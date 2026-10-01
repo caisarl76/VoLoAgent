@@ -171,8 +171,10 @@ def _typed(cls, data):
         kinds = getattr(hint, '__args__', (hint,))
         if value is None and type(None) in kinds:
             continue
-        if float in kinds and finite_number(value):
-            continue
+        if float in kinds:
+            if finite_number(value):
+                continue
+            raise ValueError(f'Invalid finite {name}')
         if type(value) not in kinds:
             raise ValueError(f'Invalid {name} type')
     if 'phase' in data and data['phase'] not in PHASES:
