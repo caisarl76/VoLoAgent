@@ -70,3 +70,10 @@ def test_response_rejects_bad_result_types():
     _, c = modules()
     with pytest.raises(ValueError):
         c.decode_response(b'{"request_id":"r","runtime_id":"b","result":{},"error":null}')
+
+
+def test_response_rejects_overflowed_float():
+    _, c = modules()
+    payload = b'{"request_id":"r","runtime_id":"boot","error":null,"result":{"runtime_id":"boot","session_id":"s","lease_id":"l","expires_at":1e1000}}'
+    with pytest.raises(ValueError):
+        c.decode_response(payload)

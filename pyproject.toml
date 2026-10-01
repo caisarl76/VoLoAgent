@@ -39,6 +39,7 @@ dev = [
 
 [project.scripts]
 vlm-orchestrator = "vlm_orchestrator.cli:main"
+volo-g1-harness = "vlm_orchestrator.harness.g1.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["vlm_orchestrator*"]
