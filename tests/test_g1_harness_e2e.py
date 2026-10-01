@@ -210,3 +210,23 @@ def test_coordinator_loss_mid_walk_stops_movement(native_runtime, tmp_path):
             )
         finally:
             observer.close()
+
+
+def test_operator_takeover_pauses_owned_mission(native_runtime, tmp_path):
+    with executor(native_runtime, tmp_path, "operator_pause") as (endpoint, evidence):
+        monitor = G1CompletionMonitor(
+            PROFILE.require_skill("bottle_to_right_table"),
+            lambda *_: '{"status":"complete","action":"next","reason":"released"}',
+            time.monotonic,
+        )
+        result = HarnessRunner(
+            PROFILE, lambda: G1Client(endpoint), monitor, tmp_path / "missions"
+        ).run(SkillCall("bottle_to_right_table", {}))
+        assert result.outcome == "interrupted"
+        recorded = events(evidence)
+        index = next(
+            i for i, e in enumerate(recorded) if e["event"] == "operator_override"
+        )
+        assert not any(e.get("kind") == "pose" for e in recorded[index:])
+        assert not any(e["event"] == "reset" for e in recorded)
+        assert any(e["event"] == "late_result_rejected" for e in recorded)
