@@ -264,6 +264,16 @@ class HarnessRunner:
                 raise ValueError("Executor profile mismatch")
             if not status.controller_running or status.owner_session_id is not None:
                 raise ValueError("Operator must prepare a running paused executor")
+            if (
+                any(c.skill_id in {"walk_for", "turn_by"} for c in calls)
+                and not status.locomotion_enabled
+            ):
+                raise ValueError("Native executor has locomotion disabled")
+            if (
+                any(c.skill_id in self.profile.skills for c in calls)
+                and self.monitor is None
+            ):
+                raise ValueError("Manipulation requires a configured VLM monitor")
             ready_deadline = time.monotonic() + self.profile.limits.prewarm_deadline_s
             while not status.policy_ready and any(
                 c.skill_id in self.profile.skills for c in calls

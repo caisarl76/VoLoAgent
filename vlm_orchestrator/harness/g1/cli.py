@@ -59,8 +59,10 @@ def main(argv=None):
                 )
             )
             return 0
+
         def factory():
             return G1Client(args.endpoint, profile.limits.rpc_timeout_s)
+
         if args.command in {"status", "observe"}:
             client = factory()
             try:

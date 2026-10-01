@@ -31,6 +31,7 @@ class Executor:
         self.heartbeats = 0
         self.reboot = False
         self.profile_mismatch = False
+        self.locomotion = False
 
     def status(self):
         return Status(
@@ -54,6 +55,7 @@ class Executor:
             PROFILE.checkpoint,
             self.owner,
             None,
+            self.locomotion,
         )
 
     def client(self):
@@ -99,6 +101,9 @@ class LocalClient:
                 self.e.epoch += 1
             elif method == "cancel":
                 self.e.phase = "INTERRUPTED"
+                self.e.epoch += 1
+            elif method in {"walk_for", "turn_by"}:
+                self.e.phase = "COMPLETED"
                 self.e.epoch += 1
             result = Execution(
                 "boot",
@@ -211,3 +216,61 @@ def test_bad_later_skill_prevents_claim(tmp_path):
             [SkillCall("bottle_to_right_table", {}), SkillCall("invented", {})]
         )
     assert not e.calls
+
+
+def test_native_locomotion_opt_in_checked_before_any_skill(tmp_path):
+    e = Executor()
+    r = runner(e, tmp_path)
+    r.locomotion_enabled = True
+    result = r.run_sequence(
+        [
+            SkillCall("bottle_to_right_table", {}),
+            SkillCall(
+                "walk_for",
+                {"direction": "backward", "duration_s": 1.0, "speed_mps": 0.2},
+            ),
+        ]
+    )
+    assert result.outcome == "fault" and not e.calls
+
+
+def test_sequence_stops_on_first_failure(tmp_path):
+    e = Executor()
+    e.locomotion = True
+    r = runner(e, tmp_path, Monitor("failure"))
+    r.locomotion_enabled = True
+    result = r.run_sequence(
+        [
+            SkillCall("bottle_to_right_table", {}),
+            SkillCall(
+                "walk_for",
+                {"direction": "backward", "duration_s": 1.0, "speed_mps": 0.2},
+            ),
+        ]
+    )
+    assert result.outcome == "interrupted" and "walk_for" not in e.calls
+
+
+def test_sequence_uses_one_lease_and_no_extra_reset(tmp_path):
+    e = Executor()
+    e.locomotion = True
+    r = runner(e, tmp_path)
+    r.locomotion_enabled = True
+    result = r.run_sequence(
+        [
+            SkillCall("bottle_to_right_table", {}),
+            SkillCall(
+                "walk_for",
+                {"direction": "backward", "duration_s": 1.0, "speed_mps": 0.2},
+            ),
+            SkillCall("turn_by", {"angle_rad": 0.1, "rate_rps": 0.1}),
+        ]
+    )
+    assert result.outcome == "completed"
+    assert e.calls.count("claim_control") == 1
+    assert e.calls.count("reset_standing") == 1
+    assert (
+        e.calls.index("reset_standing")
+        < e.calls.index("walk_for")
+        < e.calls.index("turn_by")
+    )
