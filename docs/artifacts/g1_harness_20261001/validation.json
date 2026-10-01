@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-01",
+  "voLo_code_commit": "d5b4aa7",
+  "native_commit": "00dc529",
+  "profile_sha256": "17e415bf4ebd63e771e3befe9c0c95ce360ad36ec03c94f1f2b535a89406b71f",
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "prompt": "pick drink bottle and place it on the right table",
+  "tests": {
+    "volo_passed": 604,
+    "volo_preexisting_skipped": 6,
+    "native_passed": 607,
+    "cross_process_passed": 9,
+    "cross_process_skipped": 0
+  },
+  "serving": {
+    "cold_latency_s": 4.772138233998703,
+    "warm_latency_s": 0.12807305000023916,
+    "motion_shape": [
+      1,
+      40,
+      64
+    ],
+    "hand_shapes": [
+      [
+        1,
+        40,
+        7
+      ],
+      [
+        1,
+        40,
+        7
+      ]
+    ],
+    "gpu": 1,
+    "host": "127.0.0.1",
+    "port": 15558,
+    "temporary_server_stopped": true
+  },
+  "code_review": "approved_no_critical_or_important_findings",
+  "sonic_control_simulation": "pending",
+  "monitor_accuracy": "pending_labeled_clips_and_endpoint",
+  "hardware": "pending",
+  "hardware_actuation": false
+}

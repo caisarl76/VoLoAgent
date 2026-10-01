@@ -1,5 +1,9 @@
 # Unitree G1 agent harness
 
+Software checks and recorded-checkpoint serving passed on 2026-10-01.
+See the [validation report](artifacts/g1_harness_20261001/README.md) for exact
+results and remaining simulation, visual-accuracy, and hardware gates.
+
 The agent chooses a registered skill, checks camera evidence, and asks the native
 executor to pause and reset. The existing native inference loop publishes every
 robot command. RPC, vision monitoring, and the agent have no actuator publisher.
