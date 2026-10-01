@@ -1,0 +1,148 @@
+"""Cross-repository IPC checks. The native fixture has no robot-action socket."""
+
+from contextlib import contextmanager
+import json
+import os
+from pathlib import Path
+import subprocess
+import time
+
+import pytest
+
+from vlm_orchestrator.harness.g1.client import G1Client
+from vlm_orchestrator.harness.g1.contract import SkillCall
+from vlm_orchestrator.harness.g1.monitor import G1CompletionMonitor
+from vlm_orchestrator.harness.g1.registry import load_profile
+from vlm_orchestrator.harness.g1.runner import HarnessRunner
+
+
+ROOT = Path(__file__).resolve().parents[1]
+PROFILE_PATH = ROOT / "configs/g1/workstation.yaml"
+PROFILE = load_profile(PROFILE_PATH)
+
+
+@contextmanager
+def executor(native_runtime, tmp_path, scenario="success"):
+    checkout, python = native_runtime
+    endpoint = "ipc://" + str(tmp_path / "runtime.sock")
+    evidence = tmp_path / "native.jsonl"
+    with (tmp_path / "native.log").open("w") as log:
+        env = {**os.environ, "PYTHONPATH": str(checkout)}
+        process = subprocess.Popen(
+            [
+                str(python),
+                str(checkout / "gear_sonic/tests/harness_fake_runtime.py"),
+                "--endpoint",
+                endpoint,
+                "--profile",
+                str(PROFILE_PATH),
+                "--scenario",
+                scenario,
+                "--evidence",
+                str(evidence),
+            ],
+            cwd=checkout,
+            env=env,
+            stdout=log,
+            stderr=log,
+        )
+        try:
+            deadline = time.monotonic() + 5
+            while not Path(endpoint[6:]).exists():
+                assert process.poll() is None, (tmp_path / "native.log").read_text()
+                assert time.monotonic() < deadline, "Native fixture did not start"
+                time.sleep(0.02)
+            yield endpoint, evidence
+        finally:
+            process.terminate()
+            process.wait(timeout=5)
+
+
+def events(path):
+    return [json.loads(line) for line in path.read_text().splitlines()]
+
+
+def test_mirrored_contract_and_golden_fixtures(native_runtime):
+    checkout, _ = native_runtime
+    assert (ROOT / "tests/fixtures/g1_rpc_v1.json").read_bytes() == (
+        checkout / "gear_sonic/tests/fixtures/g1_rpc_v1.json"
+    ).read_bytes()
+    for local, native in [
+        ("contract.py", "harness_contract.py"),
+        ("registry.py", "harness_profile.py"),
+    ]:
+        ours = (ROOT / "vlm_orchestrator/harness/g1" / local).read_text()
+        theirs = (checkout / "gear_sonic/utils/inference" / native).read_text()
+        assert ours.replace("from .contract", "from .harness_contract") == theirs
+
+
+@pytest.mark.parametrize(
+    "scenario", ["success", "late_result", "frozen_camera", "failed_ack"]
+)
+def test_bottle_mission_cross_process(native_runtime, tmp_path, scenario):
+    with executor(native_runtime, tmp_path, scenario) as (endpoint, evidence):
+        monitor = G1CompletionMonitor(
+            PROFILE.require_skill("bottle_to_right_table"),
+            lambda *_: (
+                '{"status":"complete","action":"next","reason":"placed and released"}'
+            ),
+            time.monotonic,
+            PROFILE.limits,
+        )
+        result = HarnessRunner(
+            PROFILE, lambda: G1Client(endpoint), monitor, tmp_path / "missions"
+        ).run(SkillCall("bottle_to_right_table", {}))
+        recorded = events(evidence)
+        mission = events(result.evidence_dir / "events.jsonl")
+        assert len([e for e in mission if e["event"] == "mission_result"]) == 1
+        assert {e["publisher"] for e in recorded if "publisher" in e} == {"memory-only"}
+        assert [e["prompt"] for e in recorded if e["event"] == "prompt"] == [
+            "pick drink bottle and place it on the right table"
+        ]
+        if scenario in {"success", "late_result"}:
+            assert result.outcome == "completed", result.reason
+            decisions = [e for e in mission if e["event"] == "monitor_decision"]
+            assert [e["outcome"] for e in decisions] == ["in_progress", "complete"]
+            assert decisions[0]["frame_id"] != decisions[1]["frame_id"]
+            terminal = next(
+                e
+                for e in mission
+                if e["event"] == "status" and e["phase"] == "COMPLETED"
+            )
+            assert terminal["hold_confirmed"] and terminal["planner_reference_active"]
+            assert terminal["inference_epoch"] > decisions[-1]["inference_epoch"]
+            assert any(e["event"] == "measured_settled" for e in recorded)
+            if scenario == "late_result":
+                assert any(e["event"] == "late_result_rejected" for e in recorded)
+        else:
+            assert result.outcome != "completed"
+            assert not any(e["event"] == "measured_settled" for e in recorded)
+
+
+def test_coordinator_loss_expires_lease_and_preserves_hands(native_runtime, tmp_path):
+    with executor(native_runtime, tmp_path) as (endpoint, evidence):
+        client = G1Client(endpoint)
+        status = client.get_status()
+        lease = client.request(
+            "claim_control",
+            {"registry_sha256": status.registry_sha256},
+            session_id="lost-agent",
+        ).result
+        started = client.request(
+            "start_manipulation",
+            {"skill_id": "bottle_to_right_table"},
+            session_id="lost-agent",
+            lease_id=lease.lease_id,
+        ).result
+        assert started.phase == "MANIPULATING"
+        client.close()  # No heartbeat or cleanup from this owner.
+        time.sleep(PROFILE.limits.lease_s + 0.3)
+        observer = G1Client(endpoint)
+        try:
+            status = observer.get_status()
+            assert status.phase == "INTERRUPTED" and status.owner_session_id is None
+            assert status.hold_confirmed and status.reason == "lease_expired"
+            holds = [e for e in events(evidence) if e["event"] == "hold"]
+            assert holds and all(not e["open_hands"] for e in holds)
+        finally:
+            observer.close()
