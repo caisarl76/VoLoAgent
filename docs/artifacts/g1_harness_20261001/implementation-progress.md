@@ -1,0 +1,30 @@
+# SDD ledger — plan: docs/superpowers/plans/2026-09-30-unitree-g1-harness.md
+V: /home/jihun/work/VoLoAgent/.worktrees/g1-harness (base bff8266)
+G: /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native (base 7c6d710)
+Pre-flight 1->2->3: shared profile and strict wire fields; native implementation independent, fixture parity required.
+Pre-flight 3->4->5: monotonic freshness, execution/epoch binding, separate heartbeat socket; compatible.
+Pre-flight 2/3->7: planner hooks and ownership shared; add bounded commands after mission lifecycle.
+Pre-flight 5->6: use explicit native path/environment and in-memory publisher; never bind actual robot ports in tests.
+Ruling: use committed native base 7c6d710, which contains reset and manual planner; dirty recording-message edits are unrelated and stay untouched. Cost if wrong: recording text differs from the user's active checkout.
+Ruling: use a separate VoLoAgent dev environment for pure native tests and native environment for checkpoint serving; native environment lacks pytest. Cost if wrong: native dependency differences require separate validation.
+Ruling: perform software and non-actuating validation now; physical readiness and a labeled monitor acceptance dataset are not supplied. Hardware validation remains pending and harness defaults disabled. Cost if wrong: hardware readiness must be established before deployment.
+Task 1: complete (commits bff8266..f44f598, tests: .venv/bin/python -m pytest tests/test_g1_registry_contract.py -q → 12 passed in 0.05s)
+Baseline VoLoAgent: 554 passed, 6 skipped outside sandbox (sandbox denied ZMQ socket binding).
+Native baseline: checkpoint verifier collection needs safetensors; isolated test environment now reads teleop dependencies.
+Ruling: mirror data-only contract/profile modules into native package and enforce parity; no cross-package runtime imports. Cost if wrong: divergence is caught by parity tests.
+Task 2/3: native control tests RED 10 missing-module assertions, GREEN 43 lifecycle/reset/manual tests; RPC/snapshot RED 5 missing implementation/fixture assertions, GREEN 10 outside sandbox. Integration in progress.
+Task 2: complete (commits f44f598..f44f598, tests: env PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python -m pytest /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/tests/test_harness_control.py /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/tests/test_run_vla_reset.py /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/tests/test_vla_standing_reset.py -q → 29 passed in 0.52s)
+Task 2 native commit: d7dadfc; task 3 native commit: 9c01574. Task 3 complete: 10 RPC/snapshot tests passed outside sandbox.
+Ruling: include background freshness cache with task 2 because active policy guards consume it; RPC ownership/wire fixtures committed in task 3. Cost if wrong: commit boundaries differ, behavior remains covered by both suites.
+Ruling: native test environment uses teleop dependencies through a local .pth; serving checks use Isaac-GR00T/.venv (the actual launcher environment). Cost if wrong: deployment dependency validation must still run separately.
+Task 4: complete (commits 62a34ad..7739699, tests: .venv/bin/python -m pytest tests/test_g1_monitor.py tests/test_vlm_failure_handler.py -q → 35 passed in 0.15s)
+Task 5 complete: commit 2177289; coordinator/CLI/RPC RED 11 missing modules, GREEN 12 tests, including independent heartbeat during slow monitoring. Registry overflow regression RED->GREEN; native contract mirror updated.
+
+Task 6 complete: launcher RED 2 missing fields; E2E RED 6 missing fixture. GREEN: 42 VoLo G1 tests, 60 native lifecycle/RPC/launcher/reset tests, cross-process gate 6 tests with zero skips. Ruff passed. Native fake publisher is memory-only; no robot socket.
+
+Task 7 complete: planner/camera RED 11 failures; GREEN 22 native planner/controller, 23 registry/coordinator and 61 native regressions. Cross-process 8 passed, including bottle-reset-walk-turn and owner death mid-walk. Missing telemetry zeros retained native planner motion before any hold attempt. Hardware locomotion remains opt-in.
+
+Task 8 partial: recorded checkpoint serving passed with exact trained prompt and finite native shapes; cold4.772s/warm0.128s. Reconstructed174episodes/274241frames and generated official stats. Temporary localhost GPU1 server stopped. SONIC control simulation, labeled visual acceptance, and supervised hardware remain pending.
+Review: seven initial defects plus two camera races fixed with RED/GREEN regressions; final fresh reviewer approved V49043dc/G49b87c5. Runtime code unchanged by later fixture/ignore/artifact commits.
+Final software: V604passed6legacy skips; native607passed; required cross-process9passed0skips; Ruff passed; installed skills/help and native policy/model imports passed.
+Ruling: actual C++ lost-input hand preservation is unverified; source clears hand overrides on1s planner timeout. Do not infer process-death safety from lease-expiry tests. Hardware gate remains open.
