@@ -68,8 +68,9 @@ class HarnessRunner:
         return result.result
 
     def _heartbeat(self):
-        client = self.client_factory()
+        client = None
         try:
+            client = self.client_factory()
             if client.get_status().runtime_id != self._lease.runtime_id:
                 raise MissionInterrupted("Executor restarted")
             while not self._stop.is_set():
@@ -86,7 +87,8 @@ class HarnessRunner:
         except Exception as exc:
             self._heartbeat_error.put(exc)
         finally:
-            client.close()
+            if client is not None:
+                client.close()
 
     def _check(self):
         if not self._heartbeat_error.empty():
@@ -218,12 +220,12 @@ class HarnessRunner:
                 or status.owner_session_id != self._session_id
             ):
                 return
-            if self._execution and status.phase not in {
+            if status.execution_id and status.phase not in {
                 "COMPLETED",
                 "INTERRUPTED",
                 "FAULT",
             }:
-                self._rpc("cancel", {"execution_id": self._execution.execution_id})
+                self._rpc("cancel", {"execution_id": status.execution_id})
             deadline = time.monotonic() + self.profile.limits.planner_deadline_s
             while time.monotonic() < deadline:
                 status = self._client.get_status()
