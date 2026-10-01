@@ -95,6 +95,28 @@ Each mission writes `events.jsonl`, the camera frames used for decisions, raw
 monitor replies, request IDs, runtime/execution/epoch IDs, and `result.json`.
 Review both coordinator evidence and the native serving/runtime logs.
 
+## Bounded repositioning
+
+Locomotion requires `--harness-locomotion` on the native runtime and
+`--locomotion` on the coordinator. It is disabled by default. Runtime status
+advertises the native setting so a mixed sequence is rejected before its first
+skill if locomotion is unavailable.
+
+```bash
+.venv/bin/python -m vlm_orchestrator.harness.g1.cli execute \
+  --plan-file configs/g1/bottle_then_reposition.json --locomotion \
+  --vlm-model YOUR_VISION_MODEL --vlm-base-url YOUR_VISION_ENDPOINT
+```
+
+The example places the bottle, performs its automatic standing reset, walks
+backward for 1 second at 0.2 m/s, then turns 15 degrees at 10 degrees/s. One
+ownership lease covers the whole sequence. A failure ends the sequence.
+Walking completion means the commanded duration ended; no measured distance
+is claimed. Turns require measured yaw within 3 degrees for 0.5 seconds, followed
+by fresh planner acknowledgement of the stopped command. Heading targets lead
+measured yaw by at most 5 degrees. Arms and hands keep their measured positions.
+Floor-home navigation requires localization and remains future work.
+
 ## Software checks
 
 The cross-process fixture uses the real native lifecycle, IPC server, snapshot

@@ -146,3 +146,67 @@ def test_coordinator_loss_expires_lease_and_preserves_hands(native_runtime, tmp_
             assert holds and all(not e["open_hands"] for e in holds)
         finally:
             observer.close()
+
+
+def test_bottle_then_bounded_reposition(native_runtime, tmp_path):
+    with executor(native_runtime, tmp_path, "locomotion") as (endpoint, evidence):
+        monitor = G1CompletionMonitor(
+            PROFILE.require_skill("bottle_to_right_table"),
+            lambda *_: '{"status":"complete","action":"next","reason":"released"}',
+            time.monotonic,
+        )
+        runner = HarnessRunner(
+            PROFILE, lambda: G1Client(endpoint), monitor, tmp_path / "missions"
+        )
+        runner.locomotion_enabled = True
+        plan = json.loads((ROOT / "configs/g1/bottle_then_reposition.json").read_text())
+        result = runner.run_sequence([SkillCall(**call) for call in plan["skills"]])
+        assert result.outcome == "completed", result.reason
+        phases = [e["phase"] for e in events(evidence) if e["event"] == "phase"]
+        assert (
+            "WALKING" in phases
+            and "TURNING" in phases
+            and phases.count("RESETTING") == 1
+        )
+
+
+def test_coordinator_loss_mid_walk_stops_movement(native_runtime, tmp_path):
+    with executor(native_runtime, tmp_path, "locomotion") as (endpoint, evidence):
+        client = G1Client(endpoint)
+        status = client.get_status()
+        lease = client.request(
+            "claim_control",
+            {"registry_sha256": status.registry_sha256},
+            session_id="lost-agent",
+        ).result
+        reset = client.request(
+            "reset_standing",
+            {"execution_id": "", "open_hands": False},
+            session_id="lost-agent",
+            lease_id=lease.lease_id,
+        ).result
+        deadline = time.monotonic() + 3
+        while client.get_status().phase != "COMPLETED":
+            assert time.monotonic() < deadline
+            client.request(
+                "heartbeat", {}, session_id="lost-agent", lease_id=lease.lease_id
+            )
+            time.sleep(0.05)
+        started = client.request(
+            "walk_for",
+            {"direction": "forward", "duration_s": 5.0, "speed_mps": 0.2},
+            session_id="lost-agent",
+            lease_id=lease.lease_id,
+        ).result
+        assert started.phase == "WALKING" and started.execution_id != reset.execution_id
+        client.close()
+        time.sleep(PROFILE.limits.lease_s + 0.3)
+        observer = G1Client(endpoint)
+        try:
+            status = observer.get_status()
+            assert status.phase == "INTERRUPTED" and status.hold_confirmed
+            assert any(
+                e["event"] == "hold" and not e["open_hands"] for e in events(evidence)
+            )
+        finally:
+            observer.close()

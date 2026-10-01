@@ -1,5 +1,8 @@
 # G1 harness local RPC version 1
 
+Status includes `locomotion_enabled: bool` (default false). Coordinators check
+this capability before claiming a sequence containing walking or turning.
+
 The G1 inference loop owns robot control. A background REP worker on `ipc:///tmp/volo-g1-harness.sock` accepts JSON requests and queues them for that loop. Each request returns promptly with acceptance/status; poll `get_status` to confirm a motion finished. The endpoint supports local IPC only and uses user-only permissions.
 
 ```json
