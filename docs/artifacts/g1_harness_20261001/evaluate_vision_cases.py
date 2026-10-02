@@ -1,7 +1,7 @@
 """Inspect recorded frames with the real G1 monitor, without any robot client.
 
-Each case is independent: compare the model's one-frame completion claim with
-the label. The monitor's two-frame mission confirmation is a separate gate.
+Cases are independent unless they share an explicit sequence_id. Replay
+sequences check two-frame confirmation on recorded images, without robot control.
 """
 
 import argparse
@@ -98,7 +98,7 @@ def main():
     frames.mkdir(exist_ok=True)
     report = {
         "robot_connection": False,
-        "scope": "Independent frame judgments; no two-frame mission acceptance",
+        "scope": "Recorded frame judgments and explicit replay sequences; no live robot mission",
         "label_provenance": manifest["label_provenance"],
         "model": args.vlm_model,
         "base_url": args.vlm_base_url,
@@ -138,6 +138,7 @@ def main():
             .message.content
         )
 
+    monitors = {}
     for case in manifest["cases"]:
         episode = manifest["episodes"][case["episode"]]
         jpeg = frame(episode["video"], case["at_s"], frames / f"{case['id']}.jpg")
@@ -153,17 +154,19 @@ def main():
             skill = SkillDefinition(
                 case["episode"], episode["prompt"], episode["completion_criteria"]
             )
-            execution = Execution(
-                "offline-replay",
-                case["id"],
-                skill.skill_id,
-                "MANIPULATING",
-                1,
-                time.monotonic(),
-                None,
-            )
-            monitor = G1CompletionMonitor(skill, vlm_call, time.monotonic)
-            monitor.begin(execution, snapshot(initial, execution, initial_s))
+            key = (case["episode"], case.get("sequence_id", case["id"]))
+            if key not in monitors:
+                execution = Execution(
+                    "offline-replay", key[1], skill.skill_id,
+                    "MANIPULATING", 1, time.monotonic(), None,
+                )
+                monitor = G1CompletionMonitor(skill, vlm_call, time.monotonic)
+                monitor.begin(execution, snapshot(initial, execution, initial_s))
+                monitors[key] = (execution, monitor, initial_s)
+            execution, monitor, last_s = monitors[key]
+            if case.get("sequence_id") and case["at_s"] <= last_s:
+                raise ValueError("Replay sequence frames must follow the initial image and increase in time")
+            monitors[key] = (execution, monitor, case["at_s"])
             decision = monitor.check(snapshot(jpeg, execution, case["at_s"]))
             raw = monitor.raw_response
             parsed = parse_json(raw) if raw is not None else None
@@ -181,6 +184,11 @@ def main():
                 frame_complete=claim,
                 matches_label=claim == case["complete"] if claim is not None else None,
                 decision_latency_s=decision.decided_at - decision.captured_at,
+                confirmation_streak=monitor.streak,
+                matches_monitor_outcome=(
+                    decision.outcome == case["expected_monitor_outcome"]
+                    if "expected_monitor_outcome" in case else None
+                ),
             )
         report["cases"].append(record)
         (args.output / "result.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -208,12 +216,18 @@ def main():
             "positive_label_disagreements": sum(
                 c["complete"] and c["frame_complete"] is False for c in cases
             ),
+            "sequence_confirmations": sum(
+                bool(c.get("sequence_id")) and c["decision"]["outcome"] == "complete"
+                for c in cases
+            ),
+            "monitor_outcome_disagreements": sum(c["matches_monitor_outcome"] is False for c in cases),
         }
         (args.output / "result.json").write_text(json.dumps(report, indent=2) + "\n")
         return (
             1
             if report["summary"]["unavailable"]
             or any(c["matches_label"] is False for c in cases)
+            or report["summary"]["monitor_outcome_disagreements"]
             else 0
         )
     return 0

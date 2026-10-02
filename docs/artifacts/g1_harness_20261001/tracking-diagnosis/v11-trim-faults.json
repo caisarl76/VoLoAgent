@@ -1,0 +1,64 @@
+{
+  "outcome": "passed",
+  "gate": "faults",
+  "robot_connection": false,
+  "dds_interface": "lo",
+  "action_port": 11556,
+  "state_port": 11557,
+  "scenario": "faults",
+  "gpu": 0,
+  "release_band": true,
+  "sonic_assets": {
+    "model_decoder.onnx": {
+      "path": "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+      "sha256": "34bae8570d4a4421a5391a5c2befd745d4a02d182ec539e5f9da44c091c67509"
+    },
+    "model_encoder.onnx": {
+      "path": "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+      "sha256": "fb97de22819b2057b41459802128d91723d91a25f0ad73e7bfc41a9cf8365bae"
+    },
+    "observation_config.yaml": {
+      "path": "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+      "sha256": "4a67713b310932e50aca81f19188c8d76013148e98b15c8b5bbea995f12e59f0"
+    }
+  },
+  "controller_binary": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+  "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "cancellation": "passed",
+  "coordinator_loss": "passed",
+  "stale_feedback": "passed",
+  "lost_input_hand_change_rad": 0.013495758175849915,
+  "lost_input_hands_before_rad": [
+    0.001475879573263228,
+    0.16140280663967133,
+    0.45002350211143494,
+    -0.324319452047348,
+    -0.4379255771636963,
+    -0.37900277972221375,
+    -0.44068625569343567,
+    -0.025615202262997627,
+    -0.1382206529378891,
+    -0.45690158009529114,
+    0.35586416721343994,
+    0.42458343505859375,
+    0.38368040323257446,
+    0.4409245252609253
+  ],
+  "lost_input_hands_after_rad": [
+    0.0018263432430103421,
+    0.1479462832212448,
+    0.44060447812080383,
+    -0.3147348165512085,
+    -0.4285757839679718,
+    -0.3699501156806946,
+    -0.43135303258895874,
+    -0.021992452442646027,
+    -0.12472489476203918,
+    -0.4474985599517822,
+    0.34656429290771484,
+    0.4151949882507324,
+    0.37459754943847656,
+    0.4315955340862274
+  ],
+  "lost_planner_input": "passed_measured_hand_tolerance_only"
+}

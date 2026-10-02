@@ -1,0 +1,163 @@
+{
+  "robot_connection": false,
+  "scope": "Recorded frame judgments and explicit replay sequences; no live robot mission",
+  "label_provenance": "Provisional frame annotations from direct session visual inspection, not user-approved labels. The intended right-table destination appears to be the green stool; confirmation requested. Source metadata only identifies retained demonstrations, not success/failure ground truth.",
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "episodes": {
+    "bottle_18": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "sha256": "5adf0f2de73b01733915abb888303ac902093371700f05aeb52344f42ff6d89e",
+      "user_outcome": "Session inspection: bottles transported to the green stool, with a released bottle visible at37-39.5s. User confirmation of destination/labels pending."
+    }
+  },
+  "cases": [
+    {
+      "id": "bottle_out_of_view",
+      "episode": "bottle_18",
+      "at_s": 1.0,
+      "initial_s": 0.1,
+      "complete": false,
+      "note": "Early camera view shows floor; no bottle or destination visible. Not an occlusion during transport.",
+      "image": "frames/bottle_out_of_view.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is not visibly resting on the right table, so completion is not established.",
+        "frame_id": "a11b0f420bf46c529520b16dce5142464725acebd1fe5ed0b7a2553ac12746d8",
+        "execution_id": "bottle_out_of_view",
+        "inference_epoch": 1,
+        "captured_at": 100713.355025071,
+        "decided_at": 100717.129858406
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle is not visibly resting on the right table, so completion is not established.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.774833335002768,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_before_grasp",
+      "episode": "bottle_18",
+      "at_s": 12.0,
+      "complete": false,
+      "image": "frames/bottle_before_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot is reaching toward a bottle, but the bottle has not been visibly placed and released on the right table.",
+        "frame_id": "5ccb3e0c8df5b01bb5be780e9ff9263ce2004d9007d9423a8c389ad251821143",
+        "execution_id": "bottle_before_grasp",
+        "inference_epoch": 1,
+        "captured_at": 100717.284024735,
+        "decided_at": 100720.31268189
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The robot is reaching toward a bottle, but the bottle has not been visibly placed and released on the right table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.0286571550095687,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_held",
+      "episode": "bottle_18",
+      "at_s": 28.0,
+      "complete": false,
+      "image": "frames/bottle_held.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is still held by the robot and has not been visibly released onto the right table.",
+        "frame_id": "f9e7bbd1464e1f1f6eb637a2f107b52a523ea4e6f77ccf14a3f1eab2df899b56",
+        "execution_id": "bottle_held",
+        "inference_epoch": 1,
+        "captured_at": 100720.380336927,
+        "decided_at": 100723.468859173
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle is still held by the robot and has not been visibly released onto the right table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.0885222459910437,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_held_above_destination",
+      "episode": "bottle_18",
+      "at_s": 31.0,
+      "complete": false,
+      "image": "frames/bottle_held_above_destination.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is still held by the robot and has not been released onto the right table.",
+        "frame_id": "1578d62167e76566609ec338499d199644b6f9f07f59b7a0ff293c7e163cf32e",
+        "execution_id": "bottle_held_above_destination",
+        "inference_epoch": 1,
+        "captured_at": 100723.556490214,
+        "decided_at": 100726.72088174
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle is still held by the robot and has not been released onto the right table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.1643915259919595,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_released_first",
+      "episode": "bottle_18",
+      "at_s": 37.0,
+      "complete": true,
+      "sequence_id": "bottle_release",
+      "expected_monitor_outcome": "in_progress",
+      "image": "frames/bottle_released_first.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is visibly resting upright on the right table, and the robot has released it.",
+        "frame_id": "adcda2a7b5a25588df0e9e098e9b9fc7840d9509c525d9dbd262856ec6b0ac72",
+        "execution_id": "bottle_release",
+        "inference_epoch": 1,
+        "captured_at": 100726.82106032,
+        "decided_at": 100729.779011156
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The drink bottle is visibly resting upright on the right table, and the robot has released it.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 2.9579508360038744,
+      "confirmation_streak": 1,
+      "matches_monitor_outcome": true
+    },
+    {
+      "id": "bottle_released_second",
+      "episode": "bottle_18",
+      "at_s": 38.0,
+      "complete": true,
+      "sequence_id": "bottle_release",
+      "expected_monitor_outcome": "complete",
+      "image": "frames/bottle_released_second.jpg",
+      "decision": {
+        "outcome": "complete",
+        "reason": "The drink bottle is visibly resting upright on the right table, and the robot gripper has released it.",
+        "frame_id": "7473b025353e3996535cd19c3eac1e554a739ef49310ca3cec7144c3decfa159",
+        "execution_id": "bottle_release",
+        "inference_epoch": 1,
+        "captured_at": 100729.837834157,
+        "decided_at": 100732.505234038
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The drink bottle is visibly resting upright on the right table, and the robot gripper has released it.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 2.667399881000165,
+      "confirmation_streak": 2,
+      "matches_monitor_outcome": true
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "unavailable": 0,
+    "valid_negative_cases": 4,
+    "false_complete": 0,
+    "positive_label_disagreements": 0,
+    "sequence_confirmations": 1,
+    "monitor_outcome_disagreements": 0
+  }
+}

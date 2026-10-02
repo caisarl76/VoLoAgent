@@ -1,0 +1,120 @@
+{
+  "robot_connection": false,
+  "scope": "Recorded frame judgments and explicit replay sequences; no live robot mission",
+  "label_provenance": "The user identified episode 5 as a failed manipulation ending without recovery on 2026-10-02. Frame annotations are from direct session visual inspection. The green stool is the user-confirmed intended destination; bottles remaining on the front source table do not establish completion.",
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "episodes": {
+    "bottle_failed_5": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445",
+      "user_outcome": "User-labeled unrecovered failure. The robot attempts to grasp a bottle at the front source table; intended right-side placement is not established before the clip ends."
+    }
+  },
+  "cases": [
+    {
+      "id": "failed_bottle_before_grasp",
+      "episode": "bottle_failed_5",
+      "at_s": 12.0,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "image": "frames/failed_bottle_before_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is released but still visibly resting on the wooden source table, not the right-hand table.",
+        "frame_id": "b8c0a318dd5977dcf8bf6caf6d4217fa634169bb5bd36dcbaf63b41dfb4dab58",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 103453.78776842,
+        "decided_at": 103458.75457701
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle is released but still visibly resting on the wooden source table, not the right-hand table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 4.966808589990251,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "failed_bottle_grasp_attempt",
+      "episode": "bottle_failed_5",
+      "at_s": 17.0,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "Bottle remains at the front source table, enclosed by the left fingers; release on the right destination is not established.",
+      "image": "frames/failed_bottle_grasp_attempt.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot is still holding the drink bottle; it has not been visibly placed and released on the right table.",
+        "frame_id": "4a59a849fb962318b1d71da849ac945a695ee454a43443e334a3b5a425bd907d",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 103458.824365943,
+        "decided_at": 103461.812850542
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The robot is still holding the drink bottle; it has not been visibly placed and released on the right table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.988484599001822,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "failed_bottle_target_unobservable",
+      "episode": "bottle_failed_5",
+      "at_s": 18.8,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "The bottle near the left grasp at17s is no longer visibly identifiable; other bottles remain on the source table. Target visibility loss during manipulation, not proof of blocked-camera occlusion or a fall.",
+      "image": "frames/failed_bottle_target_unobservable.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is released but is still visibly on the wooden table; there is no clear evidence it rests on the right table.",
+        "frame_id": "11d82e8c263db00035e55798643fdd71f0fc266c815bb08b678fa7e7e1c02bc1",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 103461.864898731,
+        "decided_at": 103465.72976224
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle is released but is still visibly on the wooden table; there is no clear evidence it rests on the right table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.86486350899213,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "failed_bottle_terminal",
+      "episode": "bottle_failed_5",
+      "at_s": 19.4,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "The clip ends at19.54s without visible placement on the intended right-side destination; user labeled the episode failed without recovery.",
+      "image": "frames/failed_bottle_terminal.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle remains on the wooden table and has not yet been placed and released on the right table.",
+        "frame_id": "1352a9409b9ab706cc036325990fbe38a433ab7aad4b887e4079f318bc475812",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 103465.78493815,
+        "decided_at": 103468.840910888
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle remains on the wooden table and has not yet been placed and released on the right table.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.0559727380023105,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "unavailable": 0,
+    "valid_negative_cases": 4,
+    "false_complete": 0,
+    "positive_label_disagreements": 0,
+    "sequence_confirmations": 0,
+    "monitor_outcome_disagreements": 0
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "date": "2026-10-02",
+  "profile_sha256": "17e415bf4ebd63e771e3befe9c0c95ce360ad36ec03c94f1f2b535a89406b71f",
+  "current_native_commit": "d513de5",
+  "voLo_runtime_commit": "d5b4aa7",
+  "note": "Invocations reconstructed from session calls and recorded parameters. Scripts evolved during investigation; final script hashes do not attest historical script versions. Original results/events are unchanged.",
+  "final_script_sha256": {
+    "sonic_sim_probe.py": "2b34579efdab8b8a27ac7b588174feaeb5d717c2d8750aad30ee148c7774095d",
+    "sonic_sim_worker.py": "c9052fc0977466776b67c9bf437cd8c9fbf07bae193cbec1893f4ecafd2ebdd2",
+    "evaluate_vision_cases.py": "f262b38b2f04d827b9a3395c8b699555eb25ec371c80d2da111c130823ff5112"
+  },
+  "runs": [
+    {
+      "result": "sonic-sim-final-faults/result.json",
+      "result_sha256": "3119f12dde9bb06d3682c08dc2632b1d1925f357d9f1773994c3db9cd5f968bb",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-final-faults",
+        "--scenario",
+        "faults",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--initial-yaw-deg",
+        "0",
+        "--turn-angle-deg",
+        "15"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-final-faults-20261002"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-final-faults-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "passed",
+      "parameters": {}
+    },
+    {
+      "result": "sonic-sim-final-transitions/result.json",
+      "result_sha256": "635b05e779f468e329c0391953cada3b9c7032188aa3782d2ae3bd4176d67fa7",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-final-transitions",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--initial-yaw-deg",
+        "0",
+        "--turn-angle-deg",
+        "15"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-final-transitions-20261002"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-final-transitions-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "passed",
+      "parameters": {}
+    },
+    {
+      "result": "sonic-sim-lead-negative/result.json",
+      "result_sha256": "1badb4fe15e4933700adb96fd768d94c698ff867e07c294df98f44b80a43d19f",
+      "native_commit": "d513de5",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-lead-negative",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "0.0",
+        "--turn-angle-deg",
+        "-15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-lead-negative-20261002",
+            "--initial-yaw-deg",
+            "0.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-lead-negative-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": 0.0,
+        "turn_angle_deg": -15.0,
+        "prepare_standing": true,
+        "diagnostic_turn_mode": null
+      }
+    },
+    {
+      "result": "sonic-sim-lead-positive/result.json",
+      "result_sha256": "024f2f134c0ce1b323256a667d06c23b82b3fee5f6676a49a7bfc01f9a87a787",
+      "native_commit": "d513de5",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-lead-positive",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "0.0",
+        "--turn-angle-deg",
+        "15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-lead-positive-20261002",
+            "--initial-yaw-deg",
+            "0.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-lead-positive-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": 0.0,
+        "turn_angle_deg": 15.0,
+        "prepare_standing": true,
+        "diagnostic_turn_mode": null
+      }
+    },
+    {
+      "result": "sonic-sim-negative-gait-diagnostic/result.json",
+      "result_sha256": "ef82d98dfdce7690c5d98dd6d5be4523b81035660920e538641757d1badf5b4e",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-negative-gait-diagnostic",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "0.0",
+        "--turn-angle-deg",
+        "-15.0",
+        "--diagnostic-turn-mode",
+        "1"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-negative-gait-diagnostic-20261002",
+            "--initial-yaw-deg",
+            "0.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-negative-gait-diagnostic-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": 0.0,
+        "turn_angle_deg": -15.0,
+        "prepare_standing": true,
+        "diagnostic_turn_mode": 1
+      }
+    },
+    {
+      "result": "sonic-sim-negative-ordinary/result.json",
+      "result_sha256": "84406566917d48954d2f45bf41029b11d6baec53d654ab609065d5dd4bdb989f",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-negative-ordinary",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "0.0",
+        "--turn-angle-deg",
+        "-15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-negative-ordinary-prepared-20261002",
+            "--initial-yaw-deg",
+            "0.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-negative-ordinary-prepared-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": 0.0,
+        "turn_angle_deg": -15.0,
+        "prepare_standing": true
+      }
+    },
+    {
+      "result": "sonic-sim-slow-negative/result.json",
+      "result_sha256": "22bacf94136c2a586ebbd1afd1aeb03fa579bbd590a297209ebde4a977342b82",
+      "native_commit": "d513de5",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-slow-negative",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "0.0",
+        "--turn-angle-deg",
+        "-15.0",
+        "--turn-rate-deg-s",
+        "5.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-slow-negative-20261002",
+            "--initial-yaw-deg",
+            "0.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-slow-negative-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": 0.0,
+        "turn_angle_deg": -15.0,
+        "turn_rate_deg_s": 5.0,
+        "prepare_standing": true,
+        "diagnostic_turn_mode": null
+      }
+    },
+    {
+      "result": "sonic-sim-wrap-baseline/result.json",
+      "result_sha256": "f73ef7b7d4dad5e6a3d2570051286923aebb3cb591170ab89e9b802e32afa9e2",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-wrap-baseline",
+        "--scenario",
+        "baseline",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--initial-yaw-deg",
+        "179.0",
+        "--turn-angle-deg",
+        "15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-wrap-baseline-supported-20261002",
+            "--initial-yaw-deg",
+            "179.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-wrap-baseline-supported-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "observed",
+      "parameters": {
+        "initial_yaw_deg": 179.0,
+        "turn_angle_deg": 15.0
+      }
+    },
+    {
+      "result": "sonic-sim-wrap-negative/result.json",
+      "result_sha256": "c4c80bd29e6ee5826a60bb30c1cc55c17260846e30931d57d3a0c17e999341fc",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-wrap-negative",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "-179.0",
+        "--turn-angle-deg",
+        "-15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-wrap-negative-prepared-20261002",
+            "--initial-yaw-deg",
+            "-179.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-wrap-negative-prepared-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": -179.0,
+        "turn_angle_deg": -15.0,
+        "prepare_standing": true
+      }
+    },
+    {
+      "result": "sonic-sim-wrap-positive/result.json",
+      "result_sha256": "bdf31d100e612113d20a0ca48d1a9e0e9b9f2f70d729e4f18b2adb31f6d6b47f",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-wrap-positive",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--prepare-standing",
+        "--initial-yaw-deg",
+        "179.0",
+        "--turn-angle-deg",
+        "15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-wrap-positive-prepared-20261002",
+            "--initial-yaw-deg",
+            "179.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-wrap-positive-prepared-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "passed",
+      "parameters": {
+        "initial_yaw_deg": 179.0,
+        "turn_angle_deg": 15.0,
+        "prepare_standing": true
+      }
+    },
+    {
+      "result": "sonic-sim-wrap-unprepared/result.json",
+      "result_sha256": "809c0688bcca30ac5d681b6936fccbc976b13582500d9150fa4989901a996945",
+      "native_commit": "e1485e0",
+      "working_directory": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "reproduction_argv_using_final_probe": [
+        "env",
+        "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        ".venv/bin/python",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py",
+        "--native",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+        "--profile",
+        "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml",
+        "--output",
+        "/tmp/g1-sonic-reproduce-sonic-sim-wrap-unprepared",
+        "--scenario",
+        "transitions",
+        "--gpu",
+        "0",
+        "--sonic-policy",
+        "sonic_v1_1",
+        "--release-band",
+        "--initial-yaw-deg",
+        "179.0",
+        "--turn-angle-deg",
+        "15.0"
+      ],
+      "recorded_child_launches": [
+        {
+          "name": "mujoco",
+          "command": [
+            "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/bin/python",
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py",
+            "--output",
+            "/tmp/g1-sonic-wrap-positive-supported-20261002",
+            "--initial-yaw-deg",
+            "179.0"
+          ]
+        },
+        {
+          "name": "sonic",
+          "command": [
+            "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+            "lo",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example",
+            "--encoder-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx",
+            "--planner-file",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx",
+            "--obs-config",
+            "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml",
+            "--input-type",
+            "zmq_manager",
+            "--harness-planner-hold",
+            "--output-type",
+            "zmq",
+            "--disable-crc-check",
+            "--zmq-host",
+            "127.0.0.1",
+            "--zmq-port",
+            "11556",
+            "--zmq-out-port",
+            "11557",
+            "--logs-dir",
+            "/tmp/g1-sonic-wrap-positive-supported-20261002/controller"
+          ]
+        }
+      ],
+      "outcome": "failed",
+      "parameters": {
+        "initial_yaw_deg": 179.0,
+        "turn_angle_deg": 15.0
+      }
+    }
+  ]
+}

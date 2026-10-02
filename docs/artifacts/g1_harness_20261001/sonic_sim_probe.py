@@ -21,10 +21,12 @@ import zmq
 
 from gear_sonic.utils.data_collection.zmq_state_subscriber import ZMQStateSubscriber
 from gear_sonic.utils.inference.harness_control import HarnessControl, RuntimeFacts
+from gear_sonic.utils.inference.bounded_planner import wrap
 from gear_sonic.utils.inference.planner_heading_frame import (
     planner_command_in_reference_frame,
 )
 from gear_sonic.utils.inference.standing_reset import StandingReset, _measured_joints
+from gear_sonic.utils.teleop.xr_upperbody_bridge import feedback_payload_heading_yaw
 from gear_sonic.utils.teleop.zmq.zmq_planner_sender import build_command_message
 
 
@@ -33,12 +35,26 @@ def main():
     parser.add_argument("--native", required=True, type=Path)
     parser.add_argument("--profile", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--gpu", type=int, default=1)
+    parser.add_argument("--release-band", action="store_true")
+    parser.add_argument("--sonic-policy", choices=("release", "sonic_v1_1"), default="release")
+    parser.add_argument("--initial-yaw-deg", type=float, default=0.0)
+    parser.add_argument("--turn-angle-deg", type=float, default=15.0)
+    parser.add_argument("--turn-rate-deg-s", type=float, default=10.0)
+    parser.add_argument("--prepare-standing", action="store_true")
+    parser.add_argument("--diagnostic-turn-mode", type=int, choices=(0, 1))
     parser.add_argument(
-        "--scenario", choices=("transitions", "faults"), default="transitions"
+        "--scenario", choices=("transitions", "faults", "baseline"), default="transitions"
     )
     args = parser.parse_args()
+    if not np.isfinite(args.initial_yaw_deg) or not -180 <= args.initial_yaw_deg <= 180:
+        parser.error("Initial simulator heading must be finite and within +/-180 degrees")
+    if not np.isfinite(args.turn_angle_deg) or not 0 < abs(args.turn_angle_deg) <= 45:
+        parser.error("Turn angle must be finite and within the nonzero +/-45 degree bound")
+    if not np.isfinite(args.turn_rate_deg_s) or not 0 < args.turn_rate_deg_s <= 10:
+        parser.error("Turn rate must be finite and within the positive 10 degree/s bound")
     origin = Path("/home/jihun/work/GR00T-WholeBodyControl")
-    args.output.mkdir(parents=True, exist_ok=True)
+    args.output.mkdir(parents=True, exist_ok=False)
     events = (args.output / "events.jsonl").open("w")
     logs, processes = [], []
     context = zmq.Context()
@@ -55,14 +71,29 @@ def main():
         "action_port": 11556,
         "state_port": 11557,
         "scenario": args.scenario,
+        "gpu": args.gpu,
+        "release_band": args.release_band,
+        "initial_yaw_deg": args.initial_yaw_deg,
+        "turn_angle_deg": args.turn_angle_deg,
+        "turn_rate_deg_s": args.turn_rate_deg_s,
+        "prepare_standing": args.prepare_standing,
+        "diagnostic_turn_mode": args.diagnostic_turn_mode,
     }
     binary = args.native / "gear_sonic_deploy/target/release/g1_deploy_onnx_ref"
+    sonic_policy = origin / "gear_sonic_deploy/policy" / args.sonic_policy
+    result["sonic_assets"] = {
+        name: {"path": str(sonic_policy / name), "sha256": hashlib.sha256((sonic_policy / name).read_bytes()).hexdigest()}
+        for name in ("model_decoder.onnx", "model_encoder.onnx", "observation_config.yaml")
+    }
     result["controller_binary"] = str(binary)
     result["controller_binary_sha256"] = hashlib.sha256(binary.read_bytes()).hexdigest()
 
     def record(event, **data):
         events.write(
-            json.dumps(dict(at=time.monotonic(), event=event, **data), default=str)
+            json.dumps(
+                dict(at=time.monotonic(), event=event, **data),
+                default=lambda value: value.tolist() if isinstance(value, np.ndarray) else str(value),
+            )
             + "\n"
         )
         events.flush()
@@ -126,6 +157,8 @@ def main():
                 else feedback.get(
                     "right_hand_q_measured", feedback.get("right_hand_q")
                 ),
+                compensate_tracking_bias=True,
+                joint_tolerance_rad=control.profile.limits.reset_joint_tolerance_rad,
             )
             self.command = self.reset.command
             self.last_reset = self.reset
@@ -136,6 +169,8 @@ def main():
             return self.reset
 
         def set_planner_command(self, command):
+            if control.phase == "TURNING" and args.diagnostic_turn_mode is not None:
+                command = replace(command, mode=args.diagnostic_turn_mode)
             self.reset, self.command = None, command
 
         def stop_planner_motion(self):
@@ -179,12 +214,14 @@ def main():
         prepare=False,
         drop_feedback=False,
         allow_fault=False,
+        operator_reset=False,
     ):
         deadline, last_at, heartbeat_at = (
             time.monotonic() + duration,
             time.monotonic(),
             0.0,
         )
+        sample_at = 0.0
         while time.monotonic() < deadline:
             now = time.monotonic()
             for process in processes:
@@ -208,8 +245,13 @@ def main():
                 heartbeat_at = now + 0.25
             if (
                 hooks.reset is not None
-                and control.hold_confirmed
-                and control.phase == "RESETTING"
+                and (
+                    (control.hold_confirmed and control.phase == "RESETTING")
+                    or (
+                        operator_reset and feedback is not None
+                        and feedback["planner_reference_active"][0] == 1
+                    )
+                )
             ):
                 hooks.command = hooks.reset.advance(hooks.feedback, now - last_at)
             if hooks.command is not None and hooks.feedback is not None and publish:
@@ -220,6 +262,13 @@ def main():
                 )
             if feedback is not None:
                 record("status", **control.status(now))
+                if now >= sample_at:
+                    record(
+                        "measurement",
+                        feedback=feedback,
+                        command=None if hooks.command is None else hooks.command.__dict__,
+                    )
+                    sample_at = now + 0.1
             if stop_when is not None and stop_when():
                 return
             if control.phase == "FAULT" and not allow_fault:
@@ -233,17 +282,16 @@ def main():
         env = {
             **os.environ,
             "PYTHONPATH": str(args.native),
-            "CUDA_VISIBLE_DEVICES": "1",
+            "CUDA_VISIBLE_DEVICES": str(args.gpu),
         }
         launch(
             [
                 str(origin / ".venv_sim/bin/python"),
-                "-m",
-                "gear_sonic.scripts.run_sim_loop",
-                "--interface",
-                "sim",
-                "--no-enable-onscreen",
-                "--no-enable-offscreen",
+                str(Path(__file__).with_name("sonic_sim_worker.py")),
+                "--output",
+                str(args.output),
+                "--initial-yaw-deg",
+                str(args.initial_yaw_deg),
             ],
             "mujoco",
             args.native,
@@ -254,14 +302,14 @@ def main():
             [
                 str(binary),
                 "lo",
-                str(deploy / "policy/release/model_decoder.onnx"),
+                str(sonic_policy / "model_decoder.onnx"),
                 str(deploy / "reference/example"),
                 "--encoder-file",
-                str(deploy / "policy/release/model_encoder.onnx"),
+                str(sonic_policy / "model_encoder.onnx"),
                 "--planner-file",
                 str(deploy / "planner/target_vel/V2/planner_sonic.onnx"),
                 "--obs-config",
-                str(deploy / "policy/release/observation_config.yaml"),
+                str(sonic_policy / "observation_config.yaml"),
                 "--input-type",
                 "zmq_manager",
                 "--harness-planner-hold",
@@ -288,9 +336,49 @@ def main():
             lambda: control.feedback is not None and control._fresh(time.monotonic()),
             prepare=True,
         )
+        if args.scenario == "baseline":
+            # Stationary target without any harness lease/reset transition.
+            baseline = StandingReset(control.feedback, np.zeros(7), np.zeros(7))
+            hooks.command = replace(
+                baseline.command,
+                upper_body_position=baseline.target[:17].tolist(),
+                left_hand_position=[0.0] * 7,
+                right_hand_position=[0.0] * 7,
+            )
+            record("baseline_start", target=baseline.target.tolist())
+            if args.release_band:
+                # Match the normal viewer's operator key 9 after startup.
+                (args.output / "release-band").touch()
+            pump(12)
+            errors = _measured_joints(hooks.feedback) - baseline.target
+            result.update(
+                outcome="observed",
+                gate="stationary_baseline",
+                baseline_joint_error_rad=errors.tolist(),
+                baseline_upper_max_error_rad=float(np.max(np.abs(errors[:17]))),
+                baseline_hand_max_error_rad=float(np.max(np.abs(errors[17:]))),
+                baseline_last_feedback=hooks.feedback,
+            )
+            return 0
         # Native k-style preparation is confined to the loopback simulator.
         hooks.request_planner_hold(control.feedback, False)
-        pump(2)
+        if args.prepare_standing:
+            # Simulated operator preparation, before granting an agent lease.
+            # Match a legacy k-style standing ramp before lowering the support.
+            hooks.reset = StandingReset(
+                control.feedback,
+                control.feedback["left_hand_q_measured"],
+                control.feedback["right_hand_q_measured"],
+            )
+            record("operator_standing_preparation", target=hooks.reset.target)
+            pump(4, operator_reset=True)
+        else:
+            pump(2)
+        if args.release_band:
+            (args.output / "release-band").touch()
+            pump(2, operator_reset=args.prepare_standing)
+        if args.prepare_standing:
+            hooks.request_planner_hold(control.feedback, False)
         request("claim_control", {"registry_sha256": control.profile.registry_sha256})
         if args.scenario == "faults":
             result["gate"] = "cancellation"
@@ -364,10 +452,17 @@ def main():
             result["outcome"], result["gate"] = "passed", "faults"
             return 0
         result["gate"] = "standing_reset"
+        reset_started_at = time.monotonic()
         request("reset_standing", {"execution_id": "", "open_hands": False})
         pump(16, lambda: control.phase in {"COMPLETED", "INTERRUPTED"})
         assert control.phase == "COMPLETED", control.reason
         result["standing_reset"] = "passed"
+        errors = _measured_joints(hooks.feedback) - hooks.last_reset.target
+        result["reset_elapsed_s"] = time.monotonic() - reset_started_at
+        result["reset_joint_error_rad"] = errors.tolist()
+        result["reset_max_joint_error_rad"] = float(np.max(np.abs(errors)))
+        result["reset_target_rad"] = hooks.last_reset.target.tolist()
+        result["reset_command_rad"] = hooks.last_reset._position.tolist()
         result["gate"] = "walking"
         request(
             "walk_for", {"direction": "backward", "duration_s": 1.0, "speed_mps": 0.2}
@@ -375,8 +470,19 @@ def main():
         pump(3, lambda: control.phase == "COMPLETED")
         result["walking"] = "passed_duration_and_stop_ack"
         result["gate"] = "turning"
-        request("turn_by", {"angle_rad": np.pi / 12, "rate_rps": np.pi / 18})
-        pump(10, lambda: control.phase == "COMPLETED")
+        initial_yaw = feedback_payload_heading_yaw(hooks.feedback)
+        angle = float(np.deg2rad(args.turn_angle_deg))
+        turn_goal = wrap(initial_yaw + angle)
+        turn_started_at = time.monotonic()
+        request("turn_by", {"angle_rad": angle, "rate_rps": float(np.deg2rad(args.turn_rate_deg_s))})
+        pump(11, lambda: control.phase in {"COMPLETED", "INTERRUPTED"})
+        result["turn_elapsed_s"] = time.monotonic() - turn_started_at
+        result["turn_goal_yaw_rad"] = turn_goal
+        result["turn_initial_yaw_rad"] = initial_yaw
+        result["turn_crosses_wrap_boundary"] = abs(initial_yaw + angle) > np.pi
+        result["turn_measured_yaw_rad"] = feedback_payload_heading_yaw(hooks.feedback)
+        result["turn_error_rad"] = abs(wrap(result["turn_measured_yaw_rad"] - turn_goal))
+        assert control.phase == "COMPLETED", control.reason
         result["turning"] = "passed_measured_dwell_and_stop_ack"
         result["gate"] = "coordinator_loss"
         request(
@@ -401,7 +507,7 @@ def main():
                 + "\n"
             )
         reset = hooks.reset or hooks.last_reset
-        if reset is not None and hooks.feedback is not None:
+        if result["gate"] == "standing_reset" and reset is not None and hooks.feedback is not None:
             errors = _measured_joints(hooks.feedback) - reset.target
             result["reset_joint_error_rad"] = errors.tolist()
             result["reset_max_joint_error_rad"] = float(np.max(np.abs(errors)))
@@ -427,7 +533,9 @@ def main():
         for log in logs:
             log.close()
         events.close()
-        (args.output / "result.json").write_text(json.dumps(result, indent=2) + "\n")
+        (args.output / "result.json").write_text(
+            json.dumps(result, default=lambda value: value.tolist(), indent=2) + "\n"
+        )
     print(json.dumps(result))
     return 0 if result["outcome"] == "passed" else 1
 

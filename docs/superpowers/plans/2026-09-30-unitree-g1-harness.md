@@ -201,13 +201,36 @@ Files: update V's runbook; save results under `V/docs/artifacts/g1_harness_<vali
 
 Resumed validation on 2026-10-02 is recorded in
 `docs/artifacts/g1_harness_20261001/README.md`. Native software corrections are
-committed as `c77badc`; 616 native, 9 required integration and 11 controller tests
-pass. Real SONIC cancellation, lease expiry and stale-body-feedback checks pass.
-Measured reset and lost-input hand stability fail their unchanged 0.05-rad limits;
-walking and turning remain gated behind reset. Genon evaluated the supplied apple
-and box recordings, with provisional labels, 2 positive disagreements and 1
-deadline failure. Bottle/full-occlusion/unrecovered-failure coverage and supervised
-hardware are still pending. Task 8 remains open.
+committed through `d513de5`; 626 native, 9 required integration and 11 controller
+tests pass. SONIC reset, one-second walking, cancellation, lease expiry, stale
+body feedback and lost-input hand stability pass. Current positive/negative
+15-degree turns miss at 3.314 / 3.761 degrees and interrupt at the unchanged
+10-second deadline. A positive wrap passed before the stricter lead fix;
+signed physical repeatability remains open.
+
+Ten recorded bottle judgments are valid, with zero false-completes in eight
+negatives and one two-frame release confirmation. The destination and failed
+episode 5 are user-confirmed. Full carried-bottle occlusion, live-camera mission
+acceptance, combined actual SONIC/VLA-worker faults and supervised hardware remain
+pending. The incompatible bottle-scene gap is documented. Failed episode 5 is
+retained in the prepared training corpus; audit episode outcomes before further
+fine-tuning. Historical apple/box disagreements and timeout remain recorded.
+Task 8 remains open; its partial checks are not marked complete.
+
+## Deferred to another session: G1 monitoring dashboard
+
+Deferred by the user on 2026-10-02. Dashboard implementation is outside the
+remaining work in this session.
+
+- [ ] Add a browser monitoring page for the G1 harness: camera, executor
+  connection and telemetry freshness, active skill and mission progress,
+  VLA/SONIC mode, completion-monitor decisions, faults, and saved evidence.
+
+The existing subgoal HITL page does not consume G1 harness status. Start the
+separate session from `docs/unitree-g1-harness.md` and the current CLI `status`
+and `observe` interfaces. The first dashboard should monitor without acquiring
+a control lease; show unavailable or stale data explicitly. Robot command
+controls require their own design before implementation.
 
 ## Execution order and review gates
 

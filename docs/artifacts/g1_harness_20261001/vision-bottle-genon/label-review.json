@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-02",
+  "episode": "bottle_18",
+  "question": "In episode 18, the bottle is released onto a green stool around 37–40 seconds. Does that stool count as the intended right table for this task?",
+  "user_answer": "Yes, that is the intended destination",
+  "intended_destination_confirmed": true,
+  "frame_annotations": "Direct session visual inspection; individual frame labels were not separately reviewed by the user.",
+  "raw_evaluation_preserved": true,
+  "full_transport_occlusion_covered": false,
+  "unrecovered_failed_episode_covered": false
+}

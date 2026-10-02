@@ -1,7 +1,8 @@
 # Unitree G1 agent harness
 
-Software checks and recorded-checkpoint serving passed; resumed validation ran
-on 2026-10-02. SONIC measured settling and visual acceptance remain open.
+Software checks and recorded-checkpoint serving pass. SONIC loopback simulation
+passes standing reset, bounded walking and tested interruption paths. Physical
+turn repeatability, full visual acceptance and supervised hardware remain open.
 See the [validation report](artifacts/g1_harness_20261001/README.md) for exact
 results and remaining simulation, visual-accuracy, and hardware gates.
 
@@ -105,6 +106,12 @@ feedback plus measured joint/heading settling for 0.5 seconds. A requested mode
 alone is insufficient. Standing reset preserves heading at reset entry; it does
 not navigate to an earlier floor position.
 
+Harness resets compensate a steady upper-body tracking offset after the nominal
+standing ramp reaches its target. The trim is capped at 0.15 rad and uses half
+the profile's joint tolerance as its deadband. The 0.5-rad/s slew, 0.15-rad lead,
+physical target, measured dwell, and 15-second deadline still apply. Hands receive
+no trim. Ordinary keyboard resets use their existing behavior.
+
 Ctrl-C requests cancellation. Failure, stale data, cancellation, or lease expiry
 invalidates VLA actions and requests a measured planner hold preserving the hand
 targets. Missing telemetry means hold is unconfirmed. The ownership heartbeat
@@ -135,6 +142,12 @@ Walking completion means the commanded duration ended; no measured distance
 is claimed. Turns require measured yaw within 3 degrees for 0.5 seconds, followed
 by fresh planner acknowledgement of the stopped command. Heading targets lead
 measured yaw by at most 5 degrees. Arms and hands keep their measured positions.
+After reaching the nominal turn reference, bounded heading trim can compensate
+a steady offset; its magnitude is also capped at 5 degrees. Completion still
+checks the original physical heading goal, tolerance, dwell, and deadline.
+Backward heading drift retracts the reference to preserve the measured lead
+bound. If a feedback jump makes the rate and lead limits incompatible, the
+executor interrupts and requests a measured hold.
 Floor-home navigation requires localization and remains future work.
 
 ## Software checks
@@ -156,12 +169,20 @@ Without explicit paths, ordinary tests skip these integration checks with a
 reason. The dedicated gate fails for missing paths. Scripted vision responses
 verify sequencing, not vision-model accuracy or physical task success.
 
-The current SONIC/MuJoCo probe acknowledges PLANNER but fails measured standing
-settling. It therefore stops before walking and turning. Cancellation, coordinator
-loss and stale body feedback pass; measured hand stability after planner loss is
-not repeatable within tolerance. See the validation report for the recorded
-values and controller hash.
+The corrected SONIC v1.1/MuJoCo probe passes measured standing reset, one-second
+backward walking, cancellation, lease expiry, stale body feedback and hand
+stability on planner-input loss. Latest positive/negative turns interrupt after
+10 seconds at 3.314 / 3.761-degree error, outside the 3-degree tolerance.
+The headless simulator needs a prepared standing pose and released virtual
+support. The probe runs native control modules through its own adapter and
+records measurements/asset hashes; it has no VLA worker or camera.
+See the validation report for trial values and the limits of these checks.
 
-Apple and white-box videos have been evaluated through Genon. They validate
-general placement recognition; bottle-specific footage and clear post-release
-views remain necessary. Supervised hardware acceptance is pending.
+Genon evaluated ten bottle frames: eight negatives without false completion
+and one two-frame release confirmation. The user confirmed the destination and
+unrecovered failed episode; frame annotations come from session inspection.
+Fully hidden carried-bottle footage and live-camera acceptance remain pending.
+The failed episode is retained in the prepared training corpus, warranting a
+data audit before further training. The default SONIC scene contains no task
+objects, and the legacy bottle scene needs adaptation.
+Physical bottle placement and supervised hardware acceptance remain pending.

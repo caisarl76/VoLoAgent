@@ -1,0 +1,23 @@
+{
+  "sonic-sim-wrap-negative": {
+    "sample_count": 97,
+    "sampled_max_command_lead_deg": 5.332021726358859,
+    "turn_error_deg": 10.969996268127058,
+    "outcome": "failed",
+    "reason": "planner_error:Turn deadline exceeded"
+  },
+  "sonic-sim-lead-positive": {
+    "sample_count": 97,
+    "sampled_max_command_lead_deg": 5.000000503729982,
+    "turn_error_deg": 3.31422028704575,
+    "outcome": "failed",
+    "reason": "planner_error:Turn deadline exceeded"
+  },
+  "sonic-sim-lead-negative": {
+    "sample_count": 97,
+    "sampled_max_command_lead_deg": 5.000000566054004,
+    "turn_error_deg": 3.761216990323742,
+    "outcome": "failed",
+    "reason": "planner_error:Turn deadline exceeded"
+  }
+}
