@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-02",
+  "robot_connection": false,
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "source_reports": [
+    "vision-bottle-genon/result.json",
+    "vision-bottle-failure-genon/result.json"
+  ],
+  "scope": "Recorded frames; user-confirmed destination and user-labeled failed episode; frame annotations from session inspection.",
+  "total": 10,
+  "unavailable": 0,
+  "valid_negative_cases": 8,
+  "false_complete": 0,
+  "positive_label_disagreements": 0,
+  "sequence_confirmations": 1,
+  "latency_min_s": 2.667399881000165,
+  "latency_max_s": 4.966808589990251,
+  "intended_destination_confirmed": true,
+  "unrecovered_failure_covered": true,
+  "target_visibility_loss_during_manipulation_covered": true,
+  "fully_occluded_transport_episode_covered": false,
+  "live_camera_and_mission_validated": false,
+  "immediate_failure_classification_validated": false
+}

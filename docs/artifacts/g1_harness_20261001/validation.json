@@ -1,20 +1,23 @@
 {
   "date": "2026-10-02",
   "voLo_code_commit": "d5b4aa7",
-  "native_commit": "c77badc",
+  "native_commit": "d513de5",
   "profile_sha256": "17e415bf4ebd63e771e3befe9c0c95ce360ad36ec03c94f1f2b535a89406b71f",
   "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
   "prompt": "pick drink bottle and place it on the right table",
   "tests": {
     "volo_passed": 604,
     "volo_preexisting_skipped": 6,
-    "native_passed": 616,
+    "native_passed": 626,
     "cross_process_passed": 9,
     "cross_process_skipped": 0,
     "controller_cpp_passed": 11,
-    "native_duration_s": 6.96,
-    "cross_process_duration_s": 27.09,
-    "volo_full_suite_date": "2026-10-01"
+    "native_duration_s": 7.18,
+    "cross_process_duration_s": 27.23,
+    "volo_full_suite_date": "2026-10-01",
+    "artifact_output_guard_passed": 1,
+    "artifact_ruff": "passed",
+    "artifact_integrity": "38 JSON files and 17411 JSONL rows parsed; raw-report counts, provenance hashes and 40 links checked"
   },
   "serving": {
     "cold_latency_s": 4.772138233998703,
@@ -41,8 +44,114 @@
     "port": 15558,
     "temporary_server_stopped": true
   },
-  "code_review": "current_native_software_approved_no_critical_or_important_findings",
+  "code_review": {
+    "independent_native_controller_review_commit": "c77badc",
+    "independent_tracking_review_fixes_commit": "e1485e0",
+    "subsequent_lead_fix_commit": "d513de5",
+    "subsequent_lead_fix_review": "main_agent_diff_review_and_four_regressions_no_second_independent_review",
+    "deferred_minor": "Probe final publish or process-signal race may interrupt teardown/result persistence."
+  },
   "sonic_control_simulation": {
+    "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+    "dds_interface": "lo",
+    "gpu": 0,
+    "action_port": 11556,
+    "state_port": 11557,
+    "policy": "sonic_v1_1",
+    "adapter": "Probe Hooks using native control/reset/planner modules; no VLA inference main loop",
+    "cancellation": "passed",
+    "coordinator_loss": "passed",
+    "stale_feedback": "passed",
+    "fault_trial_native_commit": "e1485e0",
+    "fault_trial_report": "sonic-sim-final-faults/result.json",
+    "standing_reset": "repeated_measured_passes",
+    "lost_planner_input_hand_stability": "passed_hand_drift_only_no_object",
+    "hand_drift_rad": 0.01338207721710205,
+    "required_joint_tolerance_rad": 0.05,
+    "walking": "passed_duration_and_stop_ack_only",
+    "turning": "partial_not_accepted",
+    "turn_required_tolerance_deg": 3,
+    "turn_required_dwell_s": 0.5,
+    "turn_deadline_s": 10,
+    "current_turn_trials": [
+      {
+        "report": "sonic-sim-lead-positive/result.json",
+        "native_commit": "d513de5",
+        "angle_deg": 15.0,
+        "rate_deg_s": 10,
+        "reset_max_joint_error_rad": 0.02817019820213318,
+        "reset_elapsed_s": 2.0399701130081667,
+        "walking": "passed_duration_and_stop_ack",
+        "turn_error_deg": 3.31422028704575,
+        "turn_elapsed_s": 10.002463466997142,
+        "phase": "INTERRUPTED",
+        "reason": "planner_error:Turn deadline exceeded"
+      },
+      {
+        "report": "sonic-sim-lead-negative/result.json",
+        "native_commit": "d513de5",
+        "angle_deg": -15.0,
+        "rate_deg_s": 10,
+        "reset_max_joint_error_rad": 0.025300534442067146,
+        "reset_elapsed_s": 1.0736501189967385,
+        "walking": "passed_duration_and_stop_ack",
+        "turn_error_deg": 3.761216990323742,
+        "turn_elapsed_s": 10.003418049003812,
+        "phase": "INTERRUPTED",
+        "reason": "planner_error:Turn deadline exceeded"
+      },
+      {
+        "report": "sonic-sim-slow-negative/result.json",
+        "native_commit": "d513de5",
+        "angle_deg": -15.0,
+        "rate_deg_s": 5.0,
+        "reset_max_joint_error_rad": 0.028204554691910744,
+        "reset_elapsed_s": 1.4639056010055356,
+        "walking": "passed_duration_and_stop_ack",
+        "turn_error_deg": 6.241767695086895,
+        "turn_elapsed_s": 10.005519006008399,
+        "phase": "INTERRUPTED",
+        "reason": "planner_error:Turn deadline exceeded"
+      }
+    ],
+    "wrapped_turn_repeatability": "not_accepted",
+    "actual_vla_worker_faults_validated": false,
+    "robot_connection": false,
+    "scene_report": "bottle-scene-gap.md",
+    "actual_bottle_placement_validated": false,
+    "provenance": "simulation-provenance.json"
+  },
+  "monitor_accuracy": {
+    "status": "partial_not_accepted",
+    "date": "2026-10-02",
+    "robot_connection": false,
+    "model": "openai/gpt-5.6-sol",
+    "base_url": "https://api.genon.ai/v1",
+    "source_reports": [
+      "vision-bottle-genon/result.json",
+      "vision-bottle-failure-genon/result.json"
+    ],
+    "scope": "Recorded frames; user-confirmed destination and user-labeled failed episode; frame annotations from session inspection.",
+    "total": 10,
+    "unavailable": 0,
+    "valid_negative_cases": 8,
+    "false_complete": 0,
+    "positive_label_disagreements": 0,
+    "sequence_confirmations": 1,
+    "latency_min_s": 2.667399881000165,
+    "latency_max_s": 4.966808589990251,
+    "intended_destination_confirmed": true,
+    "unrecovered_failure_covered": true,
+    "target_visibility_loss_during_manipulation_covered": true,
+    "fully_occluded_transport_episode_covered": false,
+    "live_camera_and_mission_validated": false,
+    "immediate_failure_classification_validated": false,
+    "bottle_specific": true,
+    "source_report": "bottle-monitor-validation.json"
+  },
+  "hardware": "pending",
+  "hardware_actuation": false,
+  "historical_sonic_control_simulation": {
     "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
     "dds_interface": "lo",
     "action_port": 11556,
@@ -58,7 +167,7 @@
     "walk_turn": "not_run_after_reset_failure",
     "robot_connection": false
   },
-  "monitor_accuracy": {
+  "historical_apple_box_monitor_accuracy": {
     "status": "partial_not_accepted",
     "model": "openai/gpt-5.6-sol",
     "base_url": "https://api.genon.ai/v1",
@@ -78,6 +187,10 @@
       "original_timeout_preserved": true
     }
   },
-  "hardware": "pending",
-  "hardware_actuation": false
+  "training_data_audit": "bottle-training-data-audit.json",
+  "temporary_validation_ports_stopped": [
+    11556,
+    11557,
+    15558
+  ]
 }

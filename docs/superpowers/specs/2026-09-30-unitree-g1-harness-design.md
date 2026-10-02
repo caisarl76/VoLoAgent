@@ -149,6 +149,18 @@ These settings are implementation starting points. They have not been validated 
 | Turn | 0 < abs(angle) <= 45 degrees; 0 < rate <= 10 degrees/s; shortest wrapped yaw error, <= 5 degree target lead |
 | Turn settling / deadline | Error <= 3 degrees for 0.5 s of fresh feedback; 10 s deadline |
 
+The loopback-tested implementation adds bounded tracking trim after a nominal
+reset or turn reference is reached. Standing trim affects only the 17 upper-body
+references, is capped at 0.15 rad, and uses half the configured joint tolerance
+as its deadband. Turn trim is capped at the configured heading lead. Both retain
+the command rate/lead limits and compare measured settling with the original
+physical target; neither relaxes a tolerance, dwell, or deadline. Hardware
+validation of this outer feedback correction is still required.
+Turn feedback moving backward retracts the reference into the measured lead
+interval. If a feedback jump makes rate and lead bounds incompatible, execution
+interrupts and requests a measured hold. Current physical turn trials still
+miss the tolerance; software regression checks alone do not accept this gate.
+
 Walking completion means the duration expired, zero movement was commanded, and fresh planner-active telemetry followed. It does not prove a requested distance or zero measured base velocity; the current telemetry cannot prove either. Turning completion uses measured yaw. Stale feedback interrupts both skills and clears their movement request.
 
 ## Validation and acceptance
