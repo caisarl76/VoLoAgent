@@ -1,6 +1,7 @@
 # Unitree G1 agent harness
 
-Software checks and recorded-checkpoint serving passed on 2026-10-01.
+Software checks and recorded-checkpoint serving passed; resumed validation ran
+on 2026-10-02. SONIC measured settling and visual acceptance remain open.
 See the [validation report](artifacts/g1_harness_20261001/README.md) for exact
 results and remaining simulation, visual-accuracy, and hardware gates.
 
@@ -42,6 +43,21 @@ deployment workflow. Use its verified remote/local state and action hosts.
 Camera defaults to port 5555, state to 5557, and action to 5556. The policy profile
 selects `127.0.0.1:15558`, horizon 40, and 50 Hz. Disable competing XR, teleop,
 or another VLA sender using the same controller input.
+
+Rebuild the C++ controller from the native harness checkout and append
+`--harness-planner-hold` to its `--input-type zmq_manager` launch. The older
+workstation binary lacks the required telemetry contract. The opt-in flag retains
+the current planner session's commanded arm/hand position targets when planner
+input disappears; lower-body movement becomes IDLE and arm velocity becomes zero.
+Stop and mode changes clear those targets. This does not establish physical
+pose stability or preservation of a grasp.
+
+Harness authority requires `body_q_measured_motor` (29 absolute motor-order
+angles), `harness_planner_hold_enabled=[1]`, and two finite seven-joint measured
+hand arrays. C++ measured hand fields use sensor readings, with their original
+DDS receipt times. Absent, disabled, or older-than-500-ms hand data produces empty
+arrays and invalidates agent ownership. A running body controller alone is
+insufficient.
 
 Append these options to the existing native inference launch:
 
@@ -140,6 +156,12 @@ Without explicit paths, ordinary tests skip these integration checks with a
 reason. The dedicated gate fails for missing paths. Scripted vision responses
 verify sequencing, not vision-model accuracy or physical task success.
 
-Simulation, deployed-controller lost-input behavior, labeled visual evaluation,
-and supervised hardware acceptance remain separate gates. Record their results
-in the validation artifact before treating the harness as hardware-ready.
+The current SONIC/MuJoCo probe acknowledges PLANNER but fails measured standing
+settling. It therefore stops before walking and turning. Cancellation, coordinator
+loss and stale body feedback pass; measured hand stability after planner loss is
+not repeatable within tolerance. See the validation report for the recorded
+values and controller hash.
+
+Apple and white-box videos have been evaluated through Genon. They validate
+general placement recognition; bottle-specific footage and clear post-release
+views remain necessary. Supervised hardware acceptance is pending.

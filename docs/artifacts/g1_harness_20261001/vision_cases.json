@@ -1,0 +1,32 @@
+{
+  "label_provenance": "User supplied episode outcomes; frame labels are provisional visual annotations from this session.",
+  "scope": "Offline completion recognition only. These tasks do not extend the bottle checkpoint's trained prompt registry.",
+  "episodes": {
+    "apple": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_table_261001/videos/chunk-000/observation.images.ego_view/episode_000011.mp4",
+      "outcome": "success",
+      "prompt": "pick and place apple",
+      "completion_criteria": "The red apple rests inside the white basket and the robot has released it. An apple still held above the basket is incomplete. If release or destination is not visible, continue.",
+      "initial_s": 0.0
+    },
+    "white_box": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_table_261001/videos/chunk-000/observation.images.ego_view/episode_000000.mp4",
+      "outcome": "failed grasp followed by recovery and success",
+      "prompt": "pick and place white box",
+      "completion_criteria": "The white rectangular carton rests on the white round plate and the robot has released it. A missed grasp or a carton still in the hand is incomplete. If release or destination is not visible, continue.",
+      "initial_s": 5.0
+    }
+  },
+  "cases": [
+    {"id": "apple_before_grasp", "episode": "apple", "at_s": 1.0, "complete": false, "note": "Apple remains on its source plate."},
+    {"id": "apple_held", "episode": "apple", "at_s": 5.5, "complete": false, "note": "Apple lifted in the hand."},
+    {"id": "apple_over_basket", "episode": "apple", "at_s": 6.1, "complete": false, "note": "Moving toward the basket; release not established."},
+    {"id": "apple_placed", "episode": "apple", "at_s": 7.2, "complete": true, "note": "Apple rests in basket, fingers spread; hand remains nearby."},
+    {"id": "box_out_of_view", "episode": "white_box", "at_s": 2.0, "initial_s": 0.0, "complete": false, "note": "Wide view, carton beside plate near upper image edge. Historical case ID; this frame does not cover full object occlusion."},
+    {"id": "box_before_grasp", "episode": "white_box", "at_s": 9.0, "complete": false, "note": "Carton remains on source tabletop."},
+    {"id": "box_missed_grasp", "episode": "white_box", "at_s": 13.8, "complete": false, "note": "First attempt leaves carton on tabletop; episode subsequently recovers."},
+    {"id": "box_recovery_held", "episode": "white_box", "at_s": 18.2, "complete": false, "note": "Second attempt lifts the carton; it is still carried."},
+    {"id": "box_placed_early", "episode": "white_box", "at_s": 21.2, "complete": true, "note": "Carton rests on plate; verify release in full frame."},
+    {"id": "box_placed_late", "episode": "white_box", "at_s": 22.4, "complete": true, "note": "Carton remains on plate, hand withdrawn to its edge."}
+  ]
+}

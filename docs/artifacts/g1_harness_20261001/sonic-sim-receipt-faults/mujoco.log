@@ -1,0 +1,5 @@
+1790906941.886798 [0]     python: selected interface "lo" is not multicast-capable: disabling multicast
+[ChannelFactory] create domain error. msg: Occurred upon initialisation of a cyclonedds.domain.Domain
+Note: Channel factory initialization attempt: channel factory init error.
+Simulator interrupted by user.
+++++closing simulator ++++

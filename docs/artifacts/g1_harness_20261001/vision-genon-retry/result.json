@@ -1,0 +1,49 @@
+{
+  "robot_connection": false,
+  "scope": "Independent frame judgments; no two-frame mission acceptance",
+  "label_provenance": "User supplied episode outcomes; frame labels are provisional visual annotations from this session.",
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "episodes": {
+    "apple": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_table_261001/videos/chunk-000/observation.images.ego_view/episode_000011.mp4",
+      "sha256": "24bcebb771a262e88e37017e351ca517d9682b6d4ed9c956a9a0b27f9dc044d6",
+      "user_outcome": "success"
+    },
+    "white_box": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_table_261001/videos/chunk-000/observation.images.ego_view/episode_000000.mp4",
+      "sha256": "a31448a6c9cb21904d8d1946ae3ab34d94f9180cdf2f9e8771821c43547fffdb",
+      "user_outcome": "failed grasp followed by recovery and success"
+    }
+  },
+  "cases": [
+    {
+      "id": "apple_held",
+      "episode": "apple",
+      "at_s": 5.5,
+      "complete": false,
+      "note": "Apple lifted in the hand.",
+      "image": "frames/apple_held.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot is still holding the apple above the basket; it has not released it inside.",
+        "frame_id": "57678d78ac0765b0cd5beda11405770e7e48f9e06a7a3284f7f77de68ea4fdfb",
+        "execution_id": "apple_held",
+        "inference_epoch": 1,
+        "captured_at": 92916.906912,
+        "decided_at": 92920.167021754
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The robot is still holding the apple above the basket; it has not released it inside.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.2601097539882176
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "unavailable": 0,
+    "valid_negative_cases": 1,
+    "false_complete": 0,
+    "positive_label_disagreements": 0
+  }
+}

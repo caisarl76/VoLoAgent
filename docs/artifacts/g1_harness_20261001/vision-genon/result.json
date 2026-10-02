@@ -1,0 +1,241 @@
+{
+  "robot_connection": false,
+  "scope": "Independent frame judgments; no two-frame mission acceptance",
+  "label_provenance": "User supplied episode outcomes; frame labels are provisional visual annotations from this session.",
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "episodes": {
+    "apple": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_table_261001/videos/chunk-000/observation.images.ego_view/episode_000011.mp4",
+      "sha256": "24bcebb771a262e88e37017e351ca517d9682b6d4ed9c956a9a0b27f9dc044d6",
+      "user_outcome": "success"
+    },
+    "white_box": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_table_261001/videos/chunk-000/observation.images.ego_view/episode_000000.mp4",
+      "sha256": "a31448a6c9cb21904d8d1946ae3ab34d94f9180cdf2f9e8771821c43547fffdb",
+      "user_outcome": "failed grasp followed by recovery and success"
+    }
+  },
+  "cases": [
+    {
+      "id": "apple_before_grasp",
+      "episode": "apple",
+      "at_s": 1.0,
+      "complete": false,
+      "note": "Apple remains on its source plate.",
+      "image": "frames/apple_before_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The red apple remains on the white dish and has not been placed inside the white basket.",
+        "frame_id": "38b7631d5e0e2e6a020ee93a66d69d24c06d8eca5918661cfdef2ac0e8f76dbb",
+        "execution_id": "apple_before_grasp",
+        "inference_epoch": 1,
+        "captured_at": 91706.808811124,
+        "decided_at": 91709.391124542
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The red apple remains on the white dish and has not been placed inside the white basket.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.582313417995465
+    },
+    {
+      "id": "apple_held",
+      "episode": "apple",
+      "at_s": 5.5,
+      "complete": false,
+      "note": "Apple lifted in the hand.",
+      "image": "frames/apple_held.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vlm_error_or_expired_decision",
+        "frame_id": "57678d78ac0765b0cd5beda11405770e7e48f9e06a7a3284f7f77de68ea4fdfb",
+        "execution_id": "apple_held",
+        "inference_epoch": 1,
+        "captured_at": 91709.448933962,
+        "decided_at": 91719.449215803
+      },
+      "raw_response": null,
+      "frame_complete": null,
+      "matches_label": null,
+      "decision_latency_s": 10.000281840999378
+    },
+    {
+      "id": "apple_over_basket",
+      "episode": "apple",
+      "at_s": 6.1,
+      "complete": false,
+      "note": "Moving toward the basket; release not established.",
+      "image": "frames/apple_over_basket.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The apple is positioned above the white basket but is still held by the gripper; it must be released into the basket.",
+        "frame_id": "3ca0f5462b5eaef0c4fc96a36c22a5ce65cb42deef7b263244ee509f84e2bd01",
+        "execution_id": "apple_over_basket",
+        "inference_epoch": 1,
+        "captured_at": 91719.512689754,
+        "decided_at": 91722.870522511
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The apple is positioned above the white basket but is still held by the gripper; it must be released into the basket.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.3578327569994144
+    },
+    {
+      "id": "apple_placed",
+      "episode": "apple",
+      "at_s": 7.2,
+      "complete": true,
+      "note": "Apple rests in basket, fingers spread; hand remains nearby.",
+      "image": "frames/apple_placed.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The apple is inside the white basket, but the gripper still appears to be holding or contacting it; release is not clearly visible.",
+        "frame_id": "b606dd50269ed56d003a8489657eb001db2dd8a10076e998e3021e36823271db",
+        "execution_id": "apple_placed",
+        "inference_epoch": 1,
+        "captured_at": 91722.94058454,
+        "decided_at": 91725.628952894
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The apple is inside the white basket, but the gripper still appears to be holding or contacting it; release is not clearly visible.\"}",
+      "frame_complete": false,
+      "matches_label": false,
+      "decision_latency_s": 2.6883683539927006
+    },
+    {
+      "id": "box_out_of_view",
+      "episode": "white_box",
+      "at_s": 2.0,
+      "initial_s": 0.0,
+      "complete": false,
+      "note": "Wide view, carton beside plate near upper image edge. Historical case ID; this frame does not cover full object occlusion.",
+      "image": "frames/box_out_of_view.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The white carton remains beside the plate and has not been placed on it.",
+        "frame_id": "61e585c3dde497f44b1fd668db96bf18213349d9fd96bfe74f50306bfdc929b8",
+        "execution_id": "box_out_of_view",
+        "inference_epoch": 1,
+        "captured_at": 91725.692424282,
+        "decided_at": 91727.984293649
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The white carton remains beside the plate and has not been placed on it.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.291869367007166
+    },
+    {
+      "id": "box_before_grasp",
+      "episode": "white_box",
+      "at_s": 9.0,
+      "complete": false,
+      "note": "Carton remains on source tabletop.",
+      "image": "frames/box_before_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The white carton remains on the table beside the plate and has not yet been placed and released on the plate.",
+        "frame_id": "77ee1ed520d02712d48a979b83a811c65e642dfdfb62aa4aee03896fbccfc369",
+        "execution_id": "box_before_grasp",
+        "inference_epoch": 1,
+        "captured_at": 91728.067252623,
+        "decided_at": 91730.509784773
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The white carton remains on the table beside the plate and has not yet been placed and released on the plate.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.44253215000208
+    },
+    {
+      "id": "box_missed_grasp",
+      "episode": "white_box",
+      "at_s": 13.8,
+      "complete": false,
+      "note": "First attempt leaves carton on tabletop; episode subsequently recovers.",
+      "image": "frames/box_missed_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot is grasping the white carton; it has not visibly placed and released it on the plate.",
+        "frame_id": "6616f28376f376d30d1a512c8dc495c2824bfecb30989456c9a7591c820cbafe",
+        "execution_id": "box_missed_grasp",
+        "inference_epoch": 1,
+        "captured_at": 91730.592772793,
+        "decided_at": 91733.556900147
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The robot is grasping the white carton; it has not visibly placed and released it on the plate.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.964127354003722
+    },
+    {
+      "id": "box_recovery_held",
+      "episode": "white_box",
+      "at_s": 18.2,
+      "complete": false,
+      "note": "Second attempt lifts the carton; it is still carried.",
+      "image": "frames/box_recovery_held.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The carton is not visibly resting on the plate, and the destination/release is not shown.",
+        "frame_id": "665304bd2575de30c6128986a20d6583fde390db30d5c0d5b384d751ef2e0e90",
+        "execution_id": "box_recovery_held",
+        "inference_epoch": 1,
+        "captured_at": 91733.638553087,
+        "decided_at": 91736.264640344
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The carton is not visibly resting on the plate, and the destination/release is not shown.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.6260872569982894
+    },
+    {
+      "id": "box_placed_early",
+      "episode": "white_box",
+      "at_s": 21.2,
+      "complete": true,
+      "note": "Carton rests on plate; verify release in full frame.",
+      "image": "frames/box_placed_early.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The white carton is resting on the white round plate, and the gripper appears open and released.",
+        "frame_id": "9d1625ee2d29b8fe22feb0de1910de761f57e541b4c97d8e02b309a830194af2",
+        "execution_id": "box_placed_early",
+        "inference_epoch": 1,
+        "captured_at": 91736.335296522,
+        "decided_at": 91739.867828011
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The white carton is resting on the white round plate, and the gripper appears open and released.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 3.532531489006942
+    },
+    {
+      "id": "box_placed_late",
+      "episode": "white_box",
+      "at_s": 22.4,
+      "complete": true,
+      "note": "Carton remains on plate, hand withdrawn to its edge.",
+      "image": "frames/box_placed_late.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The carton is on the plate, but the gripper remains at the carton and release is not clearly visible.",
+        "frame_id": "44f39582732e0f71a9d22af64af8ad41549915f655ed271e0a4dd4a710a0ec59",
+        "execution_id": "box_placed_late",
+        "inference_epoch": 1,
+        "captured_at": 91739.95490958,
+        "decided_at": 91743.933846335
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The carton is on the plate, but the gripper remains at the carton and release is not clearly visible.\"}",
+      "frame_complete": false,
+      "matches_label": false,
+      "decision_latency_s": 3.978936754996539
+    }
+  ],
+  "annotation_correction": "box_out_of_view is a historical case ID; the 2-second frame shows the carton and plate at the upper image edge. It is not a full-occlusion case.",
+  "summary": {
+    "total": 10,
+    "valid_responses": 9,
+    "unavailable": 1,
+    "valid_negative_cases": 6,
+    "false_complete": 0,
+    "positive_label_disagreements": 2
+  }
+}

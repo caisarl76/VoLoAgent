@@ -1,14 +1,15 @@
-# G1 harness software validation — 2026-10-01
+# G1 harness validation — updated 2026-10-02
 
-The software implementation is ready for SONIC simulation. Hardware acceptance
-is pending. No robot command or SONIC control loop was launched in this session.
+Software checks pass. SONIC/MuJoCo control ran on loopback; measured reset and
+hand stability gates failed. Recorded visual evaluation is partial. Hardware
+acceptance is pending, and no physical robot was connected or actuated.
 
 ## Implementation
 
 VoLoAgent: `work/g1-harness-20261001`, code/test commit `d5b4aa7`, base
 `bff8266`, checkout `/home/jihun/work/VoLoAgent/.worktrees/g1-harness`.
 
-Native executor: `work/volo-g1-harness-20261001`, commit `00dc529`, base
+Native executor: `work/volo-g1-harness-20261001`, commit `c77badc`, base
 `7c6d710`, checkout `/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native`.
 The original native checkout's tracked edits and untracked files were preserved.
 
@@ -22,16 +23,19 @@ the coordinator and executor.
 
 | Gate | Result | Practical limit |
 | --- | --- | --- |
-| VoLoAgent full suite | 604 passed, 6 existing skips | G1 integration cases were required and not skipped |
-| Native full suite | 607 passed | Includes existing MuJoCo hand-contact test; not SONIC harness physics validation |
+| VoLoAgent full suite (2026-10-01) | 604 passed, 6 existing skips | G1 integration cases were required and not skipped |
+| Native full suite | 616 passed | Includes existing MuJoCo hand-contact test; physical harness gates are separate |
 | Dedicated cross-process G1 gate | 9 passed, zero skips | Synthetic policy/measurements; memory-only publisher |
 | Ruff on modified Python files | Passed | Mirrors deliberately share the same source formatting |
+| Rebuilt C++ controller tests | 11 passed | Motor mapping, measured hand validity, timeout retention, mode boundaries, stop/E-stop, VR filtering |
 | Installed entry point | skills and help passed | No lease or robot connection |
 | Native imports and G1 model construction | Passed | Policy client import and Pinocchio model only |
 | Recorded checkpoint queries | Passed: 4.772 s cold, 0.128 s warm | Model serving, shape and finite values only |
-| Fresh independent code review | Approved | Physical behavior and visual accuracy excluded |
-| SONIC simulation transitions/lost input | Pending | No SONIC simulation control loop run |
-| Completion-monitor labeled clips | Pending | Acceptance labels and chosen vision endpoint not supplied |
+| Fresh independent code review | Approved for current software | Physical behavior and visual accuracy excluded |
+| SONIC cancellation/lease loss/stale feedback | Passed | Actual native hooks with loopback controller; no VLA manipulation |
+| SONIC measured standing reset | Failed: 0.531 rad maximum error at timeout | Required tolerance 0.05 rad; walk/turn sequence never starts |
+| SONIC measured hand stability on input loss | Failed: 0.087 rad drift over 2.5 s | Command targets retain; physical tolerance 0.05 rad not established |
+| Completion-monitor recorded frames | Partial: 9/10 valid replies, 0 false-completes in 6 valid negatives | 2 positive-label disagreements, 1 timeout; provisional apple/box labels |
 | Physical bottle/reset/locomotion | Pending | Robot readiness confirmation and supervised trials required |
 
 The full tests use disabled third-party pytest auto-loading. Native tests use a
@@ -44,6 +48,8 @@ native full suite reported 604 passes and one mesh-decoder failure. Sixty deploy
 meshes and 65 robot-model meshes were hydrated from local files after matching
 their SHA-256 against the pointer OIDs. No mesh content change was committed.
 The full native suite then passed, and the actual G1 model constructor succeeded.
+Three SDK library blobs were also hydrated from locally verified originals for
+the C++ rebuild; their LFS pointer content is unchanged.
 
 Full software commands:
 
@@ -103,6 +109,77 @@ model path and three loaded shards. This is launch evidence, not an RPC identity
 attestation from an arbitrary external server. The temporary server was stopped
 after both queries; port 15558 has no listener left by this validation.
 
+## SONIC controller and measured behavior
+
+The bounded [sonic_sim_probe.py](sonic_sim_probe.py) starts the headless MuJoCo
+simulator and the rebuilt controller using DDS interface `lo`, GPU 1, action
+port 11556 and state port 11557. It uses actual native control/reset hooks and
+a sole planner publisher. It has no VLA policy worker or physical connection.
+Both owned process groups are stopped on exit.
+
+Build uses `BUILD_ROS2=OFF`, `BUILD_DEPLOY_TESTS=ON`, cached GoogleTest,
+TensorRT 10.13 and existing SONIC decoder/encoder/planner assets. The controller
+SHA-256 in both final results is
+`2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b`.
+
+The controller now emits explicit absolute motor-order body measurements and
+real measured hand positions. Original hand DDS receipt times survive logging;
+absent, disabled or older-than-500-ms hands produce empty measured arrays. The
+harness requires these measurements and effective opt-in timeout capability
+before granting authority, and revokes authority if either disappears.
+
+`--harness-planner-hold` retains established commanded arm/hand positions on a
+one-second planner-input timeout, zeros upper-body velocity and sets locomotion
+to IDLE. Default behavior still clears overrides. Stop, emergency stop and mode
+changes clear targets; fresh primed planner entry remains supported. Physical
+stability and object retention require separate acceptance checks.
+
+- [Final fault result](sonic-sim-receipt-faults/result.json): cancellation,
+  coordinator lease expiry and stale body feedback pass. After 3 seconds of
+  target preparation and 2.5 seconds without planner input, measured hand drift
+  is 0.086657 rad, exceeding the 0.05-rad limit.
+- [Final transition result](sonic-sim-receipt-transitions/result.json): fresh
+  PLANNER acknowledgement arrives, but standing reset times out at 15 seconds
+  with maximum joint error 0.530868 rad. The harness interrupts and does not
+  proceed to walking or turning.
+
+An earlier measured-hand run showed 0.012148-rad drift, but the final run did
+not repeat that result. Earlier binaries also had ambiguous body ordering and
+reported commanded hands as measurements; those runs cannot close physical
+acceptance. Exploratory attempts are preserved under
+`/tmp/volo-g1-harness-investigation-20261002/`.
+
+```bash
+# Native checkout; local ZMQ tests require normal socket access.
+gear_sonic_deploy/target/release/run_tests \
+  --gtest_filter=HarnessTelemetry.*:HarnessTimeout.*:Vr3PtSafetyFilter.*
+
+env PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native \
+  .venv/bin/python \
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_probe.py \
+  --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native \
+  --profile /home/jihun/work/VoLoAgent/.worktrees/g1-harness/configs/g1/workstation.yaml \
+  --output /tmp/g1-sonic-check --scenario faults
+```
+
+Omit `--scenario faults` for the reset/walk/turn transition gate. Both require
+the simulator workflow's existing readiness/launch authorization.
+
+## Recorded visual evaluation
+
+The [Genon report](vision-genon/README.md) records the two supplied manipulation
+episodes, ten frame labels and raw replies. Evaluation uses
+`openai/gpt-5.6-sol` through `https://api.genon.ai/v1`. Median valid decision
+latency is 2.688 seconds; one held-apple frame exceeds the 10-second deadline.
+That frame passes a single recorded retry in 3.260 seconds; the initial timeout
+remains part of the acceptance record.
+The model keeps the missed grasp and transport frames incomplete. It recognizes
+one box placement frame, but declines two other positive labels because release
+is unclear. The wide-view negative does not cover full object occlusion.
+
+These are provisional apple/box frame checks. They do not extend the checkpoint's
+trained prompt registry or validate bottle placement and two-frame completion.
+
 ## Review and remaining gates
 
 Review found seven issues: pause takeover resuming VLA, reset advancing after
@@ -115,22 +192,22 @@ Follow-up review caught two camera timing races. Inference now shares an atomic
 raw frame and local receipt time with the continuously sampled camera cache.
 Freshness tolerates a concurrent local receipt update after the caller sampled
 its clock. The final review approved runtime commits `49043dc` and `49b87c5`
-with no Critical or Important findings outstanding. Later changes add only the
-takeover fixture/test, environment ignore entry and these artifacts.
+with no Critical or Important findings outstanding on 2026-10-01. Resumed review
+of the controller changes found stale targets across mode boundaries and missing
+or stale hands masquerading as measured-open. Both are fixed and covered by
+regressions; fresh final review approves `c77badc` for software correctness.
 
 Task 8 remains open for the following:
 
-1. Run bounded, headless SONIC simulation on loopback with separate action/state
-   ports, validating measured reset and turn settling, walking deadlines,
-   cancellation, stale telemetry, worker stalls and process loss.
-2. Verify the deployed C++ manager's lost-input behavior. Source
-   `zmq_manager.hpp` switches to IDLE after a 1-second planner-input timeout and
-   clears upper-body and hand overrides. A preserved grasp across executor
-   death has not been established. Python lease-expiry tests keep the executor
-   alive; they cannot prove this separate process-death behavior.
-3. Supply labeled success, failure, held-bottle and occlusion clips and a chosen
-   vision endpoint. Record sample counts and require zero false-completes in
-   that acceptance set. Scripted monitor tests measure control logic.
+1. Diagnose measured SONIC standing and hand tracking against a standalone
+   stationary-planner baseline. Keep the 0.05-rad acceptance limit. Rerun reset
+   and input-loss stability after correcting the underlying tracking issue.
+2. Once reset settles, run bounded walking, turning and coordinator-loss checks
+   in the actual simulator. Their synthetic integration checks already pass.
+3. Review frame labels and add clear post-release tails, bottle placement,
+   full occlusion and unrecovered failure examples. Resolve the Genon deadline
+   failure and positive disagreements, then require zero false-completes in
+   the stated acceptance set and verify two-frame confirmation.
 4. Validate the actual bottle/table scene in compatible simulation or document
    the gap before supervised physical evaluation.
 5. Use the existing deployment workflow to confirm robot readiness and then
