@@ -1,16 +1,20 @@
 {
-  "date": "2026-10-01",
+  "date": "2026-10-02",
   "voLo_code_commit": "d5b4aa7",
-  "native_commit": "00dc529",
+  "native_commit": "c77badc",
   "profile_sha256": "17e415bf4ebd63e771e3befe9c0c95ce360ad36ec03c94f1f2b535a89406b71f",
   "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
   "prompt": "pick drink bottle and place it on the right table",
   "tests": {
     "volo_passed": 604,
     "volo_preexisting_skipped": 6,
-    "native_passed": 607,
+    "native_passed": 616,
     "cross_process_passed": 9,
-    "cross_process_skipped": 0
+    "cross_process_skipped": 0,
+    "controller_cpp_passed": 11,
+    "native_duration_s": 6.96,
+    "cross_process_duration_s": 27.09,
+    "volo_full_suite_date": "2026-10-01"
   },
   "serving": {
     "cold_latency_s": 4.772138233998703,
@@ -37,9 +41,43 @@
     "port": 15558,
     "temporary_server_stopped": true
   },
-  "code_review": "approved_no_critical_or_important_findings",
-  "sonic_control_simulation": "pending",
-  "monitor_accuracy": "pending_labeled_clips_and_endpoint",
+  "code_review": "current_native_software_approved_no_critical_or_important_findings",
+  "sonic_control_simulation": {
+    "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+    "dds_interface": "lo",
+    "action_port": 11556,
+    "state_port": 11557,
+    "cancellation": "passed",
+    "coordinator_loss": "passed",
+    "stale_feedback": "passed",
+    "standing_reset": "failed_reset_timeout",
+    "reset_max_joint_error_rad": 0.5308681130409241,
+    "lost_planner_input_hand_stability": "failed",
+    "hand_drift_rad": 0.08665675297379494,
+    "required_joint_tolerance_rad": 0.05,
+    "walk_turn": "not_run_after_reset_failure",
+    "robot_connection": false
+  },
+  "monitor_accuracy": {
+    "status": "partial_not_accepted",
+    "model": "openai/gpt-5.6-sol",
+    "base_url": "https://api.genon.ai/v1",
+    "labels": "provisional_session_frames_user_labeled_episodes",
+    "total": 10,
+    "valid_responses": 9,
+    "unavailable": 1,
+    "valid_negative_cases": 6,
+    "false_complete": 0,
+    "positive_label_disagreements": 2,
+    "bottle_specific": false,
+    "full_occlusion_covered": false,
+    "two_frame_confirmation": "not_validated_on_recorded_clips",
+    "held_apple_retry": {
+      "matches_label": true,
+      "latency_s": 3.2601097539882176,
+      "original_timeout_preserved": true
+    }
+  },
   "hardware": "pending",
   "hardware_actuation": false
 }

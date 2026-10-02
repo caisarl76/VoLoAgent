@@ -197,7 +197,17 @@ Files: update V's runbook; save results under `V/docs/artifacts/g1_harness_<vali
 - [ ] Run an actual bottle/right-table manipulation scene if a compatible simulation environment is available. If it is missing, record that gap and keep manipulation success unvalidated; the generic SONIC control simulation does not close it. Build the scene or proceed only to explicitly supervised physical evaluation with the limitation documented.
 - [ ] Test milestone 2 in simulation: 1 s backward walk, 15-degree turn, wraparound heading, fresh/stale telemetry, and killing the coordinator. Require zero continued movement requests after lease/deadline and measured turn/standing tolerances within the design limits.
 - [ ] Use the deploy skill for the real G1. Obtain its explicit robot-readiness confirmation before actuation, then perform observe-only, supervised pause/reset, bottle placement/reset, and locomotion checks in that order. Record each result and intervention; fail the milestone if an old action reappears, a reset falsely completes, or an interrupted skill resumes automatically.
-- [ ] Report separate outcomes for contract/lifecycle tests, real-checkpoint serving, simulation control, monitor accuracy, physical placement, standing reset, and locomotion. Merge only validated code; document any hardware feature still disabled.
+- [x] Report separate outcomes for contract/lifecycle tests, real-checkpoint serving, simulation control, monitor accuracy, physical placement, standing reset, and locomotion. Merge only validated code; document any hardware feature still disabled.
+
+Resumed validation on 2026-10-02 is recorded in
+`docs/artifacts/g1_harness_20261001/README.md`. Native software corrections are
+committed as `c77badc`; 616 native, 9 required integration and 11 controller tests
+pass. Real SONIC cancellation, lease expiry and stale-body-feedback checks pass.
+Measured reset and lost-input hand stability fail their unchanged 0.05-rad limits;
+walking and turning remain gated behind reset. Genon evaluated the supplied apple
+and box recordings, with provisional labels, 2 positive disagreements and 1
+deadline failure. Bottle/full-occlusion/unrecovered-failure coverage and supervised
+hardware are still pending. Task 8 remains open.
 
 ## Execution order and review gates
 
