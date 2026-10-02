@@ -1,10 +1,13 @@
 # Unitree G1 agent harness
 
-Software checks and recorded-checkpoint serving pass. SONIC loopback simulation
-passes standing reset, bounded walking and tested interruption paths. Physical
-turn repeatability, full visual acceptance and supervised hardware remain open.
-See the [validation report](artifacts/g1_harness_20261001/README.md) for exact
-results and remaining simulation, visual-accuracy, and hardware gates.
+Software checks and checkpoint serving pass. The real checkpoint, native loop,
+SONIC, simulator camera and Genon monitor now run together. A live false-success
+case was corrected by identifying the destination as the separate green stool.
+The fresh live trial kept the bottle on the source table and interrupted with
+confirmed planner hold at its deadline. Successful pick-and-place, repeatable
+turning, full occlusion acceptance and supervised hardware remain open.
+See the [current validation report](artifacts/g1_harness_20261002/README.md) for
+the scene, raw evidence, software checks and remaining gates.
 
 The agent chooses a registered skill, checks camera evidence, and asks the native
 executor to pause and reset. The existing native inference loop publishes every
@@ -32,10 +35,18 @@ client dependencies. For this workstation, the existing policy server uses
 in the worktree imports the existing teleoperation dependencies. It is not a
 replacement for the deployment setup.
 
+The inference extra now declares PyYAML, which the harness profile loader needs.
+The existing workstation `.venv_inference` was missing it; PyYAML 6.0.2 is now
+installed there and its native harness/inference module imports pass. The live
+trial's native worktree environment also imports the actual GR00T client.
+
 The shared profile is `configs/g1/workstation.yaml`. Its SHA-256 covers the exact
 file bytes. Pass the same absolute path to both processes. Status reports
 `checkpoint_expected`; it cannot attest which model an external server loaded.
 Verify the serving log and run a separate non-actuating inference check.
+The current profile digest is
+`2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154`.
+Historical trials before the destination correction use a different digest.
 
 ## Prepare and inspect
 
@@ -99,8 +110,11 @@ The endpoint must accept the existing OpenAI-compatible multimodal messages.
   --evidence-dir /tmp/g1-missions
 ```
 
-The monitor requires two distinct fresh frames showing the bottle released on
-the right table. Completion pauses VLA, invalidates its action epoch, then resets
+The monitor requires two distinct fresh frames showing the bottle moved from
+the source and released on the separate green stool, the user-confirmed
+right-table destination. A bottle on the source table or an unseen destination
+does not establish completion. Camera left/right does not identify the stool.
+Completion pauses VLA, invalidates its action epoch, then resets
 to standing with open hands. Reset completion requires post-request planner
 feedback plus measured joint/heading settling for 0.5 seconds. A requested mode
 alone is insufficient. Standing reset preserves heading at reset entry; it does
@@ -169,20 +183,39 @@ Without explicit paths, ordinary tests skip these integration checks with a
 reason. The dedicated gate fails for missing paths. Scripted vision responses
 verify sequencing, not vision-model accuracy or physical task success.
 
-The corrected SONIC v1.1/MuJoCo probe passes measured standing reset, one-second
-backward walking, cancellation, lease expiry, stale body feedback and hand
-stability on planner-input loss. Latest positive/negative turns interrupt after
-10 seconds at 3.314 / 3.761-degree error, outside the 3-degree tolerance.
+SONIC v1.1/MuJoCo checks pass measured standing reset, one-second backward
+walking, cancellation, lease expiry, stale body feedback and hand stability on
+planner-input loss. The earlier probe uses a native control-module adapter;
+the new fault probes run the actual VLA main loop and confirm policy-stall hold
+and discard of a fresh late result during reset. That late chunk is discarded
+by the paused queue drain; it does not isolate the active epoch comparison.
 The headless simulator needs a prepared standing pose and released virtual
-support. The probe runs native control modules through its own adapter and
-records measurements/asset hashes; it has no VLA worker or camera.
-See the validation report for trial values and the limits of these checks.
+support. All controller trials use DDS loopback, with no physical robot.
 
-Genon evaluated ten bottle frames: eight negatives without false completion
-and one two-frame release confirmation. The user confirmed the destination and
-unrecovered failed episode; frame annotations come from session inspection.
-Fully hidden carried-bottle footage and live-camera acceptance remain pending.
-The failed episode is retained in the prepared training corpus, warranting a
-data audit before further training. The default SONIC scene contains no task
-objects, and the legacy bottle scene needs adaptation.
+Positive/negative 15-degree turns now pass in some states, but negative trials
+near/crossing the heading boundary still interrupt. Earlier failures are
+retained. A diagnostic shadow calculation cannot request a stronger heading
+within the existing lead/rate bounds; downstream planner, decoder and contact
+effects need separation. Turning remains unaccepted. See the current report
+for exact tolerances, trial values and scope.
+
+The corrected Genon criterion passes ten recorded judgments: eight negatives
+without false completion and one two-frame release confirmation. Three saved
+live negative frames also pass; a fresh live mission produces 44 in-progress
+decisions and deadline interruption. These small sets do not establish general
+monitor reliability. Fully hidden carried-bottle footage and successful live
+placement remain pending. The original false-success frames/results are saved.
+
+The [editable sample scene](artifacts/g1_harness_20261002/scene_layout.json)
+preserves native actuator/state/camera mapping and passes passive contacts and
+camera transport. The source table and green stool are both 80 cm high. Its
+bottle appearance, mass and contacts are provisional; the checkpoint never
+grasped it in the live trials. The diagnostic's stool-contact check cannot
+certify stable released placement and is explicitly labeled contact-only.
+
+The [training-review queue](artifacts/g1_harness_20261002/training-review/summary.json)
+maps all 179 source episodes to 174 retained episodes. Failed episode 5 remains
+in the corpus; 172 retained episodes have no outcome review yet. Review outcomes
+and idle segments before another training run. Register new manipulation
+prompts only after collecting demonstrations and evaluating the resulting policy.
 Physical bottle placement and supervised hardware acceptance remain pending.

@@ -1,0 +1,3 @@
+# Retain captured log/model bytes and their recorded hashes.
+*.log -whitespace
+*.xml -whitespace

@@ -1,5 +1,9 @@
 # Bottle manipulation simulation gap — 2026-10-02
 
+This is the earlier gap inspection. The subsequent
+[sample scene and live trials](../g1_harness_20261002/README.md) resolve basic model
+compatibility and run the real checkpoint, but do not demonstrate placement.
+
 The current loopback SONIC scene cannot validate bottle placement: it has no
 bottle, source table, or right-side destination. A legacy scene exists, but
 requires adaptation before it can drive this harness and represent the trained

@@ -1,0 +1,94 @@
+{
+  "label_provenance": "Frame annotations from direct session visual inspection. On 2026-10-02 the user confirmed that the green stool is the intended right-table destination. Individual frame annotations remain session labels; source metadata identifies retained demonstrations, not success/failure ground truth. Re-evaluated after source/destination ambiguity was found in live simulation; criterion identifies the user-confirmed separate green stool.",
+  "episodes": {
+    "bottle_18": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "outcome": "Session inspection: bottles transported to the green stool, with a released bottle visible at37-39.5s. The user confirmed that this stool is the intended destination.",
+      "initial_s": 5.0,
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies."
+    },
+    "bottle_failed_5": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "outcome": "User-labeled unrecovered failure. The robot attempts to grasp a bottle at the front source table; intended right-side placement is not established before the clip ends.",
+      "initial_s": 5.0,
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies."
+    }
+  },
+  "cases": [
+    {
+      "id": "bottle_out_of_view",
+      "episode": "bottle_18",
+      "at_s": 1.0,
+      "initial_s": 0.1,
+      "complete": false,
+      "note": "Early camera view shows floor; no bottle or destination visible. Not an occlusion during transport."
+    },
+    {
+      "id": "bottle_before_grasp",
+      "episode": "bottle_18",
+      "at_s": 12.0,
+      "complete": false
+    },
+    {
+      "id": "bottle_held",
+      "episode": "bottle_18",
+      "at_s": 28.0,
+      "complete": false
+    },
+    {
+      "id": "bottle_held_above_destination",
+      "episode": "bottle_18",
+      "at_s": 31.0,
+      "complete": false
+    },
+    {
+      "id": "bottle_released_first",
+      "episode": "bottle_18",
+      "at_s": 37.0,
+      "complete": true,
+      "sequence_id": "bottle_release",
+      "expected_monitor_outcome": "in_progress"
+    },
+    {
+      "id": "bottle_released_second",
+      "episode": "bottle_18",
+      "at_s": 38.0,
+      "complete": true,
+      "sequence_id": "bottle_release",
+      "expected_monitor_outcome": "complete"
+    },
+    {
+      "id": "failed_bottle_before_grasp",
+      "episode": "bottle_failed_5",
+      "at_s": 12.0,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode"
+    },
+    {
+      "id": "failed_bottle_grasp_attempt",
+      "episode": "bottle_failed_5",
+      "at_s": 17.0,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "Bottle remains at the front source table, enclosed by the left fingers; release on the right destination is not established."
+    },
+    {
+      "id": "failed_bottle_target_unobservable",
+      "episode": "bottle_failed_5",
+      "at_s": 18.8,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "The bottle near the left grasp at17s is no longer visibly identifiable; other bottles remain on the source table. Target visibility loss during manipulation, not proof of blocked-camera occlusion or a fall."
+    },
+    {
+      "id": "failed_bottle_terminal",
+      "episode": "bottle_failed_5",
+      "at_s": 19.4,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "The clip ends at19.54s without visible placement on the intended right-side destination; user labeled the episode failed without recovery."
+    }
+  ]
+}

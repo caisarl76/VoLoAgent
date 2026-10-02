@@ -1,0 +1,161 @@
+{
+  "outcome": "passed_scene_smoke_only",
+  "robot_connection": false,
+  "dds_started": false,
+  "checkpoint_used": false,
+  "placement_validated": false,
+  "geometry_measured": false,
+  "native_checkout": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+  "sources": {
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/scene_43dof.xml": "274e7b3755dc1eedcf210af54d1c97749f31457d77ae2c499ec234e804065b21",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/g1_29dof_with_hand.xml": "58c82f77753db54f8a6ca0a8e020e142b015d8587db6cfc442f9a75f2bc444c6"
+  },
+  "camera_port": 11555,
+  "layout": {
+    "units": "meters",
+    "coordinate_frame": "G1 initial pelvis XY projected onto floor; X forward, Y robot-left, Z up",
+    "scope": "Sample layout to which the user can move the station; source height and stool height range are user supplied, other dimensions are assumptions",
+    "source_table": {
+      "center_xy": [
+        0.5,
+        0.2
+      ],
+      "half_size_xy": [
+        0.237,
+        0.3
+      ],
+      "height": 0.8
+    },
+    "destination_stool": {
+      "center_xy": [
+        0.35,
+        -0.6
+      ],
+      "radius": 0.25,
+      "height": 0.8
+    },
+    "bottle": {
+      "source_xy": [
+        0.45,
+        0.0
+      ],
+      "radius": 0.03,
+      "half_height": 0.075,
+      "density": 100.0
+    }
+  },
+  "layout_sha256": "00c56ad2a6f8df403d13c81d0b81b4217bb3a9e70d96f0e8e453133175f5a2a7",
+  "mapping": {
+    "outcome": "passed",
+    "nq": 57,
+    "nv": 55,
+    "nu": 43,
+    "body_joints": 29,
+    "left_hand_joints": 7,
+    "right_hand_joints": 7,
+    "camera_preserved": true,
+    "right_hand_actuators": [
+      "right_hand_thumb_0",
+      "right_hand_thumb_1",
+      "right_hand_thumb_2",
+      "right_hand_middle_0",
+      "right_hand_middle_1",
+      "right_hand_index_0",
+      "right_hand_index_1"
+    ]
+  },
+  "passive_contacts": {
+    "source": {
+      "outcome": "passed",
+      "position": [
+        0.4500004552065342,
+        3.210007175399197e-07,
+        0.8749668007837065
+      ],
+      "contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "velocity_norm": 0.0049937199013823435
+    },
+    "destination": {
+      "outcome": "passed",
+      "position": [
+        0.34999963643135273,
+        -0.599999118054859,
+        0.8749660151303922
+      ],
+      "contacts": [
+        "right_green_stool",
+        "right_green_stool",
+        "right_green_stool",
+        "right_green_stool",
+        "right_green_stool"
+      ],
+      "velocity_norm": 0.0036659644437572647
+    }
+  },
+  "hand_collision_filter": {
+    "left": [
+      "left_hand_middle_0_link",
+      "left_hand_middle_0_link",
+      "left_hand_middle_0_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_1_link",
+      "left_hand_index_1_link",
+      "left_hand_index_1_link"
+    ],
+    "right": [
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_index_0_link",
+      "right_hand_index_0_link",
+      "right_hand_index_0_link",
+      "right_hand_index_1_link",
+      "right_hand_index_1_link",
+      "right_hand_index_1_link"
+    ]
+  },
+  "camera_transport": {
+    "outcome": "passed",
+    "frames": 3,
+    "timestamps": [
+      1790925109.9541643,
+      1790925109.9637456,
+      1790925109.9682128
+    ],
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "camera": "head_camera"
+  },
+  "outputs": {
+    "robot.xml": "d76545ca52961b67efcfd432cd3ae296fef7c064e60fb3b5f4e3d87aae321693",
+    "layout.json": "b4223b036ed9e786864f817f4858e994691ac9d7c741edd565f93728d7324e96",
+    "overview.png": "c79acdec21b8824f05c867256b4bf808d71f8179d172f687b22b504613375626",
+    "scene.xml": "22fb182734bf1a7e7fa8c1d8b8da50a3b6628b2882efe3fc1dc2983f3c92dae0",
+    "ego_view.png": "55e3f493f77b9765993d3963bfcf143dd315d11d6f775941620c6a4c25cbd5ad"
+  }
+}

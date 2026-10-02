@@ -192,30 +192,40 @@ Interfaces produced:
 Files: update V's runbook; save results under `V/docs/artifacts/g1_harness_<validation-date>/` with exact commands, checkout commits, profile digest, checkpoint identity evidence, JSONL, and evidence media. This task runs only during implementation/validation, not while preparing this plan.
 
 - [x] Verify the recorded derived dataset exists at `/tmp/pnp_bottle_260916_gr00t_raw_20260930` and the expected server is on port 15558. Run `<native-python> /home/jihun/work/GR00T-WholeBodyControl/docs/artifacts/pnp_bottle_260916_raw_training_20260930/smoke_inference.py`. Require finite native shapes and record latency. Keep all outputs disconnected from robot control; if the temporary dataset is missing, reconstruct it with the experiment's documented preparation before this check.
-- [ ] Run SONIC MuJoCo transitions with a scripted policy/monitor first: pause -> planner hold -> standing settle, then cancellation, lease expiry, telemetry loss, policy stall, and old-epoch results. Verify the C++ controller's lost-input behavior and whether a hold actually applies; unresolved behavior blocks agent-controlled hardware testing.
+- [x] Run SONIC MuJoCo transitions with a scripted policy/monitor first: pause -> planner hold -> standing settle, then cancellation, lease expiry, telemetry loss, policy stall, and old-epoch results. Verify the C++ controller's lost-input behavior and whether a hold actually applies; unresolved behavior blocks agent-controlled hardware testing. Scope: adapter-driven controller interruptions plus actual VLA-main-loop policy stall and late-result discard during reset; the active epoch comparison remains covered by synthetic cross-process checks.
 - [ ] Validate the completion monitor on recorded success/failure/held-bottle/occlusion clips. Save labels, decisions, and false-complete counts. Require zero false-completes in the chosen acceptance set before supervised trials; report the sample count so this is not presented as a general reliability guarantee.
-- [ ] Run an actual bottle/right-table manipulation scene if a compatible simulation environment is available. If it is missing, record that gap and keep manipulation success unvalidated; the generic SONIC control simulation does not close it. Build the scene or proceed only to explicitly supervised physical evaluation with the limitation documented.
+- [x] Run an actual bottle/right-table manipulation scene if a compatible simulation environment is available. If it is missing, record that gap and keep manipulation success unvalidated; the generic SONIC control simulation does not close it. Build the scene or proceed only to explicitly supervised physical evaluation with the limitation documented. Two real-checkpoint/sample-scene missions were run; neither placed the bottle. Scene calibration and successful placement remain acceptance work.
 - [ ] Test milestone 2 in simulation: 1 s backward walk, 15-degree turn, wraparound heading, fresh/stale telemetry, and killing the coordinator. Require zero continued movement requests after lease/deadline and measured turn/standing tolerances within the design limits.
 - [ ] Use the deploy skill for the real G1. Obtain its explicit robot-readiness confirmation before actuation, then perform observe-only, supervised pause/reset, bottle placement/reset, and locomotion checks in that order. Record each result and intervention; fail the milestone if an old action reappears, a reset falsely completes, or an interrupted skill resumes automatically.
 - [x] Report separate outcomes for contract/lifecycle tests, real-checkpoint serving, simulation control, monitor accuracy, physical placement, standing reset, and locomotion. Merge only validated code; document any hardware feature still disabled.
 
-Resumed validation on 2026-10-02 is recorded in
-`docs/artifacts/g1_harness_20261001/README.md`. Native software corrections are
-committed through `d513de5`; 626 native, 9 required integration and 11 controller
-tests pass. SONIC reset, one-second walking, cancellation, lease expiry, stale
-body feedback and lost-input hand stability pass. Current positive/negative
-15-degree turns miss at 3.314 / 3.761 degrees and interrupt at the unchanged
-10-second deadline. A positive wrap passed before the stricter lead fix;
-signed physical repeatability remains open.
+Latest validation on 2026-10-02 is recorded in
+`docs/artifacts/g1_harness_20261002/README.md`; the earlier report retains the
+full-suite/controller results. Fifty current G1 tests pass with no skips,
+including required integration cases. Twenty-three native harness/launcher
+tests pass after declaring PyYAML, and the workstation inference imports pass
+after installing that missing dependency. Actual VLA-loop policy stall and
+fresh late-result discard during reset now pass against SONIC/MuJoCo. Existing
+reset, one-second walking, cancellation, lease expiry, stale body feedback and
+lost-input hand-stability checks remain valid. Signed turns pass in some states,
+but negative near/wrapped trials still fail at unchanged limits; repeatability
+remains open.
 
-Ten recorded bottle judgments are valid, with zero false-completes in eight
-negatives and one two-frame release confirmation. The destination and failed
-episode 5 are user-confirmed. Full carried-bottle occlusion, live-camera mission
-acceptance, combined actual SONIC/VLA-worker faults and supervised hardware remain
-pending. The incompatible bottle-scene gap is documented. Failed episode 5 is
-retained in the prepared training corpus; audit episode outcomes before further
-fine-tuning. Historical apple/box disagreements and timeout remain recorded.
-Task 8 remains open; its partial checks are not marked complete.
+An editable compatible sample scene now runs the real checkpoint, live camera,
+SONIC and Genon together. The first trial falsely reported completion while
+the bottle stayed on the source. Naming the separate green stool corrected
+that observed case: three saved negatives and all ten recorded judgments pass,
+and a fresh live trial reports 44 in-progress decisions before its 120-second
+deadline and confirmed hold. Neither live trial placed the bottle. The
+prototype contact check is labeled contact-only and cannot certify placement.
+
+Scene calibration, successful grasp/placement, full carried-bottle occlusion,
+turn repeatability and supervised hardware remain open. The training-review
+queue maps 179 source/174 retained episodes; failed episode 5 remains retained,
+and 172 retained outcomes remain unreviewed. No dataset or checkpoint changed.
+Historical vision disagreements, false success and failed driver attempts are
+preserved. Task 8 remains open despite completing its scene-run and interruption
+activities. Dashboard implementation remains deferred below.
 
 ## Deferred to another session: G1 monitoring dashboard
 
