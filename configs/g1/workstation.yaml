@@ -12,4 +12,4 @@ limits:
 skills:
   bottle_to_right_table:
     prompt: pick drink bottle and place it on the right table
-    completion_criteria: The drink bottle is visibly resting on the right table and the robot has released it. Occlusion or a bottle still held in the hand does not establish completion.
+    completion_criteria: The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies.

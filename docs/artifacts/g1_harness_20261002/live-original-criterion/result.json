@@ -1,0 +1,229 @@
+{
+  "outcome": "completed",
+  "gate": "actual_checkpoint_bottle_mission",
+  "robot_connection": false,
+  "dds_interface": "lo",
+  "controller_gpu": 0,
+  "policy_gpu": 1,
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "profile_sha256": "17e415bf4ebd63e771e3befe9c0c95ce360ad36ec03c94f1f2b535a89406b71f",
+  "scene_sha256": "22fb182734bf1a7e7fa8c1d8b8da50a3b6628b2882efe3fc1dc2983f3c92dae0",
+  "scene_calibrated": false,
+  "placement_validated": false,
+  "monitor_model": "openai/gpt-5.6-sol",
+  "monitor_base_url": "https://api.genon.ai/v1",
+  "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "preparation": {
+    "execution_id": "0023bd322f404600b67ecc1ef4d983c9",
+    "outcome": "completed",
+    "reason": "All skills completed with confirmed planner hold",
+    "evidence_dir": "/tmp/g1-bottle-live-mission-ordered-20261002/preparation/1db31a254d7648fc97fe0517510c14f4"
+  },
+  "mission": {
+    "execution_id": "1904ad7ca9fb4331ad4d7dcefe5b882a",
+    "outcome": "completed",
+    "reason": "All skills completed with confirmed planner hold",
+    "evidence_dir": "/tmp/g1-bottle-live-mission-ordered-20261002/mission/aa78ed036d8d401283525814c9a93d03"
+  },
+  "final_status": {
+    "runtime_id": "19a18f96634f4b8a993ecb81d874ee88",
+    "phase": "COMPLETED",
+    "skill_id": "bottle_to_right_table",
+    "execution_id": "1904ad7ca9fb4331ad4d7dcefe5b882a",
+    "inference_epoch": 5,
+    "controller_running": true,
+    "policy_ready": true,
+    "mode_requested": "PLANNER",
+    "planner_reference_active": true,
+    "hold_confirmed": true,
+    "telemetry_age_s": 0.0,
+    "telemetry_index": 1256,
+    "observation_age_s": 0.035339011999894865,
+    "frame_id": "4a85fb6480994206b5ff48ff931f467a:1790926395.1100974",
+    "registry_sha256": "17e415bf4ebd63e771e3befe9c0c95ce360ad36ec03c94f1f2b535a89406b71f",
+    "policy_host": "127.0.0.1",
+    "policy_port": 15558,
+    "checkpoint_expected": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+    "owner_session_id": null,
+    "reason": null,
+    "locomotion_enabled": false
+  },
+  "independent_last_object_samples": [
+    {
+      "at": 111680.504599594,
+      "sim_time": 46.32500000000525,
+      "bottle_position": [
+        0.45000019924944196,
+        1.5133458828777228e-07,
+        0.8749668007835328
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.787188638861602
+    },
+    {
+      "at": 111680.605976844,
+      "sim_time": 46.4250000000053,
+      "bottle_position": [
+        0.4499996726929884,
+        -2.5974991588645875e-06,
+        0.8749666514606038
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872565066531461
+    },
+    {
+      "at": 111680.708170681,
+      "sim_time": 46.52500000000535,
+      "bottle_position": [
+        0.45000084948120533,
+        -1.8192355262346904e-06,
+        0.8749666770907387
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872842181460473
+    },
+    {
+      "at": 111680.812194931,
+      "sim_time": 46.6250000000054,
+      "bottle_position": [
+        0.44999999069715396,
+        -1.497583422903846e-06,
+        0.8749667531879096
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872915343331437
+    },
+    {
+      "at": 111680.914990192,
+      "sim_time": 46.72000000000545,
+      "bottle_position": [
+        0.45000005930368436,
+        -1.6538647691746327e-06,
+        0.8749667725761202
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872973815639924
+    },
+    {
+      "at": 111681.017119235,
+      "sim_time": 46.8200000000055,
+      "bottle_position": [
+        0.4499996105857065,
+        -1.3628063184320177e-06,
+        0.8749667290593605
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872819442828255
+    },
+    {
+      "at": 111681.121358469,
+      "sim_time": 46.92000000000555,
+      "bottle_position": [
+        0.4499999714024938,
+        -2.599926767517135e-06,
+        0.874966649485445
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872689637032807
+    },
+    {
+      "at": 111681.223694977,
+      "sim_time": 47.0200000000056,
+      "bottle_position": [
+        0.45000086984312304,
+        -2.139662614568016e-06,
+        0.8749666954168294
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872497267646883
+    },
+    {
+      "at": 111681.328624693,
+      "sim_time": 47.12000000000565,
+      "bottle_position": [
+        0.4500000569935786,
+        -1.6553960674285803e-06,
+        0.8749667725761192
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7872716738081976
+    },
+    {
+      "at": 111681.430652246,
+      "sim_time": 47.220000000005705,
+      "bottle_position": [
+        0.44999960827560104,
+        -1.3643375805122338e-06,
+        0.8749667290593585
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7873206526685065
+    }
+  ],
+  "owned_process_exit_codes": {
+    "policy": 0,
+    "mujoco": 0,
+    "sonic": -15,
+    "native": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "units": "meters",
+  "coordinate_frame": "G1 initial pelvis XY projected onto floor; X forward, Y robot-left, Z up",
+  "scope": "Sample layout to which the user can move the station; source height and stool height range are user supplied, other dimensions are assumptions",
+  "source_table": {"center_xy": [0.5, 0.2], "half_size_xy": [0.237, 0.3], "height": 0.8},
+  "destination_stool": {"center_xy": [0.35, -0.6], "radius": 0.25, "height": 0.8},
+  "bottle": {"source_xy": [0.45, 0.0], "radius": 0.03, "half_height": 0.075, "density": 100.0}
+}

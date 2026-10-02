@@ -1,0 +1,230 @@
+{
+  "outcome": "failed",
+  "gate": "actual_checkpoint_bottle_mission",
+  "robot_connection": false,
+  "dds_interface": "lo",
+  "controller_gpu": 0,
+  "policy_gpu": 1,
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "scene_sha256": "22fb182734bf1a7e7fa8c1d8b8da50a3b6628b2882efe3fc1dc2983f3c92dae0",
+  "scene_calibrated": false,
+  "placement_validated": false,
+  "monitor_model": "openai/gpt-5.6-sol",
+  "monitor_base_url": "https://api.genon.ai/v1",
+  "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "preparation": {
+    "execution_id": "2177b4a92c07483b9eb5af70c94bc51f",
+    "outcome": "completed",
+    "reason": "All skills completed with confirmed planner hold",
+    "evidence_dir": "/tmp/g1-bottle-live-corrected-20261002/preparation/5bea26464c5149668b5df3b7e55ddb93"
+  },
+  "mission": {
+    "execution_id": "2b072b55d01c44a1a14d9123fb2fb158",
+    "outcome": "interrupted",
+    "reason": "policy_or_task_timeout",
+    "evidence_dir": "/tmp/g1-bottle-live-corrected-20261002/mission/be79f5e9e18f4cc4a04ed3a9d95c4922"
+  },
+  "final_status": {
+    "runtime_id": "9d43c68905b24c94a1da816641acf6d6",
+    "phase": "INTERRUPTED",
+    "skill_id": "bottle_to_right_table",
+    "execution_id": "2b072b55d01c44a1a14d9123fb2fb158",
+    "inference_epoch": 4,
+    "controller_running": true,
+    "policy_ready": true,
+    "mode_requested": "PLANNER",
+    "planner_reference_active": true,
+    "hold_confirmed": true,
+    "telemetry_age_s": 0.0,
+    "telemetry_index": 6444,
+    "observation_age_s": 0.008662795007694513,
+    "frame_id": "741b214033e9439ca0ec131bab96cab1:1790928600.1956868",
+    "registry_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+    "policy_host": "127.0.0.1",
+    "policy_port": 15558,
+    "checkpoint_expected": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+    "owner_session_id": null,
+    "reason": "policy_or_task_timeout",
+    "locomotion_enabled": false
+  },
+  "independent_last_object_samples": [
+    {
+      "at": 113885.597629367,
+      "sim_time": 148.67499999993728,
+      "bottle_position": [
+        0.44999921192733305,
+        -1.3487631662368602e-06,
+        0.8749667044989432
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7837624777074487
+    },
+    {
+      "at": 113885.699192395,
+      "sim_time": 148.7749999999372,
+      "bottle_position": [
+        0.4499994273658361,
+        -3.3103845792663586e-06,
+        0.8749666658571823
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7844666095386799
+    },
+    {
+      "at": 113885.800792342,
+      "sim_time": 148.8749999999371,
+      "bottle_position": [
+        0.450000372468682,
+        -2.708446463760023e-06,
+        0.8749667140544921
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7847778585556476
+    },
+    {
+      "at": 113885.902107924,
+      "sim_time": 148.974999999937,
+      "bottle_position": [
+        0.4500001884707771,
+        -3.217963746673983e-06,
+        0.8749667450455704
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.785002770078797
+    },
+    {
+      "at": 113886.00363994,
+      "sim_time": 149.07499999993692,
+      "bottle_position": [
+        0.449999209617216,
+        -1.3502944244834063e-06,
+        0.8749667044989411
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7851824559544844
+    },
+    {
+      "at": 113886.105378635,
+      "sim_time": 149.17499999993683,
+      "bottle_position": [
+        0.44999942505570417,
+        -3.311915862907535e-06,
+        0.8749666658571801
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7852215391794324
+    },
+    {
+      "at": 113886.206757747,
+      "sim_time": 149.27499999993674,
+      "bottle_position": [
+        0.45000037015854627,
+        -2.709977746424056e-06,
+        0.8749667140544907
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7848896346959388
+    },
+    {
+      "at": 113886.308555969,
+      "sim_time": 149.37499999993665,
+      "bottle_position": [
+        0.45000018616064,
+        -3.2194950236490217e-06,
+        0.8749667450455678
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7842456545237187
+    },
+    {
+      "at": 113886.409826372,
+      "sim_time": 149.47499999993656,
+      "bottle_position": [
+        0.4499992073070989,
+        -1.3518256826986113e-06,
+        0.8749667044989391
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7839468349987818
+    },
+    {
+      "at": 113886.511292711,
+      "sim_time": 149.57499999993647,
+      "bottle_position": [
+        0.4499994227455723,
+        -3.3134471465313616e-06,
+        0.8749666658571779
+      ],
+      "bottle_contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "robot_height": 0.7837639137235269
+    }
+  ],
+  "reason": "Independent object truth does not establish placement",
+  "owned_process_exit_codes": {
+    "policy": 0,
+    "mujoco": 0,
+    "sonic": -15,
+    "native": 0
+  }
+}

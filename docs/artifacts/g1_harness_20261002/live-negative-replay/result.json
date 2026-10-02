@@ -1,0 +1,64 @@
+{
+  "profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "criterion": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies.",
+  "robot_connection": false,
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "label_source": "Live MuJoCo bottle position and source_table contact; all three frames negative",
+  "initial_reference": "First saved monitor frame; the original pre-start snapshot was not persisted",
+  "cases": [
+    {
+      "frame": "0a7309b69843151365b09a5c1ba0bdec86161c83913ada27e0986e79dd9dbc56.jpg",
+      "sha256": "ee00847bf3743aa3cec5ebb0aa5971e9c478c555a46419d926f14fe4703df704",
+      "expected_complete": false,
+      "frame_complete": false,
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle remains on the source table and has not yet been moved to and released on the green stool.",
+        "frame_id": "ee00847bf3743aa3cec5ebb0aa5971e9c478c555a46419d926f14fe4703df704",
+        "execution_id": "negative-source-table",
+        "inference_epoch": 1,
+        "captured_at": 113542.704749205,
+        "decided_at": 113545.920208653
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle remains on the source table and has not yet been moved to and released on the green stool.\"}"
+    },
+    {
+      "frame": "78f04a23a2df9f7452461efe3445ba9a1ebdf3cabdcdc28eded74a6ca111cf55.jpg",
+      "sha256": "5a0a180b4fe7e62121b1d50acaec50ed40ac58efb8109c5d6a34120de0f1b669",
+      "expected_complete": false,
+      "frame_complete": false,
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is still resting on the source table; it has not been moved to and released on the green stool.",
+        "frame_id": "5a0a180b4fe7e62121b1d50acaec50ed40ac58efb8109c5d6a34120de0f1b669",
+        "execution_id": "negative-source-table",
+        "inference_epoch": 1,
+        "captured_at": 113545.920550142,
+        "decided_at": 113548.447788931
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle is still resting on the source table; it has not been moved to and released on the green stool.\"}"
+    },
+    {
+      "frame": "88d29f89bc730f0d8ac556f60aaa29618e648a55b52ad56c378eb449a6412095.jpg",
+      "sha256": "93af218c908fb177575177e5020b6aafd59737f1b24963f00693fc6f99897950",
+      "expected_complete": false,
+      "frame_complete": false,
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle remains on the source table; it has not been moved to and released on the green stool.",
+        "frame_id": "93af218c908fb177575177e5020b6aafd59737f1b24963f00693fc6f99897950",
+        "execution_id": "negative-source-table",
+        "inference_epoch": 1,
+        "captured_at": 113548.448216875,
+        "decided_at": 113550.828455048
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle remains on the source table; it has not been moved to and released on the green stool.\"}"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "false_complete": 0,
+    "unavailable": 0
+  }
+}

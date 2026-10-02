@@ -1,0 +1,67 @@
+{
+  "runtime_changed": false,
+  "limits_changed": false,
+  "acceptance": "open",
+  "trials": [
+    {
+      "trial": "shadow-positive",
+      "outcome": "passed",
+      "entry_deg": 8.873759291996963,
+      "error_deg": 2.1529729759695413,
+      "elapsed_s": 3.652100003004307,
+      "actual_wrap_crossing": false,
+      "reason": null,
+      "saturated_samples": 97,
+      "saturated_max_shadow_difference_deg": 0.0,
+      "real_time_factor": 0.9844845482697255
+    },
+    {
+      "trial": "shadow-negative",
+      "outcome": "passed",
+      "entry_deg": 5.153719154937814,
+      "error_deg": 1.3343005499712237,
+      "elapsed_s": 4.325861147008254,
+      "actual_wrap_crossing": false,
+      "reason": null,
+      "saturated_samples": 157,
+      "saturated_max_shadow_difference_deg": 0.0,
+      "real_time_factor": 0.9842848079265109
+    },
+    {
+      "trial": "shadow-near-pi-negative",
+      "outcome": "failed",
+      "entry_deg": 176.91693507034645,
+      "error_deg": 9.884052833247784,
+      "elapsed_s": 10.015498259002925,
+      "actual_wrap_crossing": false,
+      "reason": "planner_error:Turn deadline exceeded",
+      "saturated_samples": 428,
+      "saturated_max_shadow_difference_deg": 0.0,
+      "real_time_factor": 0.9837040083800653
+    },
+    {
+      "trial": "shadow-cross-negative",
+      "outcome": "failed",
+      "entry_deg": -168.0572936254311,
+      "error_deg": 6.8850160735796955,
+      "elapsed_s": 4.749602044001222,
+      "actual_wrap_crossing": true,
+      "reason": "planner_error:Heading feedback moved beyond the rate-limited lead bound",
+      "saturated_samples": 172,
+      "saturated_max_shadow_difference_deg": 0.0,
+      "real_time_factor": 0.9829981960157095
+    },
+    {
+      "trial": "shadow-cross-positive",
+      "outcome": "passed",
+      "entry_deg": 172.3353715076962,
+      "error_deg": 2.7464844298004376,
+      "elapsed_s": 2.3491924929985544,
+      "actual_wrap_crossing": true,
+      "reason": null,
+      "saturated_samples": 3,
+      "saturated_max_shadow_difference_deg": 0.0,
+      "real_time_factor": 0.9828933570685193
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLForConditionalGeneration is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLVisionModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3VLTextModel is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+Starting GR00T inference server...
+  Embodiment tag: EmbodimentTag.UNITREE_G1_SONIC
+  Model path: /mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000
+  Device: cuda:0
+  Host: 127.0.0.1
+  Port: 15558
+Traceback (most recent call last):
+  File "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic/scripts/serve_pnp_bottle_offline.py", line 14, in <module>
+    runpy.run_module("gr00t.eval.run_gr00t_server", run_name="__main__")
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 227, in run_module
+    return _run_code(code, {}, init_globals, run_name, mod_spec)
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/jihun/work/Isaac-GR00T/gr00t/eval/run_gr00t_server.py", line 180, in <module>
+    main(config)
+  File "/home/jihun/work/Isaac-GR00T/gr00t/eval/run_gr00t_server.py", line 105, in main
+    policy = Gr00tPolicy(
+  File "/home/jihun/work/Isaac-GR00T/gr00t/policy/gr00t_policy.py", line 109, in __init__
+    model = AutoModel.from_pretrained(model_dir)
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4971, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+  File "/home/jihun/work/Isaac-GR00T/gr00t/model/gr00t_n1d7/gr00t_n1d7.py", line 530, in __init__
+    self.backbone = backbone_cls(
+  File "/home/jihun/work/Isaac-GR00T/gr00t/model/modules/qwen3_backbone.py", line 183, in __init__
+    self.model = Qwen3VLForConditionalGeneration.from_pretrained(
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5468, in _load_pretrained_model
+    _error_msgs, disk_offload_index = load_shard_file(args)
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 843, in load_shard_file
+    disk_offload_index = _load_state_dict_into_meta_model(
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 750, in _load_state_dict_into_meta_model
+    param = param.to(casting_dtype)
+KeyboardInterrupt

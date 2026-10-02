@@ -1,5 +1,10 @@
 # G1 harness validation — updated 2026-10-02
 
+This report retains the earlier results and profile. The
+[follow-up report](../g1_harness_20261002/README.md) records actual VLA-loop faults,
+the editable scene, turning diagnosis and a live false-success correction.
+Use it for current acceptance status and the current profile digest.
+
 Software checks pass. SONIC/MuJoCo standing reset, walking and tested interruption
 paths pass. Turning remains unaccepted: the latest positive and negative
 15-degree turns stop short and interrupt at the deadline. Recorded bottle

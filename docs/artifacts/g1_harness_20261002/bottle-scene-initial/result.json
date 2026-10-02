@@ -1,0 +1,126 @@
+{
+  "outcome": "passed_scene_smoke_only",
+  "robot_connection": false,
+  "dds_started": false,
+  "checkpoint_used": false,
+  "placement_validated": false,
+  "geometry_measured": false,
+  "native_checkout": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+  "sources": {
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/scene_43dof.xml": "274e7b3755dc1eedcf210af54d1c97749f31457d77ae2c499ec234e804065b21",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/g1_29dof_with_hand.xml": "58c82f77753db54f8a6ca0a8e020e142b015d8587db6cfc442f9a75f2bc444c6"
+  },
+  "camera_port": 11555,
+  "mapping": {
+    "outcome": "passed",
+    "nq": 57,
+    "nv": 55,
+    "nu": 43,
+    "body_joints": 29,
+    "left_hand_joints": 7,
+    "right_hand_joints": 7,
+    "camera_preserved": true,
+    "right_hand_actuators": [
+      "right_hand_thumb_0",
+      "right_hand_thumb_1",
+      "right_hand_thumb_2",
+      "right_hand_middle_0",
+      "right_hand_middle_1",
+      "right_hand_index_0",
+      "right_hand_index_1"
+    ]
+  },
+  "passive_contacts": {
+    "source": {
+      "outcome": "passed",
+      "position": [
+        0.44999926225420256,
+        -2.412572279052535e-07,
+        0.8749667436054851
+      ],
+      "contacts": [
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table",
+        "source_table"
+      ],
+      "velocity_norm": 0.002224754525569631
+    },
+    "destination": {
+      "outcome": "passed",
+      "position": [
+        0.4000010437280368,
+        -0.8499980918467839,
+        0.5749659760968913
+      ],
+      "contacts": [
+        "right_green_stool",
+        "right_green_stool",
+        "right_green_stool",
+        "right_green_stool",
+        "right_green_stool"
+      ],
+      "velocity_norm": 0.008720343764738372
+    }
+  },
+  "hand_collision_filter": {
+    "left": [
+      "left_hand_middle_0_link",
+      "left_hand_middle_0_link",
+      "left_hand_middle_0_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_middle_1_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_0_link",
+      "left_hand_index_1_link",
+      "left_hand_index_1_link",
+      "left_hand_index_1_link"
+    ],
+    "right": [
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_0_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_middle_1_link",
+      "right_hand_index_0_link",
+      "right_hand_index_0_link",
+      "right_hand_index_0_link",
+      "right_hand_index_1_link",
+      "right_hand_index_1_link",
+      "right_hand_index_1_link"
+    ]
+  },
+  "camera_transport": {
+    "outcome": "passed",
+    "frames": 3,
+    "timestamps": [
+      1790924097.208728,
+      1790924097.2168508,
+      1790924097.22176
+    ],
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "camera": "head_camera"
+  },
+  "outputs": {
+    "robot.xml": "d76545ca52961b67efcfd432cd3ae296fef7c064e60fb3b5f4e3d87aae321693",
+    "overview.png": "0d1ddd1a8104ae84ae3dc3147634155a721d538f72789aa5e303bf650642fae3",
+    "scene.xml": "2546c9bc7090194f8b1e60decde136e79a93a46b03b38078a9bbaecc00072f72",
+    "ego_view.png": "04028e96e0f80cc6491a2786df6a1f5f720c341a03846a4ecc81c1d646f5369b"
+  }
+}

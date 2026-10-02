@@ -1,0 +1,263 @@
+{
+  "robot_connection": false,
+  "scope": "Recorded frame judgments and explicit replay sequences; no live robot mission",
+  "label_provenance": "Frame annotations from direct session visual inspection. On 2026-10-02 the user confirmed that the green stool is the intended right-table destination. Individual frame annotations remain session labels; source metadata identifies retained demonstrations, not success/failure ground truth. Re-evaluated after source/destination ambiguity was found in live simulation; criterion identifies the user-confirmed separate green stool.",
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "episodes": {
+    "bottle_18": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "sha256": "5adf0f2de73b01733915abb888303ac902093371700f05aeb52344f42ff6d89e",
+      "user_outcome": "Session inspection: bottles transported to the green stool, with a released bottle visible at37-39.5s. The user confirmed that this stool is the intended destination."
+    },
+    "bottle_failed_5": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445",
+      "user_outcome": "User-labeled unrecovered failure. The robot attempts to grasp a bottle at the front source table; intended right-side placement is not established before the clip ends."
+    }
+  },
+  "cases": [
+    {
+      "id": "bottle_out_of_view",
+      "episode": "bottle_18",
+      "at_s": 1.0,
+      "initial_s": 0.1,
+      "complete": false,
+      "note": "Early camera view shows floor; no bottle or destination visible. Not an occlusion during transport.",
+      "image": "frames/bottle_out_of_view.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The green stool and bottle are not visible, so there is no clear evidence that the bottle has been placed and released at the destination.",
+        "frame_id": "a11b0f420bf46c529520b16dce5142464725acebd1fe5ed0b7a2553ac12746d8",
+        "execution_id": "bottle_out_of_view",
+        "inference_epoch": 1,
+        "captured_at": 113657.969131909,
+        "decided_at": 113661.570174756
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The green stool and bottle are not visible, so there is no clear evidence that the bottle has been placed and released at the destination.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.601042846989003,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_before_grasp",
+      "episode": "bottle_18",
+      "at_s": 12.0,
+      "complete": false,
+      "image": "frames/bottle_before_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottles remain on the source table, and no bottle is visibly resting released on the green stool; the robot can continue the transfer.",
+        "frame_id": "5ccb3e0c8df5b01bb5be780e9ff9263ce2004d9007d9423a8c389ad251821143",
+        "execution_id": "bottle_before_grasp",
+        "inference_epoch": 1,
+        "captured_at": 113661.725184625,
+        "decided_at": 113664.811688868
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottles remain on the source table, and no bottle is visibly resting released on the green stool; the robot can continue the transfer.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.086504242994124,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_held",
+      "episode": "bottle_18",
+      "at_s": 28.0,
+      "complete": false,
+      "image": "frames/bottle_held.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is still held by the robot beside the green stool and is not visibly resting on it.",
+        "frame_id": "f9e7bbd1464e1f1f6eb637a2f107b52a523ea4e6f77ccf14a3f1eab2df899b56",
+        "execution_id": "bottle_held",
+        "inference_epoch": 1,
+        "captured_at": 113664.87311939,
+        "decided_at": 113668.044522782
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle is still held by the robot beside the green stool and is not visibly resting on it.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.1714033919997746,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_held_above_destination",
+      "episode": "bottle_18",
+      "at_s": 31.0,
+      "complete": false,
+      "image": "frames/bottle_held_above_destination.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The green stool destination is visible but empty; the bottle is still held by the robot and has not been released onto it.",
+        "frame_id": "1578d62167e76566609ec338499d199644b6f9f07f59b7a0ff293c7e163cf32e",
+        "execution_id": "bottle_held_above_destination",
+        "inference_epoch": 1,
+        "captured_at": 113668.132149804,
+        "decided_at": 113671.481893584
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The green stool destination is visible but empty; the bottle is still held by the robot and has not been released onto it.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.3497437799960608,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "bottle_released_first",
+      "episode": "bottle_18",
+      "at_s": 37.0,
+      "complete": true,
+      "sequence_id": "bottle_release",
+      "expected_monitor_outcome": "in_progress",
+      "image": "frames/bottle_released_first.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is visibly resting upright on the separate green stool and has been released.",
+        "frame_id": "adcda2a7b5a25588df0e9e098e9b9fc7840d9509c525d9dbd262856ec6b0ac72",
+        "execution_id": "bottle_release",
+        "inference_epoch": 1,
+        "captured_at": 113671.577392284,
+        "decided_at": 113674.365969726
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The drink bottle is visibly resting upright on the separate green stool and has been released.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 2.788577441999223,
+      "confirmation_streak": 1,
+      "matches_monitor_outcome": true
+    },
+    {
+      "id": "bottle_released_second",
+      "episode": "bottle_18",
+      "at_s": 38.0,
+      "complete": true,
+      "sequence_id": "bottle_release",
+      "expected_monitor_outcome": "complete",
+      "image": "frames/bottle_released_second.jpg",
+      "decision": {
+        "outcome": "complete",
+        "reason": "The drink bottle is visibly resting upright on the separate green stool, and the robot has released it.",
+        "frame_id": "7473b025353e3996535cd19c3eac1e554a739ef49310ca3cec7144c3decfa159",
+        "execution_id": "bottle_release",
+        "inference_epoch": 1,
+        "captured_at": 113674.424387399,
+        "decided_at": 113677.322721849
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The drink bottle is visibly resting upright on the separate green stool, and the robot has released it.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 2.89833445000113,
+      "confirmation_streak": 2,
+      "matches_monitor_outcome": true
+    },
+    {
+      "id": "failed_bottle_before_grasp",
+      "episode": "bottle_failed_5",
+      "at_s": 12.0,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "image": "frames/failed_bottle_before_grasp.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is still resting on the source wooden table and has not been placed and released on the green stool.",
+        "frame_id": "b8c0a318dd5977dcf8bf6caf6d4217fa634169bb5bd36dcbaf63b41dfb4dab58",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 113677.470642524,
+        "decided_at": 113680.735564819
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle is still resting on the source wooden table and has not been placed and released on the green stool.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.2649222949985415,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "failed_bottle_grasp_attempt",
+      "episode": "bottle_failed_5",
+      "at_s": 17.0,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "Bottle remains at the front source table, enclosed by the left fingers; release on the right destination is not established.",
+      "image": "frames/failed_bottle_grasp_attempt.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot is holding the target drink bottle, but it has not yet placed and released it on the green stool destination.",
+        "frame_id": "4a59a849fb962318b1d71da849ac945a695ee454a43443e334a3b5a425bd907d",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 113680.806886693,
+        "decided_at": 113683.808742582
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The robot is holding the target drink bottle, but it has not yet placed and released it on the green stool destination.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.0018558890005806,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "failed_bottle_target_unobservable",
+      "episode": "bottle_failed_5",
+      "at_s": 18.8,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "The bottle near the left grasp at17s is no longer visibly identifiable; other bottles remain on the source table. Target visibility loss during manipulation, not proof of blocked-camera occlusion or a fall.",
+      "image": "frames/failed_bottle_target_unobservable.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle remains on the source table, and there is no visible evidence that it rests released on the green stool.",
+        "frame_id": "11d82e8c263db00035e55798643fdd71f0fc266c815bb08b678fa7e7e1c02bc1",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 113683.86287762,
+        "decided_at": 113687.190916122
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle remains on the source table, and there is no visible evidence that it rests released on the green stool.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.328038501989795,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "failed_bottle_terminal",
+      "episode": "bottle_failed_5",
+      "at_s": 19.4,
+      "complete": false,
+      "sequence_id": "failed_bottle_episode",
+      "note": "The clip ends at19.54s without visible placement on the intended right-side destination; user labeled the episode failed without recovery.",
+      "image": "frames/failed_bottle_terminal.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle remains on the source table, and there is no visible evidence that it rests released on the green stool.",
+        "frame_id": "1352a9409b9ab706cc036325990fbe38a433ab7aad4b887e4079f318bc475812",
+        "execution_id": "failed_bottle_episode",
+        "inference_epoch": 1,
+        "captured_at": 113687.24927672,
+        "decided_at": 113690.425343212
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottle remains on the source table, and there is no visible evidence that it rests released on the green stool.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.1760664920002455,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "unavailable": 0,
+    "valid_negative_cases": 8,
+    "false_complete": 0,
+    "positive_label_disagreements": 0,
+    "sequence_confirmations": 1,
+    "monitor_outcome_disagreements": 0
+  }
+}

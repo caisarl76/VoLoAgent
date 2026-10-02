@@ -1,0 +1,397 @@
+[DEBUG] Program starting...
+[DEBUG] Arguments validated...
+[INFO] Using encoder file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx
+[INFO] Using planner file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx
+[INFO] Using observation config: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml
+[INFO] Using input type: zmq_manager
+[INFO] Using output type: zmq
+[INFO] CRC checking disabled for MuJoCo simulation
+[INFO] Using logs directory: /tmp/g1-sonic-shadow-positive-20261002/controller
+[DEBUG] Creating G1Deploy object...
+1790921143.966628 [0] g1_deploy_: selected interface "lo" is not multicast-capable: disabling multicast
+Reading motion data from CSV files in: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example
+Found 13 motion folders
+✓ Loaded neutral_kick_R_001__A543_M (165 timesteps)
+✓ Loaded walking_quip_360_R_002__A428 (455 timesteps)
+✓ Loaded squat_001__A359 (424 timesteps)
+✓ Loaded tired_one_leg_jumping_R_001__A359_M (500 timesteps)
+✓ Loaded dance_in_da_party_001__A464_M (497 timesteps)
+✓ Loaded forward_lunge_R_001__A359_M (399 timesteps)
+✓ Loaded dance_in_da_party_001__A464 (497 timesteps)
+✓ Loaded macarena_001__A545 (1375 timesteps)
+✓ Loaded tired_one_leg_jumping_R_001__A359 (500 timesteps)
+✓ Loaded walking_quip_360_R_002__A428_M (455 timesteps)
+✓ Loaded neutral_kick_R_001__A543 (165 timesteps)
+✓ Loaded macarena_001__A545_M (1375 timesteps)
+✓ Loaded tired_forward_lunge_R_001__A359_M (810 timesteps)
+✓ Motion data loaded successfully!
+Started with motion: neutral_kick_R_001__A543_M (paused at frame 0)
+Loading policy model...
+hash value in file 440e58fad5e2b2fb1863b5f5279dbc4fd0249124d35af832ae0a63898c76711f
+hash of onnx/gpu type 440e58fad5e2b2fb1863b5f5279dbc4fd0249124d35af832ae0a63898c76711f
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 143 MiB
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +0, now: CPU 0, GPU 142 (MiB)
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: obs_dict [1, 994]. 994 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: OUTPUT Tensor: action [1, 29]. 29 elements of type FLOAT
+✓ Successfully converted ONNX to TRT: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/policy_model_decoder.trt
+✓ Policy engine initialized successfully!
+  Model: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx
+  Input dimension: 994
+  Action dimension: 29
+  Input tensor: obs_dict
+  Output tensor: action
+  Precision: FP32
+Capturing control policy CUDA graph...
+✓ Control policy CUDA graph captured successfully!
+✓ Policy model loaded successfully!
+Loading observation configuration...
+Using observation config file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml
+Parsing observation config file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml
+Found observations section at line 9
+  Parsed observation: token_state -> enabled
+  Parsed observation: his_base_angular_velocity_10frame_step1 -> enabled
+  Parsed observation: his_body_joint_positions_10frame_step1 -> enabled
+  Parsed observation: his_body_joint_velocities_10frame_step1 -> enabled
+  Parsed observation: his_last_actions_10frame_step1 -> enabled
+  Parsed observation: his_gravity_dir_10frame_step1 -> enabled
+Found encoder section at line 23
+  Encoder dimension: 64
+  Encoder use_fp16: false
+  Found encoder_observations subsection
+    Encoder obs: encoder_mode_4 -> enabled
+    Encoder obs: motion_joint_positions_10frame_step5 -> enabled
+    Encoder obs: motion_joint_velocities_10frame_step5 -> enabled
+    Encoder obs: motion_anchor_orientation_heading_10frame_step5 -> enabled
+    Encoder obs: motion_anchor_orientation_heading -> enabled
+    Encoder obs: motion_joint_positions_lowerbody_10frame_step5 -> enabled
+    Encoder obs: motion_joint_velocities_lowerbody_10frame_step5 -> enabled
+    Encoder obs: vr_3point_local_target -> enabled
+    Encoder obs: vr_3point_local_orn_target -> enabled
+    Encoder obs: smpl_joints_10frame_step1 -> enabled
+    Encoder obs: smpl_anchor_orientation_heading_10frame_step1 -> enabled
+    Encoder obs: motion_joint_positions_wrists_10frame_step1 -> enabled
+  Found encoder_modes subsection (after encoder_observations)
+    Found mode: g1
+      Mode ID: 0
+      Found required_observations for mode g1
+        - encoder_mode_4
+        - motion_joint_positions_10frame_step5
+        - motion_joint_velocities_10frame_step5
+        - motion_anchor_orientation_heading_10frame_step5
+    Saved mode 'g1' with 4 observations
+    Found mode: teleop
+      Mode ID: 1
+      Found required_observations for mode teleop
+        - encoder_mode_4
+        - motion_joint_positions_lowerbody_10frame_step5
+        - motion_joint_velocities_lowerbody_10frame_step5
+        - vr_3point_local_target
+        - vr_3point_local_orn_target
+        - motion_anchor_orientation_heading
+    Saved mode 'teleop' with 6 observations
+    Found mode: smpl
+      Mode ID: 2
+      Found required_observations for mode smpl
+        - encoder_mode_4
+        - smpl_joints_10frame_step1
+        - smpl_anchor_orientation_heading_10frame_step1
+        - motion_joint_positions_wrists_10frame_step1
+    Saved mode 'smpl' with 4 observations
+✓ Token state observation validated with encoder configuration
+Successfully parsed 6 observations
+Encoder config found with 12 input observations
+✓ Token state buffer initialized (size: 64)
+Initializing encoder...
+Loading encoder model...
+hash value in file 90ed9925d6f62fc7894b8ee8f8a2145352570e5348ba867b839ac99e0d29932c
+hash of onnx/gpu type 90ed9925d6f62fc7894b8ee8f8a2145352570e5348ba867b839ac99e0d29932c
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 47 MiB
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Running engine with multi stream info
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of aux streams is 2
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of total worker streams is 3
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] The main stream provided by execute/enqueue calls is the first worker stream
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +0, now: CPU 0, GPU 189 (MiB)
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: obs_dict [1, 1751]. 1751 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: OUTPUT Tensor: encoded_tokens [1, 64]. 64 elements of type FLOAT
+✓ Encoder initialized successfully!
+  Model: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx
+  Input dimension: 1751
+  Token dimension: 64
+  Input tensor: obs_dict
+  Output tensor: encoded_tokens
+Capturing encoder CUDA graph...
+✓ Encoder CUDA graph captured successfully!
+✓ Encoder model loaded successfully!
+Setting encode_mode for 13 loaded reference motions...
+  Motion 'neutral_kick_R_001__A543_M' encode_mode set to: 0
+  Motion 'walking_quip_360_R_002__A428' encode_mode set to: 0
+  Motion 'squat_001__A359' encode_mode set to: 0
+  Motion 'tired_one_leg_jumping_R_001__A359_M' encode_mode set to: 0
+  Motion 'dance_in_da_party_001__A464_M' encode_mode set to: 0
+  Motion 'forward_lunge_R_001__A359_M' encode_mode set to: 0
+  Motion 'dance_in_da_party_001__A464' encode_mode set to: 0
+  Motion 'macarena_001__A545' encode_mode set to: 0
+  Motion 'tired_one_leg_jumping_R_001__A359' encode_mode set to: 0
+  Motion 'walking_quip_360_R_002__A428_M' encode_mode set to: 0
+  Motion 'neutral_kick_R_001__A543' encode_mode set to: 0
+  Motion 'macarena_001__A545_M' encode_mode set to: 0
+  Motion 'tired_forward_lunge_R_001__A359_M' encode_mode set to: 0
+Planner motion encode_mode set to: 0
+LocalMotionPlannerBase constructor
+config_.version: 2
+config_.motion_look_ahead_steps: 2
+config_.default_height: 0.78874
+config_.initial_random_seed: 1234
+Available modes number: 27
+Initialize Engine...
+hash value in file 93ec4df1dfa8c640f7f308e3bb5f047cc3264ceea616dae1004bd3207609eba0
+hash of onnx/gpu type 93ec4df1dfa8c640f7f308e3bb5f047cc3264ceea616dae1004bd3207609eba0
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 713 MiB
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Running engine with multi stream info
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of aux streams is 1
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of total worker streams is 2
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] The main stream provided by execute/enqueue calls is the first worker stream
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +1, now: CPU 0, GPU 897 (MiB)
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: context_mujoco_qpos [1, 4, 36]. 144 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: target_vel [1]. 1 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: mode [1]. 1 elements of type INT64
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: movement_direction [1, 3]. 3 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: facing_direction [1, 3]. 3 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: random_seed [1]. 1 elements of type INT64
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: has_specific_target [1, 1]. 1 elements of type INT64
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: specific_target_positions [1, 4, 3]. 12 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: specific_target_headings [1, 4]. 4 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: allowed_pred_num_tokens [1, 11]. 11 elements of type INT64
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: height [1]. 1 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: OUTPUT Tensor: mujoco_qpos [1, 64, 36]. 2304 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: OUTPUT Tensor: num_pred_frames [1]. 1 elements of type INT32
+✓ Successfully converted ONNX to TRT: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_planner_sonic.trt
+Input tensors:
+  allowed_pred_num_tokens 1 11 int64
+  context_mujoco_qpos 1 4 36 float
+  facing_direction 1 3 float
+  has_specific_target 1 1 int64
+  height 1 float
+  mode 1 int64
+  movement_direction 1 3 float
+  random_seed 1 int64
+  specific_target_headings 1 4 float
+  specific_target_positions 1 4 3 float
+  target_vel 1 float
+Output tensors:
+  mujoco_qpos 1 64 36 float
+  num_pred_frames 1 int32
+✓ TensorRT planner model loaded successfully!
+Initializing encoder observations...
+✓ Initialized 12 encoder observations (total dim: 1751)
+
+=== Observation Configuration ===
+Active policy observations (runtime order):
+  1. token_state (64D) [offset: 0]
+  2. his_base_angular_velocity_10frame_step1 (30D) [offset: 64]
+  3. his_body_joint_positions_10frame_step1 (290D) [offset: 94]
+  4. his_body_joint_velocities_10frame_step1 (290D) [offset: 384]
+  5. his_last_actions_10frame_step1 (290D) [offset: 674]
+  6. his_gravity_dir_10frame_step1 (30D) [offset: 964]
+
+Policy Summary:
+  Total dimension: 994
+  Model dimension: 994
+  ✓ Dimension match: Configuration is valid!
+
+--- Encoder Observations ---
+  1. encoder_mode_4 (4D) [offset: 0]
+  2. motion_joint_positions_10frame_step5 (290D) [offset: 4]
+  3. motion_joint_velocities_10frame_step5 (290D) [offset: 294]
+  4. motion_anchor_orientation_heading_10frame_step5 (60D) [offset: 584]
+  5. motion_anchor_orientation_heading (6D) [offset: 644]
+  6. motion_joint_positions_lowerbody_10frame_step5 (120D) [offset: 650]
+  7. motion_joint_velocities_lowerbody_10frame_step5 (120D) [offset: 770]
+  8. vr_3point_local_target (9D) [offset: 890]
+  9. vr_3point_local_orn_target (12D) [offset: 899]
+  10. smpl_joints_10frame_step1 (720D) [offset: 911]
+  11. smpl_anchor_orientation_heading_10frame_step1 (60D) [offset: 1631]
+  12. motion_joint_positions_wrists_10frame_step1 (60D) [offset: 1691]
+
+Encoder Summary:
+  Total dimension: 1751
+  Model dimension: 1751
+  ✓ Dimension match: Encoder configuration is valid!
+================================
+
+[ZMQEndpointInterface] Connected to 127.0.0.1:11556 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+[ZMQManager] Initialized (default: PLANNER mode)
+  - Host: 127.0.0.1:11556
+  - Command topic: 'command' (start/stop/mode)
+    Format: { start: bool, stop: bool, planner: bool }
+  - Planner topic: 'planner' (movement)
+  - Pose topic: 'pose' (streamed motion)
+  - VR_3PT safety filter: max position step 0.03 m, max orientation step 5 deg, stop after 10 rejects
+Initialized ZMQ manager
+  Host: 127.0.0.1:11556
+  Pose topic: pose
+  Command topic: command
+  Planner topic: planner
+  Conflate: disabled
+  Initial encoder mode: 0
+[INFO] Initial VR 3-point compliance: [0.5, 0.5, 0]
+[INFO] Initial hand max close ratio: 1 (1.0 = full closure allowed, 0.2 = limited)
+[INFO] Keyboard controls: g/h = left hand +/- 0.1, b/v = right hand +/- 0.1 (range: 0.01-0.5)
+[INFO] Keyboard controls: x/c = hand max close ratio +/- 0.1 (range: 0.2-1.0)
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Compliance control: DISABLED                                               │
+│  Policy does not observe 'vr_3point_compliance'.                            │
+│  Keyboard controls (g/h/b/v) will be ignored for this policy.               │
+│  To enable, use a compliance-aware policy that observes it natively.        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Initializing realtime debug socket
+Binding to port: 11557 and topic: g1_debug
+[INFO] Realtime debug socket bound to port: 11557
+[ZMQ Output DEBUG] ZMQOutputHandler initialized with topics: 'g1_debug' (combined state+viz), 'robot_config' (config)
+Initialized ZMQ output interface
+[ZMQ Output] Robot config cached (10 fields, 645 bytes)
+Total output interfaces initialized: 1
+[DEBUG] G1Deploy object created successfully!
+[ZMQManager] Planner enabled
+Initializing planner...
+Setting planner_motion encode mode to 0
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [1, 0, 0]
+Planner Init timing - Model: 6740us, Extract: 5us
+Planner initialized
+Planner initialized successfully!
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+[ZMQManager] Waiting for planner to be initialized
+Init Done
+[Control] DEBUG: operator_state.start=true, transitioning to CONTROL state
+Planner() no data in planner_motion_, returning. If control loop is started, this should only happen once when planner is initialized. If control loop is not started, this should keep returning until control loop is started.
+Reset heading state to 0.999912, -0.00602205, 0.0118001, 2.26489e-05
+Reset delta heading to 0
+Reset init reference data root rotation to current frame: 0.710374, -0.013102, 0.01908, 0.703444
+**********************************************************
+Reference motion name: neutral_kick_R_001__A543_M
+**********************************************************
+[Mode Filter] Switched to mode 'g1' (ID=0) with 4 required observations
+Reset heading state to 0.999892, -0.00362273, 0.0142229, 0.000677969
+Reset delta heading to 0
+Reset init reference data root rotation to current frame: 0.999977, 0.000536604, 0.00669896, -3.59734e-06
+**********************************************************
+Reference motion name: planner_motion
+**********************************************************
+[ZMQManager] Waiting for planner to be initialized
+[ZMQManager] motion name is planner_motion
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.999999, -0.00135011, 0]
+Loop timing - LowState age: 4.934ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 4.935ms, Obs: 386us, Policy: 505us, Obs 2 Motor Command: 891us, Post processing: 26us, Planner - Gather Input: 24us, Model: 6777us, Convert50Hz: 7us, Total: 6809us | HandCloseRatio: 1
+Loop timing - LowState age: 5.611ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 5.592ms, Obs: 363us, Policy: 504us, Obs 2 Motor Command: 867us, Post processing: 23us, Planner - Gather Input: 24us, Model: 6777us, Convert50Hz: 7us, Total: 6809us | HandCloseRatio: 1
+Loop timing - LowState age: 4.798ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 4.827ms, Obs: 386us, Policy: 501us, Obs 2 Motor Command: 887us, Post processing: 31us, Planner - Gather Input: 24us, Model: 6777us, Convert50Hz: 7us, Total: 6809us | HandCloseRatio: 1
+Loop timing - LowState age: 4.018ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 4.055ms, Obs: 383us, Policy: 507us, Obs 2 Motor Command: 891us, Post processing: 25us, Planner - Gather Input: 24us, Model: 6777us, Convert50Hz: 7us, Total: 6809us | HandCloseRatio: 1
+Loop timing - LowState age: 3.539ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 3.527ms, Obs: 403us, Policy: 503us, Obs 2 Motor Command: 907us, Post processing: 22us, Planner - Gather Input: 24us, Model: 6777us, Convert50Hz: 7us, Total: 6809us | HandCloseRatio: 1
+Loop timing - LowState age: 2.686ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 2.712ms, Obs: 427us, Policy: 504us, Obs 2 Motor Command: 931us, Post processing: 31us, Planner - Gather Input: 24us, Model: 6777us, Convert50Hz: 7us, Total: 6809us | HandCloseRatio: 1
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.999908, 0.0135622, 0]
+Loop timing - LowState age: 5.568ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 5.592ms, Obs: 369us, Policy: 514us, Obs 2 Motor Command: 883us, Post processing: 35us, Planner - Gather Input: 23us, Model: 5990us, Convert50Hz: 7us, Total: 6021us | HandCloseRatio: 1
+Replanning with mode: SLOW_WALK, target_height: -1, target_vel: 0.2, movement: [-0.99768, -0.0680789, 0], facing: [0.99768, 0.0680789, 0]
+Replanning with mode: SLOW_WALK, target_height: -1, target_vel: 0.2, movement: [-0.99768, -0.0680789, 0], facing: [0.99768, 0.0680789, 0]
+Loop timing - LowState age: 11.539ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 11.52ms, Obs: 477us, Policy: 7380us, Obs 2 Motor Command: 7858us, Post processing: 39us, Planner - Gather Input: 34us, Model: 6499us, Convert50Hz: 4us, Total: 6538us | HandCloseRatio: 1
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.987666, 0.156578, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.984675, 0.1744, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.98137, 0.192126, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.977728, 0.209875, 0]
+Loop timing - LowState age: 10.266ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 10.258ms, Obs: 393us, Policy: 7262us, Obs 2 Motor Command: 7656us, Post processing: 29us, Planner - Gather Input: 28us, Model: 6512us, Convert50Hz: 5us, Total: 6546us | HandCloseRatio: 1
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.973803, 0.227395, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.970428, 0.241391, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.965916, 0.258857, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.961112, 0.276159, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.95598, 0.293432, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.950551, 0.310568, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.944818, 0.327596, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.938771, 0.344541, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.933715, 0.358017, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.92715, 0.37469, 0]
+Loop timing - LowState age: 10.476ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 10.476ms, Obs: 393us, Policy: 7429us, Obs 2 Motor Command: 7822us, Post processing: 41us, Planner - Gather Input: 24us, Model: 6298us, Convert50Hz: 4us, Total: 6328us | HandCloseRatio: 1
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.920513, 0.390712, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.916547, 0.399927, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.912853, 0.408289, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.91114, 0.412097, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.909626, 0.415428, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.90864, 0.417581, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.907846, 0.419303, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.907571, 0.419898, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.907626, 0.41978, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.907092, 0.420931, 0]
+Loop timing - LowState age: 10.717ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 10.695ms, Obs: 452us, Policy: 7747us, Obs 2 Motor Command: 8199us, Post processing: 31us, Planner - Gather Input: 25us, Model: 6365us, Convert50Hz: 5us, Total: 6396us | HandCloseRatio: 1
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.906139, 0.42298, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.905679, 0.423964, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.905247, 0.424885, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.904762, 0.425917, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.902972, 0.4297, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.90176, 0.432238, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.901038, 0.43374, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.900241, 0.435391, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.898394, 0.439191, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.897369, 0.441281, 0]
+Loop timing - LowState age: 8.88ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 8.876ms, Obs: 443us, Policy: 7758us, Obs 2 Motor Command: 8202us, Post processing: 29us, Planner - Gather Input: 29us, Model: 5965us, Convert50Hz: 4us, Total: 5999us | HandCloseRatio: 1
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.896426, 0.443193, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.895155, 0.445755, 0]
+Replanning with mode: IDLE, target_height: -1, target_vel: -1, movement: [0, 0, 0], facing: [0.893923, 0.448221, 0]
+Replanning with mode: SLOW_WALK, target_height: -1, target_vel: 0.2, movement: [0.929461, 0.368919, 0], facing: [0.929461, 0.368919, 0]
+Replanning with mode: SLOW_WALK, target_height: -1, target_vel: 0.2, movement: [0.929461, 0.368919, 0], facing: [0.929461, 0.368919, 0]
+Loop timing - LowState age: 12.646ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 12.668ms, Obs: 364us, Policy: 7413us, Obs 2 Motor Command: 7777us, Post processing: 33us, Planner - Gather Input: 23us, Model: 5903us, Convert50Hz: 5us, Total: 5932us | HandCloseRatio: 1
+Replanning with mode: SLOW_WALK, target_height: -1, target_vel: 0.2, movement: [0.929461, 0.368919, 0], facing: [0.929461, 0.368919, 0]
+Loop timing - LowState age: 11.445ms, Streaming data mean delay: 0ms, Streaming data std delay: 0ms, IMU age: 11.404ms, Obs: 356us, Policy: 6987us, Obs 2 Motor Command: 7344us, Post processing: 35us, Planner - Gather Input: 19us, Model: 6129us, Convert50Hz: 6us, Total: 6155us | HandCloseRatio: 1

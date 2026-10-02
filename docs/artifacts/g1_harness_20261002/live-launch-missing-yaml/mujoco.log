@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261002/bottle_live_sim_worker.py", line 69, in <module>
+    main()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261002/bottle_live_sim_worker.py", line 65, in main
+    worker.main()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py", line 30, in main
+    instantiate_g1_robot_model(), config.env_name, wbc_config,
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/instantiation/g1.py", line 57, in instantiate_g1_robot_model
+    robot_model = RobotModel(
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/robot_model.py", line 24, in __init__
+    self.pinocchio_wrapper = pin.RobotWrapper.BuildFromURDF(
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/cmeel.prefix/lib/python3.10/site-packages/pinocchio/robot_wrapper.py", line 17, in BuildFromURDF
+    robot.initFromURDF(filename, package_dirs, root_joint, verbose, meshLoader)
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/cmeel.prefix/lib/python3.10/site-packages/pinocchio/robot_wrapper.py", line 21, in initFromURDF
+    model, collision_model, visual_model = buildModelsFromUrdf(filename, package_dirs, root_joint, verbose, meshLoader)
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/cmeel.prefix/lib/python3.10/site-packages/pinocchio/shortcuts.py", line 49, in buildModelsFromUrdf
+    geom_model = pin.buildGeomFromUrdf(model, filename, geometry_type, package_dirs = package_dirs)
+KeyboardInterrupt

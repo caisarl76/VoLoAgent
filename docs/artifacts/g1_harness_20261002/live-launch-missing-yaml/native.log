@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/run_vla_inference.py", line 1095, in <module>
+    main(config)
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/run_vla_inference.py", line 405, in main
+    from gear_sonic.utils.inference.harness_control import HarnessControl, RuntimeFacts, validate_native_action
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/inference/harness_control.py", line 15, in <module>
+    from .harness_profile import load_profile, validate_skill_call
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/inference/harness_profile.py", line 8, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
