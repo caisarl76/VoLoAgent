@@ -1,0 +1,12 @@
+{
+  "browser": "local headless Chrome",
+  "robot_connection": false,
+  "default_corrected_frames": 44,
+  "original_confirmation": "Second raw-complete frame confirms the false success",
+  "corrected_last_frame": "44/44 remains in progress",
+  "image_navigation": "tabs, next, previous and range passed",
+  "mobile_width_px": 390,
+  "javascript_errors": 0,
+  "external_page_http_requests": 0,
+  "outcome": "passed"
+}

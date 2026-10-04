@@ -1,0 +1,21 @@
+{
+  "validation_date": "2026-10-02",
+  "visualization_created_at_utc": "2026-10-04T14:48:12.265634+00:00",
+  "source_agent_commit": "d9fe414",
+  "robot_connection": false,
+  "report_scope": "Saved evidence only; no live status polling or robot controls",
+  "browser_checks": "browser-checks.json",
+  "files": {
+    "browser-checks.json": "4ec7d1c3b9f8a24dec079648cbe10530515584498ffcc7ee0d28ab568103c413",
+    "build_report.py": "c93192996f87a53d0c237cb7bd6f4d6f54add890530c75d308243d345b3a07e2",
+    "report-desktop.png": "f577c6b1b5a00240afbb68d8271567f8bc666871d70dbbdd9e209598ebe7b384",
+    "report-mobile.png": "3b3612ec3b4e43301364abce1921375525c9b3a39363b9dbf59d3b052f73ba3e",
+    "report.html": "ef8e84b938da70da9b130acb8800403a95aea90bfb161cbdbd2ff7bac360c4a7",
+    "results-overview.pdf": "8a8d9288a9b7d15b8770d5b87ab16a8c80288d6b7fb0b59722ea43dd5ef56b67",
+    "results-overview.png": "557b166701d4e43062b1d8a8010d5aa4b3d3435491b10c8903271b957b325262",
+    "turning.svg": "a1f8918c2995b178b4e90d3ac2384aa3f31475d7ab714d692e32858bec486fa3",
+    "validate_report.mjs": "e7e27971c5fd4ac90a50d67eac93386f1172c9fe80e33e8e57b4ee1b96d12325",
+    "visualization-data.json": "f0322cb555c559bec33f64231877036ddc501e05170303d43ebceed89eb89ccc"
+  },
+  "verification": "Browser interaction checks passed; generated SVG whitespace normalization preserves XML structure and every path/attribute."
+}
