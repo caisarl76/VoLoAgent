@@ -1,0 +1,1 @@
+Initial extraction stopped after episode 5 images: hashlib.file_digest requires Python 3.11, but the workstation evaluation environment is Python 3.10. The script now uses streamed hashlib.sha256. This partial folder is not the review index.

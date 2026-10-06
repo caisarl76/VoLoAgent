@@ -1,0 +1,1834 @@
+{
+  "schema_version": 1,
+  "prompt": "pick drink bottle and place it on the right table",
+  "action_horizon": 40,
+  "training_ready": false,
+  "training_performed": false,
+  "dataset_exported": false,
+  "current_checkpoint_evaluation_is_held_out": false,
+  "split_scope": "Proposal for a new derived dataset and future checkpoint. Current checkpoint already trained on retained references. No new dataset is claimed.",
+  "eligibility_policy": "Default successful bottle demonstrations with explicit task-boundary/evidence review. Failed trials remain evaluation references; recovery training would need a separate explicit label policy. No task label is inferred from control mode. Each full 40-frame action window must remain within one accepted segment.",
+  "episodes": [
+    {
+      "source_episode": 0,
+      "prepared_episode": 0,
+      "source_sha256": "d8adb7d00343682ca29d1f8720fcb5b2f2eda95da7c7a47eac82402b7e55a2af",
+      "frames": 37,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 1,
+      "prepared_episode": 1,
+      "source_sha256": "7e6e0f4711d867032f06ceaec6c11708fd63f87b2ac644a8d0f71ccc88cd59c7",
+      "frames": 1131,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 2,
+      "prepared_episode": 2,
+      "source_sha256": "c99cbb9f6490739cff6240e176507040e11860732f020f3765e7a6012ca1f9b9",
+      "frames": 927,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 3,
+      "prepared_episode": 3,
+      "source_sha256": "ce7632be2cfbe62dbd82005ea259149ffa4c3ce8bc3720c8718f925bb4741303",
+      "frames": 845,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 4,
+      "prepared_episode": 4,
+      "source_sha256": "479f6c3266894dc47e87bf769084e68b30ab3171db9852e1c8f781da657d6090",
+      "frames": 884,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 5,
+      "prepared_episode": 5,
+      "source_sha256": "9b05fa51dd570bd22bcc78c3ceac5c9a54a76a12afcba17d5abe31f3d11a7142",
+      "frames": 977,
+      "split": "held_out",
+      "segments": [],
+      "review_candidates": [
+        [
+          0,
+          4
+        ],
+        [
+          14.5,
+          19.52
+        ]
+      ],
+      "note": "Reserved whole source episode for a future training run; already seen by the current checkpoint."
+    },
+    {
+      "source_episode": 6,
+      "prepared_episode": 6,
+      "source_sha256": "e2cc27d4421976ab4ca4c1ecac22fe3debe910edf022073d2c841e363ca0dbb8",
+      "frames": 962,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 7,
+      "prepared_episode": 7,
+      "source_sha256": "b6cbc0e30fcbae9e399585ae109d3af05be377118abbe2dcf024ecbc400d343d",
+      "frames": 911,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 8,
+      "prepared_episode": 8,
+      "source_sha256": "c0c1a7668752f551dc48b9537565dc12ff09e53f055072bc6f7897cfe1c80b9e",
+      "frames": 49,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 9,
+      "prepared_episode": 9,
+      "source_sha256": "2f2fe39aae489aafca43f3dfcb85c768b1de667209b9869e82116fe820203054",
+      "frames": 863,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 10,
+      "prepared_episode": 10,
+      "source_sha256": "9423483f9a8e06e647babe4f5b007fe9863c0574bbbc4ffc0d78e5c061cbf451",
+      "frames": 1038,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 11,
+      "prepared_episode": 11,
+      "source_sha256": "cb34bedbfe09ca587e7885856557f9c682e264d0e9e9be8668b225baec94fa87",
+      "frames": 1006,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 12,
+      "prepared_episode": 12,
+      "source_sha256": "d22d34c2a8adddcd588f88fd926944ab3b5193fbfe2071d9620bd6f675a60817",
+      "frames": 945,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 14,
+      "prepared_episode": 13,
+      "source_sha256": "8530b367900b668687ea8d695162311e41aa5785aec87a179fa80dfe3aeb57dc",
+      "frames": 27244,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 15,
+      "prepared_episode": 14,
+      "source_sha256": "05e0189b2761344dd598088f9ead4f6b915fd2814997499ebccec9f95e224eb6",
+      "frames": 1095,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 16,
+      "prepared_episode": 15,
+      "source_sha256": "cd2d5e1361a49bd8352b1a77b27fa7222a0141ccfde9929c0e57e349d7a843ef",
+      "frames": 984,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 17,
+      "prepared_episode": 16,
+      "source_sha256": "26a7c4c7e130221a491b1a0b62585eafee1e38f5bc1a215e4646ac055817e1ff",
+      "frames": 1327,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 18,
+      "prepared_episode": 17,
+      "source_sha256": "a3b9e16a00dec8d3037326076d14a36d8340d713cd06937383852e132d6e935a",
+      "frames": 2024,
+      "split": "held_out",
+      "segments": [],
+      "review_candidates": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          35.4,
+          36
+        ],
+        [
+          36,
+          40.46
+        ]
+      ],
+      "note": "Reserved whole source episode for a future training run; already seen by the current checkpoint."
+    },
+    {
+      "source_episode": 19,
+      "prepared_episode": 18,
+      "source_sha256": "8b9e04b20d49962309c41a96c0ff847df34aedc18b1ac7f882386f16ab8beccf",
+      "frames": 45,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 20,
+      "prepared_episode": 19,
+      "source_sha256": "c3caad9b1c0526733f33b45ffa815b51deedf991f811b5e2538fa64058a7be00",
+      "frames": 809,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 21,
+      "prepared_episode": 20,
+      "source_sha256": "ce48bf7f60d34f099c432c82b8491cc5a533dc8159d0ab65f2367fd54f04abe0",
+      "frames": 828,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 22,
+      "prepared_episode": 21,
+      "source_sha256": "52e96e34cbe72f83191b79b2b11833b7d25415765968394aac0862e175471b03",
+      "frames": 959,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 23,
+      "prepared_episode": 22,
+      "source_sha256": "cb650188453610ebbacd13ac89736cf5685613eb2b43a8574b2f93d40c56e358",
+      "frames": 1105,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 24,
+      "prepared_episode": 23,
+      "source_sha256": "830a730e158cfcc26e5d71c7b7c380c76256938658490f021f7e0c7a82213a20",
+      "frames": 1147,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 25,
+      "prepared_episode": 24,
+      "source_sha256": "402b41f7c9b535929fb1106b058facbe75de9aa8a468aa20f1c60edc3aa7f243",
+      "frames": 859,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 26,
+      "prepared_episode": 25,
+      "source_sha256": "df876693b0912dd8bd08f58e66027751b479bb816b0c7a7aaf8b62786a715972",
+      "frames": 954,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 27,
+      "prepared_episode": 26,
+      "source_sha256": "7ded0f738eee7a677fe4e2bed17018798a84109c9e730a88e4154222f73b7751",
+      "frames": 1017,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 28,
+      "prepared_episode": 27,
+      "source_sha256": "9365373909d50d6f454c4f5cb6a0ab716e7c6c33d9ec07279f060f14ba86e747",
+      "frames": 1018,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 29,
+      "prepared_episode": 28,
+      "source_sha256": "c8f65cf23ac813daa343ca5efb41c06205789a2708faf949cb5c6bc02bc3ec20",
+      "frames": 747,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 30,
+      "prepared_episode": 29,
+      "source_sha256": "5f7bd4d71cde051b1eb8de8aaf0029a97558c254a722a9170fa8b9178e02c23c",
+      "frames": 1145,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 31,
+      "prepared_episode": 30,
+      "source_sha256": "032db40286a22c0d40587becec4fbc69ba6123242908d012ae3846b8099125e7",
+      "frames": 875,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 32,
+      "prepared_episode": 31,
+      "source_sha256": "6938a8cf8f0c3f7a384570d06b86e01f1fd90a3b1ee17e99be27af4e7377a4e7",
+      "frames": 1082,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 33,
+      "prepared_episode": 32,
+      "source_sha256": "41423b9c582f14973ecac390cd9ca1b3454115e2b230a4044fcba2432d6b3b30",
+      "frames": 1201,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 34,
+      "prepared_episode": 33,
+      "source_sha256": "a19d54f02bdfd0662dc14cd3b0c548bfc2ab735a0a2bf3ce6dc82be2e0aad2a7",
+      "frames": 1362,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 35,
+      "prepared_episode": 34,
+      "source_sha256": "c2e922b724071fc939309e86ddcb4108a26cfb440523d5244e068ca53e989e0f",
+      "frames": 799,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 36,
+      "prepared_episode": 35,
+      "source_sha256": "10fe5961365de60f03a0d684f3b7a3e55274510b0be07fa9eec3b7927fb7b535",
+      "frames": 1077,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 37,
+      "prepared_episode": 36,
+      "source_sha256": "47c58dabcff75b9b8f69068e2f1fb3470d3559d66b00584d97d4998437fe9d3c",
+      "frames": 1030,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 38,
+      "prepared_episode": 37,
+      "source_sha256": "829e88b6b759ce1f4b2092396d8c2aa2b4c86a1fd5a1693845bba257ff37ecd4",
+      "frames": 1134,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 39,
+      "prepared_episode": 38,
+      "source_sha256": "def16acfd9fedd936e1d3809ef6370995ccf21afbe17757e87183b4b111016c7",
+      "frames": 877,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 40,
+      "prepared_episode": 39,
+      "source_sha256": "6c7a00f7c75a94537100c95b38ba5ab5623da93b76eef614b2af4afb16dff8d0",
+      "frames": 977,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 41,
+      "prepared_episode": 40,
+      "source_sha256": "31f91ecf13af9151981f33132564a4a40468f5ef249e6b82e7827580081809ac",
+      "frames": 2592,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 42,
+      "prepared_episode": 41,
+      "source_sha256": "7fceeeb66a2a4040b4e34c35bc36f1c413b8e6925f43b2704d7d6069be27c5e7",
+      "frames": 1329,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 43,
+      "prepared_episode": 42,
+      "source_sha256": "e4c15e1c6dc8d11c35f7315e83318dcfb5fc46e0f57ffedba5f7f14dd1436ab2",
+      "frames": 806,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 44,
+      "prepared_episode": 43,
+      "source_sha256": "0a5d2395c911cc78e764c5a7bae797cb4df2ec528f4008dde320239f8d3832b2",
+      "frames": 1130,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 45,
+      "prepared_episode": 44,
+      "source_sha256": "f6e4c1714129cd8acdd2304127bbfd3d8c6c01b20f1f90dfd439409848511084",
+      "frames": 1209,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 46,
+      "prepared_episode": 45,
+      "source_sha256": "c564d6a280f0f03bc2c9eb7aa77a1064d635e3d5352d0649a4ff5fda1137606e",
+      "frames": 1023,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 47,
+      "prepared_episode": 46,
+      "source_sha256": "b698568196bfd9648c99d5d1bc97c81dc2c96024b9cdd7660e6622f4e26772f1",
+      "frames": 1289,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 48,
+      "prepared_episode": 47,
+      "source_sha256": "f54521856636a68486ae111edf3d570d4cdeb6d5aa6f0d6ebb2ce88965e90b4e",
+      "frames": 1048,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 49,
+      "prepared_episode": 48,
+      "source_sha256": "db6cd74b1249cc2adfa84dd4a44bd41f32f1d4eb078cfb96a94010afaad5bbd3",
+      "frames": 1055,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 50,
+      "prepared_episode": 49,
+      "source_sha256": "ad125547fe6a69faca327ca68b3f1bdeb2f6a3b662c1b12b9b8c0c64d75e2f3c",
+      "frames": 1187,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 51,
+      "prepared_episode": 50,
+      "source_sha256": "1f3ff55149a04aab567c7ab330f070f7f6687af607456c127dc05a1d0b29b843",
+      "frames": 771,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 52,
+      "prepared_episode": 51,
+      "source_sha256": "1960737f53c62aadaee2d426dd0a1708df4b6019e55b003929dc56c38f6044cc",
+      "frames": 2750,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [
+        [
+          49,
+          54.98
+        ]
+      ],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 53,
+      "prepared_episode": 52,
+      "source_sha256": "150aa98d656cd762dd406f095284c39789146237800c4ac5a0267d0d8bb0455f",
+      "frames": 970,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 54,
+      "prepared_episode": 53,
+      "source_sha256": "7fa44b95a7462c94324c4be217cce2080b38c318d76b40c6f89c5308f2a585ac",
+      "frames": 971,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 55,
+      "prepared_episode": 54,
+      "source_sha256": "1eb935b26cda89d231186787390b2444b3a536ae4eb0009c1e9fea950c058e9c",
+      "frames": 1073,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 56,
+      "prepared_episode": 55,
+      "source_sha256": "d68cffe694811d2c1c0cf77f9e96cca4a9f1846512feec3367dfa5d93ddf042c",
+      "frames": 655,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 57,
+      "prepared_episode": 56,
+      "source_sha256": "3216b2e0b99e7976df90361294a0be5dde8c8d57f835ef02ecfbf6b37b9607f9",
+      "frames": 525,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 58,
+      "prepared_episode": 57,
+      "source_sha256": "1b5fbcf37ff3e8f9a25bceb8e9b277e07d60eef864c26d57c44fead4cab942cd",
+      "frames": 613,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 59,
+      "prepared_episode": 58,
+      "source_sha256": "116d1db33f62da59a2962114f11bb3ed56602fe59434ef9bfcce17b8257e2119",
+      "frames": 1063,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 60,
+      "prepared_episode": 59,
+      "source_sha256": "30545bedc9c0d33c19949ece05583898124a8605dd0e2d17b68fd2a96c4d91cb",
+      "frames": 136,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 61,
+      "prepared_episode": 60,
+      "source_sha256": "0974dff587a1279adb62ab6ae7dbe894a9169bc66c00f98b9d53b9287351ffd9",
+      "frames": 1174,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 62,
+      "prepared_episode": 61,
+      "source_sha256": "973c534f531cbb63579810d9448d0e5c5ec0de8efdd9901899ef34c43fb5432f",
+      "frames": 1042,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 63,
+      "prepared_episode": 62,
+      "source_sha256": "cf7dcdcf69488e20116bc654c8d5727a158e0da0e9c8defd4b796a6e90aaab9c",
+      "frames": 992,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 64,
+      "prepared_episode": 63,
+      "source_sha256": "9abc71b8f765a0dd87c5d444d11e2f023bc5eca3f08619b0de2f9775a9247dfa",
+      "frames": 988,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 65,
+      "prepared_episode": 64,
+      "source_sha256": "b976150bcf15711dd1e1d309cebd8814fdfba1cb6c1464b2bb5c805e295b5d08",
+      "frames": 959,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 66,
+      "prepared_episode": 65,
+      "source_sha256": "c1eae41a2a6eaa5a856bd6b8ded6094974c9ee300e97af96a642e07dc71de154",
+      "frames": 969,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 67,
+      "prepared_episode": 66,
+      "source_sha256": "57380bbf8311eb09e050bdd7554edfd40426c140d276d97dcc8c284c91202695",
+      "frames": 1093,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 68,
+      "prepared_episode": 67,
+      "source_sha256": "840898f8bb4e094033cf35af2d4d007fa520cabb717351b604f89357442ca83d",
+      "frames": 70,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 69,
+      "prepared_episode": 68,
+      "source_sha256": "e19cddfd9fe1a1b2fe8b17ad9fd1a0fe451494bc29d8860a53509b20a8b9d2c0",
+      "frames": 84,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 70,
+      "prepared_episode": 69,
+      "source_sha256": "7d7dce6ed17cdb19ac6ab2ea8d8ba6d08af63dc85dfc5d604e08363b9c969900",
+      "frames": 1275,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 71,
+      "prepared_episode": 70,
+      "source_sha256": "de8913cbebd1ad7300d1c9b530f56a45d4e2c020a46efcccb7d595025f10eaf0",
+      "frames": 1516,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 72,
+      "prepared_episode": 71,
+      "source_sha256": "1063d3a30007b7ead7d1dd30aba4f284e99550fd412584ff3cdb893317f5408c",
+      "frames": 902,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 73,
+      "prepared_episode": 72,
+      "source_sha256": "a3f97eced6b8714261263d82934914932928d93c23724e0761be14e30de43e2c",
+      "frames": 902,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 74,
+      "prepared_episode": 73,
+      "source_sha256": "0faae1ec6048aca926a75a093f4745453e4377303741146607a0cb4503b99084",
+      "frames": 870,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 75,
+      "prepared_episode": 74,
+      "source_sha256": "2d7b4a7b48063e772aa215b911d48652b69679eb020217334630234fb977b61e",
+      "frames": 914,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 76,
+      "prepared_episode": 75,
+      "source_sha256": "6240cddb4e2b1afe940187c11d0ee3c323ecf0e9cff7b5e176f23da853749f79",
+      "frames": 1933,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 77,
+      "prepared_episode": 76,
+      "source_sha256": "edd35f42b9e503fb31e1fae0363ebce8025b2948206ccdffe36328e79e1195f5",
+      "frames": 1848,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 78,
+      "prepared_episode": 77,
+      "source_sha256": "801a9364e201e3fa5a53deaf03c8e62e73d532601373d8971f5d708cddf51dd6",
+      "frames": 3952,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [
+        [
+          35,
+          37.2
+        ],
+        [
+          37.2,
+          37.4
+        ],
+        [
+          37.4,
+          44
+        ]
+      ],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 79,
+      "prepared_episode": 78,
+      "source_sha256": "3d7a304ab2ba9a918a0db89ea39172545a6f76e328fdfd06d04624462583db3a",
+      "frames": 1032,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 80,
+      "prepared_episode": 79,
+      "source_sha256": "f361edd5cd0c30d1c5c5c1edebdae9882934df3c938612f0f1fa095d3b141c74",
+      "frames": 343,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 81,
+      "prepared_episode": 80,
+      "source_sha256": "5aa3b13af1b6693a5907ab73d2cab2a91bdc3eedbdbfb3dfcce62af137f8e0ef",
+      "frames": 1977,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 82,
+      "prepared_episode": 81,
+      "source_sha256": "c4255999789a74e33f6e3da6b2836a18692e6c397e6e57bd99608b2aa529f2bf",
+      "frames": 1656,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 83,
+      "prepared_episode": 82,
+      "source_sha256": "4bf96878dfe3a9b89258cd2cd22c1967aa1439d0ded32c4aa105aecbb3388351",
+      "frames": 165,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 84,
+      "prepared_episode": 83,
+      "source_sha256": "9d3efa1e34875637b76e4f644a71f16b2ea857370d23f726f418de6770d175dd",
+      "frames": 608,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 85,
+      "prepared_episode": 84,
+      "source_sha256": "055021183fd3cc246f500c8c044b614da2eb9aeab16fa8f7f967816a8247b328",
+      "frames": 1539,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 86,
+      "prepared_episode": 85,
+      "source_sha256": "30840c1c7cd9c00542a08ff402d16ec5e590f9110b58b2dda73a76a8494a5ec0",
+      "frames": 1717,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 87,
+      "prepared_episode": 86,
+      "source_sha256": "5abbdc1792789f4f821448896d712dda08b05e2f4ed9ce32ef6ab763f49d7715",
+      "frames": 1807,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 88,
+      "prepared_episode": 87,
+      "source_sha256": "5cb5ce474a4cd39046e9cf082055cd8b8a5f64b7f2266515e75c79f440943a34",
+      "frames": 2696,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 89,
+      "prepared_episode": 88,
+      "source_sha256": "d3074c8d7b7a659ad32f6d23ebc87430f2a2f9b3d3e2fb009ba2d3d75a17e7b6",
+      "frames": 1801,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 90,
+      "prepared_episode": 89,
+      "source_sha256": "f982ece95d831a9215c7db8fc6270c654add192dd28a1074efe400e86b73e5c6",
+      "frames": 1661,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 91,
+      "prepared_episode": 90,
+      "source_sha256": "15898ec01d1e0286575c1bd8f803039e27e7d0720251dc07f73fefd5a4ed33e8",
+      "frames": 2971,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 92,
+      "prepared_episode": 91,
+      "source_sha256": "aa863698a6973c1cd78519a4f93d9412e82a561d9453952f085ff76b161bacc6",
+      "frames": 2145,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 93,
+      "prepared_episode": 92,
+      "source_sha256": "c8a7ec67f2189d698afe4c610404af27353f4d3743a1b1c8f323d5813ad99096",
+      "frames": 2907,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 95,
+      "prepared_episode": 93,
+      "source_sha256": "327eb05f90cc02e714206367b1adfce256a68ba0ff6439f08136436b8eb6b175",
+      "frames": 1709,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 96,
+      "prepared_episode": 94,
+      "source_sha256": "cf91e1a9464c47493722ad535f1b0c439e181ca8491eae3eb7d3f313871dd5bd",
+      "frames": 1702,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 97,
+      "prepared_episode": 95,
+      "source_sha256": "6dad02708f436b9f703c7248e3a257150d0f05ca56a24222b25f06db72273958",
+      "frames": 1857,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 98,
+      "prepared_episode": 96,
+      "source_sha256": "fb39dcb2d9bbd2c5023ae3b68ca4a3055c7d74a2ce24aff891b80f8a67c531d1",
+      "frames": 1786,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 100,
+      "prepared_episode": 97,
+      "source_sha256": "629ab2ec41b0feb227071061e940e4e4fd8284bed8a65d2258be5d9c1046b0f7",
+      "frames": 90,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 101,
+      "prepared_episode": 98,
+      "source_sha256": "d934c1737a51b9ee46ae83fd330b3294452180422346713fe4abf1f2b7122173",
+      "frames": 1562,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 102,
+      "prepared_episode": 99,
+      "source_sha256": "2f938c6730671176f8ca1341d4de2197edc5f9a30a49ff98ac1a1ef365c6f1e7",
+      "frames": 1655,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 103,
+      "prepared_episode": 100,
+      "source_sha256": "4b009532970a808fcbc7a2561a377f10201c4e9bdeb90e9b27269a0bf59ee06f",
+      "frames": 2082,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 104,
+      "prepared_episode": 101,
+      "source_sha256": "b476537269fed1370bbc59f1fa9d23fc3fb03af9099111f15acd73bb54089372",
+      "frames": 1744,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 105,
+      "prepared_episode": 102,
+      "source_sha256": "f5b54b83d1f362cf99f616acfe82a602d4dc0a47086681f170b1e97a71fca31d",
+      "frames": 1819,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 107,
+      "prepared_episode": 103,
+      "source_sha256": "4013809e7b69d8e711f450dc656a021c175b2e03e321f4068658532ef62bb367",
+      "frames": 2248,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 108,
+      "prepared_episode": 104,
+      "source_sha256": "a8004d8788dbe8aa6d0c83647038187b3238264a4a863a0b51cffc545ad93428",
+      "frames": 1768,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 110,
+      "prepared_episode": 105,
+      "source_sha256": "08b332188ec748aa668bf66235994b2db8d958fc438326735a0c707a5c592183",
+      "frames": 1947,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 111,
+      "prepared_episode": 106,
+      "source_sha256": "03f89f95c4e483bba518f3a66b378a3ea4dcbb478c277815f72797757206626d",
+      "frames": 1718,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 112,
+      "prepared_episode": 107,
+      "source_sha256": "5a90f4d6aa0a675cd7483d6c0b64ac04816b96fabc3f6ef1fe36ba9a88c68417",
+      "frames": 1762,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 113,
+      "prepared_episode": 108,
+      "source_sha256": "db2aa48c24bcf6ea38a3bfaa9feeec883be5cb22c8668de8f4263bf691b667b5",
+      "frames": 1812,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 114,
+      "prepared_episode": 109,
+      "source_sha256": "a314a576695617cd74cb21baabf03b1cb0e74efc47576f0f8b733cefa9788b66",
+      "frames": 2124,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 115,
+      "prepared_episode": 110,
+      "source_sha256": "2dff3a344190256d2c7017f2ddf3c4cc4a0218336a76b2d504c5aef286b3626e",
+      "frames": 1737,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 116,
+      "prepared_episode": 111,
+      "source_sha256": "97fa0b73a34d536f045929e705b11ebe5238396a95c2d5f96991b9b6d143d15b",
+      "frames": 1987,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 117,
+      "prepared_episode": 112,
+      "source_sha256": "eef0f14043c755246260096f50c8fa2039d342f34aa760ddcdbc2e2dd2f38f2e",
+      "frames": 1801,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 118,
+      "prepared_episode": 113,
+      "source_sha256": "fdec42cca48d1a74f7d26e9a90ddc176469f7f954f0731676ac8152e610399f6",
+      "frames": 3121,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 119,
+      "prepared_episode": 114,
+      "source_sha256": "7c96a666e61397da407ac136a764135af91ff524602b99c49a2c27910480bb56",
+      "frames": 2026,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 120,
+      "prepared_episode": 115,
+      "source_sha256": "90cc9cb1f798f3dca18459deb19d052d7aea6607f43efa061627368378470c79",
+      "frames": 2004,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 121,
+      "prepared_episode": 116,
+      "source_sha256": "42fef85b6ea0bd7659ee4d710904c8b3f0ddf630119df2539341cb57bdb43440",
+      "frames": 1601,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 122,
+      "prepared_episode": 117,
+      "source_sha256": "7f9ba88b863dabe897af2df571d105907ca8ada82108ecab6250ed3631723102",
+      "frames": 549,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 123,
+      "prepared_episode": 118,
+      "source_sha256": "f6c5fd7b7e7cf32083ef7b15a8bb7e841b4003612f50ac41e7b4c367ec823735",
+      "frames": 195,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 124,
+      "prepared_episode": 119,
+      "source_sha256": "a026af420af81a75b1759b9666c7527026b24aa010c264930c8c883d46dbba24",
+      "frames": 1795,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 125,
+      "prepared_episode": 120,
+      "source_sha256": "16986721dcfd26f9df3da9e3aeee630f27ac21ce10359206aa5f11a0ff2a7bda",
+      "frames": 2300,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 126,
+      "prepared_episode": 121,
+      "source_sha256": "7eac59470e86414c60e9710b0b0c26d47975cbb4fb6e2b72b1507e2dd182bb71",
+      "frames": 1615,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 127,
+      "prepared_episode": 122,
+      "source_sha256": "e3217fce8c251688be9a3ea8cbdf365c8fa09151d9613c57333d69025f6bd7b0",
+      "frames": 1741,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 128,
+      "prepared_episode": 123,
+      "source_sha256": "6c36ebbdd95ce0cd8c18dc11d58f5794746cbd74baa2f008613e53aba1df270c",
+      "frames": 2921,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 129,
+      "prepared_episode": 124,
+      "source_sha256": "d90fd08239beaf0c5b2c1521be23c26b8ed0a0e028fb10cb0c25791da1686262",
+      "frames": 1400,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 130,
+      "prepared_episode": 125,
+      "source_sha256": "0b3fac646729e8a0b0443abe4b0f14d2c40d88cc84cb6fd246a6da9cd244d825",
+      "frames": 1748,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 131,
+      "prepared_episode": 126,
+      "source_sha256": "1bb9c757732f481082d6dc424e7344b8073b9c932be6c89269a926d9d865e5c9",
+      "frames": 3158,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 132,
+      "prepared_episode": 127,
+      "source_sha256": "927f229d7766f863ffa557157f810349479beb07c73cd40244f4e610ac8d859a",
+      "frames": 1746,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 133,
+      "prepared_episode": 128,
+      "source_sha256": "23e62d0f0c0987c3e8787d83e612b386d5c0194c3279d2aafadc084e435eb205",
+      "frames": 1953,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 134,
+      "prepared_episode": 129,
+      "source_sha256": "3f468514905f64f0616f9ab6c230ce4175210f7a5c0d3581de5f7c8e1e233bd2",
+      "frames": 1635,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 135,
+      "prepared_episode": 130,
+      "source_sha256": "69ebb7e16d4a4cd6f129d563bd7cb08f737955ea1f40562a69b64d7eb724e1fb",
+      "frames": 1650,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 136,
+      "prepared_episode": 131,
+      "source_sha256": "a1268577857e9656f75b83e5cad94e97fb8b3c17297ec5e36fe41edf4f0554e8",
+      "frames": 2032,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 137,
+      "prepared_episode": 132,
+      "source_sha256": "1cb0635b036c530946f6182060f0d8f82acb9d2e48ab5c5e9c670f0d1f01fab3",
+      "frames": 1963,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 138,
+      "prepared_episode": 133,
+      "source_sha256": "f7cb02d7a11763bedb41b6290ea735b6662c900453075b8906ee2d281105e8ab",
+      "frames": 163,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 139,
+      "prepared_episode": 134,
+      "source_sha256": "8990ae8124fd8f89ca5aa66e9890ec09cb004c94aa1bae145e258d5b8f71aad2",
+      "frames": 204,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 140,
+      "prepared_episode": 135,
+      "source_sha256": "7c2aa0d3746efcb4e18a2ce56b56121923ffbb320f153d580f98d0a2a84117a2",
+      "frames": 1296,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 141,
+      "prepared_episode": 136,
+      "source_sha256": "645c81d06136304dbace97f5b0531819863d2ae29de1eae34baf483f8340fc57",
+      "frames": 106,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 142,
+      "prepared_episode": 137,
+      "source_sha256": "6a88ef0bd212b31e4fbf23b3367a834b575cd0f0100614691a6b15aa7746b3b9",
+      "frames": 60,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 143,
+      "prepared_episode": 138,
+      "source_sha256": "384782fe662645325c17bec519649795c6bbcdc61622ce5194603ea67e594306",
+      "frames": 124,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 144,
+      "prepared_episode": 139,
+      "source_sha256": "7544eee9c7766d954cfee1292cb80dca2144b69e750de7c21b4c70f4e9868be3",
+      "frames": 1783,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 145,
+      "prepared_episode": 140,
+      "source_sha256": "0c87d0f2821992141342be91b2a17e6e6d53760ea522fe614d9270e45f4c9489",
+      "frames": 1523,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 146,
+      "prepared_episode": 141,
+      "source_sha256": "018dd86cf0a1feb4fc2718ded64c2d6b0c3e26eb1f2ee3c80b11d62f905469b2",
+      "frames": 1423,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 147,
+      "prepared_episode": 142,
+      "source_sha256": "d7b9ee16259eefcf8a8c987fc22489893f12f2dc6eb5b407aa91d58a9775aec5",
+      "frames": 3223,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 148,
+      "prepared_episode": 143,
+      "source_sha256": "992dd054b107b289a3132f47236d8e88a954e21c556a4d3e7e2df0bd81f429d9",
+      "frames": 1854,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 149,
+      "prepared_episode": 144,
+      "source_sha256": "ac2b6d62e896bfa2dc3253512b070b852d1587cfb917dc28126cc7b2641c6b01",
+      "frames": 2040,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 150,
+      "prepared_episode": 145,
+      "source_sha256": "c278375394c34dbcdba5ce36b0e4e2a95ead7964a298b7d48eda3ee358ff6e4b",
+      "frames": 3719,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 151,
+      "prepared_episode": 146,
+      "source_sha256": "ee6c42a315a1502399b6e0a24547fece20c48d45a429d6df0b225864aca20f7d",
+      "frames": 1693,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 152,
+      "prepared_episode": 147,
+      "source_sha256": "d5f2885491365f9c6ca7f82c37a53caa39021995facbaa56b0300bfff83f4454",
+      "frames": 291,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 153,
+      "prepared_episode": 148,
+      "source_sha256": "38ab770c1d7cedc5125038fa7381581405f473e59fbc569f584af134a5caf2ee",
+      "frames": 859,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 154,
+      "prepared_episode": 149,
+      "source_sha256": "75b09ace54d53706f1250395020461e81c8590618b4d19fd3f80043b8d454e7b",
+      "frames": 2114,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 155,
+      "prepared_episode": 150,
+      "source_sha256": "12881accf88bd40924dc7ed8fabf23947d3394c2bde568d45f554fe02e40a835",
+      "frames": 8501,
+      "split": "quarantine",
+      "segments": [],
+      "review_candidates": [
+        [
+          4,
+          8
+        ],
+        [
+          12,
+          24
+        ],
+        [
+          26,
+          38
+        ],
+        [
+          40,
+          50
+        ],
+        [
+          52,
+          70
+        ],
+        [
+          90,
+          170
+        ]
+      ],
+      "note": "Quarantine pending task segmentation; do not assume the whole episode lacks a bottle task."
+    },
+    {
+      "source_episode": 156,
+      "prepared_episode": 151,
+      "source_sha256": "c8d6a85837dd82af6ce351228f542598200730b79478c51dec577bef5cd8d2e2",
+      "frames": 1021,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 157,
+      "prepared_episode": 152,
+      "source_sha256": "cb8ffcbe0f4135669c6de23aea98a031f32a6eccf7cb2b1f978d7cf5674b0826",
+      "frames": 903,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 158,
+      "prepared_episode": 153,
+      "source_sha256": "467f375abfea90267bb3cad0009b92fe699da4fe4b2ac749abc24d82e810abc3",
+      "frames": 2246,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 159,
+      "prepared_episode": 154,
+      "source_sha256": "c5bc9d78f5e5aeb27391ef3386122a1406a2fb329af8fdeceae4a7f66d8b4df2",
+      "frames": 398,
+      "split": "quarantine",
+      "segments": [],
+      "review_candidates": [
+        [
+          0,
+          7.94
+        ]
+      ],
+      "note": "Human setup candidate; confirm full task boundaries."
+    },
+    {
+      "source_episode": 160,
+      "prepared_episode": 155,
+      "source_sha256": "0ff87e97c7f057803eac3fd8c90d4c430155bcd34a175c3f72dc9f1b3d54cd73",
+      "frames": 116,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 161,
+      "prepared_episode": 156,
+      "source_sha256": "bac48790dd2c332a413cd52d8b52f37c42c9747b6b13e7f13a96f8d1554ed78e",
+      "frames": 439,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 162,
+      "prepared_episode": 157,
+      "source_sha256": "bff4a63228e8365962b32a236d18b0b8e393f0d8658ce1beaf5a5978a788664b",
+      "frames": 549,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 163,
+      "prepared_episode": 158,
+      "source_sha256": "4423fd762ce5b08d0056d84d6a83804a07254296d43f8e8a0afcf8ee20c9a4d7",
+      "frames": 2112,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 164,
+      "prepared_episode": 159,
+      "source_sha256": "9a01e8f28998361fef41f3f1163837117d528fd25b57e0a719e7db9fefe5d832",
+      "frames": 962,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 165,
+      "prepared_episode": 160,
+      "source_sha256": "5f90b5f919bdce419767d4b9e6ae51f5af95649f3ea075d455854db7207ca304",
+      "frames": 2619,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 166,
+      "prepared_episode": 161,
+      "source_sha256": "b79af4023969f05cbe92bdb1f5ecadf0bf00515c7df6d59462cf1e139265abef",
+      "frames": 3337,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 167,
+      "prepared_episode": 162,
+      "source_sha256": "62de085f30410966d1ad7f9eb9ef146df54f677e903079669abf82909d160959",
+      "frames": 1382,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 168,
+      "prepared_episode": 163,
+      "source_sha256": "f622bc0c92984c9ca75c838ca6efdee3143949d369edb849a8965bdb48c16d57",
+      "frames": 1527,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 169,
+      "prepared_episode": 164,
+      "source_sha256": "0fa274983c153ad21171433f4d71401dd3717871c251e1a65b97ebdbe597cea9",
+      "frames": 2315,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 170,
+      "prepared_episode": 165,
+      "source_sha256": "bf99fc52026c93f268e2ac3f1cb74448aede172cae81d9ceb4b38e8d2288a663",
+      "frames": 564,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 171,
+      "prepared_episode": 166,
+      "source_sha256": "bafa5e651dbb32adc93e98dd45dba4a09874b3b3958ce22c85425f00dbed6b7e",
+      "frames": 3284,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 172,
+      "prepared_episode": 167,
+      "source_sha256": "7cb209c95a4268139f37fc96cf2aa995c870fb8899cc43a8e9d1f91ce464dcff",
+      "frames": 2811,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 173,
+      "prepared_episode": 168,
+      "source_sha256": "c6a83c736a64df7c9f51cc8c88436f1652410d74965fa86b8c8499271f5357ba",
+      "frames": 2209,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 174,
+      "prepared_episode": 169,
+      "source_sha256": "97a622eb4b4dde04e76a682000e043bdaeba26d9e7293d2bf297c52bd34006a1",
+      "frames": 2482,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 175,
+      "prepared_episode": 170,
+      "source_sha256": "099a034ee636058dbe26a0690625fd36f9e753552f21301b5153b331bd0e4389",
+      "frames": 2524,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 176,
+      "prepared_episode": 171,
+      "source_sha256": "17f33f51c5501aef8732547b6e25d8c3b67a12a06d0d8b2048abbda93a943e69",
+      "frames": 555,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 177,
+      "prepared_episode": 172,
+      "source_sha256": "5f99fae6f2288e2a6cb03f82b98594393d78705a71469698227d4a45292f9550",
+      "frames": 1847,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    },
+    {
+      "source_episode": 178,
+      "prepared_episode": 173,
+      "source_sha256": "0d8ba5e5b828ef8bbf7a63f7104b4ede09217c9639d8e919e32072cf81dd5bca",
+      "frames": 2001,
+      "split": "review_needed",
+      "segments": [],
+      "review_candidates": [],
+      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+    }
+  ],
+  "disposition_counts": {
+    "train": 0,
+    "held_out": 2,
+    "quarantine": 2,
+    "review_needed": 170
+  },
+  "review_candidate_units": "Seconds; provisional sampled-review intervals, not accepted frame cuts."
+}

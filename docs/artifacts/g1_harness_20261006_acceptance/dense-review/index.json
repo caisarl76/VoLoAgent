@@ -1,0 +1,1493 @@
+{
+  "method": "Timestamped sampled frames; events between frames can be missed.",
+  "continuous_video_review": false,
+  "dataset_modified": false,
+  "accepted_new_outcome_labels": 0,
+  "jobs": [
+    {
+      "source_episode": 5,
+      "kind": "failure_reference",
+      "interval_s": [
+        0,
+        19.52
+      ],
+      "maximum_sample_gap_s": 0.5,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "video_sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445",
+      "fps": 50.0,
+      "frame_count": 977,
+      "sheets": [
+        {
+          "path": "episode_000005_failure_reference_0.jpg",
+          "frames": [
+            {
+              "frame_index": 0,
+              "actual_s": 0.0
+            },
+            {
+              "frame_index": 25,
+              "actual_s": 0.5
+            },
+            {
+              "frame_index": 50,
+              "actual_s": 1.0
+            },
+            {
+              "frame_index": 75,
+              "actual_s": 1.5
+            },
+            {
+              "frame_index": 100,
+              "actual_s": 2.0
+            },
+            {
+              "frame_index": 125,
+              "actual_s": 2.5
+            },
+            {
+              "frame_index": 150,
+              "actual_s": 3.0
+            },
+            {
+              "frame_index": 175,
+              "actual_s": 3.5
+            },
+            {
+              "frame_index": 200,
+              "actual_s": 4.0
+            },
+            {
+              "frame_index": 225,
+              "actual_s": 4.5
+            },
+            {
+              "frame_index": 250,
+              "actual_s": 5.0
+            },
+            {
+              "frame_index": 275,
+              "actual_s": 5.5
+            },
+            {
+              "frame_index": 300,
+              "actual_s": 6.0
+            },
+            {
+              "frame_index": 325,
+              "actual_s": 6.5
+            },
+            {
+              "frame_index": 350,
+              "actual_s": 7.0
+            },
+            {
+              "frame_index": 375,
+              "actual_s": 7.5
+            }
+          ]
+        },
+        {
+          "path": "episode_000005_failure_reference_1.jpg",
+          "frames": [
+            {
+              "frame_index": 400,
+              "actual_s": 8.0
+            },
+            {
+              "frame_index": 425,
+              "actual_s": 8.5
+            },
+            {
+              "frame_index": 450,
+              "actual_s": 9.0
+            },
+            {
+              "frame_index": 475,
+              "actual_s": 9.5
+            },
+            {
+              "frame_index": 500,
+              "actual_s": 10.0
+            },
+            {
+              "frame_index": 525,
+              "actual_s": 10.5
+            },
+            {
+              "frame_index": 550,
+              "actual_s": 11.0
+            },
+            {
+              "frame_index": 575,
+              "actual_s": 11.5
+            },
+            {
+              "frame_index": 600,
+              "actual_s": 12.0
+            },
+            {
+              "frame_index": 625,
+              "actual_s": 12.5
+            },
+            {
+              "frame_index": 650,
+              "actual_s": 13.0
+            },
+            {
+              "frame_index": 675,
+              "actual_s": 13.5
+            },
+            {
+              "frame_index": 700,
+              "actual_s": 14.0
+            },
+            {
+              "frame_index": 725,
+              "actual_s": 14.5
+            },
+            {
+              "frame_index": 750,
+              "actual_s": 15.0
+            },
+            {
+              "frame_index": 775,
+              "actual_s": 15.5
+            }
+          ]
+        },
+        {
+          "path": "episode_000005_failure_reference_2.jpg",
+          "frames": [
+            {
+              "frame_index": 800,
+              "actual_s": 16.0
+            },
+            {
+              "frame_index": 825,
+              "actual_s": 16.5
+            },
+            {
+              "frame_index": 850,
+              "actual_s": 17.0
+            },
+            {
+              "frame_index": 875,
+              "actual_s": 17.5
+            },
+            {
+              "frame_index": 900,
+              "actual_s": 18.0
+            },
+            {
+              "frame_index": 925,
+              "actual_s": 18.5
+            },
+            {
+              "frame_index": 950,
+              "actual_s": 19.0
+            },
+            {
+              "frame_index": 975,
+              "actual_s": 19.5
+            },
+            {
+              "frame_index": 976,
+              "actual_s": 19.52
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 18,
+      "kind": "approach_reference",
+      "interval_s": [
+        0,
+        18
+      ],
+      "maximum_sample_gap_s": 0.5,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "video_sha256": "5adf0f2de73b01733915abb888303ac902093371700f05aeb52344f42ff6d89e",
+      "fps": 50.0,
+      "frame_count": 2024,
+      "sheets": [
+        {
+          "path": "episode_000018_approach_reference_0.jpg",
+          "frames": [
+            {
+              "frame_index": 0,
+              "actual_s": 0.0
+            },
+            {
+              "frame_index": 25,
+              "actual_s": 0.5
+            },
+            {
+              "frame_index": 50,
+              "actual_s": 1.0
+            },
+            {
+              "frame_index": 75,
+              "actual_s": 1.5
+            },
+            {
+              "frame_index": 100,
+              "actual_s": 2.0
+            },
+            {
+              "frame_index": 125,
+              "actual_s": 2.5
+            },
+            {
+              "frame_index": 150,
+              "actual_s": 3.0
+            },
+            {
+              "frame_index": 175,
+              "actual_s": 3.5
+            },
+            {
+              "frame_index": 200,
+              "actual_s": 4.0
+            },
+            {
+              "frame_index": 225,
+              "actual_s": 4.5
+            },
+            {
+              "frame_index": 250,
+              "actual_s": 5.0
+            },
+            {
+              "frame_index": 275,
+              "actual_s": 5.5
+            },
+            {
+              "frame_index": 300,
+              "actual_s": 6.0
+            },
+            {
+              "frame_index": 325,
+              "actual_s": 6.5
+            },
+            {
+              "frame_index": 350,
+              "actual_s": 7.0
+            },
+            {
+              "frame_index": 375,
+              "actual_s": 7.5
+            }
+          ]
+        },
+        {
+          "path": "episode_000018_approach_reference_1.jpg",
+          "frames": [
+            {
+              "frame_index": 400,
+              "actual_s": 8.0
+            },
+            {
+              "frame_index": 425,
+              "actual_s": 8.5
+            },
+            {
+              "frame_index": 450,
+              "actual_s": 9.0
+            },
+            {
+              "frame_index": 475,
+              "actual_s": 9.5
+            },
+            {
+              "frame_index": 500,
+              "actual_s": 10.0
+            },
+            {
+              "frame_index": 525,
+              "actual_s": 10.5
+            },
+            {
+              "frame_index": 550,
+              "actual_s": 11.0
+            },
+            {
+              "frame_index": 575,
+              "actual_s": 11.5
+            },
+            {
+              "frame_index": 600,
+              "actual_s": 12.0
+            },
+            {
+              "frame_index": 625,
+              "actual_s": 12.5
+            },
+            {
+              "frame_index": 650,
+              "actual_s": 13.0
+            },
+            {
+              "frame_index": 675,
+              "actual_s": 13.5
+            },
+            {
+              "frame_index": 700,
+              "actual_s": 14.0
+            },
+            {
+              "frame_index": 725,
+              "actual_s": 14.5
+            },
+            {
+              "frame_index": 750,
+              "actual_s": 15.0
+            },
+            {
+              "frame_index": 775,
+              "actual_s": 15.5
+            }
+          ]
+        },
+        {
+          "path": "episode_000018_approach_reference_2.jpg",
+          "frames": [
+            {
+              "frame_index": 800,
+              "actual_s": 16.0
+            },
+            {
+              "frame_index": 825,
+              "actual_s": 16.5
+            },
+            {
+              "frame_index": 850,
+              "actual_s": 17.0
+            },
+            {
+              "frame_index": 875,
+              "actual_s": 17.5
+            },
+            {
+              "frame_index": 900,
+              "actual_s": 18.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 18,
+      "kind": "release_reference",
+      "interval_s": [
+        34,
+        40.46
+      ],
+      "maximum_sample_gap_s": 0.2,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "video_sha256": "5adf0f2de73b01733915abb888303ac902093371700f05aeb52344f42ff6d89e",
+      "fps": 50.0,
+      "frame_count": 2024,
+      "sheets": [
+        {
+          "path": "episode_000018_release_reference_0.jpg",
+          "frames": [
+            {
+              "frame_index": 1700,
+              "actual_s": 34.0
+            },
+            {
+              "frame_index": 1710,
+              "actual_s": 34.2
+            },
+            {
+              "frame_index": 1720,
+              "actual_s": 34.4
+            },
+            {
+              "frame_index": 1730,
+              "actual_s": 34.6
+            },
+            {
+              "frame_index": 1740,
+              "actual_s": 34.8
+            },
+            {
+              "frame_index": 1750,
+              "actual_s": 35.0
+            },
+            {
+              "frame_index": 1760,
+              "actual_s": 35.2
+            },
+            {
+              "frame_index": 1770,
+              "actual_s": 35.4
+            },
+            {
+              "frame_index": 1780,
+              "actual_s": 35.6
+            },
+            {
+              "frame_index": 1790,
+              "actual_s": 35.8
+            },
+            {
+              "frame_index": 1800,
+              "actual_s": 36.0
+            },
+            {
+              "frame_index": 1810,
+              "actual_s": 36.2
+            },
+            {
+              "frame_index": 1820,
+              "actual_s": 36.4
+            },
+            {
+              "frame_index": 1830,
+              "actual_s": 36.6
+            },
+            {
+              "frame_index": 1840,
+              "actual_s": 36.8
+            },
+            {
+              "frame_index": 1850,
+              "actual_s": 37.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000018_release_reference_1.jpg",
+          "frames": [
+            {
+              "frame_index": 1860,
+              "actual_s": 37.2
+            },
+            {
+              "frame_index": 1870,
+              "actual_s": 37.4
+            },
+            {
+              "frame_index": 1880,
+              "actual_s": 37.6
+            },
+            {
+              "frame_index": 1890,
+              "actual_s": 37.8
+            },
+            {
+              "frame_index": 1900,
+              "actual_s": 38.0
+            },
+            {
+              "frame_index": 1910,
+              "actual_s": 38.2
+            },
+            {
+              "frame_index": 1920,
+              "actual_s": 38.4
+            },
+            {
+              "frame_index": 1930,
+              "actual_s": 38.6
+            },
+            {
+              "frame_index": 1940,
+              "actual_s": 38.8
+            },
+            {
+              "frame_index": 1950,
+              "actual_s": 39.0
+            },
+            {
+              "frame_index": 1960,
+              "actual_s": 39.2
+            },
+            {
+              "frame_index": 1970,
+              "actual_s": 39.4
+            },
+            {
+              "frame_index": 1980,
+              "actual_s": 39.6
+            },
+            {
+              "frame_index": 1990,
+              "actual_s": 39.8
+            },
+            {
+              "frame_index": 2000,
+              "actual_s": 40.0
+            },
+            {
+              "frame_index": 2010,
+              "actual_s": 40.2
+            }
+          ]
+        },
+        {
+          "path": "episode_000018_release_reference_2.jpg",
+          "frames": [
+            {
+              "frame_index": 2020,
+              "actual_s": 40.4
+            },
+            {
+              "frame_index": 2023,
+              "actual_s": 40.46
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 52,
+      "kind": "release_or_drop",
+      "interval_s": [
+        49,
+        54.98
+      ],
+      "maximum_sample_gap_s": 0.2,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000052.mp4",
+      "video_sha256": "a229565ada1f36ab1be407af34c9893cbdc7008a87462a9853fb4374b7f3f55a",
+      "fps": 50.0,
+      "frame_count": 2750,
+      "sheets": [
+        {
+          "path": "episode_000052_release_or_drop_0.jpg",
+          "frames": [
+            {
+              "frame_index": 2450,
+              "actual_s": 49.0
+            },
+            {
+              "frame_index": 2460,
+              "actual_s": 49.2
+            },
+            {
+              "frame_index": 2470,
+              "actual_s": 49.4
+            },
+            {
+              "frame_index": 2480,
+              "actual_s": 49.6
+            },
+            {
+              "frame_index": 2490,
+              "actual_s": 49.8
+            },
+            {
+              "frame_index": 2500,
+              "actual_s": 50.0
+            },
+            {
+              "frame_index": 2510,
+              "actual_s": 50.2
+            },
+            {
+              "frame_index": 2520,
+              "actual_s": 50.4
+            },
+            {
+              "frame_index": 2530,
+              "actual_s": 50.6
+            },
+            {
+              "frame_index": 2540,
+              "actual_s": 50.8
+            },
+            {
+              "frame_index": 2550,
+              "actual_s": 51.0
+            },
+            {
+              "frame_index": 2560,
+              "actual_s": 51.2
+            },
+            {
+              "frame_index": 2570,
+              "actual_s": 51.4
+            },
+            {
+              "frame_index": 2580,
+              "actual_s": 51.6
+            },
+            {
+              "frame_index": 2590,
+              "actual_s": 51.8
+            },
+            {
+              "frame_index": 2600,
+              "actual_s": 52.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000052_release_or_drop_1.jpg",
+          "frames": [
+            {
+              "frame_index": 2610,
+              "actual_s": 52.2
+            },
+            {
+              "frame_index": 2620,
+              "actual_s": 52.4
+            },
+            {
+              "frame_index": 2630,
+              "actual_s": 52.6
+            },
+            {
+              "frame_index": 2640,
+              "actual_s": 52.8
+            },
+            {
+              "frame_index": 2650,
+              "actual_s": 53.0
+            },
+            {
+              "frame_index": 2660,
+              "actual_s": 53.2
+            },
+            {
+              "frame_index": 2670,
+              "actual_s": 53.4
+            },
+            {
+              "frame_index": 2680,
+              "actual_s": 53.6
+            },
+            {
+              "frame_index": 2690,
+              "actual_s": 53.8
+            },
+            {
+              "frame_index": 2700,
+              "actual_s": 54.0
+            },
+            {
+              "frame_index": 2710,
+              "actual_s": 54.2
+            },
+            {
+              "frame_index": 2720,
+              "actual_s": 54.4
+            },
+            {
+              "frame_index": 2730,
+              "actual_s": 54.6
+            },
+            {
+              "frame_index": 2740,
+              "actual_s": 54.8
+            },
+            {
+              "frame_index": 2749,
+              "actual_s": 54.98
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 78,
+      "kind": "release",
+      "interval_s": [
+        35,
+        44
+      ],
+      "maximum_sample_gap_s": 0.2,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000078.mp4",
+      "video_sha256": "c810cddd43b19c45b3719202fa4968c512c658ce2584bf236ff71e68da8be3e1",
+      "fps": 50.0,
+      "frame_count": 3952,
+      "sheets": [
+        {
+          "path": "episode_000078_release_0.jpg",
+          "frames": [
+            {
+              "frame_index": 1750,
+              "actual_s": 35.0
+            },
+            {
+              "frame_index": 1760,
+              "actual_s": 35.2
+            },
+            {
+              "frame_index": 1770,
+              "actual_s": 35.4
+            },
+            {
+              "frame_index": 1780,
+              "actual_s": 35.6
+            },
+            {
+              "frame_index": 1790,
+              "actual_s": 35.8
+            },
+            {
+              "frame_index": 1800,
+              "actual_s": 36.0
+            },
+            {
+              "frame_index": 1810,
+              "actual_s": 36.2
+            },
+            {
+              "frame_index": 1820,
+              "actual_s": 36.4
+            },
+            {
+              "frame_index": 1830,
+              "actual_s": 36.6
+            },
+            {
+              "frame_index": 1840,
+              "actual_s": 36.8
+            },
+            {
+              "frame_index": 1850,
+              "actual_s": 37.0
+            },
+            {
+              "frame_index": 1860,
+              "actual_s": 37.2
+            },
+            {
+              "frame_index": 1870,
+              "actual_s": 37.4
+            },
+            {
+              "frame_index": 1880,
+              "actual_s": 37.6
+            },
+            {
+              "frame_index": 1890,
+              "actual_s": 37.8
+            },
+            {
+              "frame_index": 1900,
+              "actual_s": 38.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000078_release_1.jpg",
+          "frames": [
+            {
+              "frame_index": 1910,
+              "actual_s": 38.2
+            },
+            {
+              "frame_index": 1920,
+              "actual_s": 38.4
+            },
+            {
+              "frame_index": 1930,
+              "actual_s": 38.6
+            },
+            {
+              "frame_index": 1940,
+              "actual_s": 38.8
+            },
+            {
+              "frame_index": 1950,
+              "actual_s": 39.0
+            },
+            {
+              "frame_index": 1960,
+              "actual_s": 39.2
+            },
+            {
+              "frame_index": 1970,
+              "actual_s": 39.4
+            },
+            {
+              "frame_index": 1980,
+              "actual_s": 39.6
+            },
+            {
+              "frame_index": 1990,
+              "actual_s": 39.8
+            },
+            {
+              "frame_index": 2000,
+              "actual_s": 40.0
+            },
+            {
+              "frame_index": 2010,
+              "actual_s": 40.2
+            },
+            {
+              "frame_index": 2020,
+              "actual_s": 40.4
+            },
+            {
+              "frame_index": 2030,
+              "actual_s": 40.6
+            },
+            {
+              "frame_index": 2040,
+              "actual_s": 40.8
+            },
+            {
+              "frame_index": 2050,
+              "actual_s": 41.0
+            },
+            {
+              "frame_index": 2060,
+              "actual_s": 41.2
+            }
+          ]
+        },
+        {
+          "path": "episode_000078_release_2.jpg",
+          "frames": [
+            {
+              "frame_index": 2070,
+              "actual_s": 41.4
+            },
+            {
+              "frame_index": 2080,
+              "actual_s": 41.6
+            },
+            {
+              "frame_index": 2090,
+              "actual_s": 41.8
+            },
+            {
+              "frame_index": 2100,
+              "actual_s": 42.0
+            },
+            {
+              "frame_index": 2110,
+              "actual_s": 42.2
+            },
+            {
+              "frame_index": 2120,
+              "actual_s": 42.4
+            },
+            {
+              "frame_index": 2130,
+              "actual_s": 42.6
+            },
+            {
+              "frame_index": 2140,
+              "actual_s": 42.8
+            },
+            {
+              "frame_index": 2150,
+              "actual_s": 43.0
+            },
+            {
+              "frame_index": 2160,
+              "actual_s": 43.2
+            },
+            {
+              "frame_index": 2170,
+              "actual_s": 43.4
+            },
+            {
+              "frame_index": 2180,
+              "actual_s": 43.6
+            },
+            {
+              "frame_index": 2190,
+              "actual_s": 43.8
+            },
+            {
+              "frame_index": 2200,
+              "actual_s": 44.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 155,
+      "kind": "task_boundaries",
+      "interval_s": [
+        0,
+        170
+      ],
+      "maximum_sample_gap_s": 2,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000155.mp4",
+      "video_sha256": "cc5d177bd1f087a4bf17ec059d2706cecacf92ea4078a2c97bf729db356ff26c",
+      "fps": 50.0,
+      "frame_count": 8501,
+      "sheets": [
+        {
+          "path": "episode_000155_task_boundaries_0.jpg",
+          "frames": [
+            {
+              "frame_index": 0,
+              "actual_s": 0.0
+            },
+            {
+              "frame_index": 100,
+              "actual_s": 2.0
+            },
+            {
+              "frame_index": 200,
+              "actual_s": 4.0
+            },
+            {
+              "frame_index": 300,
+              "actual_s": 6.0
+            },
+            {
+              "frame_index": 400,
+              "actual_s": 8.0
+            },
+            {
+              "frame_index": 500,
+              "actual_s": 10.0
+            },
+            {
+              "frame_index": 600,
+              "actual_s": 12.0
+            },
+            {
+              "frame_index": 700,
+              "actual_s": 14.0
+            },
+            {
+              "frame_index": 800,
+              "actual_s": 16.0
+            },
+            {
+              "frame_index": 900,
+              "actual_s": 18.0
+            },
+            {
+              "frame_index": 1000,
+              "actual_s": 20.0
+            },
+            {
+              "frame_index": 1100,
+              "actual_s": 22.0
+            },
+            {
+              "frame_index": 1200,
+              "actual_s": 24.0
+            },
+            {
+              "frame_index": 1300,
+              "actual_s": 26.0
+            },
+            {
+              "frame_index": 1400,
+              "actual_s": 28.0
+            },
+            {
+              "frame_index": 1500,
+              "actual_s": 30.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000155_task_boundaries_1.jpg",
+          "frames": [
+            {
+              "frame_index": 1600,
+              "actual_s": 32.0
+            },
+            {
+              "frame_index": 1700,
+              "actual_s": 34.0
+            },
+            {
+              "frame_index": 1800,
+              "actual_s": 36.0
+            },
+            {
+              "frame_index": 1900,
+              "actual_s": 38.0
+            },
+            {
+              "frame_index": 2000,
+              "actual_s": 40.0
+            },
+            {
+              "frame_index": 2100,
+              "actual_s": 42.0
+            },
+            {
+              "frame_index": 2200,
+              "actual_s": 44.0
+            },
+            {
+              "frame_index": 2300,
+              "actual_s": 46.0
+            },
+            {
+              "frame_index": 2400,
+              "actual_s": 48.0
+            },
+            {
+              "frame_index": 2500,
+              "actual_s": 50.0
+            },
+            {
+              "frame_index": 2600,
+              "actual_s": 52.0
+            },
+            {
+              "frame_index": 2700,
+              "actual_s": 54.0
+            },
+            {
+              "frame_index": 2800,
+              "actual_s": 56.0
+            },
+            {
+              "frame_index": 2900,
+              "actual_s": 58.0
+            },
+            {
+              "frame_index": 3000,
+              "actual_s": 60.0
+            },
+            {
+              "frame_index": 3100,
+              "actual_s": 62.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000155_task_boundaries_2.jpg",
+          "frames": [
+            {
+              "frame_index": 3200,
+              "actual_s": 64.0
+            },
+            {
+              "frame_index": 3300,
+              "actual_s": 66.0
+            },
+            {
+              "frame_index": 3400,
+              "actual_s": 68.0
+            },
+            {
+              "frame_index": 3500,
+              "actual_s": 70.0
+            },
+            {
+              "frame_index": 3600,
+              "actual_s": 72.0
+            },
+            {
+              "frame_index": 3700,
+              "actual_s": 74.0
+            },
+            {
+              "frame_index": 3800,
+              "actual_s": 76.0
+            },
+            {
+              "frame_index": 3900,
+              "actual_s": 78.0
+            },
+            {
+              "frame_index": 4000,
+              "actual_s": 80.0
+            },
+            {
+              "frame_index": 4100,
+              "actual_s": 82.0
+            },
+            {
+              "frame_index": 4200,
+              "actual_s": 84.0
+            },
+            {
+              "frame_index": 4300,
+              "actual_s": 86.0
+            },
+            {
+              "frame_index": 4400,
+              "actual_s": 88.0
+            },
+            {
+              "frame_index": 4500,
+              "actual_s": 90.0
+            },
+            {
+              "frame_index": 4600,
+              "actual_s": 92.0
+            },
+            {
+              "frame_index": 4700,
+              "actual_s": 94.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000155_task_boundaries_3.jpg",
+          "frames": [
+            {
+              "frame_index": 4800,
+              "actual_s": 96.0
+            },
+            {
+              "frame_index": 4900,
+              "actual_s": 98.0
+            },
+            {
+              "frame_index": 5000,
+              "actual_s": 100.0
+            },
+            {
+              "frame_index": 5100,
+              "actual_s": 102.0
+            },
+            {
+              "frame_index": 5200,
+              "actual_s": 104.0
+            },
+            {
+              "frame_index": 5300,
+              "actual_s": 106.0
+            },
+            {
+              "frame_index": 5400,
+              "actual_s": 108.0
+            },
+            {
+              "frame_index": 5500,
+              "actual_s": 110.0
+            },
+            {
+              "frame_index": 5600,
+              "actual_s": 112.0
+            },
+            {
+              "frame_index": 5700,
+              "actual_s": 114.0
+            },
+            {
+              "frame_index": 5800,
+              "actual_s": 116.0
+            },
+            {
+              "frame_index": 5900,
+              "actual_s": 118.0
+            },
+            {
+              "frame_index": 6000,
+              "actual_s": 120.0
+            },
+            {
+              "frame_index": 6100,
+              "actual_s": 122.0
+            },
+            {
+              "frame_index": 6200,
+              "actual_s": 124.0
+            },
+            {
+              "frame_index": 6300,
+              "actual_s": 126.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000155_task_boundaries_4.jpg",
+          "frames": [
+            {
+              "frame_index": 6400,
+              "actual_s": 128.0
+            },
+            {
+              "frame_index": 6500,
+              "actual_s": 130.0
+            },
+            {
+              "frame_index": 6600,
+              "actual_s": 132.0
+            },
+            {
+              "frame_index": 6700,
+              "actual_s": 134.0
+            },
+            {
+              "frame_index": 6800,
+              "actual_s": 136.0
+            },
+            {
+              "frame_index": 6900,
+              "actual_s": 138.0
+            },
+            {
+              "frame_index": 7000,
+              "actual_s": 140.0
+            },
+            {
+              "frame_index": 7100,
+              "actual_s": 142.0
+            },
+            {
+              "frame_index": 7200,
+              "actual_s": 144.0
+            },
+            {
+              "frame_index": 7300,
+              "actual_s": 146.0
+            },
+            {
+              "frame_index": 7400,
+              "actual_s": 148.0
+            },
+            {
+              "frame_index": 7500,
+              "actual_s": 150.0
+            },
+            {
+              "frame_index": 7600,
+              "actual_s": 152.0
+            },
+            {
+              "frame_index": 7700,
+              "actual_s": 154.0
+            },
+            {
+              "frame_index": 7800,
+              "actual_s": 156.0
+            },
+            {
+              "frame_index": 7900,
+              "actual_s": 158.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000155_task_boundaries_5.jpg",
+          "frames": [
+            {
+              "frame_index": 8000,
+              "actual_s": 160.0
+            },
+            {
+              "frame_index": 8100,
+              "actual_s": 162.0
+            },
+            {
+              "frame_index": 8200,
+              "actual_s": 164.0
+            },
+            {
+              "frame_index": 8300,
+              "actual_s": 166.0
+            },
+            {
+              "frame_index": 8400,
+              "actual_s": 168.0
+            },
+            {
+              "frame_index": 8500,
+              "actual_s": 170.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 159,
+      "kind": "setup",
+      "interval_s": [
+        0,
+        7.94
+      ],
+      "maximum_sample_gap_s": 0.2,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000159.mp4",
+      "video_sha256": "b8b444da9baf41473f5db708f6c29414f1f18b1e9763981535c01d6366a40980",
+      "fps": 50.0,
+      "frame_count": 398,
+      "sheets": [
+        {
+          "path": "episode_000159_setup_0.jpg",
+          "frames": [
+            {
+              "frame_index": 0,
+              "actual_s": 0.0
+            },
+            {
+              "frame_index": 10,
+              "actual_s": 0.2
+            },
+            {
+              "frame_index": 20,
+              "actual_s": 0.4
+            },
+            {
+              "frame_index": 30,
+              "actual_s": 0.6
+            },
+            {
+              "frame_index": 40,
+              "actual_s": 0.8
+            },
+            {
+              "frame_index": 50,
+              "actual_s": 1.0
+            },
+            {
+              "frame_index": 60,
+              "actual_s": 1.2
+            },
+            {
+              "frame_index": 70,
+              "actual_s": 1.4
+            },
+            {
+              "frame_index": 80,
+              "actual_s": 1.6
+            },
+            {
+              "frame_index": 90,
+              "actual_s": 1.8
+            },
+            {
+              "frame_index": 100,
+              "actual_s": 2.0
+            },
+            {
+              "frame_index": 110,
+              "actual_s": 2.2
+            },
+            {
+              "frame_index": 120,
+              "actual_s": 2.4
+            },
+            {
+              "frame_index": 130,
+              "actual_s": 2.6
+            },
+            {
+              "frame_index": 140,
+              "actual_s": 2.8
+            },
+            {
+              "frame_index": 150,
+              "actual_s": 3.0
+            }
+          ]
+        },
+        {
+          "path": "episode_000159_setup_1.jpg",
+          "frames": [
+            {
+              "frame_index": 160,
+              "actual_s": 3.2
+            },
+            {
+              "frame_index": 170,
+              "actual_s": 3.4
+            },
+            {
+              "frame_index": 180,
+              "actual_s": 3.6
+            },
+            {
+              "frame_index": 190,
+              "actual_s": 3.8
+            },
+            {
+              "frame_index": 200,
+              "actual_s": 4.0
+            },
+            {
+              "frame_index": 210,
+              "actual_s": 4.2
+            },
+            {
+              "frame_index": 220,
+              "actual_s": 4.4
+            },
+            {
+              "frame_index": 230,
+              "actual_s": 4.6
+            },
+            {
+              "frame_index": 240,
+              "actual_s": 4.8
+            },
+            {
+              "frame_index": 250,
+              "actual_s": 5.0
+            },
+            {
+              "frame_index": 260,
+              "actual_s": 5.2
+            },
+            {
+              "frame_index": 270,
+              "actual_s": 5.4
+            },
+            {
+              "frame_index": 280,
+              "actual_s": 5.6
+            },
+            {
+              "frame_index": 290,
+              "actual_s": 5.8
+            },
+            {
+              "frame_index": 300,
+              "actual_s": 6.0
+            },
+            {
+              "frame_index": 310,
+              "actual_s": 6.2
+            }
+          ]
+        },
+        {
+          "path": "episode_000159_setup_2.jpg",
+          "frames": [
+            {
+              "frame_index": 320,
+              "actual_s": 6.4
+            },
+            {
+              "frame_index": 330,
+              "actual_s": 6.6
+            },
+            {
+              "frame_index": 340,
+              "actual_s": 6.8
+            },
+            {
+              "frame_index": 350,
+              "actual_s": 7.0
+            },
+            {
+              "frame_index": 360,
+              "actual_s": 7.2
+            },
+            {
+              "frame_index": 370,
+              "actual_s": 7.4
+            },
+            {
+              "frame_index": 380,
+              "actual_s": 7.6
+            },
+            {
+              "frame_index": 390,
+              "actual_s": 7.8
+            },
+            {
+              "frame_index": 397,
+              "actual_s": 7.94
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "script_sha256": "e5aa915461e85763f456aea60004218107dab2dfd4fc4333350d1b5b63d87124"
+}

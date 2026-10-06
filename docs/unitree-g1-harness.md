@@ -198,9 +198,11 @@ Two turns completed and two reached their deadline. Both failures received fresh
 hold acknowledgement within 0.1 seconds, followed by one second of stationary
 planner requests without resumption. The successful cases also passed coordinator
 loss. Historical adapter lead/rate-guard failures remain preserved and still lack
-their own later hold observations. Turning remains unaccepted. The
+their own later hold observations. A new actual-main-loop lead/rate-guard failure
+now confirms fresh hold and stationary requests; it validates that failure path
+without altering the historical recordings. Turning remains unaccepted. The
 [follow-up report](artifacts/g1_harness_20261006_followup/README.md) separates planner,
-decoded target and measured yaw and records the unchanged limits.
+reported motion-frame target and measured yaw and records the unchanged limits.
 
 The corrected Genon criterion passes ten recorded judgments: eight negatives
 without false completion and one two-frame release confirmation. Three saved
@@ -250,3 +252,27 @@ Audit task boundaries and labels before preparing a new derived training set.
 Register new manipulation
 prompts only after collecting demonstrations and evaluating the resulting policy.
 Physical bottle placement and supervised hardware acceptance remain pending.
+
+The [acceptance investigation](artifacts/g1_harness_20261006_acceptance/README.md)
+adds dense sampled review, all-frame control-mode analysis and a standalone
+dataset eligibility checker. The proposed future dataset has no accepted
+training segments and remains blocked. Source 155 includes both other-object
+tasks and bottle manipulation; it needs segmentation. Source 52's terminal
+samples show the bottle still held, rather than establishing a drop. Eight new
+recorded vision checks match provisional frame labels, with zero false
+completions on six negatives. Fully hidden carried-bottle coverage remains open.
+
+Offline reconstruction places the closest sampled simulated hand about 20 cm
+from the bottle. The user-confirmed D435i mount enables a URDF camera proxy,
+which differs from the existing camera by 3.49 cm and about 3.44 degrees under
+the assumed optical convention. Actual RGB intrinsics and the mounting transform
+remain unmeasured. The report supplies frozen-pose comparisons and a read-only
+factory-intrinsics helper for the camera host.
+
+Two fresh native-loop simulator turns both fail: immediate turning triggers the
+lead/rate guard; a one-second stationary request first still reaches the turn
+deadline. Both confirm fresh hold within 0.1 seconds and stationary requests
+without resumption for the following second. Limits and production code are
+unchanged. Controller input/trajectory/frame timing needs instrumentation before
+selecting a turn fix. Task 8, successful manipulation and hardware acceptance
+remain open; the dashboard remains deferred.

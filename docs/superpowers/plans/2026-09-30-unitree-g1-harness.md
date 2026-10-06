@@ -276,6 +276,41 @@ and 172 complete outcomes need review before a new derived training set. No
 dataset, checkpoint or prompt pool changed. Task 8 remains open, and these
 simulation checks do not authorize physical deployment.
 
+Acceptance investigation on 2026-10-06 is recorded in
+`docs/artifacts/g1_harness_20261006_acceptance/README.md`. Dense sampled review
+inspects 316 frames on 23 sheets from six episodes; it creates no new accepted
+episode labels. Source 52 remains visibly held in terminal samples. Source 155
+mixes cup/box/other-object tasks with a bottle portion and needs segmentation.
+All 174 retained episodes receive a control-mode audit and future split plan;
+zero accepted training windows keep the standalone metadata checker blocked.
+Source 5/18 are reserved only for a future checkpoint, since the current one
+already trained on them. No dataset or checkpoint changes.
+
+Eight additional Genon frame judgments match provisional labels, with zero
+false completions on six negatives and one two-frame release confirmation. An
+incorrect manifest expectation for the first positive outcome is corrected
+without changing the monitor or rerunning API calls. Fully hidden held-bottle
+coverage remains open. Offline reconstruction finds a roughly 20 cm minimum
+sampled right-hand/bottle gap in the earlier clear-cylinder trial.
+
+The user confirms D435i with the official G1 head mount. A frozen-pose URDF mount
+proxy preserves physical parameters and state inputs, but RGB intrinsics and
+optical-to-robot transform remain unmeasured. A read-only SDK helper is supplied;
+the checked local native environment lacks pyrealsense2. Two fresh native-loop
+turns fail under unchanged limits, with and without a one-second stationary
+request first. Both receive fresh hold acknowledgement and no resumption over
+one second. The guard case closes one missing lead/rate interruption-and-hold
+check, while repeatable turning remains unaccepted. Fresh focused checks pass
+27 with no skips. No production changes or physical actuation; Task 8 remains
+open. Next: accepted segment review, measured camera calibration, controller
+input/trajectory/frame instrumentation, and successful manipulation evaluation.
+
+Review correction: the metadata checker now rejects list/object split values
+without raising. Two new regression cases bring the focused checks to 29 passes;
+the fresh full suite passes 595 with 15 skips outside the sandbox. The reviewed
+commit receives a valid author sign-off. Original sources, review, test logs and
+evidence are preserved; the correction does not change acceptance results.
+
 ## Deferred to another session: G1 monitoring dashboard
 
 Deferred by the user on 2026-10-02. Dashboard implementation is outside the

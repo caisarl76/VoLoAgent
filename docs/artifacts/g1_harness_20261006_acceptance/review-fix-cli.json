@@ -1,0 +1,32 @@
+[
+  {
+    "split_type": "list",
+    "exit_code": 1,
+    "stderr_empty": true,
+    "result": {
+      "ready": false,
+      "errors": [
+        "episode 18: invalid split",
+        "no accepted training windows; sampled screening cannot enable training",
+        "no whole-episode held-out split"
+      ],
+      "training_windows": [],
+      "scope": "Review-metadata eligibility only; does not export data, validate label truth or authorize training."
+    }
+  },
+  {
+    "split_type": "object",
+    "exit_code": 1,
+    "stderr_empty": true,
+    "result": {
+      "ready": false,
+      "errors": [
+        "episode 18: invalid split",
+        "no accepted training windows; sampled screening cannot enable training",
+        "no whole-episode held-out split"
+      ],
+      "training_windows": [],
+      "scope": "Review-metadata eligibility only; does not export data, validate label truth or authorize training."
+    }
+  }
+]

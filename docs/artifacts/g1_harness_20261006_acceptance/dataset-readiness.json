@@ -1,0 +1,8 @@
+{
+  "ready": false,
+  "errors": [
+    "no accepted training windows; sampled screening cannot enable training"
+  ],
+  "training_windows": [],
+  "scope": "Review-metadata eligibility only; does not export data, validate label truth or authorize training."
+}

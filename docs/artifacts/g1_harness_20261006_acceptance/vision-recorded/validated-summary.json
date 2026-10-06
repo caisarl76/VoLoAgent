@@ -1,0 +1,11 @@
+{
+  "scope": "Rescoring saved model responses; no new API calls.",
+  "frame_labels_matched": 8,
+  "negative_frames": 6,
+  "false_complete": 0,
+  "unavailable": 0,
+  "two_frame_sequence_confirmations": 1,
+  "monitor_outcomes_match_corrected_manifest": true,
+  "initial_evaluator_exit_code": 1,
+  "correction": "Initial manifest mistakenly expected candidate as a public outcome for first positive frame. The monitor correctly reports in_progress until the second distinct positive. Original manifest, original result and raw responses are preserved."
+}

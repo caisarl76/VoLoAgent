@@ -1,0 +1,78 @@
+{
+  "camera_model_user_confirmed": "RealSense D435i, official G1 head mount",
+  "robot_actuated": false,
+  "physics_advanced": false,
+  "camera_parent": "torso_link",
+  "urdf_joint_origin": {
+    "xyz": "0.0576235 0.01753 0.41987",
+    "rpy": "0 0.8307767239493009 0"
+  },
+  "camera_parameters": {
+    "existing": {
+      "position_in_parent_m": [
+        0.06,
+        0.0,
+        0.45
+      ],
+      "quaternion_wxyz": [
+        0.6515477423451215,
+        0.2752506903280633,
+        -0.2754699671476764,
+        -0.6510291038951777
+      ],
+      "fovy_deg": 45.0
+    },
+    "urdf_mount_proxy": {
+      "position_in_parent_m": [
+        0.0576235,
+        0.01753,
+        0.41987
+      ],
+      "quaternion_wxyz": [
+        -0.6592524821011075,
+        -0.25570718574871737,
+        0.25570718574871737,
+        0.6592524821011075
+      ],
+      "fovy_deg": 45.0
+    }
+  },
+  "mount_translation_difference_m": 0.03493945552309022,
+  "mount_rotation_difference_deg": 3.4369263830843635,
+  "invariant_fields": [
+    "body_mass",
+    "body_inertia",
+    "body_ipos",
+    "body_iquat",
+    "geom_type",
+    "geom_size",
+    "geom_pos",
+    "geom_quat",
+    "geom_contype",
+    "geom_conaffinity",
+    "geom_friction",
+    "jnt_qposadr",
+    "actuator_trnid",
+    "actuator_gainprm"
+  ],
+  "state_inputs_identical": true,
+  "state_skew_from_skill_start_s": 0.011472606973256916,
+  "object_state_skew_s": -0.0004935809993185103,
+  "full_scene_calibrated": false,
+  "rgb_intrinsics_available": false,
+  "limitations": [
+    "URDF link-to-RGB optical transform is assumed, not measured.",
+    "Original simulator fovy is retained; no nominal D435i field of view is substituted.",
+    "Root/table placement and backdrop still differ from recordings.",
+    "Saved 10 Hz pose is approximate, not an exact policy request."
+  ],
+  "sources": {
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006_acceptance/build_camera_proxy.py": "d44d30b71de41cb705a15274a00a9346c8e941c617df159fdaeacd3791b98177",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/scene.xml": "1d6d901d0052bcd5cb4774dcee405e2564fc56deac006092c6f7dfe295711de5",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/robot.xml": "d76545ca52961b67efcfd432cd3ae296fef7c064e60fb3b5f4e3d87aae321693",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/g1_29dof_with_hand.urdf": "3dcb9c361753f464fa1f0238cdf800af842909628fd153733075607881c12d62",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/ground-truth.jsonl": "8be4f4e12d14b1905fba559a4da6143c1c6890142d363d1a54d58960e990d926",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/bottle-ground-truth.jsonl": "48f92df21ed6b81cd96f68420c91bf11fc62988343a56f4d14d06f8f4a60d145",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/mission/4b3ca2c409824a6ba4e5b770ee8014e2/events.jsonl": "9fe2a8877978f278f01bbcdf5ec04093aab17ff925ad3f9c8cef1244c235a741"
+  }
+}
