@@ -1,0 +1,106 @@
+1791267211.481747 [0]     python: selected interface "lo" is not multicast-capable: disabling multicast
+[ChannelFactory] create domain error. msg: Occurred upon initialisation of a cyclonedds.domain.Domain
+Note: Channel factory initialization attempt: channel factory init error.
+Sensor server running at tcp://*:11555
+Image publishing subprocess started with 1 cameras on ZMQ port 11555
+Image publish frequency:  32.76134535172543
+Image publish frequency:  32.794645649590294
+[Sensor server] Message sent: 100, message dropped: 0
+Image publish frequency:  32.73781982235127
+Image publish frequency:  33.02939670989944
+[Sensor server] Message sent: 200, message dropped: 0
+Image publish frequency:  33.119898926089704
+Image publish frequency:  33.00366680830304
+[Sensor server] Message sent: 300, message dropped: 0
+Image publish frequency:  33.07993343481107
+Image publish frequency:  32.75008979464356
+[Sensor server] Message sent: 400, message dropped: 0
+Image publish frequency:  33.66052999053015
+Image publish frequency:  32.5003796860229
+[Sensor server] Message sent: 500, message dropped: 0
+Image publish frequency:  33.40743926722421
+Image publish frequency:  31.853215468270605
+[Sensor server] Message sent: 600, message dropped: 0
+Image publish frequency:  32.741908791431825
+Image publish frequency:  33.06402636101345
+[Sensor server] Message sent: 700, message dropped: 0
+Image publish frequency:  33.02445553753366
+Diagnostic: virtual support released
+Image publish frequency:  33.43300333189855
+[Sensor server] Message sent: 800, message dropped: 0
+Image publish frequency:  32.372948858461584
+Image publish frequency:  33.21800009503746
+[Sensor server] Message sent: 900, message dropped: 0
+Image publish frequency:  32.49484024915554
+Image publish frequency:  32.712286886396605
+[Sensor server] Message sent: 1000, message dropped: 0
+Image publish frequency:  32.706674984404245
+Image publish frequency:  33.182784810126584
+[Sensor server] Message sent: 1100, message dropped: 0
+Image publish frequency:  32.765440199984376
+Image publish frequency:  32.94637372650365
+[Sensor server] Message sent: 1200, message dropped: 0
+Image publish frequency:  33.92571502523619
+Image publish frequency:  32.39395109593908
+[Sensor server] Message sent: 1300, message dropped: 0
+Image publish frequency:  33.36385764513101
+Image publish frequency:  32.86943301594765
+[Sensor server] Message sent: 1400, message dropped: 0
+Image publish frequency:  32.72632507041814
+Image publish frequency:  31.88154364201613
+[Sensor server] Message sent: 1500, message dropped: 0
+Image publish frequency:  32.88334862133578
+Image publish frequency:  31.972435873003775
+[Sensor server] Message sent: 1600, message dropped: 0
+Image publish frequency:  35.483604615749044
+Image publish frequency:  33.82394116318829
+[Sensor server] Message sent: 1700, message dropped: 0
+Image publish frequency:  32.56750628940585
+Image publish frequency:  32.551330208300996
+[Sensor server] Message sent: 1800, message dropped: 0
+Image publish frequency:  33.28152350724063
+Image publish frequency:  33.21747394430893
+[Sensor server] Message sent: 1900, message dropped: 0
+Image publish frequency:  32.92128975542369
+Simulator interrupted by user.Image publisher interrupted by user
+
+Exception ignored in: <function Renderer.__del__ at 0x7cfb27473e20>
+Traceback (most recent call last):
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/rendering/classic/renderer.py", line 343, in __del__
+    self.close()
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/rendering/classic/renderer.py", line 329, in close
+    self._gl_context.free()
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 131, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE,
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7cfad306df40>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cfb32b2edc0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cfb32b2edc0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7cfb32b2ed40>,
+	),
+	result = 0
+)
+Exception ignored in: <function GLContext.__del__ at 0x7cfb325fc940>
+Traceback (most recent call last):
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 138, in __del__
+    self.free()
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 131, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE,
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7cfad306df40>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cfb32b2edc0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7cfb32b2edc0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7cfb32b2ed40>,
+	),
+	result = 0
+)

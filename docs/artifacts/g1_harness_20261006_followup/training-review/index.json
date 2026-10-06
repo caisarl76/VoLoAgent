@@ -1,0 +1,2240 @@
+{
+  "method": "Sampled overview, last three seconds, and flagged intervals. Brief events between frames can be missed.",
+  "labels_modified": false,
+  "training_performed": false,
+  "source_info_sha256": "787da08db0eb58a6e8470a101f6826646e4e47192f56792476ae8e0cdeac4b46",
+  "audit_sha256": "3e3431037abea90a65c5c7346b779c127e8ec61efb837e8a89abef5a6ffbcaa7",
+  "episodes": [
+    {
+      "source_episode": 5,
+      "prepared_episode": 5,
+      "duration_s": 19.52,
+      "fps": 50.0,
+      "frame_count": 977,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "video_sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445",
+      "flags": [],
+      "sheets": [
+        {
+          "path": "episode_000005_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 1.7745454545454544,
+              "actual_s": 1.78,
+              "frame_index": 89
+            },
+            {
+              "requested_s": 3.549090909090909,
+              "actual_s": 3.54,
+              "frame_index": 177
+            },
+            {
+              "requested_s": 5.323636363636363,
+              "actual_s": 5.32,
+              "frame_index": 266
+            },
+            {
+              "requested_s": 7.098181818181818,
+              "actual_s": 7.1,
+              "frame_index": 355
+            },
+            {
+              "requested_s": 8.872727272727271,
+              "actual_s": 8.88,
+              "frame_index": 444
+            },
+            {
+              "requested_s": 10.647272727272727,
+              "actual_s": 10.64,
+              "frame_index": 532
+            },
+            {
+              "requested_s": 12.421818181818182,
+              "actual_s": 12.42,
+              "frame_index": 621
+            },
+            {
+              "requested_s": 14.196363636363635,
+              "actual_s": 14.2,
+              "frame_index": 710
+            },
+            {
+              "requested_s": 15.970909090909089,
+              "actual_s": 15.98,
+              "frame_index": 799
+            },
+            {
+              "requested_s": 16.52,
+              "actual_s": 16.52,
+              "frame_index": 826
+            },
+            {
+              "requested_s": 17.52,
+              "actual_s": 17.52,
+              "frame_index": 876
+            },
+            {
+              "requested_s": 17.745454545454542,
+              "actual_s": 17.74,
+              "frame_index": 887
+            },
+            {
+              "requested_s": 18.52,
+              "actual_s": 18.52,
+              "frame_index": 926
+            },
+            {
+              "requested_s": 19.52,
+              "actual_s": 19.52,
+              "frame_index": 976
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 14,
+      "prepared_episode": 13,
+      "duration_s": 544.86,
+      "fps": 50.0,
+      "frame_count": 27244,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000014.mp4",
+      "video_sha256": "dc6773afd022c8a7e8f22ca9454f91fa8426b137787fd38a36ad88c552e4dc93",
+      "flags": [
+        {
+          "start_s": 12.22,
+          "end_s": 24.7,
+          "duration_s": 12.48
+        },
+        {
+          "start_s": 26.94,
+          "end_s": 455.94,
+          "duration_s": 429.0
+        },
+        {
+          "start_s": 498.34,
+          "end_s": 518.12,
+          "duration_s": 19.78
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000014_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 49.53272727272727,
+              "actual_s": 49.54,
+              "frame_index": 2477
+            },
+            {
+              "requested_s": 99.06545454545454,
+              "actual_s": 99.06,
+              "frame_index": 4953
+            },
+            {
+              "requested_s": 148.5981818181818,
+              "actual_s": 148.6,
+              "frame_index": 7430
+            },
+            {
+              "requested_s": 198.13090909090909,
+              "actual_s": 198.14,
+              "frame_index": 9907
+            },
+            {
+              "requested_s": 247.66363636363636,
+              "actual_s": 247.66,
+              "frame_index": 12383
+            },
+            {
+              "requested_s": 297.1963636363636,
+              "actual_s": 297.2,
+              "frame_index": 14860
+            },
+            {
+              "requested_s": 346.7290909090909,
+              "actual_s": 346.72,
+              "frame_index": 17336
+            },
+            {
+              "requested_s": 396.26181818181817,
+              "actual_s": 396.26,
+              "frame_index": 19813
+            },
+            {
+              "requested_s": 445.7945454545454,
+              "actual_s": 445.8,
+              "frame_index": 22290
+            },
+            {
+              "requested_s": 495.3272727272727,
+              "actual_s": 495.32,
+              "frame_index": 24766
+            },
+            {
+              "requested_s": 541.86,
+              "actual_s": 541.86,
+              "frame_index": 27093
+            },
+            {
+              "requested_s": 542.86,
+              "actual_s": 542.86,
+              "frame_index": 27143
+            },
+            {
+              "requested_s": 543.86,
+              "actual_s": 543.86,
+              "frame_index": 27193
+            },
+            {
+              "requested_s": 544.86,
+              "actual_s": 544.86,
+              "frame_index": 27243
+            }
+          ]
+        },
+        {
+          "path": "episode_000014_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 10.22,
+              "actual_s": 10.22,
+              "frame_index": 511
+            },
+            {
+              "requested_s": 12.22,
+              "actual_s": 12.22,
+              "frame_index": 611
+            },
+            {
+              "requested_s": 14.716000000000001,
+              "actual_s": 14.72,
+              "frame_index": 736
+            },
+            {
+              "requested_s": 17.212,
+              "actual_s": 17.22,
+              "frame_index": 861
+            },
+            {
+              "requested_s": 19.708,
+              "actual_s": 19.7,
+              "frame_index": 985
+            },
+            {
+              "requested_s": 22.204,
+              "actual_s": 22.2,
+              "frame_index": 1110
+            },
+            {
+              "requested_s": 24.7,
+              "actual_s": 24.7,
+              "frame_index": 1235
+            },
+            {
+              "requested_s": 26.7,
+              "actual_s": 26.7,
+              "frame_index": 1335
+            }
+          ]
+        },
+        {
+          "path": "episode_000014_flag-1_0.jpg",
+          "kind": "flag-1",
+          "frames": [
+            {
+              "requested_s": 24.94,
+              "actual_s": 24.94,
+              "frame_index": 1247
+            },
+            {
+              "requested_s": 26.94,
+              "actual_s": 26.94,
+              "frame_index": 1347
+            },
+            {
+              "requested_s": 41.73310344827586,
+              "actual_s": 41.74,
+              "frame_index": 2087
+            },
+            {
+              "requested_s": 56.52620689655173,
+              "actual_s": 56.52,
+              "frame_index": 2826
+            },
+            {
+              "requested_s": 71.31931034482758,
+              "actual_s": 71.32,
+              "frame_index": 3566
+            },
+            {
+              "requested_s": 86.11241379310344,
+              "actual_s": 86.12,
+              "frame_index": 4306
+            },
+            {
+              "requested_s": 100.9055172413793,
+              "actual_s": 100.9,
+              "frame_index": 5045
+            },
+            {
+              "requested_s": 115.69862068965517,
+              "actual_s": 115.7,
+              "frame_index": 5785
+            },
+            {
+              "requested_s": 130.49172413793104,
+              "actual_s": 130.5,
+              "frame_index": 6525
+            },
+            {
+              "requested_s": 145.2848275862069,
+              "actual_s": 145.28,
+              "frame_index": 7264
+            },
+            {
+              "requested_s": 160.07793103448276,
+              "actual_s": 160.08,
+              "frame_index": 8004
+            },
+            {
+              "requested_s": 174.8710344827586,
+              "actual_s": 174.88,
+              "frame_index": 8744
+            },
+            {
+              "requested_s": 189.66413793103447,
+              "actual_s": 189.66,
+              "frame_index": 9483
+            },
+            {
+              "requested_s": 204.45724137931035,
+              "actual_s": 204.46,
+              "frame_index": 10223
+            },
+            {
+              "requested_s": 219.2503448275862,
+              "actual_s": 219.26,
+              "frame_index": 10963
+            },
+            {
+              "requested_s": 234.04344827586206,
+              "actual_s": 234.04,
+              "frame_index": 11702
+            }
+          ]
+        },
+        {
+          "path": "episode_000014_flag-1_1.jpg",
+          "kind": "flag-1",
+          "frames": [
+            {
+              "requested_s": 248.8365517241379,
+              "actual_s": 248.84,
+              "frame_index": 12442
+            },
+            {
+              "requested_s": 263.6296551724138,
+              "actual_s": 263.62,
+              "frame_index": 13181
+            },
+            {
+              "requested_s": 278.42275862068965,
+              "actual_s": 278.42,
+              "frame_index": 13921
+            },
+            {
+              "requested_s": 293.2158620689655,
+              "actual_s": 293.22,
+              "frame_index": 14661
+            },
+            {
+              "requested_s": 308.00896551724134,
+              "actual_s": 308.0,
+              "frame_index": 15400
+            },
+            {
+              "requested_s": 322.8020689655172,
+              "actual_s": 322.8,
+              "frame_index": 16140
+            },
+            {
+              "requested_s": 337.5951724137931,
+              "actual_s": 337.6,
+              "frame_index": 16880
+            },
+            {
+              "requested_s": 352.38827586206895,
+              "actual_s": 352.38,
+              "frame_index": 17619
+            },
+            {
+              "requested_s": 367.1813793103448,
+              "actual_s": 367.18,
+              "frame_index": 18359
+            },
+            {
+              "requested_s": 381.9744827586207,
+              "actual_s": 381.98,
+              "frame_index": 19099
+            },
+            {
+              "requested_s": 396.7675862068965,
+              "actual_s": 396.76,
+              "frame_index": 19838
+            },
+            {
+              "requested_s": 411.5606896551724,
+              "actual_s": 411.56,
+              "frame_index": 20578
+            },
+            {
+              "requested_s": 426.35379310344825,
+              "actual_s": 426.36,
+              "frame_index": 21318
+            },
+            {
+              "requested_s": 441.1468965517241,
+              "actual_s": 441.14,
+              "frame_index": 22057
+            },
+            {
+              "requested_s": 455.94,
+              "actual_s": 455.94,
+              "frame_index": 22797
+            },
+            {
+              "requested_s": 457.94,
+              "actual_s": 457.94,
+              "frame_index": 22897
+            }
+          ]
+        },
+        {
+          "path": "episode_000014_flag-2_0.jpg",
+          "kind": "flag-2",
+          "frames": [
+            {
+              "requested_s": 496.34,
+              "actual_s": 496.34,
+              "frame_index": 24817
+            },
+            {
+              "requested_s": 498.34,
+              "actual_s": 498.34,
+              "frame_index": 24917
+            },
+            {
+              "requested_s": 502.296,
+              "actual_s": 502.3,
+              "frame_index": 25115
+            },
+            {
+              "requested_s": 506.252,
+              "actual_s": 506.26,
+              "frame_index": 25313
+            },
+            {
+              "requested_s": 510.20799999999997,
+              "actual_s": 510.2,
+              "frame_index": 25510
+            },
+            {
+              "requested_s": 514.164,
+              "actual_s": 514.16,
+              "frame_index": 25708
+            },
+            {
+              "requested_s": 518.12,
+              "actual_s": 518.12,
+              "frame_index": 25906
+            },
+            {
+              "requested_s": 520.12,
+              "actual_s": 520.12,
+              "frame_index": 26006
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 18,
+      "prepared_episode": 17,
+      "duration_s": 40.46,
+      "fps": 50.0,
+      "frame_count": 2024,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "video_sha256": "5adf0f2de73b01733915abb888303ac902093371700f05aeb52344f42ff6d89e",
+      "flags": [],
+      "sheets": [
+        {
+          "path": "episode_000018_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 3.678181818181818,
+              "actual_s": 3.68,
+              "frame_index": 184
+            },
+            {
+              "requested_s": 7.356363636363636,
+              "actual_s": 7.36,
+              "frame_index": 368
+            },
+            {
+              "requested_s": 11.034545454545455,
+              "actual_s": 11.04,
+              "frame_index": 552
+            },
+            {
+              "requested_s": 14.712727272727273,
+              "actual_s": 14.72,
+              "frame_index": 736
+            },
+            {
+              "requested_s": 18.39090909090909,
+              "actual_s": 18.4,
+              "frame_index": 920
+            },
+            {
+              "requested_s": 22.06909090909091,
+              "actual_s": 22.06,
+              "frame_index": 1103
+            },
+            {
+              "requested_s": 25.747272727272726,
+              "actual_s": 25.74,
+              "frame_index": 1287
+            },
+            {
+              "requested_s": 29.425454545454546,
+              "actual_s": 29.42,
+              "frame_index": 1471
+            },
+            {
+              "requested_s": 33.10363636363636,
+              "actual_s": 33.1,
+              "frame_index": 1655
+            },
+            {
+              "requested_s": 36.78181818181818,
+              "actual_s": 36.78,
+              "frame_index": 1839
+            },
+            {
+              "requested_s": 37.46,
+              "actual_s": 37.46,
+              "frame_index": 1873
+            },
+            {
+              "requested_s": 38.46,
+              "actual_s": 38.46,
+              "frame_index": 1923
+            },
+            {
+              "requested_s": 39.46,
+              "actual_s": 39.46,
+              "frame_index": 1973
+            },
+            {
+              "requested_s": 40.46,
+              "actual_s": 40.46,
+              "frame_index": 2023
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 42,
+      "prepared_episode": 41,
+      "duration_s": 26.56,
+      "fps": 50.0,
+      "frame_count": 1329,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000042.mp4",
+      "video_sha256": "e7dd5b9927fbe5241145b81c2bf532ec513b32ddc1f23d7533f8c12b4f5ba69a",
+      "flags": [
+        {
+          "start_s": 21.36,
+          "end_s": 26.58,
+          "duration_s": 5.22
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000042_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 2.4145454545454546,
+              "actual_s": 2.42,
+              "frame_index": 121
+            },
+            {
+              "requested_s": 4.829090909090909,
+              "actual_s": 4.82,
+              "frame_index": 241
+            },
+            {
+              "requested_s": 7.243636363636364,
+              "actual_s": 7.24,
+              "frame_index": 362
+            },
+            {
+              "requested_s": 9.658181818181818,
+              "actual_s": 9.66,
+              "frame_index": 483
+            },
+            {
+              "requested_s": 12.072727272727272,
+              "actual_s": 12.08,
+              "frame_index": 604
+            },
+            {
+              "requested_s": 14.487272727272728,
+              "actual_s": 14.48,
+              "frame_index": 724
+            },
+            {
+              "requested_s": 16.901818181818182,
+              "actual_s": 16.9,
+              "frame_index": 845
+            },
+            {
+              "requested_s": 19.316363636363636,
+              "actual_s": 19.32,
+              "frame_index": 966
+            },
+            {
+              "requested_s": 21.73090909090909,
+              "actual_s": 21.74,
+              "frame_index": 1087
+            },
+            {
+              "requested_s": 23.56,
+              "actual_s": 23.56,
+              "frame_index": 1178
+            },
+            {
+              "requested_s": 24.145454545454545,
+              "actual_s": 24.14,
+              "frame_index": 1207
+            },
+            {
+              "requested_s": 24.56,
+              "actual_s": 24.56,
+              "frame_index": 1228
+            },
+            {
+              "requested_s": 25.56,
+              "actual_s": 25.56,
+              "frame_index": 1278
+            },
+            {
+              "requested_s": 26.56,
+              "actual_s": 26.56,
+              "frame_index": 1328
+            }
+          ]
+        },
+        {
+          "path": "episode_000042_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 19.36,
+              "actual_s": 19.36,
+              "frame_index": 968
+            },
+            {
+              "requested_s": 21.36,
+              "actual_s": 21.36,
+              "frame_index": 1068
+            },
+            {
+              "requested_s": 22.4,
+              "actual_s": 22.4,
+              "frame_index": 1120
+            },
+            {
+              "requested_s": 23.439999999999998,
+              "actual_s": 23.44,
+              "frame_index": 1172
+            },
+            {
+              "requested_s": 24.479999999999997,
+              "actual_s": 24.48,
+              "frame_index": 1224
+            },
+            {
+              "requested_s": 25.52,
+              "actual_s": 25.52,
+              "frame_index": 1276
+            },
+            {
+              "requested_s": 26.56,
+              "actual_s": 26.56,
+              "frame_index": 1328
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 45,
+      "prepared_episode": 44,
+      "duration_s": 24.16,
+      "fps": 50.0,
+      "frame_count": 1209,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000045.mp4",
+      "video_sha256": "d11f502a95960a50692b5c984a4222595308bf1da2b17b2adcf867065f5c37b2",
+      "flags": [
+        {
+          "start_s": 12.7,
+          "end_s": 24.18,
+          "duration_s": 11.48
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000045_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 2.1963636363636363,
+              "actual_s": 2.2,
+              "frame_index": 110
+            },
+            {
+              "requested_s": 4.392727272727273,
+              "actual_s": 4.4,
+              "frame_index": 220
+            },
+            {
+              "requested_s": 6.589090909090909,
+              "actual_s": 6.58,
+              "frame_index": 329
+            },
+            {
+              "requested_s": 8.785454545454545,
+              "actual_s": 8.78,
+              "frame_index": 439
+            },
+            {
+              "requested_s": 10.98181818181818,
+              "actual_s": 10.98,
+              "frame_index": 549
+            },
+            {
+              "requested_s": 13.178181818181818,
+              "actual_s": 13.18,
+              "frame_index": 659
+            },
+            {
+              "requested_s": 15.374545454545455,
+              "actual_s": 15.38,
+              "frame_index": 769
+            },
+            {
+              "requested_s": 17.57090909090909,
+              "actual_s": 17.58,
+              "frame_index": 879
+            },
+            {
+              "requested_s": 19.767272727272726,
+              "actual_s": 19.76,
+              "frame_index": 988
+            },
+            {
+              "requested_s": 21.16,
+              "actual_s": 21.16,
+              "frame_index": 1058
+            },
+            {
+              "requested_s": 21.96363636363636,
+              "actual_s": 21.96,
+              "frame_index": 1098
+            },
+            {
+              "requested_s": 22.16,
+              "actual_s": 22.16,
+              "frame_index": 1108
+            },
+            {
+              "requested_s": 23.16,
+              "actual_s": 23.16,
+              "frame_index": 1158
+            },
+            {
+              "requested_s": 24.16,
+              "actual_s": 24.16,
+              "frame_index": 1208
+            }
+          ]
+        },
+        {
+          "path": "episode_000045_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 10.7,
+              "actual_s": 10.7,
+              "frame_index": 535
+            },
+            {
+              "requested_s": 12.7,
+              "actual_s": 12.7,
+              "frame_index": 635
+            },
+            {
+              "requested_s": 14.991999999999999,
+              "actual_s": 15.0,
+              "frame_index": 750
+            },
+            {
+              "requested_s": 17.284,
+              "actual_s": 17.28,
+              "frame_index": 864
+            },
+            {
+              "requested_s": 19.576,
+              "actual_s": 19.58,
+              "frame_index": 979
+            },
+            {
+              "requested_s": 21.868000000000002,
+              "actual_s": 21.86,
+              "frame_index": 1093
+            },
+            {
+              "requested_s": 24.16,
+              "actual_s": 24.16,
+              "frame_index": 1208
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 52,
+      "prepared_episode": 51,
+      "duration_s": 54.98,
+      "fps": 50.0,
+      "frame_count": 2750,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000052.mp4",
+      "video_sha256": "a229565ada1f36ab1be407af34c9893cbdc7008a87462a9853fb4374b7f3f55a",
+      "flags": [
+        {
+          "start_s": 10.32,
+          "end_s": 23.8,
+          "duration_s": 13.48
+        },
+        {
+          "start_s": 26.62,
+          "end_s": 35.54,
+          "duration_s": 8.92
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000052_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 4.998181818181818,
+              "actual_s": 5.0,
+              "frame_index": 250
+            },
+            {
+              "requested_s": 9.996363636363636,
+              "actual_s": 10.0,
+              "frame_index": 500
+            },
+            {
+              "requested_s": 14.994545454545454,
+              "actual_s": 15.0,
+              "frame_index": 750
+            },
+            {
+              "requested_s": 19.992727272727272,
+              "actual_s": 20.0,
+              "frame_index": 1000
+            },
+            {
+              "requested_s": 24.990909090909092,
+              "actual_s": 25.0,
+              "frame_index": 1250
+            },
+            {
+              "requested_s": 29.98909090909091,
+              "actual_s": 29.98,
+              "frame_index": 1499
+            },
+            {
+              "requested_s": 34.987272727272725,
+              "actual_s": 34.98,
+              "frame_index": 1749
+            },
+            {
+              "requested_s": 39.985454545454544,
+              "actual_s": 39.98,
+              "frame_index": 1999
+            },
+            {
+              "requested_s": 44.983636363636364,
+              "actual_s": 44.98,
+              "frame_index": 2249
+            },
+            {
+              "requested_s": 49.981818181818184,
+              "actual_s": 49.98,
+              "frame_index": 2499
+            },
+            {
+              "requested_s": 51.98,
+              "actual_s": 51.98,
+              "frame_index": 2599
+            },
+            {
+              "requested_s": 52.98,
+              "actual_s": 52.98,
+              "frame_index": 2649
+            },
+            {
+              "requested_s": 53.98,
+              "actual_s": 53.98,
+              "frame_index": 2699
+            },
+            {
+              "requested_s": 54.98,
+              "actual_s": 54.98,
+              "frame_index": 2749
+            }
+          ]
+        },
+        {
+          "path": "episode_000052_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 8.32,
+              "actual_s": 8.32,
+              "frame_index": 416
+            },
+            {
+              "requested_s": 10.32,
+              "actual_s": 10.32,
+              "frame_index": 516
+            },
+            {
+              "requested_s": 13.016,
+              "actual_s": 13.02,
+              "frame_index": 651
+            },
+            {
+              "requested_s": 15.712,
+              "actual_s": 15.72,
+              "frame_index": 786
+            },
+            {
+              "requested_s": 18.408,
+              "actual_s": 18.4,
+              "frame_index": 920
+            },
+            {
+              "requested_s": 21.104,
+              "actual_s": 21.1,
+              "frame_index": 1055
+            },
+            {
+              "requested_s": 23.8,
+              "actual_s": 23.8,
+              "frame_index": 1190
+            },
+            {
+              "requested_s": 25.8,
+              "actual_s": 25.8,
+              "frame_index": 1290
+            }
+          ]
+        },
+        {
+          "path": "episode_000052_flag-1_0.jpg",
+          "kind": "flag-1",
+          "frames": [
+            {
+              "requested_s": 24.62,
+              "actual_s": 24.62,
+              "frame_index": 1231
+            },
+            {
+              "requested_s": 26.62,
+              "actual_s": 26.62,
+              "frame_index": 1331
+            },
+            {
+              "requested_s": 28.404,
+              "actual_s": 28.4,
+              "frame_index": 1420
+            },
+            {
+              "requested_s": 30.188,
+              "actual_s": 30.18,
+              "frame_index": 1509
+            },
+            {
+              "requested_s": 31.972,
+              "actual_s": 31.98,
+              "frame_index": 1599
+            },
+            {
+              "requested_s": 33.756,
+              "actual_s": 33.76,
+              "frame_index": 1688
+            },
+            {
+              "requested_s": 35.54,
+              "actual_s": 35.54,
+              "frame_index": 1777
+            },
+            {
+              "requested_s": 37.54,
+              "actual_s": 37.54,
+              "frame_index": 1877
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 55,
+      "prepared_episode": 54,
+      "duration_s": 21.44,
+      "fps": 50.0,
+      "frame_count": 1073,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000055.mp4",
+      "video_sha256": "3773cebea1ea4b472c6197f46a61360c59a7f9ddb185c67998fee80bba77398b",
+      "flags": [
+        {
+          "start_s": 10.26,
+          "end_s": 21.46,
+          "duration_s": 11.2
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000055_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 1.9490909090909092,
+              "actual_s": 1.94,
+              "frame_index": 97
+            },
+            {
+              "requested_s": 3.8981818181818184,
+              "actual_s": 3.9,
+              "frame_index": 195
+            },
+            {
+              "requested_s": 5.847272727272728,
+              "actual_s": 5.84,
+              "frame_index": 292
+            },
+            {
+              "requested_s": 7.796363636363637,
+              "actual_s": 7.8,
+              "frame_index": 390
+            },
+            {
+              "requested_s": 9.745454545454546,
+              "actual_s": 9.74,
+              "frame_index": 487
+            },
+            {
+              "requested_s": 11.694545454545455,
+              "actual_s": 11.7,
+              "frame_index": 585
+            },
+            {
+              "requested_s": 13.643636363636364,
+              "actual_s": 13.64,
+              "frame_index": 682
+            },
+            {
+              "requested_s": 15.592727272727274,
+              "actual_s": 15.6,
+              "frame_index": 780
+            },
+            {
+              "requested_s": 17.541818181818183,
+              "actual_s": 17.54,
+              "frame_index": 877
+            },
+            {
+              "requested_s": 18.44,
+              "actual_s": 18.44,
+              "frame_index": 922
+            },
+            {
+              "requested_s": 19.44,
+              "actual_s": 19.44,
+              "frame_index": 972
+            },
+            {
+              "requested_s": 19.490909090909092,
+              "actual_s": 19.5,
+              "frame_index": 975
+            },
+            {
+              "requested_s": 20.44,
+              "actual_s": 20.44,
+              "frame_index": 1022
+            },
+            {
+              "requested_s": 21.44,
+              "actual_s": 21.44,
+              "frame_index": 1072
+            }
+          ]
+        },
+        {
+          "path": "episode_000055_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 8.26,
+              "actual_s": 8.26,
+              "frame_index": 413
+            },
+            {
+              "requested_s": 10.26,
+              "actual_s": 10.26,
+              "frame_index": 513
+            },
+            {
+              "requested_s": 12.496,
+              "actual_s": 12.5,
+              "frame_index": 625
+            },
+            {
+              "requested_s": 14.732,
+              "actual_s": 14.74,
+              "frame_index": 737
+            },
+            {
+              "requested_s": 16.968,
+              "actual_s": 16.96,
+              "frame_index": 848
+            },
+            {
+              "requested_s": 19.204,
+              "actual_s": 19.2,
+              "frame_index": 960
+            },
+            {
+              "requested_s": 21.44,
+              "actual_s": 21.44,
+              "frame_index": 1072
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 78,
+      "prepared_episode": 77,
+      "duration_s": 79.02,
+      "fps": 50.0,
+      "frame_count": 3952,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000078.mp4",
+      "video_sha256": "c810cddd43b19c45b3719202fa4968c512c658ce2584bf236ff71e68da8be3e1",
+      "flags": [
+        {
+          "start_s": 41.38,
+          "end_s": 53.74,
+          "duration_s": 12.36
+        },
+        {
+          "start_s": 66.92,
+          "end_s": 76.28,
+          "duration_s": 9.36
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000078_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 7.183636363636364,
+              "actual_s": 7.18,
+              "frame_index": 359
+            },
+            {
+              "requested_s": 14.367272727272727,
+              "actual_s": 14.36,
+              "frame_index": 718
+            },
+            {
+              "requested_s": 21.55090909090909,
+              "actual_s": 21.56,
+              "frame_index": 1078
+            },
+            {
+              "requested_s": 28.734545454545454,
+              "actual_s": 28.74,
+              "frame_index": 1437
+            },
+            {
+              "requested_s": 35.91818181818182,
+              "actual_s": 35.92,
+              "frame_index": 1796
+            },
+            {
+              "requested_s": 43.10181818181818,
+              "actual_s": 43.1,
+              "frame_index": 2155
+            },
+            {
+              "requested_s": 50.28545454545454,
+              "actual_s": 50.28,
+              "frame_index": 2514
+            },
+            {
+              "requested_s": 57.46909090909091,
+              "actual_s": 57.46,
+              "frame_index": 2873
+            },
+            {
+              "requested_s": 64.65272727272728,
+              "actual_s": 64.66,
+              "frame_index": 3233
+            },
+            {
+              "requested_s": 71.83636363636364,
+              "actual_s": 71.84,
+              "frame_index": 3592
+            },
+            {
+              "requested_s": 76.02,
+              "actual_s": 76.02,
+              "frame_index": 3801
+            },
+            {
+              "requested_s": 77.02,
+              "actual_s": 77.02,
+              "frame_index": 3851
+            },
+            {
+              "requested_s": 78.02,
+              "actual_s": 78.02,
+              "frame_index": 3901
+            },
+            {
+              "requested_s": 79.02,
+              "actual_s": 79.02,
+              "frame_index": 3951
+            }
+          ]
+        },
+        {
+          "path": "episode_000078_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 39.38,
+              "actual_s": 39.38,
+              "frame_index": 1969
+            },
+            {
+              "requested_s": 41.38,
+              "actual_s": 41.38,
+              "frame_index": 2069
+            },
+            {
+              "requested_s": 43.852000000000004,
+              "actual_s": 43.86,
+              "frame_index": 2193
+            },
+            {
+              "requested_s": 46.324000000000005,
+              "actual_s": 46.32,
+              "frame_index": 2316
+            },
+            {
+              "requested_s": 48.79600000000001,
+              "actual_s": 48.8,
+              "frame_index": 2440
+            },
+            {
+              "requested_s": 51.268,
+              "actual_s": 51.26,
+              "frame_index": 2563
+            },
+            {
+              "requested_s": 53.74,
+              "actual_s": 53.74,
+              "frame_index": 2687
+            },
+            {
+              "requested_s": 55.74,
+              "actual_s": 55.74,
+              "frame_index": 2787
+            }
+          ]
+        },
+        {
+          "path": "episode_000078_flag-1_0.jpg",
+          "kind": "flag-1",
+          "frames": [
+            {
+              "requested_s": 64.92,
+              "actual_s": 64.92,
+              "frame_index": 3246
+            },
+            {
+              "requested_s": 66.92,
+              "actual_s": 66.92,
+              "frame_index": 3346
+            },
+            {
+              "requested_s": 68.792,
+              "actual_s": 68.8,
+              "frame_index": 3440
+            },
+            {
+              "requested_s": 70.664,
+              "actual_s": 70.66,
+              "frame_index": 3533
+            },
+            {
+              "requested_s": 72.536,
+              "actual_s": 72.54,
+              "frame_index": 3627
+            },
+            {
+              "requested_s": 74.408,
+              "actual_s": 74.4,
+              "frame_index": 3720
+            },
+            {
+              "requested_s": 76.28,
+              "actual_s": 76.28,
+              "frame_index": 3814
+            },
+            {
+              "requested_s": 78.28,
+              "actual_s": 78.28,
+              "frame_index": 3914
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 140,
+      "prepared_episode": 135,
+      "duration_s": 25.9,
+      "fps": 50.0,
+      "frame_count": 1296,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000140.mp4",
+      "video_sha256": "3dcae847c187b9be3b81d67f244e963d0562a0401c671acccfd4d8683be37d6c",
+      "flags": [
+        {
+          "start_s": 1.0,
+          "end_s": 7.44,
+          "duration_s": 6.44
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000140_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 2.3545454545454545,
+              "actual_s": 2.36,
+              "frame_index": 118
+            },
+            {
+              "requested_s": 4.709090909090909,
+              "actual_s": 4.7,
+              "frame_index": 235
+            },
+            {
+              "requested_s": 7.0636363636363635,
+              "actual_s": 7.06,
+              "frame_index": 353
+            },
+            {
+              "requested_s": 9.418181818181818,
+              "actual_s": 9.42,
+              "frame_index": 471
+            },
+            {
+              "requested_s": 11.772727272727273,
+              "actual_s": 11.78,
+              "frame_index": 589
+            },
+            {
+              "requested_s": 14.127272727272727,
+              "actual_s": 14.12,
+              "frame_index": 706
+            },
+            {
+              "requested_s": 16.48181818181818,
+              "actual_s": 16.48,
+              "frame_index": 824
+            },
+            {
+              "requested_s": 18.836363636363636,
+              "actual_s": 18.84,
+              "frame_index": 942
+            },
+            {
+              "requested_s": 21.19090909090909,
+              "actual_s": 21.2,
+              "frame_index": 1060
+            },
+            {
+              "requested_s": 22.9,
+              "actual_s": 22.9,
+              "frame_index": 1145
+            },
+            {
+              "requested_s": 23.545454545454547,
+              "actual_s": 23.54,
+              "frame_index": 1177
+            },
+            {
+              "requested_s": 23.9,
+              "actual_s": 23.9,
+              "frame_index": 1195
+            },
+            {
+              "requested_s": 24.9,
+              "actual_s": 24.9,
+              "frame_index": 1245
+            },
+            {
+              "requested_s": 25.9,
+              "actual_s": 25.9,
+              "frame_index": 1295
+            }
+          ]
+        },
+        {
+          "path": "episode_000140_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 1.0,
+              "actual_s": 1.0,
+              "frame_index": 50
+            },
+            {
+              "requested_s": 2.2880000000000003,
+              "actual_s": 2.28,
+              "frame_index": 114
+            },
+            {
+              "requested_s": 3.576,
+              "actual_s": 3.58,
+              "frame_index": 179
+            },
+            {
+              "requested_s": 4.864,
+              "actual_s": 4.86,
+              "frame_index": 243
+            },
+            {
+              "requested_s": 6.152,
+              "actual_s": 6.16,
+              "frame_index": 308
+            },
+            {
+              "requested_s": 7.44,
+              "actual_s": 7.44,
+              "frame_index": 372
+            },
+            {
+              "requested_s": 9.440000000000001,
+              "actual_s": 9.44,
+              "frame_index": 472
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 146,
+      "prepared_episode": 141,
+      "duration_s": 28.44,
+      "fps": 50.0,
+      "frame_count": 1423,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000146.mp4",
+      "video_sha256": "5149d38ab88c8d20cfef20104857d903f4fb4010cba8b58d62b933958870bb9a",
+      "flags": [
+        {
+          "start_s": 10.02,
+          "end_s": 19.62,
+          "duration_s": 9.6
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000146_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 2.5854545454545454,
+              "actual_s": 2.58,
+              "frame_index": 129
+            },
+            {
+              "requested_s": 5.170909090909091,
+              "actual_s": 5.18,
+              "frame_index": 259
+            },
+            {
+              "requested_s": 7.756363636363636,
+              "actual_s": 7.76,
+              "frame_index": 388
+            },
+            {
+              "requested_s": 10.341818181818182,
+              "actual_s": 10.34,
+              "frame_index": 517
+            },
+            {
+              "requested_s": 12.927272727272728,
+              "actual_s": 12.92,
+              "frame_index": 646
+            },
+            {
+              "requested_s": 15.512727272727272,
+              "actual_s": 15.52,
+              "frame_index": 776
+            },
+            {
+              "requested_s": 18.098181818181818,
+              "actual_s": 18.1,
+              "frame_index": 905
+            },
+            {
+              "requested_s": 20.683636363636364,
+              "actual_s": 20.68,
+              "frame_index": 1034
+            },
+            {
+              "requested_s": 23.26909090909091,
+              "actual_s": 23.26,
+              "frame_index": 1163
+            },
+            {
+              "requested_s": 25.44,
+              "actual_s": 25.44,
+              "frame_index": 1272
+            },
+            {
+              "requested_s": 25.854545454545455,
+              "actual_s": 25.86,
+              "frame_index": 1293
+            },
+            {
+              "requested_s": 26.44,
+              "actual_s": 26.44,
+              "frame_index": 1322
+            },
+            {
+              "requested_s": 27.44,
+              "actual_s": 27.44,
+              "frame_index": 1372
+            },
+            {
+              "requested_s": 28.44,
+              "actual_s": 28.44,
+              "frame_index": 1422
+            }
+          ]
+        },
+        {
+          "path": "episode_000146_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 8.02,
+              "actual_s": 8.02,
+              "frame_index": 401
+            },
+            {
+              "requested_s": 10.02,
+              "actual_s": 10.02,
+              "frame_index": 501
+            },
+            {
+              "requested_s": 11.94,
+              "actual_s": 11.94,
+              "frame_index": 597
+            },
+            {
+              "requested_s": 13.86,
+              "actual_s": 13.86,
+              "frame_index": 693
+            },
+            {
+              "requested_s": 15.780000000000001,
+              "actual_s": 15.78,
+              "frame_index": 789
+            },
+            {
+              "requested_s": 17.700000000000003,
+              "actual_s": 17.7,
+              "frame_index": 885
+            },
+            {
+              "requested_s": 19.62,
+              "actual_s": 19.62,
+              "frame_index": 981
+            },
+            {
+              "requested_s": 21.62,
+              "actual_s": 21.62,
+              "frame_index": 1081
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 150,
+      "prepared_episode": 145,
+      "duration_s": 74.36,
+      "fps": 50.0,
+      "frame_count": 3719,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000150.mp4",
+      "video_sha256": "a82352398ac76f62840426b1ee0bd6c378d3491e3462829b5bc15bc0e6778bf9",
+      "flags": [
+        {
+          "start_s": 43.7,
+          "end_s": 71.44,
+          "duration_s": 27.74
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000150_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 6.76,
+              "actual_s": 6.76,
+              "frame_index": 338
+            },
+            {
+              "requested_s": 13.52,
+              "actual_s": 13.52,
+              "frame_index": 676
+            },
+            {
+              "requested_s": 20.28,
+              "actual_s": 20.28,
+              "frame_index": 1014
+            },
+            {
+              "requested_s": 27.04,
+              "actual_s": 27.04,
+              "frame_index": 1352
+            },
+            {
+              "requested_s": 33.8,
+              "actual_s": 33.8,
+              "frame_index": 1690
+            },
+            {
+              "requested_s": 40.56,
+              "actual_s": 40.56,
+              "frame_index": 2028
+            },
+            {
+              "requested_s": 47.32,
+              "actual_s": 47.32,
+              "frame_index": 2366
+            },
+            {
+              "requested_s": 54.08,
+              "actual_s": 54.08,
+              "frame_index": 2704
+            },
+            {
+              "requested_s": 60.839999999999996,
+              "actual_s": 60.84,
+              "frame_index": 3042
+            },
+            {
+              "requested_s": 67.6,
+              "actual_s": 67.6,
+              "frame_index": 3380
+            },
+            {
+              "requested_s": 71.36,
+              "actual_s": 71.36,
+              "frame_index": 3568
+            },
+            {
+              "requested_s": 72.36,
+              "actual_s": 72.36,
+              "frame_index": 3618
+            },
+            {
+              "requested_s": 73.36,
+              "actual_s": 73.36,
+              "frame_index": 3668
+            },
+            {
+              "requested_s": 74.36,
+              "actual_s": 74.36,
+              "frame_index": 3718
+            }
+          ]
+        },
+        {
+          "path": "episode_000150_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 41.7,
+              "actual_s": 41.7,
+              "frame_index": 2085
+            },
+            {
+              "requested_s": 43.7,
+              "actual_s": 43.7,
+              "frame_index": 2185
+            },
+            {
+              "requested_s": 49.248000000000005,
+              "actual_s": 49.24,
+              "frame_index": 2462
+            },
+            {
+              "requested_s": 54.796,
+              "actual_s": 54.8,
+              "frame_index": 2740
+            },
+            {
+              "requested_s": 60.344,
+              "actual_s": 60.34,
+              "frame_index": 3017
+            },
+            {
+              "requested_s": 65.892,
+              "actual_s": 65.9,
+              "frame_index": 3295
+            },
+            {
+              "requested_s": 71.44,
+              "actual_s": 71.44,
+              "frame_index": 3572
+            },
+            {
+              "requested_s": 73.44,
+              "actual_s": 73.44,
+              "frame_index": 3672
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 151,
+      "prepared_episode": 146,
+      "duration_s": 33.84,
+      "fps": 50.0,
+      "frame_count": 1693,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000151.mp4",
+      "video_sha256": "14a663e87106332ea5eb227ccaf5595370d0c708e16ea18193ca5c6a09549749",
+      "flags": [
+        {
+          "start_s": 21.7,
+          "end_s": 33.86,
+          "duration_s": 12.16
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000151_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 3.0763636363636366,
+              "actual_s": 3.08,
+              "frame_index": 154
+            },
+            {
+              "requested_s": 6.152727272727273,
+              "actual_s": 6.16,
+              "frame_index": 308
+            },
+            {
+              "requested_s": 9.22909090909091,
+              "actual_s": 9.22,
+              "frame_index": 461
+            },
+            {
+              "requested_s": 12.305454545454547,
+              "actual_s": 12.3,
+              "frame_index": 615
+            },
+            {
+              "requested_s": 15.381818181818183,
+              "actual_s": 15.38,
+              "frame_index": 769
+            },
+            {
+              "requested_s": 18.45818181818182,
+              "actual_s": 18.46,
+              "frame_index": 923
+            },
+            {
+              "requested_s": 21.534545454545455,
+              "actual_s": 21.54,
+              "frame_index": 1077
+            },
+            {
+              "requested_s": 24.610909090909093,
+              "actual_s": 24.62,
+              "frame_index": 1231
+            },
+            {
+              "requested_s": 27.68727272727273,
+              "actual_s": 27.68,
+              "frame_index": 1384
+            },
+            {
+              "requested_s": 30.763636363636365,
+              "actual_s": 30.76,
+              "frame_index": 1538
+            },
+            {
+              "requested_s": 30.840000000000003,
+              "actual_s": 30.84,
+              "frame_index": 1542
+            },
+            {
+              "requested_s": 31.840000000000003,
+              "actual_s": 31.84,
+              "frame_index": 1592
+            },
+            {
+              "requested_s": 32.84,
+              "actual_s": 32.84,
+              "frame_index": 1642
+            },
+            {
+              "requested_s": 33.84,
+              "actual_s": 33.84,
+              "frame_index": 1692
+            }
+          ]
+        },
+        {
+          "path": "episode_000151_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 19.7,
+              "actual_s": 19.7,
+              "frame_index": 985
+            },
+            {
+              "requested_s": 21.7,
+              "actual_s": 21.7,
+              "frame_index": 1085
+            },
+            {
+              "requested_s": 24.128,
+              "actual_s": 24.12,
+              "frame_index": 1206
+            },
+            {
+              "requested_s": 26.556,
+              "actual_s": 26.56,
+              "frame_index": 1328
+            },
+            {
+              "requested_s": 28.984,
+              "actual_s": 28.98,
+              "frame_index": 1449
+            },
+            {
+              "requested_s": 31.412000000000003,
+              "actual_s": 31.42,
+              "frame_index": 1571
+            },
+            {
+              "requested_s": 33.84,
+              "actual_s": 33.84,
+              "frame_index": 1692
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 155,
+      "prepared_episode": 150,
+      "duration_s": 170.0,
+      "fps": 50.0,
+      "frame_count": 8501,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000155.mp4",
+      "video_sha256": "cc5d177bd1f087a4bf17ec059d2706cecacf92ea4078a2c97bf729db356ff26c",
+      "flags": [
+        {
+          "start_s": 74.0,
+          "end_s": 94.48,
+          "duration_s": 20.48
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000155_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 15.454545454545455,
+              "actual_s": 15.46,
+              "frame_index": 773
+            },
+            {
+              "requested_s": 30.90909090909091,
+              "actual_s": 30.9,
+              "frame_index": 1545
+            },
+            {
+              "requested_s": 46.36363636363637,
+              "actual_s": 46.36,
+              "frame_index": 2318
+            },
+            {
+              "requested_s": 61.81818181818182,
+              "actual_s": 61.82,
+              "frame_index": 3091
+            },
+            {
+              "requested_s": 77.27272727272728,
+              "actual_s": 77.28,
+              "frame_index": 3864
+            },
+            {
+              "requested_s": 92.72727272727273,
+              "actual_s": 92.72,
+              "frame_index": 4636
+            },
+            {
+              "requested_s": 108.18181818181819,
+              "actual_s": 108.18,
+              "frame_index": 5409
+            },
+            {
+              "requested_s": 123.63636363636364,
+              "actual_s": 123.64,
+              "frame_index": 6182
+            },
+            {
+              "requested_s": 139.0909090909091,
+              "actual_s": 139.1,
+              "frame_index": 6955
+            },
+            {
+              "requested_s": 154.54545454545456,
+              "actual_s": 154.54,
+              "frame_index": 7727
+            },
+            {
+              "requested_s": 167.0,
+              "actual_s": 167.0,
+              "frame_index": 8350
+            },
+            {
+              "requested_s": 168.0,
+              "actual_s": 168.0,
+              "frame_index": 8400
+            },
+            {
+              "requested_s": 169.0,
+              "actual_s": 169.0,
+              "frame_index": 8450
+            },
+            {
+              "requested_s": 170.0,
+              "actual_s": 170.0,
+              "frame_index": 8500
+            }
+          ]
+        },
+        {
+          "path": "episode_000155_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 72.0,
+              "actual_s": 72.0,
+              "frame_index": 3600
+            },
+            {
+              "requested_s": 74.0,
+              "actual_s": 74.0,
+              "frame_index": 3700
+            },
+            {
+              "requested_s": 78.096,
+              "actual_s": 78.1,
+              "frame_index": 3905
+            },
+            {
+              "requested_s": 82.19200000000001,
+              "actual_s": 82.2,
+              "frame_index": 4110
+            },
+            {
+              "requested_s": 86.28800000000001,
+              "actual_s": 86.28,
+              "frame_index": 4314
+            },
+            {
+              "requested_s": 90.384,
+              "actual_s": 90.38,
+              "frame_index": 4519
+            },
+            {
+              "requested_s": 94.48,
+              "actual_s": 94.48,
+              "frame_index": 4724
+            },
+            {
+              "requested_s": 96.48,
+              "actual_s": 96.48,
+              "frame_index": 4824
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_episode": 159,
+      "prepared_episode": 154,
+      "duration_s": 7.94,
+      "fps": 50.0,
+      "frame_count": 398,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000159.mp4",
+      "video_sha256": "b8b444da9baf41473f5db708f6c29414f1f18b1e9763981535c01d6366a40980",
+      "flags": [
+        {
+          "start_s": 2.86,
+          "end_s": 7.96,
+          "duration_s": 5.1
+        }
+      ],
+      "sheets": [
+        {
+          "path": "episode_000159_overview_0.jpg",
+          "kind": "overview",
+          "frames": [
+            {
+              "requested_s": 0.0,
+              "actual_s": 0.0,
+              "frame_index": 0
+            },
+            {
+              "requested_s": 0.7218181818181818,
+              "actual_s": 0.72,
+              "frame_index": 36
+            },
+            {
+              "requested_s": 1.4436363636363636,
+              "actual_s": 1.44,
+              "frame_index": 72
+            },
+            {
+              "requested_s": 2.1654545454545455,
+              "actual_s": 2.16,
+              "frame_index": 108
+            },
+            {
+              "requested_s": 2.887272727272727,
+              "actual_s": 2.88,
+              "frame_index": 144
+            },
+            {
+              "requested_s": 3.609090909090909,
+              "actual_s": 3.6,
+              "frame_index": 180
+            },
+            {
+              "requested_s": 4.330909090909091,
+              "actual_s": 4.34,
+              "frame_index": 217
+            },
+            {
+              "requested_s": 4.94,
+              "actual_s": 4.94,
+              "frame_index": 247
+            },
+            {
+              "requested_s": 5.052727272727273,
+              "actual_s": 5.06,
+              "frame_index": 253
+            },
+            {
+              "requested_s": 5.774545454545454,
+              "actual_s": 5.78,
+              "frame_index": 289
+            },
+            {
+              "requested_s": 5.94,
+              "actual_s": 5.94,
+              "frame_index": 297
+            },
+            {
+              "requested_s": 6.496363636363636,
+              "actual_s": 6.5,
+              "frame_index": 325
+            },
+            {
+              "requested_s": 6.94,
+              "actual_s": 6.94,
+              "frame_index": 347
+            },
+            {
+              "requested_s": 7.218181818181818,
+              "actual_s": 7.22,
+              "frame_index": 361
+            },
+            {
+              "requested_s": 7.94,
+              "actual_s": 7.94,
+              "frame_index": 397
+            }
+          ]
+        },
+        {
+          "path": "episode_000159_flag-0_0.jpg",
+          "kind": "flag-0",
+          "frames": [
+            {
+              "requested_s": 0.8599999999999999,
+              "actual_s": 0.86,
+              "frame_index": 43
+            },
+            {
+              "requested_s": 2.86,
+              "actual_s": 2.86,
+              "frame_index": 143
+            },
+            {
+              "requested_s": 3.876,
+              "actual_s": 3.88,
+              "frame_index": 194
+            },
+            {
+              "requested_s": 4.8919999999999995,
+              "actual_s": 4.9,
+              "frame_index": 245
+            },
+            {
+              "requested_s": 5.9079999999999995,
+              "actual_s": 5.9,
+              "frame_index": 295
+            },
+            {
+              "requested_s": 6.9239999999999995,
+              "actual_s": 6.92,
+              "frame_index": 346
+            },
+            {
+              "requested_s": 7.94,
+              "actual_s": 7.94,
+              "frame_index": 397
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

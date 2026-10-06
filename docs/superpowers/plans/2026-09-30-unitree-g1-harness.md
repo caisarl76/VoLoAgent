@@ -252,6 +252,30 @@ numeric audit is done; its stationary flags are review candidates, and 172
 retained outcomes still lack visual review. No data, checkpoint or prompt pool
 changed. These activities do not close task 8 or authorize physical deployment.
 
+Follow-up validation on 2026-10-06 is recorded in
+`docs/artifacts/g1_harness_20261006_followup/README.md`. Four actual-native-loop
+trials pass measured standing reset and backward-duration checks. Two turns
+complete; two reach their deadline and confirm fresh hold within 0.1 seconds,
+with stationary requests and no resumption over the following second. Successful
+cases also pass coordinator loss. Planner, decoded target and measured yaw are
+plotted separately. Repeatability and historical lead/rate-guard stop coverage
+remain open; limits are unchanged.
+
+A deterministic regression reproduced fresh-query action-chunk exhaustion.
+Harness query cadence now starts from capture time; late-result rejection and
+legacy cadence remain intact. A real-checkpoint clear-cylinder trial at the new
+cadence lasts 120 seconds, fails to grasp and confirms deadline hold. Appearance
+controls preserve physics, but full calibration and successful placement remain
+open. Native tests pass 629, VoLoAgent 595 with 15 skips, explicit required
+cross-process tests nine with zero skips, and probe helper tests 12.
+
+All 12 stationary-flagged recordings now have sampled visual screening, without
+new accepted outcome labels. Source 155 and 159 expose incompatible sampled
+content under the blanket prepared bottle prompt. Task boundaries, task labels
+and 172 complete outcomes need review before a new derived training set. No
+dataset, checkpoint or prompt pool changed. Task 8 remains open, and these
+simulation checks do not authorize physical deployment.
+
 ## Deferred to another session: G1 monitoring dashboard
 
 Deferred by the user on 2026-10-02. Dashboard implementation is outside the
