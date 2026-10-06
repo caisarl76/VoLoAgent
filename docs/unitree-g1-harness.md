@@ -192,12 +192,14 @@ by the paused queue drain; it does not isolate the active epoch comparison.
 The headless simulator needs a prepared standing pose and released virtual
 support. All controller trials use DDS loopback, with no physical robot.
 
-Positive/negative 15-degree turns now pass in some states, but negative trials
-near/crossing the heading boundary still interrupt. Earlier failures are
-retained. A diagnostic shadow calculation cannot request a stronger heading
-within the existing lead/rate bounds; downstream planner, decoder and contact
-effects need separation. Turning remains unaccepted. See the current report
-for exact tolerances, trial values and scope.
+Signed 15-degree turns pass in some states and interrupt in others. The latest
+four controls passed both wrapped turns and interrupted both turns from a
+zero-heading setup on the lead/rate guard. Earlier wrapped failures are retained.
+Standing reset and one-second backward commands passed in all four controls.
+The failed-turn probe exits before a later hold acknowledgement, so that path
+still needs confirmation. Planner, decoder and contact effects need separation;
+turning remains unaccepted. See the [October 6 report](artifacts/g1_harness_20261006/README.md)
+for the limits, raw traces and adapter/main-loop distinction.
 
 The corrected Genon criterion passes ten recorded judgments: eight negatives
 without false completion and one two-frame release confirmation. Three saved
@@ -206,16 +208,33 @@ decisions and deadline interruption. These small sets do not establish general
 monitor reliability. Fully hidden carried-bottle footage and successful live
 placement remain pending. The original false-success frames/results are saved.
 
-The [editable sample scene](artifacts/g1_harness_20261002/scene_layout.json)
+The [updated sample scene](artifacts/g1_harness_20261006/scene_layout_bottle_measured.json)
 preserves native actuator/state/camera mapping and passes passive contacts and
-camera transport. The source table and green stool are both 80 cm high. Its
-bottle appearance, mass and contacts are provisional; the checkpoint never
-grasped it in the live trials. The diagnostic's stool-contact check cannot
-certify stable released placement and is explicitly labeled contact-only.
+camera transport. The source table and green stool are both 80 cm high. Bottle
+dimensions and mass now match the user measurements: 20 cm tall, 8 cm diameter,
+300 g. Full geometry, camera, appearance, friction and mass distribution remain
+provisional. The checkpoint still never grasped it. An independent simulation
+check now requires stable released top support for 0.5 seconds in both wall
+and physics time, fresh samples and no robot contact. Forced-object controls
+pass the intended stool and reject the source; they do not demonstrate a grasp.
+
+Native observation preparation now retains independent left-finger measurements
+as the training exporter does. All eight state groups match six recorded samples
+exactly. Thirty checkpoint queries passed disconnected replay checks; the replay
+uses a training episode and cannot establish generalization. Corrected live
+trials still failed placement, including a 120-second measured-bottle trial with
+scripted simulator-truth monitoring. That monitor is a diagnostic control;
+Genon reliability is evaluated separately. All three fresh bottle runs end in
+confirmed planner hold. The native component suite passes 627 tests, the normal
+VoLoAgent suite passes 595 with 15 skips, and the required G1 integration command
+passes 50 with no skips. These results do not establish hardware acceptance.
 
 The [training-review queue](artifacts/g1_harness_20261002/training-review/summary.json)
 maps all 179 source episodes to 174 retained episodes. Failed episode 5 remains
-in the corpus; 172 retained episodes have no outcome review yet. Review outcomes
-and idle segments before another training run. Register new manipulation
+in the corpus; 172 retained episodes have no outcome review yet. The new
+[numeric audit](artifacts/g1_harness_20261006/training-state-audit/summary.json)
+checks all 274,241 retained frames without nonfinite/token-bound violations;
+12 episodes contain stationary review candidates. Review outcomes and candidate
+segments before another training run. Register new manipulation
 prompts only after collecting demonstrations and evaluating the resulting policy.
 Physical bottle placement and supervised hardware acceptance remain pending.

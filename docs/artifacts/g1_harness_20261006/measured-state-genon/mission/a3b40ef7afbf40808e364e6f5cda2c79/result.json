@@ -1,0 +1,6 @@
+{
+  "execution_id": "d9dfe22a61ab4b81828eb20ea56df56a",
+  "outcome": "interrupted",
+  "reason": "vlm_error_or_expired_decision",
+  "evidence_dir": "/tmp/g1-bottle-measured-state-retry-20261006/mission/a3b40ef7afbf40808e364e6f5cda2c79"
+}

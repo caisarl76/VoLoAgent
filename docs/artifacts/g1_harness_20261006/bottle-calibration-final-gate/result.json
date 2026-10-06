@@ -1,0 +1,120 @@
+{
+  "robot_actuated": false,
+  "policy_used": false,
+  "positive_control_forced_object_placement": true,
+  "freshness_clock": "simulation_time_for_offline_controls",
+  "scene_fully_calibrated": false,
+  "model_timestep_s": 0.002,
+  "matched_user_bottle": {
+    "height_m": 0.2,
+    "diameter_m": 0.08,
+    "mass_kg": 0.30000000000000004
+  },
+  "previous_sample_bottle": {
+    "height_m": 0.15,
+    "diameter_m": 0.06,
+    "mass_kg": 0.042411500823462206
+  },
+  "results": {
+    "source": {
+      "placement_confirmed": false,
+      "last_sample": {
+        "at": 1.9020000000000015,
+        "sim_time": 1.9020000000000015,
+        "bottle_position": [
+          0.45000046151039935,
+          -1.553347585315412e-06,
+          0.8999668038679285
+        ],
+        "bottle_bottom_z": 0.7999661670937425,
+        "bottle_xy_radius": 0.04000159196714445,
+        "bottle_linear_speed": 5.471453187241093e-05,
+        "bottle_angular_speed": 0.000583799412581113,
+        "contacts": [
+          {
+            "geom": "source_table",
+            "is_robot": false,
+            "position_z": 0.7999832654565961,
+            "normal_abs_z": 0.9999999999972751
+          },
+          {
+            "geom": "source_table",
+            "is_robot": false,
+            "position_z": 0.7999834942234625,
+            "normal_abs_z": 0.9999994999990377
+          },
+          {
+            "geom": "source_table",
+            "is_robot": false,
+            "position_z": 0.7999833170303134,
+            "normal_abs_z": 0.9999995010712042
+          },
+          {
+            "geom": "source_table",
+            "is_robot": false,
+            "position_z": 0.7999837069760428,
+            "normal_abs_z": 0.9999994999993685
+          },
+          {
+            "geom": "source_table",
+            "is_robot": false,
+            "position_z": 0.7999831000825376,
+            "normal_abs_z": 0.9999995000116783
+          }
+        ]
+      }
+    },
+    "forced_destination": {
+      "placement_confirmed": true,
+      "last_sample": {
+        "at": 1.9020000000000015,
+        "sim_time": 1.9020000000000015,
+        "bottle_position": [
+          0.35000025434202114,
+          -0.5999999726525926,
+          0.8999654718453629
+        ],
+        "bottle_bottom_z": 0.7999653651867081,
+        "bottle_xy_radius": 0.040000266647525665,
+        "bottle_linear_speed": 0.00022556568360215703,
+        "bottle_angular_speed": 0.0023679521854550567,
+        "contacts": [
+          {
+            "geom": "right_green_stool",
+            "is_robot": false,
+            "position_z": 0.7999826826280622,
+            "normal_abs_z": 0.999999999999939
+          },
+          {
+            "geom": "right_green_stool",
+            "is_robot": false,
+            "position_z": 0.7999826827006071,
+            "normal_abs_z": 0.999999499995333
+          },
+          {
+            "geom": "right_green_stool",
+            "is_robot": false,
+            "position_z": 0.7999827890298723,
+            "normal_abs_z": 0.9999994999953573
+          },
+          {
+            "geom": "right_green_stool",
+            "is_robot": false,
+            "position_z": 0.7999827322329105,
+            "normal_abs_z": 0.9999994999994507
+          },
+          {
+            "geom": "right_green_stool",
+            "is_robot": false,
+            "position_z": 0.799982739359116,
+            "normal_abs_z": 0.9999994999994537
+          }
+        ]
+      }
+    }
+  },
+  "sources": {
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/bottle-measured-scene/scene.xml": "8dfc51ed7cb97916582fac9d59ca322b203c0379e463d175b8d17219d1f66d04",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261002/bottle-scene/scene.xml": "22fb182734bf1a7e7fa8c1d8b8da50a3b6628b2882efe3fc1dc2983f3c92dae0"
+  }
+}

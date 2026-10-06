@@ -199,7 +199,7 @@ Files: update V's runbook; save results under `V/docs/artifacts/g1_harness_<vali
 - [ ] Use the deploy skill for the real G1. Obtain its explicit robot-readiness confirmation before actuation, then perform observe-only, supervised pause/reset, bottle placement/reset, and locomotion checks in that order. Record each result and intervention; fail the milestone if an old action reappears, a reset falsely completes, or an interrupted skill resumes automatically.
 - [x] Report separate outcomes for contract/lifecycle tests, real-checkpoint serving, simulation control, monitor accuracy, physical placement, standing reset, and locomotion. Merge only validated code; document any hardware feature still disabled.
 
-Latest validation on 2026-10-02 is recorded in
+Validation on 2026-10-02 is recorded in
 `docs/artifacts/g1_harness_20261002/README.md`; the earlier report retains the
 full-suite/controller results. Fifty current G1 tests pass with no skips,
 including required integration cases. Twenty-three native harness/launcher
@@ -226,6 +226,31 @@ and 172 retained outcomes remain unreviewed. No dataset or checkpoint changed.
 Historical vision disagreements, false success and failed driver attempts are
 preserved. Task 8 remains open despite completing its scene-run and interruption
 activities. Dashboard implementation remains deferred below.
+
+Validation on 2026-10-06 is recorded in
+`docs/artifacts/g1_harness_20261006/README.md`. Native inference now preserves
+the independently measured left fingers as training does. Six recorded samples
+match all eight state groups; the regression also prevents cached-state mutation.
+Thirty disconnected checkpoint queries pass, with replay explicitly limited to
+training-fit evidence. Native component tests pass 627; normal VoLoAgent tests
+pass 595 with 15 skips; the dedicated G1 check passes 50 with zero skips.
+
+The sample bottle now matches the user's 20 cm height, 8 cm diameter and 300 g
+mass. Forced-object controls pass stable stool support and reject the source.
+The placement checker requires dwell in both wall and physics time and cannot
+retain a completed outcome after evidence failure. Fresh Genon and scripted
+truth-control runs still never grasp the bottle; all three confirm planner hold
+on interruption. A measured-bottle trial reaches its 120-second deadline without
+placement. Full scene/camera/appearance calibration and live success remain open.
+
+Four more adapter-driven SONIC trials pass standing reset and backward-duration
+checks. Both wrapped turns pass; both zero-heading turns interrupt on the
+lead/rate guard. Limits are unchanged and repeatability is unaccepted. Those
+failed-turn probes exit before a fresh hold acknowledgement; that path and
+native-main-loop locomotion remain acceptance work. The full retained-frame
+numeric audit is done; its stationary flags are review candidates, and 172
+retained outcomes still lack visual review. No data, checkpoint or prompt pool
+changed. These activities do not close task 8 or authorize physical deployment.
 
 ## Deferred to another session: G1 monitoring dashboard
 

@@ -1,0 +1,3 @@
+# Preserve captured log/model bytes and the hashes in the artifact manifest.
+*.log -whitespace
+*.xml -whitespace
