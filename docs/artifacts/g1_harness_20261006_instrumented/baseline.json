@@ -1,0 +1,6 @@
+{
+  "native_head": "7994c8bb51b0c006eb44fde8858d9d0bccc07d0d",
+  "volo_head": "78aeedabb0419abd714713c000e3ef303500325f",
+  "baseline_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "diagnostic": "one negative-zero repeat, post_walk_hold_s=0; existing rate/lead/dwell/deadline limits"
+}

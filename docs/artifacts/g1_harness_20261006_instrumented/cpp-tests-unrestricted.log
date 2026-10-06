@@ -1,0 +1,146 @@
+[==========] Running 17 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from FK
+[ RUN      ] FK.TestFKAndGlobalVelocities
+Reading motion data from CSV files in: reference/bones_072925_test/
+Error reading directory: filesystem error: directory iterator cannot open directory: No such file or directory [reference/bones_072925_test/]
+unknown file: Failure
+C++ exception with description "Couldn't parse xml file g1/g1_29dof.xml" thrown in the test body.
+
+[  FAILED  ] FK.TestFKAndGlobalVelocities (0 ms)
+[----------] 1 test from FK (0 ms total)
+
+[----------] 1 test from HarnessTelemetry
+[ RUN      ] HarnessTelemetry.AbsoluteMotorOrderingAndEffectiveCapability
+[       OK ] HarnessTelemetry.AbsoluteMotorOrderingAndEffectiveCapability (0 ms)
+[----------] 1 test from HarnessTelemetry (0 ms total)
+
+[----------] 2 tests from HarnessTimeout
+[ RUN      ] HarnessTimeout.RetainsOnlyOptedInTargetsAndZerosVelocity
+[ZMQEndpointInterface] Connected to 127.0.0.1:44913 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+[ZMQManager] Initialized (default: PLANNER mode)
+  - Host: 127.0.0.1:44913
+  - Command topic: 'command' (start/stop/mode)
+    Format: { start: bool, stop: bool, planner: bool }
+  - Planner topic: 'planner' (movement)
+  - Pose topic: 'pose' (streamed motion)
+  - VR_3PT safety filter: max position step 0.03 m, max orientation step 5 deg, stop after 10 rejects
+[ZMQManager] Planner timeout (1260ms) - reset to IDLE; overrides cleared
+[ZMQEndpointInterface] Connected to 127.0.0.1:33627 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+[ZMQManager] Initialized (default: PLANNER mode)
+  - Host: 127.0.0.1:33627
+  - Command topic: 'command' (start/stop/mode)
+    Format: { start: bool, stop: bool, planner: bool }
+  - Planner topic: 'planner' (movement)
+  - Pose topic: 'pose' (streamed motion)
+  - VR_3PT safety filter: max position step 0.03 m, max orientation step 5 deg, stop after 10 rejects
+[ZMQManager] Planner timeout (1260ms) - reset to IDLE; overrides retained for harness hold
+[       OK ] HarnessTimeout.RetainsOnlyOptedInTargetsAndZerosVelocity (2807 ms)
+[ RUN      ] HarnessTimeout.ModeBoundariesAndStopsClearRetainedTargets
+[ZMQEndpointInterface] Connected to 127.0.0.1:41471 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+[ZMQManager] Initialized (default: PLANNER mode)
+  - Host: 127.0.0.1:41471
+  - Command topic: 'command' (start/stop/mode)
+    Format: { start: bool, stop: bool, planner: bool }
+  - Planner topic: 'planner' (movement)
+  - Pose topic: 'pose' (streamed motion)
+  - VR_3PT safety filter: max position step 0.03 m, max orientation step 5 deg, stop after 10 rejects
+[ZMQManager] Planner timeout (1260ms) - reset to IDLE; overrides retained for harness hold
+[ZMQManager] Switched to: STREAMED MOTION mode (safety reset)
+[ZMQManager] Cleared planner buffer
+[ZMQEndpointInterface] Safety reset triggered: will disable ZMQ streaming and return to reference motion
+[ZMQManager] ZMQ streaming enabled
+Safety reset: Planner disabled
+Safety reset: ZMQ streaming disabled, returned to reference motion at frame 0
+=====================================
+ZMQ STREAMING MODE: ENABLED
+=====================================
+Using pose data from 127.0.0.1:41471
+Press ENTER again to return to loaded motions
+[ZMQManager] Switched to: PLANNER mode (safety reset)
+[ZMQManager] Safety reset: Planner kept enabled with current state
+[ZMQManager] Switched to: STREAMED MOTION mode (safety reset)
+[ZMQManager] Cleared planner buffer
+[ZMQEndpointInterface] Safety reset triggered: will disable ZMQ streaming and return to reference motion
+[ZMQManager] ZMQ streaming enabled
+Safety reset: Planner disabled
+Safety reset: ZMQ streaming disabled, returned to reference motion at frame 0
+=====================================
+ZMQ STREAMING MODE: ENABLED
+=====================================
+Using pose data from 127.0.0.1:41471
+Press ENTER again to return to loaded motions
+[ZMQManager] Switched to: PLANNER mode (safety reset)
+[ZMQManager] Safety reset: Planner kept enabled with current state
+[ZMQEndpointInterface] Connected to 127.0.0.1:39827 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+[ZMQManager] Initialized (default: PLANNER mode)
+  - Host: 127.0.0.1:39827
+  - Command topic: 'command' (start/stop/mode)
+    Format: { start: bool, stop: bool, planner: bool }
+  - Planner topic: 'planner' (movement)
+  - Pose topic: 'pose' (streamed motion)
+  - VR_3PT safety filter: max position step 0.03 m, max orientation step 5 deg, stop after 10 rejects
+[ZMQManager] Planner timeout (1260ms) - reset to IDLE; overrides retained for harness hold
+[ZMQEndpointInterface] Connected to 127.0.0.1:45199 topic='pose'
+[ZMQEndpointInterface] Press ENTER to toggle between loaded motions and ZMQ stream
+[ZMQManager] Initialized (default: PLANNER mode)
+  - Host: 127.0.0.1:45199
+  - Command topic: 'command' (start/stop/mode)
+    Format: { start: bool, stop: bool, planner: bool }
+  - Planner topic: 'planner' (movement)
+  - Pose topic: 'pose' (streamed motion)
+  - VR_3PT safety filter: max position step 0.03 m, max orientation step 5 deg, stop after 10 rejects
+[ZMQManager] Planner timeout (1260ms) - reset to IDLE; overrides retained for harness hold
+[ZMQManager] EMERGENCY STOP (O/o)
+[       OK ] HarnessTimeout.ModeBoundariesAndStopsClearRetainedTargets (4508 ms)
+[----------] 2 tests from HarnessTimeout (7316 ms total)
+
+[----------] 5 tests from PlannerTrace
+[ RUN      ] PlannerTrace.RetainsFirstRecordsAndReportsOverflow
+[       OK ] PlannerTrace.RetainsFirstRecordsAndReportsOverflow (0 ms)
+[ RUN      ] PlannerTrace.RequiresFreezeAndRejectsLaterWrites
+[       OK ] PlannerTrace.RequiresFreezeAndRejectsLaterWrites (0 ms)
+[ RUN      ] PlannerTrace.RecordsGeneratedMergedAndSelectedQuaternionsSeparately
+[       OK ] PlannerTrace.RecordsGeneratedMergedAndSelectedQuaternionsSeparately (0 ms)
+[ RUN      ] PlannerTrace.FreezeProducesConsistentSnapshotWithConcurrentWriter
+[       OK ] PlannerTrace.FreezeProducesConsistentSnapshotWithConcurrentWriter (1 ms)
+[ RUN      ] PlannerTrace.OptionIsLimitedToLoopbackSimulation
+[       OK ] PlannerTrace.OptionIsLimitedToLoopbackSimulation (0 ms)
+[----------] 5 tests from PlannerTrace (1 ms total)
+
+[----------] 8 tests from Vr3PtSafetyFilter
+[ RUN      ] Vr3PtSafetyFilter.FirstFrameAlwaysAccepted
+[       OK ] Vr3PtSafetyFilter.FirstFrameAlwaysAccepted (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.SmallStepAccepted
+[       OK ] Vr3PtSafetyFilter.SmallStepAccepted (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.LargePositionStepRejectedAndFrozen
+[Vr3PtSafetyFilter] reject: position-step observed=0.3000m limit=0.0300m streak=1
+[       OK ] Vr3PtSafetyFilter.LargePositionStepRejectedAndFrozen (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.LargeQuatStepRejected
+[Vr3PtSafetyFilter] reject: orientation-step observed=1.5708rad limit=0.0873rad streak=1
+[       OK ] Vr3PtSafetyFilter.LargeQuatStepRejected (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.NonUnitQuatIsNormalizedAndAccepted
+[       OK ] Vr3PtSafetyFilter.NonUnitQuatIsNormalizedAndAccepted (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.NaNRejected
+[Vr3PtSafetyFilter] reject: NaN/Inf/invalid-quat observed=0.0000 limit=0.0000 streak=1
+[       OK ] Vr3PtSafetyFilter.NaNRejected (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.EStopAfterStreak
+[Vr3PtSafetyFilter] reject: position-step observed=0.5000m limit=0.0300m streak=1
+[       OK ] Vr3PtSafetyFilter.EStopAfterStreak (0 ms)
+[ RUN      ] Vr3PtSafetyFilter.GoodFrameResetsStreak
+[Vr3PtSafetyFilter] reject: position-step observed=0.5000m limit=0.0300m streak=1
+[Vr3PtSafetyFilter] reject: position-step observed=0.4950m limit=0.0300m streak=1
+[       OK ] Vr3PtSafetyFilter.GoodFrameResetsStreak (0 ms)
+[----------] 8 tests from Vr3PtSafetyFilter (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 5 test suites ran. (7318 ms total)
+[  PASSED  ] 16 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FK.TestFKAndGlobalVelocities
+
+ 1 FAILED TEST

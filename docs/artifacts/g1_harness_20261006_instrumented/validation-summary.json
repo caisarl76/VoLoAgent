@@ -1,0 +1,23 @@
+{
+  "python_focused_passed": 39,
+  "python_focused_skipped": 0,
+  "native_trace_passed": 6,
+  "native_hold_telemetry_safety_passed": 11,
+  "controller_build_exit_code": 0,
+  "initial_broad_cpp_passed": 16,
+  "initial_broad_cpp_failed": 1,
+  "initial_broad_cpp_failure": "Existing FK fixture reference/bones_072925_test and g1/g1_29dof.xml absent from test working directory",
+  "deploy_preflight_exit_code": 1,
+  "deploy_preflight_failure": "Unrelated decoupled-WBC Balance.onnx is a Git LFS pointer; CUDA passes unrestricted",
+  "simulator_trial_count": 1,
+  "turn_success": false,
+  "control_checks_passed": true,
+  "physical_robot_commands": 0,
+  "camera_pipeline_started": false,
+  "unchanged_prior_manifest_files": {
+    "g1_harness_20261002": 203,
+    "g1_harness_20261006": 423,
+    "g1_harness_20261006_followup": 316,
+    "g1_harness_20261006_acceptance": 138
+  }
+}

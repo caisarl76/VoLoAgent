@@ -1,0 +1,40 @@
+{
+  "pipeline_started": false,
+  "robot_commands_sent": false,
+  "camera_to_robot_calibrated": false,
+  "requested_profile": {
+    "width": 640,
+    "height": 480,
+    "fps": 15,
+    "format": "rgb8"
+  },
+  "status": "available",
+  "reason": null,
+  "device_name": "Intel RealSense D435I",
+  "firmware_version": "5.15.1.55",
+  "profile_intrinsics": [
+    {
+      "width": 640,
+      "height": 480,
+      "fps": 15,
+      "format": "rgb8",
+      "fx": 604.1785888671875,
+      "fy": 603.9077758789062,
+      "cx": 316.75347900390625,
+      "cy": 255.6288299560547,
+      "distortion_model": "distortion.inverse_brown_conrady",
+      "distortion_coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "limitations": [
+    "No RGB optical-to-robot transform is measured.",
+    "Select the actual recording/runtime resolution and frame rate.",
+    "No pipeline was opened and no image was captured."
+  ]
+}

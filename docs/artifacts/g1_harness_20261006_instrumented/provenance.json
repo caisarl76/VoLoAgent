@@ -1,0 +1,32 @@
+{
+  "models": {
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx": "34bae8570d4a4421a5391a5c2befd745d4a02d182ec539e5f9da44c091c67509",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx": "fb97de22819b2057b41459802128d91723d91a25f0ad73e7bfc41a9cf8365bae",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml": "4a67713b310932e50aca81f19188c8d76013148e98b15c8b5bbea995f12e59f0",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx": "39b553e197f62f077975ba38512bc04781a3fc37c2af7c6756e04629f760edea"
+  },
+  "profile": {
+    "path": "configs/g1/workstation.yaml",
+    "sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154"
+  },
+  "controller_binary": {
+    "path": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+    "sha256": "25d4de7b062ffc83743a750ccc8151913ae25f13607237d9ce7b82d4596e72b1"
+  },
+  "native_baseline_commit": "7994c8bb51b0c006eb44fde8858d9d0bccc07d0d",
+  "volo_baseline_commit": "78aeedabb0419abd714713c000e3ef303500325f",
+  "controller_sources": {
+    "include/planner_trace.hpp": "486d1767cddd3fe7c8bfaeaae0d9ea5f3b232fe91341f88477e8502414bc0302",
+    "include/localmotion_kplanner.hpp": "8e0a7cc80efe77904e677bff64a2f678c81b6e8d7cb753b9865d886a3bd1f9b3",
+    "src/g1_deploy_onnx_ref.cpp": "5aac635f83a126fc867e8ca09280902a4d74d2cd3cb4f730cf88e2b830315aa9",
+    "unit_tests/test_planner_trace.cpp": "2ac2e3878e84eb9b060ab279e3f965f3504afdc2a50f5de6b589700295d8dea8"
+  },
+  "original_native_workspace_preserved": true,
+  "robot_connection": false,
+  "dds_interface": "lo",
+  "vision_api_calls": 0,
+  "vla_checkpoint_queries": 0,
+  "camera_host": "pc2_222",
+  "camera_query_only": true,
+  "native_implementation_commit": "557754d2be33b73a2c831776a31daa95804baeec"
+}

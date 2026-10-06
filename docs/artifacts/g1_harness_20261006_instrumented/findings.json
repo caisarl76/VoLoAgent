@@ -1,0 +1,90 @@
+{
+  "scope": "One native-loop simulation diagnostic, no checkpoint queries or hardware commands.",
+  "turn_window_s": 8.106459027971141,
+  "goal_world_deg": -15.580672368611761,
+  "turn_samples": 405,
+  "turn_plan_count": 81,
+  "turn_control_count": 406,
+  "metadata": {
+    "clock": "steady_clock_seconds",
+    "control_capacity": 8192,
+    "control_count": 799,
+    "control_dropped": 0,
+    "event": "metadata",
+    "merge_capacity": 512,
+    "merge_count": 87,
+    "merge_dropped": 0,
+    "plan_capacity": 512,
+    "plan_count": 87,
+    "plan_dropped": 0,
+    "quaternion_order": "wxyz",
+    "schema": 1
+  },
+  "received_effective_facing_max_component_gap": 0.0,
+  "wire_effective_facing_max_component_gap": 0.0,
+  "recovered_world_facing_max_gap_deg": 7.182344461398316e-07,
+  "selected_merge_max_quat_component_gap": 0.0,
+  "native_telemetry_max_quat_component_gap": 0.0,
+  "observed_control_tick_minus_telemetry_index": [
+    1
+  ],
+  "generation_frame_mismatches": 0,
+  "raw_future_within_1deg_count": 49,
+  "raw_future_first_within_1deg_s": {
+    "min": 0.0,
+    "median": 1.0333333333333334,
+    "max": 1.3333333333333333
+  },
+  "resampled_future_within_1deg_count": 48,
+  "resampled_first_hit_beyond_max_active_frame_count": 41,
+  "generated_to_merged_offset_frames": [
+    2
+  ],
+  "max_active_frame": 6,
+  "observation_window_frames": [
+    46
+  ],
+  "raw_frames": [
+    44
+  ],
+  "resampled_frames": [
+    73
+  ],
+  "merged_frames": [
+    75
+  ],
+  "best_active_target_goal_error_deg": 2.896372398068962,
+  "best_measured_goal_error_deg": 5.706174797005502,
+  "target_measured_gap_deg": {
+    "min": 0.0061248324816745026,
+    "median": 1.2751361754291537,
+    "max": 3.501439638686378
+  },
+  "planning_ms": {
+    "min": 6.190349988173693,
+    "median": 7.80209299409762,
+    "max": 10.26175101287663
+  },
+  "inference_ms": {
+    "min": 6.161,
+    "median": 7.768,
+    "max": 10.227
+  },
+  "merge_after_plan_end_ms": {
+    "min": 0.5297189927659929,
+    "median": 0.9852710063569248,
+    "max": 12.552080035675317
+  },
+  "terminal_reason": "planner_error:Heading feedback moved beyond the rate-limited lead bound",
+  "terminal_old_scalar_reference_lead_deg": -5.216941020995715,
+  "terminal_required_retraction_rate_deg_s": 10.814282161888183,
+  "limitations": [
+    "Future quaternions are predictions, not executed poses.",
+    "Encoder observes a lookahead window; active-frame counts do not describe all encoder input.",
+    "Generated hit indices are aligned by the recorded merge offset; blending may alter the actual merged hit.",
+    "Movement buffer timestamp is a local receipt/update identity; packets contain no sender sequence.",
+    "Initial phase timings are unavailable; planning/model durations bracket host operations, not CUDA kernel-only time.",
+    "telemetry_end brackets state publication, not the separate 500 Hz DDS motor writer.",
+    "One trace does not isolate generator/context, activation/blending and lower-controller causality."
+  ]
+}

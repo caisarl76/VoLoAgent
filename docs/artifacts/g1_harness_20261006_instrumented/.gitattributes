@@ -1,0 +1,6 @@
+*.log -whitespace
+*.csv whitespace=cr-at-eol
+# Preserve the upstream whitespace in exact as-run source copies and diff context.
+native-negative-zero*/as-run/*.cpp -whitespace
+native-negative-zero*/as-run/*.hpp -whitespace
+native-instrumentation.patch -whitespace

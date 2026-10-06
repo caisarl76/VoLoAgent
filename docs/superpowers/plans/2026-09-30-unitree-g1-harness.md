@@ -311,6 +311,27 @@ the fresh full suite passes 595 with 15 skips outside the sandbox. The reviewed
 commit receives a valid author sign-off. Original sources, review, test logs and
 evidence are preserved; the correction does not change acceptance results.
 
+The instrumented loopback diagnostic is recorded in
+`docs/artifacts/g1_harness_20261006_instrumented/README.md`. Its opt-in native
+memory trace changes observability while preserving command generation and
+all limits. One negative-zero repeat interrupts at 8.17 seconds on the lead/rate
+guard, receives fresh hold acknowledgement in 0.129 seconds, and has 50
+stationary packets over the next second. All owned processes stop, with no
+latent publications or checkpoint queries. Reset/walk/control checks pass;
+turn success remains false.
+
+Across 81 turn replans, facing is identical on the wire and at the model input.
+Generated future headings, merged trajectories and active root frames are now
+captured. The best measured goal error remains 5.706 degrees. Generation/context,
+blending/frame replacement and lower tracking need an offline controlled
+comparison before a control change. Factory D435i intrinsics for advertised
+640x480 RGB8/15 FPS are read on user-provided `pc2_222` without starting a stream.
+Actual runtime profile and optical-to-robot pose remain unconfirmed. Task 8,
+accepted segment review and manipulation acceptance remain open. Fresh checks
+pass 39 focused Python tests, six native trace tests and 11 native hold/safety
+tests; the broad legacy FK fixture remains unavailable. Previous archives,
+models, checkpoint and prompt pool are unchanged.
+
 ## Deferred to another session: G1 monitoring dashboard
 
 Deferred by the user on 2026-10-02. Dashboard implementation is outside the
