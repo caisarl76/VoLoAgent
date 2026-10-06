@@ -6,7 +6,7 @@ case was corrected by identifying the destination as the separate green stool.
 The fresh live trial kept the bottle on the source table and interrupted with
 confirmed planner hold at its deadline. Successful pick-and-place, repeatable
 turning, full occlusion acceptance and supervised hardware remain open.
-See the [current validation report](artifacts/g1_harness_20261002/README.md) for
+See the [current validation report](artifacts/g1_harness_20261006_followup/README.md) for
 the scene, raw evidence, software checks and remaining gates.
 
 The agent chooses a registered skill, checks camera evidence, and asks the native
@@ -192,14 +192,15 @@ by the paused queue drain; it does not isolate the active epoch comparison.
 The headless simulator needs a prepared standing pose and released virtual
 support. All controller trials use DDS loopback, with no physical robot.
 
-Signed 15-degree turns pass in some states and interrupt in others. The latest
-four controls passed both wrapped turns and interrupted both turns from a
-zero-heading setup on the lead/rate guard. Earlier wrapped failures are retained.
-Standing reset and one-second backward commands passed in all four controls.
-The failed-turn probe exits before a later hold acknowledgement, so that path
-still needs confirmation. Planner, decoder and contact effects need separation;
-turning remains unaccepted. See the [October 6 report](artifacts/g1_harness_20261006/README.md)
-for the limits, raw traces and adapter/main-loop distinction.
+Signed 15-degree turns pass in some states and interrupt in others. Four new
+actual-main-loop controls passed standing reset and one-second backward commands.
+Two turns completed and two reached their deadline. Both failures received fresh
+hold acknowledgement within 0.1 seconds, followed by one second of stationary
+planner requests without resumption. The successful cases also passed coordinator
+loss. Historical adapter lead/rate-guard failures remain preserved and still lack
+their own later hold observations. Turning remains unaccepted. The
+[follow-up report](artifacts/g1_harness_20261006_followup/README.md) separates planner,
+decoded target and measured yaw and records the unchanged limits.
 
 The corrected Genon criterion passes ten recorded judgments: eight negatives
 without false completion and one two-frame release confirmation. Three saved
@@ -225,16 +226,27 @@ uses a training episode and cannot establish generalization. Corrected live
 trials still failed placement, including a 120-second measured-bottle trial with
 scripted simulator-truth monitoring. That monitor is a diagnostic control;
 Genon reliability is evaluated separately. All three fresh bottle runs end in
-confirmed planner hold. The native component suite passes 627 tests, the normal
-VoLoAgent suite passes 595 with 15 skips, and the required G1 integration command
-passes 50 with no skips. These results do not establish hardware acceptance.
+confirmed planner hold. A clear-cylinder trial revealed avoidable action-chunk
+exhaustion. Harness mode now schedules replacement queries from observation
+capture; late results still fail closed. The new 120-second clear-cylinder trial
+also never grasped the bottle and confirmed hold at its deadline. Its mass,
+collision geometry and camera match the cyan control; full calibration remains
+provisional. The native component suite passes 629 tests, the normal VoLoAgent
+suite passes 595 with 15 skips, and the explicit required G1 cross-process command
+passes nine with zero skips. These results do not establish hardware acceptance.
 
 The [training-review queue](artifacts/g1_harness_20261002/training-review/summary.json)
 maps all 179 source episodes to 174 retained episodes. Failed episode 5 remains
 in the corpus; 172 retained episodes have no outcome review yet. The new
 [numeric audit](artifacts/g1_harness_20261006/training-state-audit/summary.json)
 checks all 274,241 retained frames without nonfinite/token-bound violations;
-12 episodes contain stationary review candidates. Review outcomes and candidate
-segments before another training run. Register new manipulation
+12 episodes contain stationary review candidates. All 12 now have
+[sampled visual screening](artifacts/g1_harness_20261006_followup/training-review/review.json),
+while 172 retained outcomes still need complete review. Source episodes 155 and
+159 show other-object actions or human setup in sampled frames despite their
+prepared bottle instruction. Preparation replaced the generic source task
+`place OBJECT on the table` with the bottle prompt for all retained episodes.
+Audit task boundaries and labels before preparing a new derived training set.
+Register new manipulation
 prompts only after collecting demonstrations and evaluating the resulting policy.
 Physical bottle placement and supervised hardware acceptance remain pending.

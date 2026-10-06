@@ -1,0 +1,49 @@
+.............................................................F.......... [ 11%]
+........................................................................ [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 57%]
+........................................................................ [ 68%]
+........................................................................ [ 80%]
+........................................................................ [ 91%]
+.....................................................                    [100%]
+=================================== FAILURES ===================================
+_________ test_local_rpc_and_second_server_does_not_unlink_live_socket _________
+
+tmp_path = PosixPath('/tmp/pytest-of-jihun/pytest-163/test_local_rpc_and_second_serv0')
+
+    def test_local_rpc_and_second_server_does_not_unlink_live_socket(tmp_path):
+        module = rpc_module()
+        c, _ = make()
+        endpoint = "ipc://" + str(tmp_path / "h.sock")
+        server = module.HarnessRPCServer(endpoint, None)
+>       server.start()
+
+gear_sonic/tests/test_harness_rpc.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <gear_sonic.utils.inference.harness_rpc.HarnessRPCServer object at 0x740e72950430>
+
+    def start(self):
+        self._thread = threading.Thread(target=self._run, daemon=True)
+        self._thread.start()
+        if not self._ready.wait(1.0):
+            self.close()
+            raise OSError("IPC worker startup timed out")
+        if self._error:
+>           raise OSError(str(self._error))
+E           OSError: Operation not permitted (addr='ipc:///tmp/pytest-of-jihun/pytest-163/test_local_rpc_and_second_serv0/h.sock')
+
+gear_sonic/utils/inference/harness_rpc.py:45: OSError
+=============================== warnings summary ===============================
+../../../GR00T-WholeBodyControl/.venv_teleop/lib/python3.10/site-packages/torch/jit/_script.py:1488: 122 warnings
+  /home/jihun/work/GR00T-WholeBodyControl/.venv_teleop/lib/python3.10/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+<unknown>:4
+  <unknown>:4: DeprecationWarning: invalid escape sequence '\*'
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED gear_sonic/tests/test_harness_rpc.py::test_local_rpc_and_second_server_does_not_unlink_live_socket
+1 failed, 628 passed, 123 warnings in 13.60s

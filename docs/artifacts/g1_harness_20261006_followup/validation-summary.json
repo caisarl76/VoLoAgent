@@ -1,0 +1,170 @@
+{
+  "task8_complete": false,
+  "hardware_connected": false,
+  "dashboard_deferred": true,
+  "checkpoint_changed": false,
+  "prompt_pool_changed": false,
+  "training_performed": false,
+  "dataset_modified": false,
+  "native_capture_cadence_fixed": true,
+  "turning_accepted": false,
+  "turn_successes": 2,
+  "turn_trials": 4,
+  "native_turns": [
+    {
+      "case": "negative-zero",
+      "turn_success": false,
+      "control_checks": "passed_control_checks",
+      "final_error_deg": 7.829170196426604,
+      "elapsed_s": 10.076923567976337,
+      "entry_yaw_measured_deg": -1.0986604724422884,
+      "final_in_tolerance_span_s": 0,
+      "advancing_indices_in_final_span": 0,
+      "max_saved_reference_rate_deg_s": 10.000000000000016,
+      "max_saved_reference_lead_deg": 5.0000000000000036,
+      "nominal_reference_reached": false,
+      "hold_ack_elapsed_s": 0.09057622996624559,
+      "post_interrupt_stationary_packets": 49,
+      "coordinator_loss": null,
+      "latent_wire_count": 0,
+      "final_reason": "planner_error:Turn deadline exceeded"
+    },
+    {
+      "case": "positive-zero",
+      "turn_success": true,
+      "control_checks": "passed_control_checks",
+      "final_error_deg": 2.1853283471694325,
+      "elapsed_s": 3.412572788016405,
+      "entry_yaw_measured_deg": 1.6491852198118537,
+      "final_in_tolerance_span_s": 0.5416191110271029,
+      "advancing_indices_in_final_span": 23,
+      "max_saved_reference_rate_deg_s": 10.000000000000103,
+      "max_saved_reference_lead_deg": 5.000000000000007,
+      "nominal_reference_reached": true,
+      "hold_ack_elapsed_s": null,
+      "post_interrupt_stationary_packets": null,
+      "coordinator_loss": "passed",
+      "latent_wire_count": 0,
+      "final_reason": null
+    },
+    {
+      "case": "negative-wrap",
+      "turn_success": true,
+      "control_checks": "passed_control_checks",
+      "final_error_deg": 2.1545513817983886,
+      "elapsed_s": 8.489054043020587,
+      "entry_yaw_measured_deg": -173.28741533500818,
+      "final_in_tolerance_span_s": 0.5617642989964224,
+      "advancing_indices_in_final_span": 29,
+      "max_saved_reference_rate_deg_s": 10.000000000000632,
+      "max_saved_reference_lead_deg": 5.000000000000009,
+      "nominal_reference_reached": true,
+      "hold_ack_elapsed_s": null,
+      "post_interrupt_stationary_packets": null,
+      "coordinator_loss": "passed",
+      "latent_wire_count": 0,
+      "final_reason": null
+    },
+    {
+      "case": "positive-wrap",
+      "turn_success": false,
+      "control_checks": "passed_control_checks",
+      "final_error_deg": 3.033845889933553,
+      "elapsed_s": 10.05329020501813,
+      "entry_yaw_measured_deg": 168.94217124935298,
+      "final_in_tolerance_span_s": 0,
+      "advancing_indices_in_final_span": 0,
+      "max_saved_reference_rate_deg_s": 10.000000000000624,
+      "max_saved_reference_lead_deg": 5.000000000000009,
+      "nominal_reference_reached": true,
+      "hold_ack_elapsed_s": 0.07045425201067701,
+      "post_interrupt_stationary_packets": 50,
+      "coordinator_loss": null,
+      "latent_wire_count": 0,
+      "final_reason": "planner_error:Turn deadline exceeded"
+    }
+  ],
+  "appearance_trials": [
+    {
+      "trial": "appearance-live",
+      "outcome": "failed",
+      "reason": "action_chunk_exhausted",
+      "elapsed_s": 28.321893721004017,
+      "object_samples": 586,
+      "robot_contact_samples": 0,
+      "contact_geoms": [
+        "source_table"
+      ],
+      "hold_confirmed": true,
+      "placement_validated": false,
+      "native_runner_sha256": "565e7acc59cdd75de61e7d13659d07c179c1cb8ef87b6b556c1b675b60371787",
+      "owned_process_exit_codes": {
+        "policy": 0,
+        "mujoco": 0,
+        "sonic": -15,
+        "native": 0
+      }
+    },
+    {
+      "trial": "appearance-live-capture-cadence",
+      "outcome": "failed",
+      "reason": "Manipulation deadline exceeded",
+      "elapsed_s": 120.16307254898129,
+      "object_samples": 1499,
+      "robot_contact_samples": 0,
+      "contact_geoms": [
+        "source_table"
+      ],
+      "hold_confirmed": true,
+      "placement_validated": false,
+      "native_runner_sha256": "2290b225519b70a361d15d931ca4eabd77ee565625856e317aa84ea6ea82105c",
+      "owned_process_exit_codes": {
+        "policy": 0,
+        "mujoco": 0,
+        "sonic": -15,
+        "native": 0
+      }
+    }
+  ],
+  "full_scene_calibrated": false,
+  "new_sampled_training_screenings": 12,
+  "accepted_new_outcome_labels": 0,
+  "retained_episodes_without_complete_outcome_review": 172,
+  "prior_archives_verified": {
+    "g1_harness_20261002": {
+      "files_verified": 203,
+      "manifest_sha256": "abf4767648104671eeaac2b4167603c2f4d5d1e324c369910a00b9b3768e2871"
+    },
+    "g1_harness_20261006": {
+      "files_verified": 423,
+      "manifest_sha256": "646fa38eaf58ee80d5e8f48662e5a8dde65ee44a0fd4dca00d3cec2ed668a5fa"
+    }
+  },
+  "credential_scan_passed": true,
+  "software_checks": [
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "command": "env PYTHONPATH=. PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest gear_sonic/tests -q",
+      "result": "629 passed",
+      "log": "software-checks/g1-capture-cadence-native-suite-unrestricted.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q",
+      "result": "595 passed, 15 skipped",
+      "log": "software-checks/g1-followup-volo-suite.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/test_g1_harness_e2e.py --g1-native-checkout=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --g1-native-python=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python --require-g1-e2e -q",
+      "result": "9 passed, zero skips",
+      "log": "software-checks/g1-capture-cadence-crossprocess.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py docs/artifacts/g1_harness_20261006_followup/test_planner_wire.py -q",
+      "result": "12 passed",
+      "log": "software-checks/g1-followup-probes-green.log"
+    }
+  ]
+}

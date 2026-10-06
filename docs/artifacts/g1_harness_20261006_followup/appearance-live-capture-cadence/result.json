@@ -1,0 +1,524 @@
+{
+  "outcome": "failed",
+  "gate": "actual_checkpoint_bottle_mission",
+  "robot_connection": false,
+  "dds_interface": "lo",
+  "controller_gpu": 0,
+  "policy_gpu": 1,
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "scene_sha256": "1d6d901d0052bcd5cb4774dcee405e2564fc56deac006092c6f7dfe295711de5",
+  "native_runner_sha256": "2290b225519b70a361d15d931ca4eabd77ee565625856e317aa84ea6ea82105c",
+  "destination_geometry": {
+    "geom": "right_green_stool",
+    "xy": [
+      0.35,
+      -0.6
+    ],
+    "radius": 0.25,
+    "height": 0.8
+  },
+  "scene_calibrated": false,
+  "placement_validated": false,
+  "destination_contact_observed": false,
+  "monitor_mode": "simulator_truth_control",
+  "monitor_model": "scripted_simulator_truth",
+  "monitor_base_url": null,
+  "scripted_monitor_delay_s": 1.0,
+  "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "preparation": {
+    "execution_id": "c1292248795e42a1b9743aca3f569dbd",
+    "outcome": "completed",
+    "reason": "All skills completed with confirmed planner hold",
+    "evidence_dir": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/preparation/cf114e137647403192b1ecac6c0dfaa6"
+  },
+  "mission": {
+    "execution_id": "c25ab373f9b349278c5382616354c377",
+    "outcome": "interrupted",
+    "reason": "Manipulation deadline exceeded",
+    "evidence_dir": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/mission/4b3ca2c409824a6ba4e5b770ee8014e2"
+  },
+  "final_status": {
+    "runtime_id": "f0aa77fc01d64ac59b21c58231207284",
+    "phase": "INTERRUPTED",
+    "skill_id": "bottle_to_right_table",
+    "execution_id": "c25ab373f9b349278c5382616354c377",
+    "inference_epoch": 4,
+    "controller_running": true,
+    "policy_ready": true,
+    "mode_requested": "PLANNER",
+    "planner_reference_active": true,
+    "hold_confirmed": true,
+    "telemetry_age_s": 0.0,
+    "telemetry_index": 6436,
+    "observation_age_s": 0.003909519989974797,
+    "frame_id": "6e350f32f50c4e1481a81a24bad58d9f:1791267915.2268155",
+    "registry_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+    "policy_host": "127.0.0.1",
+    "policy_port": 15558,
+    "checkpoint_expected": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+    "owner_session_id": null,
+    "reason": "policy_or_task_timeout",
+    "locomotion_enabled": false
+  },
+  "independent_last_object_samples": [
+    {
+      "at": 453200.566873919,
+      "sim_time": 148.49499999993745,
+      "bottle_position": [
+        0.44999917399208245,
+        -1.5777924702398035e-06,
+        0.8999667667334368
+      ],
+      "bottle_bottom_z": 0.7999662749820842,
+      "bottle_xy_radius": 0.04000122939727416,
+      "bottle_linear_speed": 0.0002248645283476707,
+      "bottle_angular_speed": 0.0023799150073019414,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999835413527452,
+          "normal_abs_z": 0.9999999999996997
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999834270268682,
+          "normal_abs_z": 0.9999995000081091
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833446472064,
+          "normal_abs_z": 0.9999995010711208
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999836253154701,
+          "normal_abs_z": 0.999999499999713
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831431573386,
+          "normal_abs_z": 0.9999995010726384
+        }
+      ]
+    },
+    {
+      "at": 453200.668244804,
+      "sim_time": 148.59499999993736,
+      "bottle_position": [
+        0.44999890583342156,
+        -1.730275890045992e-06,
+        0.8999667597577496
+      ],
+      "bottle_bottom_z": 0.7999662167650513,
+      "bottle_xy_radius": 0.04000135750478104,
+      "bottle_linear_speed": 0.0003667785541583138,
+      "bottle_angular_speed": 0.0039335870543979,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983229818221,
+          "normal_abs_z": 0.9999999999983324
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833657151063,
+          "normal_abs_z": 0.999999500008134
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833991292256,
+          "normal_abs_z": 0.9999995010690182
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983650889638,
+          "normal_abs_z": 0.9999995000000399
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831091728868,
+          "normal_abs_z": 0.9999994999999539
+        }
+      ]
+    },
+    {
+      "at": 453200.770296584,
+      "sim_time": 148.69499999993727,
+      "bottle_position": [
+        0.44999914485518333,
+        -1.485228899034722e-06,
+        0.8999667224407409
+      ],
+      "bottle_bottom_z": 0.7999662688268455,
+      "bottle_xy_radius": 0.04000113405081434,
+      "bottle_linear_speed": 0.00020028376107350304,
+      "bottle_angular_speed": 0.00212348267419763,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999835069393723,
+          "normal_abs_z": 0.9999999999997441
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999834013199296,
+          "normal_abs_z": 0.9999995000081017
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833258711011,
+          "normal_abs_z": 0.999999501071373
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983584455898,
+          "normal_abs_z": 0.9999994999997407
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983139580509,
+          "normal_abs_z": 0.9999995010721369
+        }
+      ]
+    },
+    {
+      "at": 453200.871702171,
+      "sim_time": 148.79499999993718,
+      "bottle_position": [
+        0.44999889864839177,
+        -1.7203238306821833e-06,
+        0.8999667569520206
+      ],
+      "bottle_bottom_z": 0.7999662178101573,
+      "bottle_xy_radius": 0.04000134787736771,
+      "bottle_linear_speed": 0.0003665677869368031,
+      "bottle_angular_speed": 0.003931449806651245,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999835434592533,
+          "normal_abs_z": 0.9999999999995398
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833631548761,
+          "normal_abs_z": 0.9999995000081316
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833988694487,
+          "normal_abs_z": 0.9999995010690252
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999836475376203,
+          "normal_abs_z": 0.9999995000000398
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831095676677,
+          "normal_abs_z": 0.9999995010733023
+        }
+      ]
+    },
+    {
+      "at": 453200.973171048,
+      "sim_time": 148.89499999993708,
+      "bottle_position": [
+        0.4500003881140564,
+        -1.34109240035582e-06,
+        0.8999666380562068
+      ],
+      "bottle_bottom_z": 0.7999658973084697,
+      "bottle_xy_radius": 0.04000185191221259,
+      "bottle_linear_speed": 0.0003441402935502194,
+      "bottle_angular_speed": 0.0036523924464444283,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831404301262,
+          "normal_abs_z": 0.999999999996789
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999836263313538,
+          "normal_abs_z": 0.9999994999993677
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999830181574439,
+          "normal_abs_z": 0.9999995010792854
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999835261981686,
+          "normal_abs_z": 0.9999994999977848
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831173249423,
+          "normal_abs_z": 0.9999995000368705
+        }
+      ]
+    },
+    {
+      "at": 453201.075771699,
+      "sim_time": 148.994999999937,
+      "bottle_position": [
+        0.44999886659007554,
+        -1.6742127381270567e-06,
+        0.8999667430817476
+      ],
+      "bottle_bottom_z": 0.7999662218892817,
+      "bottle_xy_radius": 0.04000130300238747,
+      "bottle_linear_speed": 0.00036464144923709096,
+      "bottle_angular_speed": 0.003912514193269077,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999835296901134,
+          "normal_abs_z": 0.9999999999995592
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833504446181,
+          "normal_abs_z": 0.9999995000081296
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833976373252,
+          "normal_abs_z": 0.999999501069044
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999836311911539,
+          "normal_abs_z": 0.9999995000000391
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831118352543,
+          "normal_abs_z": 0.999999501073046
+        }
+      ]
+    },
+    {
+      "at": 453201.176801101,
+      "sim_time": 149.0949999999369,
+      "bottle_position": [
+        0.44999935359794824,
+        -3.248836940821637e-06,
+        0.8999667023589749
+      ],
+      "bottle_bottom_z": 0.799965500396991,
+      "bottle_xy_radius": 0.04000300501783648,
+      "bottle_linear_speed": 0.00033064452937448994,
+      "bottle_angular_speed": 0.0034987662124438836,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999830620988682,
+          "normal_abs_z": 0.9999999999908631
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999834301878708,
+          "normal_abs_z": 0.9999995000082267
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999832743510298,
+          "normal_abs_z": 0.9999995010655269
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999839461439375,
+          "normal_abs_z": 0.9999994999994025
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999827601609868,
+          "normal_abs_z": 0.9999995000110815
+        }
+      ]
+    },
+    {
+      "at": 453201.278343163,
+      "sim_time": 149.1949999999368,
+      "bottle_position": [
+        0.44999923648724227,
+        -1.2987872485217309e-06,
+        0.8999666600916819
+      ],
+      "bottle_bottom_z": 0.7999662794973313,
+      "bottle_xy_radius": 0.04000095149719314,
+      "bottle_linear_speed": 0.0003633920288780272,
+      "bottle_angular_speed": 0.003876101571576345,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983452690639,
+          "normal_abs_z": 0.9999999999998402
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999833879292082,
+          "normal_abs_z": 0.9999994999994529
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999832776190836,
+          "normal_abs_z": 0.9999995010725925
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999835117593654,
+          "normal_abs_z": 0.9999994999996237
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831502276655,
+          "normal_abs_z": 0.9999995010710484
+        }
+      ]
+    },
+    {
+      "at": 453201.379653968,
+      "sim_time": 149.29499999993672,
+      "bottle_position": [
+        0.44999933756663524,
+        -3.2255532886699912e-06,
+        0.8999666971606813
+      ],
+      "bottle_bottom_z": 0.7999655052474949,
+      "bottle_xy_radius": 0.04000297989396321,
+      "bottle_linear_speed": 0.0003312396768887236,
+      "bottle_angular_speed": 0.0035047115677105368,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983061108926,
+          "normal_abs_z": 0.9999999999910316
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983424791592,
+          "normal_abs_z": 0.999999500008226
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999832746606991,
+          "normal_abs_z": 0.9999995010655378
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983938882054,
+          "normal_abs_z": 0.9999994999994236
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799982762145445,
+          "normal_abs_z": 0.9999995000107088
+        }
+      ]
+    },
+    {
+      "at": 453201.481129481,
+      "sim_time": 149.39499999993663,
+      "bottle_position": [
+        0.44999931105879204,
+        4.424531561541207e-07,
+        0.8999667486482856
+      ],
+      "bottle_bottom_z": 0.7999663566497834,
+      "bottle_xy_radius": 0.04000098000826069,
+      "bottle_linear_speed": 0.0004425917469860806,
+      "bottle_angular_speed": 0.004591811302901134,
+      "contacts": [
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999832775902473,
+          "normal_abs_z": 0.9999999999996659
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999834537691183,
+          "normal_abs_z": 0.9999995000005949
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999832864295446,
+          "normal_abs_z": 0.9999995010799504
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.7999831965315309,
+          "normal_abs_z": 0.9999994999994539
+        },
+        {
+          "geom": "source_table",
+          "is_robot": false,
+          "position_z": 0.799983553683389,
+          "normal_abs_z": 0.9999995010615081
+        }
+      ]
+    }
+  ],
+  "truth_evaluated_at": 453201.585246597,
+  "reason": "Independent object truth does not establish placement",
+  "owned_process_exit_codes": {
+    "policy": 0,
+    "mujoco": 0,
+    "sonic": -15,
+    "native": 0
+  }
+}

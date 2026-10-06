@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/meta/tasks.jsonl": "56a1f6e5839831f3d72d88f0a26b1ec3cab8a686a97cc7820476fda30e2f93be",
+    "/tmp/pnp_bottle_260916_gr00t_raw_20260930/meta/tasks.jsonl": "21e04afca76bfd83089dd9aa9e58375e5754ac98fc380055f3b9ddc63436768f",
+    "/tmp/pnp_bottle_260916_gr00t_raw_20260930/meta/episodes.jsonl": "b552697a0b460517bd4932e53957a636df3abc1ac24e6049f17e1d5302e6b769",
+    "/home/jihun/work/GR00T-WholeBodyControl/docs/artifacts/pnp_bottle_260916_raw_training_20260930/prepare_dataset.py": "113d2ce5bdec3e4e68bfccd7b982b1dd40972f6ad11554f459a09931aa55819e",
+    "/home/jihun/work/GR00T-WholeBodyControl/docs/artifacts/pnp_bottle_260916_raw_training_20260930/README.md": "fe4b001c3485ccad2db86a05a9d90c178a3bece6551c1fdd6552f52fdc3896f6"
+  },
+  "source_task": "place OBJECT on the table",
+  "prepared_task": "pick drink bottle and place it on the right table",
+  "source_to_prepared": {
+    "155": 150,
+    "159": 154
+  },
+  "dataset_modified": false
+}
