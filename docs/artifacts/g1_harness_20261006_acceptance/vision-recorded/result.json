@@ -1,0 +1,236 @@
+{
+  "robot_connection": false,
+  "scope": "Recorded frame judgments and explicit replay sequences; no live robot mission",
+  "label_provenance": "Eight additional frames labeled by Codex from timestamped sheets. Destination identity is user-confirmed. These are provisional frame labels, not accepted episode-level training labels, human labels, or a held-out reliability estimate. The legacy evaluator field user_outcome contains the explicitly non-user episode description above.",
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "episodes": {
+    "52": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000052.mp4",
+      "sha256": "a229565ada1f36ab1be407af34c9893cbdc7008a87462a9853fb4374b7f3f55a",
+      "user_outcome": "Codex sampled frame review; no new user-confirmed episode outcome"
+    },
+    "78": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000078.mp4",
+      "sha256": "c810cddd43b19c45b3719202fa4968c512c658ce2584bf236ff71e68da8be3e1",
+      "user_outcome": "Codex sampled frame review; no new user-confirmed episode outcome"
+    },
+    "155": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000155.mp4",
+      "sha256": "cc5d177bd1f087a4bf17ec059d2706cecacf92ea4078a2c97bf729db356ff26c",
+      "user_outcome": "Codex sampled frame review; no new user-confirmed episode outcome"
+    },
+    "159": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000159.mp4",
+      "sha256": "b8b444da9baf41473f5db708f6c29414f1f18b1e9763981535c01d6366a40980",
+      "user_outcome": "Codex sampled frame review; no new user-confirmed episode outcome"
+    }
+  },
+  "cases": [
+    {
+      "id": "episode-52-0",
+      "episode": "52",
+      "at_s": 53.8,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle visibly held at stool; release not established.",
+      "image": "frames/episode-52-0.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is still held by the gripper and is not visibly released and resting on the green stool.",
+        "frame_id": "39414edd833f4b7f4989b17a7e465e01aa14aa876fe7834516aa931ba7ed9e73",
+        "execution_id": "episode-52-0",
+        "inference_epoch": 1,
+        "captured_at": 459934.929450529,
+        "decided_at": 459939.594032653
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle is still held by the gripper and is not visibly released and resting on the green stool.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 4.664582124038134,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "episode-52-1",
+      "episode": "52",
+      "at_s": 54.6,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle visibly held at stool; release not established.",
+      "image": "frames/episode-52-1.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is still held by the gripper and is not visibly resting released on the green stool.",
+        "frame_id": "6ca02147b54d476951dc24e3a7dac81721e28240533bc1807af32fad9fa2b94c",
+        "execution_id": "episode-52-1",
+        "inference_epoch": 1,
+        "captured_at": 459939.70528567,
+        "decided_at": 459943.250536494
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottle is still held by the gripper and is not visibly resting released on the green stool.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.545250824012328,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "episode-78-0",
+      "episode": "78",
+      "at_s": 39,
+      "complete": true,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle lies on stool after fingers opened and hand withdrew; lying orientation is allowed by criterion.",
+      "sequence_id": "release-78",
+      "expected_monitor_outcome": "candidate",
+      "image": "frames/episode-78-0.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottle is visibly resting on the green stool and has been released by the robot.",
+        "frame_id": "3f07402ed4bb31ec0c4e2a4ef0a598ba7e1bf466721e489e38eb25f0b3b0b908",
+        "execution_id": "release-78",
+        "inference_epoch": 1,
+        "captured_at": 459943.313042103,
+        "decided_at": 459946.704720912
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The drink bottle is visibly resting on the green stool and has been released by the robot.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 3.3916788089554757,
+      "confirmation_streak": 1,
+      "matches_monitor_outcome": false
+    },
+    {
+      "id": "episode-78-1",
+      "episode": "78",
+      "at_s": 40,
+      "complete": true,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle lies on stool after fingers opened and hand withdrew; lying orientation is allowed by criterion.",
+      "sequence_id": "release-78",
+      "expected_monitor_outcome": "complete",
+      "image": "frames/episode-78-1.jpg",
+      "decision": {
+        "outcome": "complete",
+        "reason": "The drink bottle is visibly resting on the separate green stool and has been released by the robot.",
+        "frame_id": "0dbbe75350a3d20611c2eb0a9b86353a39a84e15eee0adc4bf531c5358b50928",
+        "execution_id": "release-78",
+        "inference_epoch": 1,
+        "captured_at": 459946.770213095,
+        "decided_at": 459949.798578666
+      },
+      "raw_response": "{\"status\":\"complete\",\"action\":\"next\",\"reason\":\"The drink bottle is visibly resting on the separate green stool and has been released by the robot.\"}",
+      "frame_complete": true,
+      "matches_label": true,
+      "decision_latency_s": 3.0283655709936284,
+      "confirmation_streak": 2,
+      "matches_monitor_outcome": true
+    },
+    {
+      "id": "episode-155-0",
+      "episode": "155",
+      "at_s": 6,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Robot manipulates cup/box; bottles remain on source, no green-stool placement visible.",
+      "image": "frames/episode-155-0.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottles remain on the source table, and no bottle is visibly resting on the green stool destination.",
+        "frame_id": "eea9ba32ec0aca573380bdc927d0538e8215ff57ca13f05cef5070379a1c6112",
+        "execution_id": "episode-155-0",
+        "inference_epoch": 1,
+        "captured_at": 459949.860334769,
+        "decided_at": 459952.863710456
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottles remain on the source table, and no bottle is visibly resting on the green stool destination.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 3.0033756869961508,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "episode-155-1",
+      "episode": "155",
+      "at_s": 20,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Robot manipulates cup/box; bottles remain on source, no green-stool placement visible.",
+      "image": "frames/episode-155-1.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottles remain on the source table, and no bottle is visibly resting on the green stool destination.",
+        "frame_id": "47de6fc6ce12afaba53d69639c55bedac2bf0b1cde93960eab7ebfdec3f029dd",
+        "execution_id": "episode-155-1",
+        "inference_epoch": 1,
+        "captured_at": 459952.918604995,
+        "decided_at": 459955.354447054
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The bottles remain on the source table, and no bottle is visibly resting on the green stool destination.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.435842058970593,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "episode-159-0",
+      "episode": "159",
+      "at_s": 3,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Human setup of unrelated objects; no released bottle on destination visible.",
+      "image": "frames/episode-159-0.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottles remain on the source table, and no bottle is visibly resting on the green stool destination.",
+        "frame_id": "6973f1f5e28e60882d48d2ef73353b477c8aff891211fc22e65960cc4216e6e6",
+        "execution_id": "episode-159-0",
+        "inference_epoch": 1,
+        "captured_at": 459955.425105397,
+        "decided_at": 459958.28735458
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottles remain on the source table, and no bottle is visibly resting on the green stool destination.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.8622491830028594,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    },
+    {
+      "id": "episode-159-1",
+      "episode": "159",
+      "at_s": 7,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Human setup of unrelated objects; no released bottle on destination visible.",
+      "image": "frames/episode-159-1.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The drink bottles remain on the source table, and no bottle is visibly resting released on the green stool destination.",
+        "frame_id": "ea2217b80f3a09a7a9cf7e37baf9761eff4b55d415780da2b3029f7cefa53665",
+        "execution_id": "episode-159-1",
+        "inference_epoch": 1,
+        "captured_at": 459958.349485919,
+        "decided_at": 459961.260706742
+      },
+      "raw_response": "{\"status\":\"in_progress\",\"action\":\"continue\",\"reason\":\"The drink bottles remain on the source table, and no bottle is visibly resting released on the green stool destination.\"}",
+      "frame_complete": false,
+      "matches_label": true,
+      "decision_latency_s": 2.91122082300717,
+      "confirmation_streak": 0,
+      "matches_monitor_outcome": null
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "unavailable": 0,
+    "valid_negative_cases": 6,
+    "false_complete": 0,
+    "positive_label_disagreements": 0,
+    "sequence_confirmations": 1,
+    "monitor_outcome_disagreements": 1
+  }
+}

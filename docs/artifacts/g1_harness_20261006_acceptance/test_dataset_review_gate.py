@@ -1,0 +1,98 @@
+"""Counterexamples for future dataset eligibility, using synthetic metadata."""
+
+import copy
+
+import pytest
+
+from dataset_review_gate import assess
+
+
+PROMPT = "pick drink bottle and place it on the right table"
+
+
+def valid_plan():
+    return {"prompt": PROMPT, "action_horizon": 40, "episodes": [
+        {"source_episode": 10, "prepared_episode": 9, "source_sha256": "a" * 64,
+         "frames": 100, "split": "train", "segments": [
+             {"start_frame": 10, "end_frame_exclusive": 90,
+              "task_prompt": PROMPT, "review_state": "accepted",
+              "outcome": "success", "evidence": ["review/episode10.mp4"]}]},
+        {"source_episode": 18, "prepared_episode": 17, "source_sha256": "b" * 64,
+         "frames": 150, "split": "held_out", "segments": []}]}
+
+
+def test_accepted_segment_keeps_complete_action_windows_inside_bounds():
+    result = assess(valid_plan())
+    assert result["ready"]
+    assert result["training_windows"] == [{"source_episode": 10,
+        "first_start_frame": 10, "last_start_frame": 50, "count": 41}]
+
+
+def test_other_part_of_same_episode_cannot_leak_into_holdout():
+    p = valid_plan()
+    duplicate = copy.deepcopy(p["episodes"][0])
+    duplicate["split"], duplicate["segments"] = "held_out", []
+    p["episodes"].append(duplicate)
+    result = assess(p)
+    assert not result["ready"]
+    assert any("duplicate source episode" in e for e in result["errors"])
+
+
+def test_provisional_task_screening_cannot_enable_training():
+    p = valid_plan()
+    p["episodes"][0]["segments"][0]["review_state"] = "sampled_candidate"
+    assert not assess(p)["ready"]
+
+
+def test_unrelated_task_prompt_cannot_inherit_bottle_label():
+    p = valid_plan()
+    p["episodes"][0]["segments"][0]["task_prompt"] = "pick and place cup"
+    assert not assess(p)["ready"]
+
+
+def test_short_or_overlapping_segments_cannot_create_cross_boundary_windows():
+    for start, end in [(10, 49), (-1, 90), (10, 101)]:
+        p = valid_plan()
+        p["episodes"][0]["segments"][0].update(start_frame=start, end_frame_exclusive=end)
+        assert not assess(p)["ready"]
+    p = valid_plan()
+    p["episodes"][0]["segments"].append(copy.deepcopy(p["episodes"][0]["segments"][0]))
+    assert not assess(p)["ready"]
+
+
+def test_quarantined_episode_and_empty_training_set_remain_blocked():
+    p = valid_plan()
+    p["episodes"][0]["split"] = "quarantine"
+    assert not assess(p)["ready"]
+    p["episodes"][0]["segments"] = []
+    assert not assess(p)["ready"]
+
+
+def test_failure_label_or_missing_evidence_cannot_enable_training():
+    for field, value in [("outcome", "failure"), ("evidence", [])]:
+        p = valid_plan()
+        p["episodes"][0]["segments"][0][field] = value
+        assert not assess(p)["ready"]
+
+
+def test_malformed_review_metadata_is_rejected_without_creating_windows():
+    plans = [None, [], {"episodes": [None]}]
+    for field, value in [("segments", None), ("segments", [None])]:
+        p = valid_plan()
+        p["episodes"][0][field] = value
+        plans.append(p)
+    for p in plans:
+        result = assess(p)
+        assert not result["ready"]
+        assert result["errors"]
+        assert result["training_windows"] == []
+
+
+@pytest.mark.parametrize("split", [[], {}], ids=["list", "object"])
+def test_unhashable_split_returns_structured_rejection_without_training_windows(split):
+    p = valid_plan()
+    p["episodes"][1]["split"] = split
+    result = assess(p)
+    assert not result["ready"]
+    assert any("invalid split" in error for error in result["errors"])
+    assert result["training_windows"] == []
