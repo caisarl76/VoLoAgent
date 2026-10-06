@@ -1,0 +1,48 @@
+...................FFFFFF.FFF.....sssssssss............................. [ 11%]
+....................Fatal Python error: Aborted
+
+Current thread 0x00007332953ad740 (most recent call first):
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 322 in bind
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 506 in bind_to_random_port
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_gr00t_protocol.py", line 236 in __init__
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_gr00t_protocol.py", line 280 in mock_gr00t_server
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/fixtures.py", line 998 in call_fixture_func
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/fixtures.py", line 1328 in pytest_fixture_setup
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/fixtures.py", line 1232 in execute
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/fixtures.py", line 726 in _get_active_fixturedef
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/fixtures.py", line 630 in getfixturevalue
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/fixtures.py", line 806 in _fillfixtures
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py", line 1710 in setup
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 536 in setup
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 170 in pytest_runtest_setup
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 250 in <lambda>
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 361 in from_call
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 249 in call_and_report
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 132 in runtestprotocol
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/runner.py", line 118 in pytest_runtest_protocol
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/main.py", line 408 in pytest_runtestloop
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/main.py", line 384 in _main
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/main.py", line 330 in wrap_session
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/main.py", line 377 in pytest_cmdline_main
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/jihun/miniforge3/lib/python3.13/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/config/__init__.py", line 229 in _main
+  File "/home/jihun/.local/lib/python3.13/site-packages/_pytest/config/__init__.py", line 253 in _console_main
+  File "/home/jihun/.local/lib/python3.13/site-packages/pytest/__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg, websockets.speedups, msgpack._cmsgpack, PIL._imaging, zmq.backend.cython._zmq, yaml._yaml, _brotli, backports.zstd._zstd, multidict._multidict, yarl._quoting_c, propcache._helpers_c, aiohttp._http_writer, aiohttp._http_parser, aiohttp._websocket.mask, aiohttp._websocket.reader_c, frozenlist._frozenlist, PIL._imagingft, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._pcg64, numpy.random._generator, numpy.random._mt19937, numpy.random._philox, numpy.random._sfc64, numpy.random.mtrand, PIL._imagingmath, _cyutility, scipy._cyutility, scipy._lib._ccallback_c, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.spatial._ckdtree, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg._batched_linalg, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._internal_matfuncs, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg.cython_lapack, scipy.linalg._decomp_update, scipy.special._ufuncs_cxx, scipy.special._ellip_harm_2, scipy.special._special_ufuncs, scipy.special._gufuncs, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.spatial._hausdorff, scipy.spatial._distance_wrap, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial.transform._rotation_cy, scipy.spatial.transform._rigid_transform_cy (total: 59)

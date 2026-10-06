@@ -1,0 +1,5 @@
+{
+  "outcome": "failed_driver_dwell",
+  "cause": "400 steps at native timestep 0.002s; only 0.28s of sampled dwell. Positive control correctly rejected. Driver now derives run/sample duration from model.opt.timestep.",
+  "superseded_by": "../bottle-calibration-controls-verified/result.json"
+}

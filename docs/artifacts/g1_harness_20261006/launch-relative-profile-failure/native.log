@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/run_vla_inference.py", line 1093, in <module>
+    main(config)
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/run_vla_inference.py", line 408, in main
+    profile = load_profile(Path(config.harness_profile))
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/inference/harness_profile.py", line 93, in load_profile
+    raw = Path(path).read_bytes()
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/pathlib.py", line 1126, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: 'configs/g1/workstation.yaml'

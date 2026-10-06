@@ -1,0 +1,5 @@
+{
+  "outcome": "launch_path_error",
+  "cause": "Original scene argument used nonexistent bottle-layout-calibrated/scene.xml; corrected to immutable Oct02 bottle-scene/scene.xml.",
+  "superseded_by": "../bottle-calibration-controls-verified/result.json"
+}
