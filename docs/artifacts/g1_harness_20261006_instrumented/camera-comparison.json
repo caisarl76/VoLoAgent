@@ -1,0 +1,17 @@
+{
+  "host_alias": "pc2_222",
+  "host_name": "unitree-g1-nx",
+  "profile": "640x480 RGB8 15 FPS; factory-advertised, actual runtime profile not confirmed",
+  "sdk_read_only": true,
+  "horizontal_fov_deg": 55.81432213978197,
+  "vertical_fov_deg": 43.32416298945482,
+  "existing_simulator_fovy_deg": 45,
+  "principal_point_offset_from_image_center_px": [
+    -3.24652099609375,
+    15.628829956054688
+  ],
+  "camera_to_robot_transform_measured": false,
+  "runtime_or_physics_modified": false,
+  "no_pipeline_started": true,
+  "no_robot_commands_sent": true
+}
