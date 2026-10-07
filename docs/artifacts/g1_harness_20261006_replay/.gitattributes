@@ -1,0 +1,2 @@
+# Preserve the generated CSV bytes recorded by the replay evidence.
+frame-map.csv whitespace=cr-at-eol
