@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "source_hashes_unchanged": true,
+  "frame_mapping_rows_checked": 410,
+  "player_javascript_syntax": "passed",
+  "videos": {
+    "full-trial.mp4": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "10/1",
+      "duration": "41.000000",
+      "nb_frames": "410",
+      "decoded_frames": 410
+    },
+    "turn-focus.mp4": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "10/1",
+      "duration": "18.100000",
+      "nb_frames": "181",
+      "decoded_frames": 181
+    },
+    "turn-focus-half-speed.mp4": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 800,
+      "r_frame_rate": "10/1",
+      "duration": "36.100000",
+      "nb_frames": "361",
+      "decoded_frames": 361
+    }
+  }
+}

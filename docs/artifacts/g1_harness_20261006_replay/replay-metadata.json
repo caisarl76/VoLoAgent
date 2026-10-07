@@ -1,0 +1,97 @@
+{
+  "kind": "offline_saved_pose_replay",
+  "robot_connection": false,
+  "mj_step_calls": 0,
+  "mujoco_version": "3.8.1",
+  "backend": "egl",
+  "scene": "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic/data/robot_model/model_data/g1/scene_43dof.xml",
+  "scene_sha256": "274e7b3755dc1eedcf210af54d1c97749f31457d77ae2c499ec234e804065b21",
+  "trial": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006_instrumented/native-negative-zero-run",
+  "source_sha256": {
+    "ground-truth.jsonl": "a910d32557bb683339198dd495a793a726b6c4ad0cc4bd58034214b906e455d1",
+    "events.jsonl": "5268b0c19f55d6efd806cd0b4f7b97079319db8df300e165012274b3e59d7862",
+    "native-trace.jsonl": "4d0b2af41ce177742127cc7b6c414a3e70d74aae16d5d74fd2150d0e7c35cba4",
+    "planner-trace.jsonl": "56b1d57862536e169e666524c139aa32ca7ac6a1405fd96d41d8805971316da2"
+  },
+  "pose_rows": 403,
+  "rendered_frames": 410,
+  "fps": 10,
+  "sample_selection": "latest recorded state at or before video timestamp; zero-order hold",
+  "focus_start_full_time_s": 22.9,
+  "milestones_full_time_s": {
+    "reset_standing": 25.914538193959743,
+    "walk_for": 29.125407119980082,
+    "turn_by": 30.2092637019814,
+    "support_released": 23.925435099983588,
+    "interrupted": 38.33652002597228,
+    "last_control_sample": 39.695892066985834
+  },
+  "milestones_focus_time_s": {
+    "reset_standing": 3.014538193959744,
+    "walk_for": 6.225407119980083,
+    "turn_by": 7.309263701981401,
+    "support_released": 1.0254350999835893,
+    "interrupted": 15.436520025972278,
+    "last_control_sample": 16.795892066985836
+  },
+  "absolute_goal_yaw_deg": -15.580672368611761,
+  "joint_mapping": {
+    "body_q": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "left_hand_q": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "right_hand_q": [
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ]
+  },
+  "shutdown_label": "after last recorded control tick; exact shutdown timestamp unavailable",
+  "limitations": [
+    "10 Hz pose sampling cannot resolve every 50 Hz foot/control event",
+    "rendered replay, not an original screen recording",
+    "no recorded contact-force visualization",
+    "current scene assets; no as-run scene hash was saved",
+    "single trial; no causal attribution from video alone"
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G1 SONIC simulation replay</title>
+<style>
+body{max-width:1280px;margin:24px auto;padding:0 16px;background:#111923;color:#edf1f6;font:16px system-ui,sans-serif}
+h1{font-size:24px}video{display:block;width:100%;background:#000}button,select{margin:6px 5px 6px 0;padding:8px;background:#273648;color:#edf1f6;border:1px solid #677486;border-radius:4px}a{color:#83d9ff}p{line-height:1.5}.legend{display:flex;gap:20px;flex-wrap:wrap}.body{color:#50dcff}.facing{color:#ffaf4b}.target{color:#eb69dc}
+</style>
+<h1>G1 SONIC simulation replay</h1>
+<p>Recorded robot poses from the latest -15° turning trial, rendered from three fixed views. Pose sampling is about 10 Hz. This is a turn test; it does not show bottle manipulation.</p>
+<video id="video" controls preload="metadata" src="turn-focus.mp4"></video>
+<div>
+<select id="clip" aria-label="Select clip"><option value="turn-focus.mp4">Focused trial · 1×</option><option value="full-trial.mp4">Full trial · 1×</option><option value="turn-focus-half-speed.mp4">Focused trial · half speed</option></select>
+<button id="back">Previous 0.1 s</button><button id="next">Next 0.1 s</button>
+<select id="speed" aria-label="Playback speed"><option value="1">Playback 1×</option><option value="0.5">Playback 0.5×</option><option value="0.25">Playback 0.25×</option></select>
+</div>
+<div id="bookmarks"></div>
+<p class="legend"><span class="body">Cyan: body direction</span><span class="facing">Orange: facing sent to planner</span><span class="target">Pink: active controller target</span><span>White: final goal</span></p>
+<p>The final “shutdown tail” begins after the last recorded control tick. Its collapse is shown separately from the interrupted turn; the exact shutdown timestamp was not saved. The red floor sphere is a fixed model marker.</p>
+<p><a href="turn-focus.mp4">Download focused video</a> · <a href="turn-focus-half-speed.mp4">Download half-speed video</a> · <a href="full-trial.mp4">Download full video</a> · <a href="frame-map.csv">Frame timestamps and values</a> · <a href="README.md">Reading notes</a></p>
+<script>
+const video = document.querySelector('#video');
+const clip = document.querySelector('#clip');
+// These boundaries come from the recorded timestamps, rounded to 0.01 s.
+const fullMarks = [['Support released',23.93],['Reset standing',25.91],['Backward walk',29.13],['Turn requested',30.21],['Turn interrupted',38.34],['After last control tick',39.70]];
+const focusStart = 22.9;
+function bookmarks(){
+  document.querySelector('#bookmarks').replaceChildren(...fullMarks.map(([name,time])=>{
+    const button = document.createElement('button');
+    const full = clip.value === 'full-trial.mp4';
+    const slow = clip.value === 'turn-focus-half-speed.mp4';
+    const seek = Math.max(0,(time-(full?0:focusStart))*(slow?2:1));
+    button.textContent = `${name} · ${seek.toFixed(1)} s`;
+    button.onclick = ()=>{video.pause();video.currentTime=seek;};
+    return button;
+  }));
+}
+clip.onchange=()=>{video.src=clip.value;video.load();bookmarks();};
+document.querySelector('#speed').onchange=event=>{video.playbackRate=Number(event.target.value);};
+for(const [id,offset] of [['back',-0.1],['next',0.1]]){
+  document.querySelector(`#${id}`).onclick=()=>{video.pause();video.currentTime=Math.max(0,Math.min(video.duration||0,video.currentTime+offset));};
+}
+bookmarks();
+</script>
+</html>
