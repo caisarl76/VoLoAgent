@@ -55,6 +55,7 @@ class HarnessRunner:
 
     def _rpc(self, method, params):
         rid = uuid.uuid4().hex
+        self._log("request", request_id=rid, method=method, params=params)
         result = self._client.request(
             method,
             params,
@@ -62,7 +63,6 @@ class HarnessRunner:
             lease_id=self._lease.lease_id if self._lease else None,
             request_id=rid,
         )
-        self._log("request", request_id=rid, method=method, params=params)
         if result.error:
             raise RPCError(result.error["code"], result.error["message"])
         return result.result
@@ -115,15 +115,78 @@ class HarnessRunner:
                     raise MissionInterrupted(
                         "Completion without a confirmed planner hold"
                     )
-                return
+                return status
             time.sleep(0.02)
         raise MissionInterrupted("Motion completion deadline exceeded")
+
+    def _check_paused(self, execution):
+        status = self._check()
+        if (
+            status.execution_id != execution.execution_id
+            or status.inference_epoch != execution.inference_epoch
+            or status.phase != "PAUSED"
+        ):
+            raise MissionInterrupted("Paused manipulation state changed")
+        return status
+
+    def _fresh_hold(self, status):
+        return (
+            status.controller_running
+            and status.hold_confirmed
+            and status.planner_reference_active is True
+            and status.telemetry_age_s is not None
+            and 0 <= status.telemetry_age_s <= self.profile.limits.feedback_max_age_s
+        )
+
+    def _wait_paused_hold(self, execution, previous_index):
+        deadline = time.monotonic() + self.profile.limits.planner_deadline_s
+        while time.monotonic() < deadline:
+            status = self._check_paused(execution)
+            if (
+                self._fresh_hold(status)
+                and previous_index is not None
+                and status.telemetry_index is not None
+                and status.telemetry_index > previous_index
+            ):
+                return
+            time.sleep(0.02)
+        raise MissionInterrupted("Manipulation hold acknowledgement deadline exceeded")
+
+    def _start_manipulation(self, call):
+        deadline = time.monotonic() + self.profile.limits.policy_deadline_s
+        while True:
+            if self._held_execution is not None:
+                if time.monotonic() >= deadline:
+                    raise MissionInterrupted(
+                        "Manipulation handoff readiness deadline exceeded"
+                    )
+                status = self._check_paused(self._held_execution)
+                if not self._fresh_hold(status):
+                    raise MissionInterrupted("Manipulation handoff lost confirmed hold")
+            initial = self._client.observe()
+            if self._held_execution is not None and time.monotonic() >= deadline:
+                raise MissionInterrupted(
+                    "Manipulation handoff readiness deadline exceeded"
+                )
+            try:
+                execution = self._rpc("start_manipulation", {"skill_id": call.skill_id})
+                self._held_execution = None
+                return execution, initial
+            except RPCError as exc:
+                # A rejected start did not mutate the executor. Transport errors
+                # may have done so and must never be retried here.
+                if self._held_execution is None or exc.code != "NOT_READY":
+                    raise
+                if time.monotonic() >= deadline:
+                    raise MissionInterrupted(
+                        "Manipulation handoff readiness deadline exceeded"
+                    ) from exc
+                time.sleep(0.02)
 
     def _manipulate(self, call):
         if self.monitor is None:
             raise ValueError("Manipulation requires a configured VLM monitor")
-        initial = self._client.observe()
-        execution = self._rpc("start_manipulation", {"skill_id": call.skill_id})
+        execution, initial = self._start_manipulation(call)
         if not isinstance(execution, Execution):
             raise ValueError("Expected manipulation execution")
         self._execution = execution
@@ -169,16 +232,37 @@ class HarnessRunner:
                     paused = self._rpc(
                         "pause_manipulation", {"execution_id": execution.execution_id}
                     )
-                    if not isinstance(paused, Execution) or paused.phase != "PAUSED":
+                    if (
+                        not isinstance(paused, Execution)
+                        or paused.phase != "PAUSED"
+                        or paused.runtime_id != execution.runtime_id
+                        or paused.execution_id != execution.execution_id
+                        or paused.inference_epoch <= execution.inference_epoch
+                    ):
                         raise MissionInterrupted(
                             "Pause did not acknowledge action invalidation"
                         )
+                    self._execution = paused
+                    if skill.completion_action == "hold":
+                        self._wait_paused_hold(paused, status.telemetry_index)
+                        self._held_execution = paused
+                        self._log(
+                            "skill_complete", completion_action="hold", **asdict(paused)
+                        )
+                        return
                     reset = self._rpc(
                         "reset_standing",
                         {"execution_id": execution.execution_id, "open_hands": True},
                     )
                     self._execution = reset
-                    self._wait_complete(reset, self.profile.limits.reset_deadline_s)
+                    completed = self._wait_complete(
+                        reset, self.profile.limits.reset_deadline_s
+                    )
+                    self._log(
+                        "skill_complete",
+                        completion_action="reset_standing",
+                        **asdict(completed),
+                    )
                     return
             if pending is None and time.monotonic() >= next_check:
                 frame = self._client.observe()
@@ -220,11 +304,23 @@ class HarnessRunner:
                 or status.owner_session_id != self._session_id
             ):
                 return
-            if status.execution_id and status.phase not in {
-                "COMPLETED",
-                "INTERRUPTED",
-                "FAULT",
-            }:
+            held = (
+                self._held_execution is not None
+                and status.phase == "PAUSED"
+                and status.execution_id == self._held_execution.execution_id
+                and status.inference_epoch == self._held_execution.inference_epoch
+                and self._fresh_hold(status)
+            )
+            if (
+                not held
+                and status.execution_id
+                and status.phase
+                not in {
+                    "COMPLETED",
+                    "INTERRUPTED",
+                    "FAULT",
+                }
+            ):
                 self._rpc("cancel", {"execution_id": status.execution_id})
             deadline = time.monotonic() + self.profile.limits.planner_deadline_s
             while time.monotonic() < deadline:
@@ -250,6 +346,7 @@ class HarnessRunner:
         self._mission_dir = self.evidence_dir / self._session_id
         self._mission_dir.mkdir(parents=True, exist_ok=False)
         self._client, self._lease, self._execution = self.client_factory(), None, None
+        self._held_execution = None
         self._stop, self._heartbeat_error = threading.Event(), queue.Queue()
         heartbeat = None
         outcome, reason = "fault", "Mission did not start"
@@ -295,6 +392,7 @@ class HarnessRunner:
                 if call.skill_id in self.profile.skills:
                     self._manipulate(call)
                 else:
+                    self._held_execution = None
                     params = (
                         {"execution_id": "", **call.params}
                         if call.skill_id == "reset_standing"

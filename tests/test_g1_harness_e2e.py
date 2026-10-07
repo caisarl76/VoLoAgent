@@ -22,7 +22,7 @@ PROFILE = load_profile(PROFILE_PATH)
 
 
 @contextmanager
-def executor(native_runtime, tmp_path, scenario="success"):
+def executor(native_runtime, tmp_path, scenario="success", profile_path=PROFILE_PATH):
     checkout, python = native_runtime
     endpoint = "ipc://" + str(tmp_path / "runtime.sock")
     evidence = tmp_path / "native.jsonl"
@@ -35,7 +35,7 @@ def executor(native_runtime, tmp_path, scenario="success"):
                 "--endpoint",
                 endpoint,
                 "--profile",
-                str(PROFILE_PATH),
+                str(profile_path),
                 "--scenario",
                 scenario,
                 "--evidence",
@@ -60,6 +60,57 @@ def executor(native_runtime, tmp_path, scenario="success"):
 
 def events(path):
     return [json.loads(line) for line in path.read_text().splitlines()]
+
+
+@pytest.mark.parametrize("sequence", [False, True])
+def test_subskill_hold_cross_process(native_runtime, tmp_path, sequence):
+    from test_g1_subskill_handoff import candidate_profile
+
+    profile_path = candidate_profile(tmp_path)
+    profile = load_profile(profile_path)
+    with executor(native_runtime, tmp_path, "subskill_handoff", profile_path) as (
+        endpoint,
+        evidence,
+    ):
+        monitor = G1CompletionMonitor(
+            profile.require_skill("pick_bottle_and_hold"),
+            lambda *_: (
+                '{"status":"complete","action":"next","reason":"test-only skill result"}'
+            ),
+            time.monotonic,
+            profile.limits,
+        )
+        calls = [SkillCall("pick_bottle_and_hold", {})]
+        if sequence:
+            calls.append(SkillCall("place_held_bottle_on_stool", {}))
+        result = HarnessRunner(
+            profile, lambda: G1Client(endpoint), monitor, tmp_path / "missions"
+        ).run_sequence(calls)
+        assert result.outcome == "completed", result.reason
+        recorded = events(evidence)
+        mission = events(result.evidence_dir / "events.jsonl")
+        prompts = [e for e in recorded if e["event"] == "prompt"]
+        assert [e["prompt"] for e in prompts] == [
+            profile.require_skill(c.skill_id).prompt for c in calls
+        ]
+        hold = next(e for e in recorded if e["event"] == "hold")
+        assert hold["open_hands"] is False
+        assert hold["left"] == pytest.approx([0.3] * 7)
+        assert hold["right"] == pytest.approx([0.4] * 7)
+        assert any(e["event"] == "late_result_rejected" for e in recorded)
+        requests = [e for e in mission if e["event"] == "request"]
+        assert all(e["method"] != "cancel" for e in requests)
+        if sequence:
+            assert (
+                hold["at"]
+                < prompts[1]["at"]
+                < next(e["at"] for e in recorded if e["event"] == "reset")
+            )
+            assert len([e for e in recorded if e["event"] == "reset"]) == 1
+            assert len([e for e in requests if e["method"] == "start_manipulation"]) > 2
+        else:
+            assert not any(e["event"] == "reset" for e in recorded)
+        assert {e["publisher"] for e in recorded if "publisher" in e} == {"memory-only"}
 
 
 def test_mirrored_contract_and_golden_fixtures(native_runtime):

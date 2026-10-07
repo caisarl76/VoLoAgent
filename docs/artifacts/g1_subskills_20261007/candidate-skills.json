@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "fps": 50,
+  "action_horizon": 40,
+  "status": "candidate_only",
+  "checkpoint_support": "Neither new prompt has been validated with the current whole-task checkpoint.",
+  "skills": {
+    "pick_bottle_and_hold": {
+      "prompt": "pick the bottle and hold it above the source table",
+      "completion_action": "hold",
+      "entry_condition": "Bottle rests on the source table within trained reach; the manipulating hand is empty; robot is stationary.",
+      "completion_criteria": "Bottle is visibly grasped and lifted clear of the source table, remains supported by the hand above that source table, and is held steadily while the robot stops there. Require two fresh observations. Carrying toward or holding near the stool, occlusion, fingers closing without a bottle, or resting on the source do not count.",
+      "minimum_terminal_frames": 100,
+      "training_status": "needs accepted entry/terminal segment labels and stable-hold demonstrations"
+    },
+    "place_held_bottle_on_stool": {
+      "prompt": "place the held bottle on the green stool",
+      "completion_action": "reset_standing",
+      "entry_condition": "Bottle is already securely held above the source table in the pose produced by pick_bottle_and_hold; green stool is visible and reachable; robot is stationary.",
+      "completion_criteria": "Bottle is released from the hand and visibly rests on the separate green stool for two fresh observations. The stool is the user's confirmed destination. Held, falling, source-table or occluded bottles do not count.",
+      "minimum_terminal_frames": 100,
+      "training_status": "needs accepted segments with a held-bottle start; full pick-and-place relabels are insufficient"
+    }
+  },
+  "deferred": {
+    "arm_above_table": "Add after the bottle pair is independently evaluated; requires its own entry and terminal demonstrations.",
+    "pick_red_block": "Requires red-block data and evaluation; bottle recordings cannot establish support.",
+    "approach_table": "SONIC locomotion plus perception/navigation; current bounded walking does not identify a table or navigate to it."
+  }
+}
