@@ -1,0 +1,74 @@
+FFFFFFF.FFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+____________ test_known_failed_skill_cannot_be_relabeled_as_success ____________
+tests/test_g1_subskill_dataset.py:92: in test_known_failed_skill_cannot_be_relabeled_as_success
+    assert not result["ready"]
+E   assert not True
+___________ test_malformed_failed_skill_metadata_is_rejected[value0] ___________
+tests/test_g1_subskill_dataset.py:118: in test_malformed_failed_skill_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+_ test_malformed_failed_skill_metadata_is_rejected[place_held_bottle_on_stool] _
+tests/test_g1_subskill_dataset.py:118: in test_malformed_failed_skill_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+___________ test_malformed_failed_skill_metadata_is_rejected[value2] ___________
+tests/test_g1_subskill_dataset.py:118: in test_malformed_failed_skill_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+___________ test_malformed_failed_skill_metadata_is_rejected[value3] ___________
+tests/test_g1_subskill_dataset.py:118: in test_malformed_failed_skill_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+___________ test_malformed_failed_skill_metadata_is_rejected[value4] ___________
+tests/test_g1_subskill_dataset.py:118: in test_malformed_failed_skill_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+_____ test_positive_segment_cannot_touch_excluded_previous_episode_frames ______
+tests/test_g1_subskill_dataset.py:130: in test_positive_segment_cannot_touch_excluded_previous_episode_frames
+    assert not result["ready"]
+E   assert not True
+____________ test_malformed_exclusion_metadata_is_rejected[value0] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+____________ test_malformed_exclusion_metadata_is_rejected[value1] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+____________ test_malformed_exclusion_metadata_is_rejected[value2] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+____________ test_malformed_exclusion_metadata_is_rejected[value3] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+____________ test_malformed_exclusion_metadata_is_rejected[value4] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+____________ test_malformed_exclusion_metadata_is_rejected[value5] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+____________ test_malformed_exclusion_metadata_is_rejected[value6] _____________
+tests/test_g1_subskill_dataset.py:150: in test_malformed_exclusion_metadata_is_rejected
+    assert not result["ready"] and result["errors"]
+E   assert (not True)
+=========================== short test summary info ============================
+FAILED tests/test_g1_subskill_dataset.py::test_known_failed_skill_cannot_be_relabeled_as_success
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_failed_skill_metadata_is_rejected[value0]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_failed_skill_metadata_is_rejected[place_held_bottle_on_stool]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_failed_skill_metadata_is_rejected[value2]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_failed_skill_metadata_is_rejected[value3]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_failed_skill_metadata_is_rejected[value4]
+FAILED tests/test_g1_subskill_dataset.py::test_positive_segment_cannot_touch_excluded_previous_episode_frames
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value0]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value1]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value2]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value3]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value4]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value5]
+FAILED tests/test_g1_subskill_dataset.py::test_malformed_exclusion_metadata_is_rejected[value6]
+14 failed, 1 passed, 35 deselected in 0.08s

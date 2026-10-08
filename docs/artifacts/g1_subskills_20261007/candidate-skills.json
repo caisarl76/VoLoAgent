@@ -17,7 +17,7 @@
       "prompt": "place the held bottle on the green stool",
       "completion_action": "reset_standing",
       "entry_condition": "Bottle is already securely held above the source table in the pose produced by pick_bottle_and_hold; green stool is visible and reachable; robot is stationary.",
-      "completion_criteria": "Bottle is released from the hand and visibly rests on the separate green stool for two fresh observations. The stool is the user's confirmed destination. Held, falling, source-table or occluded bottles do not count.",
+      "completion_criteria": "Bottle is released from the hand and visibly rests on the separate green stool for two fresh observations. The stool is the user's confirmed destination. Held, falling, source-table or occluded bottles do not count. The basket and other objects already on the destination must remain supported and stable. Knocking the basket off the stool is placement failure even if the bottle is later released onto the stool.",
       "minimum_terminal_frames": 100,
       "training_status": "needs accepted segments with a held-bottle start; full pick-and-place relabels are insufficient"
     }
@@ -26,5 +26,6 @@
     "arm_above_table": "Add after the bottle pair is independently evaluated; requires its own entry and terminal demonstrations.",
     "pick_red_block": "Requires red-block data and evaluation; bottle recordings cannot establish support.",
     "approach_table": "SONIC locomotion plus perception/navigation; current bounded walking does not identify a table or navigate to it."
-  }
+  },
+  "last_review_update": "2026-10-08"
 }

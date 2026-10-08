@@ -1,5 +1,12 @@
 # Bottle subskill preparation, 7 October 2026
 
+**Updated 8 October:** the user confirmed that source 52's frames 0–1812 belong
+to the previous episode's return to start, and source 78's placement failed
+because the basket was knocked off the stool. Open the
+[corrected review](../g1_subskills_20261008/review.html) and
+[correction report](../g1_subskills_20261008/README.md). The original media below
+remain historical references; source 78's later release is not placement success.
+
 The harness can now finish a manipulation while preserving its measured hand
 targets, then start another manipulation without a standing reset. The two
 candidate prompts are `pick the bottle and hold it above the source table` and
@@ -44,8 +51,8 @@ Open [the frame-stepping review page](review.html), or open these videos:
 
 | Original source | Prepared episode | Material | Status |
 |---|---:|---|---|
-| 52 | 51 | [Held-bottle candidate, 55 s](source_000052_hold_candidate.mp4) | Review needed; bottle is held near the stool in late samples |
-| 78 | 77 | [Placement candidate, first 46 s](source_000078_placement_candidate.mp4) | Review needed; sampled release around 37.2–37.4 s |
+| 52 | 51 | [Original untrimmed reference, 55 s](source_000052_hold_candidate.mp4) | Frames 0–1812 now excluded; see the corrected 18.74 s copy |
+| 78 | 77 | [Failure reference, first 46 s](source_000078_placement_candidate.mp4) | User-confirmed basket-fall placement failure around frames 1500–1600 |
 | 18 | 17 | [Success reference, 40.48 s](source_000018_held_out_success.mp4) | Reserved whole source for future evaluation |
 | 5 | 5 | [Failure reference, 19.54 s](source_000005_held_out_failure.mp4) | Reserved whole source for future evaluation |
 
@@ -118,6 +125,9 @@ two held-out references and two quarantined mixed/setup sources. Each new
 skill needs accepted training and held-out segments. Windows contain all 40
 action frames within one skill segment; source identity, content duplicates,
 split contamination, overlapping cuts and malformed metadata are rejected.
+The 8 October update additionally rejects excluded intervals and positive
+segments for a known failed skill. Earlier pick segments remain separately
+reviewable without relabeling the failed placement.
 
 Passing this checker only prepares a window manifest. It trusts review
 assertions and recorded hashes; it does not check label truth or export a

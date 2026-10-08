@@ -553,11 +553,21 @@
       "segments": [],
       "review_candidates": [
         [
-          49,
-          54.98
+          36.26,
+          55.0
         ]
       ],
-      "note": "Late hold near stool does not satisfy the confirmed pick terminal. Review earlier lift separately; no accepted segment."
+      "note": "User confirmed exclusion of original frames 0–1812 inclusive. Retain 1813–2749 for subskill review. Late stool-side hold still does not meet the confirmed source-table pick terminal; no accepted segment.",
+      "excluded_intervals": [
+        {
+          "start_frame": 0,
+          "end_frame_exclusive": 1813,
+          "reason": "Return to starting position after the previous episode; unrelated to this bottle attempt.",
+          "reviewer": "user",
+          "confirmed_date": "2026-10-08"
+        }
+      ],
+      "retained_review_start_frame": 1813
     },
     {
       "source_episode": 53,
@@ -818,19 +828,27 @@
       "segments": [],
       "review_candidates": [
         [
-          35,
-          37.2
-        ],
-        [
-          37.2,
-          37.4
-        ],
-        [
-          37.4,
-          44
+          29,
+          33.02
         ]
       ],
-      "note": "Task boundaries, prompt match and outcome remain unaccepted."
+      "note": "User-confirmed left-hand placement failure: basket knocked off stool around original frames1500–1600. Keep as failure evidence, block positive placement windows. Earlier pick remains separately reviewable; no accepted pick label.",
+      "failed_skills": [
+        "place_held_bottle_on_stool"
+      ],
+      "placement_review": {
+        "outcome": "failure",
+        "reviewer": "user",
+        "reported_hand": "left",
+        "incident_start_frame": 1500,
+        "incident_end_frame_exclusive": 1601,
+        "bounds_precision": "approximate",
+        "reason": "Lowering the bottle-holding hand onto the basket pushed the basket off the stool and it fell to the ground. Later bottle release does not erase this placement failure.",
+        "evidence": [
+          "User review on 2026-10-08: source78, about frames1500–1600",
+          "../g1_subskills_20261008/source_000078_basket_failure.mp4"
+        ]
+      }
     },
     {
       "source_episode": 79,
@@ -1823,5 +1841,8 @@
       "note": "Task boundaries, prompt match and outcome remain unaccepted."
     }
   ],
-  "confirmed_pick_terminal": "Stop immediately after lifting and hold above the source table; holding near the stool does not qualify."
+  "confirmed_pick_terminal": "Stop immediately after lifting and hold above the source table; holding near the stool does not qualify.",
+  "last_review_update": "2026-10-08",
+  "frame_coordinate_system": "original_source_zero_based",
+  "user_corrections": "../g1_subskills_20261008/review-corrections.json"
 }

@@ -1,0 +1,12 @@
+{
+  "ready": false,
+  "errors": [
+    "train: no accepted windows for pick_bottle_and_hold",
+    "train: no accepted windows for place_held_bottle_on_stool",
+    "held_out: no accepted windows for pick_bottle_and_hold",
+    "held_out: no accepted windows for place_held_bottle_on_stool"
+  ],
+  "training_windows": [],
+  "held_out_windows": [],
+  "scope": "Reviewed metadata only; no label-truth validation, dataset export, training or policy activation."
+}

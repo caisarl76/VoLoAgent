@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-08",
+  "base_commit": "394a10b60d8688a04835a041ddb9ff87c4e70d99",
+  "scope": "User label corrections, source-index-preserving review cuts and metadata eligibility checks. No robot command, new training, vision-model call or deployed monitor change.",
+  "tests": {
+    "focused_dataset_tests_passed": 50,
+    "new_tests": 16,
+    "red_failures": 14,
+    "red_passed": 1,
+    "red_deselected": 35,
+    "logs": [
+      "tests-red.txt",
+      "tests-green.txt"
+    ]
+  },
+  "media_checks": [
+    {
+      "source_episode": 52,
+      "frames": 937,
+      "fps": 50,
+      "frame_map_checked": true,
+      "source_alignment_samples": [
+        {
+          "clip_frame": 0,
+          "source_frame": 1813,
+          "decoded_rgb_mean_absolute_error": 4.509186197916667
+        },
+        {
+          "clip_frame": 468,
+          "source_frame": 2281,
+          "decoded_rgb_mean_absolute_error": 3.0039344618055557
+        },
+        {
+          "clip_frame": 936,
+          "source_frame": 2749,
+          "decoded_rgb_mean_absolute_error": 5.015419921875
+        }
+      ]
+    },
+    {
+      "source_episode": 78,
+      "frames": 201,
+      "fps": 50,
+      "frame_map_checked": true,
+      "source_alignment_samples": [
+        {
+          "clip_frame": 0,
+          "source_frame": 1450,
+          "decoded_rgb_mean_absolute_error": 2.604020182291667
+        },
+        {
+          "clip_frame": 100,
+          "source_frame": 1550,
+          "decoded_rgb_mean_absolute_error": 2.5530935329861113
+        },
+        {
+          "clip_frame": 200,
+          "source_frame": 1650,
+          "decoded_rgb_mean_absolute_error": 4.1288053385416665
+        }
+      ]
+    }
+  ],
+  "retained_rows": {
+    "exactly_equal_to_prepared_source_slice": true,
+    "source_start_frame": 1813,
+    "source_end_frame_exclusive": 2750,
+    "rows": 937,
+    "indices_rebased": false
+  },
+  "prior_media_hashes_unchanged": true,
+  "independent_review": {
+    "scope": "Read-only standards and specification review against base commit 394a10b; gate, correction metadata, crop/slice generator and corrected review page.",
+    "confirmed_defects": 0,
+    "focused_dataset_tests_passed": 50,
+    "artifact_bytes_verified_by": "Main agent frame-alignment, hash and retained-row equality checks recorded above."
+  },
+  "review_gate": {
+    "ready": false,
+    "expected_exit_code": 1,
+    "training_windows": 0,
+    "accepted_positive_segments": 0
+  },
+  "active_profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "active_profile_changed": false,
+  "training_performed": false,
+  "dataset_exported_for_training": false,
+  "original_datasets_modified": false,
+  "source_sha256": {
+    "docs/artifacts/g1_subskills_20261007/candidate-manifest.json": "453623d8a881a6eb14dcf677e00a4cb70741fca35365b4e62b5d5c0b2b08f0c0",
+    "docs/artifacts/g1_subskills_20261007/candidate-skills.json": "5a85a7bbfb1137865b18c93348b72ea1b0446e52a9314233f2984e343c7d903b",
+    "docs/artifacts/g1_subskills_20261007/subskill_dataset.py": "ed1dfdcbbd75fa32ec9a19968fa34635d4f7800270a6db58e18d39a24dee79dc",
+    "docs/artifacts/g1_subskills_20261008/review-corrections.json": "06dbcb75d6f674733ba0c4f4059141f24420c823a31e5d8024cb1ad1a4393e2d",
+    "docs/artifacts/g1_subskills_20261008/prepare_corrected_review.py": "1b86a105e3ee7502680e94800bd2272b61aa6c637c8e89c8eb8c14a854e59b7a"
+  }
+}

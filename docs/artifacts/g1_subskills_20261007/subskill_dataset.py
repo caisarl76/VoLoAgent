@@ -109,6 +109,36 @@ def assess(plan, catalogue):
         if type(frames) is not int or frames <= 0:
             errors.append(f"source {source}: invalid frame count")
             continue
+        failed_skills = episode.get("failed_skills", [])
+        if not isinstance(failed_skills, list) or any(
+            not isinstance(skill_id, str) or skill_id not in skills
+            for skill_id in failed_skills
+        ):
+            errors.append(f"source {source}: invalid failed skill metadata")
+            continue
+        exclusion_entries = episode.get("excluded_intervals", [])
+        if not isinstance(exclusion_entries, list):
+            errors.append(f"source {source}: excluded intervals must be a list")
+            continue
+        exclusions = []
+        for interval in exclusion_entries:
+            if not isinstance(interval, dict):
+                errors.append(f"source {source}: excluded interval must be an object")
+                continue
+            start, end = (
+                interval.get("start_frame"),
+                interval.get("end_frame_exclusive"),
+            )
+            if (
+                type(start) is not int
+                or type(end) is not int
+                or not 0 <= start < end <= frames
+                or not text(interval.get("reason"))
+                or not text(interval.get("reviewer"))
+            ):
+                errors.append(f"source {source}: invalid excluded interval or review")
+                continue
+            exclusions.append((start, end))
         segments = episode.get("segments", [])
         if not isinstance(segments, list):
             errors.append(f"source {source}: segments must be a list")
@@ -139,6 +169,19 @@ def assess(plan, catalogue):
                 or b - a < 40
             ):
                 errors.append(f"source {source}: invalid 40-frame segment bounds")
+                continue
+            if skill_id in failed_skills:
+                errors.append(
+                    f"source {source}/{skill_id}: known failed skill cannot supply positive windows"
+                )
+                continue
+            if any(
+                a < excluded_end and excluded_start < b
+                for excluded_start, excluded_end in exclusions
+            ):
+                errors.append(
+                    f"source {source}/{skill_id}: segment overlaps an excluded interval"
+                )
                 continue
             terminal = segment.get("terminal_stable_frames")
             valid = (
