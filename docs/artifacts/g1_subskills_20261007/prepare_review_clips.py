@@ -1,4 +1,9 @@
-"""Create checksum-bound review videos; does not accept labels or alter datasets."""
+"""Recreate the original untrimmed reference media, without changing datasets.
+
+Source78's earlier placement-candidate interpretation was superseded by the
+user's basket-fall failure label on 2026-10-08. For the confirmed source52 trim
+and source78 failure review, use ../g1_subskills_20261008/prepare_corrected_review.py.
+"""
 
 import argparse
 import hashlib
@@ -183,7 +188,9 @@ button,input{font:inherit;margin:5px;padding:5px}a{color:#95c7ff}input{width:110
 Find an empty-hand start and a steady held-bottle finish above the source table for picking; placement starts from that held pose and finishes after release on the stool.
 Require at least two seconds of stable terminal behavior. Source 5 and 18 stay reserved for evaluation of a future checkpoint.</p>
 <p>The user confirmed that picking must stop above the source table. Source 52's late hold near the stool does not qualify as that finish.
-Source 78 is a placement candidate. Neither has accepted subskill labels.
+Source 78 is a user-confirmed placement failure due to a basket fall, even though the bottle was released later.
+This page contains untrimmed historical media. <a href="../g1_subskills_20261008/review.html">Open the corrected review</a> for source52's confirmed cut.
+Neither has accepted positive subskill labels.
 Use frame stepping while paused and check the full recording before accepting boundaries.</p>"""
         + "\n".join(cards)
         + """

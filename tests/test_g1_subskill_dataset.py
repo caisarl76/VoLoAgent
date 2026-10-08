@@ -85,6 +85,88 @@ def test_valid_review_enumerates_only_contained_windows():
     assert first["last_start_frame"] + 40 <= second["first_start_frame"]
 
 
+def test_known_failed_skill_cannot_be_relabeled_as_success():
+    plan, catalogue = fixture()
+    plan["episodes"][0]["failed_skills"] = ["place_held_bottle_on_stool"]
+    result = gate().assess(plan, catalogue)
+    assert not result["ready"]
+    assert any("failed skill" in error for error in result["errors"])
+    assert result["training_windows"] == result["held_out_windows"] == []
+
+
+def test_failure_on_placement_does_not_discard_an_independent_pick():
+    plan, catalogue = fixture()
+    episode = plan["episodes"][0]
+    other = copy.deepcopy(episode)
+    other.update(source_episode=90, prepared_episode=89, source_sha256=f"{90:064x}")
+    other["segments"] = other["segments"][1:]
+    episode["segments"] = episode["segments"][:1]
+    episode["failed_skills"] = ["place_held_bottle_on_stool"]
+    plan["episodes"].append(other)
+    result = gate().assess(plan, catalogue)
+    assert result["ready"], result["errors"]
+    assert [
+        (w["source_episode"], w["skill_id"]) for w in result["training_windows"]
+    ] == [
+        (52, "pick_bottle_and_hold"),
+        (90, "place_held_bottle_on_stool"),
+    ]
+
+
+@pytest.mark.parametrize(
+    "value", [{}, "place_held_bottle_on_stool", [None], [[]], ["invented_skill"]]
+)
+def test_malformed_failed_skill_metadata_is_rejected(value):
+    plan, catalogue = fixture()
+    plan["episodes"][0]["failed_skills"] = value
+    result = gate().assess(plan, catalogue)
+    assert not result["ready"] and result["errors"]
+
+
+def excluded(start, end):
+    return {
+        "start_frame": start,
+        "end_frame_exclusive": end,
+        "reason": "Return to start after prior episode",
+        "reviewer": "user",
+    }
+
+
+def test_positive_segment_cannot_touch_excluded_previous_episode_frames():
+    plan, catalogue = fixture()
+    plan["episodes"][0]["excluded_intervals"] = [excluded(0, 11)]
+    result = gate().assess(plan, catalogue)
+    assert not result["ready"]
+    assert any("excluded interval" in error for error in result["errors"])
+
+
+def test_positive_segment_can_start_exactly_after_excluded_interval():
+    plan, catalogue = fixture()
+    plan["episodes"][0]["excluded_intervals"] = [excluded(0, 10)]
+    result = gate().assess(plan, catalogue)
+    assert result["ready"], result["errors"]
+    assert result["training_windows"][0]["first_start_frame"] == 10
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        {},
+        [None],
+        [excluded(True, 10)],
+        [excluded(-1, 10)],
+        [excluded(10, 10)],
+        [excluded(0, 501)],
+        [{"start_frame": 0, "end_frame_exclusive": 10}],
+    ],
+)
+def test_malformed_exclusion_metadata_is_rejected(value):
+    plan, catalogue = fixture()
+    plan["episodes"][0]["excluded_intervals"] = value
+    result = gate().assess(plan, catalogue)
+    assert not result["ready"] and result["errors"]
+
+
 @pytest.mark.parametrize(
     "path,value",
     [
