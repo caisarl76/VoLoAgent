@@ -15,6 +15,7 @@
   "relative_document_links_checked": true,
   "independent_document_review": {
     "confirmed_material_defects": 0,
+    "confirmation_delta_reviewed": true,
     "data_or_runtime_independently_exercised": false
   },
   "active_profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
@@ -26,10 +27,18 @@
   "new_handover_software_tests_run": false,
   "new_handover_simulation_run": false,
   "source_sha256": {
-    "docs/superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md": "94edd09be6c5cfd3aa79012971d2d11b0e3b6e4473875deb432d4c76d38f62ad",
+    "docs/superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md": "63c0f3c017acc3652829f3778b652918bf131f9c9494792290057287d0f24487",
     "docs/unitree-g1-harness.md": "f605a3992ee042a9048fd02ca2f26cb69977b51352f6e00f8b7d51ecb611582a",
-    "docs/artifacts/g1_handover_20261009/README.md": "073c9fabe9cbd9bad6bcf5a380ac55877d2a9e1e143c2ead4c30ab0ed138d58b",
+    "docs/artifacts/g1_handover_20261009/README.md": "5a1acfedd19c5b8a6b45d5071bcb309cd45ff1e7c4c20ef66154516aaf99a112",
     "docs/artifacts/g1_handover_20261009/numeric-audit.json": "7b78f875776b425c26e8c1aa384be22603a054b9cd55e4edc1d1faaa2efccfef",
-    "docs/artifacts/g1_handover_20261009/sampled-review.json": "da7992e8bc63fdd1873cfabc0b9d135009d08edff62b2572b495d144f449b0a2"
-  }
+    "docs/artifacts/g1_handover_20261009/sampled-review.json": "10850dfae931ed3953dd3c8ab50199d25dceff9946ff8a63796a004b00d5c0b7",
+    "docs/artifacts/g1_handover_20261009/ready-pose-candidate.json": "74eff59c47ee415340d2be272da8d39882eea0a98e83d76050cb21ae59211559"
+  },
+  "user_confirmed_reference_episodes": [
+    15,
+    30
+  ],
+  "candidate_ready_pose_extracted": true,
+  "candidate_pose_deployed": false,
+  "candidate_ready_pose_verified_against_source": true
 }

@@ -21,6 +21,7 @@ Resolved input: `/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_260930`.
 | Current task label | `place OBJECT on the table`, task index 0 on every row |
 | Held-out split | None; original metadata declares train `0:61` |
 | Accepted handover segments | 0 |
+| User-confirmed reference episodes | 15 and 30 |
 
 [Numeric audit](numeric-audit.json) records per-episode counts, dimensions,
 control fields and hashes for the inspected source metadata, parquet and video
@@ -54,7 +55,20 @@ These samples are preliminary review evidence, not accepted cuts or labels.
 The active movement appears to use the right hand; the recorded right-arm
 span in the reviewed episodes supports that reading. Palm orientation and
 object support are visual judgments here, not calibrated wrist transforms.
-The user was asked for the best complete-cycle episode, including ready return.
+The user confirmed **15 and 30** when asked for the best complete-cycle
+references, including ready return. Their choice establishes the intended
+examples. Episode 15's visible empty-hand ending is the candidate ready-pose
+reference; the recorded joints can supply its numeric target. It still needs
+a validated return path and measured settling. The sampled inspection alone
+does not establish a continuous ready-return motion, particularly in episode
+30's recorded ending.
+
+[Candidate ready target](ready-pose-candidate.json) contains named right-arm
+and hand joint values derived from the median measured state at episode 15
+frames 415–431. The largest right-arm joint span there is 0.00971 rad. This
+short 0.34-second interval is below the native reset's 0.5-second settle dwell;
+it supplies a target candidate, not a passed settling test or an actuator
+command. Motor/hand mapping, joint limits and the return path still need checks.
 
 ## Harness fit and remaining work
 
@@ -72,8 +86,9 @@ This requires a reviewed ready target, a trained handover checkpoint and
 validation of the vision decisions across phase changes and occlusion.
 
 The original generic labels and lack of held-out episodes are immediate
-training preparation gaps. The sampled recordings also leave full ready-return
-coverage unestablished. The current placement checkpoint cannot be declared
+training preparation gaps. The ready target can now be derived from the
+confirmed episode 15 reference; its controlled return and dwell coverage need
+validation. The current placement checkpoint cannot be declared
 competent at handover merely because the new prompt is registered.
 
 No runtime code was changed, no policy or vision endpoint was queried, and no

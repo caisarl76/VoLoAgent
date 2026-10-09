@@ -4,8 +4,7 @@
   "resolved_dataset_path": "/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_260930",
   "coordinate_system": "original_source_zero_based",
   "fps": 50,
-  "scope": "Preliminary sampled inspection for designing the new handover task; no accepted training cuts or full-cycle outcomes.",
-  "best_complete_cycle_episode": "awaiting_user",
+  "scope": "Preliminary sampled inspection and user-confirmed reference choice for the handover design; no accepted training cuts or independently verified full-cycle runtime outcomes.",
   "samples": [
     {
       "episode": 0,
@@ -39,9 +38,10 @@
       ],
       "sheet": "episode_000015.jpg",
       "sha256": "a92dba2ec65c16a5609acc675a60430d009bc4da41640ea0633ae6286bc406eb",
-      "note": "Pickup, open-palm offer and removal sampled; last empty palm is not an accepted handshake-ready return.",
+      "note": "User-confirmed task reference. Pickup, open-palm offer and removal sampled; visible empty-hand ending supplies a candidate ready target requiring measured return validation.",
       "review_state": "needs_full_review",
-      "accepted_segments": []
+      "accepted_segments": [],
+      "user_confirmed_reference": true
     },
     {
       "episode": 30,
@@ -57,9 +57,10 @@
       ],
       "sheet": "episode_000030.jpg",
       "sha256": "9fe5545fbb7d32aa9a5fa324e85d6027c2867af37bd5a23a94a914a7430bdf0e",
-      "note": "Pickup and offer sampled; video ends during person removal.",
+      "note": "User-confirmed task reference. Pickup and offer sampled; last video frame is during removal, so sampled views alone do not verify a settled empty-hand ending.",
       "review_state": "needs_full_review",
-      "accepted_segments": []
+      "accepted_segments": [],
+      "user_confirmed_reference": true
     },
     {
       "episode": 45,
@@ -135,7 +136,8 @@
       "sha256": "3bd33abc9acf9372524629535d58648ea8fd4fe1355e8f9f7ca12812497ad6d4",
       "note": "Dense terminal samples, not continuous review or accepted frame boundaries.",
       "review_state": "needs_full_review",
-      "accepted_segments": []
+      "accepted_segments": [],
+      "user_confirmed_reference": true
     },
     {
       "episode": 30,
@@ -157,9 +159,20 @@
       "sha256": "84d44b6ec0a6ba4a93e989f6056796124e03137dc4749274271ed5ea7279049d",
       "note": "Dense terminal samples, not continuous review or accepted frame boundaries.",
       "review_state": "needs_full_review",
-      "accepted_segments": []
+      "accepted_segments": [],
+      "user_confirmed_reference": true
     }
   ],
   "accepted_training_segments": 0,
-  "numeric_audit_sha256": "7b78f875776b425c26e8c1aa384be22603a054b9cd55e4edc1d1faaa2efccfef"
+  "numeric_audit_sha256": "7b78f875776b425c26e8c1aa384be22603a054b9cd55e4edc1d1faaa2efccfef",
+  "user_confirmed_reference_episodes": [
+    15,
+    30
+  ],
+  "user_confirmation": {
+    "date": "2026-10-09",
+    "reply": "15, 30 confirmed",
+    "question_scope": "Complete intended cycle: pick, open palm-up handover, person takes bottle, then empty-hand handshake-ready pose.",
+    "scope": "Reference choice confirmed; no exact training cuts or runtime acceptance established."
+  }
 }
