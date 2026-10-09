@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-09",
+  "dataset_path": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930",
+  "resolved_dataset_path": "/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_260930",
+  "coordinate_system": "original_source_zero_based",
+  "fps": 50,
+  "scope": "Preliminary sampled inspection for designing the new handover task; no accepted training cuts or full-cycle outcomes.",
+  "best_complete_cycle_episode": "awaiting_user",
+  "samples": [
+    {
+      "episode": 0,
+      "frames": [
+        0,
+        86,
+        172,
+        258,
+        343,
+        429,
+        515,
+        601
+      ],
+      "sheet": "episode_000000.jpg",
+      "sha256": "63db57737b4708d6f6139bb841274754882c19763d1540a3581b76768f0c45ab",
+      "note": "Human setup, pickup and offer sampled; terminal cycle unreviewed.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 15,
+      "frames": [
+        0,
+        62,
+        123,
+        185,
+        246,
+        308,
+        369,
+        431
+      ],
+      "sheet": "episode_000015.jpg",
+      "sha256": "a92dba2ec65c16a5609acc675a60430d009bc4da41640ea0633ae6286bc406eb",
+      "note": "Pickup, open-palm offer and removal sampled; last empty palm is not an accepted handshake-ready return.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 30,
+      "frames": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300,
+        360,
+        420
+      ],
+      "sheet": "episode_000030.jpg",
+      "sha256": "9fe5545fbb7d32aa9a5fa324e85d6027c2867af37bd5a23a94a914a7430bdf0e",
+      "note": "Pickup and offer sampled; video ends during person removal.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 45,
+      "frames": [
+        0,
+        30,
+        61,
+        91,
+        121,
+        151,
+        182,
+        212
+      ],
+      "sheet": "episode_000045.jpg",
+      "sha256": "ab8f3bd9b328d88cb69217a634bf5d250136104939d861d51daf6580ad9c9f68",
+      "note": "Setup-only sampled footage; no accepted robot handover label.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 54,
+      "frames": [
+        0,
+        123,
+        246,
+        369,
+        491,
+        614,
+        737,
+        860
+      ],
+      "sheet": "episode_000054.jpg",
+      "sha256": "186d95c0937b9c75f56d785722d4f31ecc0ca07b5b1cc7f37d74c13308f954cd",
+      "note": "Human repositioning sampled; full outcome unreviewed.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 60,
+      "frames": [
+        0,
+        328,
+        657,
+        985,
+        1314,
+        1642,
+        1971,
+        2299
+      ],
+      "sheet": "episode_000060.jpg",
+      "sha256": "0fe9ab015726af101c56d4e9266e7f9b77b09f6669338f2779fa65e2e4cf9ca3",
+      "note": "Early interaction plus changing camera/workspace views; possible unrelated tail, not an accepted cut.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 15,
+      "frames": [
+        300,
+        325,
+        350,
+        365,
+        375,
+        385,
+        395,
+        405,
+        415,
+        420,
+        425,
+        431
+      ],
+      "sheet": "episode_000015_terminal.jpg",
+      "sha256": "3bd33abc9acf9372524629535d58648ea8fd4fe1355e8f9f7ca12812497ad6d4",
+      "note": "Dense terminal samples, not continuous review or accepted frame boundaries.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    },
+    {
+      "episode": 30,
+      "frames": [
+        280,
+        300,
+        320,
+        340,
+        360,
+        370,
+        380,
+        390,
+        400,
+        410,
+        415,
+        420
+      ],
+      "sheet": "episode_000030_terminal.jpg",
+      "sha256": "84d44b6ec0a6ba4a93e989f6056796124e03137dc4749274271ed5ea7279049d",
+      "note": "Dense terminal samples, not continuous review or accepted frame boundaries.",
+      "review_state": "needs_full_review",
+      "accepted_segments": []
+    }
+  ],
+  "accepted_training_segments": 0,
+  "numeric_audit_sha256": "7b78f875776b425c26e8c1aa384be22603a054b9cd55e4edc1d1faaa2efccfef"
+}

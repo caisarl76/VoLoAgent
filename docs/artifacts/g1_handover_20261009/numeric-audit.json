@@ -1,0 +1,914 @@
+{
+  "episodes": [
+    {
+      "episode": 0,
+      "rows": 602,
+      "left_arm_span_rad": 0.357,
+      "right_arm_span_rad": 1.4,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 602
+    },
+    {
+      "episode": 1,
+      "rows": 605,
+      "left_arm_span_rad": 0.311,
+      "right_arm_span_rad": 1.398,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 605
+    },
+    {
+      "episode": 2,
+      "rows": 703,
+      "left_arm_span_rad": 0.588,
+      "right_arm_span_rad": 1.626,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 703
+    },
+    {
+      "episode": 3,
+      "rows": 414,
+      "left_arm_span_rad": 0.5,
+      "right_arm_span_rad": 1.523,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 414
+    },
+    {
+      "episode": 4,
+      "rows": 412,
+      "left_arm_span_rad": 0.307,
+      "right_arm_span_rad": 1.572,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 412
+    },
+    {
+      "episode": 5,
+      "rows": 559,
+      "left_arm_span_rad": 0.27,
+      "right_arm_span_rad": 1.595,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 559
+    },
+    {
+      "episode": 6,
+      "rows": 377,
+      "left_arm_span_rad": 0.26,
+      "right_arm_span_rad": 1.483,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 377
+    },
+    {
+      "episode": 7,
+      "rows": 754,
+      "left_arm_span_rad": 0.36,
+      "right_arm_span_rad": 1.614,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 754
+    },
+    {
+      "episode": 8,
+      "rows": 478,
+      "left_arm_span_rad": 0.264,
+      "right_arm_span_rad": 1.48,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 478
+    },
+    {
+      "episode": 9,
+      "rows": 383,
+      "left_arm_span_rad": 0.255,
+      "right_arm_span_rad": 1.518,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 383
+    },
+    {
+      "episode": 10,
+      "rows": 393,
+      "left_arm_span_rad": 0.252,
+      "right_arm_span_rad": 1.455,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 393
+    },
+    {
+      "episode": 11,
+      "rows": 410,
+      "left_arm_span_rad": 0.195,
+      "right_arm_span_rad": 1.494,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 410
+    },
+    {
+      "episode": 12,
+      "rows": 408,
+      "left_arm_span_rad": 0.216,
+      "right_arm_span_rad": 1.493,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 408
+    },
+    {
+      "episode": 13,
+      "rows": 351,
+      "left_arm_span_rad": 0.267,
+      "right_arm_span_rad": 1.387,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 351
+    },
+    {
+      "episode": 14,
+      "rows": 423,
+      "left_arm_span_rad": 0.337,
+      "right_arm_span_rad": 1.365,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 423
+    },
+    {
+      "episode": 15,
+      "rows": 432,
+      "left_arm_span_rad": 0.251,
+      "right_arm_span_rad": 1.38,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 432
+    },
+    {
+      "episode": 16,
+      "rows": 387,
+      "left_arm_span_rad": 0.573,
+      "right_arm_span_rad": 1.497,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 387
+    },
+    {
+      "episode": 17,
+      "rows": 471,
+      "left_arm_span_rad": 0.576,
+      "right_arm_span_rad": 1.616,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 471
+    },
+    {
+      "episode": 18,
+      "rows": 388,
+      "left_arm_span_rad": 0.605,
+      "right_arm_span_rad": 1.38,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 388
+    },
+    {
+      "episode": 19,
+      "rows": 388,
+      "left_arm_span_rad": 0.447,
+      "right_arm_span_rad": 1.356,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 388
+    },
+    {
+      "episode": 20,
+      "rows": 365,
+      "left_arm_span_rad": 0.562,
+      "right_arm_span_rad": 1.217,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 365
+    },
+    {
+      "episode": 21,
+      "rows": 411,
+      "left_arm_span_rad": 0.156,
+      "right_arm_span_rad": 1.312,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 411
+    },
+    {
+      "episode": 22,
+      "rows": 403,
+      "left_arm_span_rad": 0.306,
+      "right_arm_span_rad": 1.319,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 403
+    },
+    {
+      "episode": 23,
+      "rows": 545,
+      "left_arm_span_rad": 0.509,
+      "right_arm_span_rad": 1.574,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 545
+    },
+    {
+      "episode": 24,
+      "rows": 468,
+      "left_arm_span_rad": 0.299,
+      "right_arm_span_rad": 1.27,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 468
+    },
+    {
+      "episode": 25,
+      "rows": 422,
+      "left_arm_span_rad": 0.36,
+      "right_arm_span_rad": 1.063,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 422
+    },
+    {
+      "episode": 26,
+      "rows": 502,
+      "left_arm_span_rad": 0.327,
+      "right_arm_span_rad": 1.513,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 502
+    },
+    {
+      "episode": 27,
+      "rows": 380,
+      "left_arm_span_rad": 0.316,
+      "right_arm_span_rad": 1.345,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 380
+    },
+    {
+      "episode": 28,
+      "rows": 253,
+      "left_arm_span_rad": 0.49,
+      "right_arm_span_rad": 0.837,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 253
+    },
+    {
+      "episode": 29,
+      "rows": 379,
+      "left_arm_span_rad": 0.239,
+      "right_arm_span_rad": 1.356,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 379
+    },
+    {
+      "episode": 30,
+      "rows": 421,
+      "left_arm_span_rad": 0.255,
+      "right_arm_span_rad": 1.536,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 421
+    },
+    {
+      "episode": 31,
+      "rows": 630,
+      "left_arm_span_rad": 0.25,
+      "right_arm_span_rad": 1.386,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 630
+    },
+    {
+      "episode": 32,
+      "rows": 536,
+      "left_arm_span_rad": 0.458,
+      "right_arm_span_rad": 1.407,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 536
+    },
+    {
+      "episode": 33,
+      "rows": 485,
+      "left_arm_span_rad": 0.33,
+      "right_arm_span_rad": 1.357,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 485
+    },
+    {
+      "episode": 34,
+      "rows": 441,
+      "left_arm_span_rad": 0.388,
+      "right_arm_span_rad": 1.506,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 441
+    },
+    {
+      "episode": 35,
+      "rows": 457,
+      "left_arm_span_rad": 0.293,
+      "right_arm_span_rad": 1.425,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 457
+    },
+    {
+      "episode": 36,
+      "rows": 447,
+      "left_arm_span_rad": 0.326,
+      "right_arm_span_rad": 1.341,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 447
+    },
+    {
+      "episode": 37,
+      "rows": 492,
+      "left_arm_span_rad": 0.266,
+      "right_arm_span_rad": 1.372,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 492
+    },
+    {
+      "episode": 38,
+      "rows": 486,
+      "left_arm_span_rad": 0.316,
+      "right_arm_span_rad": 1.513,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 486
+    },
+    {
+      "episode": 39,
+      "rows": 475,
+      "left_arm_span_rad": 0.197,
+      "right_arm_span_rad": 1.419,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 475
+    },
+    {
+      "episode": 40,
+      "rows": 367,
+      "left_arm_span_rad": 0.244,
+      "right_arm_span_rad": 1.474,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 367
+    },
+    {
+      "episode": 41,
+      "rows": 408,
+      "left_arm_span_rad": 0.249,
+      "right_arm_span_rad": 1.465,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 408
+    },
+    {
+      "episode": 42,
+      "rows": 413,
+      "left_arm_span_rad": 0.182,
+      "right_arm_span_rad": 1.301,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 413
+    },
+    {
+      "episode": 43,
+      "rows": 407,
+      "left_arm_span_rad": 0.187,
+      "right_arm_span_rad": 1.435,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 407
+    },
+    {
+      "episode": 44,
+      "rows": 373,
+      "left_arm_span_rad": 0.34,
+      "right_arm_span_rad": 1.307,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 373
+    },
+    {
+      "episode": 45,
+      "rows": 213,
+      "left_arm_span_rad": 0.281,
+      "right_arm_span_rad": 1.815,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 213
+    },
+    {
+      "episode": 46,
+      "rows": 489,
+      "left_arm_span_rad": 0.451,
+      "right_arm_span_rad": 1.583,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 489
+    },
+    {
+      "episode": 47,
+      "rows": 348,
+      "left_arm_span_rad": 0.588,
+      "right_arm_span_rad": 1.333,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 348
+    },
+    {
+      "episode": 48,
+      "rows": 375,
+      "left_arm_span_rad": 0.263,
+      "right_arm_span_rad": 1.495,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 375
+    },
+    {
+      "episode": 49,
+      "rows": 575,
+      "left_arm_span_rad": 0.355,
+      "right_arm_span_rad": 1.569,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 575
+    },
+    {
+      "episode": 50,
+      "rows": 425,
+      "left_arm_span_rad": 0.283,
+      "right_arm_span_rad": 1.388,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 425
+    },
+    {
+      "episode": 51,
+      "rows": 334,
+      "left_arm_span_rad": 0.289,
+      "right_arm_span_rad": 1.375,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 334
+    },
+    {
+      "episode": 52,
+      "rows": 404,
+      "left_arm_span_rad": 0.618,
+      "right_arm_span_rad": 1.57,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 404
+    },
+    {
+      "episode": 53,
+      "rows": 255,
+      "left_arm_span_rad": 0.241,
+      "right_arm_span_rad": 1.186,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 255
+    },
+    {
+      "episode": 54,
+      "rows": 861,
+      "left_arm_span_rad": 0.28,
+      "right_arm_span_rad": 1.132,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 861
+    },
+    {
+      "episode": 55,
+      "rows": 465,
+      "left_arm_span_rad": 0.234,
+      "right_arm_span_rad": 1.218,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 465
+    },
+    {
+      "episode": 56,
+      "rows": 438,
+      "left_arm_span_rad": 0.249,
+      "right_arm_span_rad": 1.367,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 438
+    },
+    {
+      "episode": 57,
+      "rows": 561,
+      "left_arm_span_rad": 0.272,
+      "right_arm_span_rad": 1.394,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 561
+    },
+    {
+      "episode": 58,
+      "rows": 709,
+      "left_arm_span_rad": 0.2,
+      "right_arm_span_rad": 1.15,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 709
+    },
+    {
+      "episode": 59,
+      "rows": 979,
+      "left_arm_span_rad": 0.714,
+      "right_arm_span_rad": 1.248,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 979
+    },
+    {
+      "episode": 60,
+      "rows": 2300,
+      "left_arm_span_rad": 0.609,
+      "right_arm_span_rad": 1.569,
+      "nonfinite_state_or_token": false,
+      "nonzero_planner_movement_rows": 0,
+      "nonzero_planner_speed_rows": 2300
+    }
+  ],
+  "issues": [],
+  "stream_mode_row_counts": {
+    "1": 29433,
+    "2": 270,
+    "3": 332
+  },
+  "date": "2026-10-09",
+  "dataset_path": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930",
+  "resolved_dataset_path": "/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_260930",
+  "fps": 50,
+  "resolution": [
+    640,
+    480
+  ],
+  "declared_episodes": 61,
+  "total_frames": 30035,
+  "duration_seconds": 600.7,
+  "task_prompts": [
+    "{\"task_index\": 0, \"task\": \"place OBJECT on the table\"}"
+  ],
+  "original_train_split": "0:61",
+  "hold_out_split_defined": false,
+  "video_alignment_checked_episodes": 61,
+  "checked_widths": {
+    "observation.state": 43,
+    "observation.eef_state": 14,
+    "action.motion_token": 64,
+    "teleop.right_hand_joints": 7
+  },
+  "finite_columns_checked": [
+    "observation.state",
+    "action.motion_token"
+  ],
+  "max_absolute_motion_token": 0.5625,
+  "episodes_exceeding_native_1_25_token_bound": [],
+  "episode_stream_mode_counts": {
+    "0": {
+      "1": 602
+    },
+    "1": {
+      "1": 605
+    },
+    "2": {
+      "2": 131,
+      "1": 572
+    },
+    "3": {
+      "2": 36,
+      "1": 378
+    },
+    "4": {
+      "1": 412
+    },
+    "5": {
+      "1": 559
+    },
+    "6": {
+      "1": 377
+    },
+    "7": {
+      "1": 754
+    },
+    "8": {
+      "1": 478
+    },
+    "9": {
+      "1": 383
+    },
+    "10": {
+      "1": 393
+    },
+    "11": {
+      "1": 410
+    },
+    "12": {
+      "1": 408
+    },
+    "13": {
+      "1": 351
+    },
+    "14": {
+      "1": 423
+    },
+    "15": {
+      "1": 432
+    },
+    "16": {
+      "1": 387
+    },
+    "17": {
+      "1": 471
+    },
+    "18": {
+      "1": 388
+    },
+    "19": {
+      "1": 388
+    },
+    "20": {
+      "1": 365
+    },
+    "21": {
+      "1": 411
+    },
+    "22": {
+      "1": 403
+    },
+    "23": {
+      "2": 103,
+      "1": 442
+    },
+    "24": {
+      "1": 468
+    },
+    "25": {
+      "1": 422
+    },
+    "26": {
+      "1": 502
+    },
+    "27": {
+      "1": 380
+    },
+    "28": {
+      "1": 253
+    },
+    "29": {
+      "1": 379
+    },
+    "30": {
+      "1": 421
+    },
+    "31": {
+      "1": 630
+    },
+    "32": {
+      "1": 536
+    },
+    "33": {
+      "1": 485
+    },
+    "34": {
+      "1": 441
+    },
+    "35": {
+      "1": 457
+    },
+    "36": {
+      "1": 447
+    },
+    "37": {
+      "1": 492
+    },
+    "38": {
+      "1": 486
+    },
+    "39": {
+      "1": 475
+    },
+    "40": {
+      "1": 367
+    },
+    "41": {
+      "1": 408
+    },
+    "42": {
+      "1": 413
+    },
+    "43": {
+      "1": 407
+    },
+    "44": {
+      "1": 373
+    },
+    "45": {
+      "1": 213
+    },
+    "46": {
+      "1": 489
+    },
+    "47": {
+      "1": 348
+    },
+    "48": {
+      "1": 375
+    },
+    "49": {
+      "1": 575
+    },
+    "50": {
+      "1": 425
+    },
+    "51": {
+      "1": 334
+    },
+    "52": {
+      "1": 404
+    },
+    "53": {
+      "1": 255
+    },
+    "54": {
+      "1": 861
+    },
+    "55": {
+      "1": 465
+    },
+    "56": {
+      "1": 438
+    },
+    "57": {
+      "1": 561
+    },
+    "58": {
+      "1": 709
+    },
+    "59": {
+      "1": 647,
+      "3": 332
+    },
+    "60": {
+      "1": 2300
+    }
+  },
+  "planner_speed_value_row_counts": {
+    "-1.0": 30035
+  },
+  "planner_movement_rows_nonzero": 0,
+  "planner_note": "Speed is a recorded planner parameter, not measured locomotion. Stream-mode integers remain uninterpreted in this audit. Camera movement in episode60 is a visual review flag, not a measured locomotion result.",
+  "source_hashes": {
+    "data/chunk-000/episode_000000.parquet": "6d1b9f6828f5074277453d54193692adda9af16107f3cd0b29124edcaf960c23",
+    "videos/chunk-000/observation.images.ego_view/episode_000000.mp4": "0120c33447aeb99f9eb1cc8f2aa3229885fad0824d52843eb440c040862cf637",
+    "data/chunk-000/episode_000001.parquet": "33c67fdd14b438b8aa3a5116754fb6cbf86f03a62b750baaf0a4413969cdeb7c",
+    "videos/chunk-000/observation.images.ego_view/episode_000001.mp4": "5f5b0a4e79c1c9bb68988361bf84d366e125d851301560832b4566077c70f392",
+    "data/chunk-000/episode_000002.parquet": "56203d6d38d7f1d5a7e6fa2c20b1313ed2a1961486456d93af2c72be341bcfb9",
+    "videos/chunk-000/observation.images.ego_view/episode_000002.mp4": "ef66710ac897c0833fb5b707480f7fb38b799dd38aca07457448eef9dbbb7bde",
+    "data/chunk-000/episode_000003.parquet": "df2ed21f7da3aa1a6a4345bfaed84ec9394f351c5b06ec78cbdb14a9073bf677",
+    "videos/chunk-000/observation.images.ego_view/episode_000003.mp4": "b10ade8ecd08d2f082444de6e70efe352f10151038b775ea6a9ebcff0862bdab",
+    "data/chunk-000/episode_000004.parquet": "213316fb660f2744c434582d8edaba90312ca582abda809190c631885608a584",
+    "videos/chunk-000/observation.images.ego_view/episode_000004.mp4": "2c87e1fa6880b5607c4ee07107a01cadfe6e573004feace7b11dc3da138adbb5",
+    "data/chunk-000/episode_000005.parquet": "245e9ea27c5827c0c4805f6b976872bfcf1a5a52277c47d6b8e9bac15aaf5a2d",
+    "videos/chunk-000/observation.images.ego_view/episode_000005.mp4": "1f115eb940cd1b448350c8384942f7903635d4f5404b88003c7dc319163385ac",
+    "data/chunk-000/episode_000006.parquet": "c2efb62b51afb2ad4f4a3065dc2ccfd38abd5a9e40cacd3df3e0d418d1e1acfe",
+    "videos/chunk-000/observation.images.ego_view/episode_000006.mp4": "8cfb63f5dd655b1833c9b6a7b017409ec16a8f28295ff0a365ae630e3a9b431f",
+    "data/chunk-000/episode_000007.parquet": "9835cd91b024b23fdd3ad355ab79b9ccb1bf7e82d22488959601d55a7d400ce2",
+    "videos/chunk-000/observation.images.ego_view/episode_000007.mp4": "f05197f5cc83aa6b4cfdac6a0b9d3443bc258693ad40dd132925fbe4992ba35e",
+    "data/chunk-000/episode_000008.parquet": "b3827b2e3d4c23a673262b9ce675b04c97313a54165395171ab1772bd393bc92",
+    "videos/chunk-000/observation.images.ego_view/episode_000008.mp4": "0bf0bb8398203cf98f623195880de4508c39b79ae363cd8a8e6441f61902f6c3",
+    "data/chunk-000/episode_000009.parquet": "30585dd13f0aa7349983d2708872fa8382b1d46756f31f5a96a817599cfda59d",
+    "videos/chunk-000/observation.images.ego_view/episode_000009.mp4": "9910a6a140f7272fba4475ce7ec351eeb4084a7efe79f807ae677071a47a2cbd",
+    "data/chunk-000/episode_000010.parquet": "56119dfb92cd8b20b8986b5d6a77a365cb88fb4dddc81685c0e8691423a1ccfd",
+    "videos/chunk-000/observation.images.ego_view/episode_000010.mp4": "53280edc4fea220aef8a2fff9dc168fff13b8f7f80424f7f615b2355c4333048",
+    "data/chunk-000/episode_000011.parquet": "8b33aaf77026f1088f704457e4d0320c6744239b35419a76fec0bd9ea2cd3e1b",
+    "videos/chunk-000/observation.images.ego_view/episode_000011.mp4": "b7979c7a6d4a72b14996a8f5c4988fa62d3ca71a38ff00d62bbb2d770019fea4",
+    "data/chunk-000/episode_000012.parquet": "fc942b1a328613d197203f4f7e72c2e6f086642930470cc2f5af8dbcbdc77e97",
+    "videos/chunk-000/observation.images.ego_view/episode_000012.mp4": "e756317deac90d85655a1f38affc55f7a68836a0e271500b02cc0a66e9840971",
+    "data/chunk-000/episode_000013.parquet": "c8791f7ff66e823b7059425d9a67273162e89e22f5ef8d22b9734847a2d70962",
+    "videos/chunk-000/observation.images.ego_view/episode_000013.mp4": "cebfb4763da11f943a73983de1aeae31ec74ce8163f27fea240481b8a0ba3e4f",
+    "data/chunk-000/episode_000014.parquet": "9cf98ac6368800105da939e4f22892e930c2a41d470559def5a27a81557645ae",
+    "videos/chunk-000/observation.images.ego_view/episode_000014.mp4": "81c5488d09cb5d2df37528d73cf7d7115cb72f57bb30761393cc61ddf7d87499",
+    "data/chunk-000/episode_000015.parquet": "73b26fdd55874a2dc17129c57788737353c103da7454a7e04121ff3b63cc15d3",
+    "videos/chunk-000/observation.images.ego_view/episode_000015.mp4": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207",
+    "data/chunk-000/episode_000016.parquet": "467617157dec869c1194a5db16d97393f85a931c73f4946db74c5661c1ecbe31",
+    "videos/chunk-000/observation.images.ego_view/episode_000016.mp4": "3588658bc9bfa2484e66e5a1c58d30371d493806167bdc063727b7120543359c",
+    "data/chunk-000/episode_000017.parquet": "79057ce08a4a0f3f713d58c2b4d0b0b07ecfbac0c332fbe206dd8383792bb5ab",
+    "videos/chunk-000/observation.images.ego_view/episode_000017.mp4": "9610126c66b45b8226d7afb29a9a0e7eec6346d0f3946011dae6538b8d5febbd",
+    "data/chunk-000/episode_000018.parquet": "f1e797f283d2bdabcc722901f15221493edf053412c96d5e4c98edbfa209c42a",
+    "videos/chunk-000/observation.images.ego_view/episode_000018.mp4": "2329f3be49335dfc196201e2a1f8560aa265cd96126333f9fdc390159055b8fc",
+    "data/chunk-000/episode_000019.parquet": "27d5bacdaa1d3e065bb729c02936eaf6125beb9ff7dfd78956c4b69f69fd6c91",
+    "videos/chunk-000/observation.images.ego_view/episode_000019.mp4": "46af817255eabdeed0f7643b6e7f11b9da050fb830e697e4e595c3f27e9617ac",
+    "data/chunk-000/episode_000020.parquet": "3b4bccc202df69f3ab7b3372b04328cbe49f99a3d436212d256284029f08d47b",
+    "videos/chunk-000/observation.images.ego_view/episode_000020.mp4": "9133fcfeaa7c298d3e3153066867f24d3fb2943c1b3d0d94c951bae7817cacb5",
+    "data/chunk-000/episode_000021.parquet": "f66bfc4c4f3986abd57c1326bc65cada4ae9540dc227db5f59fc86f285074d89",
+    "videos/chunk-000/observation.images.ego_view/episode_000021.mp4": "e24815bda3c5f89814f1be53f3f1c716d57f2b158dbfaeb0cf1e3580a6c75d67",
+    "data/chunk-000/episode_000022.parquet": "5e9683443cb69c5f0fd40c2656d79321241be2cfc235df30bae59379b93e38b9",
+    "videos/chunk-000/observation.images.ego_view/episode_000022.mp4": "ca417dcaa247f350b883b03f3b7898c7d64c18e2e19aafaef3907efd64dda5cc",
+    "data/chunk-000/episode_000023.parquet": "f6c24dd832950dc188776ddcda1795e4ab193d42aac25f6721bbc820727bc50e",
+    "videos/chunk-000/observation.images.ego_view/episode_000023.mp4": "48319019874022143e4a9abbba4ffb7a25d9f2b28b367c43348b62abcf93c315",
+    "data/chunk-000/episode_000024.parquet": "b206fe259fc5c15eb94abd8e9a1191eb0d75236a0bb93d6a42ca0979659194cb",
+    "videos/chunk-000/observation.images.ego_view/episode_000024.mp4": "a20e3fc3fb3a7eff3fe51a92a2394fe646efabe4055250ac978bd690db6a5c9a",
+    "data/chunk-000/episode_000025.parquet": "827945e918cf468ac59cda3485d38c1f93428dcff9be841530d3b0c24fc43d2e",
+    "videos/chunk-000/observation.images.ego_view/episode_000025.mp4": "7a6d03ede197347f87fb971b4caf71b9b49bcaeb87c5bbb6f6ee30dac720c4a2",
+    "data/chunk-000/episode_000026.parquet": "7a8b1fb4228934c23b0efe3d399820e3bd4b22fe28949c089e9171e775ec01f9",
+    "videos/chunk-000/observation.images.ego_view/episode_000026.mp4": "e30e4cf0eacaadb40222ba2bd43f9f3e4fc7c456cf393e38c4a3e40cfde1eef3",
+    "data/chunk-000/episode_000027.parquet": "2f6ef478a10cd4481b969675bd014280ffbfea34a2df00458f461adb9c8e0387",
+    "videos/chunk-000/observation.images.ego_view/episode_000027.mp4": "f3c54d5c7fd014dafea3a53b7455664c0352a024a6054e4ce63c2d8f737b587b",
+    "data/chunk-000/episode_000028.parquet": "f482751130aeb78248d57131805b3f069b8937ede8e33e26d0af405cfae570ee",
+    "videos/chunk-000/observation.images.ego_view/episode_000028.mp4": "76c3008c42d497c421a1861775db7c8cda0eb7d4fd359e0d60c1eea86ba27fa6",
+    "data/chunk-000/episode_000029.parquet": "65e78802e6913c378ebe08c793241266e59c4dd7df43bcc2dffbea9ddc547433",
+    "videos/chunk-000/observation.images.ego_view/episode_000029.mp4": "fd6616daf3e193c7e831ae58f1bc7458f7c8f3a5adbf682eaf4e7660158fbfc8",
+    "data/chunk-000/episode_000030.parquet": "bd3b4ab91f35ce4d2a1eaddc100cdd5e7c850006566b39d3aba04495b11c6c47",
+    "videos/chunk-000/observation.images.ego_view/episode_000030.mp4": "eb9f1283f44059abada2d8f24dd5997722436cd6b39edfd443da1be6fbe537a1",
+    "data/chunk-000/episode_000031.parquet": "483d392fa58437cb77e5f5da00de44b93ab1f2d6a1abec65860954faa7b3cbd2",
+    "videos/chunk-000/observation.images.ego_view/episode_000031.mp4": "1870cdeef5cce84b429ef17f1b3073d8b614e22cfdd50d6a616f7761b56ebac4",
+    "data/chunk-000/episode_000032.parquet": "dd59e3f53ca894b2d7564b77c0080a287c00ce2e47f9131e7482ba7d9fb53407",
+    "videos/chunk-000/observation.images.ego_view/episode_000032.mp4": "696ed442837c613f5ae24bd66328363f5e7bcf5b55a35ca4f55e5eba6054597e",
+    "data/chunk-000/episode_000033.parquet": "4e98b270a407e617ed0f864758a8cd78ad4df10d53e7de72568bcbe85c98046a",
+    "videos/chunk-000/observation.images.ego_view/episode_000033.mp4": "a44cae1e075f60381961729607c1b7e19cdd6306ed960efaf4803aa13fdefbc3",
+    "data/chunk-000/episode_000034.parquet": "8143d9c19c177505aff4c295a378af24b9fc1a2b1fa880ba5209847d20a8a117",
+    "videos/chunk-000/observation.images.ego_view/episode_000034.mp4": "789ff615901dbe511a5e3d5921af96a0d2cd78aad5e0366103ab5aa48e7d265e",
+    "data/chunk-000/episode_000035.parquet": "b275e8668317958aff8d9d1a31cc459b12913a3e76a2055801c0cf3a0621f933",
+    "videos/chunk-000/observation.images.ego_view/episode_000035.mp4": "d413d603af345c60f8489dcf634a82742cd903f2c4e06fe0fb2c3a8929d95353",
+    "data/chunk-000/episode_000036.parquet": "2fc515693c8031b0dc093cd100f9326fadba38b78b9178b41222cc11a6559a7c",
+    "videos/chunk-000/observation.images.ego_view/episode_000036.mp4": "7c09e6d858e420c84c014f059a5ee57e81537f698890778a15f3f4e46e8721a9",
+    "data/chunk-000/episode_000037.parquet": "748080ba02b0a81c161ee77c1c3268c316f3d64863e1388a8382a3a098e15df7",
+    "videos/chunk-000/observation.images.ego_view/episode_000037.mp4": "c0688e8b6b83a6d90f9e73690bd79a7b497abb785879289bac7ae12283a74cf8",
+    "data/chunk-000/episode_000038.parquet": "b50eb07d98dc47a515b9efc7d21afbf14c06dfc89e46f4e82fed046f9112edd2",
+    "videos/chunk-000/observation.images.ego_view/episode_000038.mp4": "be5eac3c123405d019d765d6ced88ee5013efdcabbc2d801c7f8dbc4d19eac32",
+    "data/chunk-000/episode_000039.parquet": "ee6f15d6f41d0beaa381d877ffbadaa4ee4a31dd847b82865e92fe5292254c16",
+    "videos/chunk-000/observation.images.ego_view/episode_000039.mp4": "f852bf856e1d9b1738a9ad040058759f492ade837ad7b12c85bb2a4d3ec3bbb1",
+    "data/chunk-000/episode_000040.parquet": "1fef8d38e347c14f39a44b5fad9573649cff85e5f8f647a75063d3d41294ca68",
+    "videos/chunk-000/observation.images.ego_view/episode_000040.mp4": "0f6f32d95e3231cdc11a2e3b23ceabb3178c919be0d8d2494b5cc7b0907ab941",
+    "data/chunk-000/episode_000041.parquet": "9e38b273f915f4331f63b1351c173c40f25a0a23af1ffd5bde23712d7d12002b",
+    "videos/chunk-000/observation.images.ego_view/episode_000041.mp4": "8696e6f80e5c34ccded3062972491eee7f4de9c7d3b6315472a7ce548dbc6cba",
+    "data/chunk-000/episode_000042.parquet": "353ecbdadae1de07eb332ccae34fa5bb8eb897bab64433de66cff66b43aa532f",
+    "videos/chunk-000/observation.images.ego_view/episode_000042.mp4": "17003edecc753b971ce44d3b76cf07357ea47e97f11d263474c6c619c5a6aa04",
+    "data/chunk-000/episode_000043.parquet": "de45fb72d1e206f4870f6ff62dbfc494dc68237ddf2b4ed2c4d0d7fdc5902b85",
+    "videos/chunk-000/observation.images.ego_view/episode_000043.mp4": "df9e01cdff3766c7a3986d10aa16a06147a497620c8b561d16965a8d97b5ef64",
+    "data/chunk-000/episode_000044.parquet": "d45826659005d9da21541c698ebb9ef206a5fa98e572de8090a868bcdf832a7f",
+    "videos/chunk-000/observation.images.ego_view/episode_000044.mp4": "222a03e0fa8b8208aa1191c04ebf7da0b6c0bf98e56ffb3b53411d3f9c80b841",
+    "data/chunk-000/episode_000045.parquet": "f1450dc300df8fc506ca2f5fc944ac728f5deb42b369f82cfbfea3436e57132f",
+    "videos/chunk-000/observation.images.ego_view/episode_000045.mp4": "4e3cfc3309cb4bfa1765154976dd619ff41db9566d45ade60475b79d9c8200e8",
+    "data/chunk-000/episode_000046.parquet": "b566fdd40c38e36082f847cdc7502ec151342a426804febcd9a3d883fd901bf0",
+    "videos/chunk-000/observation.images.ego_view/episode_000046.mp4": "2cb21cb07301251c9ddae25cbfd13005ce039e40c1138c5894159793a87891dd",
+    "data/chunk-000/episode_000047.parquet": "a715f6781698d00de440fdd2bd7e84b106c958c19dac8acb8a414d686a3ebcd9",
+    "videos/chunk-000/observation.images.ego_view/episode_000047.mp4": "17ed04b094a9fd7f972786a277e432a119f2487e65fc9eb97b208fe11c221407",
+    "data/chunk-000/episode_000048.parquet": "7a1c15be25f7d8c6f8f6577125a5744e2e8ddf3860326f3da4e32d2d5a174abb",
+    "videos/chunk-000/observation.images.ego_view/episode_000048.mp4": "85f9cb443f95fad445fe6be5307bc6baf397e3ad0540a2116f1bc260497c7d2c",
+    "data/chunk-000/episode_000049.parquet": "0af4dc377e956bf537b5f3da586cab4e484c753730748e34a17937497d26b585",
+    "videos/chunk-000/observation.images.ego_view/episode_000049.mp4": "90306902bf134d5da43f8a0403e56a1ced432426f736c8e3429abbd776f0ee00",
+    "data/chunk-000/episode_000050.parquet": "bca7b653f7bd846e2775b3abca87c4984087ca3d0d7c13a5c24d1a2ddbfd0a0e",
+    "videos/chunk-000/observation.images.ego_view/episode_000050.mp4": "4e84e86fd93beb399336d0920b11e2943767b86d92abb4fe086e0384d51ece91",
+    "data/chunk-000/episode_000051.parquet": "03e96507b7943895e624ea21b01025a487fe930d0eefc411c68d88b4b3529e25",
+    "videos/chunk-000/observation.images.ego_view/episode_000051.mp4": "cbe27935cb488cec47cb790537e9e17288673b13c6a218b44af701782e700cbc",
+    "data/chunk-000/episode_000052.parquet": "2138e49033dac431d7d4e33b9e4ac3bb262322c66015ba5c709e44695e1f15b8",
+    "videos/chunk-000/observation.images.ego_view/episode_000052.mp4": "98e77631fdc971c09ffad5c70cabcd75a6a83641e79410fae54eb9f4551187d6",
+    "data/chunk-000/episode_000053.parquet": "30e4cd9f95ea418b3753ddd4542bf56d8156197bb65bbade3f0297f419e03b56",
+    "videos/chunk-000/observation.images.ego_view/episode_000053.mp4": "059d926e457ce26bd610b6618032326d838930cd118bb7fcb6cc0252cb517238",
+    "data/chunk-000/episode_000054.parquet": "2a0560d56cf7dfab7d3b5fb5ac8cf2f276f463c96f5c63f33f18d3055017efe2",
+    "videos/chunk-000/observation.images.ego_view/episode_000054.mp4": "c8c2e3a60e9324b7f16c5d096cb3a4db863fbf6e43dece4a8cc5a155c082fa05",
+    "data/chunk-000/episode_000055.parquet": "4db192db292927fde3ceec4beaba99965635550db7087e75658309aaf52ec21b",
+    "videos/chunk-000/observation.images.ego_view/episode_000055.mp4": "3c3c9717593a3cfe1f4042db777c3961273f07d3e9b689d9cb8f515a8e123bc2",
+    "data/chunk-000/episode_000056.parquet": "90cb2291683444f422fe82bcc71c38633ac1219b7309ecf15f9fe5e98cfa1363",
+    "videos/chunk-000/observation.images.ego_view/episode_000056.mp4": "82936dc03e57586a7f4b36ff3adb584543fe643aa252d013551f7a73c78dbc88",
+    "data/chunk-000/episode_000057.parquet": "6e55876d8bfe2cfbd00b6bbb7a3e90f09c88923be9dc9da009a96aaa45192f6c",
+    "videos/chunk-000/observation.images.ego_view/episode_000057.mp4": "d68691b0ec4866a5c441c7da292d377f0b99cff21492be3f4a72d624f32e1c8f",
+    "data/chunk-000/episode_000058.parquet": "64f3f1d77ddc16662bc02379bf917521091dbaf2d38830e4adb20ef79619bc33",
+    "videos/chunk-000/observation.images.ego_view/episode_000058.mp4": "56e335626a3cb561042dc7b890760af1a175a24c83a129f176147383f4c58f57",
+    "data/chunk-000/episode_000059.parquet": "512222b38a92471ef7bcf84a90376fe2da8cb157819db3448e6cbada496c6c24",
+    "videos/chunk-000/observation.images.ego_view/episode_000059.mp4": "fc1b0c03a4b04cdc72e239d360c69d5cb275ae66ad41c496fc6ea29ff6a1fdcc",
+    "data/chunk-000/episode_000060.parquet": "9fe6e9508e2c87dd4e9b2f5030ad68e120dfba6913ae11dbbdaeedb9ddcb372e",
+    "videos/chunk-000/observation.images.ego_view/episode_000060.mp4": "cb6a53f254f88180b2532e7b2c961d6b2ff3faf7e30d14a79631c89278e4a1e6",
+    "meta/info.json": "01d609f1fc7ac4fe19eeab5dba192c42cf6b17167db9bfb7cecd24c93fedb93c",
+    "meta/tasks.jsonl": "56a1f6e5839831f3d72d88f0a26b1ec3cab8a686a97cc7820476fda30e2f93be",
+    "meta/modality.json": "45ff0cd3e2d1221147588957b0fb788bf321599dcebc396cf1a71d97e5f6da5b",
+    "meta/episodes.jsonl": "4ae43f8fdc852c7c8ea8ba22f5cd0666043c92683a9c0df569d2c1253fe11c9a"
+  },
+  "accepted_training_segments": 0,
+  "datasets_modified": false,
+  "policy_queried": false,
+  "hardware_command_sent": false
+}

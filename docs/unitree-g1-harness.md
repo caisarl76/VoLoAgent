@@ -1,5 +1,13 @@
 # Unitree G1 agent harness
 
+**Active target, 9 October 2026:** the user changed the task to a repeating
+stationary bottle handover across a desk: detect, pick, offer on an open
+upward-facing palm, observe the empty hand, and return to a handshake-ready
+pose. See the [proposed handover design](superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md)
+and [dataset inspection](artifacts/g1_handover_20261009/README.md).
+The handover loop and ready-return operation are not implemented yet. The
+placement configuration and evidence below describe the earlier target.
+
 Software checks and checkpoint serving pass. The real checkpoint, native loop,
 SONIC, simulator camera and Genon monitor now run together. A live false-success
 case was corrected by identifying the destination as the separate green stool.

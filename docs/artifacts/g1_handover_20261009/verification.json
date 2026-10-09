@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-09",
+  "base_commit": "8b7ef47df68de8652ed24592863debafac99d016",
+  "scope": "Read-only source dataset inspection and proposed handover design; documentation and sampled evidence only.",
+  "core_inspection_reproduction": {
+    "exit_code": 0,
+    "stdout": "61 30035 0.5625"
+  },
+  "episodes_checked": 61,
+  "rows_checked": 30035,
+  "numeric_issues": [],
+  "source_files_rehashed": 126,
+  "sample_sheets": 8,
+  "sample_frames": 72,
+  "relative_document_links_checked": true,
+  "independent_document_review": {
+    "confirmed_material_defects": 0,
+    "data_or_runtime_independently_exercised": false
+  },
+  "active_profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "runtime_implementation_changed": false,
+  "accepted_training_segments": 0,
+  "training_performed": false,
+  "policy_or_vision_called": false,
+  "hardware_command_sent": false,
+  "new_handover_software_tests_run": false,
+  "new_handover_simulation_run": false,
+  "source_sha256": {
+    "docs/superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md": "94edd09be6c5cfd3aa79012971d2d11b0e3b6e4473875deb432d4c76d38f62ad",
+    "docs/unitree-g1-harness.md": "f605a3992ee042a9048fd02ca2f26cb69977b51352f6e00f8b7d51ecb611582a",
+    "docs/artifacts/g1_handover_20261009/README.md": "073c9fabe9cbd9bad6bcf5a380ac55877d2a9e1e143c2ead4c30ab0ed138d58b",
+    "docs/artifacts/g1_handover_20261009/numeric-audit.json": "7b78f875776b425c26e8c1aa384be22603a054b9cd55e4edc1d1faaa2efccfef",
+    "docs/artifacts/g1_handover_20261009/sampled-review.json": "da7992e8bc63fdd1873cfabc0b9d135009d08edff62b2572b495d144f449b0a2"
+  }
+}
