@@ -1,7 +1,7 @@
 # G1 bottle handover autopilot
 
-Status: user-approved design, 9 October 2026. Software implementation is in
-progress; hardware acceptance has not started.
+Status: user-approved design, 9 October 2026. Software implementation is complete
+and under final regression verification; hardware acceptance has not started.
 
 ## Goal
 
@@ -96,6 +96,10 @@ stateDiagram-v2
     ReturnReady --> Stopped: Failure or stale evidence
     Stopped --> [*]
 ```
+
+Before the first ready return, establish a measured planner hold and confirm
+the right hand is visibly empty in two fresh frames. A held bottle or occlusion
+keeps this startup phase waiting; it cannot open the fingers first.
 
 1. **Ready:** hold the reviewed handshake-ready pose. Watch for a bottle on
    the reachable working surface in two distinct fresh views. A bottle in
@@ -208,7 +212,9 @@ hardware acceptance comes after these checks.
 
 The target and dataset have been investigated and the user approved this design.
 The implementation follows the [plan](../plans/2026-10-09-g1-bottle-handover-autopilot.md).
-Software changes are in progress; runtime acceptance is not yet established.
+The loop, phase monitor, shared profile/CLI and bounded native ready return are
+implemented. Software acceptance uses scripted perception and synthetic
+tracking; physical acceptance is not established.
 No handover labels are accepted for training, no handover training has run,
 and no new checkpoint, live vision call or robot command was used in this
 investigation. Episodes 15 and 30 are now user-confirmed reference examples;

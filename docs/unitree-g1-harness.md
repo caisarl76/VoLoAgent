@@ -26,6 +26,16 @@ is `pick drink bottle and place it on the right table`; the expected checkpoint
 is `/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000`.
 Adding a name to the registry does not teach the policy a new behavior.
 
+## Stationary bottle handover, 9 October 2026
+
+The handover software now repeats detection → pickup/offer → measured paused
+hold → visible empty hand → bounded handshake-ready return under one lease.
+The [report](artifacts/g1_handover_20261009/README.md) distinguishes software
+checks from physical acceptance and records episode 16's roll/rescue failure.
+The [handover example](../configs/g1/handover.example.yaml) is disabled until
+its checkpoint and ready path are verified. The existing placement profile
+remains the active workstation profile. Dashboard work stays deferred.
+
 ## Checkouts and environments
 
 Implementation lives in two isolated branches:

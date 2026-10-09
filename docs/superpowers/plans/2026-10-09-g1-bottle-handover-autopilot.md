@@ -1,6 +1,6 @@
 # G1 Bottle Handover Autopilot Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Implement the stationary, repeating bottle handover loop approved by the user, with a native measured ready return and explicit phase evidence.
 
@@ -38,11 +38,11 @@
 
 **Interfaces:** Add optional `G1Profile.handover: HandoverSettings | None` with `skill_id`, `checkpoint_verified`, `ready_pose_reviewed` and seven named `ready_right_arm_joints`. Add RPC `reset_ready(execution_id: str)` (empty ID for startup from IDLE/COMPLETED), status `ready_return_enabled: bool` and `right_hand_open: bool | None`. Add `StandingReset(..., right_arm_target=None)` and native hook `begin_ready_reset(feedback, right_arm_target)`.
 
-- [ ] Write `tests/test_g1_handover_profile.py` and native `gear_sonic/tests/test_handover_ready.py`: valid candidate ordering, malformed/list/nonfinite targets, joint bounds, unverified checkpoint rejection, preserved left arm/waist/heading/left hand, right-hand zero target, measured rate/lead bounds, .5-second settling and unavailable hook rejection.
-- [ ] Run the new test files. Expected: failures because the profile/RPC/ready target are unsupported.
-- [ ] Implement the interfaces. Validate seven named joints against the checked G1 XML bounds; require a hold completion action for the handover skill. Native ready capability requires a reviewed target and implemented hook. Reject handover policy start unless its checkpoint is verified. Example flags remain false.
-- [ ] Run new tests plus existing profile, RPC, standing reset and native control tests. Expected: all pass; mirrors and fixtures identical.
-- [ ] Commit with matching author and `Signed-off-by` in each repository.
+- [x] Write `tests/test_g1_handover_profile.py` and native `gear_sonic/tests/test_handover_ready.py`: valid candidate ordering, malformed/list/nonfinite targets, joint bounds, unverified checkpoint rejection, preserved left arm/waist/heading/left hand, right-hand zero target, measured rate/lead bounds, .5-second settling and unavailable hook rejection.
+- [x] Run the new test files. Expected: failures because the profile/RPC/ready target are unsupported.
+- [x] Implement the interfaces. Validate seven named joints against the checked G1 XML bounds; require a hold completion action for the handover skill. Native ready capability requires a reviewed target and implemented hook. Reject handover policy start unless its checkpoint is verified. Example flags remain false.
+- [x] Run new tests plus existing profile, RPC, standing reset and native control tests. Expected: all pass; mirrors and fixtures identical.
+- [x] Commit with matching author and `Signed-off-by` in each repository.
 
 ### Task 2: Phase monitor with persistent roll/drop failure
 
@@ -50,11 +50,11 @@
 
 **Interfaces:** `HandoverMonitor.begin_phase(phase: str, cycle_id: int, execution: Execution, initial: ObservationSnapshot, not_before: float) -> None`; `check(snapshot) -> HandoverDecision`. Decision carries existing completion fields plus `runtime_id`, `cycle_id` and `phase`. Phases are `ready`, `pick_offer`, `wait_empty`.
 
-- [ ] Write tests for two-frame detection, a held/person-held bottle, occlusion resetting confirmations, level/stable support, episode-16-style roll followed by rescue, same-cycle failure surviving phase changes, stale/repeated/wrong-epoch snapshots, malformed responses and expired calls.
-- [ ] Run the new tests. Expected: missing monitor implementation.
-- [ ] Reuse bounded off-thread vision calls. Supply initial, previous and current images with phase-specific criteria; accept strict JSON outcomes `yes/no/unknown/failure`. A roll or drop takes precedence over every transition. Keep the failure latched until a new cycle starts.
-- [ ] Run the new tests and existing monitor tests. Expected: all pass. Store source checksums and sampled incident bracket [335,361), explicitly not an exact event boundary or accepted positive cut.
-- [ ] Commit with matching author sign-off.
+- [x] Write tests for two-frame detection, a held/person-held bottle, occlusion resetting confirmations, level/stable support, episode-16-style roll followed by rescue, same-cycle failure surviving phase changes, stale/repeated/wrong-epoch snapshots, malformed responses and expired calls.
+- [x] Run the new tests. Expected: missing monitor implementation.
+- [x] Reuse bounded off-thread vision calls. Supply initial, previous and current images with phase-specific criteria; accept strict JSON outcomes `yes/no/unknown/failure`. A roll or drop takes precedence over every transition. Keep the failure latched until a new cycle starts.
+- [x] Run the new tests and existing monitor tests. Expected: all pass. Store source checksums and sampled incident bracket [335,361), explicitly not an exact event boundary or accepted positive cut.
+- [x] Commit with matching author sign-off.
 
 ### Task 3: One-session loop, CLI and cross-process acceptance
 
@@ -62,12 +62,12 @@
 
 **Interfaces:** `HandoverRunner(HarnessRunner).run_autopilot(max_cycles: int | None = None) -> MissionResult`. Default repeats until cancellation; positive finite limits support supervised checks. Reuse one lease/heartbeat, monitor and RPC client. Add CLI `autopilot --max-cycles N`, retaining existing vision options and `GENON_API_KEY` fallback.
 
-- [ ] Write tests for three cycles with one lease, initial and post-removal ready settling, held-bottle no-trigger, paused waiting through occlusion, closed measured fingers blocking offering, wrong-phase/cycle results, failure/stale evidence/ownership loss/cancel and unavailable native capability. Add a memory-only native IPC run with real contracts and bounded reset, synthetic tracking and scripted vision.
-- [ ] Run new tests. Expected: missing autopilot and native fixture ready hook.
-- [ ] Implement phase waits off the main control loop, continuing status/ownership checks. Pause and acknowledge the new epoch before waiting for removal. Return ready only after clear empty-hand confirmation, then wait for native settling before the next cycle. Never auto-restart an interrupted session.
-- [ ] Run both repositories' appropriate suites and explicit cross-process tests with `--require-g1-e2e`. Expected: all runnable tests pass; report environmental collection failures by name rather than hiding them.
-- [ ] Request a fresh `gpt-6-astra` high-reasoning standards/spec review. Inspect the diff and resolve material findings with regression tests.
-- [ ] Update evidence, docs and plan checkboxes with actual results; signed commits and push the existing feature branches.
+- [x] Write tests for three cycles with one lease, initial and post-removal ready settling, held-bottle no-trigger, paused waiting through occlusion, closed measured fingers blocking offering, wrong-phase/cycle results, failure/stale evidence/ownership loss/cancel and unavailable native capability. Add a memory-only native IPC run with real contracts and bounded reset, synthetic tracking and scripted vision.
+- [x] Run new tests. Expected: missing autopilot and native fixture ready hook.
+- [x] Implement phase waits off the main control loop, continuing status/ownership checks. Pause and acknowledge the new epoch before waiting for removal. Return ready only after clear empty-hand confirmation, then wait for native settling before the next cycle. Never auto-restart an interrupted session.
+- [x] Run both repositories' appropriate suites and explicit cross-process tests with `--require-g1-e2e`. Expected: all runnable tests pass; report environmental collection failures by name rather than hiding them.
+- [x] Request a fresh `gpt-6-astra` high-reasoning standards/spec review. Inspect the diff and resolve material findings with regression tests.
+- [x] Update evidence, docs and plan checkboxes with actual results; signed commits and push the existing feature branches.
 
 ## Acceptance boundaries
 
