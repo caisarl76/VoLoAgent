@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-09",
+  "episode": 16,
+  "source_video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000016.mp4",
+  "source_video_sha256": "3588658bc9bfa2484e66e5a1c58d30371d493806167bdc063727b7120543359c",
+  "outcome": "failed_offer_with_human_rescue",
+  "cause": "Palm angle lets bottle roll off open hand",
+  "user_confirmation": "slipped due to hand angle is making bottle roll off the hand.",
+  "incident_frames_half_open": [
+    335,
+    361
+  ],
+  "incident_bracket_precision": "Sampled review bracket; not exact onset or contact boundaries",
+  "fps": 50,
+  "positive_training_eligible": false,
+  "evaluation_role": "Regression: roll followed by rescue/empty hand remains failure",
+  "samples": [
+    {
+      "sheet": "episode_000016.jpg",
+      "frames": [
+        0,
+        35,
+        70,
+        105,
+        140,
+        175,
+        211,
+        246,
+        281,
+        316,
+        351,
+        386
+      ],
+      "sha256": "3a9ff7aea71165ef4caa25bbf0d8399db87888e30fc913c01b2fc1bbc0ba3c3e"
+    },
+    {
+      "sheet": "episode_000016_terminal.jpg",
+      "frames": [
+        246,
+        260,
+        275,
+        290,
+        305,
+        320,
+        335,
+        350,
+        360,
+        370,
+        380,
+        386
+      ],
+      "sha256": "9c00f58b439e37c4d1f74b7a44597b033bdfbd835e575abf65a4abd25f3b1c0c"
+    }
+  ]
+}

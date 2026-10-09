@@ -1,7 +1,7 @@
 # G1 bottle handover autopilot
 
-Status: proposed design for the user's new target, 9 October 2026. Runtime
-implementation and hardware acceptance have not started for this target.
+Status: user-approved design, 9 October 2026. Software implementation is in
+progress; hardware acceptance has not started.
 
 ## Goal
 
@@ -57,6 +57,12 @@ view after its early manipulation. Episode 54 includes human repositioning
 and needs separate outcome review. These are review flags, not accepted cuts
 or final outcome labels.
 
+Episode 16 is a user-confirmed failed offer: the hand angle makes the bottle
+roll off the open palm, followed by human rescue around sampled frames
+335–360. Stable, level support is required; opening the fingers is insufficient.
+A later empty hand must not erase this failure. See the
+[failure evidence](../../artifacts/g1_handover_20261009/episode-16-failure.json).
+
 ## Approaches
 
 | Approach | Benefit | Limitation |
@@ -98,7 +104,7 @@ stateDiagram-v2
    rather than an affirmative detection.
 2. **Pick and offer:** invoke only the registered trained handover prompt.
    Require evidence that the bottle was lifted and is now supported by the
-   upward-facing, open robot hand. A bottle still on the desk or an unsupported
+   upward-facing, level open robot hand with stable support across frames. A bottle still on the desk or an unsupported
    bottle is not a completed offering. Validate the opening/pose judgment
    against measured hand and arm state; motor angles alone do not prove
    object support or semantic palm direction.
@@ -200,8 +206,9 @@ hardware acceptance comes after these checks.
 
 ## Current status
 
-The target and dataset have been investigated and this proposal is reviewable.
-The new loop, perception states and ready-return operation are not implemented.
+The target and dataset have been investigated and the user approved this design.
+The implementation follows the [plan](../plans/2026-10-09-g1-bottle-handover-autopilot.md).
+Software changes are in progress; runtime acceptance is not yet established.
 No handover labels are accepted for training, no handover training has run,
 and no new checkpoint, live vision call or robot command was used in this
 investigation. Episodes 15 and 30 are now user-confirmed reference examples;
