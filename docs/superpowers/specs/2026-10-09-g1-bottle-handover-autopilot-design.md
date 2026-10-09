@@ -18,8 +18,13 @@ are outside this handover loop.
 
 The working assumption is the right hand: sampled videos show the offering
 motion and the recorded right-arm joint variation supports that interpretation.
-The exact ready pose still needs a user-reviewed recording or measured pose.
-No guessed joint angles will be used as a hardware ready pose.
+The user confirmed episodes 15 and 30 as the intended reference examples,
+including the ready phase. Episode 15's visible empty-hand terminal frames
+provide a candidate ready-pose target. Extract that target from measured
+joints and validate its controlled return; the
+[candidate extract](../../artifacts/g1_handover_20261009/ready-pose-candidate.json)
+records named joint values without deploying them. No guessed joint angles
+will be used as a hardware ready pose.
 
 ## Dataset evidence
 
@@ -42,8 +47,11 @@ may exist elsewhere; the active profile still names the old placement model.
 
 Sampled episodes 0, 15 and 30 show bottle pickup and offering. In episode 15,
 the bottle rests sideways on the open palm before the person removes it, and
-frames 415–431 show an empty palm. This does not demonstrate a subsequent
-handshake-ready return. Episode 30 ends during removal. Sampled episode 45
+frames 415–431 show an empty palm. The user confirmed episodes 15 and 30 in
+response to the request for full-cycle references, including the desired
+empty-hand ready pose. This establishes the reference choice; the sampled
+views alone do not independently verify a continuous settled ready return.
+Episode 30's final sampled frame is during removal. Sampled episode 45
 contains desk/object setup; episode 60 contains a changing camera/workspace
 view after its early manipulation. Episode 54 includes human repositioning
 and needs separate outcome review. These are review flags, not accepted cuts
@@ -165,10 +173,11 @@ checksums. Assign train/validation/test by complete source episode before
 extracting 40-frame action windows. Human-removal clips are valuable monitor
 tests and do not automatically supply robot pickup actions.
 
-Record or identify an empty-hand handshake-ready target and the safe return
-path. Review whether existing episode starts provide a suitable ready pose;
-the observed terminal palm-up pose is not automatically that target. Collect
-missing offer dwell or ready-return demonstrations if review shows gaps.
+Extract a candidate empty-hand ready target from the confirmed episode 15
+ending and validate the safe return path. Review whether the starts and ends
+of the confirmed recordings establish enough settled-pose and offer-dwell
+coverage. Collect longer dwell or ready-return demonstrations if validation
+shows gaps; the visible terminal sample spans only 0.34 seconds of frames.
 
 Implementation should cover the loop and phase monitor, native ready return,
 shared contracts/profile/CLI, cross-process fixtures, and user-facing task
@@ -195,5 +204,5 @@ The target and dataset have been investigated and this proposal is reviewable.
 The new loop, perception states and ready-return operation are not implemented.
 No handover labels are accepted for training, no handover training has run,
 and no new checkpoint, live vision call or robot command was used in this
-investigation. The best full-cycle reference episode is still awaiting the
-user's response.
+investigation. Episodes 15 and 30 are now user-confirmed reference examples;
+their exact training cuts and the ready-return validation remain open.
