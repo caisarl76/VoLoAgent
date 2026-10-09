@@ -336,6 +336,32 @@ class HarnessRunner:
         return self.run_sequence([call])
 
     def run_sequence(self, calls: list[SkillCall]) -> MissionResult:
+        return self._run_session(calls, self._execute_sequence)
+
+    def _execute_sequence(self, calls):
+        for call in calls:
+            if call.skill_id in self.profile.skills:
+                self._manipulate(call)
+            else:
+                self._held_execution = None
+                params = (
+                    {"execution_id": "", **call.params}
+                    if call.skill_id == "reset_standing"
+                    else call.params
+                )
+                self._execution = self._rpc(call.skill_id, params)
+                self._wait_complete(
+                    self._execution,
+                    self.profile.limits.reset_deadline_s
+                    if call.skill_id == "reset_standing"
+                    else self.profile.limits.turn_deadline_s,
+                )
+        return "All skills completed with confirmed planner hold"
+
+    def _validate_executor(self, status):
+        pass
+
+    def _run_session(self, calls, execute):
         if not calls or len(calls) > 64:
             raise ValueError("Sequence requires 1 to 64 skills")
         for call in calls:
@@ -381,6 +407,7 @@ class HarnessRunner:
                     raise TimeoutError("Policy prewarm unavailable")
                 time.sleep(0.1)
                 status = self._client.get_status()
+            self._validate_executor(status)
             self._lease = self._rpc(
                 "claim_control", {"registry_sha256": self.profile.registry_sha256}
             )
@@ -388,26 +415,10 @@ class HarnessRunner:
                 raise ValueError("Expected control lease")
             heartbeat = threading.Thread(target=self._heartbeat, daemon=True)
             heartbeat.start()
-            for call in calls:
-                if call.skill_id in self.profile.skills:
-                    self._manipulate(call)
-                else:
-                    self._held_execution = None
-                    params = (
-                        {"execution_id": "", **call.params}
-                        if call.skill_id == "reset_standing"
-                        else call.params
-                    )
-                    self._execution = self._rpc(call.skill_id, params)
-                    self._wait_complete(
-                        self._execution,
-                        self.profile.limits.reset_deadline_s
-                        if call.skill_id == "reset_standing"
-                        else self.profile.limits.turn_deadline_s,
-                    )
+            completed_reason = execute(calls)
             outcome, reason = (
                 "completed",
-                "All skills completed with confirmed planner hold",
+                completed_reason,
             )
         except (MissionInterrupted, KeyboardInterrupt) as exc:
             outcome, reason = "interrupted", str(exc) or "Operator cancelled"

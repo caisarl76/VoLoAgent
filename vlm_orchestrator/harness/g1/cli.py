@@ -16,6 +16,8 @@ from .contract import SkillCall
 from .monitor import G1CompletionMonitor, decode_image
 from .registry import load_profile, validate_skill_call
 from .runner import HarnessRunner
+from .autopilot import HandoverRunner
+from .handover_monitor import HandoverMonitor
 
 
 def main(argv=None):
@@ -33,7 +35,9 @@ def main(argv=None):
     run.add_argument("--skill", required=True)
     execute = sub.add_parser("execute")
     execute.add_argument("--plan-file", required=True, type=Path)
-    for p in (run, execute):
+    autopilot = sub.add_parser("autopilot")
+    autopilot.add_argument("--max-cycles", type=int)
+    for p in (run, execute, autopilot):
         p.add_argument("--vlm-model")
         p.add_argument("--vlm-base-url")
         p.add_argument("--vlm-api-key")
@@ -89,7 +93,19 @@ def main(argv=None):
             finally:
                 client.close()
             return 0
-        if args.command == "run":
+        if args.command == "autopilot":
+            h = profile.handover
+            if (
+                h is None
+                or not h.checkpoint_verified
+                or not h.ready_pose_reviewed
+                or args.locomotion
+            ):
+                raise ValueError("Verified stationary handover profile required")
+            if args.max_cycles is not None and args.max_cycles < 1:
+                raise ValueError("max_cycles must be positive")
+            calls = [SkillCall(h.skill_id, {})]
+        elif args.command == "run":
             calls = [SkillCall(args.skill, {})]
         else:
             data = json.loads(args.plan_file.read_text())
@@ -124,6 +140,7 @@ def main(argv=None):
             api = OpenAI(
                 api_key=args.vlm_api_key
                 or os.environ.get("VLM_API_KEY")
+                or os.environ.get("GENON_API_KEY")
                 or os.environ.get("OPENAI_API_KEY")
                 or "local",
                 base_url=args.vlm_base_url,
@@ -143,15 +160,24 @@ def main(argv=None):
                 )
                 return response.choices[0].message.content
 
-            monitor = G1CompletionMonitor(
-                profile.require_skill(manipulation[0].skill_id),
-                vlm_call,
-                time.monotonic,
-                profile.limits,
+            monitor = (
+                HandoverMonitor(vlm_call, time.monotonic, profile.limits)
+                if args.command == "autopilot"
+                else G1CompletionMonitor(
+                    profile.require_skill(manipulation[0].skill_id),
+                    vlm_call,
+                    time.monotonic,
+                    profile.limits,
+                )
             )
-        runner = HarnessRunner(profile, factory, monitor, args.evidence_dir)
+        runner_cls = HandoverRunner if args.command == "autopilot" else HarnessRunner
+        runner = runner_cls(profile, factory, monitor, args.evidence_dir)
         runner.locomotion_enabled = args.locomotion
-        result = runner.run_sequence(calls)
+        result = (
+            runner.run_autopilot(args.max_cycles)
+            if args.command == "autopilot"
+            else runner.run_sequence(calls)
+        )
         print(json.dumps(asdict(result), default=str))
         return 0 if result.outcome == "completed" else 1
     except (ValueError, OSError, RuntimeError) as exc:

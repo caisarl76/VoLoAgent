@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "base_commit": "8b7ef47df68de8652ed24592863debafac99d016",
-  "scope": "Read-only source dataset inspection and proposed handover design; documentation and sampled evidence only.",
+  "scope": "Source inspection, approved design, failure evidence and implemented handover software; physical acceptance pending",
   "core_inspection_reproduction": {
     "exit_code": 0,
     "stdout": "61 30035 0.5625"
@@ -10,8 +10,8 @@
   "rows_checked": 30035,
   "numeric_issues": [],
   "source_files_rehashed": 126,
-  "sample_sheets": 8,
-  "sample_frames": 72,
+  "sample_sheets": 10,
+  "sample_frames": 96,
   "relative_document_links_checked": true,
   "independent_document_review": {
     "confirmed_material_defects": 0,
@@ -19,20 +19,23 @@
     "data_or_runtime_independently_exercised": false
   },
   "active_profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
-  "runtime_implementation_changed": false,
+  "runtime_implementation_changed": true,
   "accepted_training_segments": 0,
   "training_performed": false,
   "policy_or_vision_called": false,
   "hardware_command_sent": false,
-  "new_handover_software_tests_run": false,
+  "new_handover_software_tests_run": true,
   "new_handover_simulation_run": false,
   "source_sha256": {
-    "docs/superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md": "63c0f3c017acc3652829f3778b652918bf131f9c9494792290057287d0f24487",
-    "docs/unitree-g1-harness.md": "f605a3992ee042a9048fd02ca2f26cb69977b51352f6e00f8b7d51ecb611582a",
-    "docs/artifacts/g1_handover_20261009/README.md": "5a1acfedd19c5b8a6b45d5071bcb309cd45ff1e7c4c20ef66154516aaf99a112",
+    "docs/superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md": "8725397745b73ef7df45220e1690ae002db8b0db045df26bee969c7a027206ae",
+    "docs/unitree-g1-harness.md": "a02ed342ddac02c57441b02656dadd2ee8c875be65c652463bdef99ba5c84b2f",
+    "docs/artifacts/g1_handover_20261009/README.md": "252420e8a78321ae2ce27a1e7a9f5abc5722f6ebce218ee784d8af6553eea597",
     "docs/artifacts/g1_handover_20261009/numeric-audit.json": "7b78f875776b425c26e8c1aa384be22603a054b9cd55e4edc1d1faaa2efccfef",
     "docs/artifacts/g1_handover_20261009/sampled-review.json": "10850dfae931ed3953dd3c8ab50199d25dceff9946ff8a63796a004b00d5c0b7",
-    "docs/artifacts/g1_handover_20261009/ready-pose-candidate.json": "74eff59c47ee415340d2be272da8d39882eea0a98e83d76050cb21ae59211559"
+    "docs/artifacts/g1_handover_20261009/ready-pose-candidate.json": "74eff59c47ee415340d2be272da8d39882eea0a98e83d76050cb21ae59211559",
+    "docs/superpowers/plans/2026-10-09-g1-bottle-handover-autopilot.md": "b19a6ca74b5f25948e6babdd3d155b45c259f5120a225d1ca152bf8bb697be3f",
+    "docs/artifacts/g1_handover_20261009/episode-16-failure.json": "ce26c1fea49f91b021b82d515c1d96e135cae4325dd7a9f0664a8c836711f4e2",
+    "docs/artifacts/g1_handover_20261009/runtime-verification.json": "541495c8c83617a802828a4e3fdfdb7a9212410afc1c896b3e50799f4f89159e"
   },
   "user_confirmed_reference_episodes": [
     15,
@@ -40,5 +43,6 @@
   ],
   "candidate_ready_pose_extracted": true,
   "candidate_pose_deployed": false,
-  "candidate_ready_pose_verified_against_source": true
+  "candidate_ready_pose_verified_against_source": true,
+  "runtime_verification": "runtime-verification.json"
 }

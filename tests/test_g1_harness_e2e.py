@@ -62,6 +62,36 @@ def events(path):
     return [json.loads(line) for line in path.read_text().splitlines()]
 
 
+@pytest.mark.parametrize("failure", [False, True])
+def test_handover_cycles_cross_process(native_runtime, tmp_path, failure):
+    import importlib
+    from test_g1_handover_profile import handover_profile
+    from test_g1_handover_monitor import reply
+    from vlm_orchestrator.harness.g1.handover_monitor import HandoverMonitor
+
+    module = importlib.util.find_spec("vlm_orchestrator.harness.g1.autopilot")
+    assert module is not None, "Handover autopilot missing"
+    runner_cls = importlib.import_module(module.name).HandoverRunner
+    path = handover_profile(tmp_path)
+    profile = load_profile(path)
+    monitor = HandoverMonitor(lambda *_: reply("yes"), time.monotonic, profile.limits)
+    if failure:
+        monitor.vlm_call_fn = lambda *_: reply("failure", "test-only scripted roll") if monitor.phase == "wait_empty" else reply("yes")
+    with executor(native_runtime, tmp_path, "handover", path) as (endpoint, evidence):
+        result = runner_cls(profile, lambda: G1Client(endpoint), monitor,
+                            tmp_path / "missions").run_autopilot(3)
+        assert result.outcome == ("interrupted" if failure else "completed"), result.reason
+        recorded = events(evidence)
+        mission = events(result.evidence_dir / "events.jsonl")
+        assert {e["publisher"] for e in recorded if "publisher" in e} == {"memory-only"}
+        assert len([e for e in mission if e["event"] == "request" and e["method"] == "claim_control"]) == 1
+        assert len([e for e in recorded if e["event"] == "ready_reset"]) == (1 if failure else 4)
+        assert len([e for e in recorded if e["event"] == "prompt"]) == (1 if failure else 3)
+        assert any(e["event"] == "late_result_rejected" for e in recorded)
+        if not failure:
+            assert len([e for e in recorded if e["event"] == "measured_settled"]) == 4
+
+
 @pytest.mark.parametrize("sequence", [False, True])
 def test_subskill_hold_cross_process(native_runtime, tmp_path, sequence):
     from test_g1_subskill_handoff import candidate_profile

@@ -2,7 +2,7 @@
 
 The active development target is a standing G1 handing a bottle across a desk
 to a person, then returning its empty hand to a handshake-ready pose and
-repeating. See the [proposed design](../../superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md).
+repeating. See the [approved design](../../superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md).
 
 ## Dataset
 
@@ -22,6 +22,7 @@ Resolved input: `/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_260930`.
 | Held-out split | None; original metadata declares train `0:61` |
 | Accepted handover segments | 0 |
 | User-confirmed reference episodes | 15 and 30 |
+| User-confirmed failed offering | 16: bottle rolls off tilted open palm; human rescue |
 
 [Numeric audit](numeric-audit.json) records per-episode counts, dimensions,
 control fields and hashes for the inspected source metadata, parquet and video
@@ -47,6 +48,7 @@ These samples are preliminary review evidence, not accepted cuts or labels.
 |---|---|---|
 | [0](episode_000000.jpg) | Human supplies bottle, robot picks and offers it | Exclude initial setup; check terminal handover/ready return in full video |
 | [15](episode_000015.jpg) | Pickup, sideways open-palm offer, person removes bottle | Promising offering/removal reference; [dense terminal views](episode_000015_terminal.jpg) show empty palm at frames 415–431, only 0.34 s of frames |
+| [16](episode_000016.jpg) | Tilted open palm lets bottle roll off; person rescues it | [Dense incident views](episode_000016_terminal.jpg), sampled bracket [335,361); exclude from positive handover training |
 | [30](episode_000030.jpg) | Pickup and offering; recording ends while person removes bottle | [Dense terminal views](episode_000030_terminal.jpg); no observed subsequent settled ready pose |
 | [45](episode_000045.jpg) | Human desk/bottle setup in sampled views | Do not auto-label as a successful robot handover |
 | [54](episode_000054.jpg) | Human repositions bottle during the episode | Review full attempt and recovery before assigning an outcome |
@@ -68,32 +70,73 @@ and hand joint values derived from the median measured state at episode 15
 frames 415–431. The largest right-arm joint span there is 0.00971 rad. This
 short 0.34-second interval is below the native reset's 0.5-second settle dwell;
 it supplies a target candidate, not a passed settling test or an actuator
-command. Motor/hand mapping, joint limits and the return path still need checks.
+command. The implementation maps seven named right-arm joints to motor order
+and checks the native XML limits. It uses the existing all-zero open-right-hand
+preset rather than copying the dataset’s differently ordered measured hand
+array. The physical return path and palm calibration remain unverified.
 
-## Harness fit and remaining work
+## Implemented handover loop
 
-The existing harness already provides manipulation start, action invalidation,
-measured planner hold, lease heartbeat and evidence logs. Its runner executes
-a finite sequence of 1–64 skills. It does not yet watch for a new bottle,
-wait for removal with phase-specific empty-hand perception, or return to a
-handshake-ready pose. Its current default completion returns to straight
-standing, which does not meet this task's ready-pose requirement.
+The software implements one ownership session across repeated cycles:
 
-The proposed implementation reuses the controller and trains one pickup-and-
-offer prompt. A separate coordinator phase holds the offered pose while the
-person takes the bottle, then requests a measured, bounded ready return.
-This requires a reviewed ready target, a trained handover checkpoint and
-validation of the vision decisions across phase changes and occlusion.
+```mermaid
+flowchart LR
+    E[Confirm initial hand empty] --> R[Bounded ready return and measured settling]
+    R --> D[Confirm bottle on reachable desk]
+    D --> P[VLA picks and offers on stable level open palm]
+    P --> H[Pause VLA and hold measured pose]
+    H --> W[Wait for visible empty hand after removal]
+    W --> R
+```
 
-The original generic labels and lack of held-out episodes are immediate
-training preparation gaps. The ready target can now be derived from the
-confirmed episode 15 reference; its controlled return and dwell coverage need
-validation. The current placement checkpoint cannot be declared
-competent at handover merely because the new prompt is registered.
+Two distinct fresh affirmative camera frames are required for each perception
+transition. Occlusion or a still-held bottle keeps the robot waiting. An
+observed roll/drop/rescue latches failure for the cycle; subsequent empty-hand
+evidence cannot repair it. Failure, expired observations, lost ownership or
+cancellation stop the session. The offering image remains available across
+the paused epoch as context; only fresh paused frames confirm removal.
 
-No runtime code was changed, no policy or vision endpoint was queried, and no
-robot command was sent. GPU training, simulation and hardware checks have not
-run for the new target. The old bottle/stool reports remain historical evidence.
+`reset_ready` preserves the measured waist, other arm, left hand and heading.
+It opens the right hand and approaches the named right-arm target at no more
+than 0.5 rad/s and 0.15 rad ahead of measurements. Tracking compensation is
+clipped to the right-arm joint limits. Completion requires measured settling
+within 0.05 rad for 0.5 seconds; the deadline remains 15 seconds.
+
+The [implementation plan](../../superpowers/plans/2026-10-09-g1-bottle-handover-autopilot.md)
+links the changed interfaces and tests. The old placement profile is unchanged.
+The new [example profile](../../../configs/g1/handover.example.yaml) is disabled:
+its handover checkpoint and ready-path review flags are false. Registering the
+prompt does not establish that a model can execute it.
+
+The CLI now accepts `autopilot --max-cycles 3`; omit the limit to repeat until
+cancellation. Use the same reviewed profile in VoLoAgent and the native
+executor; the strict status schema changed, so both must be updated together.
+The CLI accepts an exported `GENON_API_KEY` (or `--vlm-api-key`), with
+`--vlm-model openai/gpt-5.6-sol --vlm-base-url https://api.genon.ai/v1`.
+A key stored in `.env` must first be loaded into the launching shell's
+environment. Credentials are absent from committed artifacts.
+
+## Remaining acceptance work
+
+1. Review exact positive pickup-to-stable-offer cuts from episodes 15/30 and
+   other suitable sources. Reserve episode 16 as failure evidence; do not
+   train it as a successful offering. Assign whole source episodes to
+   train/validation/test before producing action windows.
+2. Replace the generic `place OBJECT on the table` labels in a derived dataset
+   with the exact trained pickup-and-offer instruction, train a handover VLA,
+   and verify the actual serving checkpoint and disconnected policy replay.
+3. Score the recorded success, roll/rescue, removal and occlusion cases using
+   the requested Genon vision endpoint. Measure latency against offer dwell;
+   sparse images can miss a fast roll, even with retained context.
+4. Validate palm orientation and stable bottle support, the ready-return path,
+   and desk/person clearance in SONIC simulation before supervised hardware
+   acceptance. The current checks do not prove those physical properties.
+
+No source dataset was changed, no policy/vision endpoint was queried and no
+physical robot command was sent. The IPC tests use synthetic measurements,
+blank camera images, scripted vision replies and a memory-only publisher.
+They establish software control flow and contracts, not policy or perception
+competence. GPU training and new-target physical simulation have not run.
 
 ## Verification
 
@@ -132,11 +175,14 @@ PY
 ```
 
 Expected output: `61 30035 0.5625`. Source hashes were rechecked for all 126
-inspected input files. Eight contact sheets contain 72 sampled frames with
+inspected input files. Ten contact sheets contain 96 sampled frames with
 valid source bounds. An independent standards/specification review found no
-confirmed material defects in the proposal and report; it did not independently
-exercise source data, runtime or hardware.
+confirmed material defects in the earlier proposal/report. A separate runtime
+review identified three Important findings: cached phase-entry frames, ready
+tracking compensation outside joint bounds, and discarded offering context.
+Each was reproduced by a failing test and fixed; no second review is claimed.
 
 [Verification record](verification.json) binds the report files and records the
-inspection scope. New handover software, simulation and hardware tests remain
-pending implementation.
+inspection scope. [Software verification](runtime-verification.json) records
+the test commands, results and native full-suite dependency gaps. Simulation,
+trained policy and hardware acceptance remain pending.
