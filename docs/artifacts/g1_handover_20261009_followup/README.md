@@ -58,12 +58,35 @@ needs genuinely unseen successful episodes and whole-episode splits before
 [CPU metadata preflight](policy-metadata-preflight.json) verifies the selected
 checkpoint shards, processor files, prompt and episode mapping in the existing
 training container. It did not load weights or run inference. The user allocated
-`h100_174` GPUs 4/5; the planned disconnected test uses GPU 4. Staging through
-the workstation relay was too slow. At the user's request, both verified relay
-processes were stopped and partial model files preserved for manual rsync.
-[Transfer script](transfer_handover.sh) uses direct encrypted host-to-host copying
-with temporary SSH agent forwarding. GPU inference has not run; completion
-requires the manual transfer, its verification, then the disconnected test.
+`h100_174` GPUs 4/5, then also authorized `h100` GPU 0. GPU 0 was idle with
+80,995 MiB available, so the checkpoint test ran on its original host without
+waiting for transfer.
+
+The [disconnected GPU result](policy-smoke-h100-gpu0/result.json) passed four
+recorded-frame inferences: source 15 frames 62/365 and source 30 frames 60/370.
+Model loading took 17.60 s. The first inference took 1.01 s; the following three
+took 0.086–0.090 s. Each returned finite motion tokens of shape `[1,40,64]` and
+left/right hand targets of shape `[1,40,7]`. These four training-reference
+samples establish loading and interface compatibility, not physical success
+or a measured latency distribution. The pinned-image invocation uses one GPU,
+read-only model/data/cache mounts, and Docker networking disabled. It opens no
+robot connection. [Runner](run_policy_smoke_h100.py), invocation, log and all
+four action archives are preserved. The temporary container exits after the
+test; the example profile's activation flags remain false.
+
+Staging through the workstation relay was too slow. At the user's request,
+both verified relay processes were stopped and partial model files preserved
+for manual rsync. The initial manual command also exposed two host-path
+problems: `dataset_view/data` and `videos` link to container-only `/dataset`
+paths, while generated `stats.json` and `relative_stats.json` are root-owned
+mode 0600. [Source diagnostic](transfer-source-diagnostic.json) verifies the
+real host files and readable temporary metadata copies, preserving original
+permissions. The corrected [transfer script](transfer_handover.sh) uses the
+older run's physical `dataset` directory for subset episodes 10/19 and exports
+the current run's metadata through the existing container. Separate rsync
+calls preserve the intended destination layout and resume partial model shards
+with `--append-verify`. The old input relay is disabled. The optional .174
+transfer remains user-operated; it is no longer required for this smoke test.
 
 ## Recorded vision results
 
@@ -137,9 +160,9 @@ The regressions were observed failing before their respective fixes.
 
 The next acceptance work is:
 
-1. Verify the disconnected checkpoint result, then evaluate behavior in a
-   calibrated scene with genuinely unseen attempts. Action shape/finiteness
-   is a compatibility check, not a manipulation-success metric.
+1. Evaluate checkpoint behavior in a calibrated scene with genuinely unseen
+   attempts. The disconnected loading/interface check has passed; action
+   shape/finiteness is not a manipulation-success metric.
 2. Record real stable open-palm offers long enough for the measured verifier
    latency, with the person waiting before taking. A provisional collection
    target is 10–15 s of stable dwell, to be checked against observed latency

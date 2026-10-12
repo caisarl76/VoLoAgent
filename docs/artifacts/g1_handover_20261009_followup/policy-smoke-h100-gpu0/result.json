@@ -1,0 +1,155 @@
+{
+  "robot_connection": false,
+  "network_service": false,
+  "physical_success_verified": false,
+  "policy_inference_verified": true,
+  "samples_are_training_references": true,
+  "checkpoint": "/outputs/train/handover-bottle-261002-20k-gpu6/checkpoint-20000",
+  "dataset": "/outputs/dataset_view",
+  "prompt": "pick drink bottle from the table and handover",
+  "checkpoint_metadata_sha256": "12117379d91d029c5979a585d07ba794001730c9516d6de5512e3dedfee30730",
+  "samples": [
+    {
+      "source_episode": 15,
+      "subset_episode": 10,
+      "source_frame": 62,
+      "latency_s": 1.0097100660204887,
+      "actions": {
+        "motion_token": {
+          "shape": [
+            1,
+            40,
+            64
+          ],
+          "max_abs": 0.395263671875,
+          "finite": true
+        },
+        "left_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.017573624849319458,
+          "finite": true
+        },
+        "right_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.0146484375,
+          "finite": true
+        }
+      }
+    },
+    {
+      "source_episode": 15,
+      "subset_episode": 10,
+      "source_frame": 365,
+      "latency_s": 0.08560246601700783,
+      "actions": {
+        "motion_token": {
+          "shape": [
+            1,
+            40,
+            64
+          ],
+          "max_abs": 0.5,
+          "finite": true
+        },
+        "left_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.011715749278664589,
+          "finite": true
+        },
+        "right_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.0087890625,
+          "finite": true
+        }
+      }
+    },
+    {
+      "source_episode": 30,
+      "subset_episode": 19,
+      "source_frame": 60,
+      "latency_s": 0.08957776054739952,
+      "actions": {
+        "motion_token": {
+          "shape": [
+            1,
+            40,
+            64
+          ],
+          "max_abs": 0.4375,
+          "finite": true
+        },
+        "left_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.008786812424659729,
+          "finite": true
+        },
+        "right_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.0234375,
+          "finite": true
+        }
+      }
+    },
+    {
+      "source_episode": 30,
+      "subset_episode": 19,
+      "source_frame": 370,
+      "latency_s": 0.08710412308573723,
+      "actions": {
+        "motion_token": {
+          "shape": [
+            1,
+            40,
+            64
+          ],
+          "max_abs": 0.4444580078125,
+          "finite": true
+        },
+        "left_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.014644686132669449,
+          "finite": true
+        },
+        "right_hand_joints": {
+          "shape": [
+            1,
+            40,
+            7
+          ],
+          "max_abs": 0.0078125,
+          "finite": true
+        }
+      }
+    }
+  ],
+  "cosmos_revision": "9ce19a195e423419c349abfc86fd07178b230561",
+  "model_load_s": 17.595824472606182
+}
