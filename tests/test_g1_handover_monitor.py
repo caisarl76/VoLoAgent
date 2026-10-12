@@ -152,3 +152,36 @@ def test_wait_empty_keeps_offer_image_but_uses_fresh_paused_confirmations():
     )
     clock[0] = 1.3
     assert m.check(snapshot("empty-2", 1.3, epoch=3)).outcome == "complete"
+
+
+def test_removal_evidence_survives_both_empty_hand_confirmations():
+    import base64
+    import io
+    from PIL import Image
+
+    m, clock, execution = make([], "wait_empty")
+    contents = []
+    replies = iter([reply("no"), reply("no"), reply("yes"), reply("yes")])
+
+    def vision(_, content):
+        contents.append(content)
+        return next(replies)
+
+    m.vlm_call_fn = vision
+    evidence = []
+    for i, label in enumerate(("contact", "taking", "empty-1", "empty-2")):
+        clock[0] = 1.0 + .1*i
+        data = io.BytesIO()
+        Image.new("RGB", (8, 8), (30*i, 100, 0)).save(data, format="JPEG")
+        frame = replace(snapshot(label, clock[0]),
+                        jpeg_rgb_b64=base64.b64encode(data.getvalue()).decode())
+        evidence.append("data:image/jpeg;base64," + frame.jpeg_rgb_b64)
+        decision = m.check(frame)
+    assert decision.outcome == "complete"
+    last_images = [part["image_url"]["url"] for part in contents[-1] if "image_url" in part]
+    assert evidence[0] in last_images and evidence[1] in last_images
+    clock[0] = 1.5
+    m.begin_phase("ready", 2, execution, snapshot("new-start", 1.5), 1.5)
+    replies = iter([reply("no")])
+    m.check(snapshot("new-desk", 1.5))
+    assert not any(part.get("image_url", {}).get("url") in evidence for part in contents[-1])

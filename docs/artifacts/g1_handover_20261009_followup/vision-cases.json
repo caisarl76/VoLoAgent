@@ -1,0 +1,18 @@
+{
+  "label_provenance": "User-confirmed episode outcomes: 15 and 30 success; 16 palm-angle slip. Phase labels are investigator judgments of the saved terminal sheets, not new user approvals or policy hold-out labels.",
+  "cases": [
+    {"id":"desk-bottle", "episode":15,"phase":"ready","initial_frame":0,"frame":62,"acceptable_outcomes":["yes"]},
+    {"id":"closed-grasp", "episode":15,"phase":"pick_offer","initial_frame":246,"frame":300,"acceptable_outcomes":["no","unknown"]},
+    {"id":"offer15-first", "episode":15,"phase":"pick_offer","initial_frame":350,"frame":365,"sequence":"offer15","acceptable_outcomes":["yes"]},
+    {"id":"offer15-second", "episode":15,"phase":"pick_offer","initial_frame":350,"frame":375,"sequence":"offer15","acceptable_outcomes":["yes"]},
+    {"id":"offer30-first", "episode":30,"phase":"pick_offer","initial_frame":360,"frame":370,"sequence":"offer30","acceptable_outcomes":["yes"]},
+    {"id":"offer30-second", "episode":30,"phase":"pick_offer","initial_frame":360,"frame":390,"sequence":"offer30","acceptable_outcomes":["yes"]},
+    {"id":"person-contact", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":395,"acceptable_outcomes":["no","unknown"]},
+    {"id":"empty15-first", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":415,"sequence":"empty15","acceptable_outcomes":["yes"]},
+    {"id":"empty15-second", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":425,"sequence":"empty15","acceptable_outcomes":["yes"]},
+    {"id":"removal30-incomplete", "episode":30,"phase":"wait_empty","initial_frame":390,"frame":420,"acceptable_outcomes":["no","unknown"]},
+    {"id":"slip16", "episode":16,"phase":"pick_offer","initial_frame":335,"frame":350,"sequence":"failure16","acceptable_outcomes":["failure"]},
+    {"id":"rescue16", "episode":16,"phase":"pick_offer","initial_frame":335,"frame":360,"sequence":"failure16","acceptable_outcomes":["failure"]},
+    {"id":"later16", "episode":16,"phase":"pick_offer","initial_frame":335,"frame":386,"sequence":"failure16","acceptable_outcomes":["failure"]}
+  ]
+}

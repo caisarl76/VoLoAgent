@@ -1,0 +1,17 @@
+{
+  "robot_connection": false,
+  "network_service": false,
+  "physical_success_verified": false,
+  "policy_inference_verified": false,
+  "samples_are_training_references": true,
+  "checkpoint": "/outputs/train/handover-bottle-261002-20k-gpu6/checkpoint-20000",
+  "dataset": "/outputs/dataset_view",
+  "prompt": "pick drink bottle from the table and handover",
+  "checkpoint_metadata_sha256": "12117379d91d029c5979a585d07ba794001730c9516d6de5512e3dedfee30730",
+  "samples": [],
+  "host": "h100",
+  "container": "jihun_gr00t_n17_handover_bottle_261002_20k_gpu6_20261006",
+  "remote_temporary_output": "/tmp/volo-handover-metadata-preflight-4a981c37d1204fd9a3e6f69083a72ca9",
+  "preflight_only": true,
+  "checkpoint_loaded": false
+}

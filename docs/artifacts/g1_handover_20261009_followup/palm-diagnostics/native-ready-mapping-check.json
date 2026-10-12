@@ -1,0 +1,165 @@
+{
+  "source_sha256": "50ffd609d71ef85841b3c775286287118ede75b6d6e7419d1b7529d3eb5ab087",
+  "mapping_pass": true,
+  "max_target_mapping_error_rad": 0.0,
+  "preserved_non_right_arm": true,
+  "planner_upperbody_order": [
+    "waist_yaw_joint",
+    "waist_roll_joint",
+    "waist_pitch_joint",
+    "left_shoulder_pitch_joint",
+    "right_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "right_shoulder_roll_joint",
+    "left_shoulder_yaw_joint",
+    "right_shoulder_yaw_joint",
+    "left_elbow_joint",
+    "right_elbow_joint",
+    "left_wrist_roll_joint",
+    "right_wrist_roll_joint",
+    "left_wrist_pitch_joint",
+    "right_wrist_pitch_joint",
+    "left_wrist_yaw_joint",
+    "right_wrist_yaw_joint"
+  ],
+  "rows": [
+    {
+      "planner_index": 0,
+      "joint": "waist_yaw_joint",
+      "measured": 0.019203977659344673,
+      "expected": 0.019203977659344673,
+      "actual": 0.019203977659344673,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 1,
+      "joint": "waist_roll_joint",
+      "measured": 0.04796406626701355,
+      "expected": 0.04796406626701355,
+      "actual": 0.04796406626701355,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 2,
+      "joint": "waist_pitch_joint",
+      "measured": 0.13306160271167755,
+      "expected": 0.13306160271167755,
+      "actual": 0.13306160271167755,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 3,
+      "joint": "left_shoulder_pitch_joint",
+      "measured": 0.13928066194057465,
+      "expected": 0.13928066194057465,
+      "actual": 0.13928066194057465,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 4,
+      "joint": "right_shoulder_pitch_joint",
+      "measured": -0.10434664785861969,
+      "expected": -0.10413093119859695,
+      "actual": -0.10413093119859695,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 5,
+      "joint": "left_shoulder_roll_joint",
+      "measured": 0.24393890798091888,
+      "expected": 0.24393890798091888,
+      "actual": 0.24393890798091888,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 6,
+      "joint": "right_shoulder_roll_joint",
+      "measured": -0.08465656638145447,
+      "expected": -0.08507601171731949,
+      "actual": -0.08507601171731949,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 7,
+      "joint": "left_shoulder_yaw_joint",
+      "measured": -0.43227100372314453,
+      "expected": -0.43227100372314453,
+      "actual": -0.43227100372314453,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 8,
+      "joint": "right_shoulder_yaw_joint",
+      "measured": 0.30505844950675964,
+      "expected": 0.30275747179985046,
+      "actual": 0.30275747179985046,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 9,
+      "joint": "left_elbow_joint",
+      "measured": 0.8801215291023254,
+      "expected": 0.8801215291023254,
+      "actual": 0.8801215291023254,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 10,
+      "joint": "right_elbow_joint",
+      "measured": -0.21841250360012054,
+      "expected": -0.21820877492427826,
+      "actual": -0.21820877492427826,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 11,
+      "joint": "left_wrist_roll_joint",
+      "measured": -0.5549055933952332,
+      "expected": -0.5549055933952332,
+      "actual": -0.5549055933952332,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 12,
+      "joint": "right_wrist_roll_joint",
+      "measured": 1.7013405561447144,
+      "expected": 1.70130455493927,
+      "actual": 1.70130455493927,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 13,
+      "joint": "left_wrist_pitch_joint",
+      "measured": -0.04897952824831009,
+      "expected": -0.04897952824831009,
+      "actual": -0.04897952824831009,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 14,
+      "joint": "right_wrist_pitch_joint",
+      "measured": -0.10500577837228775,
+      "expected": -0.09610150009393692,
+      "actual": -0.09610150009393692,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 15,
+      "joint": "left_wrist_yaw_joint",
+      "measured": -0.03236939385533333,
+      "expected": -0.03236939385533333,
+      "actual": -0.03236939385533333,
+      "error_rad": 0.0
+    },
+    {
+      "planner_index": 16,
+      "joint": "right_wrist_yaw_joint",
+      "measured": -0.0679984912276268,
+      "expected": -0.07287607342004776,
+      "actual": -0.07287607342004776,
+      "error_rad": 0.0
+    }
+  ],
+  "hands": "Unchanged zero fixtures only, no hand motor-order conversion attempted.",
+  "control_connection_opened": false
+}

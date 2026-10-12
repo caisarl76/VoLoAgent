@@ -1,7 +1,7 @@
 # G1 bottle handover autopilot
 
-Status: user-approved design, 9 October 2026. Software implementation is complete
-and under final regression verification; hardware acceptance has not started.
+Status: user-approved design, 9 October 2026; offline follow-up on 12 October.
+Software tests pass. Policy, scene and hardware acceptance remain separate gates.
 
 ## Goal
 
@@ -41,9 +41,11 @@ These checks establish numeric/transport consistency, not successful handovers.
 Every row uses task index 0, currently labeled `place OBJECT on the table`.
 There are no per-phase language columns and no defined held-out split.
 Do not train the new handover task from those labels without review and
-derived-task annotation. No handover checkpoint was identified in the checked
-workstation model directory or local experiment documentation. A checkpoint
-may exist elsewhere; the active profile still names the old placement model.
+derived-task annotation. The follow-up identified an existing 20,000-step H100
+checkpoint trained on the manually relabeled 43-episode subset. Source 16 is
+excluded; source 15/30 map to subset 10/19 and were used in training. See the
+[training audit](../../artifacts/g1_handover_20261009_followup/baseline-training-audit.json).
+The active placement profile still names the old placement model.
 
 Sampled episodes 0, 15 and 30 show bottle pickup and offering. In episode 15,
 the bottle rests sideways on the open palm before the person removes it, and
@@ -75,11 +77,10 @@ Use the first approach. Opening the fingers belongs to the demonstrated
 pickup-and-offer movement; the pause must retain those measured open-finger
 targets. It must not run the existing standing reset after offering.
 
-The proposed exact training prompt is `pick up the drink bottle and offer it
-on your open palm to the person`. This is a new training instruction, not a
-prompt claimed to work with the current placement checkpoint. If review finds
-another instruction already used by a validated handover checkpoint, bind the
-profile to that exact instruction instead.
+The baseline's exact trained prompt is `pick drink bottle from the table and
+handover`. The disabled handover example now uses that instruction. The earlier
+proposed pickup-and-offer wording is not claimed to be trained. Verifying the
+prompt and checkpoint files does not prove the policy can perform a stable offer.
 
 ## Loop and transition rules
 
@@ -132,6 +133,10 @@ source frame. The offer hold has a new paused epoch: decisions from the
 preceding manipulation cannot confirm an empty hand in this phase. Repeated
 frame IDs cannot advance a streak. A later empty hand cannot erase a recorded
 drop or other failure from the same cycle.
+
+Keep up to three recent valid phase images as temporal context, so the taking
+frame remains visible through both empty-hand confirmations. Reset this history
+at phase entry. Historical images never count toward the fresh-frame streak.
 
 ## Components and interfaces
 
@@ -210,12 +215,17 @@ hardware acceptance comes after these checks.
 
 ## Current status
 
-The target and dataset have been investigated and the user approved this design.
-The implementation follows the [plan](../plans/2026-10-09-g1-bottle-handover-autopilot.md).
-The loop, phase monitor, shared profile/CLI and bounded native ready return are
-implemented. Software acceptance uses scripted perception and synthetic
-tracking; physical acceptance is not established.
-No handover labels are accepted for training, no handover training has run,
-and no new checkpoint, live vision call or robot command was used in this
-investigation. Episodes 15 and 30 are now user-confirmed reference examples;
-their exact training cuts and the ready-return validation remain open.
+The loop, monitor, profile/CLI and native ready return are implemented. The
+follow-up corrected ready-return indexing to the planner's interleaved arm
+order and retained removal-image context. Software tests use synthetic tracking;
+recorded-image checks now use the requested real Genon endpoint. These are
+different validation scopes.
+
+The existing baseline has been audited, and proposed review clips preserve
+the originals. New positive cuts remain unaccepted. Recorded offer intervals
+are much shorter than two observed 3–5.4-second vision calls; capturing fast
+slips and pausing before human removal remain unresolved. The desk is 0.85 m
+high, with the person directly across it; bottle distance and scene clearance
+remain unmeasured. See the [follow-up report](../../artifacts/g1_handover_20261009_followup/README.md)
+for current policy-inference evidence and remaining acceptance work. No robot
+commands have been sent in this follow-up.

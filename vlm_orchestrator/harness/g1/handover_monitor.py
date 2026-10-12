@@ -73,6 +73,7 @@ class HandoverMonitor(G1CompletionMonitor):
             self.offer_anchor = None
         self.phase, self.cycle_id, self.execution = phase, cycle_id, execution
         self.initial, self.previous, self.not_before = initial, None, not_before
+        self.recent_frames = []
         self.streak, self.seen, self.last_check = 0, set(), None
 
     def _decision(self, snapshot, outcome, reason):
@@ -120,8 +121,9 @@ class HandoverMonitor(G1CompletionMonitor):
         frames = [("PHASE START", self.initial)]
         if self.phase == "wait_empty" and self.offer_anchor is not None:
             frames.append(("ACCEPTED OFFER BEFORE PAUSE", self.offer_anchor))
-        if self.previous is not None:
-            frames.append(("PREVIOUS", self.previous))
+        # Keep contact/removal visible through both fresh empty-hand judgments.
+        # History supplies context only; it never increments the confirmation streak.
+        frames.extend(("RECENT", frame) for frame in self.recent_frames)
         frames.append(("NOW", snapshot))
         frames.sort(key=lambda item: item[1].source_timestamp)
         try:
@@ -159,6 +161,7 @@ class HandoverMonitor(G1CompletionMonitor):
                 snapshot, "unavailable", f"vision_unavailable:{type(exc).__name__}"
             )
         self.previous = snapshot
+        self.recent_frames = (self.recent_frames + [snapshot])[-3:]
         if data["outcome"] == "failure":
             self.streak = 0
             self.failure = data["reason"] or "Observed handover failure"

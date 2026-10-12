@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-12",
+  "native_commit": "44f9bba",
+  "robot_commands_sent": false,
+  "source_hashes_rechecked": 126,
+  "source_hash_mismatches": 0,
+  "source_dataset_modified": false,
+  "voLoAgent_tests": {
+    "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q --tb=short",
+    "passed": 709,
+    "skipped": 19,
+    "warnings": 46,
+    "seconds": 17.41,
+    "exit_code": 0,
+    "local_mock_socket_binding_required_escalation": true
+  },
+  "native_focused_tests": {
+    "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest gear_sonic/tests/test_handover_ready.py gear_sonic/tests/test_harness_control.py gear_sonic/tests/test_harness_rpc.py gear_sonic/tests/test_harness_review_regressions.py gear_sonic/tests/test_vla_standing_reset.py gear_sonic/tests/test_run_vla_reset.py -q --tb=short",
+    "passed": 68,
+    "exit_code": 0,
+    "log": "native-focused-tests.log"
+  },
+  "explicit_integration_tests": {
+    "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/test_g1_harness_e2e.py --g1-native-checkout=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --g1-native-python=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python --require-g1-e2e -q --tb=short",
+    "passed": 13,
+    "seconds": 46.49,
+    "exit_code": 0,
+    "memory_only_publisher": true,
+    "synthetic_tracking_and_scripted_vision": true
+  },
+  "fresh_reviews": {
+    "native_mapping": "gpt-6-astra/high; no confirmed defect; named XML mapping and bounds checked",
+    "phase_history": "gpt-6-astra/high; no confirmed runtime defect; evaluator phase-count defect fixed; before replay already completed at frame415"
+  },
+  "regressions_observed_red_before_green": [
+    "native ready target changes non-right-arm motors under old slice10:17 mapping",
+    "taking-frame image missing during second empty-hand confirmation"
+  ],
+  "vision_main_cases": {
+    "result": "vision-compatible/result.json",
+    "cases": 13,
+    "provider_calls": 11,
+    "unavailable": 0,
+    "positive_label_disagreements": 3,
+    "false_positive_frames_in_this_case_set": 0,
+    "robot_connection": false,
+    "real_time_replay": false
+  },
+  "transfer_replay": {
+    "before": "transfer-before/result.json",
+    "after": "transfer-after/result.json",
+    "frame405_label_disagreement_preserved": true,
+    "after_complete_decisions": 2,
+    "after_unique_confirmed_phases": 1,
+    "historical_after_summary_phase_count_overcounts_decisions": true
+  },
+  "gpu_checkpoint_inference": {
+    "status": "pending_user_manual_transfer",
+    "allocated_host": "h100_174",
+    "allocated_gpus": [4, 5],
+    "planned_gpu": 4,
+    "checkpoint_loaded": false,
+    "relay_processes_stopped_for_manual_rsync": true,
+    "partial_destination_preserved": true,
+    "transfer_script": "transfer_handover.sh"
+  },
+  "ready_clearance_validated": false,
+  "palm_contact_surface_calibrated": false,
+  "physical_bottle_support_verified": false,
+  "sonic_closed_loop_handover_evaluated": false,
+  "desk_height_m": 0.85,
+  "person_location": "directly across desk",
+  "bottle_horizontal_distance_m": null,
+  "profile_activation_flags": false
+}

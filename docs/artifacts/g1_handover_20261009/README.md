@@ -1,5 +1,10 @@
 # Bottle handover target and dataset inspection, 9 October 2026
 
+Historical report. The [12 October follow-up](../g1_handover_20261009_followup/README.md)
+corrects a native ready-return joint-order defect that the original software
+tests missed, identifies an existing handover checkpoint, and records real
+Genon judgments. Use that report for current acceptance status.
+
 The active development target is a standing G1 handing a bottle across a desk
 to a person, then returning its empty hand to a handshake-ready pose and
 repeating. See the [approved design](../../superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md).
