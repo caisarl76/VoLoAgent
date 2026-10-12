@@ -1,0 +1,66 @@
+{
+  "frame_interval": "zero-based [start,end), at original 50 fps",
+  "source_data_modified": false,
+  "accepted_positive_training_cuts": 0,
+  "scope": "Proposed visual cuts only; not a training dataset or held-out policy test.",
+  "cuts": [
+    {
+      "source_episode": 15,
+      "start_frame": 62,
+      "end_frame_exclusive": 376,
+      "role": "proposed_pick_to_offer",
+      "sampled_offer_frames": [
+        365,
+        375
+      ],
+      "user_episode_outcome": "success",
+      "baseline_training_episode": 10,
+      "accepted_for_training": false,
+      "source_video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000015.mp4",
+      "source_sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207",
+      "clip": "review-clips/source_000015_proposed_pick_to_offer.mp4",
+      "clip_sha256": "0391abb85cc208866c3b7b939ccb04ad4ddc816e46699966df38b808f90790a3",
+      "frames": 314,
+      "duration_s": 6.28
+    },
+    {
+      "source_episode": 30,
+      "start_frame": 60,
+      "end_frame_exclusive": 391,
+      "role": "proposed_pick_to_offer",
+      "sampled_offer_frames": [
+        370,
+        390
+      ],
+      "user_episode_outcome": "success",
+      "baseline_training_episode": 19,
+      "accepted_for_training": false,
+      "source_video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000030.mp4",
+      "source_sha256": "eb9f1283f44059abada2d8f24dd5997722436cd6b39edfd443da1be6fbe537a1",
+      "clip": "review-clips/source_000030_proposed_pick_to_offer.mp4",
+      "clip_sha256": "309acec3a1542d64afbd08be9e3eeffd58fcdd396ee1613483a651a07b608db5",
+      "frames": 331,
+      "duration_s": 6.62
+    },
+    {
+      "source_episode": 16,
+      "start_frame": 300,
+      "end_frame_exclusive": 387,
+      "role": "failure_roll_and_human_rescue",
+      "sampled_failure_frames": [
+        335,
+        350,
+        360
+      ],
+      "user_episode_outcome": "failure",
+      "baseline_training_episode": null,
+      "accepted_for_training": false,
+      "source_video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000016.mp4",
+      "source_sha256": "3588658bc9bfa2484e66e5a1c58d30371d493806167bdc063727b7120543359c",
+      "clip": "review-clips/source_000016_failure_roll_and_human_rescue.mp4",
+      "clip_sha256": "889875f2a134b23bf82ae13635d49bd5e2dd6b916afcff8176de043458c29a1c",
+      "frames": 87,
+      "duration_s": 1.74
+    }
+  ]
+}

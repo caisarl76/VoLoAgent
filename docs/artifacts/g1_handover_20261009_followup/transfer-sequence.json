@@ -1,0 +1,9 @@
+{
+  "label_provenance": "Investigator-selected temporal context from user-confirmed successful source episode 15. First show contact and removal, then two distinct visibly empty-hand frames. These are recorded-image judgments, not real-time robot acceptance.",
+  "cases": [
+    {"id":"contact15", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":395,"sequence":"transfer15","acceptable_outcomes":["no","unknown"]},
+    {"id":"taking15", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":405,"sequence":"transfer15","acceptable_outcomes":["no","unknown"]},
+    {"id":"clear15-first", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":415,"sequence":"transfer15","acceptable_outcomes":["yes"]},
+    {"id":"clear15-second", "episode":15,"phase":"wait_empty","initial_frame":375,"frame":425,"sequence":"transfer15","acceptable_outcomes":["yes"]}
+  ]
+}

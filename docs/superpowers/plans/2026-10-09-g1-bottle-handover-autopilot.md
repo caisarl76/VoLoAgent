@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Robot remains stationary: person → desk → G1; no walking, turning or dashboard work.
-- One exact trained instruction: `pick up the drink bottle and offer it on your open palm to the person`.
+- Baseline's exact trained instruction, verified in the follow-up: `pick drink bottle from the table and handover`.
 - Preserve the other arm, waist and heading at ready-return entry; open the right hand using the existing zero preset.
 - Keep the current 0.5 rad/s joint-rate cap, 0.15 rad measured-lead cap, 0.05 rad settling tolerance, 0.5-second dwell and 15-second reset deadline.
 - Keep camera/feedback freshness at 0.5 seconds, lease at 2 seconds and independent heartbeat at 0.25 seconds; do not relax decision expiry.
@@ -71,4 +71,16 @@
 
 ## Acceptance boundaries
 
-Software acceptance uses synthetic tracking and scripted perception; it does not prove a trained policy can hand over a bottle. Recorded Genon scoring, exact positive cuts from episodes 15/30, episode-level held-out split, handover training/checkpoint verification, palm calibration and desk/person clearance in simulation remain prerequisites for supervised hardware operation. The example profile cannot activate the new task until those reviews are recorded.
+Software acceptance uses synthetic tracking and scripted perception; it does not prove physical handover success. Recorded Genon scoring and the existing training audit are now in the [follow-up report](../../artifacts/g1_handover_20261009_followup/README.md). Exact new positive cuts, held-out policy evaluation, serving checkpoint verification, offer dwell, palm calibration and desk/person clearance remain acceptance work. The example remains disabled.
+
+### Follow-up acceptance work, 12 October
+
+- [x] Reproduce and correct the native right-arm planner indexing; verify actual named motor targets and retained joints.
+- [x] Audit the existing 20,000-step checkpoint and exact prompt; record source 15/30 training membership and source 16 exclusion.
+- [x] Query Genon on recorded phase/failure frames; preserve raw judgments, latency and label disagreements.
+- [x] Retain bounded taking-frame context through empty-hand judgments; add a failing regression and verify the fix with a real recorded replay.
+- [x] Prepare proposed positive review clips and a separate failure clip without modifying the source dataset.
+- [ ] Run disconnected checkpoint inference on the user-allocated h100_174 GPU 4; this proves loading/action compatibility, not physical success.
+- [ ] Collect or validate longer stable offering dwell; define genuinely unseen policy validation/test episodes before a new training run.
+- [ ] Validate calibrated bottle support and ready-return swept clearance at the 0.85 m desk in SONIC simulation.
+- [ ] Complete supervised hardware acceptance before enabling checkpoint/ready review flags.

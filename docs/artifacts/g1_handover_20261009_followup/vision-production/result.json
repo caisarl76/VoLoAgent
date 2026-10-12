@@ -1,0 +1,486 @@
+{
+  "robot_connection": false,
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "deadline_s": 10.0,
+  "production_deadline": true,
+  "scope": "Recorded timestamps; provider wall time is not real-time video replay.",
+  "label_provenance": "User-confirmed episode outcomes: 15 and 30 success; 16 palm-angle slip. Phase labels are investigator judgments of the saved terminal sheets, not new user approvals or policy hold-out labels.",
+  "episodes": {
+    "15": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000015.mp4",
+      "sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207"
+    },
+    "16": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000016.mp4",
+      "sha256": "3588658bc9bfa2484e66e5a1c58d30371d493806167bdc063727b7120543359c"
+    },
+    "30": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000030.mp4",
+      "sha256": "eb9f1283f44059abada2d8f24dd5997722436cd6b39edfd443da1be6fbe537a1"
+    }
+  },
+  "cases": [
+    {
+      "id": "desk-bottle",
+      "episode": 15,
+      "phase": "ready",
+      "initial_frame": 0,
+      "frame": 62,
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000062.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "ecff1616d11dff4c3b2987ad5a5892eb761d5c8e38fae942eb269d337682ca53",
+        "execution_id": "desk-bottle",
+        "inference_epoch": 1,
+        "captured_at": 721191.311498971,
+        "decided_at": 721193.200859373,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "ready"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721191.320259935,
+        "error_class": "BadRequestError",
+        "latency_s": 1.8805424029706046
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.8893604020122439
+    },
+    {
+      "id": "closed-grasp",
+      "episode": 15,
+      "phase": "pick_offer",
+      "initial_frame": 246,
+      "frame": 300,
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep15_f000300.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "c9bee7b60466d473b935fb3dcdc31948e38748d8b1e7cc43bd0f3a85d5f6fd73",
+        "execution_id": "closed-grasp",
+        "inference_epoch": 1,
+        "captured_at": 721193.20139498,
+        "decided_at": 721194.649776725,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721193.206455077,
+        "error_class": "BadRequestError",
+        "latency_s": 1.4432695870054886
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.448381745023653
+    },
+    {
+      "id": "offer15-first",
+      "episode": 15,
+      "phase": "pick_offer",
+      "initial_frame": 350,
+      "frame": 365,
+      "sequence": "offer15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000365.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "438f6a270c8db52e5eff8b5f633641e86c36ca01cd3a1bc0cae03a9fa1c429f9",
+        "execution_id": "offer15",
+        "inference_epoch": 1,
+        "captured_at": 721194.650293785,
+        "decided_at": 721196.023408193,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721194.655038608,
+        "error_class": "BadRequestError",
+        "latency_s": 1.3683088009711355
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.373114407993853
+    },
+    {
+      "id": "offer15-second",
+      "episode": 15,
+      "phase": "pick_offer",
+      "initial_frame": 350,
+      "frame": 375,
+      "sequence": "offer15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000375.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "438974f0968c46310609dee5c11b94f720f2e3ec37aa738447441cfaad85e4b9",
+        "execution_id": "offer15",
+        "inference_epoch": 1,
+        "captured_at": 721196.023838851,
+        "decided_at": 721197.290846494,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721196.029097795,
+        "error_class": "BadRequestError",
+        "latency_s": 1.2616946690250188
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.2670076430076733
+    },
+    {
+      "id": "offer30-first",
+      "episode": 30,
+      "phase": "pick_offer",
+      "initial_frame": 360,
+      "frame": 370,
+      "sequence": "offer30",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep30_f000370.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "06112ee03a6dea5e433dfe57738d088e377051aa8ce6b20c23588a1d7ef23021",
+        "execution_id": "offer30",
+        "inference_epoch": 1,
+        "captured_at": 721197.291344722,
+        "decided_at": 721198.445605497,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721197.297310706,
+        "error_class": "BadRequestError",
+        "latency_s": 1.1482506740139797
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.1542607749579474
+    },
+    {
+      "id": "offer30-second",
+      "episode": 30,
+      "phase": "pick_offer",
+      "initial_frame": 360,
+      "frame": 390,
+      "sequence": "offer30",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep30_f000390.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "009011533db04b6b1a6a808b362e193aa90b3ed4e11363b48bd0f5c4135932f1",
+        "execution_id": "offer30",
+        "inference_epoch": 1,
+        "captured_at": 721198.446056453,
+        "decided_at": 721199.538822722,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721198.4512953,
+        "error_class": "BadRequestError",
+        "latency_s": 1.0874694699887186
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.0927662689937279
+    },
+    {
+      "id": "person-contact",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 395,
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep15_f000395.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "35e5ea6d29e194ba4bce28495b07ea1995d0f898e46822f4032b210aae71d1aa",
+        "execution_id": "person-contact",
+        "inference_epoch": 1,
+        "captured_at": 721199.539438385,
+        "decided_at": 721200.399794388,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721199.545915555,
+        "error_class": "BadRequestError",
+        "latency_s": 0.8538327789865434
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 0.8603560029296204
+    },
+    {
+      "id": "empty15-first",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 415,
+      "sequence": "empty15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000415.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "b937460859ab9f07406da762032a7e8ca0bfc23db001d41b9f1321eb7f987d01",
+        "execution_id": "empty15",
+        "inference_epoch": 1,
+        "captured_at": 721200.400575555,
+        "decided_at": 721201.265383553,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721200.40602036,
+        "error_class": "BadRequestError",
+        "latency_s": 0.8593074070522562
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 0.8648079979466274
+    },
+    {
+      "id": "empty15-second",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 425,
+      "sequence": "empty15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000425.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "fa4a08bbcd830318099590146078ad0219dff8f5709039e6bb24d4917cf1eb0c",
+        "execution_id": "empty15",
+        "inference_epoch": 1,
+        "captured_at": 721201.400861953,
+        "decided_at": 721202.390359624,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721201.405792884,
+        "error_class": "BadRequestError",
+        "latency_s": 0.9845254610991105
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 0.9894976710202172
+    },
+    {
+      "id": "removal30-incomplete",
+      "episode": 30,
+      "phase": "wait_empty",
+      "initial_frame": 390,
+      "frame": 420,
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep30_f000420.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "eb4c27aa658e88d313ef1a2c90264362b1ee77305d0cccde9a0572ff348e2c27",
+        "execution_id": "removal30-incomplete",
+        "inference_epoch": 1,
+        "captured_at": 721202.390852609,
+        "decided_at": 721203.528342076,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721202.394153945,
+        "error_class": "BadRequestError",
+        "latency_s": 1.1341256520245224
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.137489467044361
+    },
+    {
+      "id": "slip16",
+      "episode": 16,
+      "phase": "pick_offer",
+      "initial_frame": 335,
+      "frame": 350,
+      "sequence": "failure16",
+      "acceptable_outcomes": [
+        "failure"
+      ],
+      "image": "frames/ep16_f000350.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "7ad5991d6974fe80c142d290ad7932eee2c7c079db3b4f339b1b5642c5b2c3bb",
+        "execution_id": "failure16",
+        "inference_epoch": 1,
+        "captured_at": 721203.528829598,
+        "decided_at": 721204.568469712,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721203.531399214,
+        "error_class": "BadRequestError",
+        "latency_s": 1.0370186679065228
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.039640114060603
+    },
+    {
+      "id": "rescue16",
+      "episode": 16,
+      "phase": "pick_offer",
+      "initial_frame": 335,
+      "frame": 360,
+      "sequence": "failure16",
+      "acceptable_outcomes": [
+        "failure"
+      ],
+      "image": "frames/ep16_f000360.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "91f8c47890baa73a8a0468882d2c780cd95a100e0450886c1d731093b3664c0d",
+        "execution_id": "failure16",
+        "inference_epoch": 1,
+        "captured_at": 721204.568918682,
+        "decided_at": 721205.834449821,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721204.571714259,
+        "error_class": "BadRequestError",
+        "latency_s": 1.2626902000047266
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.2655311389826238
+    },
+    {
+      "id": "later16",
+      "episode": 16,
+      "phase": "pick_offer",
+      "initial_frame": 335,
+      "frame": 386,
+      "sequence": "failure16",
+      "acceptable_outcomes": [
+        "failure"
+      ],
+      "image": "frames/ep16_f000386.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "d30528a9315e8cba83febe778e798729226cbe2a58bea8ff57172cbc20ecade6",
+        "execution_id": "failure16",
+        "inference_epoch": 1,
+        "captured_at": 721205.834957382,
+        "decided_at": 721206.963329886,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 721205.837519988,
+        "error_class": "BadRequestError",
+        "latency_s": 1.1257695050444454
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.128372504026629
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "unavailable": 13,
+    "label_disagreements": 13,
+    "confirmed_phases": 0,
+    "false_positive_frames": 0
+  }
+}

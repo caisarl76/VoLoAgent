@@ -10,7 +10,8 @@ publish_rate: 50
 limits: {}
 skills:
   bottle_handover:
-    prompt: pick up the drink bottle and offer it on your open palm to the person
+    # Exact prompt from the audited 20,000-step H100 baseline.
+    prompt: pick drink bottle from the table and handover
     completion_criteria: Bottle lifted from desk and stably supported on level upward-facing open right palm; no rolling, falling or human rescue.
     completion_action: hold
 handover:
