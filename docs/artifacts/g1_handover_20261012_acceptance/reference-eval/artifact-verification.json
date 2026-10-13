@@ -1,0 +1,365 @@
+{
+  "samples_checked": 13,
+  "arrays_checked": 78,
+  "all_finite": true,
+  "shapes_and_report_metrics_verified": true,
+  "held_out": false,
+  "physical_success_verified": false,
+  "prefix_interpretation": "Example forecast prefixes; not measured executed chunks or release timing.",
+  "transitions": [
+    {
+      "source_episode": 15,
+      "query_frame": 325,
+      "reference_first_open_future_offset": 10,
+      "prediction_first_open_future_offset": 26,
+      "threshold_max_abs_joint_rad": 0.1
+    },
+    {
+      "source_episode": 30,
+      "query_frame": 320,
+      "reference_first_open_future_offset": 24,
+      "prediction_first_open_future_offset": 26,
+      "threshold_max_abs_joint_rad": 0.1
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "source15_frame62.npz",
+      "sha256": "ea8a9cf56a196409bce9c9017c11c71c57ee8a3d6132734841f181c03011dcfd",
+      "source_episode": 15,
+      "source_frame": 62,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.022647498175501823,
+          "prefix_5_rmse": 0.018727555871009827,
+          "prefix_10_rmse": 0.019095059484243393,
+          "prefix_40_rmse": 0.02278321050107479
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0,
+          "prefix_5_rmse": 1.066025288309902e-05,
+          "prefix_10_rmse": 1.066025288309902e-05,
+          "prefix_40_rmse": 0.0012543856864795089
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0,
+          "prefix_5_rmse": 0.0020259846933186054,
+          "prefix_10_rmse": 0.0019196346402168274,
+          "prefix_40_rmse": 0.0025385527405887842
+        }
+      }
+    },
+    {
+      "file": "source15_frame120.npz",
+      "sha256": "0d141dc16a27f4aa85a39f4da7126889536d0240f6a8d0e81640f3297de0d6db",
+      "source_episode": 15,
+      "source_frame": 120,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.015928437933325768,
+          "prefix_5_rmse": 0.013376872055232525,
+          "prefix_10_rmse": 0.011452443897724152,
+          "prefix_40_rmse": 0.00971836969256401
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0005235972348600626,
+          "prefix_5_rmse": 0.00023422045342158526,
+          "prefix_10_rmse": 0.00023481322568841279,
+          "prefix_40_rmse": 0.0015989616513252258
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.011292469687759876,
+          "prefix_5_rmse": 0.007230105809867382,
+          "prefix_10_rmse": 0.006224093493074179,
+          "prefix_40_rmse": 0.004147065803408623
+        }
+      }
+    },
+    {
+      "file": "source15_frame200.npz",
+      "sha256": "367f39c64968c834b0161e7bfc8607ae82489ee7074642d3101e950c60ac6a55",
+      "source_episode": 15,
+      "source_frame": 200,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.0077933440916240215,
+          "prefix_5_rmse": 0.008314612321555614,
+          "prefix_10_rmse": 0.009099303744733334,
+          "prefix_40_rmse": 0.009790576063096523
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 2.5079116312554106e-05,
+          "prefix_5_rmse": 1.4246722457755823e-05,
+          "prefix_10_rmse": 0.00013347392086870968,
+          "prefix_40_rmse": 0.0006561615155078471
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0028022921178489923,
+          "prefix_5_rmse": 0.005178335588425398,
+          "prefix_10_rmse": 0.004129371140152216,
+          "prefix_40_rmse": 0.0026957623194903135
+        }
+      }
+    },
+    {
+      "file": "source15_frame246.npz",
+      "sha256": "81ef9391151b377292eced479c15f4dc98a00c011ab518cddbda2b9f382fc8be",
+      "source_episode": 15,
+      "source_frame": 246,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.017067590728402138,
+          "prefix_5_rmse": 0.01375837903469801,
+          "prefix_10_rmse": 0.01201128214597702,
+          "prefix_40_rmse": 0.011377722956240177
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.001045992597937584,
+          "prefix_5_rmse": 0.0004688533372245729,
+          "prefix_10_rmse": 0.0008555438835173845,
+          "prefix_40_rmse": 0.0020479236263781786
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0010334921535104513,
+          "prefix_5_rmse": 0.0024000362027436495,
+          "prefix_10_rmse": 0.002703204983845353,
+          "prefix_40_rmse": 0.00269001885317266
+        }
+      }
+    },
+    {
+      "file": "source15_frame300.npz",
+      "sha256": "ca60973ff5427b88eca58c8824193e7bc7b18632d3b2b835de3ff09e593497f0",
+      "source_episode": 15,
+      "source_frame": 300,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.015839574858546257,
+          "prefix_5_rmse": 0.015037620440125465,
+          "prefix_10_rmse": 0.01563659869134426,
+          "prefix_40_rmse": 0.018415510654449463
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.001045992597937584,
+          "prefix_5_rmse": 0.00046815091627649963,
+          "prefix_10_rmse": 0.000481863011373207,
+          "prefix_40_rmse": 0.001740932115353644
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0010334921535104513,
+          "prefix_5_rmse": 0.001265767845325172,
+          "prefix_10_rmse": 0.0014228534419089556,
+          "prefix_40_rmse": 0.36392080783843994
+        }
+      }
+    },
+    {
+      "file": "source15_frame325.npz",
+      "sha256": "b5d56c22cb9a28b712f05a3b7c324ded49e7c3ef5ce5e28cc0ad763d065699f8",
+      "source_episode": 15,
+      "source_frame": 325,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.02668181248009205,
+          "prefix_5_rmse": 0.026044296100735664,
+          "prefix_10_rmse": 0.0239949319511652,
+          "prefix_40_rmse": 0.0164081659168005
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0005253960262052715,
+          "prefix_5_rmse": 0.0002361277729505673,
+          "prefix_10_rmse": 0.00016742914158385247,
+          "prefix_40_rmse": 0.001819542609155178
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.003929197788238525,
+          "prefix_5_rmse": 0.0037327520549297333,
+          "prefix_10_rmse": 0.003382668597623706,
+          "prefix_40_rmse": 0.652797281742096
+        }
+      }
+    },
+    {
+      "file": "source15_frame365.npz",
+      "sha256": "7db6fc795b5109f4af0d2835fe159bce05634cbf5374d3d9228c1d958512512a",
+      "source_episode": 15,
+      "source_frame": 365,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.012119246646761894,
+          "prefix_5_rmse": 0.012139528058469296,
+          "prefix_10_rmse": 0.01095234602689743,
+          "prefix_40_rmse": 0.009817657992243767
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0,
+          "prefix_5_rmse": 1.3212072190071922e-05,
+          "prefix_10_rmse": 0.0003504199266899377,
+          "prefix_40_rmse": 0.0016115003963932395
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0024760377127677202,
+          "prefix_5_rmse": 0.001351149519905448,
+          "prefix_10_rmse": 0.000983513193204999,
+          "prefix_40_rmse": 0.0005626898491755128
+        }
+      }
+    },
+    {
+      "file": "source30_frame60.npz",
+      "sha256": "03f4c37f2b27355307dc13476e08317c6f531f931898ee01085bd8ac059feec7",
+      "source_episode": 30,
+      "source_frame": 60,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.02001849375665188,
+          "prefix_5_rmse": 0.019631173461675644,
+          "prefix_10_rmse": 0.018600866198539734,
+          "prefix_40_rmse": 0.017791759222745895
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0,
+          "prefix_5_rmse": 2.0156232494628057e-05,
+          "prefix_10_rmse": 9.622323705116287e-05,
+          "prefix_40_rmse": 0.0019763882737606764
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0,
+          "prefix_5_rmse": 0.0012777677038684487,
+          "prefix_10_rmse": 0.0017130650812759995,
+          "prefix_40_rmse": 0.0030494940001517534
+        }
+      }
+    },
+    {
+      "file": "source30_frame120.npz",
+      "sha256": "07a4598fbf9c45ba362bd586cef8874581f3b9b966373e85035e49586decdecd",
+      "source_episode": 30,
+      "source_frame": 120,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.01071307435631752,
+          "prefix_5_rmse": 0.012542947195470333,
+          "prefix_10_rmse": 0.013801145367324352,
+          "prefix_40_rmse": 0.014928271993994713
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 2.5079116312554106e-05,
+          "prefix_5_rmse": 2.1795891370857134e-05,
+          "prefix_10_rmse": 9.621209028409794e-05,
+          "prefix_40_rmse": 0.0016192726325243711
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.007751224562525749,
+          "prefix_5_rmse": 0.004732162691652775,
+          "prefix_10_rmse": 0.004803314805030823,
+          "prefix_40_rmse": 0.0035194787196815014
+        }
+      }
+    },
+    {
+      "file": "source30_frame200.npz",
+      "sha256": "14d0bda00e070d4cc2af55aa25ba611244410b7613c8a902df6ac5c0d3080ca5",
+      "source_episode": 30,
+      "source_frame": 200,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.012413476593792439,
+          "prefix_5_rmse": 0.012467152439057827,
+          "prefix_10_rmse": 0.013315479271113873,
+          "prefix_40_rmse": 0.012279949150979519
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0012040581787005067,
+          "prefix_5_rmse": 0.0005424194387160242,
+          "prefix_10_rmse": 0.0005524429143406451,
+          "prefix_40_rmse": 0.0021210534032434225
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.0019475342705845833,
+          "prefix_5_rmse": 0.0047154356725513935,
+          "prefix_10_rmse": 0.00484438007697463,
+          "prefix_40_rmse": 0.27978071570396423
+        }
+      }
+    },
+    {
+      "file": "source30_frame260.npz",
+      "sha256": "6c9717edaae0c9b1d89bbbbf52813384629279679805d638eabf2f73f55178f1",
+      "source_episode": 30,
+      "source_frame": 260,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.013285466469824314,
+          "prefix_5_rmse": 0.01653544045984745,
+          "prefix_10_rmse": 0.017767295241355896,
+          "prefix_40_rmse": 0.0159702617675066
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.0,
+          "prefix_5_rmse": 3.002656922035385e-05,
+          "prefix_10_rmse": 9.827919711824507e-05,
+          "prefix_40_rmse": 0.002793475752696395
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.00277099316008389,
+          "prefix_5_rmse": 0.003999991808086634,
+          "prefix_10_rmse": 0.004513065330684185,
+          "prefix_40_rmse": 0.0031653495971113443
+        }
+      }
+    },
+    {
+      "file": "source30_frame320.npz",
+      "sha256": "a8af58fc760908e2244fe0e07f518388b0705ed5ac7686971bd17e1dcb69901e",
+      "source_episode": 30,
+      "source_frame": 320,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.011788638308644295,
+          "prefix_5_rmse": 0.009410405531525612,
+          "prefix_10_rmse": 0.008849475532770157,
+          "prefix_40_rmse": 0.007324951235204935
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.001568988780491054,
+          "prefix_5_rmse": 0.0007399772293865681,
+          "prefix_10_rmse": 0.0005560161080211401,
+          "prefix_40_rmse": 0.0014866398414596915
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.000516757310833782,
+          "prefix_5_rmse": 0.0025304609443992376,
+          "prefix_10_rmse": 0.0018711874727159739,
+          "prefix_40_rmse": 0.23091630637645721
+        }
+      }
+    },
+    {
+      "file": "source30_frame370.npz",
+      "sha256": "947ae31147c682235e7ded729d4567a9520f3f2149ecb72645c75ffddbb827e5",
+      "source_episode": 30,
+      "source_frame": 370,
+      "metrics": {
+        "motion_token": {
+          "prefix_1_rmse": 0.009083498269319534,
+          "prefix_5_rmse": 0.006991623900830746,
+          "prefix_10_rmse": 0.008119440637528896,
+          "prefix_40_rmse": 0.008516725152730942
+        },
+        "left_hand_joints": {
+          "prefix_1_rmse": 0.001046293182298541,
+          "prefix_5_rmse": 0.0004688526678364724,
+          "prefix_10_rmse": 0.0007804512861184776,
+          "prefix_40_rmse": 0.0023302671033889055
+        },
+        "right_hand_joints": {
+          "prefix_1_rmse": 0.00921908114105463,
+          "prefix_5_rmse": 0.00501299649477005,
+          "prefix_10_rmse": 0.00417608767747879,
+          "prefix_40_rmse": 0.0026296305004507303
+        }
+      }
+    }
+  ]
+}

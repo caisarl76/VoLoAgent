@@ -1,0 +1,12 @@
+{
+  "frames": 123,
+  "fps": 20,
+  "duration_s": 6.15,
+  "rendering": "Post-run mj_forward of saved measured qpos; zero-order hold at wall-time cadence, no resimulation.",
+  "max_sample_age_s": 0.051190397003665566,
+  "source_run": "ready-040-fixture",
+  "robot_connection": false,
+  "virtual_support_enabled": false,
+  "full_handover_demonstrated": false,
+  "hardware_acceptance": false
+}
