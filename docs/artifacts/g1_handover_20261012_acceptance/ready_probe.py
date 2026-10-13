@@ -21,6 +21,8 @@ from vlm_orchestrator.harness.g1.registry import load_profile
 ROOT=Path(__file__).parent
 NATIVE=Path('/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native')
 ORIGIN=Path('/home/jihun/work/GR00T-WholeBodyControl')
+NATIVE_WORKER=ROOT.parent/'g1_harness_20261006_followup/native_locomotion_worker.py'
+MIN_FREE_GPU_MIB=3072
 
 
 def main():
@@ -32,8 +34,8 @@ def main():
     gpu_check=subprocess.run(['nvidia-smi','--id',str(args.gpu),
         '--query-gpu=index,name,memory.free','--format=csv,noheader,nounits'],
         check=True,capture_output=True,text=True).stdout.strip()
-    if int(gpu_check.rsplit(',',1)[1])<3072:
-        raise RuntimeError(f'SONIC needs at least 3072 MiB free before startup: {gpu_check}')
+    if int(gpu_check.rsplit(',',1)[1])<MIN_FREE_GPU_MIB:
+        raise RuntimeError(f'SONIC needs at least {MIN_FREE_GPU_MIB} MiB free before startup: {gpu_check}')
     output=args.output.resolve()
     for port in (11556,11557,11580):
         with socket.socket() as probe:
@@ -77,7 +79,7 @@ def main():
     processes,logs=[],[]
     client,lease=None,None
     heartbeat_at=0.0
-    worker=ROOT.parent/'g1_harness_20261006_followup/native_locomotion_worker.py'
+    worker=NATIVE_WORKER
     events=(output/'events.jsonl').open('x')
 
     def record(event,**fields):

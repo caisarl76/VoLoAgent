@@ -1,0 +1,21 @@
+{
+  "reviewer": "fresh-context gpt-6-astra, high reasoning",
+  "mode": "Read-only; no controller, GPU job, network operation or robot command",
+  "confirmed_material_findings": 0,
+  "independently_verified": {
+    "fixture_scene_tests_passed": 17,
+    "both_saved_native_comparisons_recomputed_exactly": true,
+    "staged_physics_samples": 189,
+    "minimum_conservative_sampled_desk_gap_m": 0.05321395868150571,
+    "staged_contact_snapshots": 0,
+    "direct_physics_samples": 121,
+    "direct_contact_snapshots": 7,
+    "asset_and_prototype_hashes_match": true,
+    "source_30_frame_60_waypoint_matches_named_joints": true,
+    "recording_hashes_checked": 8,
+    "native_checkout_clean": true,
+    "hardware_example_hash_unchanged": true
+  },
+  "review_limits": "Reviewer did not independently repeat the root agent's 126-file rehash or full 709-test project suite.",
+  "qualification": "Sampled separation in a provisional scene; continuous clearance and hardware acceptance remain unqualified."
+}

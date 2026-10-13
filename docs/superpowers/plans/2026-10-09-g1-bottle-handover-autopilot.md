@@ -85,6 +85,7 @@ Software acceptance uses synthetic tracking and scripted perception; it does not
 - [x] Estimate grasp reach from source 15/30 checked grasp brackets; retain unknown hand-to-bottle transform and absolute scene pose.
 - [x] Exercise and render the actual native ready-return component from default standing in provisional SONIC/MuJoCo simulation. Tracking settled; modeled desk clearance failed. See the [acceptance continuation](../../artifacts/g1_handover_20261012_acceptance/README.md).
 - [x] Prepare a recording and whole-session split checklist; confirmed source 15/30 successes are training data, and source 16 remains a failure negative.
+- [x] Inspect recorded lift-before-reach approaches and test a simulation-only raised-waypoint return: 8.942 s completion, at least 53.21 mm conservative gap in 189 saved states, zero sampled hand/forearm desk contacts. Production integration and real scene review remain pending. See the [lift investigation](../../artifacts/g1_handover_20261013_lift/README.md).
 - [ ] Collect or validate longer stable offering dwell; define genuinely unseen policy validation/test episodes before a new training run.
 - [ ] Validate calibrated bottle support and ready-return swept clearance at the 0.85 m desk in SONIC simulation.
 - [ ] Complete supervised hardware acceptance before enabling checkpoint/ready review flags.

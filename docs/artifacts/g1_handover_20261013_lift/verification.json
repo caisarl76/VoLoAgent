@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-13",
+  "base_commit": "3009290",
+  "native_commit": "44f9bba",
+  "purpose": "Inspect recorded lift-before-reach approach and evaluate a simulation-only native-ready prototype.",
+  "production_native_reset_changed": false,
+  "hardware_profiles_unchanged": true,
+  "hardware_flags_enabled": false,
+  "hardware_command_sent": false,
+  "source_files_rehashed": 126,
+  "source_data_changed": false,
+  "fixture_and_scene_tests": {
+    "passed": 17,
+    "exit_code": 0,
+    "log": "fixture-tests.log"
+  },
+  "project_tests": {
+    "passed": 709,
+    "skipped": 19,
+    "warnings": 46,
+    "exit_code": 0,
+    "log": "volo-tests.log"
+  },
+  "syntax_checked_files": [
+    "inspect_lift.py",
+    "analyze_native.py",
+    "render_staged.py",
+    "test_staged_reset.py",
+    "test_geometry.py",
+    "geometry.py",
+    "staged_reset.py",
+    "native_staged_worker.py",
+    "run_staged_probe.py"
+  ],
+  "reference_source_episodes": [
+    15,
+    30
+  ],
+  "failure_comparison_source": 16,
+  "corrected_waypoint_source": {
+    "episode": 30,
+    "frame": 60
+  },
+  "native_ready_duration_s": 8.942349775927141,
+  "minimum_conservative_sampled_desk_gap_m": 0.05321395868150571,
+  "sampled_desk_contact_states": 0,
+  "checked_physics_samples": 189,
+  "native_final_ready_settling_passed": true,
+  "owned_processes_stopped": true,
+  "scene_calibrated": false,
+  "continuous_clearance_certificate": false,
+  "physical_balance_qualified": false,
+  "full_vla_handover_run": false,
+  "simulation_prototype_only": true,
+  "first_prototype_result": "Preserved open-near-body attempt interrupted at 15 s deadline due slow finger tracking.",
+  "assets_sha256": {
+    "source-16-raising.jpg": "c0d67d46abac1e2c75fee65917ef987992ac2423eac63e714f1fcc7dfde0b186",
+    "source-15-raising.jpg": "7ee045343031b6b64d1bf7bded6b0c31c592442e33c2a25c804cf87d6897b427",
+    "source-30-raising.jpg": "6dd2bcd7ac3b7c4440e34c49a29a5ce2a121be3368a3a3f3f4f1e6436bb51837",
+    "ready-return-preview.jpg": "fc90e93bf05b4a474aa310c70a8ff0caea8ac942239649931e71f49811560d93",
+    "native-lift-comparison.png": "c58689323c73cda0abb7e3307e3e6d87d7a344d8e54148ac6bd724fb624c270e",
+    "ready-return.mp4": "5ec0f2d6942e12b1dc0b72c8c5ae7ae3f84dd653870f193b2a312c981e088b37",
+    "lift-comparison.png": "de88ebab6aff7e44c839b35ea551deb58b5f9ee116d5ce39fdcd764445c05a4e",
+    "recorded-lift.mp4": "fce13ba917d9e69c75f58ff0900639e646df98e2a6cfb7eb90758285d1b17931"
+  },
+  "independent_review": {
+    "report": "review.json",
+    "confirmed_material_findings": 0,
+    "read_only": true
+  }
+}
