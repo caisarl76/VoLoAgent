@@ -33,36 +33,49 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, default=Path(__file__).with_name('vision-cases.json'))
     parser.add_argument('--env-file', type=Path)
+    parser.add_argument('--model', default='openai/gpt-5.6-sol')
+    parser.add_argument('--base-url', default='https://api.genon.ai/v1')
+    parser.add_argument('--api-key-env', default='GENON_API_KEY')
+    parser.add_argument('--max-tokens', type=int)
+    parser.add_argument('--disable-thinking', action='store_true')
     parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--deadline', type=float, default=10.)
     parser.add_argument('--case', action='append')
     args = parser.parse_args()
     if args.deadline <= 0:
         parser.error('Deadline must be positive')
+    if args.max_tokens is not None and args.max_tokens <= 0:
+        parser.error('Max tokens must be positive')
     manifest = json.loads(args.manifest.read_text())
     cases = manifest['cases']
     if args.case:
         if set(args.case) - {c['id'] for c in cases}:
             parser.error('Unknown case ID')
         cases = [c for c in cases if c['id'] in args.case]
-    key = os.environ.get('GENON_API_KEY')
+    key = os.environ.get(args.api_key_env)
     if args.env_file:
         for line in args.env_file.read_text().splitlines():
             name, sep, value = line.strip().removeprefix('export ').partition('=')
-            if sep and name.strip() == 'GENON_API_KEY':
+            if sep and name.strip() == args.api_key_env:
                 tokens = shlex.split(value, comments=True)
                 if len(tokens) == 1:
                     key = tokens[0]
     if not args.prepare_only and not key:
-        parser.error('GENON_API_KEY missing')
+        parser.error(f'{args.api_key_env} missing')
     args.output.mkdir(parents=True, exist_ok=True)
     frames = args.output / 'frames'
     frames.mkdir(exist_ok=True)
-    report = dict(robot_connection=False, model='openai/gpt-5.6-sol',
-                  base_url='https://api.genon.ai/v1', deadline_s=args.deadline,
+    report = dict(robot_connection=False, model=args.model,
+                  base_url=args.base_url, deadline_s=args.deadline,
                   production_deadline=args.deadline == 10.,
                   scope='Recorded timestamps; provider wall time is not real-time video replay.',
                   label_provenance=manifest['label_provenance'], episodes={}, cases=[])
+    request_options = {}
+    if args.max_tokens is not None:
+        request_options['max_tokens'] = args.max_tokens
+    if args.disable_thinking:
+        request_options['extra_body'] = {'chat_template_kwargs': {'enable_thinking': False}}
+    report['request_options'] = request_options
     info = json.loads((SOURCE / 'meta/info.json').read_text())
     for episode in sorted({c['episode'] for c in cases}):
         video = SOURCE / info['video_path'].format(
@@ -80,10 +93,16 @@ def main():
         calls.append(record)
         try:
             result = chat_create(api, model=report['model'], messages=[
-                dict(role='system', content=system), dict(role='user', content=content)])
+                dict(role='system', content=system), dict(role='user', content=content)],
+                **request_options)
             record['response_model'] = result.model
             record['usage'] = result.usage.model_dump() if result.usage else None
-            return result.choices[0].message.content
+            record['finish_reason'] = result.choices[0].finish_reason
+            message = result.choices[0].message
+            record['content_present'] = bool(message.content)
+            record['reasoning_present'] = bool(getattr(message, 'reasoning_content', None)
+                                               or getattr(message, 'reasoning', None))
+            return message.content
         except Exception as exc:
             record['error_class'] = type(exc).__name__
             record['http_status'] = getattr(exc, 'status_code', None)
