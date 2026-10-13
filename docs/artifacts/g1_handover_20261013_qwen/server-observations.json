@@ -1,0 +1,30 @@
+{
+  "host": "192.168.75.173",
+  "requested_gpu": 6,
+  "server_endpoint": "http://127.0.0.1:34002/v1",
+  "endpoint_binding": "127.0.0.1:34002 on the server; direct workstation connection refused",
+  "workstation_tunnel_endpoint": "http://127.0.0.1:13402/v1",
+  "reported_model": "Qwen/Qwen3.6-27B",
+  "reported_max_model_len": 32768,
+  "gpu6_observation": {
+    "uuid": "GPU-0bcc19a5-253f-8e51-16da-f24dea47b6fc",
+    "engine_pid": 2947711,
+    "engine_name": "VLLM::EngineCore",
+    "used_memory_mib": 73362,
+    "parent_pid": 2945421,
+    "parent_name": "vllm",
+    "selected_parent_arguments": {
+      "--model": "Qwen/Qwen3.6-27B",
+      "--host": "0.0.0.0",
+      "--port": "8000",
+      "--max-model-len": "32768",
+      "--gpu-memory-utilization": "0.90",
+      "--reasoning-parser": "qwen3"
+    },
+    "environment_readable": false
+  },
+  "model_revision_or_quantization_verified": false,
+  "serving_process_started_or_reconfigured": false,
+  "model_downloaded": false,
+  "robot_connection": false
+}
