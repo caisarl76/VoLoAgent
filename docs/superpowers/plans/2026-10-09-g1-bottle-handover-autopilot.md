@@ -81,6 +81,10 @@ Software acceptance uses synthetic tracking and scripted perception; it does not
 - [x] Retain bounded taking-frame context through empty-hand judgments; add a failing regression and verify the fix with a real recorded replay.
 - [x] Prepare proposed positive review clips and a separate failure clip without modifying the source dataset.
 - [x] Run disconnected checkpoint inference on the user-allocated h100 GPU 0 (subsequently authorized alongside h100_174 GPUs 4/5): all four training-reference checks passed; this proves loading/action compatibility, not physical success.
+- [x] Expand training-reference comparison to 13 grasp/holding/offer observations and independently check all 78 saved prediction/reference arrays.
+- [x] Estimate grasp reach from source 15/30 checked grasp brackets; retain unknown hand-to-bottle transform and absolute scene pose.
+- [x] Exercise and render the actual native ready-return component from default standing in provisional SONIC/MuJoCo simulation. Tracking settled; modeled desk clearance failed. See the [acceptance continuation](../../artifacts/g1_handover_20261012_acceptance/README.md).
+- [x] Prepare a recording and whole-session split checklist; confirmed source 15/30 successes are training data, and source 16 remains a failure negative.
 - [ ] Collect or validate longer stable offering dwell; define genuinely unseen policy validation/test episodes before a new training run.
 - [ ] Validate calibrated bottle support and ready-return swept clearance at the 0.85 m desk in SONIC simulation.
 - [ ] Complete supervised hardware acceptance before enabling checkpoint/ready review flags.
