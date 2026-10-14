@@ -86,15 +86,19 @@ offer-entry run passed the production settling check. From grounded standing the
 hook kept the raise, which behaved as before (old code: 1/3).
 
 **After merging `main` (native `9329b16`, rebuilt binary `65ce96a7…`).**
-This re-check uses the new SONIC mode handoff and Dex3 feedback-validity flags,
-in one run, `merge-prod-ep15-01`.
+These runs repeat the production-hook runs with the new SONIC mode handoff and Dex3 feedback-validity flags.
+They are the `merge-prod-*` trials.
 
 | Entry | Decision logged | Completed | Return time | Min desk gap | Contacts | Feet on floor |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| ep15 offer | direct | 1/1 | 1.3 s | 55.0 mm | 0 | all samples |
+| ep15 offer | direct ×3 | 3/3 | 1.3–2.8 s | 54.7–56.2 mm | 0 | all samples |
+| ep30 offer | direct ×3 | 3/3 | 2.7–3.1 s | 53.5–65.1 mm | 0 | all samples |
+| Grounded standing | raise first ×3 | 1/3 | — | — | — | — |
 
-Preserved waist/left arm stayed within 0.044 rad. The return settled faster than
-the three pre-merge ep15 runs (2.7–3.1 s) with a similar 0.024 rad right-arm move.
+- **Offer entries:** results match the pre-merge runs. Preserved waist/left arm stayed within 0.044–0.075 rad.
+- **Grounded standing:** the two failed runs end at `reset_reference_lead_exceeded` and `reset_timeout`.
+  Both fail during the raise, with right shoulder yaw (motor 24) furthest off (0.19 and 0.26 rad).
+  This is the gravity-load stall diagnosed before the merge, not a merge effect.
 
 ## Production change
 
