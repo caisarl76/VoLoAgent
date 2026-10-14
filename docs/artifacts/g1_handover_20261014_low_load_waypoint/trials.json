@@ -1,0 +1,347 @@
+{
+  "f103-01": {
+    "raised_waypoint_rad": [
+      0.05391702800989151,
+      -0.32592299580574036,
+      0.1095597892999649,
+      -0.45001962780952465,
+      0.6355834007263184,
+      0.10084725171327591,
+      0.045156560838222504
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.991906326031312,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.19517141580581665,
+      "24": 0.07671211659908295,
+      "23": 0.07407471537590027
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f103-02": {
+    "raised_waypoint_rad": [
+      0.05391702800989151,
+      -0.32592299580574036,
+      0.1095597892999649,
+      -0.45001962780952465,
+      0.6355834007263184,
+      0.10084725171327591,
+      0.045156560838222504
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_reference_lead_exceeded",
+    "duration_s": 1.2437637369148433,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "25": 1.4370522201061249,
+      "24": 0.47333233058452606,
+      "26": 0.19259735941886902
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f103-03": {
+    "raised_waypoint_rad": [
+      0.05391702800989151,
+      -0.32592299580574036,
+      0.1095597892999649,
+      -0.45001962780952465,
+      0.6355834007263184,
+      0.10084725171327591,
+      0.045156560838222504
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.990437736967579,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.3212435841560364,
+      "18": 0.1363469362258911,
+      "24": 0.03694465756416321
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f103-04": {
+    "raised_waypoint_rad": [
+      0.05391702800989151,
+      -0.32592299580574036,
+      0.1095597892999649,
+      -0.45001962780952465,
+      0.6355834007263184,
+      0.10084725171327591,
+      0.045156560838222504
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.991533355088905,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.2082606852054596,
+      "23": 0.07061940431594849,
+      "24": 0.06504608690738678
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f103-05": {
+    "raised_waypoint_rad": [
+      0.05391702800989151,
+      -0.32592299580574036,
+      0.1095597892999649,
+      -0.45001962780952465,
+      0.6355834007263184,
+      0.10084725171327591,
+      0.045156560838222504
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_reference_lead_exceeded",
+    "duration_s": 4.455470846034586,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.16366812586784363,
+      "22": 0.06568620447069407,
+      "24": 0.06350179016590118
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f72-01": {
+    "raised_waypoint_rad": [
+      -0.00806538388133049,
+      -0.38064295053482056,
+      -0.3950839638710022,
+      -0.07819706946611404,
+      0.5916372537612915,
+      -0.049051433801651,
+      -0.43114447593688965
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.9900108280126,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.4148336201906204,
+      "18": 0.04031109809875488,
+      "22": 0.027628012001514435
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f72-02": {
+    "raised_waypoint_rad": [
+      -0.00806538388133049,
+      -0.38064295053482056,
+      -0.3950839638710022,
+      -0.07819706946611404,
+      0.5916372537612915,
+      -0.049051433801651,
+      -0.43114447593688965
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.989745414117351,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.26111650466918945,
+      "24": 0.09276503324508667,
+      "28": 0.02525952458381653
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f72-03": {
+    "raised_waypoint_rad": [
+      -0.00806538388133049,
+      -0.38064295053482056,
+      -0.3950839638710022,
+      -0.07819706946611404,
+      0.5916372537612915,
+      -0.049051433801651,
+      -0.43114447593688965
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.989322982961312,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.39749790728092194,
+      "16": 0.024660497903823853,
+      "26": 0.024594604969024658
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f72-04": {
+    "raised_waypoint_rad": [
+      -0.00806538388133049,
+      -0.38064295053482056,
+      -0.3950839638710022,
+      -0.07819706946611404,
+      0.5916372537612915,
+      -0.049051433801651,
+      -0.43114447593688965
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.98955569905229,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.3922744244337082,
+      "26": 0.050488293170928955,
+      "24": 0.04547226428985596
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "f72-05": {
+    "raised_waypoint_rad": [
+      -0.00806538388133049,
+      -0.38064295053482056,
+      -0.3950839638710022,
+      -0.07819706946611404,
+      0.5916372537612915,
+      -0.049051433801651,
+      -0.43114447593688965
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.989119178848341,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.41702960431575775,
+      "24": 0.03466534614562988,
+      "28": 0.03279930353164673
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "synth-01": {
+    "raised_waypoint_rad": [
+      -0.0888067338615656,
+      -0.581782603263855,
+      -0.5984442830085754,
+      0.16412396728992462,
+      1.085878610610962,
+      -0.15723302960395813,
+      -0.48973536491394043
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.989167122868821,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "24": 0.22082650661468506,
+      "17": 0.08957141637802124,
+      "26": 0.03246414661407471
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "synth-02": {
+    "raised_waypoint_rad": [
+      -0.0888067338615656,
+      -0.581782603263855,
+      -0.5984442830085754,
+      0.16412396728992462,
+      1.085878610610962,
+      -0.15723302960395813,
+      -0.48973536491394043
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.989256639964879,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "17": 0.10251259803771973,
+      "24": 0.05881279706954956,
+      "12": 0.02501854859292507
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "synth-03": {
+    "raised_waypoint_rad": [
+      -0.0888067338615656,
+      -0.581782603263855,
+      -0.5984442830085754,
+      0.16412396728992462,
+      1.085878610610962,
+      -0.15723302960395813,
+      -0.48973536491394043
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.991905199130997,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "24": 0.23825395107269287,
+      "17": 0.08285218477249146,
+      "27": 0.06411994993686676
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "synth-04": {
+    "raised_waypoint_rad": [
+      -0.0888067338615656,
+      -0.581782603263855,
+      -0.5984442830085754,
+      0.16412396728992462,
+      1.085878610610962,
+      -0.15723302960395813,
+      -0.48973536491394043
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.990937259048223,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "24": 0.16683515906333923,
+      "17": 0.1068757176399231,
+      "26": 0.03232872486114502
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  },
+  "synth-05": {
+    "raised_waypoint_rad": [
+      -0.0888067338615656,
+      -0.581782603263855,
+      -0.5984442830085754,
+      0.16412396728992462,
+      1.085878610610962,
+      -0.15723302960395813,
+      -0.48973536491394043
+    ],
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "duration_s": 14.992286056047305,
+    "stage1_entered_s": null,
+    "max_raise_dwell_s": 0,
+    "raise_tail_worst": {
+      "24": 0.25073015689849854,
+      "17": 0.0653073787689209,
+      "21": 0.02216840535402298
+    },
+    "physics_modified": false,
+    "owned_processes_stopped": true
+  }
+}

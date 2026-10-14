@@ -123,7 +123,8 @@ deployment model.
 
 ## Open decisions before any production change
 
-1. **Waypoint pose.** Choose a raised pose whose shoulder-yaw gravity load is
+1. **Waypoint pose.** (Tried: [no waypoint passed](../g1_handover_20261014_low_load_waypoint/README.md)
+   under the grounded-standing entry; right-yaw path load and left-arm drift conflict.) Choose a raised pose whose shoulder-yaw gravity load is
    well inside the lead budget, then re-review its desk clearance. The ready
    pose's yaw load is only 0.019 rad. Lowest risk; needs a pose review.
 2. **Real-robot feedforward.** Send yaw gravity torque through `tau` on

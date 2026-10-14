@@ -1,0 +1,38 @@
+# SIMULATION CANDIDATE ONLY. Source30 frame 103. Not a reviewed hardware path.
+schema_version: 1
+policy_host: 127.0.0.1
+policy_port: 15558
+checkpoint: /UNCONFIGURED/handover/checkpoint
+embodiment: unitree_g1_sonic
+camera_key: ego_view
+action_horizon: 40
+publish_rate: 50
+limits: {}
+skills:
+  bottle_handover:
+    # Exact prompt from the audited 20,000-step H100 baseline.
+    prompt: pick drink bottle from the table and handover
+    completion_criteria: Bottle lifted from desk and stably supported on level upward-facing open right palm; no rolling, falling or human rescue.
+    completion_action: hold
+handover:
+  skill_id: bottle_handover
+  checkpoint_verified: false
+  ready_pose_reviewed: false
+  # Simulation candidate from episode 30 frame 103 (low shoulder-yaw gravity load); real swept path unqualified.
+  raised_right_arm_joints:
+    right_shoulder_pitch_joint: 0.05391702800989151
+    right_shoulder_roll_joint: -0.32592299580574036
+    right_shoulder_yaw_joint: 0.1095597892999649
+    right_elbow_joint: -0.45001962780952465
+    right_wrist_roll_joint: 0.6355834007263184
+    right_wrist_pitch_joint: 0.10084725171327591
+    right_wrist_yaw_joint: 0.045156560838222504
+  # Candidate measured from episode 15 frames [415,432); path not yet reviewed.
+  ready_right_arm_joints:
+    right_shoulder_pitch_joint: -0.10413093119859695
+    right_shoulder_roll_joint: -0.08507601171731949
+    right_shoulder_yaw_joint: 0.30275747179985046
+    right_elbow_joint: -0.21820877492427826
+    right_wrist_roll_joint: 1.70130455493927
+    right_wrist_pitch_joint: -0.09610150009393692
+    right_wrist_yaw_joint: -0.07287607342004776
