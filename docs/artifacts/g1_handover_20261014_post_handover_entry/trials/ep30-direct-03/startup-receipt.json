@@ -1,0 +1,21 @@
+{
+  "events": [
+    {
+      "key": "9",
+      "received_monotonic": 1152684.211917459,
+      "sim_time": 23.69499999999957,
+      "band_enabled": false,
+      "base_height_m": 0.9627274721019929
+    },
+    {
+      "key": "backspace",
+      "received_monotonic": 1152684.211975515,
+      "sim_time": 0.0,
+      "band_enabled": false,
+      "base_height_m": 0.793
+    }
+  ],
+  "support_released": true,
+  "scene_reset_applied": true,
+  "desk_moved_away_m": 3.0
+}

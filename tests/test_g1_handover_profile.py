@@ -98,3 +98,28 @@ def test_example_is_disabled_and_separate_from_placement():
     assert not example.handover.checkpoint_verified
     assert not example.handover.ready_pose_reviewed
     assert "pnp_bottle" not in example.checkpoint
+
+
+def test_handover_desk_pose_is_optional_and_paired(tmp_path):
+    assert load_profile(handover_profile(tmp_path)).handover.desk_top_above_pelvis_m is None
+    example = load_profile(ROOT / "configs/g1/handover.example.yaml").handover
+    assert (example.desk_top_above_pelvis_m, example.desk_front_from_pelvis_m) == (0.063, 0.40)
+
+
+@pytest.mark.parametrize(
+    "desk",
+    [
+        {"desk_top_above_pelvis_m": 0.063},
+        {"desk_front_from_pelvis_m": 0.40},
+        {"desk_top_above_pelvis_m": float("nan"), "desk_front_from_pelvis_m": 0.40},
+        {"desk_top_above_pelvis_m": True, "desk_front_from_pelvis_m": 0.40},
+        {"desk_top_above_pelvis_m": 0.063, "desk_front_from_pelvis_m": -0.1},
+    ],
+)
+def test_handover_rejects_partial_or_invalid_desk_pose(tmp_path, desk):
+    path = handover_profile(tmp_path)
+    data = yaml.safe_load(path.read_text())
+    data["handover"].update(desk)
+    path.write_text(yaml.safe_dump(data))
+    with pytest.raises(ValueError):
+        load_profile(path)

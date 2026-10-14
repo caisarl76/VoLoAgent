@@ -18,6 +18,11 @@ handover:
   skill_id: bottle_handover
   checkpoint_verified: false
   ready_pose_reviewed: false
+  # Provisional desk pose in the pelvis frame: 85 cm desk with the 0.787 m standing
+  # pelvis height used in simulation, 40 cm near edge. When the direct return keeps
+  # >=3 cm from this desk the raise is skipped; measure both before hardware use.
+  desk_top_above_pelvis_m: 0.063
+  desk_front_from_pelvis_m: 0.40
   # Simulation candidate from episode 30 frame 60; real swept path unqualified.
   raised_right_arm_joints:
     right_shoulder_pitch_joint: 0.01119326613843441
