@@ -85,6 +85,17 @@ Preserved waist/left arm stayed within 0.05–0.08 rad during motion, and every
 offer-entry run passed the production settling check. From grounded standing the
 hook kept the raise, which behaved as before (old code: 1/3).
 
+**After merging `main` (native `9329b16`, rebuilt binary `65ce96a7…`).**
+This re-check uses the new SONIC mode handoff and Dex3 feedback-validity flags,
+in one run, `merge-prod-ep15-01`.
+
+| Entry | Decision logged | Completed | Return time | Min desk gap | Contacts | Feet on floor |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| ep15 offer | direct | 1/1 | 1.3 s | 55.0 mm | 0 | all samples |
+
+Preserved waist/left arm stayed within 0.044 rad. The return settled faster than
+the three pre-merge ep15 runs (2.7–3.1 s) with a similar 0.024 rad right-arm move.
+
 ## Production change
 
 - **Native repository:** adds `gear_sonic/utils/inference/ready_clearance.py`.
