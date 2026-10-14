@@ -23,6 +23,7 @@ NATIVE=Path('/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native')
 ORIGIN=Path('/home/jihun/work/GR00T-WholeBodyControl')
 NATIVE_WORKER=ROOT.parent/'g1_harness_20261006_followup/native_locomotion_worker.py'
 MIN_FREE_GPU_MIB=3072
+PROFILE_TEMPLATE=ROOT.parents[2]/'configs/g1/handover.example.yaml'
 
 
 def main():
@@ -53,7 +54,7 @@ def main():
     scene_code='from scene import build_scene; import sys; build_scene(sys.argv[1],desk_front_m=float(sys.argv[2]))'
     subprocess.run([str(ORIGIN/'.venv_sim/bin/python'),'-c',scene_code,str(output/'scene.xml'),str(args.desk_front_m)],
         cwd=ROOT,check=True)
-    template=ROOT.parents[2]/'configs/g1/handover.example.yaml'
+    template=PROFILE_TEMPLATE
     data=yaml.safe_load(template.read_text())
     # Test-fixture gates for the ready component only; no checkpoint qualification.
     data['handover']['ready_pose_reviewed']=True

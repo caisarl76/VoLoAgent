@@ -1,0 +1,24 @@
+{
+  "reviewer": "gpt-6-astra",
+  "reasoning": "high",
+  "read_only": true,
+  "focused_tests_before_review_fix": 53,
+  "findings": [
+    {
+      "severity": "P1",
+      "description": "Measured-interval clipping could override a right-arm joint limit when feedback drifted outward past the limit.",
+      "status": "fixed",
+      "resolution": "Intersect lead/joint intervals, reject empty intersections and invalid candidates, and reject out-of-bound measured right-arm values when constructing resets or holds.",
+      "red_evidence": "review-bounds-red.log",
+      "green_evidence": "native-suite-final.log"
+    }
+  ],
+  "other_confirmed_findings": 0,
+  "physical_acceptance_reviewed": false,
+  "final_main_agent_checks": {
+    "focused": 58,
+    "native_suite": 674,
+    "volo_suite": 745,
+    "crossprocess": 13
+  }
+}
