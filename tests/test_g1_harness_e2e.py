@@ -74,7 +74,8 @@ def test_handover_cycles_cross_process(native_runtime, tmp_path, failure):
     runner_cls = importlib.import_module(module.name).HandoverRunner
     path = handover_profile(tmp_path)
     profile = load_profile(path)
-    monitor = HandoverMonitor(lambda *_: reply("yes"), time.monotonic, profile.limits)
+    monitor = HandoverMonitor(lambda *_: reply("yes"), time.monotonic, profile.limits,
+                              require_hand_state=True)
     if failure:
         monitor.vlm_call_fn = lambda *_: reply("failure", "test-only scripted roll") if monitor.phase == "wait_empty" else reply("yes")
     with executor(native_runtime, tmp_path, "handover", path) as (endpoint, evidence):
@@ -150,6 +151,7 @@ def test_mirrored_contract_and_golden_fixtures(native_runtime):
     ).read_bytes()
     for local, native in [
         ("contract.py", "harness_contract.py"),
+        ("hand_pose.py", "harness_hand_pose.py"),
         ("registry.py", "harness_profile.py"),
     ]:
         ours = (ROOT / "vlm_orchestrator/harness/g1" / local).read_text()

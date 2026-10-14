@@ -6,6 +6,7 @@ from vlm_orchestrator.vlm.api import parse_json
 
 from .monitor import CompletionDecision, G1CompletionMonitor, decode_image
 from .registry import SkillDefinition
+from .hand_pose import hand_state_for_frame
 
 
 CRITERIA = {
@@ -52,7 +53,7 @@ class HandoverDecision(CompletionDecision):
 
 
 class HandoverMonitor(G1CompletionMonitor):
-    def __init__(self, vlm_call_fn, now_fn, limits=None):
+    def __init__(self, vlm_call_fn, now_fn, limits=None, *, require_hand_state=False):
         super().__init__(
             SkillDefinition("bottle_handover", "handover", "phase criterion"),
             vlm_call_fn,
@@ -62,6 +63,7 @@ class HandoverMonitor(G1CompletionMonitor):
         self.cycle_id = 0
         self.failure = None
         self.offer_anchor = None
+        self.require_hand_state = require_hand_state
 
     def begin_phase(self, phase, cycle_id, execution, initial, not_before):
         if phase not in CRITERIA or type(cycle_id) is not int or cycle_id < 1:
@@ -75,6 +77,7 @@ class HandoverMonitor(G1CompletionMonitor):
         self.initial, self.previous, self.not_before = initial, None, not_before
         self.recent_frames = []
         self.streak, self.seen, self.last_check = 0, set(), None
+        self.last_hand_index = None
 
     def _decision(self, snapshot, outcome, reason):
         return HandoverDecision(
@@ -117,6 +120,11 @@ class HandoverMonitor(G1CompletionMonitor):
         self.seen.add(snapshot.frame_id)
         self.last_check, self.raw_response = now, None
         self._call_deadline = snapshot.received_at + self.limits.decision_expiry_s
+        hand_state = hand_state_for_frame(snapshot, now, self.limits.feedback_max_age_s)
+        distinct_hand = hand_state != 'unknown' and (
+            self.last_hand_index is None or snapshot.right_hand_sample_index > self.last_hand_index)
+        if hand_state != 'unknown':
+            self.last_hand_index = max(self.last_hand_index or 0, snapshot.right_hand_sample_index)
         content = [{"type": "text", "text": CRITERIA[self.phase]}]
         frames = [("PHASE START", self.initial)]
         if self.phase == "wait_empty" and self.offer_anchor is not None:
@@ -144,6 +152,13 @@ class HandoverMonitor(G1CompletionMonitor):
                         },
                     ]
                 )
+            if self.phase == 'pick_offer' and hand_state != 'unknown':
+                content.append({"type": "text", "text": (
+                    f"Measured RIGHT hand: {hand_state} at NOW, from fresh finger-joint feedback. "
+                    "Use this measured finger posture instead of guessing its opening from appearance. "
+                    "A horizontally supported bottle is allowed. This says nothing about palm orientation, "
+                    "bottle contact/stability, slipping, person removal or an empty hand; judge those from the frames."
+                )})
             raw = self._bounded_call(SYSTEM, content)
             data = parse_json(raw)
             if (
@@ -166,6 +181,12 @@ class HandoverMonitor(G1CompletionMonitor):
             self.streak = 0
             self.failure = data["reason"] or "Observed handover failure"
             return self._decision(snapshot, "failure", self.failure)
+        if self.phase == 'pick_offer' and (
+            hand_state in {'closed', 'partial'}
+            or (self.require_hand_state and (hand_state != 'open' or not distinct_hand))
+        ):
+            self.streak = 0
+            return self._decision(snapshot, 'in_progress', 'measured_hand_not_confirmed_open')
         self.streak = self.streak + 1 if data["outcome"] == "yes" else 0
         if self.phase == "pick_offer" and self.streak >= 2:
             self.offer_anchor = snapshot

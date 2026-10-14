@@ -1,0 +1,22 @@
+{
+  "reviewer": "gpt-6-astra",
+  "reasoning_requested": "high",
+  "read_only": true,
+  "initial_finding": "Global packet receipt/index falsely refreshed a cached right-hand DDS sample.",
+  "initial_finding_resolved": true,
+  "resolution": "Propagate original DDS receipt alongside joints; verify boot/time-namespace clock identity; derive stable identity from DDS receipt; require aligned distinct samples.",
+  "followup_finding": "NumPy int64 minimum overflowed abs() and was classified open.",
+  "followup_finding_resolved": true,
+  "followup_resolution": "Signed open comparisons and native joint bounds with measurement margin; regression observed red then green.",
+  "reviewer_checks": {
+    "malformed_receipt_variants_failed_closed": 10,
+    "final_classifier_monitor_checks_before_overflow_fix": 49,
+    "autopilot_checks": 20,
+    "final_classifier_monitor_checks": 51,
+    "final_native_focused_checks": 42,
+    "final_mirror_and_xml_bounds_checked": true
+  },
+  "remaining_confirmed_material_findings": 0,
+  "final_fixes_independently_verified": true,
+  "physical_robot_acceptance_performed": false
+}

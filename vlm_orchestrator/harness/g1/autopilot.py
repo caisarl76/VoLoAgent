@@ -223,6 +223,8 @@ class HandoverRunner(HarnessRunner):
             raise ValueError(
                 "Verified stationary handover profile and phase monitor required"
             )
+        # Offline vision-only monitors cannot relax live offer confirmation.
+        self.monitor.require_hand_state = True
         return self._run_session(
             [SkillCall(h.skill_id, {})], lambda _: self._cycles(max_cycles)
         )

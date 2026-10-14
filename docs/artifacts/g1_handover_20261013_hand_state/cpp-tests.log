@@ -1,0 +1,8 @@
+Excerpt from the executed rebuilt C++ test binary:
+Note: Google Test filter = HarnessTelemetry.*:HarnessTimeout.*
+[==========] Running 3 tests from 2 test suites.
+[       OK ] HarnessTelemetry.AbsoluteMotorOrderingAndEffectiveCapability (0 ms)
+[       OK ] HarnessTimeout.RetainsOnlyOptedInTargetsAndZerosVelocity (2809 ms)
+[       OK ] HarnessTimeout.ModeBoundariesAndStopsClearRetainedTargets (4509 ms)
+[==========] 3 tests from 2 test suites ran. (7319 ms total)
+[  PASSED  ] 3 tests.

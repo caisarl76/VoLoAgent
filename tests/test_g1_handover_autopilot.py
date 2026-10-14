@@ -37,6 +37,12 @@ class HandoverExecutor(Executor):
 
 
 class HandoverClient(LocalClient):
+    def observe(self):
+        frame = super().observe()
+        return replace(frame, right_hand_state='open' if self.e.hand_open else 'partial',
+                       right_hand_sample_at=frame.received_at,
+                       right_hand_sample_index=self.e.index)
+
     def request(self, method, params, **kwargs):
         if method == "reset_ready":
             self.e.calls.append(method)
@@ -93,6 +99,7 @@ def test_fresh_cached_pretransition_frames_wait_for_new_capture(tmp_path):
                 frame,
                 received_at=frame.received_at - 0.1,
                 source_timestamp=frame.source_timestamp - 0.1,
+                right_hand_sample_at=frame.right_hand_sample_at - 0.1,
                 age_s=0.1,
             )
 
