@@ -1,12 +1,77 @@
 from dataclasses import replace
 import importlib
 import json
+from dataclasses import replace
 
 import pytest
 
 from test_g1_monitor import snapshot
 from vlm_orchestrator.harness.g1.contract import Execution
 from vlm_orchestrator.harness.g1.registry import HarnessLimits
+
+
+def hand_frame(name, at, state='open', index=1, sample_at=None):
+    return replace(snapshot(name, at), right_hand_state=state,
+                   right_hand_sample_at=at if sample_at is None else sample_at,
+                   right_hand_sample_index=index)
+
+
+def test_measured_open_hand_is_supplied_to_vision_without_implying_offer():
+    m, clock, _ = make([reply('no', 'Bottle still on desk')])
+    captured = []
+    m.vlm_call_fn = lambda system, content: captured.append(content) or reply('no', 'Bottle still on desk')
+    d = m.check(hand_frame('open', clock[0]))
+    text = '\n'.join(item['text'] for item in captured[0] if item['type'] == 'text')
+    assert 'Measured RIGHT hand: open' in text
+    assert 'horizontal' in text
+    assert d.outcome == 'in_progress' and m.streak == 0
+
+
+@pytest.mark.parametrize('state', ['closed', 'partial'])
+def test_measured_nonopen_hand_blocks_visual_yes(state):
+    m, clock, _ = make([reply('yes'), reply('yes')])
+    assert m.check(hand_frame('a', 1., state, 1)).outcome == 'in_progress'
+    clock[0] = 1.1
+    assert m.check(hand_frame('b', 1.1, state, 2)).outcome == 'in_progress'
+    assert m.streak == 0
+
+
+def test_closed_hand_does_not_hide_visual_failure():
+    m, _, _ = make([reply('failure', 'Bottle slipped')])
+    assert m.check(hand_frame('slip', 1., 'closed')).outcome == 'failure'
+
+
+def test_required_hand_feedback_needs_distinct_aligned_samples():
+    m, clock, _ = make([reply('yes')] * 5)
+    m.require_hand_state = True
+    assert m.check(hand_frame('a', 1., index=1)).outcome == 'in_progress'
+    clock[0] = 1.1
+    assert m.check(hand_frame('b', 1.1, index=1)).outcome == 'in_progress'
+    assert m.streak == 0
+    clock[0] = 1.2
+    assert m.check(hand_frame('c', 1.2, index=2, sample_at=.9)).outcome == 'in_progress'
+    assert m.streak == 0
+    clock[0] = 1.3
+    assert m.check(hand_frame('d', 1.3, index=3)).outcome == 'in_progress'
+    clock[0] = 1.4
+    assert m.check(hand_frame('e', 1.4, index=4)).outcome == 'complete'
+
+
+def test_required_missing_feedback_cannot_confirm_offer():
+    m, clock, _ = make([reply('yes'), reply('yes')])
+    m.require_hand_state = True
+    assert m.check(snapshot('a')).outcome == 'in_progress'
+    clock[0] = 1.1
+    assert m.check(snapshot('b', 1.1)).outcome == 'in_progress'
+    assert m.streak == 0
+
+
+def test_finger_opening_hint_is_not_used_to_judge_empty_hand():
+    m, _, _ = make([reply('unknown')], phase='wait_empty')
+    captured = []
+    m.vlm_call_fn = lambda system, content: captured.append(content) or reply('unknown')
+    assert m.check(hand_frame('open', 1.)).outcome == 'in_progress'
+    assert not any('Measured RIGHT hand:' in item.get('text', '') for item in captured[0])
 
 
 def make(responses, phase="pick_offer"):

@@ -161,7 +161,7 @@ def main(argv=None):
                 return response.choices[0].message.content
 
             monitor = (
-                HandoverMonitor(vlm_call, time.monotonic, profile.limits)
+                HandoverMonitor(vlm_call, time.monotonic, profile.limits, require_hand_state=True)
                 if args.command == "autopilot"
                 else G1CompletionMonitor(
                     profile.require_skill(manipulation[0].skill_id),

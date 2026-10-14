@@ -1,0 +1,211 @@
+{
+  "cache_sha256": "62e956c2fe5b8fb9b465c1caee3de3888df00e4bf532e3f4dd360ec84d1750b5",
+  "native_joint_names": [
+    "right_hand_thumb_0_joint",
+    "right_hand_thumb_1_joint",
+    "right_hand_thumb_2_joint",
+    "right_hand_index_0_joint",
+    "right_hand_index_1_joint",
+    "right_hand_middle_0_joint",
+    "right_hand_middle_1_joint"
+  ],
+  "source_columns": [
+    40,
+    41,
+    42,
+    36,
+    37,
+    38,
+    39
+  ],
+  "recorded_rows": [
+    {
+      "episode": 15,
+      "frame": 246,
+      "right_hand_rad": [
+        0.02820655144751072,
+        -0.3595452904701233,
+        -0.5331628322601318,
+        0.5330861210823059,
+        1.1602665185928345,
+        0.6531767845153809,
+        0.7463159561157227
+      ],
+      "state": "closed"
+    },
+    {
+      "episode": 15,
+      "frame": 300,
+      "right_hand_rad": [
+        0.028316712006926537,
+        -0.34127023816108704,
+        -0.5380373001098633,
+        0.53306645154953,
+        1.187488079071045,
+        0.6526051163673401,
+        0.7953738570213318
+      ],
+      "state": "closed"
+    },
+    {
+      "episode": 15,
+      "frame": 350,
+      "right_hand_rad": [
+        0.028313644230365753,
+        -0.014379570260643959,
+        -0.027226068079471588,
+        0.008468193002045155,
+        0.4531315863132477,
+        0.01634383015334606,
+        0.10074134171009064
+      ],
+      "state": "partial"
+    },
+    {
+      "episode": 15,
+      "frame": 365,
+      "right_hand_rad": [
+        0.028312621638178825,
+        -0.011613578535616398,
+        -0.009704243391752243,
+        -0.011371446773409843,
+        0.019630366936326027,
+        -0.005292094778269529,
+        0.007042919751256704
+      ],
+      "state": "open"
+    },
+    {
+      "episode": 15,
+      "frame": 375,
+      "right_hand_rad": [
+        0.028313899412751198,
+        -0.01160910539329052,
+        -0.009662198834121227,
+        -0.01136786863207817,
+        0.006799635477364063,
+        -0.005309986416250467,
+        0.0070295012556016445
+      ],
+      "state": "open"
+    },
+    {
+      "episode": 30,
+      "frame": 300,
+      "right_hand_rad": [
+        0.0248061865568161,
+        -0.3007974922657013,
+        -0.6251294016838074,
+        0.5202133655548096,
+        1.216976523399353,
+        0.5271899700164795,
+        1.2124589681625366
+      ],
+      "state": "closed"
+    },
+    {
+      "episode": 30,
+      "frame": 360,
+      "right_hand_rad": [
+        0.024760181084275246,
+        -0.0130851361900568,
+        -0.031277548521757126,
+        0.00794218946248293,
+        0.4321800172328949,
+        -7.01100043443148e-06,
+        0.42087626457214355
+      ],
+      "state": "partial"
+    },
+    {
+      "episode": 30,
+      "frame": 370,
+      "right_hand_rad": [
+        0.02477014809846878,
+        -0.012030445039272308,
+        -0.009892996400594711,
+        -0.005506685469299555,
+        0.03870873153209686,
+        -0.006811959203332663,
+        0.03612072020769119
+      ],
+      "state": "open"
+    },
+    {
+      "episode": 30,
+      "frame": 390,
+      "right_hand_rad": [
+        0.02477014809846878,
+        -0.012015237472951412,
+        -0.009553956799209118,
+        -0.005533521994948387,
+        0.00661803875118494,
+        -0.006816431879997253,
+        0.006831802893429995
+      ],
+      "state": "open"
+    },
+    {
+      "episode": 16,
+      "frame": 335,
+      "right_hand_rad": [
+        0.028900478035211563,
+        -0.012950057163834572,
+        -0.011140912771224976,
+        -0.011397388763725758,
+        0.09011216461658478,
+        -0.006743972189724445,
+        0.05660981684923172
+      ],
+      "state": "partial"
+    },
+    {
+      "episode": 16,
+      "frame": 350,
+      "right_hand_rad": [
+        0.028900733217597008,
+        -0.01233906950801611,
+        -0.009998554363846779,
+        -0.016912376508116722,
+        -0.006259209476411343,
+        -0.010114689357578754,
+        0.0039853001944720745
+      ],
+      "state": "open"
+    }
+  ],
+  "thresholds_are_provisional": true,
+  "robot_connection": false,
+  "synthetic_receipt_times": true,
+  "source_videos_and_current_jpegs_rechecked": true,
+  "held_out_positive_test": false,
+  "qwen_no_cue_summary": {
+    "total": 13,
+    "unavailable": 0,
+    "label_disagreements": 5,
+    "complete_decisions": 1,
+    "confirmed_phases": 1,
+    "false_positive_frames": 0
+  },
+  "qwen_all_phase_cue_diagnostic_summary": {
+    "total": 13,
+    "unavailable": 0,
+    "label_disagreements": 5,
+    "complete_decisions": 1,
+    "confirmed_phases": 1,
+    "false_positive_frames": 1
+  },
+  "qwen_offer_only_cue_summary": {
+    "total": 13,
+    "unavailable": 0,
+    "label_disagreements": 4,
+    "complete_decisions": 1,
+    "confirmed_phases": 1,
+    "false_positive_frames": 0
+  },
+  "qwen_offer_only_provider_latency_s": {
+    "min": 1.213474411983043,
+    "median": 1.5755745118949562,
+    "max": 2.326526117976755
+  }
+}

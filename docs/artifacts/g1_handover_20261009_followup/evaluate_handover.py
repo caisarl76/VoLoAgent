@@ -10,12 +10,14 @@ from pathlib import Path
 import shlex
 import subprocess
 import time
+import numpy as np
 
 from openai import OpenAI
 
 from vlm_orchestrator.harness.g1.contract import Execution, ObservationSnapshot
 from vlm_orchestrator.harness.g1.handover_monitor import HandoverMonitor
 from vlm_orchestrator.harness.g1.registry import HarnessLimits
+from vlm_orchestrator.harness.g1.hand_pose import classify_right_hand, RIGHT_HAND_JOINT_NAMES
 from vlm_orchestrator.vlm.api import chat_create, parse_json
 
 SOURCE = Path('/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930')
@@ -38,6 +40,8 @@ def main():
     parser.add_argument('--api-key-env', default='GENON_API_KEY')
     parser.add_argument('--max-tokens', type=int)
     parser.add_argument('--disable-thinking', action='store_true')
+    parser.add_argument('--measured-hand-cache', type=Path,
+                        help='Recorded measured-extract.npz; synthetic receipt times, not live feedback')
     parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--deadline', type=float, default=10.)
     parser.add_argument('--case', action='append')
@@ -77,6 +81,24 @@ def main():
         request_options['extra_body'] = {'chat_template_kwargs': {'enable_thinking': False}}
     report['request_options'] = request_options
     info = json.loads((SOURCE / 'meta/info.json').read_text())
+    measured = None
+    if args.measured_hand_cache:
+        measured = np.load(args.measured_hand_cache, allow_pickle=False)
+        names = measured['names'].tolist()
+        if len(set(names)) != len(names):
+            parser.error('Duplicate measured joint names')
+        hand_columns = [names.index(name) for name in RIGHT_HAND_JOINT_NAMES]
+        report['measured_hand'] = dict(cache=str(args.measured_hand_cache),
+            sha256=hashlib.sha256(args.measured_hand_cache.read_bytes()).hexdigest(),
+            joint_names=RIGHT_HAND_JOINT_NAMES,
+            prompt_hint_phases=['pick_offer'],
+            scope='Recorded measured joints; synthetic fresh receipt times aligned to selected camera rows.')
+
+    def hand_at(episode, index):
+        if measured[f'{episode}/frame_index'][index] != index or not np.isclose(
+                measured[f'{episode}/timestamp'][index], index / info['fps'], atol=1e-5):
+            raise ValueError('Measured row does not match selected camera frame timestamp')
+        return measured[f'{episode}/observation.state'][index, hand_columns]
     for episode in sorted({c['episode'] for c in cases}):
         video = SOURCE / info['video_path'].format(
             episode_chunk=episode // info['chunks_size'], episode_index=episode,
@@ -123,6 +145,10 @@ def main():
                  for i in (case['initial_frame'], case['frame'])}
         images = {i: extract(video, i, p) for i, p in paths.items()}
         record = {**case, 'image': str(paths[case['frame']].relative_to(args.output))}
+        if measured is not None:
+            joints = hand_at(episode, case['frame'])
+            record.update(measured_right_hand_joints=joints.tolist(),
+                          measured_right_hand_state=classify_right_hand(joints))
         if api is not None:
             session = case.get('sequence', case['id'])
             if session not in sessions:
@@ -130,7 +156,8 @@ def main():
                                       'MANIPULATING', 1, time.monotonic(), None)
                 limits = replace(HarnessLimits(), monitor_deadline_s=args.deadline,
                                  decision_expiry_s=args.deadline)
-                monitor = HandoverMonitor(provider, time.monotonic, limits)
+                monitor = HandoverMonitor(provider, time.monotonic, limits,
+                                         require_hand_state=measured is not None)
                 sessions[session] = execution, monitor
                 new_session = True
             else:
@@ -139,10 +166,14 @@ def main():
 
             def snapshot(index):
                 image = images[index]
+                received = time.monotonic()
+                hand = {} if measured is None else dict(
+                    right_hand_state=classify_right_hand(hand_at(episode, index)),
+                    right_hand_sample_at=received, right_hand_sample_index=index)
                 return ObservationSnapshot(execution.runtime_id, execution.execution_id,
                     execution.inference_epoch, 'ego_view', index / info['fps'],
-                    hashlib.sha256(image).hexdigest(), time.monotonic(), 0.,
-                    base64.b64encode(image).decode())
+                    hashlib.sha256(image).hexdigest(), received, 0.,
+                    base64.b64encode(image).decode(), **hand)
 
             if new_session:
                 initial = snapshot(case['initial_frame'])
