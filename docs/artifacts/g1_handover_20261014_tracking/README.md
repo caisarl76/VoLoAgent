@@ -17,6 +17,9 @@ The signed-off native implementation is
 The required environment-check log is retained in
 [`5deabf4`](https://github.com/caisarl76/GR00T-WholeBodyControl/commit/5deabf4).
 
+For the next session investigating the remaining ready-return failure, read
+the [investigation handoff](HANDOFF.md).
+
 ## Confirmed defect and fix
 
 The unchanged production controller completed the first paired trial in 8.991 s.
