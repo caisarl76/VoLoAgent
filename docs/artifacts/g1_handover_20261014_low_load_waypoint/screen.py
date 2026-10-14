@@ -7,6 +7,13 @@ stall happens mid-swing, so the screen bounds the maximum sag over the ideal
 production-reset path (StandingReset, perfect tracking) until yaw is within
 0.05 rad of the waypoint, not the endpoint value.
 
+Usage: screen.py [ENTRY]  ENTRY = grounded_standing (default), source15_f431 or
+source30_f420. Recorded entries are the last frame of the user-confirmed offer:
+waist, both arms and both hands from the recording; legs/root stay the fixture's.
+Writes screen-ENTRY.json. Only yaw motion opposed by gravity can stall, so the
+path metric counts sag while gravity opposes the yaw motion; gravity-assisted
+sag (runaway risk) is reported separately. "direct" is the no-waypoint return.
+
 Candidates: raised frames from user-confirmed handover episodes 15 and 30, and a
 grid around the current waypoint whose per-joint move from entry is no larger
 than the current one (+0.05 rad). Raised = whole hand >=3 cm above the assumed
@@ -47,13 +54,14 @@ PATH_SAG_LIMIT = 0.10
 # ponytail: reach is a 4-pose empirical proxy for policy-driven left-yaw drift, not a model;
 # replace with a per-candidate SONIC drift measurement if a pose lands near the limit.
 REACH_LIMIT_M = 0.32
-# Endpoint-sag screen choice; 0/5 in SONIC (lead runaway, preserved left shoulder yaw).
-REJECTED_IN_SIM = {"source30_f103"}
+# 0/5 each in SONIC from the grounded-standing entry (trials/); not tested from other entries.
+REJECTED_IN_SIM = {"grounded_standing": {"source30_f103", "source15_f72", "grid_f60_p-0.10_r+0.10_y+0.00_e+0.00"}}
+ENTRIES = {"grounded_standing": None, "source15_f431": (15, 431), "source30_f420": (30, 420)}
 GRID = np.stack(np.meshgrid(np.arange(-.3, .31, .1), np.arange(0, .51, .05), np.arange(-.2, .61, .1),
                             np.arange(-.3, .31, .1), indexing="ij"), -1).reshape(-1, 4)  # pitch, roll, yaw, elbow
 
 
-def main():
+def main(entry_name):
     z = np.load(ART / "g1_handover_20261009_followup/palm-diagnostics/measured-extract.npz")
     model = mujoco.MjModel.from_xml_path(str(FIXTURE / "scene.xml"))
     data = mujoco.MjData(model)
@@ -77,6 +85,13 @@ def main():
     entry_qpos = np.array(initial["qpos"])
     entry = dict(body_q=np.array(initial["body_q"]), left_hand_q=np.array(initial["left_hand_q"]),
                  right_hand_q=np.array(initial["right_hand_q"]), base_quat=entry_qpos[3:7].copy())
+    if ENTRIES[entry_name] is not None:
+        ep, frame = ENTRIES[entry_name]
+        row = z[f"{ep}/observation.state"][frame]
+        entry_qpos[addresses[12:]] = row[12:]
+        entry["body_q"][12:] = np.r_[row[12:22], row[29:36]]
+        entry["left_hand_q"] = row[[names.index(f"left_hand_{n}_joint") for n in hand_order]]
+        entry["right_hand_q"] = row[[names.index(f"right_hand_{n}_joint") for n in hand_order]]
     final = list(yaml.safe_load((ART.parents[1] / "configs/g1/handover.example.yaml").read_text())
                  ["handover"]["ready_right_arm_joints"].values())
 
@@ -90,11 +105,11 @@ def main():
         return (np.abs(data.qfrc_bias[arm_v]) / KP, min(b[0][2] for b in boxes), max(b[1][0] for b in boxes))
 
     def route(waypoint):
-        """Ideal tracking of the production reset: desk gap and per-stage max yaw sag."""
+        """Ideal tracking of the production reset (waypoint None = direct): desk gap, yaw sag."""
         state = {k: v.copy() for k, v in entry.items()}
-        gap, path_sag = np.inf, [0.0, 0.0]
-        for stage, target in enumerate((waypoint, final)):
-            hand = entry["right_hand_q"] if stage == 0 else np.zeros(7)
+        gap, opposed, assisted = np.inf, 0.0, 0.0
+        stages = ([] if waypoint is None else [(waypoint, entry["right_hand_q"])]) + [(final, np.zeros(7))]
+        for target, hand in stages:
             reset = StandingReset(state, state["left_hand_q"], hand, right_arm_target=target)
             for _ in range(1000):
                 command = reset.advance(state, .02)
@@ -107,14 +122,17 @@ def main():
                     data.qpos[hand_addresses[side]] = state[f"{side}_hand_q"]
                 mujoco.mj_forward(model, data)
                 gap = min(gap, closest_bounds_gap(model, data, ["desk_top"])["gap_m"])
-                if abs(state["body_q"][24] - target[2]) > .05:
-                    path_sag[stage] = max(path_sag[stage], abs(data.qfrc_bias[yaw_v]) / KP[2])
+                remaining = target[2] - state["body_q"][24]
+                if abs(remaining) > .05:
+                    # Gravity force is -qfrc_bias; it opposes the motion when bias has the motion's sign.
+                    sag = data.qfrc_bias[yaw_v] * np.sign(remaining) / KP[2]
+                    opposed, assisted = max(opposed, sag), max(assisted, -sag)
                 if reset.is_settled(state, 1e-5, .01):
                     break
             else:
                 raise RuntimeError("Ideal reference did not settle")
-        return dict(ideal_route_min_desk_gap_m=gap, raise_path_max_yaw_sag_rad=path_sag[0],
-                    final_path_max_yaw_sag_rad=path_sag[1])
+        return dict(ideal_route_min_desk_gap_m=gap, path_max_opposed_yaw_sag_rad=opposed,
+                    path_max_assisted_yaw_sag_rad=assisted)
 
     def candidate(label, arm, **extra):
         sag, lowest_z, farthest_x = static(arm)
@@ -136,34 +154,40 @@ def main():
     # routing poses that cannot pass.
     raised = [c for c in candidates if c["hand_lowest_z_m"] >= .88 and c["hand_farthest_x_m"] < .40
               and np.max(np.abs(np.subtract(c["right_arm_rad"], final))) > .1
-              and c["label"] not in REJECTED_IN_SIM
+              and c["label"] not in REJECTED_IN_SIM.get(entry_name, ())
               and (c["sag_rad"][2] <= PATH_SAG_LIMIT + .01 or c["hand_farthest_x_m"] <= REACH_LIMIT_M)]
+    direct = dict(label="direct", right_arm_rad=None, **route(None))
+    direct_kept = direct["ideal_route_min_desk_gap_m"] > 0 and direct["path_max_opposed_yaw_sag_rad"] <= PATH_SAG_LIMIT
     screened = [dict(c, **route(c["right_arm_rad"])) for c in [current] + raised]
     clear = [c for c in screened[1:] if c["ideal_route_min_desk_gap_m"] > 0]
-    kept = [c for c in clear if c["raise_path_max_yaw_sag_rad"] <= PATH_SAG_LIMIT
+    kept = [c for c in clear if c["path_max_opposed_yaw_sag_rad"] <= PATH_SAG_LIMIT
             and c["hand_farthest_x_m"] <= REACH_LIMIT_M]
     frontier = [c for c in clear if not any(
-        o["raise_path_max_yaw_sag_rad"] <= c["raise_path_max_yaw_sag_rad"] and o["hand_farthest_x_m"] <= c["hand_farthest_x_m"]
-        and (o["raise_path_max_yaw_sag_rad"], o["hand_farthest_x_m"]) != (c["raise_path_max_yaw_sag_rad"], c["hand_farthest_x_m"])
+        o["path_max_opposed_yaw_sag_rad"] <= c["path_max_opposed_yaw_sag_rad"] and o["hand_farthest_x_m"] <= c["hand_farthest_x_m"]
+        and (o["path_max_opposed_yaw_sag_rad"], o["hand_farthest_x_m"]) != (c["path_max_opposed_yaw_sag_rad"], c["hand_farthest_x_m"])
         for o in clear)]
     frontier.sort(key=lambda c: c["hand_farthest_x_m"])
-    chosen = max(kept, key=lambda c: c["ideal_route_min_desk_gap_m"]) if kept else None
+    # Prefer no waypoint when the direct return already passes: fewer motions.
+    chosen = direct if direct_kept else max(kept, key=lambda c: c["ideal_route_min_desk_gap_m"]) if kept else None
     report = dict(
         scope="Static gravity/Kp sag along an ideal-tracking production-reset path and provisional-scene "
-              "geometry, entry body from ready-040-fixture (grounded standing, not a post-handover pose). "
+              "geometry from ready-040-fixture legs/root with the named entry's upper body. "
               "Not dynamics, swept clearance or hardware qualification.",
         desk_height_assumed_m=.85, desk_front_assumed_m=.40, kp=KP.tolist(), joint_names=ARM,
-        path_sag_limit_rad=PATH_SAG_LIMIT, reach_limit_m=REACH_LIMIT_M, rejected_in_sim=sorted(REJECTED_IN_SIM),
+        entry=entry_name, entry_right_arm_rad=entry["body_q"][22:29].tolist(), path_sag_limit_rad=PATH_SAG_LIMIT, reach_limit_m=REACH_LIMIT_M, rejected_in_sim=sorted(REJECTED_IN_SIM.get(entry_name, ())),
         candidates_total=len(candidates), routed=len(raised), kept=len(kept),
-        current=screened[0], screened=screened, frontier=frontier, chosen=chosen, hardware_acceptance=False)
-    (ROOT / "screen.json").write_text(json.dumps(report, indent=2) + "\n")
+        direct=direct, direct_kept=direct_kept, current=screened[0], screened=screened, frontier=frontier, chosen=chosen, hardware_acceptance=False)
+    (ROOT / f"screen-{entry_name}.json").write_text(json.dumps(report, indent=2) + "\n")
+    print(f"entry {entry_name}: direct opposed={direct['path_max_opposed_yaw_sag_rad']:.3f} "
+          f"assisted={direct['path_max_assisted_yaw_sag_rad']:.3f} gap={direct['ideal_route_min_desk_gap_m'] * 1000:.1f}mm"
+          f" kept={direct_kept}")
     print("sag/reach frontier (current first):")
     for c in [screened[0]] + frontier + sorted(kept, key=lambda c: -c["ideal_route_min_desk_gap_m"])[:10]:
-        print(f"{c['label']:>34} path_yaw_sag={c['raise_path_max_yaw_sag_rad']:.3f} end={c['sag_rad'][2]:.3f} "
-              f"final_path={c['final_path_max_yaw_sag_rad']:.3f} z={c['hand_lowest_z_m']:.3f} "
+        print(f"{c['label']:>34} path_yaw_sag={c['path_max_opposed_yaw_sag_rad']:.3f} end={c['sag_rad'][2]:.3f} "
+              f"assisted={c['path_max_assisted_yaw_sag_rad']:.3f} z={c['hand_lowest_z_m']:.3f} "
               f"x={c['hand_farthest_x_m']:.3f} gap={c['ideal_route_min_desk_gap_m'] * 1000:.1f}mm")
     print("candidates", len(candidates), "routed", len(raised), "kept", len(kept),
           "chosen", chosen and chosen["label"])
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else "grounded_standing")

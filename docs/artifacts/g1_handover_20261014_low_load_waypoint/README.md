@@ -71,7 +71,7 @@ It keeps poses that:
 - have a path-max right-yaw sag ≤ 0.10 rad;
 - reach no further than 0.32 m forward.
 
-[`screen.json`](screen.json) has the full results and the sag/reach Pareto frontier.
+[`screen-grounded_standing.json`](screen-grounded_standing.json) has the full results and the sag/reach Pareto frontier.
 
 **0 poses pass.** On the frontier:
 
@@ -93,6 +93,12 @@ budget and the 0.05 rad preserved-left-arm check.
   simulated; the 0.119 rad frontier neighbour was not.
 - Clearance is ideal-tracking and sampled in the provisional scene, not swept or physical.
 
+Follow-up: rerun from the recorded offer poses in
+[post-handover entry](../g1_handover_20261014_post_handover_entry/README.md). There
+the direct return needs no raise. The screen now counts only gravity-opposed yaw
+motion, so the grounded-standing values above may differ slightly in
+`screen-grounded_standing.json`.
+
 ## Remaining directions (decisions, not taken)
 
 - **Re-run this screen from real post-handover entry poses.** Use the recorded
@@ -110,7 +116,7 @@ budget and the 0.05 rad preserved-left-arm check.
 From the VoLoAgent worktree, with GPU 1 checked for 2 GiB free:
 
 ```bash
-/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_handover_20261014_low_load_waypoint/screen.py
+/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_handover_20261014_low_load_waypoint/screen.py [grounded_standing|source15_f431|source30_f420]
 env PYTHONPATH=. .venv/bin/python docs/artifacts/g1_handover_20261014_torque_probe/run_torque_probe.py --gpu 1 --desk-front-m 0.40 --candidate-profile docs/artifacts/g1_handover_20261014_low_load_waypoint/candidate-source15-f72.yaml --output /tmp/new-dir
 /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_handover_20261014_low_load_waypoint/summarize.py
 ```
