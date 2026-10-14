@@ -20,6 +20,10 @@ The required environment-check log is retained in
 For the next session investigating the remaining ready-return failure, read
 the [investigation handoff](HANDOFF.md).
 
+The follow-up [delivered-torque comparison](../g1_handover_20261014_torque_probe/README.md)
+attributes the stall to right-shoulder-yaw gravity load versus the 0.15 rad lead
+(unchanged 1/3, yaw-only sim feedforward 3/3); no production fix was made.
+
 ## Confirmed defect and fix
 
 The unchanged production controller completed the first paired trial in 8.991 s.
