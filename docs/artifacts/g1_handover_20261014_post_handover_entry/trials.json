@@ -449,5 +449,30 @@
     "terminal_reason": null,
     "error": null,
     "owned_processes_stopped": true
+  },
+  "merge-prod-ep15-01": {
+    "entry": "source15_f431",
+    "return_mode": "profile",
+    "native_run_vla_sha256": "350597d81ab24d98d7d74ed8f4cc1eec41e237e1958a09e337842c926a5c9a97",
+    "pre_pose_phase": "COMPLETED",
+    "pre_pose_s": 4.080648589180782,
+    "desk_restored": true,
+    "desk_gap_at_restore_m": 0.07340649888928542,
+    "terminal_phase": "COMPLETED",
+    "terminal_reason": null,
+    "error": null,
+    "owned_processes_stopped": true,
+    "return_s": 1.3234944648575038,
+    "stage1_entered_s": 0.0,
+    "max_raise_dwell_s": 0,
+    "right_arm_move_rad": 0.023639440536499023,
+    "preserved_waist_left_arm_max_error_rad": 0.04404038190841675,
+    "preserved_worst_motor": 19,
+    "final_tail_max_error_rad": 0.05734848976135254,
+    "desk_samples": 52,
+    "min_conservative_desk_gap_m": 0.054902382664979175,
+    "min_signed_desk_clearance_m": 0.0,
+    "robot_desk_contacts": 0,
+    "foot_floor_contact_samples": 52
   }
 }
