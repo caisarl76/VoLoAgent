@@ -1,0 +1,10 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_raise_first_qualifying_sample_does_not_credit_unsettled_interval _____
+gear_sonic/tests/test_handover_ready.py:170: in test_raise_first_qualifying_sample_does_not_credit_unsettled_interval
+    assert reset.stage == 0
+E   assert 1 == 0
+E    +  where 1 = <gear_sonic.utils.inference.standing_reset.StandingReset object at 0x7ece7ffd08e0>.stage
+=========================== short test summary info ============================
+FAILED gear_sonic/tests/test_handover_ready.py::test_raise_first_qualifying_sample_does_not_credit_unsettled_interval
+1 failed in 0.16s

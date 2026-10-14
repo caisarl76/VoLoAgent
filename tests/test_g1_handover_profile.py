@@ -28,6 +28,8 @@ TARGET = [
     -0.0961015001,
     -0.0728760734,
 ]
+RAISED = [.0111932661, -.6817826033, -.5984442830, .1641239673,
+          1.0858786106, -.1572330296, -.4897353649]
 
 
 def handover_profile(tmp_path, *, verified=True, reviewed=True):
@@ -46,6 +48,7 @@ def handover_profile(tmp_path, *, verified=True, reviewed=True):
         "checkpoint_verified": verified,
         "ready_pose_reviewed": reviewed,
         "ready_right_arm_joints": dict(zip(reversed(NAMES), reversed(TARGET))),
+        "raised_right_arm_joints": dict(zip(reversed(NAMES), reversed(RAISED))),
     }
     path = tmp_path / "handover.yaml"
     path.write_text(yaml.safe_dump(data))
@@ -55,11 +58,13 @@ def handover_profile(tmp_path, *, verified=True, reviewed=True):
 def test_handover_target_uses_named_motor_order(tmp_path):
     profile = load_profile(handover_profile(tmp_path))
     assert profile.handover.right_arm_target == tuple(TARGET)
+    assert profile.handover.right_arm_waypoint == tuple(RAISED)
     validate_params("reset_ready", {"execution_id": ""})
     with pytest.raises(ValueError):
         validate_params("reset_ready", {"execution_id": "x", "joints": TARGET})
 
 
+@pytest.mark.parametrize("field", ["ready_right_arm_joints", "raised_right_arm_joints"])
 @pytest.mark.parametrize(
     "value",
     [
@@ -70,10 +75,19 @@ def test_handover_target_uses_named_motor_order(tmp_path):
         {**dict(zip(NAMES, TARGET)), NAMES[4]: 2.1},
     ],
 )
-def test_handover_rejects_malformed_or_out_of_bounds_targets(tmp_path, value):
+def test_handover_rejects_malformed_or_out_of_bounds_targets(tmp_path, field, value):
     path = handover_profile(tmp_path)
     data = yaml.safe_load(path.read_text())
-    data["handover"]["ready_right_arm_joints"] = value
+    data["handover"][field] = value
+    path.write_text(yaml.safe_dump(data))
+    with pytest.raises(ValueError):
+        load_profile(path)
+
+
+def test_handover_rejects_missing_raise_target(tmp_path):
+    path = handover_profile(tmp_path)
+    data = yaml.safe_load(path.read_text())
+    del data["handover"]["raised_right_arm_joints"]
     path.write_text(yaml.safe_dump(data))
     with pytest.raises(ValueError):
         load_profile(path)

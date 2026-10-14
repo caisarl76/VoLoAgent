@@ -18,6 +18,15 @@ handover:
   skill_id: bottle_handover
   checkpoint_verified: false
   ready_pose_reviewed: false
+  # Simulation candidate from episode 30 frame 60; real swept path unqualified.
+  raised_right_arm_joints:
+    right_shoulder_pitch_joint: 0.01119326613843441
+    right_shoulder_roll_joint: -0.681782603263855
+    right_shoulder_yaw_joint: -0.5984442830085754
+    right_elbow_joint: 0.16412396728992462
+    right_wrist_roll_joint: 1.085878610610962
+    right_wrist_pitch_joint: -0.15723302960395813
+    right_wrist_yaw_joint: -0.48973536491394043
   # Candidate measured from episode 15 frames [415,432); path not yet reviewed.
   ready_right_arm_joints:
     right_shoulder_pitch_joint: -0.10413093119859695
