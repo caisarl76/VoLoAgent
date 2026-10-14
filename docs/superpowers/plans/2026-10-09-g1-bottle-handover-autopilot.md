@@ -103,6 +103,19 @@ The existing placement profile and `reset_standing` behavior are preserved.
 - [x] Run project and cross-process checks, resolve the fresh review's dwell finding, and publish signed-off feature-branch commits. Software suites pass; final motion acceptance remains failing.
 - [ ] Diagnose raised-pose tracking with paired native feedback/reference traces and achieve repeatable settling without relaxing limits.
 
+### Paired feedback diagnosis, 14 October continuation
+
+- [x] Verify available disk space after the user's cleanup (about 26 GB).
+- [x] Record exact native command/feedback pairs; reproduce intermittent completion and an excessive 0.20855 rad reference lead.
+- [x] Fix bounded reference retraction and interruption, resolve the review's joint-limit intersection finding, and verify measured holds reject out-of-bound right-arm input.
+- [x] Test the final guard with the original pose and a separate recorded episode-15 candidate. Both final traces respect rate/lead limits but time out without settling; the candidate is not adopted.
+- [x] Capture decoded motor targets, estimate model gravity loads, retain raw evidence and render the final corrected failure. See the [tracking report](../../artifacts/g1_handover_20261014_tracking/README.md).
+- [ ] Verify effective encoder target composition and model/actuator dynamics, then achieve repeatable measured ready settling without weakening the approved limits.
+
+The final suites pass (674 native, 745 VoLoAgent, 13 cross-process). This is
+software verification; posture preservation, motion acceptance and full-cycle
+VLA/hardware acceptance remain incomplete.
+
 The run starts from default standing in the provisional scene. Actual handover
 entry poses, swept clearance, bottle/person contact and the full VLA cycle remain
 separate acceptance work; neither hardware gate is enabled by this integration.

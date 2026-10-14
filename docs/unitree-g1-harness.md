@@ -44,6 +44,13 @@ profiles without the raised target are rejected. `ready_pose_reviewed` covers
 the entire path; both review flags in the example remain false. The integration
 evidence is in the [native lift report](artifacts/g1_handover_20261014_native_lift/README.md).
 
+The subsequent [paired tracking diagnosis](artifacts/g1_handover_20261014_tracking/README.md)
+fixed reference retraction when a measured joint falls back. The executor now
+enforces rate, lead and right-arm joint bounds together, interrupts impossible
+updates, and rejects out-of-model measurements when constructing holds. Motion
+acceptance still fails: corrected simulations do not settle under the current
+arm dynamics. The example remains disabled.
+
 ## Checkouts and environments
 
 Implementation lives in two isolated branches:

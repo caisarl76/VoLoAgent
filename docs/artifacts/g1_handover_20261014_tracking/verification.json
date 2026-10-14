@@ -1,0 +1,22 @@
+{
+  "software_verification_passed": true,
+  "tests": {
+    "native": 674,
+    "volo": 745,
+    "crossprocess": 13
+  },
+  "volo_skips": 19,
+  "native_source_matches_decoder_trial": true,
+  "actual_profiles_unchanged": true,
+  "review_findings_fixed": true,
+  "motion_acceptance_passed": false,
+  "hardware_commands_sent": false,
+  "hardware_flags_enabled": false,
+  "free_disk_gib_at_software_verification": 10.01,
+  "later_environment_preflight_passed": false,
+  "later_environment_preflight_free_disk_gib": 9.6,
+  "later_environment_preflight_cuda_tensorrt_passed": true,
+  "environment_preflight_scope": "All-purpose training/deploy check; training dependencies/Python, unused decoupled-WBC LFS balance asset and disk recommendation fail. No training was attempted.",
+  "unused_balance_asset_is_lfs_pointer": true,
+  "owned_processes_stopped": true
+}

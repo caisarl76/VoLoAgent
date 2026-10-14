@@ -1,0 +1,103 @@
+{
+  "paired-baseline": {
+    "terminal_phase": "COMPLETED",
+    "terminal_reason": null,
+    "samples": 445,
+    "stages": [
+      0,
+      1
+    ],
+    "maximum_paired_reference_lead_rad": 0.15000000000000002,
+    "checked_joint_count": 17,
+    "maximum_rate_bound_excess_rad": null,
+    "final_tail_max_native_vs_saved_physics_gap_rad": 0.00720549886634389,
+    "final_tail_worst_motor": 24,
+    "final_tail_max_active_target_error_rad": 0.03688013553619385,
+    "max_recorded_lift_dwell_s": 0.5019235289655626,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false
+  },
+  "paired-repeat": {
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "samples": 748,
+    "stages": [
+      0
+    ],
+    "maximum_paired_reference_lead_rad": 0.20855490178652492,
+    "checked_joint_count": 17,
+    "maximum_rate_bound_excess_rad": null,
+    "final_tail_max_native_vs_saved_physics_gap_rad": 0.002578414641249721,
+    "final_tail_worst_motor": 24,
+    "final_tail_max_active_target_error_rad": 0.10357943177223206,
+    "max_recorded_lift_dwell_s": 0.4016647699754685,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false
+  },
+  "corrected-first": {
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "samples": 748,
+    "stages": [
+      0
+    ],
+    "maximum_paired_reference_lead_rad": 0.15000000000000002,
+    "checked_joint_count": 17,
+    "maximum_rate_bound_excess_rad": null,
+    "final_tail_max_native_vs_saved_physics_gap_rad": 0.00021585137405602528,
+    "final_tail_worst_motor": 24,
+    "final_tail_max_active_target_error_rad": 0.26633429527282715,
+    "max_recorded_lift_dwell_s": 0.20083770784549415,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false
+  },
+  "candidate-15-first": {
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "samples": 748,
+    "stages": [
+      0
+    ],
+    "maximum_paired_reference_lead_rad": 0.15000000000000002,
+    "checked_joint_count": 31,
+    "maximum_rate_bound_excess_rad": 0.0,
+    "final_tail_max_native_vs_saved_physics_gap_rad": 0.012726957731347244,
+    "final_tail_worst_motor": 17,
+    "final_tail_max_active_target_error_rad": 0.3815513104200363,
+    "max_recorded_lift_dwell_s": 0,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false
+  },
+  "decoder-trace": {
+    "terminal_phase": "INTERRUPTED",
+    "terminal_reason": "reset_timeout",
+    "samples": 748,
+    "stages": [
+      0
+    ],
+    "maximum_paired_reference_lead_rad": 0.15000000000000002,
+    "checked_joint_count": 31,
+    "maximum_rate_bound_excess_rad": 0.0,
+    "final_tail_max_native_vs_saved_physics_gap_rad": 0.008117713403668292,
+    "final_tail_worst_motor": 24,
+    "final_tail_max_active_target_error_rad": 0.41404417157173157,
+    "max_recorded_lift_dwell_s": 0,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false,
+    "decoder": {
+      "joint": "right_shoulder_yaw_joint",
+      "mean_goal_rad": -0.5984442830085754,
+      "mean_reference_rad": -0.37693741992115976,
+      "mean_motor_target_rad": -0.40760644188310036,
+      "mean_measured_rad": -0.22693741992115973,
+      "mean_motor_target_vs_reference_gap_rad": 0.030669021961940553,
+      "mean_motor_target_vs_measured_gap_rad": 0.1806690219619406,
+      "model_gravity_torque_mean_nm": -2.2259229905078715,
+      "estimated_proportional_torque_mean_nm": -2.5746461375883647,
+      "shoulder_kp_nm_per_rad": 14.250623098688912,
+      "sampled_non_floor_contacts": 200,
+      "sampled_robot_non_floor_contacts": 0,
+      "scope": "Last 40 native samples; last_action is already motor-order absolute angle after native scale/default conversion. Torque is an estimate, excluding damping/friction; not measured motor torque."
+    }
+  }
+}
