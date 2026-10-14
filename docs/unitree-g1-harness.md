@@ -5,8 +5,8 @@ stationary bottle handover across a desk: detect, pick, offer on an open
 upward-facing palm, observe the empty hand, and return to a handshake-ready
 pose. See the [proposed handover design](superpowers/specs/2026-10-09-g1-bottle-handover-autopilot-design.md)
 and [dataset inspection](artifacts/g1_handover_20261009/README.md).
-The handover loop and ready-return operation are not implemented yet. The
-placement configuration and evidence below describe the earlier target.
+The handover loop and native ready return are implemented; physical acceptance
+remains open. Placement configuration and evidence below describe the earlier target.
 
 Software checks and checkpoint serving pass. The real checkpoint, native loop,
 SONIC, simulator camera and Genon monitor now run together. A live false-success
@@ -35,6 +35,14 @@ checks from physical acceptance and records episode 16's roll/rescue failure.
 The [handover example](../configs/g1/handover.example.yaml) is disabled until
 its checkpoint and ready path are verified. The existing placement profile
 remains the active workstation profile. Dashboard work stays deferred.
+
+The ready return now raises near the body with the entry finger targets,
+waits for measured upper-body and heading settling, then opens the hand and
+approaches the final ready pose. Handover profiles require both seven-joint
+`raised_right_arm_joints` and `ready_right_arm_joints` mappings. Older handover
+profiles without the raised target are rejected. `ready_pose_reviewed` covers
+the entire path; both review flags in the example remain false. The integration
+evidence is in the [native lift report](artifacts/g1_handover_20261014_native_lift/README.md).
 
 ## Checkouts and environments
 

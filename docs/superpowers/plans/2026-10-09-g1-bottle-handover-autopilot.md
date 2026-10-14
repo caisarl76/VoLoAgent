@@ -89,3 +89,20 @@ Software acceptance uses synthetic tracking and scripted perception; it does not
 - [ ] Collect or validate longer stable offering dwell; define genuinely unseen policy validation/test episodes before a new training run.
 - [ ] Validate calibrated bottle support and ready-return swept clearance at the 0.85 m desk in SONIC simulation.
 - [ ] Complete supervised hardware acceptance before enabling checkpoint/ready review flags.
+
+### Native lift integration, 14 October
+
+Reuse the measured episode-30 raised waypoint before the final ready target.
+Require both seven-joint targets in handover profiles; legacy direct-return
+handover profiles must be updated rather than silently retaining the desk-contact path.
+The existing placement profile and `reset_standing` behavior are preserved.
+
+- [x] Add named raised-waypoint profile validation and native lift-first ready return.
+- [x] Verify retained entry fingers during lift, measured upper-body/heading dwell, final full-joint dwell, and retained rate/lead/deadline implementation in software tests.
+- [x] Run the production path in loopback SONIC/MuJoCo on authorized local GPU 1, inspect saved contacts/clearance and render the return. The corrected final run timed out in the raised pose; motion acceptance failed. See the [native lift report](../../artifacts/g1_handover_20261014_native_lift/README.md).
+- [x] Run project and cross-process checks, resolve the fresh review's dwell finding, and publish signed-off feature-branch commits. Software suites pass; final motion acceptance remains failing.
+- [ ] Diagnose raised-pose tracking with paired native feedback/reference traces and achieve repeatable settling without relaxing limits.
+
+The run starts from default standing in the provisional scene. Actual handover
+entry poses, swept clearance, bottle/person contact and the full VLA cycle remain
+separate acceptance work; neither hardware gate is enabled by this integration.

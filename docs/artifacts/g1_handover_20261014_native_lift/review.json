@@ -1,0 +1,23 @@
+{
+  "reviewer": "gpt-6-astra",
+  "reasoning": "high",
+  "scope": "Current native lift-first controller, profile mirrors, hooks and connected tests",
+  "read_only": true,
+  "independent_focused_tests_passed": 68,
+  "findings": [
+    {
+      "severity": "P2",
+      "description": "The first qualifying raise sample credited a preceding unsettled interval, shortening dwell by up to one sample.",
+      "status": "fixed",
+      "regression": "test_raise_first_qualifying_sample_does_not_credit_unsettled_interval",
+      "red_evidence": "review-dwell-red.log",
+      "green_evidence": "native-suite-final.log"
+    }
+  ],
+  "other_confirmed_code_findings": 0,
+  "motion_acceptance_passed": false,
+  "limits": [
+    "Final simulation stalled in raised pose and hit reset_timeout; this is not certified hardware motion.",
+    "Actual post-handover entry, swept/person clearance and full VLA cycle remain unvalidated."
+  ]
+}

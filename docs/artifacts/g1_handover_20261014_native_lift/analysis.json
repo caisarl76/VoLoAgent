@@ -1,0 +1,3146 @@
+{
+  "terminal_phase": "INTERRUPTED",
+  "duration_s": 15.06661922391504,
+  "final_ready_settling_passed": false,
+  "minimum_conservative_sampled_desk_gap": {
+    "gap_m": 0.03701141836033506,
+    "actor": "right_hand_middle_0_link",
+    "obstacle": "desk_top"
+  },
+  "sampled_hand_or_forearm_desk_contact_states": 0,
+  "physics_samples": 311,
+  "grounded_standing_screen": {
+    "ready": true,
+    "failures": [],
+    "samples": 311,
+    "foot_floor_contact_samples": 311,
+    "base_height_min_m": 0.7851991681931292,
+    "base_height_max_m": 0.7869925932985365,
+    "base_tilt_max_rad": 0.053590603862277195,
+    "physical_balance_qualified": false
+  },
+  "zero_speed_planner_packets": 157,
+  "latent_action_publications": 0,
+  "owned_processes_stopped": true,
+  "hardware_acceptance": false,
+  "scope": "Saved measured simulation snapshots, about 20 Hz; no continuous collision certificate or physical qualification.",
+  "samples": [
+    {
+      "time_s": 0.0343282469548285,
+      "conservative_gap": {
+        "gap_m": 0.21045881927857862,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.4504824954927782
+    },
+    {
+      "time_s": 0.08489008201286197,
+      "conservative_gap": {
+        "gap_m": 0.21215840553054868,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.4453897397390385
+    },
+    {
+      "time_s": 0.13575386186130345,
+      "conservative_gap": {
+        "gap_m": 0.21161509497559977,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.4222093745117186
+    },
+    {
+      "time_s": 0.18696931679733098,
+      "conservative_gap": {
+        "gap_m": 0.2098075153452243,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.4202902831645188
+    },
+    {
+      "time_s": 0.23744330392219126,
+      "conservative_gap": {
+        "gap_m": 0.2063124231925444,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.4195718031261466
+    },
+    {
+      "time_s": 0.2883650357834995,
+      "conservative_gap": {
+        "gap_m": 0.1971608678945463,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.4038047000299416
+    },
+    {
+      "time_s": 0.33934878278523684,
+      "conservative_gap": {
+        "gap_m": 0.18423146435552804,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.3813927531666699
+    },
+    {
+      "time_s": 0.389824345940724,
+      "conservative_gap": {
+        "gap_m": 0.17133044818828658,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.3479647163348711
+    },
+    {
+      "time_s": 0.4404247689526528,
+      "conservative_gap": {
+        "gap_m": 0.16109340031879382,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.312452564650888
+    },
+    {
+      "time_s": 0.4914094398263842,
+      "conservative_gap": {
+        "gap_m": 0.1503962566662607,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.2874130886936999
+    },
+    {
+      "time_s": 0.542020978871733,
+      "conservative_gap": {
+        "gap_m": 0.1367013309548542,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.2556776508725507
+    },
+    {
+      "time_s": 0.5929306449834257,
+      "conservative_gap": {
+        "gap_m": 0.12082731153351342,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.2203298726866385
+    },
+    {
+      "time_s": 0.6436413298361003,
+      "conservative_gap": {
+        "gap_m": 0.11313234301668439,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.2044904871651936
+    },
+    {
+      "time_s": 0.694474859861657,
+      "conservative_gap": {
+        "gap_m": 0.10886906695289846,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.1986431479019517
+    },
+    {
+      "time_s": 0.7453237159643322,
+      "conservative_gap": {
+        "gap_m": 0.10277964379283688,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.18665816772707
+    },
+    {
+      "time_s": 0.7961896718479693,
+      "conservative_gap": {
+        "gap_m": 0.09410687386451276,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.1567690145055969
+    },
+    {
+      "time_s": 0.847129515837878,
+      "conservative_gap": {
+        "gap_m": 0.08715090437384831,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.1299751859616085
+    },
+    {
+      "time_s": 0.8977930638939142,
+      "conservative_gap": {
+        "gap_m": 0.08074016424405372,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.105574002717269
+    },
+    {
+      "time_s": 0.9486478799954057,
+      "conservative_gap": {
+        "gap_m": 0.07634551741195522,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.08332443331494
+    },
+    {
+      "time_s": 0.9996410068124533,
+      "conservative_gap": {
+        "gap_m": 0.07427942853670472,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.0495218096821226
+    },
+    {
+      "time_s": 1.050127763999626,
+      "conservative_gap": {
+        "gap_m": 0.07316860379329498,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 1.001251787100606
+    },
+    {
+      "time_s": 1.1008747178129852,
+      "conservative_gap": {
+        "gap_m": 0.0717360116256745,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.9567369416530067
+    },
+    {
+      "time_s": 1.1515830329153687,
+      "conservative_gap": {
+        "gap_m": 0.0691387173700927,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.9386785382061376
+    },
+    {
+      "time_s": 1.2021192538086325,
+      "conservative_gap": {
+        "gap_m": 0.06632746716645938,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.9313801675445544
+    },
+    {
+      "time_s": 1.2528556548058987,
+      "conservative_gap": {
+        "gap_m": 0.06218642601489255,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.9265757849294359
+    },
+    {
+      "time_s": 1.3036098559387028,
+      "conservative_gap": {
+        "gap_m": 0.05835396104673468,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.9027254329948129
+    },
+    {
+      "time_s": 1.3545598278287798,
+      "conservative_gap": {
+        "gap_m": 0.056270335421996664,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8665953811872001
+    },
+    {
+      "time_s": 1.405696582980454,
+      "conservative_gap": {
+        "gap_m": 0.05523076638616481,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8364027760296363
+    },
+    {
+      "time_s": 1.456205756869167,
+      "conservative_gap": {
+        "gap_m": 0.05515535075665493,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8014006644574803
+    },
+    {
+      "time_s": 1.507014533970505,
+      "conservative_gap": {
+        "gap_m": 0.05304308742852942,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7681481057795975
+    },
+    {
+      "time_s": 1.5578459489624947,
+      "conservative_gap": {
+        "gap_m": 0.05225624829442971,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7288867454773418
+    },
+    {
+      "time_s": 1.6090499139390886,
+      "conservative_gap": {
+        "gap_m": 0.051685304508859886,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6652468890700811
+    },
+    {
+      "time_s": 1.659604610875249,
+      "conservative_gap": {
+        "gap_m": 0.04977482919865511,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6347057129160141
+    },
+    {
+      "time_s": 1.7102502819616348,
+      "conservative_gap": {
+        "gap_m": 0.04685438743083792,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6348039770911291
+    },
+    {
+      "time_s": 1.7612171529326588,
+      "conservative_gap": {
+        "gap_m": 0.04295837146998999,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6347402912310619
+    },
+    {
+      "time_s": 1.8120487628038973,
+      "conservative_gap": {
+        "gap_m": 0.038819286298611644,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6321470847105456
+    },
+    {
+      "time_s": 1.862577584804967,
+      "conservative_gap": {
+        "gap_m": 0.03701141836033506,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6267803024722066
+    },
+    {
+      "time_s": 1.9133233278989792,
+      "conservative_gap": {
+        "gap_m": 0.03986589818957871,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.626131587043756
+    },
+    {
+      "time_s": 1.9642217957880348,
+      "conservative_gap": {
+        "gap_m": 0.04703290952464372,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6268405382575021
+    },
+    {
+      "time_s": 2.014853661879897,
+      "conservative_gap": {
+        "gap_m": 0.05427672910619676,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6352420561740884
+    },
+    {
+      "time_s": 2.0658321178052574,
+      "conservative_gap": {
+        "gap_m": 0.059499698797982954,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6466951328984247
+    },
+    {
+      "time_s": 2.116394046926871,
+      "conservative_gap": {
+        "gap_m": 0.0625947066223154,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6489291991441567
+    },
+    {
+      "time_s": 2.167311818804592,
+      "conservative_gap": {
+        "gap_m": 0.06612273620189033,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6490414016652278
+    },
+    {
+      "time_s": 2.2181442028377205,
+      "conservative_gap": {
+        "gap_m": 0.07200947970441983,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6526239956310267
+    },
+    {
+      "time_s": 2.2689980717841536,
+      "conservative_gap": {
+        "gap_m": 0.0778398000631144,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6846019006696636
+    },
+    {
+      "time_s": 2.319712118944153,
+      "conservative_gap": {
+        "gap_m": 0.08170909917568595,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7013213284627982
+    },
+    {
+      "time_s": 2.370403266977519,
+      "conservative_gap": {
+        "gap_m": 0.08542014139967757,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7173851106714406
+    },
+    {
+      "time_s": 2.4213292729109526,
+      "conservative_gap": {
+        "gap_m": 0.0896091541962303,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7340916998797191
+    },
+    {
+      "time_s": 2.472344067879021,
+      "conservative_gap": {
+        "gap_m": 0.09348777962316847,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7449621409492164
+    },
+    {
+      "time_s": 2.522941904840991,
+      "conservative_gap": {
+        "gap_m": 0.09807575596416955,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7588799029830908
+    },
+    {
+      "time_s": 2.573510260786861,
+      "conservative_gap": {
+        "gap_m": 0.1051292435799668,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.788196758125441
+    },
+    {
+      "time_s": 2.624390003969893,
+      "conservative_gap": {
+        "gap_m": 0.11151674970967847,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8068489575371123
+    },
+    {
+      "time_s": 2.674879791913554,
+      "conservative_gap": {
+        "gap_m": 0.1139062198724116,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8140396171245662
+    },
+    {
+      "time_s": 2.725733242928982,
+      "conservative_gap": {
+        "gap_m": 0.11337018566907849,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8161012816379195
+    },
+    {
+      "time_s": 2.776446893811226,
+      "conservative_gap": {
+        "gap_m": 0.11243095950600361,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8163266609619
+    },
+    {
+      "time_s": 2.827473283978179,
+      "conservative_gap": {
+        "gap_m": 0.11187517351110256,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8164848828731118
+    },
+    {
+      "time_s": 2.8782050269655883,
+      "conservative_gap": {
+        "gap_m": 0.11168876496468486,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.816571105441204
+    },
+    {
+      "time_s": 2.929067261982709,
+      "conservative_gap": {
+        "gap_m": 0.1116318954282429,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8166738028208148
+    },
+    {
+      "time_s": 2.9795540887862444,
+      "conservative_gap": {
+        "gap_m": 0.11129197664462102,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8167758076765685
+    },
+    {
+      "time_s": 3.030358694959432,
+      "conservative_gap": {
+        "gap_m": 0.11064755459431165,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8168749051652692
+    },
+    {
+      "time_s": 3.0811111419461668,
+      "conservative_gap": {
+        "gap_m": 0.10985094531065377,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8169628566410931
+    },
+    {
+      "time_s": 3.131804757984355,
+      "conservative_gap": {
+        "gap_m": 0.10877683055418694,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8172193180610429
+    },
+    {
+      "time_s": 3.1825085328891873,
+      "conservative_gap": {
+        "gap_m": 0.10725683889616384,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8183115948790354
+    },
+    {
+      "time_s": 3.2333949559833854,
+      "conservative_gap": {
+        "gap_m": 0.10536505472885513,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8190918296654726
+    },
+    {
+      "time_s": 3.2841656219679862,
+      "conservative_gap": {
+        "gap_m": 0.10300019203045412,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8193046041470489
+    },
+    {
+      "time_s": 3.335018407786265,
+      "conservative_gap": {
+        "gap_m": 0.10218255492482727,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8232778937473915
+    },
+    {
+      "time_s": 3.3856316399760544,
+      "conservative_gap": {
+        "gap_m": 0.10482583102731974,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.836909084142987
+    },
+    {
+      "time_s": 3.436421904945746,
+      "conservative_gap": {
+        "gap_m": 0.109275992793164,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8522383812652201
+    },
+    {
+      "time_s": 3.487120518926531,
+      "conservative_gap": {
+        "gap_m": 0.11284675300308963,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8584081516776562
+    },
+    {
+      "time_s": 3.5377966719679534,
+      "conservative_gap": {
+        "gap_m": 0.1147809897835484,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8601942698045818
+    },
+    {
+      "time_s": 3.588558825897053,
+      "conservative_gap": {
+        "gap_m": 0.11564208098767961,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8620069062268902
+    },
+    {
+      "time_s": 3.639472793787718,
+      "conservative_gap": {
+        "gap_m": 0.11664905384153765,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8655910479997553
+    },
+    {
+      "time_s": 3.690879907924682,
+      "conservative_gap": {
+        "gap_m": 0.11686286517370484,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8660550509585664
+    },
+    {
+      "time_s": 3.741604329785332,
+      "conservative_gap": {
+        "gap_m": 0.11656210610499723,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8660186217424538
+    },
+    {
+      "time_s": 3.792336482787505,
+      "conservative_gap": {
+        "gap_m": 0.11592558250417245,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8653176033623612
+    },
+    {
+      "time_s": 3.8428797388914973,
+      "conservative_gap": {
+        "gap_m": 0.11418071686946114,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8610427444267584
+    },
+    {
+      "time_s": 3.893803561804816,
+      "conservative_gap": {
+        "gap_m": 0.11278230336978066,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8581648189124345
+    },
+    {
+      "time_s": 3.9449078508187085,
+      "conservative_gap": {
+        "gap_m": 0.11174298851463808,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8557269459954121
+    },
+    {
+      "time_s": 3.9953059828840196,
+      "conservative_gap": {
+        "gap_m": 0.11009033698744305,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8505049691559253
+    },
+    {
+      "time_s": 4.04623999982141,
+      "conservative_gap": {
+        "gap_m": 0.10823528002391526,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8437856812253254
+    },
+    {
+      "time_s": 4.096849179826677,
+      "conservative_gap": {
+        "gap_m": 0.10613866630358439,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8348746443025763
+    },
+    {
+      "time_s": 4.147446827962995,
+      "conservative_gap": {
+        "gap_m": 0.10374772685792821,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8270730372564012
+    },
+    {
+      "time_s": 4.198192693991587,
+      "conservative_gap": {
+        "gap_m": 0.10193840596623856,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8220296679724474
+    },
+    {
+      "time_s": 4.248918474884704,
+      "conservative_gap": {
+        "gap_m": 0.1013605665929947,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8221205096445658
+    },
+    {
+      "time_s": 4.29970251978375,
+      "conservative_gap": {
+        "gap_m": 0.10085608282912331,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8221696034607259
+    },
+    {
+      "time_s": 4.350522667868063,
+      "conservative_gap": {
+        "gap_m": 0.10040165280495005,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8221510154538113
+    },
+    {
+      "time_s": 4.4013307159766555,
+      "conservative_gap": {
+        "gap_m": 0.09918659057292332,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8205103335025606
+    },
+    {
+      "time_s": 4.452133210841566,
+      "conservative_gap": {
+        "gap_m": 0.09725398407901602,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8155723778542241
+    },
+    {
+      "time_s": 4.502599550876766,
+      "conservative_gap": {
+        "gap_m": 0.09589295283575948,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.811908961239788
+    },
+    {
+      "time_s": 4.553492655977607,
+      "conservative_gap": {
+        "gap_m": 0.09527900933782317,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.810559228840334
+    },
+    {
+      "time_s": 4.6041980078443885,
+      "conservative_gap": {
+        "gap_m": 0.09516368996141546,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8103113886559207
+    },
+    {
+      "time_s": 4.6546454129274935,
+      "conservative_gap": {
+        "gap_m": 0.09609659474037152,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8116701418482153
+    },
+    {
+      "time_s": 4.705677704885602,
+      "conservative_gap": {
+        "gap_m": 0.09841165840092939,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8146228956578211
+    },
+    {
+      "time_s": 4.756327721988782,
+      "conservative_gap": {
+        "gap_m": 0.1022317511928428,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8224609575896732
+    },
+    {
+      "time_s": 4.807013775920495,
+      "conservative_gap": {
+        "gap_m": 0.10643801736727056,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8328903405594672
+    },
+    {
+      "time_s": 4.85781962890178,
+      "conservative_gap": {
+        "gap_m": 0.10840391157614009,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8334439167765016
+    },
+    {
+      "time_s": 4.908385294955224,
+      "conservative_gap": {
+        "gap_m": 0.10769917925762038,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8334179604978952
+    },
+    {
+      "time_s": 4.959315288811922,
+      "conservative_gap": {
+        "gap_m": 0.10597491200957668,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8316762858772414
+    },
+    {
+      "time_s": 5.010586126940325,
+      "conservative_gap": {
+        "gap_m": 0.10370249796281325,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8286296216279253
+    },
+    {
+      "time_s": 5.061952298972756,
+      "conservative_gap": {
+        "gap_m": 0.10276827682219176,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.828153424964395
+    },
+    {
+      "time_s": 5.114455703878775,
+      "conservative_gap": {
+        "gap_m": 0.1042438515740938,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8313010151185379
+    },
+    {
+      "time_s": 5.165411240886897,
+      "conservative_gap": {
+        "gap_m": 0.10808747068971547,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8370600856781406
+    },
+    {
+      "time_s": 5.216192310908809,
+      "conservative_gap": {
+        "gap_m": 0.11266437104710005,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8423791903721768
+    },
+    {
+      "time_s": 5.266585632925853,
+      "conservative_gap": {
+        "gap_m": 0.11623670439475582,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8438177082086574
+    },
+    {
+      "time_s": 5.317520956974477,
+      "conservative_gap": {
+        "gap_m": 0.11828046446915104,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8438338664203416
+    },
+    {
+      "time_s": 5.368347622919828,
+      "conservative_gap": {
+        "gap_m": 0.1180467798997103,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8402617931248838
+    },
+    {
+      "time_s": 5.418861859943718,
+      "conservative_gap": {
+        "gap_m": 0.11542988453291879,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8309037464067078
+    },
+    {
+      "time_s": 5.469599581789225,
+      "conservative_gap": {
+        "gap_m": 0.11253157999980865,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8222863437112133
+    },
+    {
+      "time_s": 5.520358806010336,
+      "conservative_gap": {
+        "gap_m": 0.10939013286454477,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.816270587195951
+    },
+    {
+      "time_s": 5.571480101905763,
+      "conservative_gap": {
+        "gap_m": 0.10601869136747819,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8115051535012889
+    },
+    {
+      "time_s": 5.622210083995014,
+      "conservative_gap": {
+        "gap_m": 0.10444488496006112,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.811074551662114
+    },
+    {
+      "time_s": 5.673539056908339,
+      "conservative_gap": {
+        "gap_m": 0.1039265527396063,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8116288614667417
+    },
+    {
+      "time_s": 5.723796681966633,
+      "conservative_gap": {
+        "gap_m": 0.10504124254062468,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8178786295665978
+    },
+    {
+      "time_s": 5.774537399876863,
+      "conservative_gap": {
+        "gap_m": 0.1073041164711353,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8217413911988346
+    },
+    {
+      "time_s": 5.825314754853025,
+      "conservative_gap": {
+        "gap_m": 0.10961499108569436,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8220042308250747
+    },
+    {
+      "time_s": 5.876153800869361,
+      "conservative_gap": {
+        "gap_m": 0.11134157600959978,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8225292287271655
+    },
+    {
+      "time_s": 5.926918443990871,
+      "conservative_gap": {
+        "gap_m": 0.11205099596521921,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8226065390494259
+    },
+    {
+      "time_s": 5.97748404298909,
+      "conservative_gap": {
+        "gap_m": 0.11174634952174393,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8220924925828496
+    },
+    {
+      "time_s": 6.027864639880136,
+      "conservative_gap": {
+        "gap_m": 0.11115100537617975,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8208161675059132
+    },
+    {
+      "time_s": 6.0785052119754255,
+      "conservative_gap": {
+        "gap_m": 0.11163135241676558,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.82227292396453
+    },
+    {
+      "time_s": 6.129344668937847,
+      "conservative_gap": {
+        "gap_m": 0.11337861288775183,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8249265167153216
+    },
+    {
+      "time_s": 6.1798194099683315,
+      "conservative_gap": {
+        "gap_m": 0.11584599092032381,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8314422664448987
+    },
+    {
+      "time_s": 6.230573607841507,
+      "conservative_gap": {
+        "gap_m": 0.1179029966283709,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8337787469902466
+    },
+    {
+      "time_s": 6.281362312845886,
+      "conservative_gap": {
+        "gap_m": 0.11900579079478615,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8329384902890132
+    },
+    {
+      "time_s": 6.3323706379160285,
+      "conservative_gap": {
+        "gap_m": 0.11859048360911843,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8324476355834394
+    },
+    {
+      "time_s": 6.38286390597932,
+      "conservative_gap": {
+        "gap_m": 0.11726549776510235,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8324469758085313
+    },
+    {
+      "time_s": 6.433820828795433,
+      "conservative_gap": {
+        "gap_m": 0.11311958133810267,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8252985040467983
+    },
+    {
+      "time_s": 6.484295097878203,
+      "conservative_gap": {
+        "gap_m": 0.10722301159147034,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8115455839599043
+    },
+    {
+      "time_s": 6.535199878970161,
+      "conservative_gap": {
+        "gap_m": 0.10285492083680442,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8086279773558133
+    },
+    {
+      "time_s": 6.588345306925476,
+      "conservative_gap": {
+        "gap_m": 0.10055361133182653,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.807908613953078
+    },
+    {
+      "time_s": 6.640590459806845,
+      "conservative_gap": {
+        "gap_m": 0.1001327452441801,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8076730204830322
+    },
+    {
+      "time_s": 6.690619650995359,
+      "conservative_gap": {
+        "gap_m": 0.10057357429765426,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.8066523487106549
+    },
+    {
+      "time_s": 6.74164779484272,
+      "conservative_gap": {
+        "gap_m": 0.10063864762769789,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7999856549801507
+    },
+    {
+      "time_s": 6.792472876841202,
+      "conservative_gap": {
+        "gap_m": 0.10048376214454599,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7938316405978851
+    },
+    {
+      "time_s": 6.842996571911499,
+      "conservative_gap": {
+        "gap_m": 0.10188917545262645,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7924747750691796
+    },
+    {
+      "time_s": 6.893979812972248,
+      "conservative_gap": {
+        "gap_m": 0.10340176352675892,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7923759615758528
+    },
+    {
+      "time_s": 6.9449188217986375,
+      "conservative_gap": {
+        "gap_m": 0.1032665339671843,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7915354547740822
+    },
+    {
+      "time_s": 6.995700413826853,
+      "conservative_gap": {
+        "gap_m": 0.10215110104931584,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7885501863302748
+    },
+    {
+      "time_s": 7.046932224882767,
+      "conservative_gap": {
+        "gap_m": 0.1005988255257078,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7798768744441813
+    },
+    {
+      "time_s": 7.097407024819404,
+      "conservative_gap": {
+        "gap_m": 0.10039670082437885,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7783645673899113
+    },
+    {
+      "time_s": 7.148422593949363,
+      "conservative_gap": {
+        "gap_m": 0.10033616672281825,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7784234692855381
+    },
+    {
+      "time_s": 7.199111119844019,
+      "conservative_gap": {
+        "gap_m": 0.09986464368215046,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7784972167295193
+    },
+    {
+      "time_s": 7.249919421970844,
+      "conservative_gap": {
+        "gap_m": 0.09918099958479033,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7785662553293827
+    },
+    {
+      "time_s": 7.3009057028684765,
+      "conservative_gap": {
+        "gap_m": 0.09853409180402849,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7804308971692218
+    },
+    {
+      "time_s": 7.352349146967754,
+      "conservative_gap": {
+        "gap_m": 0.09816541961187843,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7810444016949507
+    },
+    {
+      "time_s": 7.402482438832521,
+      "conservative_gap": {
+        "gap_m": 0.0985094927305338,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7856780809452584
+    },
+    {
+      "time_s": 7.453135760966688,
+      "conservative_gap": {
+        "gap_m": 0.09988747237212295,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7926114932219692
+    },
+    {
+      "time_s": 7.503701964858919,
+      "conservative_gap": {
+        "gap_m": 0.10102378805204885,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7982765968354602
+    },
+    {
+      "time_s": 7.554866467835382,
+      "conservative_gap": {
+        "gap_m": 0.100880212251113,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7986126699944884
+    },
+    {
+      "time_s": 7.6062221569009125,
+      "conservative_gap": {
+        "gap_m": 0.10078228639976874,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7987825954117469
+    },
+    {
+      "time_s": 7.656540534924716,
+      "conservative_gap": {
+        "gap_m": 0.10024544512058157,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7988833620593316
+    },
+    {
+      "time_s": 7.706980702932924,
+      "conservative_gap": {
+        "gap_m": 0.09969339740461372,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7988881274915971
+    },
+    {
+      "time_s": 7.757909437874332,
+      "conservative_gap": {
+        "gap_m": 0.09930432818576569,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.798909322770725
+    },
+    {
+      "time_s": 7.808395569911227,
+      "conservative_gap": {
+        "gap_m": 0.09894355562889008,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7974230239495145
+    },
+    {
+      "time_s": 7.862040825886652,
+      "conservative_gap": {
+        "gap_m": 0.09851918836889878,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7924683239108605
+    },
+    {
+      "time_s": 7.916378162801266,
+      "conservative_gap": {
+        "gap_m": 0.09785056896656592,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7892521498274514
+    },
+    {
+      "time_s": 7.9673187548760325,
+      "conservative_gap": {
+        "gap_m": 0.09703418267444973,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7882347643787349
+    },
+    {
+      "time_s": 8.018588218837976,
+      "conservative_gap": {
+        "gap_m": 0.0963253011915324,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7860154932443475
+    },
+    {
+      "time_s": 8.069065421819687,
+      "conservative_gap": {
+        "gap_m": 0.09498290946479944,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7806868950754073
+    },
+    {
+      "time_s": 8.120297404006124,
+      "conservative_gap": {
+        "gap_m": 0.09391224616739871,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.778667308572806
+    },
+    {
+      "time_s": 8.171136228833348,
+      "conservative_gap": {
+        "gap_m": 0.09269939319151066,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7748178654190159
+    },
+    {
+      "time_s": 8.223368807928637,
+      "conservative_gap": {
+        "gap_m": 0.09143736944290437,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7684853206650522
+    },
+    {
+      "time_s": 8.279937665909529,
+      "conservative_gap": {
+        "gap_m": 0.0905940689582286,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7636656432187375
+    },
+    {
+      "time_s": 8.329944458790123,
+      "conservative_gap": {
+        "gap_m": 0.09020516210989701,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7599029959459885
+    },
+    {
+      "time_s": 8.38369996799156,
+      "conservative_gap": {
+        "gap_m": 0.09041348788706284,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7578219322386948
+    },
+    {
+      "time_s": 8.437318710843101,
+      "conservative_gap": {
+        "gap_m": 0.09118648609216111,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7550276440001332
+    },
+    {
+      "time_s": 8.488529730821028,
+      "conservative_gap": {
+        "gap_m": 0.09197549788821793,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7536958178734182
+    },
+    {
+      "time_s": 8.539811126887798,
+      "conservative_gap": {
+        "gap_m": 0.09255789876489115,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7546066030475083
+    },
+    {
+      "time_s": 8.590211368864402,
+      "conservative_gap": {
+        "gap_m": 0.09329289846003633,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7559849316276047
+    },
+    {
+      "time_s": 8.64100562594831,
+      "conservative_gap": {
+        "gap_m": 0.09334440859981609,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7557090592687339
+    },
+    {
+      "time_s": 8.691640086006373,
+      "conservative_gap": {
+        "gap_m": 0.09317106465472288,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7548563575841404
+    },
+    {
+      "time_s": 8.742957433918491,
+      "conservative_gap": {
+        "gap_m": 0.09299879702465713,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7536713223639608
+    },
+    {
+      "time_s": 8.793813436990604,
+      "conservative_gap": {
+        "gap_m": 0.09283861147632362,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7524393227722896
+    },
+    {
+      "time_s": 8.844921133015305,
+      "conservative_gap": {
+        "gap_m": 0.09237689195851062,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.750252842144668
+    },
+    {
+      "time_s": 8.89541309280321,
+      "conservative_gap": {
+        "gap_m": 0.09189809907740167,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7475868416873953
+    },
+    {
+      "time_s": 8.94654990080744,
+      "conservative_gap": {
+        "gap_m": 0.09161116188060499,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7457014936841162
+    },
+    {
+      "time_s": 8.997019314905629,
+      "conservative_gap": {
+        "gap_m": 0.09150453816115864,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7443588830534045
+    },
+    {
+      "time_s": 9.047886491985992,
+      "conservative_gap": {
+        "gap_m": 0.09149623429950413,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7431464704560703
+    },
+    {
+      "time_s": 9.098592808004469,
+      "conservative_gap": {
+        "gap_m": 0.0914987544216245,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.742103414353753
+    },
+    {
+      "time_s": 9.149745240807533,
+      "conservative_gap": {
+        "gap_m": 0.09083461695024658,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7332946691041675
+    },
+    {
+      "time_s": 9.200453309807926,
+      "conservative_gap": {
+        "gap_m": 0.09046003970193632,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7285309332934947
+    },
+    {
+      "time_s": 9.251216750824824,
+      "conservative_gap": {
+        "gap_m": 0.09046989350413644,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.728146218188241
+    },
+    {
+      "time_s": 9.302116356790066,
+      "conservative_gap": {
+        "gap_m": 0.09059413322963367,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7279852679511074
+    },
+    {
+      "time_s": 9.353030511876568,
+      "conservative_gap": {
+        "gap_m": 0.09064626405278937,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7278378921613817
+    },
+    {
+      "time_s": 9.40408765990287,
+      "conservative_gap": {
+        "gap_m": 0.09068082391152679,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7276591853181258
+    },
+    {
+      "time_s": 9.45492675784044,
+      "conservative_gap": {
+        "gap_m": 0.09077884862549812,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7273929017853096
+    },
+    {
+      "time_s": 9.505674848798662,
+      "conservative_gap": {
+        "gap_m": 0.09087441663358045,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7271752133048728
+    },
+    {
+      "time_s": 9.556256093783304,
+      "conservative_gap": {
+        "gap_m": 0.0909343338917437,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7270458445203994
+    },
+    {
+      "time_s": 9.60690919496119,
+      "conservative_gap": {
+        "gap_m": 0.0908306878724859,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7269192321256326
+    },
+    {
+      "time_s": 9.657638002885506,
+      "conservative_gap": {
+        "gap_m": 0.09073832414467589,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7268090627121936
+    },
+    {
+      "time_s": 9.708633833797649,
+      "conservative_gap": {
+        "gap_m": 0.09076715631648469,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7267059912884963
+    },
+    {
+      "time_s": 9.75942914490588,
+      "conservative_gap": {
+        "gap_m": 0.09071008513029101,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.726743859268836
+    },
+    {
+      "time_s": 9.81029658881016,
+      "conservative_gap": {
+        "gap_m": 0.09096590624760345,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7270392529113409
+    },
+    {
+      "time_s": 9.861326085869223,
+      "conservative_gap": {
+        "gap_m": 0.09178963450708941,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.727242933166603
+    },
+    {
+      "time_s": 9.912226369837299,
+      "conservative_gap": {
+        "gap_m": 0.09265389017246503,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7272227032782873
+    },
+    {
+      "time_s": 9.962581340922043,
+      "conservative_gap": {
+        "gap_m": 0.09305257461115476,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7252890343776471
+    },
+    {
+      "time_s": 10.013714619912207,
+      "conservative_gap": {
+        "gap_m": 0.09289342074971693,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7226518399390162
+    },
+    {
+      "time_s": 10.064238216960803,
+      "conservative_gap": {
+        "gap_m": 0.09243267320139731,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.718642258474978
+    },
+    {
+      "time_s": 10.114854743005708,
+      "conservative_gap": {
+        "gap_m": 0.09170259368238147,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7168124211285901
+    },
+    {
+      "time_s": 10.165857116924599,
+      "conservative_gap": {
+        "gap_m": 0.09088870562715391,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7158035877990341
+    },
+    {
+      "time_s": 10.21661880495958,
+      "conservative_gap": {
+        "gap_m": 0.08950049186154282,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.711295122507572
+    },
+    {
+      "time_s": 10.267970287939534,
+      "conservative_gap": {
+        "gap_m": 0.0877205969421447,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7056271724133324
+    },
+    {
+      "time_s": 10.31838494585827,
+      "conservative_gap": {
+        "gap_m": 0.08684072663091591,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.704639374671689
+    },
+    {
+      "time_s": 10.369646096834913,
+      "conservative_gap": {
+        "gap_m": 0.08616965952199918,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7036260206467739
+    },
+    {
+      "time_s": 10.420155384810641,
+      "conservative_gap": {
+        "gap_m": 0.08463303308205707,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6968259221977271
+    },
+    {
+      "time_s": 10.470916120801121,
+      "conservative_gap": {
+        "gap_m": 0.0830423270361318,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6914486495667226
+    },
+    {
+      "time_s": 10.521787839010358,
+      "conservative_gap": {
+        "gap_m": 0.08287017007136739,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.691429468507794
+    },
+    {
+      "time_s": 10.57256310293451,
+      "conservative_gap": {
+        "gap_m": 0.08379272242257638,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6915298920094453
+    },
+    {
+      "time_s": 10.623573154909536,
+      "conservative_gap": {
+        "gap_m": 0.08504719518414501,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6915526391097288
+    },
+    {
+      "time_s": 10.675125651992857,
+      "conservative_gap": {
+        "gap_m": 0.08616545551163163,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6915826426646525
+    },
+    {
+      "time_s": 10.7256220059935,
+      "conservative_gap": {
+        "gap_m": 0.08695629814541439,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6916492881907086
+    },
+    {
+      "time_s": 10.776222597807646,
+      "conservative_gap": {
+        "gap_m": 0.08744514185998996,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6916411661400976
+    },
+    {
+      "time_s": 10.826929201837629,
+      "conservative_gap": {
+        "gap_m": 0.0877027097704524,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6915865147579667
+    },
+    {
+      "time_s": 10.877904701977968,
+      "conservative_gap": {
+        "gap_m": 0.08777989447748104,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6915747739403506
+    },
+    {
+      "time_s": 10.928595362929627,
+      "conservative_gap": {
+        "gap_m": 0.08774438512387123,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6916173047208536
+    },
+    {
+      "time_s": 10.980483061866835,
+      "conservative_gap": {
+        "gap_m": 0.08745760910468169,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6916852034433947
+    },
+    {
+      "time_s": 11.035594095941633,
+      "conservative_gap": {
+        "gap_m": 0.08673737010265231,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6917617121139596
+    },
+    {
+      "time_s": 11.087035039905459,
+      "conservative_gap": {
+        "gap_m": 0.08622781293517745,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6918586149776245
+    },
+    {
+      "time_s": 11.137321488000453,
+      "conservative_gap": {
+        "gap_m": 0.0859839441006577,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6919992008599041
+    },
+    {
+      "time_s": 11.187463994836435,
+      "conservative_gap": {
+        "gap_m": 0.08582100492633711,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6921182471190213
+    },
+    {
+      "time_s": 11.239920679014176,
+      "conservative_gap": {
+        "gap_m": 0.08548923981914235,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6922255161244181
+    },
+    {
+      "time_s": 11.291320902993903,
+      "conservative_gap": {
+        "gap_m": 0.08483310597653942,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6921762385136053
+    },
+    {
+      "time_s": 11.341926818946376,
+      "conservative_gap": {
+        "gap_m": 0.08421004081440324,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6921212780087078
+    },
+    {
+      "time_s": 11.39294421300292,
+      "conservative_gap": {
+        "gap_m": 0.0840768158874944,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6921370993762133
+    },
+    {
+      "time_s": 11.443671075860038,
+      "conservative_gap": {
+        "gap_m": 0.0842764820958384,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6921781997038223
+    },
+    {
+      "time_s": 11.494209886994213,
+      "conservative_gap": {
+        "gap_m": 0.08465537610405528,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.692273680584419
+    },
+    {
+      "time_s": 11.5449338699691,
+      "conservative_gap": {
+        "gap_m": 0.08519325311727845,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6924255254969232
+    },
+    {
+      "time_s": 11.595562846865505,
+      "conservative_gap": {
+        "gap_m": 0.08582804229141995,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6926095084483879
+    },
+    {
+      "time_s": 11.646900002844632,
+      "conservative_gap": {
+        "gap_m": 0.08637449697632797,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6924566842781
+    },
+    {
+      "time_s": 11.697499859845266,
+      "conservative_gap": {
+        "gap_m": 0.08635128168454485,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6923879427997941
+    },
+    {
+      "time_s": 11.748544077854604,
+      "conservative_gap": {
+        "gap_m": 0.08599478270578546,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.692458377744283
+    },
+    {
+      "time_s": 11.798933757003397,
+      "conservative_gap": {
+        "gap_m": 0.08557502659048244,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6925828245017567
+    },
+    {
+      "time_s": 11.849753509974107,
+      "conservative_gap": {
+        "gap_m": 0.0851800980453931,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6927242007596808
+    },
+    {
+      "time_s": 11.900307385949418,
+      "conservative_gap": {
+        "gap_m": 0.08463986610841284,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6925634728842189
+    },
+    {
+      "time_s": 11.951331908814609,
+      "conservative_gap": {
+        "gap_m": 0.08363305676932012,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6923343118243356
+    },
+    {
+      "time_s": 12.002108827000484,
+      "conservative_gap": {
+        "gap_m": 0.0825818262719402,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6921519396272451
+    },
+    {
+      "time_s": 12.052556428825483,
+      "conservative_gap": {
+        "gap_m": 0.0813871032533832,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6917790570284021
+    },
+    {
+      "time_s": 12.103284625802189,
+      "conservative_gap": {
+        "gap_m": 0.079882217856402,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6906174543296626
+    },
+    {
+      "time_s": 12.154069051845,
+      "conservative_gap": {
+        "gap_m": 0.0785068328124643,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6902506569757867
+    },
+    {
+      "time_s": 12.204939362825826,
+      "conservative_gap": {
+        "gap_m": 0.07745264116844362,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6900283935906975
+    },
+    {
+      "time_s": 12.255519625963643,
+      "conservative_gap": {
+        "gap_m": 0.07682417948254883,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.689836967079424
+    },
+    {
+      "time_s": 12.306506981840357,
+      "conservative_gap": {
+        "gap_m": 0.07680436598591724,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.689740155523276
+    },
+    {
+      "time_s": 12.357253407826647,
+      "conservative_gap": {
+        "gap_m": 0.07703561042878262,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6896814332528226
+    },
+    {
+      "time_s": 12.40825287392363,
+      "conservative_gap": {
+        "gap_m": 0.0773744014085481,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6896137425629256
+    },
+    {
+      "time_s": 12.458885810803622,
+      "conservative_gap": {
+        "gap_m": 0.07778276642388886,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6895630312621559
+    },
+    {
+      "time_s": 12.509604963939637,
+      "conservative_gap": {
+        "gap_m": 0.07875760557948648,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6896916073035748
+    },
+    {
+      "time_s": 12.56037331582047,
+      "conservative_gap": {
+        "gap_m": 0.08023387314348163,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.689813605374
+    },
+    {
+      "time_s": 12.611407914897427,
+      "conservative_gap": {
+        "gap_m": 0.0816144445849076,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6899168763150487
+    },
+    {
+      "time_s": 12.663878556806594,
+      "conservative_gap": {
+        "gap_m": 0.08254937071833239,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6899732876210868
+    },
+    {
+      "time_s": 12.71892837388441,
+      "conservative_gap": {
+        "gap_m": 0.08288594377532892,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6898852778137232
+    },
+    {
+      "time_s": 12.769475794862956,
+      "conservative_gap": {
+        "gap_m": 0.08284881955520816,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6896710116853205
+    },
+    {
+      "time_s": 12.820303782820702,
+      "conservative_gap": {
+        "gap_m": 0.08264315664573631,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6899287149685763
+    },
+    {
+      "time_s": 12.871543862856925,
+      "conservative_gap": {
+        "gap_m": 0.08265596062288272,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6901070912575538
+    },
+    {
+      "time_s": 12.922262985957786,
+      "conservative_gap": {
+        "gap_m": 0.08299252383364142,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6901678385229022
+    },
+    {
+      "time_s": 12.972893199883401,
+      "conservative_gap": {
+        "gap_m": 0.08246292772633948,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6894695025451806
+    },
+    {
+      "time_s": 13.023835417814553,
+      "conservative_gap": {
+        "gap_m": 0.08063458919679457,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6902996422615719
+    },
+    {
+      "time_s": 13.074310574913397,
+      "conservative_gap": {
+        "gap_m": 0.07875559112599415,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6925739644325459
+    },
+    {
+      "time_s": 13.125782856950536,
+      "conservative_gap": {
+        "gap_m": 0.07813004402346818,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6960760570815958
+    },
+    {
+      "time_s": 13.176375783979893,
+      "conservative_gap": {
+        "gap_m": 0.07922470451139892,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7019626412927884
+    },
+    {
+      "time_s": 13.228289742954075,
+      "conservative_gap": {
+        "gap_m": 0.08105847318785822,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7064008593653901
+    },
+    {
+      "time_s": 13.2832938618958,
+      "conservative_gap": {
+        "gap_m": 0.08303832844383925,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7089470311006854
+    },
+    {
+      "time_s": 13.33422013092786,
+      "conservative_gap": {
+        "gap_m": 0.08436040826223475,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7106307548435868
+    },
+    {
+      "time_s": 13.384833403863013,
+      "conservative_gap": {
+        "gap_m": 0.08526682187702064,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7108276757453345
+    },
+    {
+      "time_s": 13.435556669952348,
+      "conservative_gap": {
+        "gap_m": 0.08588221087617683,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7095346466673014
+    },
+    {
+      "time_s": 13.486250882968307,
+      "conservative_gap": {
+        "gap_m": 0.08625912288740696,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7073881202962358
+    },
+    {
+      "time_s": 13.536860389867797,
+      "conservative_gap": {
+        "gap_m": 0.08665336030356062,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7072055837258445
+    },
+    {
+      "time_s": 13.587720966897905,
+      "conservative_gap": {
+        "gap_m": 0.08658257152579565,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7069641944251948
+    },
+    {
+      "time_s": 13.638387286802754,
+      "conservative_gap": {
+        "gap_m": 0.08559032097153407,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7065129583184454
+    },
+    {
+      "time_s": 13.689455137820914,
+      "conservative_gap": {
+        "gap_m": 0.08450015585088513,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7063205624736832
+    },
+    {
+      "time_s": 13.74006716790609,
+      "conservative_gap": {
+        "gap_m": 0.08356099860548051,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7061417171912268
+    },
+    {
+      "time_s": 13.790973045863211,
+      "conservative_gap": {
+        "gap_m": 0.08262683090113564,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7059353951703966
+    },
+    {
+      "time_s": 13.841525092953816,
+      "conservative_gap": {
+        "gap_m": 0.08171169356403855,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7053142642584065
+    },
+    {
+      "time_s": 13.892582305939868,
+      "conservative_gap": {
+        "gap_m": 0.08085921523875413,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7043166340801812
+    },
+    {
+      "time_s": 13.943147264886647,
+      "conservative_gap": {
+        "gap_m": 0.08040117824779333,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7036720294012423
+    },
+    {
+      "time_s": 13.993829269893467,
+      "conservative_gap": {
+        "gap_m": 0.08013820990859108,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7034694469913438
+    },
+    {
+      "time_s": 14.04503231192939,
+      "conservative_gap": {
+        "gap_m": 0.07977395880676835,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7032194743378746
+    },
+    {
+      "time_s": 14.095648400951177,
+      "conservative_gap": {
+        "gap_m": 0.0796358911937131,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7029385484319659
+    },
+    {
+      "time_s": 14.146917545003816,
+      "conservative_gap": {
+        "gap_m": 0.07957989635775302,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.702749117671361
+    },
+    {
+      "time_s": 14.196958753978834,
+      "conservative_gap": {
+        "gap_m": 0.07910193441833552,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7025162358760659
+    },
+    {
+      "time_s": 14.247734349919483,
+      "conservative_gap": {
+        "gap_m": 0.07890189048676066,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7022546898715509
+    },
+    {
+      "time_s": 14.29863345483318,
+      "conservative_gap": {
+        "gap_m": 0.07887467631245856,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.702112623588321
+    },
+    {
+      "time_s": 14.349699183832854,
+      "conservative_gap": {
+        "gap_m": 0.07818581312459659,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7019191539988408
+    },
+    {
+      "time_s": 14.401156856911257,
+      "conservative_gap": {
+        "gap_m": 0.0775904914111786,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7016754161583788
+    },
+    {
+      "time_s": 14.457987733883783,
+      "conservative_gap": {
+        "gap_m": 0.07767792470282071,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7016007322942552
+    },
+    {
+      "time_s": 14.509968591853976,
+      "conservative_gap": {
+        "gap_m": 0.07769508037298965,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7015141151475914
+    },
+    {
+      "time_s": 14.560379115864635,
+      "conservative_gap": {
+        "gap_m": 0.07695888482478995,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7013426931183905
+    },
+    {
+      "time_s": 14.611384870950133,
+      "conservative_gap": {
+        "gap_m": 0.07668259433096841,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7012000998283019
+    },
+    {
+      "time_s": 14.662351514911279,
+      "conservative_gap": {
+        "gap_m": 0.076984762825848,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7012212720060274
+    },
+    {
+      "time_s": 14.712909997906536,
+      "conservative_gap": {
+        "gap_m": 0.07694913010132175,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7011614442280638
+    },
+    {
+      "time_s": 14.763426635880023,
+      "conservative_gap": {
+        "gap_m": 0.07651182831007784,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7009664236407358
+    },
+    {
+      "time_s": 14.814277444966137,
+      "conservative_gap": {
+        "gap_m": 0.07626740113918927,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7008453644503967
+    },
+    {
+      "time_s": 14.86459649191238,
+      "conservative_gap": {
+        "gap_m": 0.07621677729458133,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7008273322444689
+    },
+    {
+      "time_s": 14.915498602902517,
+      "conservative_gap": {
+        "gap_m": 0.07614385934023404,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7008280755604002
+    },
+    {
+      "time_s": 14.96611315291375,
+      "conservative_gap": {
+        "gap_m": 0.07635891155230322,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7008512994338075
+    },
+    {
+      "time_s": 15.016867680009454,
+      "conservative_gap": {
+        "gap_m": 0.07676181314751747,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7009344808899431
+    },
+    {
+      "time_s": 15.067507949890569,
+      "conservative_gap": {
+        "gap_m": 0.07683148177292923,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7011097838773286
+    },
+    {
+      "time_s": 15.118329624878243,
+      "conservative_gap": {
+        "gap_m": 0.07700419189277226,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7011260528741616
+    },
+    {
+      "time_s": 15.169026381801814,
+      "conservative_gap": {
+        "gap_m": 0.07691465677316156,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7010486228785564
+    },
+    {
+      "time_s": 15.219810770824552,
+      "conservative_gap": {
+        "gap_m": 0.07631057414748099,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7014355929429236
+    },
+    {
+      "time_s": 15.270234768977389,
+      "conservative_gap": {
+        "gap_m": 0.07549682902697231,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7043387648970334
+    },
+    {
+      "time_s": 15.321333813946694,
+      "conservative_gap": {
+        "gap_m": 0.0744170350089665,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7052001579673657
+    },
+    {
+      "time_s": 15.371748144971207,
+      "conservative_gap": {
+        "gap_m": 0.07266103100067084,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7045644714297572
+    },
+    {
+      "time_s": 15.422484253998846,
+      "conservative_gap": {
+        "gap_m": 0.07032452652423123,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.7037090750694078
+    },
+    {
+      "time_s": 15.473423545947298,
+      "conservative_gap": {
+        "gap_m": 0.0667334506400426,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6993431551368523
+    },
+    {
+      "time_s": 15.52428634883836,
+      "conservative_gap": {
+        "gap_m": 0.06366019992901846,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6959697553017049
+    },
+    {
+      "time_s": 15.574943949934095,
+      "conservative_gap": {
+        "gap_m": 0.06180251660191834,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6945336595483165
+    },
+    {
+      "time_s": 15.625417732866481,
+      "conservative_gap": {
+        "gap_m": 0.06088620137504316,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6939095357234792
+    },
+    {
+      "time_s": 15.676134747918695,
+      "conservative_gap": {
+        "gap_m": 0.06037773251117672,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6935886874601849
+    },
+    {
+      "time_s": 15.726864648982882,
+      "conservative_gap": {
+        "gap_m": 0.06024662954538789,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6935996553698645
+    },
+    {
+      "time_s": 15.777513921959326,
+      "conservative_gap": {
+        "gap_m": 0.060521047850995074,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6938315239277113
+    },
+    {
+      "time_s": 15.828265101881698,
+      "conservative_gap": {
+        "gap_m": 0.0616405525196736,
+        "actor": "right_hand_middle_0_link",
+        "obstacle": "desk_top"
+      },
+      "simulated_contacts": [],
+      "right_arm_max_error_rad": 0.6976620971304008
+    }
+  ],
+  "last_pre_terminal_0p5_s_max_right_arm_error_rad": 0.7012212720060274,
+  "acceptance_passed": false,
+  "production_motion_implementation": true,
+  "artifact_motion_wrapper": false,
+  "entry_pose": "Default standing, not an actual post-handover pose",
+  "full_vla_cycle_tested": false,
+  "continuous_swept_clearance_certified": false
+}
