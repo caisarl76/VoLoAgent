@@ -225,6 +225,9 @@ class HandoverRunner(HarnessRunner):
             )
         # Offline vision-only monitors cannot relax live offer confirmation.
         self.monitor.require_hand_state = True
+        # Each session numbers cycles from 1. A check left running by an interrupted
+        # session finishes before the reset, within its VLM deadline, and before claiming.
+        self.monitor.start_session(2 * self.profile.limits.monitor_deadline_s)
         return self._run_session(
             [SkillCall(h.skill_id, {})], lambda _: self._cycles(max_cycles)
         )
