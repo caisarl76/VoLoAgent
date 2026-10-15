@@ -103,7 +103,7 @@ def test_example_is_disabled_and_separate_from_placement():
 def test_handover_desk_pose_is_optional_and_paired(tmp_path):
     assert load_profile(handover_profile(tmp_path)).handover.desk_top_above_pelvis_m is None
     example = load_profile(ROOT / "configs/g1/handover.example.yaml").handover
-    assert (example.desk_top_above_pelvis_m, example.desk_front_from_pelvis_m) == (0.063, 0.40)
+    assert (example.desk_top_above_pelvis_m, example.desk_front_from_pelvis_m) == (0.063, 0.15)
 
 
 @pytest.mark.parametrize(
