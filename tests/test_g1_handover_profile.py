@@ -101,19 +101,20 @@ def test_example_is_disabled_and_separate_from_placement():
 
 
 def test_handover_desk_pose_is_optional_and_paired(tmp_path):
-    assert load_profile(handover_profile(tmp_path)).handover.desk_top_above_pelvis_m is None
+    assert load_profile(handover_profile(tmp_path)).handover.desk_top_above_floor_m is None
     example = load_profile(ROOT / "configs/g1/handover.example.yaml").handover
-    assert (example.desk_top_above_pelvis_m, example.desk_front_from_pelvis_m) == (0.063, 0.15)
+    assert (example.desk_top_above_floor_m, example.desk_front_from_pelvis_m) == (0.85, 0.15)
 
 
 @pytest.mark.parametrize(
     "desk",
     [
-        {"desk_top_above_pelvis_m": 0.063},
+        {"desk_top_above_floor_m": 0.85},
         {"desk_front_from_pelvis_m": 0.40},
-        {"desk_top_above_pelvis_m": float("nan"), "desk_front_from_pelvis_m": 0.40},
-        {"desk_top_above_pelvis_m": True, "desk_front_from_pelvis_m": 0.40},
-        {"desk_top_above_pelvis_m": 0.063, "desk_front_from_pelvis_m": -0.1},
+        {"desk_top_above_floor_m": float("nan"), "desk_front_from_pelvis_m": 0.40},
+        {"desk_top_above_floor_m": True, "desk_front_from_pelvis_m": 0.40},
+        {"desk_top_above_floor_m": 0.85, "desk_front_from_pelvis_m": -0.1},
+        {"desk_top_above_floor_m": 0.063, "desk_front_from_pelvis_m": 0.40},
     ],
 )
 def test_handover_rejects_partial_or_invalid_desk_pose(tmp_path, desk):
