@@ -129,7 +129,8 @@ deployment model.
    pose's yaw load is only 0.019 rad. Lowest risk; needs a pose review.
 2. **Real-robot feedforward.** Send yaw gravity torque through `tau` on
    hardware. This changes the torque model SONIC was trained with and is
-   unvalidated on hardware.
+   unvalidated on hardware. (Tried in simulation, opt-in: 5/5 from grounded
+   standing; see [yaw feedforward](../g1_handover_20261015_yaw_feedforward/README.md).)
 3. **Lead-bound semantics.** Allow a larger lead on gravity-loaded joints.
    This changes an existing acceptance limit.
 

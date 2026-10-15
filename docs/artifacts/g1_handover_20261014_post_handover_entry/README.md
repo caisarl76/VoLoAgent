@@ -141,7 +141,8 @@ FK lower bounds for the direct path, against the 3 cm margin:
   gaps were 52–61 mm against a 41–52 mm bound.
 - **Low starts:** the raise from grounded standing still stalls (right-yaw
   gravity load and left-arm drift). That matters only if a real return starts
-  with the hand below the desk.
+  with the hand below the desk. Follow-up: opt-in yaw gravity feedforward via
+  `tau` completed it 5/5 in simulation ([yaw feedforward](../g1_handover_20261015_yaw_feedforward/README.md)).
 - **Entries tested:** only the two recorded entries ran. Real post-handover
   poses come from VLA rollouts, so the full connected VLA cycle, swept or
   person clearance and supervised hardware acceptance remain untested.
