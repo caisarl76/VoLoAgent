@@ -30,6 +30,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--desk-front-m',type=float,default=0.40)
+    parser.add_argument('--desk-height-m',type=float,default=0.85)
     parser.add_argument('--gpu',type=int,default=0)
     args=parser.parse_args()
     gpu_check=subprocess.run(['nvidia-smi','--id',str(args.gpu),
@@ -51,8 +52,8 @@ def main():
             pass
     output.mkdir(parents=True,exist_ok=False)
     # The geometry builder needs MuJoCo; use the existing simulation environment.
-    scene_code='from scene import build_scene; import sys; build_scene(sys.argv[1],desk_front_m=float(sys.argv[2]))'
-    subprocess.run([str(ORIGIN/'.venv_sim/bin/python'),'-c',scene_code,str(output/'scene.xml'),str(args.desk_front_m)],
+    scene_code='from scene import build_scene; import sys; build_scene(sys.argv[1],desk_front_m=float(sys.argv[2]),desk_height_m=float(sys.argv[3]))'
+    subprocess.run([str(ORIGIN/'.venv_sim/bin/python'),'-c',scene_code,str(output/'scene.xml'),str(args.desk_front_m),str(args.desk_height_m)],
         cwd=ROOT,check=True)
     template=PROFILE_TEMPLATE
     data=yaml.safe_load(template.read_text())
@@ -65,7 +66,7 @@ def main():
     profile=load_profile(path)
     endpoint='ipc:///tmp/g1-handover-ready-'+uuid.uuid4().hex+'.sock'
     result=dict(completed=False,robot_connection=False,native_main_loop=True,
-        policy_inference_used_for_motion=False,scripted_prewarm_only=True,desk_front_m=args.desk_front_m,
+        policy_inference_used_for_motion=False,scripted_prewarm_only=True,desk_front_m=args.desk_front_m,desk_height_m=args.desk_height_m,
         hardware_profile_changed=False,hardware_acceptance=False,scene_calibrated=False,
         native_commit='44f9bba',endpoint=endpoint)
     result['readiness_gates_fixture_only']=True
