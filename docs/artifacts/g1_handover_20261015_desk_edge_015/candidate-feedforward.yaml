@@ -1,0 +1,48 @@
+# Copy of configs/g1/handover.example.yaml (measured 0.15 m edge) plus the yaw feedforward; review flags unchanged.
+# Disabled template. Verify a handover checkpoint and ready-return clearance first.
+schema_version: 1
+policy_host: 127.0.0.1
+policy_port: 15558
+checkpoint: /UNCONFIGURED/handover/checkpoint
+embodiment: unitree_g1_sonic
+camera_key: ego_view
+action_horizon: 40
+publish_rate: 50
+limits: {}
+skills:
+  bottle_handover:
+    # Exact prompt from the audited 20,000-step H100 baseline.
+    prompt: pick drink bottle from the table and handover
+    completion_criteria: Bottle lifted from desk and stably supported on level upward-facing open right palm; no rolling, falling or human rescue.
+    completion_action: hold
+handover:
+  skill_id: bottle_handover
+  checkpoint_verified: false
+  ready_pose_reviewed: false
+  # Desk pose in the pelvis frame. Measured 15 Oct 2026: desk top 84-85 cm from
+  # the floor, near edge 15-20 cm in front of the pelvis center; the conservative
+  # ends are used. Pelvis height is still the simulator's 0.787 m standing value;
+  # check it on the robot. When the direct return keeps >=3 cm from this desk the
+  # raise is skipped.
+  desk_top_above_pelvis_m: 0.063
+  desk_front_from_pelvis_m: 0.15
+  # Simulation trial only: right-shoulder-yaw gravity feedforward via tau.
+  ready_gravity_feedforward: true
+  # Simulation candidate from episode 30 frame 60; real swept path unqualified.
+  raised_right_arm_joints:
+    right_shoulder_pitch_joint: 0.01119326613843441
+    right_shoulder_roll_joint: -0.681782603263855
+    right_shoulder_yaw_joint: -0.5984442830085754
+    right_elbow_joint: 0.16412396728992462
+    right_wrist_roll_joint: 1.085878610610962
+    right_wrist_pitch_joint: -0.15723302960395813
+    right_wrist_yaw_joint: -0.48973536491394043
+  # Candidate measured from episode 15 frames [415,432); path not yet reviewed.
+  ready_right_arm_joints:
+    right_shoulder_pitch_joint: -0.10413093119859695
+    right_shoulder_roll_joint: -0.08507601171731949
+    right_shoulder_yaw_joint: 0.30275747179985046
+    right_elbow_joint: -0.21820877492427826
+    right_wrist_roll_joint: 1.70130455493927
+    right_wrist_pitch_joint: -0.09610150009393692
+    right_wrist_yaw_joint: -0.07287607342004776

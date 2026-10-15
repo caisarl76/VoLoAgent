@@ -1,0 +1,14 @@
+{
+  "execution": {
+    "runtime_id": "c1b891ef8c6e47b79222e5dc7a5f3ca9",
+    "execution_id": "6c0bea6bed6c488aa5070e8accdb5754",
+    "skill_id": "reset_ready",
+    "phase": "RESETTING",
+    "inference_epoch": 2,
+    "started_at": 1223961.288017686,
+    "reason": null
+  },
+  "phase": "INTERRUPTED",
+  "reason": "reset_timeout",
+  "duration_s": 15.081280356971547
+}
