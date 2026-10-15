@@ -16,10 +16,12 @@ def vector(values):
     return ' '.join(str(float(v)) for v in values)
 
 
-def build_scene(output, *, desk_front_m=0.40):
+def build_scene(output, *, desk_front_m=0.40, desk_height_m=0.85):
     output = Path(output)
     if not np.isfinite(desk_front_m) or desk_front_m <= 0:
         raise ValueError('Desk front distance must be positive and finite')
+    if not np.isfinite(desk_height_m) or not 0.5 <= desk_height_m <= 1.2:
+        raise ValueError('Desk height must be finite, 0.5-1.2 m')
     root = ET.parse(SOURCE_SCENE).getroot()
     include = root.find('include')
     source_robot = SOURCE_SCENE.parent/include.attrib['file']
@@ -32,7 +34,7 @@ def build_scene(output, *, desk_front_m=0.40):
         root.insert(0, node)
     root.set('model', 'g1_provisional_handover_85cm')
     world = root.find('worldbody')
-    width, depth, height, thickness = 1.20, 0.50, 0.85, 0.05
+    width, depth, height, thickness = 1.20, 0.50, desk_height_m, 0.05
     center_x = desk_front_m+depth/2
     ET.SubElement(world, 'geom', name='desk_top', type='box',
         pos=vector([center_x,0,height-thickness/2]),
