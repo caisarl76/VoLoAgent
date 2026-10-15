@@ -238,3 +238,53 @@ def test_bad_cycle_limit_rejected(tmp_path, cycles):
     with pytest.raises(ValueError):
         r.run_autopilot(cycles)
     assert not e.calls
+
+
+def test_reused_runner_starts_each_session_at_cycle_one(tmp_path):
+    r, e, m = build(tmp_path)
+    first = r.run_autopilot(2)
+    second = r.run_autopilot(1)
+    assert (first.outcome, second.outcome) == ("completed", "completed"), second.reason
+    assert e.calls.count("claim_control") == e.calls.count("release_control") == 2
+    assert m.cycle_id == 1
+
+
+def test_restart_waits_out_and_ignores_previous_session_monitor_worker(tmp_path):
+    # Session 1 is interrupted while its VLM check is still running. That late check
+    # reports a failure; session 2 must wait for it, then start clean.
+    release, finished, calls = threading.Event(), [], []
+
+    def vision(*_):
+        calls.append(None)
+        if len(calls) == 1:
+            release.wait(5)
+            finished.append(time.monotonic())
+            return reply("failure", "late result from the previous session")
+        return reply("yes")
+
+    r, e, m = build(tmp_path, vlm=vision)
+    threading.Timer(0.1, lambda: setattr(e, "camera_age", 0.6)).start()
+    first = r.run_autopilot(1)
+    assert first.outcome == "interrupted" and not finished
+    e.camera_age = 0.0
+    claimed = []
+    original = e.client
+
+    def client():
+        c = original()
+        request = c.request
+
+        def tracked(method, params, **kwargs):
+            if method == "claim_control":
+                claimed.append(time.monotonic())
+            return request(method, params, **kwargs)
+
+        c.request = tracked
+        return c
+
+    r.client_factory = client
+    threading.Timer(0.3, release.set).start()
+    second = r.run_autopilot(1)
+    assert second.outcome == "completed", second.reason
+    assert finished and claimed and finished[0] <= claimed[0]
+    assert m.failure is None
