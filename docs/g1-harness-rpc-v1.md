@@ -15,7 +15,8 @@ First call `get_status` with null runtime/session/lease IDs. Subsequent requests
 | --- | --- | --- |
 | `get_status`, `observe` | `{}` | Status or RGB JPEG snapshot |
 | `claim_control` | `registry_sha256` | Lease |
-| `heartbeat`, `release_control` | `{}` | Status |
+| `heartbeat` | `sequence` (integer, 1, 2, 3, … per session) | Status |
+| `release_control` | `{}` | Status |
 | `start_manipulation` | `skill_id` | Execution |
 | `pause_manipulation`, `cancel` | `execution_id` | Execution |
 | `reset_standing` | `execution_id`, `open_hands` | Execution; empty ID starts a standalone reset |
@@ -24,7 +25,27 @@ First call `get_status` with null runtime/session/lease IDs. Subsequent requests
 
 Unknown fields/methods, arbitrary prompt parameters, unsupported skill IDs, NaN/Infinity, and motion outside the profile limits fail before execution. Numeric strings and booleans in numeric fields are invalid. Standing reset preserves the heading measured at entry. Cancellation holds measured upper-body/hand targets and commands zero locomotion when fresh telemetry permits a planner handoff.
 
-`registry_sha256` hashes the shared YAML bytes. `runtime_id` changes when the executor restarts. Retries reuse the exact session/request ID and payload; cached mutation replies cannot repeat motion or renew a lease. Different payloads with a reused ID fail with `REQUEST_CONFLICT`. Recreate a REQ socket after timeout. The coordinator heartbeat uses a separate thread/client/socket; it must keep renewing a 2 s lease every 0.25 s while vision runs. Claim does not start motors.
+`registry_sha256` hashes the shared YAML bytes. `runtime_id` changes when the executor restarts.
+
+**Retries.**
+- Retries reuse the exact session/request ID and payload. Cached mutation replies cannot repeat motion or renew a lease.
+- Different payloads with a reused ID fail with `REQUEST_CONFLICT`.
+- Recreate a REQ socket after timeout.
+
+**Heartbeats.**
+- The coordinator heartbeat uses a separate thread/client/socket. It must keep renewing a 2 s lease every 0.25 s while vision runs.
+- Each heartbeat carries the session's next `sequence`, starting at 1.
+- A new, higher sequence renews the lease. Only the latest is kept.
+- Its exact retry (same request ID and sequence) returns the same reply without renewing.
+- A lower sequence, or the same sequence with a different request, fails with `REQUEST_CONFLICT`. It never renews.
+
+**Ended sessions.** A session ends when it releases control, its lease expires, or the executor interrupts ownership (operator override, telemetry fault).
+- Every later request from an ended session fails with `NOT_OWNER`. This includes a delayed claim or heartbeat.
+- The one exception is an exact retry of the request that ended it.
+- Read-only `get_status`/`observe` still work.
+- The executor then drops that session's cached replies. To claim again, use a new session ID.
+
+Claim does not start motors.
 
 The exact dataclass fields are in `vlm_orchestrator/harness/g1/contract.py` and the design spec. `started_at`, `received_at`, and `expires_at` are workstation monotonic times. Camera frame IDs advance only on source timestamp changes; telemetry freshness requires advancing `index`. A sent mode command is a request. Fresh `planner_reference_active=true` confirms planner activation; false establishes non-planner only. `controller_running` is the operator-controlled runner flag. Checkpoint identity is configured/expected until independently verified.
 

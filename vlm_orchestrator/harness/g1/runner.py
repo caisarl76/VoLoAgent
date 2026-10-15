@@ -73,10 +73,13 @@ class HarnessRunner:
             client = self.client_factory()
             if client.get_status().runtime_id != self._lease.runtime_id:
                 raise MissionInterrupted("Executor restarted")
+            sequence = 0
             while not self._stop.is_set():
+                # Each renewal gets the next sequence; the client's retry resends the same one.
+                sequence += 1
                 response = client.request(
                     "heartbeat",
-                    {},
+                    {"sequence": sequence},
                     session_id=self._session_id,
                     lease_id=self._lease.lease_id,
                 )
