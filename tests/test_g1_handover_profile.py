@@ -123,3 +123,17 @@ def test_handover_rejects_partial_or_invalid_desk_pose(tmp_path, desk):
     path.write_text(yaml.safe_dump(data))
     with pytest.raises(ValueError):
         load_profile(path)
+
+
+@pytest.mark.parametrize("value", [True, False, 1, "true", None])
+def test_handover_gravity_feedforward_is_optional_bool(tmp_path, value):
+    assert not load_profile(handover_profile(tmp_path)).handover.ready_gravity_feedforward
+    path = handover_profile(tmp_path)
+    data = yaml.safe_load(path.read_text())
+    data["handover"]["ready_gravity_feedforward"] = value
+    path.write_text(yaml.safe_dump(data))
+    if type(value) is bool:
+        assert load_profile(path).handover.ready_gravity_feedforward is value
+    else:
+        with pytest.raises(ValueError):
+            load_profile(path)
