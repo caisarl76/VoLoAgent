@@ -80,15 +80,33 @@ No hardware ran. Both review flags remain false.
    the desktop, so the robot should not power up, stand or be reset there. It
    needs to stand farther back.
 
+## Rule change: skip the raise when the hand starts above the desk top (native `453be60`)
+
+The production hook now returns directly when every right wrist and hand link
+box starts at or above the desk top; the elbow is not counted. Otherwise it
+keeps the forward-kinematics direct-path check.
+
+- **Offer entries:** the lowest wrist or hand point sits above the 0.063 m desk
+  top for both: 0.072 m for episode 15 (9 mm above) and 0.103 m for episode 30.
+- **Grounded standing:** the recorded entry (hands hanging, −0.278 m) still
+  raises.
+- **Binary:** unchanged, since this is a Python-only change.
+
+| Entry | Decision | Completed | Return time | Min conservative desk gap | Desk / bottle contacts | Preserved max error |
+| --- | --- | ---: | ---: | ---: | --- | ---: |
+| ep15 offer | direct ×3 | 3/3 | 1.3–2.3 s | **0.9–2.0 mm** | 0 / 0 | 0.040–0.083 rad |
+| ep30 offer | direct ×3 | 3/3 | 2.1–2.6 s | 17.6–24.6 mm | 0 / 0 | 0.062–0.076 rad |
+
+The feet stayed on the floor in every sample. These are the `rule-*` trials.
+
+The episode 15 margin is thin. The gap is a lower bound from boxes around the
+collision geometry, and no contact was recorded, but at this desk episode 15's
+offer pose leaves only millimetres. A real offer that ends slightly lower or
+farther forward would touch the desk on the way back.
+
 ## Decisions before the first hardware ready return (not taken)
 
-- **Raise rule:** at this desk the raise should not be chosen from above-desk
-  starts. Possible changes:
-  - Skip it whenever the hand starts above the desk top.
-  - Use exact geometry instead of boxes.
-  - Lower the 3 cm margin.
-
-  Each changes reviewed behaviour.
+- **Raise rule:** done in `453be60`; see above.
 - **Desk placement:** decide where the robot stands and gets reset, and keep that
   out of the desk.
 - **Real pelvis height:** confirm it on the robot. The ready-pose clearance is
