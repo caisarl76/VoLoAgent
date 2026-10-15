@@ -1,6 +1,7 @@
 from dataclasses import replace
 import importlib
 import importlib.util
+import queue
 from pathlib import Path
 import threading
 import time
@@ -11,6 +12,7 @@ from vlm_orchestrator.harness.g1.contract import (
     Response,
     SkillCall,
     Status,
+    validate_params,
 )
 from vlm_orchestrator.harness.g1.registry import load_profile
 from test_g1_monitor import snapshot
@@ -29,6 +31,7 @@ class Executor:
         self.owner = None
         self.calls = []
         self.heartbeats = 0
+        self.heartbeat_sequences = []
         self.reboot = False
         self.profile_mismatch = False
         self.locomotion = False
@@ -78,12 +81,14 @@ class LocalClient:
         return replace(s, runtime_id=self.e.status().runtime_id)
 
     def request(self, method, params, **kwargs):
+        validate_params(method, params)
         self.e.calls.append(method)
         if method == "claim_control":
             self.e.owner = kwargs["session_id"]
             result = Lease("boot", self.e.owner, "lease", time.monotonic() + 2)
         elif method == "heartbeat":
             self.e.heartbeats += 1
+            self.e.heartbeat_sequences.append(params["sequence"])
             result = self.e.status()
         elif method == "release_control":
             self.e.owner = None
@@ -274,3 +279,20 @@ def test_sequence_uses_one_lease_and_no_extra_reset(tmp_path):
         < e.calls.index("walk_for")
         < e.calls.index("turn_by")
     )
+
+
+def test_heartbeat_sequence_starts_at_one_and_increases():
+    e = Executor()
+    cls = importlib.import_module("vlm_orchestrator.harness.g1.runner").HarnessRunner
+    runner = cls(PROFILE, lambda: LocalClient(e), None, Path("/tmp") / "unused")
+    runner._session_id, runner._lease = "s", Lease("boot", "s", "lease", time.monotonic() + 2)
+    runner._stop, runner._heartbeat_error = threading.Event(), queue.Queue()
+    thread = threading.Thread(target=runner._heartbeat)
+    thread.start()
+    deadline = time.monotonic() + 2
+    while len(e.heartbeat_sequences) < 3 and time.monotonic() < deadline:
+        time.sleep(0.01)
+    runner._stop.set()
+    thread.join(2)
+    assert e.heartbeat_sequences[:3] == [1, 2, 3]
+    assert runner._heartbeat_error.empty()

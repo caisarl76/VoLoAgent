@@ -269,10 +269,15 @@ def test_coordinator_loss_mid_walk_stops_movement(native_runtime, tmp_path):
             lease_id=lease.lease_id,
         ).result
         deadline = time.monotonic() + 3
+        sequence = 0
         while client.get_status().phase != "COMPLETED":
             assert time.monotonic() < deadline
+            sequence += 1
             client.request(
-                "heartbeat", {}, session_id="lost-agent", lease_id=lease.lease_id
+                "heartbeat",
+                {"sequence": sequence},
+                session_id="lost-agent",
+                lease_id=lease.lease_id,
             )
             time.sleep(0.05)
         started = client.request(
