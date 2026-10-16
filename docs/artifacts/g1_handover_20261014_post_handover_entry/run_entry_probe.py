@@ -51,7 +51,7 @@ if __name__ == "__main__":
         started = time.monotonic()
         pre_pose["execution"] = asdict(ORIGINAL_REQUEST(self, method, params, **kwargs).result)
         while True:  # Keep the lease alive until the pre-pose settles.
-            ORIGINAL_REQUEST(self, "heartbeat", {}, **kwargs)
+            ORIGINAL_REQUEST(self, "heartbeat", {"sequence": time.monotonic_ns()}, **kwargs)
             status = self.get_status()
             if status.phase != "RESETTING" or time.monotonic() - started > 20:
                 break
@@ -60,7 +60,7 @@ if __name__ == "__main__":
         if status.phase == "COMPLETED":
             (output / "desk-restore").touch()
             while not (output / "desk-restore.json").exists() and time.monotonic() - started < 25:
-                ORIGINAL_REQUEST(self, "heartbeat", {}, **kwargs)
+                ORIGINAL_REQUEST(self, "heartbeat", {"sequence": time.monotonic_ns()}, **kwargs)
                 time.sleep(0.05)
             path = output / "desk-restore.json"
             pre_pose["desk"] = json.loads(path.read_text()) if path.exists() else None
