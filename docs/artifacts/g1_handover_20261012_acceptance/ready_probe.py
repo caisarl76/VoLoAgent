@@ -106,7 +106,7 @@ def main():
                 if process.poll() is not None:raise RuntimeError(f'{name} exited {process.returncode}')
             now=time.monotonic()
             if lease is not None and now>=heartbeat_at:
-                request('heartbeat',{});heartbeat_at=now+0.25
+                request('heartbeat',{'sequence':time.monotonic_ns()});heartbeat_at=now+0.25
             last=client.get_status();record('status',**asdict(last))
             if last.phase=='FAULT':raise RuntimeError(last.reason)
             if predicate and predicate(last):return last
