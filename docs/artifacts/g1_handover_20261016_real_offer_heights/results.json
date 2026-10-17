@@ -1,0 +1,164 @@
+{
+  "s07": {
+    "draft": "/mnt/data/jihun/g1_eval_sessions/_visualizer/workspace/drafts/0f94fe9ad104498b947eee25b9dcc4ca",
+    "model": "/mnt/data/jihun/g1_models/wbt_groot_he_full/pretrained_model",
+    "episodes": {
+      "0": {
+        "verdict": "success",
+        "frames": 433,
+        "lowest_hand_above_pelvis_m": 0.07449692663470843,
+        "hand_minus_desk_top_m": {
+          "0.740": -0.03550307336529156,
+          "0.760": -0.01550307336529154,
+          "0.787": 0.011496926634708485
+        }
+      },
+      "1": {
+        "verdict": "success",
+        "frames": 401,
+        "lowest_hand_above_pelvis_m": 0.09377297780751893,
+        "hand_minus_desk_top_m": {
+          "0.740": -0.016227022192481053,
+          "0.760": 0.003772977807518965,
+          "0.787": 0.03077297780751899
+        }
+      },
+      "2": {
+        "verdict": "success",
+        "frames": 383,
+        "lowest_hand_above_pelvis_m": 0.09880784358914174,
+        "hand_minus_desk_top_m": {
+          "0.740": -0.011192156410858245,
+          "0.760": 0.008807843589141773,
+          "0.787": 0.0358078435891418
+        }
+      },
+      "3": {
+        "verdict": "fail",
+        "frames": 253,
+        "lowest_hand_above_pelvis_m": 0.09182252179989256,
+        "hand_minus_desk_top_m": {
+          "0.740": -0.018177478200107428,
+          "0.760": 0.0018225217998925902,
+          "0.787": 0.028822521799892614
+        }
+      },
+      "4": {
+        "verdict": "success",
+        "frames": 389,
+        "lowest_hand_above_pelvis_m": 0.12533072677583224,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.015330726775832249,
+          "0.760": 0.035330726775832266,
+          "0.787": 0.06233072677583229
+        }
+      }
+    }
+  },
+  "s08": {
+    "draft": "/mnt/data/jihun/g1_eval_sessions/_visualizer/workspace/drafts/2ee431e22b504954a811b051e5bae108",
+    "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model",
+    "episodes": {
+      "0": {
+        "verdict": "success",
+        "frames": 344,
+        "lowest_hand_above_pelvis_m": 0.12686719636874247,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.016867196368742482,
+          "0.760": 0.0368671963687425,
+          "0.787": 0.06386719636874252
+        }
+      },
+      "1": {
+        "verdict": "success",
+        "frames": 490,
+        "lowest_hand_above_pelvis_m": 0.11179968004980305,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.0017996800498030624,
+          "0.760": 0.02179968004980308,
+          "0.787": 0.048799680049803104
+        }
+      },
+      "2": {
+        "verdict": "success",
+        "frames": 445,
+        "lowest_hand_above_pelvis_m": 0.02105379167313311,
+        "hand_minus_desk_top_m": {
+          "0.740": -0.08894620832686688,
+          "0.760": -0.06894620832686686,
+          "0.787": -0.04194620832686684
+        }
+      },
+      "3": {
+        "verdict": "success",
+        "frames": 331,
+        "lowest_hand_above_pelvis_m": 0.13747186330228095,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.027471863302280963,
+          "0.760": 0.04747186330228098,
+          "0.787": 0.074471863302281
+        }
+      },
+      "4": {
+        "verdict": "success",
+        "frames": 373,
+        "lowest_hand_above_pelvis_m": 0.13326732303029296,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.02326732303029297,
+          "0.760": 0.04326732303029299,
+          "0.787": 0.07026732303029301
+        }
+      },
+      "5": {
+        "verdict": "success",
+        "frames": 341,
+        "lowest_hand_above_pelvis_m": 0.12354697354833127,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.013546973548331287,
+          "0.760": 0.033546973548331305,
+          "0.787": 0.06054697354833133
+        }
+      },
+      "6": {
+        "verdict": "fail",
+        "frames": 879,
+        "lowest_hand_above_pelvis_m": 0.13016853302427128,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.020168533024271296,
+          "0.760": 0.04016853302427131,
+          "0.787": 0.06716853302427134
+        }
+      },
+      "7": {
+        "verdict": "success",
+        "frames": 374,
+        "lowest_hand_above_pelvis_m": 0.13244906286518043,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.022449062865180447,
+          "0.760": 0.042449062865180465,
+          "0.787": 0.06944906286518049
+        }
+      },
+      "8": {
+        "verdict": "success",
+        "frames": 388,
+        "lowest_hand_above_pelvis_m": 0.12816351302478407,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.018163513024784084,
+          "0.760": 0.0381635130247841,
+          "0.787": 0.06516351302478413
+        }
+      },
+      "9": {
+        "verdict": "success",
+        "frames": 389,
+        "lowest_hand_above_pelvis_m": 0.14611292452271202,
+        "hand_minus_desk_top_m": {
+          "0.740": 0.03611292452271203,
+          "0.760": 0.05611292452271205,
+          "0.787": 0.08311292452271207
+        }
+      }
+    }
+  }
+}
