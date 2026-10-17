@@ -1,0 +1,101 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting decoupled_wbc/tests/control/main/teleop/test_g1_control_loop.py _
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/control/main/teleop/test_g1_control_loop.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/control/main/teleop/test_g1_control_loop.py:22: in <module>
+    from decoupled_wbc.data.viz.rerun_viz import RerunViz
+decoupled_wbc/data/viz/rerun_viz.py:12: in <module>
+    import rerun as rr  # pip install rerun-sdk
+E   ModuleNotFoundError: No module named 'rerun'
+_ ERROR collecting decoupled_wbc/tests/control/main/test_data_exporter_loop.py _
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/control/main/test_data_exporter_loop.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/control/main/test_data_exporter_loop.py:19: in <module>
+    raise e
+decoupled_wbc/tests/control/main/test_data_exporter_loop.py:10: in <module>
+    from decoupled_wbc.control.main.teleop.run_g1_data_exporter import Gr00tDataCollector
+decoupled_wbc/control/main/teleop/run_g1_data_exporter.py:11: in <module>
+    from decoupled_wbc.control.main.teleop.configs.configs import DataExporterConfig
+decoupled_wbc/control/main/teleop/configs/configs.py:10: in <module>
+    from decoupled_wbc.control.policy.wbc_policy_factory import WBC_VERSIONS
+decoupled_wbc/control/policy/wbc_policy_factory.py:9: in <module>
+    from decoupled_wbc.control.policy.g1_gear_wbc_policy import G1GearWbcPolicy
+decoupled_wbc/control/policy/g1_gear_wbc_policy.py:6: in <module>
+    import onnxruntime as ort
+E   ModuleNotFoundError: No module named 'onnxruntime'
+_ ERROR collecting decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_policy.py _
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_policy.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_policy.py:7: in <module>
+    from decoupled_wbc.control.policy.interpolation_policy import (
+decoupled_wbc/control/policy/interpolation_policy.py:5: in <module>
+    import gymnasium as gym
+E   ModuleNotFoundError: No module named 'gymnasium'
+_ ERROR collecting decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_ramp_up.py _
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_ramp_up.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_ramp_up.py:4: in <module>
+    from decoupled_wbc.control.policy.interpolation_policy import (
+decoupled_wbc/control/policy/interpolation_policy.py:5: in <module>
+    import gymnasium as gym
+E   ModuleNotFoundError: No module named 'gymnasium'
+_ ERROR collecting decoupled_wbc/tests/control/teleop/test_teleop_retargeting_ik.py _
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/control/teleop/test_teleop_retargeting_ik.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/control/teleop/test_teleop_retargeting_ik.py:11: in <module>
+    from decoupled_wbc.control.teleop.teleop_retargeting_ik import TeleopRetargetingIK
+decoupled_wbc/control/teleop/teleop_retargeting_ik.py:8: in <module>
+    from decoupled_wbc.control.teleop.solver.body.body_ik_solver import BodyIKSolver
+decoupled_wbc/control/teleop/solver/body/body_ik_solver.py:4: in <module>
+    import pink
+E   ModuleNotFoundError: No module named 'pink'
+__________ ERROR collecting decoupled_wbc/tests/data/test_exporter.py __________
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/data/test_exporter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/data/test_exporter.py:7: in <module>
+    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
+E   ModuleNotFoundError: No module named 'lerobot'
+_____ ERROR collecting decoupled_wbc/tests/sim/test_sim_data_collection.py _____
+ImportError while importing test module '/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/decoupled_wbc/tests/sim/test_sim_data_collection.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+decoupled_wbc/tests/sim/test_sim_data_collection.py:1: in <module>
+    from decoupled_wbc.control.main.teleop.configs.configs import SyncSimDataCollectionConfig
+decoupled_wbc/control/main/teleop/configs/configs.py:10: in <module>
+    from decoupled_wbc.control.policy.wbc_policy_factory import WBC_VERSIONS
+decoupled_wbc/control/policy/wbc_policy_factory.py:9: in <module>
+    from decoupled_wbc.control.policy.g1_gear_wbc_policy import G1GearWbcPolicy
+decoupled_wbc/control/policy/g1_gear_wbc_policy.py:6: in <module>
+    import onnxruntime as ort
+E   ModuleNotFoundError: No module named 'onnxruntime'
+=========================== short test summary info ============================
+ERROR decoupled_wbc/tests/control/main/teleop/test_g1_control_loop.py
+ERROR decoupled_wbc/tests/control/main/test_data_exporter_loop.py
+ERROR decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_policy.py
+ERROR decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_ramp_up.py
+ERROR decoupled_wbc/tests/control/teleop/test_teleop_retargeting_ik.py
+ERROR decoupled_wbc/tests/data/test_exporter.py
+ERROR decoupled_wbc/tests/sim/test_sim_data_collection.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 7 errors during collection !!!!!!!!!!!!!!!!!!!!
+7 errors in 0.66s

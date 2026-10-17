@@ -1,0 +1,39 @@
+{
+  "robot_actuated": false,
+  "physics_advanced": false,
+  "reconstructed_samples": 1182,
+  "sample_rate_hz": 10,
+  "bottle_orientation_assumed_upright": true,
+  "maximum_object_state_skew_s": 0.0009790220065042377,
+  "minimum_sampled_hand_bottle_distance_m": {
+    "left": 0.3612944948720969,
+    "right": 0.1984303317737914
+  },
+  "minimum_distance_sample_s": {
+    "left": 0.011472606973256916,
+    "right": 39.294571691018064
+  },
+  "bottle_position_range_m": [
+    3.85271562647338e-06,
+    3.93387624625156e-06,
+    2.3594584985797695e-07
+  ],
+  "base_position_range_m": [
+    0.03151066223602664,
+    0.024584132971060657,
+    0.0030594430631025737
+  ],
+  "limitations": [
+    "Robot and object samples are asynchronous; exact capture-state parity is not claimed.",
+    "10 Hz distances can miss intermediate minima and are not contact acceptance evidence.",
+    "Assumed object orientation is suitable only for this stationary bottle trace."
+  ],
+  "sources": {
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006_acceptance/analyze_bottle_reach.py": "62a5d716efa255af81fb4c3595d5eb14d3fb516a9b0b425886a30111706acb61",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/scene.xml": "1d6d901d0052bcd5cb4774dcee405e2564fc56deac006092c6f7dfe295711de5",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/robot.xml": "d76545ca52961b67efcfd432cd3ae296fef7c064e60fb3b5f4e3d87aae321693",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/ground-truth.jsonl": "8be4f4e12d14b1905fba559a4da6143c1c6890142d363d1a54d58960e990d926",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/bottle-ground-truth.jsonl": "48f92df21ed6b81cd96f68420c91bf11fc62988343a56f4d14d06f8f4a60d145",
+    "docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence/mission/4b3ca2c409824a6ba4e5b770ee8014e2/events.jsonl": "9fe2a8877978f278f01bbcdf5ec04093aab17ff925ad3f9c8cef1244c235a741"
+  }
+}

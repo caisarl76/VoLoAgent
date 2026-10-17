@@ -1,0 +1,3523 @@
+{
+  "artifact_type": "CPU MuJoCo measured-joint forward kinematics and named-joint return references; no dynamics, VLA, hardware or scene contact validation",
+  "mujoco_version": "3.8.1",
+  "coordinate_convention": "SI units; metadata wxyz root quaternion normalized; root translation fixed at origin, world gravity -Z; full 43 joints mapped by exact name",
+  "contact_plane_calibrated": false,
+  "palm_plane_hypothesis": "+Y of right_wrist_yaw_link normal to XZ palm plane; palm mesh translation [0.0415,-0.003,0], identity rotation in XML; finger hinges +Z curl +X fingers toward +Y. Requires hardware contact-surface validation.",
+  "mesh_evidence": {
+    "raw_vertices_bounds_m": [
+      [
+        -4.336808689942018e-19,
+        -0.024300342425704002,
+        -0.0430000014603138
+      ],
+      [
+        0.11019719392061234,
+        0.024299999698996544,
+        0.0430000014603138
+      ]
+    ],
+    "extent_m": [
+      0.11019719392061234,
+      0.048600342124700546,
+      0.0860000029206276
+    ],
+    "covariance_eigenvalues": [
+      0.0003115030721051083,
+      0.0007568359026616289,
+      0.0017897078005713826
+    ],
+    "smallest_eigenvector_unsigned": [
+      0.05916518400173693,
+      0.9982481143099061,
+      -0.00042811068290982596
+    ]
+  },
+  "joint_mapping": [
+    {
+      "state_index": 0,
+      "joint": "left_hip_pitch_joint",
+      "qpos_address": 7,
+      "range_rad": [
+        -2.5307,
+        2.8798
+      ]
+    },
+    {
+      "state_index": 1,
+      "joint": "left_hip_roll_joint",
+      "qpos_address": 8,
+      "range_rad": [
+        -0.5236,
+        2.9671
+      ]
+    },
+    {
+      "state_index": 2,
+      "joint": "left_hip_yaw_joint",
+      "qpos_address": 9,
+      "range_rad": [
+        -2.7576,
+        2.7576
+      ]
+    },
+    {
+      "state_index": 3,
+      "joint": "left_knee_joint",
+      "qpos_address": 10,
+      "range_rad": [
+        -0.087267,
+        2.8798
+      ]
+    },
+    {
+      "state_index": 4,
+      "joint": "left_ankle_pitch_joint",
+      "qpos_address": 11,
+      "range_rad": [
+        -0.87267,
+        0.5236
+      ]
+    },
+    {
+      "state_index": 5,
+      "joint": "left_ankle_roll_joint",
+      "qpos_address": 12,
+      "range_rad": [
+        -0.2618,
+        0.2618
+      ]
+    },
+    {
+      "state_index": 6,
+      "joint": "right_hip_pitch_joint",
+      "qpos_address": 13,
+      "range_rad": [
+        -2.5307,
+        2.8798
+      ]
+    },
+    {
+      "state_index": 7,
+      "joint": "right_hip_roll_joint",
+      "qpos_address": 14,
+      "range_rad": [
+        -2.9671,
+        0.5236
+      ]
+    },
+    {
+      "state_index": 8,
+      "joint": "right_hip_yaw_joint",
+      "qpos_address": 15,
+      "range_rad": [
+        -2.7576,
+        2.7576
+      ]
+    },
+    {
+      "state_index": 9,
+      "joint": "right_knee_joint",
+      "qpos_address": 16,
+      "range_rad": [
+        -0.087267,
+        2.8798
+      ]
+    },
+    {
+      "state_index": 10,
+      "joint": "right_ankle_pitch_joint",
+      "qpos_address": 17,
+      "range_rad": [
+        -0.87267,
+        0.5236
+      ]
+    },
+    {
+      "state_index": 11,
+      "joint": "right_ankle_roll_joint",
+      "qpos_address": 18,
+      "range_rad": [
+        -0.2618,
+        0.2618
+      ]
+    },
+    {
+      "state_index": 12,
+      "joint": "waist_yaw_joint",
+      "qpos_address": 19,
+      "range_rad": [
+        -2.618,
+        2.618
+      ]
+    },
+    {
+      "state_index": 13,
+      "joint": "waist_roll_joint",
+      "qpos_address": 20,
+      "range_rad": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "state_index": 14,
+      "joint": "waist_pitch_joint",
+      "qpos_address": 21,
+      "range_rad": [
+        -0.52,
+        0.52
+      ]
+    },
+    {
+      "state_index": 15,
+      "joint": "left_shoulder_pitch_joint",
+      "qpos_address": 22,
+      "range_rad": [
+        -3.0892,
+        2.6704
+      ]
+    },
+    {
+      "state_index": 16,
+      "joint": "left_shoulder_roll_joint",
+      "qpos_address": 23,
+      "range_rad": [
+        -1.5882,
+        2.2515
+      ]
+    },
+    {
+      "state_index": 17,
+      "joint": "left_shoulder_yaw_joint",
+      "qpos_address": 24,
+      "range_rad": [
+        -2.618,
+        2.618
+      ]
+    },
+    {
+      "state_index": 18,
+      "joint": "left_elbow_joint",
+      "qpos_address": 25,
+      "range_rad": [
+        -1.0472,
+        2.0944
+      ]
+    },
+    {
+      "state_index": 19,
+      "joint": "left_wrist_roll_joint",
+      "qpos_address": 26,
+      "range_rad": [
+        -1.97222,
+        1.97222
+      ]
+    },
+    {
+      "state_index": 20,
+      "joint": "left_wrist_pitch_joint",
+      "qpos_address": 27,
+      "range_rad": [
+        -1.61443,
+        1.61443
+      ]
+    },
+    {
+      "state_index": 21,
+      "joint": "left_wrist_yaw_joint",
+      "qpos_address": 28,
+      "range_rad": [
+        -1.61443,
+        1.61443
+      ]
+    },
+    {
+      "state_index": 22,
+      "joint": "left_hand_index_0_joint",
+      "qpos_address": 34,
+      "range_rad": [
+        -1.8326,
+        0.191986
+      ]
+    },
+    {
+      "state_index": 23,
+      "joint": "left_hand_index_1_joint",
+      "qpos_address": 35,
+      "range_rad": [
+        -2.0944,
+        0.0
+      ]
+    },
+    {
+      "state_index": 24,
+      "joint": "left_hand_middle_0_joint",
+      "qpos_address": 32,
+      "range_rad": [
+        -1.8326,
+        0.191986
+      ]
+    },
+    {
+      "state_index": 25,
+      "joint": "left_hand_middle_1_joint",
+      "qpos_address": 33,
+      "range_rad": [
+        -2.0944,
+        0.0
+      ]
+    },
+    {
+      "state_index": 26,
+      "joint": "left_hand_thumb_0_joint",
+      "qpos_address": 29,
+      "range_rad": [
+        -1.0472,
+        1.0472
+      ]
+    },
+    {
+      "state_index": 27,
+      "joint": "left_hand_thumb_1_joint",
+      "qpos_address": 30,
+      "range_rad": [
+        -0.724312,
+        1.0472
+      ]
+    },
+    {
+      "state_index": 28,
+      "joint": "left_hand_thumb_2_joint",
+      "qpos_address": 31,
+      "range_rad": [
+        0.0,
+        2.0944
+      ]
+    },
+    {
+      "state_index": 29,
+      "joint": "right_shoulder_pitch_joint",
+      "qpos_address": 36,
+      "range_rad": [
+        -3.0892,
+        2.6704
+      ]
+    },
+    {
+      "state_index": 30,
+      "joint": "right_shoulder_roll_joint",
+      "qpos_address": 37,
+      "range_rad": [
+        -2.2515,
+        1.5882
+      ]
+    },
+    {
+      "state_index": 31,
+      "joint": "right_shoulder_yaw_joint",
+      "qpos_address": 38,
+      "range_rad": [
+        -2.618,
+        2.618
+      ]
+    },
+    {
+      "state_index": 32,
+      "joint": "right_elbow_joint",
+      "qpos_address": 39,
+      "range_rad": [
+        -1.0472,
+        2.0944
+      ]
+    },
+    {
+      "state_index": 33,
+      "joint": "right_wrist_roll_joint",
+      "qpos_address": 40,
+      "range_rad": [
+        -1.97222,
+        1.97222
+      ]
+    },
+    {
+      "state_index": 34,
+      "joint": "right_wrist_pitch_joint",
+      "qpos_address": 41,
+      "range_rad": [
+        -1.61443,
+        1.61443
+      ]
+    },
+    {
+      "state_index": 35,
+      "joint": "right_wrist_yaw_joint",
+      "qpos_address": 42,
+      "range_rad": [
+        -1.61443,
+        1.61443
+      ]
+    },
+    {
+      "state_index": 36,
+      "joint": "right_hand_index_0_joint",
+      "qpos_address": 46,
+      "range_rad": [
+        -0.191986,
+        1.8326
+      ]
+    },
+    {
+      "state_index": 37,
+      "joint": "right_hand_index_1_joint",
+      "qpos_address": 47,
+      "range_rad": [
+        0.0,
+        2.0944
+      ]
+    },
+    {
+      "state_index": 38,
+      "joint": "right_hand_middle_0_joint",
+      "qpos_address": 48,
+      "range_rad": [
+        -0.191986,
+        1.8326
+      ]
+    },
+    {
+      "state_index": 39,
+      "joint": "right_hand_middle_1_joint",
+      "qpos_address": 49,
+      "range_rad": [
+        0.0,
+        2.0944
+      ]
+    },
+    {
+      "state_index": 40,
+      "joint": "right_hand_thumb_0_joint",
+      "qpos_address": 43,
+      "range_rad": [
+        -1.0472,
+        1.0472
+      ]
+    },
+    {
+      "state_index": 41,
+      "joint": "right_hand_thumb_1_joint",
+      "qpos_address": 44,
+      "range_rad": [
+        -1.0472,
+        0.724312
+      ]
+    },
+    {
+      "state_index": 42,
+      "joint": "right_hand_thumb_2_joint",
+      "qpos_address": 45,
+      "range_rad": [
+        -2.0944,
+        0.0
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "episode": 15,
+      "source_frame": 300,
+      "time_s": 6.0,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.13708755373954773,
+        "right_shoulder_roll_joint": -0.09231448918581009,
+        "right_shoulder_yaw_joint": 0.23845012485980988,
+        "right_elbow_joint": -0.24250079691410065,
+        "right_wrist_roll_joint": 1.6797209978103638,
+        "right_wrist_pitch_joint": -0.06576942652463913,
+        "right_wrist_yaw_joint": -0.27548137307167053,
+        "right_hand_index_0_joint": 0.53306645154953,
+        "right_hand_index_1_joint": 1.187488079071045,
+        "right_hand_middle_0_joint": 0.6526051163673401,
+        "right_hand_middle_1_joint": 0.7953738570213318,
+        "right_hand_thumb_0_joint": 0.028316712006926537,
+        "right_hand_thumb_1_joint": -0.34127023816108704,
+        "right_hand_thumb_2_joint": -0.5380373001098633
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2323736343003685,
+        0.0572560838800122,
+        0.15489515389129763
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5530498303294087,
+          -0.0005583923387615375,
+          0.8331479900777585
+        ],
+        [
+          0.8309587745058827,
+          -0.07207909231699397,
+          -0.5516449215958036
+        ],
+        [
+          0.060360585188468485,
+          0.9973987631076925,
+          -0.03939932876270057
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.0005583923387615375,
+        -0.07207909231699397,
+        0.9973987631076925
+      ],
+      "candidate_plus_y_tilt_deg": 4.1335364293908645,
+      "candidate_minus_y_tilt_deg": 175.86646357060914,
+      "candidate_unsigned_plane_inclination_deg": 4.1335364293908645,
+      "wrist_roll_only_tilt_deg": 6.240923934037212,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 325,
+      "time_s": 6.5,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.12192750722169876,
+        "right_shoulder_roll_joint": -0.08566324412822723,
+        "right_shoulder_yaw_joint": 0.30063626170158386,
+        "right_elbow_joint": -0.24632376432418823,
+        "right_wrist_roll_joint": 1.679169774055481,
+        "right_wrist_pitch_joint": -0.10860104858875275,
+        "right_wrist_yaw_joint": -0.1711467206478119,
+        "right_hand_index_0_joint": 0.5330736041069031,
+        "right_hand_index_1_joint": 1.1876455545425415,
+        "right_hand_middle_0_joint": 0.6526122689247131,
+        "right_hand_middle_1_joint": 0.7954078316688538,
+        "right_hand_thumb_0_joint": 0.028314411640167236,
+        "right_hand_thumb_1_joint": -0.34127023816108704,
+        "right_hand_thumb_2_joint": -0.5380471348762512
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22431319308277958,
+        0.060778298533920465,
+        0.14556806973120234
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5437332235811663,
+          -0.007488882070314118,
+          0.839224700672812
+        ],
+        [
+          0.8289546899644904,
+          -0.15141585838199734,
+          -0.538430459591876
+        ],
+        [
+          0.1311041706426972,
+          0.9884417810249525,
+          -0.07612188886457483
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.007488882070314118,
+        -0.15141585838199734,
+        0.9884417810249525
+      ],
+      "candidate_plus_y_tilt_deg": 8.719714878810466,
+      "candidate_minus_y_tilt_deg": 171.28028512118954,
+      "candidate_unsigned_plane_inclination_deg": 8.719714878810466,
+      "wrist_roll_only_tilt_deg": 6.209341139315118,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 350,
+      "time_s": 7.0,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.0890667587518692,
+        "right_shoulder_roll_joint": -0.08923453837633133,
+        "right_shoulder_yaw_joint": 0.30630481243133545,
+        "right_elbow_joint": -0.2091846466064453,
+        "right_wrist_roll_joint": 1.6792296171188354,
+        "right_wrist_pitch_joint": -0.12471982836723328,
+        "right_wrist_yaw_joint": -0.17196165025234222,
+        "right_hand_index_0_joint": 0.008468193002045155,
+        "right_hand_index_1_joint": 0.4531315863132477,
+        "right_hand_middle_0_joint": 0.01634383015334606,
+        "right_hand_middle_1_joint": 0.10074134171009064,
+        "right_hand_thumb_0_joint": 0.028313644230365753,
+        "right_hand_thumb_1_joint": -0.014379570260643959,
+        "right_hand_thumb_2_joint": -0.027226068079471588
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22461246619002356,
+        0.058885954645918726,
+        0.12806156214389458
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5631639090590042,
+          0.049325650336913995,
+          0.824871742607431
+        ],
+        [
+          0.8251809030197557,
+          -0.08653992382003685,
+          -0.5582000706527369
+        ],
+        [
+          0.04385075626349061,
+          0.9950265432660882,
+          -0.08943874647521188
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.049325650336913995,
+        -0.08653992382003685,
+        0.9950265432660882
+      ],
+      "candidate_plus_y_tilt_deg": 5.716720535966601,
+      "candidate_minus_y_tilt_deg": 174.2832794640334,
+      "candidate_unsigned_plane_inclination_deg": 5.716720535966601,
+      "wrist_roll_only_tilt_deg": 6.212769894278466,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 365,
+      "time_s": 7.3,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.08911469578742981,
+        "right_shoulder_roll_joint": -0.08764063566923141,
+        "right_shoulder_yaw_joint": 0.30415964126586914,
+        "right_elbow_joint": -0.20924457907676697,
+        "right_wrist_roll_joint": 1.6815426349639893,
+        "right_wrist_pitch_joint": -0.11681023985147476,
+        "right_wrist_yaw_joint": -0.15062972903251648,
+        "right_hand_index_0_joint": -0.011371446773409843,
+        "right_hand_index_1_joint": 0.019630366936326027,
+        "right_hand_middle_0_joint": -0.005292094778269529,
+        "right_hand_middle_1_joint": 0.007042919751256704,
+        "right_hand_thumb_0_joint": 0.028312621638178825,
+        "right_hand_thumb_1_joint": -0.011613578535616398,
+        "right_hand_thumb_2_joint": -0.009704243391752243
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2244637424898898,
+        0.058837462324996946,
+        0.1283553145811976
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5593238447238319,
+          0.038744728477320134,
+          0.828043285546457
+        ],
+        [
+          0.8262034452841625,
+          -0.10729222702648925,
+          -0.5530607968571613
+        ],
+        [
+          0.0674144177749294,
+          0.993472306627073,
+          -0.0920221290839994
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.038744728477320134,
+        -0.10729222702648925,
+        0.993472306627073
+      ],
+      "candidate_plus_y_tilt_deg": 6.550192019679471,
+      "candidate_minus_y_tilt_deg": 173.44980798032054,
+      "candidate_unsigned_plane_inclination_deg": 6.550192019679471,
+      "wrist_roll_only_tilt_deg": 6.3452960547442085,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 375,
+      "time_s": 7.5,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.08910271525382996,
+        "right_shoulder_roll_joint": -0.08744889497756958,
+        "right_shoulder_yaw_joint": 0.30358439683914185,
+        "right_elbow_joint": -0.20925655961036682,
+        "right_wrist_roll_joint": 1.7001900672912598,
+        "right_wrist_pitch_joint": -0.11659453064203262,
+        "right_wrist_yaw_joint": -0.1492994725704193,
+        "right_hand_index_0_joint": -0.01136786863207817,
+        "right_hand_index_1_joint": 0.006799635477364063,
+        "right_hand_middle_0_joint": -0.005309986416250467,
+        "right_hand_middle_1_joint": 0.0070295012556016445,
+        "right_hand_thumb_0_joint": 0.028313899412751198,
+        "right_hand_thumb_1_joint": -0.01160910539329052,
+        "right_hand_thumb_2_joint": -0.009662198834121227
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22471362223317504,
+        0.05851819188047969,
+        0.12784348226781636
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5572876133369656,
+          0.05712826729034198,
+          0.8283519041431564
+        ],
+        [
+          0.8275220965011076,
+          -0.12003675913293498,
+          -0.5484508695036178
+        ],
+        [
+          0.0681006301263169,
+          0.9911243804554836,
+          -0.11416990252747695
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.05712826729034198,
+        -0.12003675913293498,
+        0.9911243804554836
+      ],
+      "candidate_plus_y_tilt_deg": 7.639390539312204,
+      "candidate_minus_y_tilt_deg": 172.3606094606878,
+      "candidate_unsigned_plane_inclination_deg": 7.639390539312204,
+      "wrist_roll_only_tilt_deg": 7.4137152258526156,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 385,
+      "time_s": 7.7,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.08912668377161026,
+        "right_shoulder_roll_joint": -0.08659800887107849,
+        "right_shoulder_yaw_joint": 0.30252978205680847,
+        "right_elbow_joint": -0.20944830775260925,
+        "right_wrist_roll_joint": 1.7017359733581543,
+        "right_wrist_pitch_joint": -0.1173495352268219,
+        "right_wrist_yaw_joint": -0.14789731800556183,
+        "right_hand_index_0_joint": -0.011364290490746498,
+        "right_hand_index_1_joint": 0.006717335432767868,
+        "right_hand_middle_0_joint": -0.005372605752199888,
+        "right_hand_middle_1_joint": 0.007008926477283239,
+        "right_hand_thumb_0_joint": 0.028313133865594864,
+        "right_hand_thumb_1_joint": -0.01160910539329052,
+        "right_hand_thumb_2_joint": -0.009635361842811108
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22491103593153916,
+        0.05855777697917066,
+        0.12774316719344994
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5585782559185897,
+          0.05890444261579192,
+          0.8273576002280214
+        ],
+        [
+          0.8265615911404176,
+          -0.12272717013141603,
+          -0.5493031747249937
+        ],
+        [
+          0.06918285962844378,
+          0.9906908237950216,
+          -0.1172408784595787
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.05890444261579192,
+        -0.12272717013141603,
+        0.9906908237950216
+      ],
+      "candidate_plus_y_tilt_deg": 7.824034240846813,
+      "candidate_minus_y_tilt_deg": 172.1759657591532,
+      "candidate_unsigned_plane_inclination_deg": 7.824034240846813,
+      "wrist_roll_only_tilt_deg": 7.502289119009357,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 395,
+      "time_s": 7.9,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.0920388475060463,
+        "right_shoulder_roll_joint": -0.08568721264600754,
+        "right_shoulder_yaw_joint": 0.3037281930446625,
+        "right_elbow_joint": -0.21683058142662048,
+        "right_wrist_roll_joint": 1.702335238456726,
+        "right_wrist_pitch_joint": -0.11706191301345825,
+        "right_wrist_yaw_joint": -0.11192067712545395,
+        "right_hand_index_0_joint": -0.01137323584407568,
+        "right_hand_index_1_joint": 0.006669923663139343,
+        "right_hand_middle_0_joint": -0.0057832105085253716,
+        "right_hand_middle_1_joint": 0.0070098210126161575,
+        "right_hand_thumb_0_joint": 0.028310321271419525,
+        "right_hand_thumb_1_joint": -0.011594791896641254,
+        "right_hand_thumb_2_joint": -0.00960405170917511
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22473368023942009,
+        0.05918398100577527,
+        0.12950674364565753
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5573063735401311,
+          0.03550480765879349,
+          0.8295474758232101
+        ],
+        [
+          0.8223745212511847,
+          -0.1613754062964587,
+          -0.5455805394618993
+        ],
+        [
+          0.11449782883719672,
+          0.986254220206821,
+          -0.1191337916621604
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.03550480765879349,
+        -0.1613754062964587,
+        0.986254220206821
+      ],
+      "candidate_plus_y_tilt_deg": 9.510887752612964,
+      "candidate_minus_y_tilt_deg": 170.48911224738703,
+      "candidate_unsigned_plane_inclination_deg": 9.510887752612964,
+      "wrist_roll_only_tilt_deg": 7.536624479966992,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 405,
+      "time_s": 8.1,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.1047181636095047,
+        "right_shoulder_roll_joint": -0.08448878675699234,
+        "right_shoulder_yaw_joint": 0.3051183819770813,
+        "right_elbow_joint": -0.21883195638656616,
+        "right_wrist_roll_joint": 1.702431082725525,
+        "right_wrist_pitch_joint": -0.11500062793493271,
+        "right_wrist_yaw_joint": -0.07075486332178116,
+        "right_hand_index_0_joint": -0.011370551772415638,
+        "right_hand_index_1_joint": 0.006646664813160896,
+        "right_hand_middle_0_joint": -0.005776054225862026,
+        "right_hand_middle_1_joint": 0.00700355926528573,
+        "right_hand_thumb_0_joint": 0.028312621638178825,
+        "right_hand_thumb_1_joint": -0.011564376763999462,
+        "right_hand_thumb_2_joint": -0.009587055072188377
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22498027228678377,
+        0.06055737536299746,
+        0.13314579247002628
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5520501785072506,
+          0.0016305399997428305,
+          0.8338092957921627
+        ],
+        [
+          0.8156088767901896,
+          -0.20886142521691098,
+          -0.5395915725411271
+        ],
+        [
+          0.17327077223570753,
+          0.9779438871406019,
+          -0.11663186997202621
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.0016305399997428305,
+        -0.20886142521691098,
+        0.9779438871406019
+      ],
+      "candidate_plus_y_tilt_deg": 12.056010090391206,
+      "candidate_minus_y_tilt_deg": 167.9439899096088,
+      "candidate_unsigned_plane_inclination_deg": 12.056010090391206,
+      "wrist_roll_only_tilt_deg": 7.5421159520596746,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 415,
+      "time_s": 8.3,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.10434664785861969,
+        "right_shoulder_roll_joint": -0.08465656638145447,
+        "right_shoulder_yaw_joint": 0.30505844950675964,
+        "right_elbow_joint": -0.21841250360012054,
+        "right_wrist_roll_joint": 1.7013405561447144,
+        "right_wrist_pitch_joint": -0.10500577837228775,
+        "right_wrist_yaw_joint": -0.0679984912276268,
+        "right_hand_index_0_joint": -0.011371446773409843,
+        "right_hand_index_1_joint": 0.0066511379554867744,
+        "right_hand_middle_0_joint": -0.005776054225862026,
+        "right_hand_middle_1_joint": 0.007020555902272463,
+        "right_hand_thumb_0_joint": 0.02831466682255268,
+        "right_hand_thumb_1_joint": -0.011563482694327831,
+        "right_hand_thumb_2_joint": -0.009579898789525032
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22433654491696917,
+        0.060277183033667865,
+        0.13371814712377952
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5440033575481293,
+          -0.0034603247769340317,
+          0.8390759042713607
+        ],
+        [
+          0.819593168766037,
+          -0.2120862135916404,
+          -0.5322466305355148
+        ],
+        [
+          0.17979817765597622,
+          0.9772448332719906,
+          -0.11253955373463492
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.0034603247769340317,
+        -0.2120862135916404,
+        0.9772448332719906
+      ],
+      "candidate_plus_y_tilt_deg": 12.246292703936177,
+      "candidate_minus_y_tilt_deg": 167.75370729606382,
+      "candidate_unsigned_plane_inclination_deg": 12.246292703936177,
+      "wrist_roll_only_tilt_deg": 7.479633381532395,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 420,
+      "time_s": 8.4,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.10423879325389862,
+        "right_shoulder_roll_joint": -0.08507601171731949,
+        "right_shoulder_yaw_joint": 0.3027454912662506,
+        "right_elbow_joint": -0.21828067302703857,
+        "right_wrist_roll_joint": 1.702730655670166,
+        "right_wrist_pitch_joint": -0.09646102786064148,
+        "right_wrist_yaw_joint": -0.07230082899332047,
+        "right_hand_index_0_joint": -0.011370551772415638,
+        "right_hand_index_1_joint": 0.0066368249244987965,
+        "right_hand_middle_0_joint": -0.005776054225862026,
+        "right_hand_middle_1_joint": 0.007014293689280748,
+        "right_hand_thumb_0_joint": 0.02831517718732357,
+        "right_hand_thumb_1_joint": -0.01156884990632534,
+        "right_hand_thumb_2_joint": -0.009575425647199154
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22408717319665716,
+        0.06021108954771541,
+        0.13429905647789636
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5373605423515146,
+          -0.0028535574210459824,
+          0.8433477958314299
+        ],
+        [
+          0.8241744675384238,
+          -0.21026821316674632,
+          -0.5258552325397359
+        ],
+        [
+          0.1788297922087983,
+          0.9776395735350063,
+          -0.1106380118984858
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.0028535574210459824,
+        -0.21026821316674632,
+        0.9776395735350063
+      ],
+      "candidate_plus_y_tilt_deg": 12.139205409574116,
+      "candidate_minus_y_tilt_deg": 167.86079459042588,
+      "candidate_unsigned_plane_inclination_deg": 12.139205409574116,
+      "wrist_roll_only_tilt_deg": 7.559280217443937,
+      "projected_gravity_agreement_deg": 1.2074182697257333e-06
+    },
+    {
+      "episode": 15,
+      "source_frame": 425,
+      "time_s": 8.5,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.10393918305635452,
+        "right_shoulder_roll_joint": -0.08538760244846344,
+        "right_shoulder_yaw_joint": 0.30260169506073,
+        "right_elbow_joint": -0.21772940456867218,
+        "right_wrist_roll_joint": 1.70090913772583,
+        "right_wrist_pitch_joint": -0.09606555104255676,
+        "right_wrist_yaw_joint": -0.07382282614707947,
+        "right_hand_index_0_joint": -0.011370551772415638,
+        "right_hand_index_1_joint": 0.00663145724684,
+        "right_hand_middle_0_joint": -0.005767108406871557,
+        "right_hand_middle_1_joint": 0.00701339915394783,
+        "right_hand_thumb_0_joint": 0.028310321271419525,
+        "right_hand_thumb_1_joint": -0.011546486057341099,
+        "right_hand_thumb_2_joint": -0.009561113081872463
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2239104686952803,
+        0.06003845543810009,
+        0.13452757487160338
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5369555163346366,
+          -0.004860011914794959,
+          0.843596558647552
+        ],
+        [
+          0.8245515411574682,
+          -0.20833521772538105,
+          -0.5260334523869779
+        ],
+        [
+          0.17830740156440128,
+          0.9780454065837163,
+          -0.10785941409003305
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.004860011914794959,
+        -0.20833521772538105,
+        0.9780454065837163
+      ],
+      "candidate_plus_y_tilt_deg": 12.028129920314392,
+      "candidate_minus_y_tilt_deg": 167.97187007968563,
+      "candidate_unsigned_plane_inclination_deg": 12.028129920314392,
+      "wrist_roll_only_tilt_deg": 7.454914926926149,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 15,
+      "source_frame": 431,
+      "time_s": 8.62,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.10396315157413483,
+        "right_shoulder_roll_joint": -0.08405735343694687,
+        "right_shoulder_yaw_joint": 0.30275747179985046,
+        "right_elbow_joint": -0.21774138510227203,
+        "right_wrist_roll_joint": 1.6992912292480469,
+        "right_wrist_pitch_joint": -0.09582586586475372,
+        "right_wrist_yaw_joint": -0.07375092059373856,
+        "right_hand_index_0_joint": -0.011368762701749802,
+        "right_hand_index_1_joint": 0.006620722822844982,
+        "right_hand_middle_0_joint": -0.005776054225862026,
+        "right_hand_middle_1_joint": 0.00702681764960289,
+        "right_hand_thumb_0_joint": 0.028314154595136642,
+        "right_hand_thumb_1_joint": -0.011523227207362652,
+        "right_hand_thumb_2_joint": -0.009553956799209118
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22357224583590127,
+        0.060248164232676565,
+        0.13481270594822986
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5363722884402641,
+          -0.006357854247080241,
+          0.8439575498108468
+        ],
+        [
+          0.8247178761646333,
+          -0.20848013621275494,
+          -0.5257151867115964
+        ],
+        [
+          0.17929080547493703,
+          0.9780059358174086,
+          -0.10657953170315695
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.006357854247080241,
+        -0.20848013621275494,
+        0.9780059358174086
+      ],
+      "candidate_plus_y_tilt_deg": 12.038977290535666,
+      "candidate_minus_y_tilt_deg": 167.96102270946432,
+      "candidate_unsigned_plane_inclination_deg": 12.038977290535666,
+      "wrist_roll_only_tilt_deg": 7.362215599510707,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 246,
+      "time_s": 4.92,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.1453566700220108,
+        "right_shoulder_roll_joint": -0.16604143381118774,
+        "right_shoulder_yaw_joint": 0.2754693925380707,
+        "right_elbow_joint": 0.005560680292546749,
+        "right_wrist_roll_joint": 0.22548319399356842,
+        "right_wrist_pitch_joint": -0.1634528487920761,
+        "right_wrist_yaw_joint": -0.2584398090839386,
+        "right_hand_index_0_joint": 0.5691057443618774,
+        "right_hand_index_1_joint": 1.0634853839874268,
+        "right_hand_middle_0_joint": 0.5402076244354248,
+        "right_hand_middle_1_joint": 0.9449341893196106,
+        "right_hand_thumb_0_joint": 0.029151977971196175,
+        "right_hand_thumb_1_joint": -0.37291812896728516,
+        "right_hand_thumb_2_joint": -0.4929056465625763
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23348317477524333,
+        0.07924094281574481,
+        0.11443023942194716
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.6221371582549051,
+          -0.7826009705033617,
+          -0.021933474091145988
+        ],
+        [
+          0.7517590569662179,
+          0.6049737695531523,
+          -0.2624215281220492
+        ],
+        [
+          0.21864051908960802,
+          0.14677349597200853,
+          0.9647040293750104
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.7826009705033617,
+        0.6049737695531523,
+        0.14677349597200853
+      ],
+      "candidate_plus_y_tilt_deg": 81.560008069329,
+      "candidate_minus_y_tilt_deg": 98.439991930671,
+      "candidate_unsigned_plane_inclination_deg": 81.560008069329,
+      "wrist_roll_only_tilt_deg": 77.08076463303894,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 260,
+      "time_s": 5.2,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.147154301404953,
+        "right_shoulder_roll_joint": -0.16867797076702118,
+        "right_shoulder_yaw_joint": 0.2711431086063385,
+        "right_elbow_joint": -0.025382589548826218,
+        "right_wrist_roll_joint": 0.8996317982673645,
+        "right_wrist_pitch_joint": -0.11066233366727829,
+        "right_wrist_yaw_joint": -0.25460487604141235,
+        "right_hand_index_0_joint": 0.5690869688987732,
+        "right_hand_index_1_joint": 1.1265226602554321,
+        "right_hand_middle_0_joint": 0.5400868654251099,
+        "right_hand_middle_1_joint": 1.0086790323257446,
+        "right_hand_thumb_0_joint": 0.029329612851142883,
+        "right_hand_thumb_1_joint": -0.3506748080253601,
+        "right_hand_thumb_2_joint": -0.49853694438934326
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23727353308501403,
+        0.07881774054733272,
+        0.11547554383326111
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.6255096008547221,
+          -0.5587899326382807,
+          0.5445103767796101
+        ],
+        [
+          0.7801774099631765,
+          0.4409834328788384,
+          -0.4436854977453576
+        ],
+        [
+          0.007806934207288174,
+          0.7023442340537166,
+          0.7117946534428186
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.5587899326382807,
+        0.4409834328788384,
+        0.7023442340537166
+      ],
+      "candidate_plus_y_tilt_deg": 45.38461387959461,
+      "candidate_minus_y_tilt_deg": 134.6153861204054,
+      "candidate_unsigned_plane_inclination_deg": 45.38461387959461,
+      "wrist_roll_only_tilt_deg": 38.454894843515326,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 275,
+      "time_s": 5.5,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.15355387330055237,
+        "right_shoulder_roll_joint": -0.1606844961643219,
+        "right_shoulder_yaw_joint": 0.26391661167144775,
+        "right_elbow_joint": -0.09207480400800705,
+        "right_wrist_roll_joint": 1.3535943031311035,
+        "right_wrist_pitch_joint": 0.001689775730483234,
+        "right_wrist_yaw_joint": -0.3128601908683777,
+        "right_hand_index_0_joint": 0.569075345993042,
+        "right_hand_index_1_joint": 1.1268330812454224,
+        "right_hand_middle_0_joint": 0.5400868654251099,
+        "right_hand_middle_1_joint": 1.0322920083999634,
+        "right_hand_thumb_0_joint": 0.02933344803750515,
+        "right_hand_thumb_1_joint": -0.3506748080253601,
+        "right_hand_thumb_2_joint": -0.5022968053817749
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2335167131876187,
+        0.08383321447472221,
+        0.1238714632176423
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.4934194315765339,
+          -0.24985655593702932,
+          0.8331320219496896
+        ],
+        [
+          0.8603308046989961,
+          0.28108921233918294,
+          -0.42522906908220304
+        ],
+        [
+          -0.12793815313920065,
+          0.9265854284208367,
+          0.3536541712033192
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.24985655593702932,
+        0.28108921233918294,
+        0.9265854284208367
+      ],
+      "candidate_plus_y_tilt_deg": 22.091348604151097,
+      "candidate_minus_y_tilt_deg": 157.9086513958489,
+      "candidate_unsigned_plane_inclination_deg": 22.091348604151097,
+      "wrist_roll_only_tilt_deg": 12.444759257635964,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 290,
+      "time_s": 5.8,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.15288275480270386,
+        "right_shoulder_roll_joint": -0.15384149551391602,
+        "right_shoulder_yaw_joint": 0.26431208848953247,
+        "right_elbow_joint": -0.11761318892240524,
+        "right_wrist_roll_joint": 1.6029740571975708,
+        "right_wrist_pitch_joint": 0.041010018438100815,
+        "right_wrist_yaw_joint": -0.3090132474899292,
+        "right_hand_index_0_joint": 0.5690860748291016,
+        "right_hand_index_1_joint": 1.126828670501709,
+        "right_hand_middle_0_joint": 0.5400761365890503,
+        "right_hand_middle_1_joint": 1.0342000722885132,
+        "right_hand_thumb_0_joint": 0.029334213584661484,
+        "right_hand_thumb_1_joint": -0.35067570209503174,
+        "right_hand_thumb_2_joint": -0.5051871538162231
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22713787181564987,
+        0.08077374890986563,
+        0.13897051606029104
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.4057713472765949,
+          -0.10047237392020952,
+          0.9084354219250673
+        ],
+        [
+          0.9090652152256078,
+          0.14724824305877837,
+          -0.3897670963318001
+        ],
+        [
+          -0.0946046943663833,
+          0.9839833621535179,
+          0.15108505819207496
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.10047237392020952,
+        0.14724824305877837,
+        0.9839833621535179
+      ],
+      "candidate_plus_y_tilt_deg": 10.268444952501254,
+      "candidate_minus_y_tilt_deg": 169.73155504749874,
+      "candidate_unsigned_plane_inclination_deg": 10.268444952501254,
+      "wrist_roll_only_tilt_deg": 1.8436481463829726,
+      "projected_gravity_agreement_deg": 1.478779333471098e-06
+    },
+    {
+      "episode": 16,
+      "source_frame": 305,
+      "time_s": 6.1,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.15088139474391937,
+        "right_shoulder_roll_joint": -0.15270300209522247,
+        "right_shoulder_yaw_joint": 0.2627541422843933,
+        "right_elbow_joint": -0.12032162398099899,
+        "right_wrist_roll_joint": 1.6381597518920898,
+        "right_wrist_pitch_joint": 0.08101335912942886,
+        "right_wrist_yaw_joint": -0.3089892864227295,
+        "right_hand_index_0_joint": 0.5690726637840271,
+        "right_hand_index_1_joint": 1.1268322467803955,
+        "right_hand_middle_0_joint": 0.5400707721710205,
+        "right_hand_middle_1_joint": 1.0342886447906494,
+        "right_hand_thumb_0_joint": 0.029334213584661484,
+        "right_hand_thumb_1_joint": -0.3506810665130615,
+        "right_hand_thumb_2_joint": -0.5053284764289856
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22693737992910326,
+        0.0798971189783784,
+        0.13714495152914916
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.37124139926429256,
+          -0.07483415731974724,
+          0.9255158952554705
+        ],
+        [
+          0.9221240829069468,
+          0.14665130867658405,
+          -0.3580231408533105
+        ],
+        [
+          -0.10893575719346832,
+          0.9863535079076315,
+          0.12344941572562074
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.07483415731974724,
+        0.14665130867658405,
+        0.9863535079076315
+      ],
+      "candidate_plus_y_tilt_deg": 9.476397456450943,
+      "candidate_minus_y_tilt_deg": 170.52360254354906,
+      "candidate_unsigned_plane_inclination_deg": 9.476397456450943,
+      "wrist_roll_only_tilt_deg": 3.8596399516148354,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 320,
+      "time_s": 6.4,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.15056981146335602,
+        "right_shoulder_roll_joint": -0.13745906949043274,
+        "right_shoulder_yaw_joint": 0.2564144730567932,
+        "right_elbow_joint": -0.1294296383857727,
+        "right_wrist_roll_joint": 1.638003945350647,
+        "right_wrist_pitch_joint": 0.11984225362539291,
+        "right_wrist_yaw_joint": -0.30720362067222595,
+        "right_hand_index_0_joint": 0.3273856043815613,
+        "right_hand_index_1_joint": 0.9271512031555176,
+        "right_hand_middle_0_joint": 0.30029991269111633,
+        "right_hand_middle_1_joint": 0.8338123559951782,
+        "right_hand_thumb_0_joint": 0.028905846178531647,
+        "right_hand_thumb_1_joint": -0.14118938148021698,
+        "right_hand_thumb_2_joint": -0.2941916882991791
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22459663851547887,
+        0.0792118972389059,
+        0.1400194101086658
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.3535298869266677,
+          -0.08364349780870561,
+          0.9316761155701825
+        ],
+        [
+          0.9297764318733014,
+          0.1406939354431796,
+          -0.3401778994327289
+        ],
+        [
+          -0.10262750987221203,
+          0.9865135487178252,
+          0.12750926403047572
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.08364349780870561,
+        0.1406939354431796,
+        0.9865135487178252
+      ],
+      "candidate_plus_y_tilt_deg": 9.420539533961472,
+      "candidate_minus_y_tilt_deg": 170.57946046603854,
+      "candidate_unsigned_plane_inclination_deg": 9.420539533961472,
+      "wrist_roll_only_tilt_deg": 3.850712894369643,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 335,
+      "time_s": 6.7,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.13324061036109924,
+        "right_shoulder_roll_joint": -0.13460682332515717,
+        "right_shoulder_yaw_joint": 0.25139307975769043,
+        "right_elbow_joint": -0.13241370022296906,
+        "right_wrist_roll_joint": 1.6407722234725952,
+        "right_wrist_pitch_joint": 0.13609285652637482,
+        "right_wrist_yaw_joint": -0.31513717770576477,
+        "right_hand_index_0_joint": -0.011397388763725758,
+        "right_hand_index_1_joint": 0.09011216461658478,
+        "right_hand_middle_0_joint": -0.006743972189724445,
+        "right_hand_middle_1_joint": 0.05660981684923172,
+        "right_hand_thumb_0_joint": 0.028900478035211563,
+        "right_hand_thumb_1_joint": -0.012950057163834572,
+        "right_hand_thumb_2_joint": -0.011140912771224976
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2230050968794509,
+        0.07547224358325444,
+        0.13813117800809185
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.3484357129328961,
+          -0.0719284726799197,
+          0.9345688036580712
+        ],
+        [
+          0.930024532394407,
+          0.150792380304024,
+          -0.3351358339342589
+        ],
+        [
+          -0.11682004578628213,
+          0.9859452078387421,
+          0.11943669470606719
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.0719284726799197,
+        0.150792380304024,
+        0.9859452078387421
+      ],
+      "candidate_plus_y_tilt_deg": 9.617447401059884,
+      "candidate_minus_y_tilt_deg": 170.38255259894012,
+      "candidate_unsigned_plane_inclination_deg": 9.617447401059884,
+      "wrist_roll_only_tilt_deg": 4.00932354727567,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 340,
+      "time_s": 6.8,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.1330249011516571,
+        "right_shoulder_roll_joint": -0.13348029553890228,
+        "right_shoulder_yaw_joint": 0.2511773705482483,
+        "right_elbow_joint": -0.1417614072561264,
+        "right_wrist_roll_joint": 1.6412756443023682,
+        "right_wrist_pitch_joint": 0.1351700723171234,
+        "right_wrist_yaw_joint": -0.31561654806137085,
+        "right_hand_index_0_joint": -0.015973977744579315,
+        "right_hand_index_1_joint": 0.02389475330710411,
+        "right_hand_middle_0_joint": -0.013628536835312843,
+        "right_hand_middle_1_joint": 0.014654764905571938,
+        "right_hand_thumb_0_joint": 0.028905589133501053,
+        "right_hand_thumb_1_joint": -0.012721942737698555,
+        "right_hand_thumb_2_joint": -0.010302706621587276
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22284397327914998,
+        0.07543603230528492,
+        0.13920646973351175
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.34788706051710216,
+          -0.07199128458917942,
+          0.9347683392520147
+        ],
+        [
+          0.931220239467484,
+          0.14207347153756783,
+          -0.33562478199826884
+        ],
+        [
+          -0.10864372384492199,
+          0.9872347155709545,
+          0.11646526366537208
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.07199128458917942,
+        0.14207347153756783,
+        0.9872347155709545
+      ],
+      "candidate_plus_y_tilt_deg": 9.164651487189982,
+      "candidate_minus_y_tilt_deg": 170.83534851281001,
+      "candidate_unsigned_plane_inclination_deg": 9.164651487189982,
+      "wrist_roll_only_tilt_deg": 4.038167436140644,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 345,
+      "time_s": 6.9,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.13161076605319977,
+        "right_shoulder_roll_joint": -0.13324061036109924,
+        "right_shoulder_yaw_joint": 0.2519204020500183,
+        "right_elbow_joint": -0.14686667919158936,
+        "right_wrist_roll_joint": 1.6414194107055664,
+        "right_wrist_pitch_joint": 0.13591310381889343,
+        "right_wrist_yaw_joint": -0.31492146849632263,
+        "right_hand_index_0_joint": -0.024930352345108986,
+        "right_hand_index_1_joint": -0.007151089608669281,
+        "right_hand_middle_0_joint": -0.01192439254373312,
+        "right_hand_middle_1_joint": 0.003979038447141647,
+        "right_hand_thumb_0_joint": 0.028899967670440674,
+        "right_hand_thumb_1_joint": -0.012336385436356068,
+        "right_hand_thumb_2_joint": -0.010020919144153595
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.22270394711547473,
+        0.07530799197725332,
+        0.1391558839735479
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.3459932760831328,
+          -0.07097644259491948,
+          0.9355485008816118
+        ],
+        [
+          0.9322640821038501,
+          0.1383418292218071,
+          -0.3342831427198057
+        ],
+        [
+          -0.10569926264798002,
+          0.98783798412702,
+          0.11403413081853558
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.07097644259491948,
+        0.1383418292218071,
+        0.98783798412702
+      ],
+      "candidate_plus_y_tilt_deg": 8.945024943318028,
+      "candidate_minus_y_tilt_deg": 171.05497505668197,
+      "candidate_unsigned_plane_inclination_deg": 8.945024943318028,
+      "wrist_roll_only_tilt_deg": 4.046404644279621,
+      "projected_gravity_agreement_deg": 8.537736462515939e-07
+    },
+    {
+      "episode": 16,
+      "source_frame": 350,
+      "time_s": 7.0,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.13164670765399933,
+        "right_shoulder_roll_joint": -0.1311793327331543,
+        "right_shoulder_yaw_joint": 0.25128522515296936,
+        "right_elbow_joint": -0.19032147526741028,
+        "right_wrist_roll_joint": 1.6427615880966187,
+        "right_wrist_pitch_joint": 0.13416339457035065,
+        "right_wrist_yaw_joint": -0.3010796904563904,
+        "right_hand_index_0_joint": -0.016912376508116722,
+        "right_hand_index_1_joint": -0.006259209476411343,
+        "right_hand_middle_0_joint": -0.010114689357578754,
+        "right_hand_middle_1_joint": 0.0039853001944720745,
+        "right_hand_thumb_0_joint": 0.028900733217597008,
+        "right_hand_thumb_1_joint": -0.01233906950801611,
+        "right_hand_thumb_2_joint": -0.009998554363846779
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.221264806138052,
+        0.07461400693742547,
+        0.1462004876958558
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.3413882167267119,
+          -0.08968155310971182,
+          0.9356341723729347
+        ],
+        [
+          0.938643214407331,
+          0.08444456045180398,
+          -0.33439203378246884
+        ],
+        [
+          -0.04902041949259284,
+          0.9923841671660891,
+          0.11300735918885399
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.08968155310971182,
+        0.08444456045180398,
+        0.9923841671660891
+      ],
+      "candidate_plus_y_tilt_deg": 7.075747774939201,
+      "candidate_minus_y_tilt_deg": 172.9242522250608,
+      "candidate_unsigned_plane_inclination_deg": 7.075747774939201,
+      "wrist_roll_only_tilt_deg": 4.123305744144833,
+      "projected_gravity_agreement_deg": 1.2074182697257333e-06
+    },
+    {
+      "episode": 16,
+      "source_frame": 355,
+      "time_s": 7.1,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.1258103996515274,
+        "right_shoulder_roll_joint": -0.12481570243835449,
+        "right_shoulder_yaw_joint": 0.2516687214374542,
+        "right_elbow_joint": -0.19866250455379486,
+        "right_wrist_roll_joint": 1.6511505842208862,
+        "right_wrist_pitch_joint": 0.1342233270406723,
+        "right_wrist_yaw_joint": -0.2977360785007477,
+        "right_hand_index_0_joint": -0.016576020047068596,
+        "right_hand_index_1_joint": -0.006193011533468962,
+        "right_hand_middle_0_joint": -0.009458974003791809,
+        "right_hand_middle_1_joint": 0.003984405659139156,
+        "right_hand_thumb_0_joint": 0.028896644711494446,
+        "right_hand_thumb_1_joint": -0.012292551808059216,
+        "right_hand_thumb_2_joint": -0.009982452727854252
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2199919217983796,
+        0.07453909314389615,
+        0.14599026663059236
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.3364407889243115,
+          -0.07589420988353607,
+          0.9386413928940811
+        ],
+        [
+          0.9408396489555049,
+          0.06980109919646069,
+          -0.3315849235177142
+        ],
+        [
+          -0.0403528251956341,
+          0.9946697318492805,
+          0.09488821866602284
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.07589420988353607,
+        0.06980109919646069,
+        0.9946697318492805
+      ],
+      "candidate_plus_y_tilt_deg": 5.918412847448324,
+      "candidate_minus_y_tilt_deg": 174.08158715255166,
+      "candidate_unsigned_plane_inclination_deg": 5.918412847448324,
+      "wrist_roll_only_tilt_deg": 4.603959816416989,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 360,
+      "time_s": 7.2,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.11431752145290375,
+        "right_shoulder_roll_joint": -0.12287425994873047,
+        "right_shoulder_yaw_joint": 0.25156086683273315,
+        "right_elbow_joint": -0.19863852858543396,
+        "right_wrist_roll_joint": 1.6523610353469849,
+        "right_wrist_pitch_joint": 0.1341753900051117,
+        "right_wrist_yaw_joint": -0.29786792397499084,
+        "right_hand_index_0_joint": -0.016589438542723656,
+        "right_hand_index_1_joint": -0.006190327927470207,
+        "right_hand_middle_0_joint": -0.009446450509130955,
+        "right_hand_middle_1_joint": 0.003979038447141647,
+        "right_hand_thumb_0_joint": 0.028903290629386902,
+        "right_hand_thumb_1_joint": -0.012163734994828701,
+        "right_hand_thumb_2_joint": -0.009976190514862537
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.21967885677708893,
+        0.07298312619892922,
+        0.14261869597142912
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.338691351183872,
+          -0.06038817366271959,
+          0.9389576332907277
+        ],
+        [
+          0.9394915035264371,
+          0.07624112082706783,
+          -0.3339805477818546
+        ],
+        [
+          -0.05141870705179513,
+          0.9952590416452965,
+          0.08255638429829645
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.06038817366271959,
+        0.07624112082706783,
+        0.9952590416452965
+      ],
+      "candidate_plus_y_tilt_deg": 5.581390782090679,
+      "candidate_minus_y_tilt_deg": 174.41860921790934,
+      "candidate_unsigned_plane_inclination_deg": 5.581390782090679,
+      "wrist_roll_only_tilt_deg": 4.673313557249274,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 370,
+      "time_s": 7.4,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.11104582995176315,
+        "right_shoulder_roll_joint": -0.12305402755737305,
+        "right_shoulder_yaw_joint": 0.2515488862991333,
+        "right_elbow_joint": -0.19859059154987335,
+        "right_wrist_roll_joint": 1.663710117340088,
+        "right_wrist_pitch_joint": 0.13421133160591125,
+        "right_wrist_yaw_joint": -0.29819148778915405,
+        "right_hand_index_0_joint": -0.016572441905736923,
+        "right_hand_index_1_joint": -0.0061956956051290035,
+        "right_hand_middle_0_joint": -0.009444660507142544,
+        "right_hand_middle_1_joint": 0.003988878335803747,
+        "right_hand_thumb_0_joint": 0.028900733217597008,
+        "right_hand_thumb_1_joint": -0.01214942242950201,
+        "right_hand_thumb_2_joint": -0.009943092241883278
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.21970402066211314,
+        0.07253342498009116,
+        0.14165395011029625
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.33648039633221716,
+          -0.047169640481352304,
+          0.9405083561037477
+        ],
+        [
+          0.9400929904603261,
+          0.07497573166401625,
+          -0.3325715095266078
+        ],
+        [
+          -0.05482802359628891,
+          0.9960691063768143,
+          0.06957171228465911
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.047169640481352304,
+        0.07497573166401625,
+        0.9960691063768143
+      ],
+      "candidate_plus_y_tilt_deg": 5.081894469611727,
+      "candidate_minus_y_tilt_deg": 174.9181055303883,
+      "candidate_unsigned_plane_inclination_deg": 5.081894469611727,
+      "wrist_roll_only_tilt_deg": 5.323568056801999,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 16,
+      "source_frame": 386,
+      "time_s": 7.72,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.11098591238260269,
+        "right_shoulder_roll_joint": -0.12292219698429108,
+        "right_shoulder_yaw_joint": 0.25176459550857544,
+        "right_elbow_joint": -0.1985306739807129,
+        "right_wrist_roll_joint": 1.6714038848876953,
+        "right_wrist_pitch_joint": 0.1333245038986206,
+        "right_wrist_yaw_joint": -0.29839521646499634,
+        "right_hand_index_0_joint": -0.016574230045080185,
+        "right_hand_index_1_joint": -0.006190327927470207,
+        "right_hand_middle_0_joint": -0.009443766437470913,
+        "right_hand_middle_1_joint": 0.003991561941802502,
+        "right_hand_thumb_0_joint": 0.028897667303681374,
+        "right_hand_thumb_1_joint": -0.012150316499173641,
+        "right_hand_thumb_2_joint": -0.009913571178913116
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2199029845906404,
+        0.07312005488041684,
+        0.14105738957917824
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.33442160594980724,
+          -0.03856414946932363,
+          0.9416342155262099
+        ],
+        [
+          0.940633603473671,
+          0.07521092349181818,
+          -0.33098601330516303
+        ],
+        [
+          -0.05805698485186411,
+          0.9964216594209585,
+          0.06142689269932905
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.03856414946932363,
+        0.07521092349181818,
+        0.9964216594209585
+      ],
+      "candidate_plus_y_tilt_deg": 4.848507329508885,
+      "candidate_minus_y_tilt_deg": 175.1514926704911,
+      "candidate_unsigned_plane_inclination_deg": 4.848507329508885,
+      "wrist_roll_only_tilt_deg": 5.764388465834593,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 280,
+      "time_s": 5.6,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.22496788203716278,
+        "right_shoulder_roll_joint": -0.14124608039855957,
+        "right_shoulder_yaw_joint": 0.1955106556415558,
+        "right_elbow_joint": -0.059178102761507034,
+        "right_wrist_roll_joint": 1.3322384357452393,
+        "right_wrist_pitch_joint": 0.1663530319929123,
+        "right_wrist_yaw_joint": -0.2346990704536438,
+        "right_hand_index_0_joint": 0.5202106833457947,
+        "right_hand_index_1_joint": 1.2169872522354126,
+        "right_hand_middle_0_joint": 0.5271953344345093,
+        "right_hand_middle_1_joint": 1.2124508619308472,
+        "right_hand_thumb_0_joint": 0.02480439841747284,
+        "right_hand_thumb_1_joint": -0.3008243143558502,
+        "right_hand_thumb_2_joint": -0.6248440146446228
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2020155792383217,
+        0.14716119082192333,
+        0.1616881439829815
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.1576975171872153,
+          -0.4764544013489073,
+          0.8649408630121729
+        ],
+        [
+          0.9874215478482284,
+          0.08620299042448826,
+          -0.13254331852977125
+        ],
+        [
+          -0.011409641449087238,
+          0.8749629980045615,
+          0.4840553400230943
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.4764544013489073,
+        0.08620299042448826,
+        0.8749629980045615
+      ],
+      "candidate_plus_y_tilt_deg": 28.959403242764747,
+      "candidate_minus_y_tilt_deg": 151.04059675723525,
+      "candidate_unsigned_plane_inclination_deg": 28.959403242764747,
+      "wrist_roll_only_tilt_deg": 13.66836032668708,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 300,
+      "time_s": 6.0,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.27724307775497437,
+        "right_shoulder_roll_joint": -0.09308147430419922,
+        "right_shoulder_yaw_joint": 0.12889033555984497,
+        "right_elbow_joint": -0.01865943893790245,
+        "right_wrist_roll_joint": 1.4514094591140747,
+        "right_wrist_pitch_joint": 0.03221359848976135,
+        "right_wrist_yaw_joint": -0.24709075689315796,
+        "right_hand_index_0_joint": 0.5202133655548096,
+        "right_hand_index_1_joint": 1.216976523399353,
+        "right_hand_middle_0_joint": 0.5271899700164795,
+        "right_hand_middle_1_joint": 1.2124589681625366,
+        "right_hand_thumb_0_joint": 0.0248061865568161,
+        "right_hand_thumb_1_joint": -0.3007974922657013,
+        "right_hand_thumb_2_joint": -0.6251294016838074
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2131521469662126,
+        0.15607545675641182,
+        0.17183812123304631
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.2822650031934465,
+          -0.29447760578683846,
+          0.9130221287911127
+        ],
+        [
+          0.9571494529403662,
+          0.02221931001619598,
+          -0.28874076088831285
+        ],
+        [
+          0.06474096622820347,
+          0.9554000428890799,
+          0.288130812894739
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.29447760578683846,
+        0.02221931001619598,
+        0.9554000428890799
+      ],
+      "candidate_plus_y_tilt_deg": 17.176407694755383,
+      "candidate_minus_y_tilt_deg": 162.8235923052446,
+      "candidate_unsigned_plane_inclination_deg": 17.176407694755383,
+      "wrist_roll_only_tilt_deg": 6.840363647397916,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 320,
+      "time_s": 6.4,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.3315076529979705,
+        "right_shoulder_roll_joint": -0.03858920559287071,
+        "right_shoulder_yaw_joint": 0.04978246986865997,
+        "right_elbow_joint": 0.059190087020397186,
+        "right_wrist_roll_joint": 1.6016438007354736,
+        "right_wrist_pitch_joint": -0.15539944171905518,
+        "right_wrist_yaw_joint": -0.16858209669589996,
+        "right_hand_index_0_joint": 0.5202187299728394,
+        "right_hand_index_1_joint": 1.2169944047927856,
+        "right_hand_middle_0_joint": 0.5271810293197632,
+        "right_hand_middle_1_joint": 1.2130126953125,
+        "right_hand_thumb_0_joint": 0.024800308048725128,
+        "right_hand_thumb_1_joint": -0.3008243143558502,
+        "right_hand_thumb_2_joint": -0.625205397605896
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2227179734571918,
+        0.16643276682262037,
+        0.1769978515045288
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.43443654045182145,
+          -0.08538744650835228,
+          0.8966459035199099
+        ],
+        [
+          0.8873553498820751,
+          -0.13016811378365872,
+          -0.4423310357522564
+        ],
+        [
+          0.15448422364731096,
+          0.9878083043449205,
+          0.019219222442644096
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.08538744650835228,
+        -0.13016811378365872,
+        0.9878083043449205
+      ],
+      "candidate_plus_y_tilt_deg": 8.955955114623162,
+      "candidate_minus_y_tilt_deg": 171.04404488537685,
+      "candidate_unsigned_plane_inclination_deg": 8.955955114623162,
+      "wrist_roll_only_tilt_deg": 1.767430065434832,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 340,
+      "time_s": 6.8,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2899703085422516,
+        "right_shoulder_roll_joint": -0.06186256930232048,
+        "right_shoulder_yaw_joint": 0.010905644856393337,
+        "right_elbow_joint": 0.0890188217163086,
+        "right_wrist_roll_joint": 1.6035852432250977,
+        "right_wrist_pitch_joint": -0.20691964030265808,
+        "right_wrist_yaw_joint": -0.2214445173740387,
+        "right_hand_index_0_joint": 0.5201972723007202,
+        "right_hand_index_1_joint": 1.2170078754425049,
+        "right_hand_middle_0_joint": 0.5271792411804199,
+        "right_hand_middle_1_joint": 1.2130188941955566,
+        "right_hand_thumb_0_joint": 0.024803120642900467,
+        "right_hand_thumb_1_joint": -0.3008207380771637,
+        "right_hand_thumb_2_joint": -0.62522953748703
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23532213428892118,
+        0.15788065584197575,
+        0.16340101210938118
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5183712710704307,
+          -0.028311138286503557,
+          0.8546869045315648
+        ],
+        [
+          0.8537985624967469,
+          -0.03915041407310471,
+          -0.5191293285457803
+        ],
+        [
+          0.0481584884243102,
+          0.9988321803620599,
+          0.0038775592656543623
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.028311138286503557,
+        -0.03915041407310471,
+        0.9988321803620599
+      ],
+      "candidate_plus_y_tilt_deg": 2.7692858786788794,
+      "candidate_minus_y_tilt_deg": 177.23071412132114,
+      "candidate_unsigned_plane_inclination_deg": 2.7692858786788794,
+      "wrist_roll_only_tilt_deg": 1.8786665262576558,
+      "projected_gravity_agreement_deg": 8.537736462515939e-07
+    },
+    {
+      "episode": 30,
+      "source_frame": 360,
+      "time_s": 7.2,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2672482132911682,
+        "right_shoulder_roll_joint": -0.06570950895547867,
+        "right_shoulder_yaw_joint": 0.010785802267491817,
+        "right_elbow_joint": 0.09578990936279297,
+        "right_wrist_roll_joint": 1.6166120767593384,
+        "right_wrist_pitch_joint": -0.20859742164611816,
+        "right_wrist_yaw_joint": -0.24856480956077576,
+        "right_hand_index_0_joint": 0.00794218946248293,
+        "right_hand_index_1_joint": 0.4321800172328949,
+        "right_hand_middle_0_joint": -7.01100043443148e-06,
+        "right_hand_middle_1_joint": 0.42087626457214355,
+        "right_hand_thumb_0_joint": 0.024760181084275246,
+        "right_hand_thumb_1_joint": -0.0130851361900568,
+        "right_hand_thumb_2_joint": -0.031277548521757126
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23708219222851798,
+        0.1541022355369333,
+        0.1554980411749653
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.526075839335244,
+          0.008859931667516086,
+          0.8503915056481718
+        ],
+        [
+          0.8503462110721143,
+          0.009183622834196159,
+          -0.5261434998048893
+        ],
+        [
+          -0.012471270304856064,
+          0.9999185780264737,
+          -0.0027027272331920926
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.008859931667516086,
+        0.009183622834196159,
+        0.9999185780264737
+      ],
+      "candidate_plus_y_tilt_deg": 0.7311582579026729,
+      "candidate_minus_y_tilt_deg": 179.26884174209732,
+      "candidate_unsigned_plane_inclination_deg": 0.7311582579026729,
+      "wrist_roll_only_tilt_deg": 2.6250491081891876,
+      "projected_gravity_agreement_deg": 1.2074182697257333e-06
+    },
+    {
+      "episode": 30,
+      "source_frame": 370,
+      "time_s": 7.4,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2672722041606903,
+        "right_shoulder_roll_joint": -0.06566157191991806,
+        "right_shoulder_yaw_joint": 0.010725881904363632,
+        "right_elbow_joint": 0.09575396031141281,
+        "right_wrist_roll_joint": 1.6416231393814087,
+        "right_wrist_pitch_joint": -0.22246317565441132,
+        "right_wrist_yaw_joint": -0.25026658177375793,
+        "right_hand_index_0_joint": -0.005506685469299555,
+        "right_hand_index_1_joint": 0.03870873153209686,
+        "right_hand_middle_0_joint": -0.006811959203332663,
+        "right_hand_middle_1_joint": 0.03612072020769119,
+        "right_hand_thumb_0_joint": 0.02477014809846878,
+        "right_hand_thumb_1_joint": -0.012030445039272308,
+        "right_hand_thumb_2_joint": -0.009892996400594711
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23756346264874775,
+        0.1543986010674325,
+        0.1548439232875231
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5311916282177843,
+          0.036126361263481566,
+          0.8464811516703726
+        ],
+        [
+          0.8469793550414919,
+          0.0026880395427188314,
+          -0.5316189862833306
+        ],
+        [
+          -0.021480834360853573,
+          0.9993436148118814,
+          -0.02917041806152891
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.036126361263481566,
+        0.0026880395427188314,
+        0.9993436148118814
+      ],
+      "candidate_plus_y_tilt_deg": 2.0760641767967547,
+      "candidate_minus_y_tilt_deg": 177.92393582320324,
+      "candidate_unsigned_plane_inclination_deg": 2.0760641767967547,
+      "wrist_roll_only_tilt_deg": 4.05807743757122,
+      "projected_gravity_agreement_deg": 1.2074182697257333e-06
+    },
+    {
+      "episode": 30,
+      "source_frame": 380,
+      "time_s": 7.6,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2672482132911682,
+        "right_shoulder_roll_joint": -0.06564958393573761,
+        "right_shoulder_yaw_joint": 0.00920388475060463,
+        "right_elbow_joint": 0.09581387788057327,
+        "right_wrist_roll_joint": 1.6404366493225098,
+        "right_wrist_pitch_joint": -0.23558589816093445,
+        "right_wrist_yaw_joint": -0.25178858637809753,
+        "right_hand_index_0_joint": -0.0055299438536167145,
+        "right_hand_index_1_joint": 0.01304011419415474,
+        "right_hand_middle_0_joint": -0.006811959203332663,
+        "right_hand_middle_1_joint": 0.0070187668316066265,
+        "right_hand_thumb_0_joint": 0.024758903309702873,
+        "right_hand_thumb_1_joint": -0.012024182826280594,
+        "right_hand_thumb_2_joint": -0.009592423215508461
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2383982417529638,
+        0.15373615025007856,
+        0.15501140024789647
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5443410937890991,
+          0.037891245781373595,
+          0.8380077727000059
+        ],
+        [
+          0.8385451049373902,
+          0.002963482090389935,
+          -0.544824122776739
+        ],
+        [
+          -0.023127485769758593,
+          0.9992774746120505,
+          -0.030160373587443
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.037891245781373595,
+        0.002963482090389935,
+        0.9992774746120505
+      ],
+      "candidate_plus_y_tilt_deg": 2.178162810395603,
+      "candidate_minus_y_tilt_deg": 177.8218371896044,
+      "candidate_unsigned_plane_inclination_deg": 2.178162810395603,
+      "wrist_roll_only_tilt_deg": 3.990096564762029,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 390,
+      "time_s": 7.8,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.26726019382476807,
+        "right_shoulder_roll_joint": -0.06563760340213776,
+        "right_shoulder_yaw_joint": 0.009131979197263718,
+        "right_elbow_joint": 0.09576594084501266,
+        "right_wrist_roll_joint": 1.6404486894607544,
+        "right_wrist_pitch_joint": -0.23902536928653717,
+        "right_wrist_yaw_joint": -0.2645517587661743,
+        "right_hand_index_0_joint": -0.005533521994948387,
+        "right_hand_index_1_joint": 0.00661803875118494,
+        "right_hand_middle_0_joint": -0.006816431879997253,
+        "right_hand_middle_1_joint": 0.006831802893429995,
+        "right_hand_thumb_0_joint": 0.02477014809846878,
+        "right_hand_thumb_1_joint": -0.012015237472951412,
+        "right_hand_thumb_2_joint": -0.009553956799209118
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2382071281888684,
+        0.15382320604955652,
+        0.15555005034282
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5467138285346816,
+          0.042657421926473316,
+          0.8362322249492284
+        ],
+        [
+          0.8365761459359784,
+          0.014246322808409942,
+          -0.547665403633772
+        ],
+        [
+          -0.03527522841675973,
+          0.9989881814321053,
+          -0.02789751994568719
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.042657421926473316,
+        0.014246322808409942,
+        0.9989881814321053
+      ],
+      "candidate_plus_y_tilt_deg": 2.5776596805765775,
+      "candidate_minus_y_tilt_deg": 177.4223403194234,
+      "candidate_unsigned_plane_inclination_deg": 2.5776596805765775,
+      "wrist_roll_only_tilt_deg": 3.990786413868228,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 400,
+      "time_s": 8.0,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2672722041606903,
+        "right_shoulder_roll_joint": -0.06548180431127548,
+        "right_shoulder_yaw_joint": 0.009191900491714478,
+        "right_elbow_joint": 0.09575396031141281,
+        "right_wrist_roll_joint": 1.6405086517333984,
+        "right_wrist_pitch_joint": -0.23906132578849792,
+        "right_wrist_yaw_joint": -0.26449185609817505,
+        "right_hand_index_0_joint": -0.005754479672759771,
+        "right_hand_index_1_joint": 0.006626090034842491,
+        "right_hand_middle_0_joint": -0.006819115485996008,
+        "right_hand_middle_1_joint": 0.00683895917609334,
+        "right_hand_thumb_0_joint": 0.024760181084275246,
+        "right_hand_thumb_1_joint": -0.012024182826280594,
+        "right_hand_thumb_2_joint": -0.009519068524241447
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23801738804564956,
+        0.15419349386800524,
+        0.15567350289208598
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5470285932631559,
+          0.04050015488162867,
+          0.8361336350172126
+        ],
+        [
+          0.8363255016278461,
+          0.016899454592093327,
+          -0.5479726852329612
+        ],
+        [
+          -0.036323181020732176,
+          0.9990366088833054,
+          -0.02462682747495619
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.04050015488162867,
+        0.016899454592093327,
+        0.9990366088833054
+      ],
+      "candidate_plus_y_tilt_deg": 2.5152075117719757,
+      "candidate_minus_y_tilt_deg": 177.484792488228,
+      "candidate_unsigned_plane_inclination_deg": 2.5152075117719757,
+      "wrist_roll_only_tilt_deg": 3.9942219990207293,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 410,
+      "time_s": 8.2,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2674279808998108,
+        "right_shoulder_roll_joint": -0.06644054502248764,
+        "right_shoulder_yaw_joint": 0.007897604256868362,
+        "right_elbow_joint": 0.0947592705488205,
+        "right_wrist_roll_joint": 1.63778817653656,
+        "right_wrist_pitch_joint": -0.2368442416191101,
+        "right_wrist_yaw_joint": -0.23515446484088898,
+        "right_hand_index_0_joint": -0.009282640181481838,
+        "right_hand_index_1_joint": 0.0066135660745203495,
+        "right_hand_middle_0_joint": -0.006795857101678848,
+        "right_hand_middle_1_joint": 0.0068273297511041164,
+        "right_hand_thumb_0_joint": 0.024771682918071747,
+        "right_hand_thumb_1_joint": -0.012030445039272308,
+        "right_hand_thumb_2_joint": -0.009496704675257206
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23699788950637693,
+        0.15333782356305403,
+        0.1602470972484585
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5480297362335741,
+          0.008226771001611122,
+          0.8364183931757156
+        ],
+        [
+          0.8364160843657882,
+          -0.015501213239752676,
+          -0.5478757579983787
+        ],
+        [
+          0.00845825147188134,
+          0.9998460044561776,
+          -0.015376129391223625
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        0.008226771001611122,
+        -0.015501213239752676,
+        0.9998460044561776
+      ],
+      "candidate_plus_y_tilt_deg": 1.0055352055050122,
+      "candidate_minus_y_tilt_deg": 178.99446479449497,
+      "candidate_unsigned_plane_inclination_deg": 1.0055352055050122,
+      "wrist_roll_only_tilt_deg": 3.8383502519718595,
+      "projected_gravity_agreement_deg": 8.537736462515939e-07
+    },
+    {
+      "episode": 30,
+      "source_frame": 415,
+      "time_s": 8.3,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.26764369010925293,
+        "right_shoulder_roll_joint": -0.06699182093143463,
+        "right_shoulder_yaw_joint": 0.00046738478704355657,
+        "right_elbow_joint": 0.09350092709064484,
+        "right_wrist_roll_joint": 1.6373567581176758,
+        "right_wrist_pitch_joint": -0.2290305346250534,
+        "right_wrist_yaw_joint": -0.20520588755607605,
+        "right_hand_index_0_joint": -0.009286218322813511,
+        "right_hand_index_1_joint": 0.006610882468521595,
+        "right_hand_middle_0_joint": -0.006717135198414326,
+        "right_hand_middle_1_joint": 0.006833591964095831,
+        "right_hand_thumb_0_joint": 0.02477014809846878,
+        "right_hand_thumb_1_joint": -0.011598370969295502,
+        "right_hand_thumb_2_joint": -0.009486864320933819
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.23736008740683137,
+        0.15215685260596548,
+        0.16295897482262858
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5473209447232235,
+          -0.014910550212207108,
+          0.83678997302767
+        ],
+        [
+          0.8355264800527981,
+          -0.047997104879016594,
+          -0.5473497776137441
+        ],
+        [
+          0.04832478243986865,
+          0.9987361780848849,
+          -0.013811661251907081
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.014910550212207108,
+        -0.047997104879016594,
+        0.9987361780848849
+      ],
+      "candidate_plus_y_tilt_deg": 2.8808876448048366,
+      "candidate_minus_y_tilt_deg": 177.11911235519517,
+      "candidate_unsigned_plane_inclination_deg": 2.8808876448048366,
+      "wrist_roll_only_tilt_deg": 3.813631797365639,
+      "projected_gravity_agreement_deg": 0.0
+    },
+    {
+      "episode": 30,
+      "source_frame": 420,
+      "time_s": 8.4,
+      "right_arm_and_hand_radians": {
+        "right_shoulder_pitch_joint": -0.2675718069076538,
+        "right_shoulder_roll_joint": -0.06773483753204346,
+        "right_shoulder_yaw_joint": -0.0023968450259417295,
+        "right_elbow_joint": 0.09492705017328262,
+        "right_wrist_roll_joint": 1.637620449066162,
+        "right_wrist_pitch_joint": -0.2081659883260727,
+        "right_wrist_yaw_joint": -0.18948258459568024,
+        "right_hand_index_0_joint": -0.009290690533816814,
+        "right_hand_index_1_joint": 0.006620722822844982,
+        "right_hand_middle_0_joint": -0.0066965604200959206,
+        "right_hand_middle_1_joint": 0.006832697428762913,
+        "right_hand_thumb_0_joint": 0.024758903309702873,
+        "right_hand_thumb_1_joint": -0.011502652429044247,
+        "right_hand_thumb_2_joint": -0.009469867683947086
+      },
+      "wrist_position_root_origin_world_axes_m": [
+        0.2370371037800525,
+        0.1514416141090844,
+        0.16396611613069909
+      ],
+      "wrist_rotation_world_from_link": [
+        [
+          0.5331351830279981,
+          -0.028438968442452306,
+          0.8455519509123202
+        ],
+        [
+          0.8433064705122927,
+          -0.06226714206947227,
+          -0.5338136377150722
+        ],
+        [
+          0.06783121265170655,
+          0.9976542628047194,
+          -0.009214038081623549
+        ]
+      ],
+      "candidate_plus_y_normal_world": [
+        -0.028438968442452306,
+        -0.06226714206947227,
+        0.9976542628047194
+      ],
+      "candidate_plus_y_tilt_deg": 3.9252040564661304,
+      "candidate_minus_y_tilt_deg": 176.07479594353387,
+      "candidate_unsigned_plane_inclination_deg": 3.9252040564661304,
+      "wrist_roll_only_tilt_deg": 3.8287401758096644,
+      "projected_gravity_agreement_deg": 0.0
+    }
+  ],
+  "gravity_orientation_check": {
+    "15": {
+      "max_deg": 1.7075472925031877e-06,
+      "median_deg": 0.0
+    },
+    "16": {
+      "max_deg": 1.9090959104164224e-06,
+      "median_deg": 0.0
+    },
+    "30": {
+      "max_deg": 1.7075472925031877e-06,
+      "median_deg": 0.0
+    }
+  },
+  "ready_target_limits": [
+    {
+      "joint": "right_shoulder_pitch_joint",
+      "value": -0.10413093119859695,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_shoulder_roll_joint",
+      "value": -0.08507601171731949,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_shoulder_yaw_joint",
+      "value": 0.30275747179985046,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_elbow_joint",
+      "value": -0.21820877492427826,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_wrist_roll_joint",
+      "value": 1.70130455493927,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_wrist_pitch_joint",
+      "value": -0.09610150009393692,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_wrist_yaw_joint",
+      "value": -0.07287607342004776,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_index_0_joint",
+      "value": -0.011368762701749802,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_index_1_joint",
+      "value": 0.00663145724684,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_middle_0_joint",
+      "value": -0.005776054225862026,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_middle_1_joint",
+      "value": 0.00701339915394783,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_thumb_0_joint",
+      "value": 0.028313899412751198,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_thumb_1_joint",
+      "value": -0.011559904552996159,
+      "within_xml_limits": true
+    },
+    {
+      "joint": "right_hand_thumb_2_joint",
+      "value": -0.009568269364535809,
+      "within_xml_limits": true
+    }
+  ],
+  "ready_reference_checks": [
+    {
+      "episode": 15,
+      "source_frame": 415,
+      "empty_hand_confirmed": true,
+      "max_named_joint_displacement_rad": 0.00890427827835083,
+      "ideal_0p5_radps_reference_duration_s": 0.01780855655670166,
+      "ideal_duration_plus_dwell_s": 0.5178085565567017,
+      "max_wrist_displacement_m": 0.00012031903422054626,
+      "ready_candidate_tilt_deg": 11.960906533564119
+    },
+    {
+      "episode": 16,
+      "source_frame": 386,
+      "empty_hand_confirmed": false,
+      "max_named_joint_displacement_rad": 0.22942600399255753,
+      "ideal_0p5_radps_reference_duration_s": 0.45885200798511505,
+      "ideal_duration_plus_dwell_s": 0.958852007985115,
+      "max_wrist_displacement_m": 0.01393574407813523,
+      "ready_candidate_tilt_deg": 11.279923120807402
+    },
+    {
+      "episode": 30,
+      "source_frame": 420,
+      "empty_hand_confirmed": false,
+      "max_named_joint_displacement_rad": 0.3131358250975609,
+      "ideal_0p5_radps_reference_duration_s": 0.6262716501951218,
+      "ideal_duration_plus_dwell_s": 1.1262716501951218,
+      "max_wrist_displacement_m": 0.07162614757596977,
+      "ready_candidate_tilt_deg": 16.833758614899544
+    }
+  ],
+  "ready_reference_paths": [
+    {
+      "episode": 15,
+      "start_frame": 415,
+      "reference_time_wrist_xyz_and_tilt": [
+        [
+          0.0,
+          0.22433654491696917,
+          0.060277183033667865,
+          0.13371814712377952,
+          12.246292703936177
+        ],
+        [
+          0.02,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.04,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.06,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.08,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.1,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.12,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.14,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.16,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.18,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.2,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.22,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.24,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.26,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.28,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.3,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.32,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.34,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.36,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.38,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.4,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.42,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.44,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.46,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.48,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.5,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ],
+        [
+          0.52,
+          0.22441848712405799,
+          0.06019548982318795,
+          0.13368515676072207,
+          11.960906533564119
+        ]
+      ]
+    },
+    {
+      "episode": 16,
+      "start_frame": 386,
+      "reference_time_wrist_xyz_and_tilt": [
+        [
+          0.0,
+          0.2199029845906404,
+          0.07312005488041684,
+          0.14105738957917824,
+          4.848507329508885
+        ],
+        [
+          0.02,
+          0.21659892143500525,
+          0.07370754100720864,
+          0.14165901005739767,
+          3.2186831365188984
+        ],
+        [
+          0.04,
+          0.2137447509031191,
+          0.07522258086159349,
+          0.14357645084919138,
+          1.4698077018571782
+        ],
+        [
+          0.06,
+          0.21123183908710724,
+          0.07695327664072998,
+          0.1437974309342857,
+          0.15724095421988118
+        ],
+        [
+          0.08,
+          0.2089690060158816,
+          0.07845815015537203,
+          0.14392216506278846,
+          0.8261431280502245
+        ],
+        [
+          0.1,
+          0.20762316391939298,
+          0.07913933720294489,
+          0.1437367939187633,
+          1.2985581349249744
+        ],
+        [
+          0.12,
+          0.20788097076917889,
+          0.07907160857676512,
+          0.14371232147342616,
+          1.8531264121799795
+        ],
+        [
+          0.14,
+          0.20831455213258554,
+          0.07891816503499485,
+          0.14370454217603063,
+          2.4236563144356293
+        ],
+        [
+          0.16,
+          0.2087466121003343,
+          0.07876055289740486,
+          0.1436955513459364,
+          2.997756581033876
+        ],
+        [
+          0.18,
+          0.20917710746678847,
+          0.07859878792507753,
+          0.14368534988221904,
+          3.5729880277649797
+        ],
+        [
+          0.2,
+          0.20960599518277015,
+          0.07843288629437534,
+          0.1436739388050164,
+          4.148258903836627
+        ],
+        [
+          0.22,
+          0.2100332323598651,
+          0.07826286459532308,
+          0.1436613192554267,
+          4.723007417233055
+        ],
+        [
+          0.24,
+          0.2104587762747117,
+          0.07808873982994899,
+          0.14364749249539438,
+          5.296914065939103
+        ],
+        [
+          0.26,
+          0.21088258437327306,
+          0.07791052941058446,
+          0.14363245990758391,
+          5.869782785429817
+        ],
+        [
+          0.28,
+          0.2113046142750925,
+          0.07772825115812299,
+          0.14361622299524157,
+          6.441485760254461
+        ],
+        [
+          0.3,
+          0.21172482377753152,
+          0.07754192330023787,
+          0.14359878338204504,
+          7.011935412753905
+        ],
+        [
+          0.32,
+          0.21214317085999004,
+          0.07735156446955964,
+          0.1435801428119411,
+          7.581069152556195
+        ],
+        [
+          0.34,
+          0.21255961368810844,
+          0.07715719370181272,
+          0.14356030314897125,
+          8.148840588524074
+        ],
+        [
+          0.36,
+          0.21297411061795096,
+          0.07695883043391194,
+          0.14353926637708525,
+          8.71521422142859
+        ],
+        [
+          0.38,
+          0.21338662020017002,
+          0.07675649450201874,
+          0.14351703459994278,
+          9.280162109850627
+        ],
+        [
+          0.4,
+          0.21379710118415116,
+          0.07655020613955774,
+          0.14349361004070296,
+          9.843661704149852
+        ],
+        [
+          0.42,
+          0.21420551252213804,
+          0.07633998597519326,
+          0.14346899504180224,
+          10.405694397984778
+        ],
+        [
+          0.44,
+          0.2146118133733372,
+          0.07612585503076655,
+          0.14344319206472,
+          10.9662445350058
+        ],
+        [
+          0.46,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.48,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.5,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.52,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.54,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.56,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.58,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.6,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.62,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.64,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.66,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.68,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.7000000000000001,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.72,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.74,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.76,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.78,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.8,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.8200000000000001,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.84,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.86,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.88,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.9,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.92,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.9400000000000001,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ],
+        [
+          0.96,
+          0.2149928239765145,
+          0.07592045383480045,
+          0.14341778483286316,
+          11.279923120807402
+        ]
+      ]
+    },
+    {
+      "episode": 30,
+      "start_frame": 420,
+      "reference_time_wrist_xyz_and_tilt": [
+        [
+          0.0,
+          0.2370371037800525,
+          0.1514416141090844,
+          0.16396611613069909,
+          3.9252040564661304
+        ],
+        [
+          0.02,
+          0.23656345823198527,
+          0.14984004090048,
+          0.16336450889543613,
+          4.464952778923851
+        ],
+        [
+          0.04,
+          0.23553559397237914,
+          0.1484452272720468,
+          0.1626443619126976,
+          4.983185181002706
+        ],
+        [
+          0.06,
+          0.23309126794375376,
+          0.14762652985929337,
+          0.16164656158715932,
+          5.4397857602417545
+        ],
+        [
+          0.08,
+          0.2306235727389683,
+          0.14678124002826057,
+          0.16066591589122392,
+          5.911900362618486
+        ],
+        [
+          0.1,
+          0.22813327484260754,
+          0.14590892324156957,
+          0.15970329576647574,
+          6.399171507813221
+        ],
+        [
+          0.12,
+          0.22562116367603308,
+          0.1450091695838221,
+          0.1587595801236762,
+          6.9014670695613995
+        ],
+        [
+          0.14,
+          0.2230848048496015,
+          0.1440723355652594,
+          0.1578744469360633,
+          7.4027014993488285
+        ],
+        [
+          0.16,
+          0.220527523324561,
+          0.14310356773766456,
+          0.15702543570738495,
+          7.905559139950493
+        ],
+        [
+          0.18,
+          0.21795222176235496,
+          0.14210833360823902,
+          0.15618916737841618,
+          8.415735062523034
+        ],
+        [
+          0.2,
+          0.21535964993665951,
+          0.1410863573971386,
+          0.15536651534661783,
+          8.930831141301924
+        ],
+        [
+          0.22,
+          0.21275056889521202,
+          0.14003738914386427,
+          0.1545583572568229,
+          9.449104849189492
+        ],
+        [
+          0.24,
+          0.21046903936654487,
+          0.1388371079661117,
+          0.1537642800856546,
+          9.775590475069158
+        ],
+        [
+          0.26,
+          0.20826542573075713,
+          0.13758719585783574,
+          0.1529876102403661,
+          9.72396225010358
+        ],
+        [
+          0.28,
+          0.20605141650541836,
+          0.13632103590588018,
+          0.15222949149971393,
+          9.672295026046461
+        ],
+        [
+          0.3,
+          0.20382759175282122,
+          0.13503859348829048,
+          0.15149054056186498,
+          9.620677414899053
+        ],
+        [
+          0.32,
+          0.20159453856111395,
+          0.13373985135944363,
+          0.15077137226932072,
+          9.569232171043023
+        ],
+        [
+          0.34,
+          0.1993529778927734,
+          0.13347515278801814,
+          0.15151740733680505,
+          9.871758693888026
+        ],
+        [
+          0.36,
+          0.19710331125916744,
+          0.13372810643936733,
+          0.15301929247061039,
+          10.35929727476733
+        ],
+        [
+          0.38,
+          0.19484618345644358,
+          0.1339440383341199,
+          0.15451430297612076,
+          10.8460765626025
+        ],
+        [
+          0.4,
+          0.1925823549955288,
+          0.13412281893691644,
+          0.15600237484963872,
+          11.332038197656932
+        ],
+        [
+          0.42,
+          0.19031258883106206,
+          0.1342643331838032,
+          0.15748344655356422,
+          11.817134910948685
+        ],
+        [
+          0.44,
+          0.18803765007047735,
+          0.1343684805326108,
+          0.15895745898764196,
+          12.30132833992599
+        ],
+        [
+          0.46,
+          0.1857583056822473,
+          0.13443517500756386,
+          0.16042435545927042,
+          12.784587349223903
+        ],
+        [
+          0.48,
+          0.1834753242034042,
+          0.13446434523810205,
+          0.16188408165288937,
+          13.266886725726037
+        ],
+        [
+          0.5,
+          0.18118947544645148,
+          0.13445593449189663,
+          0.16333658559846317,
+          13.74820615435938
+        ],
+        [
+          0.52,
+          0.17890153020578484,
+          0.13440990070204892,
+          0.16478181763907893,
+          14.228529406784377
+        ],
+        [
+          0.54,
+          0.17661225996373497,
+          0.13432621648845974,
+          0.1662197303976759,
+          14.70784369320191
+        ],
+        [
+          0.56,
+          0.17432243659635221,
+          0.13420486917336016,
+          0.16765027874292715,
+          15.186139140336934
+        ],
+        [
+          0.58,
+          0.17203283207904638,
+          0.13404586079099765,
+          0.16907341975428986,
+          15.663408367892268
+        ],
+        [
+          0.6,
+          0.16974421819219837,
+          0.13384920809147244,
+          0.17048911268624584,
+          16.13964614249326
+        ],
+        [
+          0.62,
+          0.16839298979099696,
+          0.13348225630622979,
+          0.17205441482691033,
+          16.657316524474666
+        ],
+        [
+          0.64,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.66,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.68,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.7000000000000001,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.72,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.74,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.76,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.78,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.8,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.8200000000000001,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.84,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.86,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.88,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.9,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.92,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.9400000000000001,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.96,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          0.98,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.0,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.02,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.04,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.06,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.08,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.1,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.12,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ],
+        [
+          1.1400000000000001,
+          0.16828139664161434,
+          0.13331769533842786,
+          0.17259637226030322,
+          16.833758614899544
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "No calibrated hand contact-plane transform, bottle/contact/friction model, root translation, desk or human geometry.",
+    "Successful reference episodes and incident bracket are manually sampled, not exact release/contact onset.",
+    "Measured angles are not motor targets; synthetic ideal tracking does not verify SONIC settling.",
+    "Ep16 final and ep30 final references only test hypothetical return geometry and cannot authorize return during human removal."
+  ]
+}

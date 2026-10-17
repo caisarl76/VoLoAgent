@@ -1,0 +1,112 @@
+{
+  "host": "h100",
+  "source_data": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_gpu2_20261002/dataset",
+  "broken_host_links": {
+    "data": "/dataset/data",
+    "videos": "/dataset/videos"
+  },
+  "metadata_export_verified": true,
+  "temporary_metadata": "/tmp/volo-handover-meta-check-yc_eki69",
+  "metadata": [
+    {
+      "name": "episodes.jsonl",
+      "bytes": 4161,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "07511f7e0ea19cb6b212fa484da65545e452447187720e8cf73132d05d267c4c"
+    },
+    {
+      "name": "episodes_stats.jsonl",
+      "bytes": 1289853,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "eefcec61cab71304aaf9575ba68c59e196fb6610de9a14418232304ffa67e8e4"
+    },
+    {
+      "name": "info.json",
+      "bytes": 9798,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "863c9c4e1cda4ad103de157ab4219da1b18801b231fafd1f25aefcd397fc5293"
+    },
+    {
+      "name": "lerobot_annotations.json",
+      "bytes": 9574,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "b48ee35dedc84926064dba7fcc8a7771bcfaa586c1f2e73765ee55687a22153c"
+    },
+    {
+      "name": "modality.json",
+      "bytes": 4813,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "45ff0cd3e2d1221147588957b0fb788bf321599dcebc396cf1a71d97e5f6da5b"
+    },
+    {
+      "name": "relative_stats.json",
+      "bytes": 30,
+      "uid": 1001,
+      "mode": "0o600",
+      "sha256": "789d3c61b014f2356298b52e0ab6fd12779d5ef8ddc68490e50a0721a67603ab"
+    },
+    {
+      "name": "stats.json",
+      "bytes": 73252,
+      "uid": 1001,
+      "mode": "0o600",
+      "sha256": "3260bd255157ba8eeced3caa0d1c9148385f07e1284f2a1f92d8745e4cf37542"
+    },
+    {
+      "name": "subset_manifest.json",
+      "bytes": 1147,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "6b7c208389dc5bf0e0a4a6ebd70ea242e91a59981abddf4b3d7d99e99668de5c"
+    },
+    {
+      "name": "tasks.jsonl",
+      "bytes": 75,
+      "uid": 1001,
+      "mode": "0o664",
+      "sha256": "5c005891880c468840e0f0b1392540c300065735da83f155e9a9ce7ea685cb6d"
+    }
+  ],
+  "original_stats": [
+    {
+      "name": "stats.json",
+      "uid": 0,
+      "mode": "0o600",
+      "host_readable": false
+    },
+    {
+      "name": "relative_stats.json",
+      "uid": 0,
+      "mode": "0o600",
+      "host_readable": false
+    }
+  ],
+  "original_permissions_changed": false,
+  "inputs": [
+    {
+      "path": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_gpu2_20261002/dataset/data/chunk-000/episode_000010.parquet",
+      "bytes": 653190,
+      "sha256": "782eef37234392ff6643da4000df7d233858c64380ebaedc80c98aec198b54d8"
+    },
+    {
+      "path": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_gpu2_20261002/dataset/videos/chunk-000/observation.images.ego_view/episode_000010.mp4",
+      "bytes": 1944698,
+      "sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207"
+    },
+    {
+      "path": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_gpu2_20261002/dataset/data/chunk-000/episode_000019.parquet",
+      "bytes": 662519,
+      "sha256": "c5a4a5138bcc602bc7bc247e75883025ebf8bb4c35f0e6749a33afd0d46d84f9"
+    },
+    {
+      "path": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_gpu2_20261002/dataset/videos/chunk-000/observation.images.ego_view/episode_000019.mp4",
+      "bytes": 2116582,
+      "sha256": "eb9f1283f44059abada2d8f24dd5997722436cd6b39edfd443da1be6fbe537a1"
+    }
+  ]
+}

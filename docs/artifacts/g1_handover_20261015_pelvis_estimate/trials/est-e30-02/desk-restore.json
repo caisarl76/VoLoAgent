@@ -1,0 +1,14 @@
+{
+  "restored": true,
+  "sim_time": 6.624999999999881,
+  "desk_gap": {
+    "gap_m": 0.03319816712007162,
+    "actor": "right_elbow_link",
+    "obstacle": "desk_top"
+  },
+  "desk_top_xpos": [
+    0.3999999999999999,
+    0.0,
+    0.825
+  ]
+}

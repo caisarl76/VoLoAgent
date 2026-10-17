@@ -1,0 +1,54 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+____ test_harness_prewarm_pause_reset_and_old_actions[reset_tracking_loss] _____
+gear_sonic/tests/test_run_vla_reset.py:268: in test_harness_prewarm_pause_reset_and_old_actions
+    assert instances[0].control.phase == ("RESETTING" if scenario == "reset" else "INTERRUPTED")
+E   AssertionError: assert 'RESETTING' == 'INTERRUPTED'
+E
+E     - INTERRUPTED
+E     + RESETTING
+----------------------------- Captured stdout call -----------------------------
+Connecting to PolicyServer at 127.0.0.1:15558...
+Harness policy connects and prewarms on its inference worker; outputs stay paused.
+[92mZMQ action socket bound to tcp://localhost:5556[0m
+[92mUsing embodiment tag: unitree_g1_sonic[0m
+Starting the policy loop with language prompt: pick drink bottle and place it on the right table
+Starting C++ control loop in PLANNER mode...
+[92mSent ZMQ command: start control loop (planner mode)[0m
+Started C++ control loop in PLANNER mode
+Press 'i' to return to straight standing, then 'p' to evaluate
+Note: Policy loop is paused - press 'p' to resume
+[92mSent ZMQ command: start control loop (pose mode)[0m
+[DEBUG] No cached chunk yet, waiting...
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.000s)[0m
+[92mSent ZMQ command: start control loop (planner mode)[0m
+[92mSent ZMQ command: start control loop (planner mode)[0m
+VLA inference loop terminated by user
+Shutdown complete.
+___________ test_operator_reset_tracking_loss_requests_measured_hold ___________
+gear_sonic/tests/test_run_vla_reset.py:290: in test_operator_reset_tracking_loss_requests_measured_hold
+    assert planners[-1]["upper_body_position"][8] == pytest.approx(.5)
+E   assert 0.0 == 0.5 ± 5.0e-07
+E
+E     comparison failed
+E     Obtained: 0.0
+E     Expected: 0.5 ± 5.0e-07
+----------------------------- Captured stdout call -----------------------------
+Connecting to PolicyServer at localhost:5550...
+[92mPolicyServer is reachable.[0m
+[92mZMQ action socket bound to tcp://localhost:5556[0m
+[92mUsing embodiment tag: unitree_g1_sonic[0m
+Starting the policy loop with language prompt: demo
+Starting C++ control loop in PLANNER mode...
+[92mSent ZMQ command: start control loop (planner mode)[0m
+Started C++ control loop in PLANNER mode
+Press 'i' to return to straight standing, then 'p' to evaluate
+Note: Policy loop is paused - press 'p' to resume
+[92mSent ZMQ command: start control loop (planner mode)[0m
+[92mReturning to straight standing; policy paused. Press 'p' when ready.[0m
+VLA inference loop terminated by user
+Shutdown complete.
+=========================== short test summary info ============================
+FAILED gear_sonic/tests/test_run_vla_reset.py::test_harness_prewarm_pause_reset_and_old_actions[reset_tracking_loss]
+FAILED gear_sonic/tests/test_run_vla_reset.py::test_operator_reset_tracking_loss_requests_measured_hold
+2 failed, 17 deselected in 0.43s

@@ -1,0 +1,36 @@
+# SIMULATION TEST FIXTURE ONLY: gates do not qualify a checkpoint or physical return.
+schema_version: 1
+policy_host: 127.0.0.1
+policy_port: 15558
+checkpoint: /UNCONFIGURED/handover/checkpoint
+embodiment: unitree_g1_sonic
+camera_key: ego_view
+action_horizon: 40
+publish_rate: 50
+limits: {}
+skills:
+  bottle_handover:
+    prompt: pick drink bottle from the table and handover
+    completion_criteria: Bottle lifted from desk and stably supported on level upward-facing
+      open right palm; no rolling, falling or human rescue.
+    completion_action: hold
+handover:
+  skill_id: bottle_handover
+  checkpoint_verified: true
+  ready_pose_reviewed: true
+  raised_right_arm_joints:
+    right_shoulder_pitch_joint: -0.00806538388133049
+    right_shoulder_roll_joint: -0.38064295053482056
+    right_shoulder_yaw_joint: -0.3950839638710022
+    right_elbow_joint: -0.07819706946611404
+    right_wrist_roll_joint: 0.5916372537612915
+    right_wrist_pitch_joint: -0.049051433801651
+    right_wrist_yaw_joint: -0.43114447593688965
+  ready_right_arm_joints:
+    right_shoulder_pitch_joint: -0.10413093119859695
+    right_shoulder_roll_joint: -0.08507601171731949
+    right_shoulder_yaw_joint: 0.30275747179985046
+    right_elbow_joint: -0.21820877492427826
+    right_wrist_roll_joint: 1.70130455493927
+    right_wrist_pitch_joint: -0.09610150009393692
+    right_wrist_yaw_joint: -0.07287607342004776

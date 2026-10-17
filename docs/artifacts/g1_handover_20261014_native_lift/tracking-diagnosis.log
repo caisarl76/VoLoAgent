@@ -1,0 +1,15 @@
+{
+  "terminal_reason": "reset_timeout",
+  "measured_ready_settling_passed": false,
+  "worst_raised_joint": "right_shoulder_yaw_joint",
+  "raised_target_rad": -0.5984442830085754,
+  "mean_measured_rad": -0.3988860752300924,
+  "mean_commanded_rad": -0.6986034559358612,
+  "mean_measured_error_rad": 0.19955820777848304,
+  "mean_command_lead_rad": 0.2997173807057687,
+  "max_saved_sample_age_s": 0.02774422406218946,
+  "qualifying_saved_right_arm_samples": 0,
+  "measurement_scope": "About 20 Hz saved simulation feedback, nearest preceding state; not synchronized command/measurement metrology.",
+  "tuning_applied": false,
+  "hardware_acceptance": false
+}

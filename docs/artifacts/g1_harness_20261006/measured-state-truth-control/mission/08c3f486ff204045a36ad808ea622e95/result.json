@@ -1,0 +1,6 @@
+{
+  "execution_id": "a0db70e1b6cc4acdb003e0eeec48be80",
+  "outcome": "interrupted",
+  "reason": "policy_or_task_timeout",
+  "evidence_dir": "/tmp/g1-bottle-measured-state-truth-20261006/mission/08c3f486ff204045a36ad808ea622e95"
+}

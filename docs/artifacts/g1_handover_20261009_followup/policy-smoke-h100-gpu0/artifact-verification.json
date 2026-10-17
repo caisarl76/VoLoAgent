@@ -1,0 +1,32 @@
+{
+  "exit_code": 0,
+  "recorded_samples": 4,
+  "action_arrays_checked": 12,
+  "all_finite": true,
+  "expected_shapes_verified": true,
+  "report_matches_saved_arrays": true,
+  "artifacts": [
+    {
+      "file": "source15_frame62_actions.npz",
+      "sha256": "0c3cb2f3c446331ecf70f80754ab36c277cbe20edb6a2362a2d7483dec4966b3",
+      "arrays_checked": 3
+    },
+    {
+      "file": "source15_frame365_actions.npz",
+      "sha256": "0ba44c8d5d16ead9b2de52fa3e956ff92e257d3755b27f5bdd9d9ba0634f910c",
+      "arrays_checked": 3
+    },
+    {
+      "file": "source30_frame60_actions.npz",
+      "sha256": "897971eaa7e6cf59d9a2452dff5b0c34570f64524155d952c314baa644b05809",
+      "arrays_checked": 3
+    },
+    {
+      "file": "source30_frame370_actions.npz",
+      "sha256": "e867e90622c742f7165636bd3e4e4d040e03a50a485093e73e043ce5d2e6493e",
+      "arrays_checked": 3
+    }
+  ],
+  "script_syntax_valid": true,
+  "physical_success_verified": false
+}

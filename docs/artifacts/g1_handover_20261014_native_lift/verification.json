@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-14",
+  "software_checks_passed": true,
+  "project_tests": {
+    "volo": 745,
+    "native_gear_sonic": 664,
+    "explicit_crossprocess": 13
+  },
+  "volo_skips": 19,
+  "review_finding_fixed": true,
+  "native_source_hashes_match_final_trial": true,
+  "profile_mirrors_match": true,
+  "placement_profile_unchanged": true,
+  "placement_profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "hardware_flags_enabled": false,
+  "physical_commands_sent": false,
+  "motion_acceptance_passed": false,
+  "final_simulation_reason": "reset_timeout",
+  "owned_processes_stopped": true,
+  "environment_preflight_passed": false,
+  "environment_issues": [
+    "about 0.3 GB free disk space",
+    "unmaterialized decoupled-WBC balance LFS model"
+  ],
+  "logs": {
+    "volo-tests-unrestricted.log": "745 passed, 19 skipped, 46 warnings",
+    "native-suite-final.log": "664 passed, 123 warnings",
+    "crossprocess-tests-final.log": "13 passed"
+  }
+}

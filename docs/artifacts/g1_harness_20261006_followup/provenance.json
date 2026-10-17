@@ -1,0 +1,69 @@
+{
+  "native_base_commit": "5e35112dc9162b616c412e90ac964e216fe803b3",
+  "native_fix_commit": "7994c8bb51b0c006eb44fde8858d9d0bccc07d0d",
+  "volo_base_commit": "95c2c44ab5637a34bb8ff335c3a0c24d26a26f58",
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "exact_prompt": "pick drink bottle and place it on the right table",
+  "controller_model_hashes": {
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx": "fb97de22819b2057b41459802128d91723d91a25f0ad73e7bfc41a9cf8365bae",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx": "34bae8570d4a4421a5391a5c2befd745d4a02d182ec539e5f9da44c091c67509",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml": "4a67713b310932e50aca81f19188c8d76013148e98b15c8b5bbea995f12e59f0",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx": "39b553e197f62f077975ba38512bc04781a3fc37c2af7c6756e04629f760edea"
+  },
+  "sources": {
+    "configs/g1/workstation.yaml": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/run_vla_inference.py": "2290b225519b70a361d15d931ca4eabd77ee565625856e317aa84ea6ea82105c",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/tests/test_run_vla_reset.py": "e4ce525f2da56f3aeb14cf8b9b62eb6a1d5a4955e511e4fc5b44981f5ab765be"
+  },
+  "old_native_turns_use_pre_cadence_fix_snapshots": true,
+  "action_wire_decoder_scope": "Only the five native planner translation/facing fields, not optional body/hand payload validation.",
+  "reconstructed_batch_source_scope": "Reconstructed from its observed pre-review source; no batch-helper source hash was recorded at launch.",
+  "native_child_launch_commands": "Each case events.jsonl and live trial driver-events.jsonl records executed argv and process identity.",
+  "software_checks": [
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "command": "env PYTHONPATH=. PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest gear_sonic/tests -q",
+      "result": "629 passed",
+      "log": "software-checks/g1-capture-cadence-native-suite-unrestricted.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q",
+      "result": "595 passed, 15 skipped",
+      "log": "software-checks/g1-followup-volo-suite.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/test_g1_harness_e2e.py --g1-native-checkout=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --g1-native-python=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python --require-g1-e2e -q",
+      "result": "9 passed, zero skips",
+      "log": "software-checks/g1-capture-cadence-crossprocess.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py docs/artifacts/g1_harness_20261006_followup/test_planner_wire.py -q",
+      "result": "12 passed",
+      "log": "software-checks/g1-followup-probes-green.log"
+    }
+  ],
+  "prior_archives_verified": {
+    "g1_harness_20261002": {
+      "files_verified": 203,
+      "manifest_sha256": "abf4767648104671eeaac2b4167603c2f4d5d1e324c369910a00b9b3768e2871"
+    },
+    "g1_harness_20261006": {
+      "files_verified": 423,
+      "manifest_sha256": "646fa38eaf58ee80d5e8f48662e5a8dde65ee44a0fd4dca00d3cec2ed668a5fa"
+    }
+  },
+  "reproduction_cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+  "reproduction_commands": [
+    ".venv/bin/python docs/artifacts/g1_harness_20261006_followup/native_locomotion_probe.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --output /tmp/g1-native-followup-reproduction --initial-yaw-deg 0 --turn-angle-deg -15",
+    ".venv/bin/python docs/artifacts/g1_harness_20261006_followup/repeat_native_turns.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --output /tmp/g1-native-wrap-followup-reproduction",
+    "env MUJOCO_GL=egl /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_harness_20261006_followup/build_appearance_control.py --scene docs/artifacts/g1_harness_20261006/bottle-measured-scene/scene.xml --saved-live docs/artifacts/g1_harness_20261006/bottle-physical-calibration-truth-control --output /tmp/g1-appearance-followup-reproduction",
+    ".venv/bin/python docs/artifacts/g1_harness_20261006/bottle_mission_probe.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --scene docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/scene.xml --output /tmp/g1-bottle-capture-followup-reproduction --monitor-mode simulator_truth_control --env-file /home/jihun/work/VoLoAgent/.env",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_harness_20261006_followup/build_training_review.py --audit docs/artifacts/g1_harness_20261006/training-state-audit/episodes.jsonl --dataset /mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916 --output /tmp/g1-training-screening-reproduction",
+    "env MPLCONFIGDIR=/tmp/g1-followup-mpl /home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006_followup/analyze_native_turns.py --root docs/artifacts/g1_harness_20261006_followup",
+    "env MPLCONFIGDIR=/tmp/g1-followup-mpl /home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006_followup/visualize_appearance.py --root docs/artifacts/g1_harness_20261006_followup --video /mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4"
+  ],
+  "reproduction_note": "Use new output directories. Controller binaries, model paths and Python environments are workstation-specific; run only headless loopback checks. Current reproduction uses the cadence fix; historical source snapshots retain older code."
+}

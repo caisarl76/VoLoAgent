@@ -1,0 +1,6 @@
+{
+  "execution_id": "2b072b55d01c44a1a14d9123fb2fb158",
+  "outcome": "interrupted",
+  "reason": "policy_or_task_timeout",
+  "evidence_dir": "/tmp/g1-bottle-live-corrected-20261002/mission/be79f5e9e18f4cc4a04ed3a9d95c4922"
+}

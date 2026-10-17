@@ -1,0 +1,17 @@
+Connecting to PolicyServer at 127.0.0.1:15558...
+Harness policy connects and prewarms on its inference worker; outputs stay paused.
+[ZMQStateSubscriber] Connected to tcp://127.0.0.1:11557 (topic: g1_debug)
+[92mZMQ action socket bound to tcp://127.0.0.1:11556[0m
+[92mUsing embodiment tag: unitree_g1_sonic[0m
+[ZMQKeyboardSubscriber] Connected to tcp://127.0.0.1:11580
+Starting the policy loop with language prompt: pick drink bottle and place it on the right table
+Starting C++ control loop in PLANNER mode...
+[92mSent ZMQ command: start control loop (planner mode)[0m
+Started C++ control loop in PLANNER mode
+Press 'i' to return to straight standing, then 'p' to evaluate
+Note: Policy loop is paused - press 'p' to resume
+[ZMQStateSubscriber] Connected to tcp://127.0.0.1:11557 (topic: g1_debug)
+[92mSent ZMQ command: start control loop (planner mode)[0m
+[92mSent ZMQ command: start control loop (planner mode)[0m
+VLA inference loop terminated by user
+Shutdown complete.

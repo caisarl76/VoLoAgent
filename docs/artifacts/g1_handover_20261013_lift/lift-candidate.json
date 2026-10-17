@@ -1,0 +1,38 @@
+{
+  "simulation_candidate_only": true,
+  "geometry_validated_for_hardware": false,
+  "source_episode": 30,
+  "source_frame": 60,
+  "right_arm_joint_names": [
+    "right_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_shoulder_yaw_joint",
+    "right_elbow_joint",
+    "right_wrist_roll_joint",
+    "right_wrist_pitch_joint",
+    "right_wrist_yaw_joint"
+  ],
+  "right_arm_waypoints_rad": [
+    [
+      0.01119326613843441,
+      -0.681782603263855,
+      -0.5984442830085754,
+      0.16412396728992462,
+      1.085878610610962,
+      -0.15723302960395813,
+      -0.48973536491394043
+    ]
+  ],
+  "final_ready_rad": [
+    -0.10413093119859695,
+    -0.08507601171731949,
+    0.30275747179985046,
+    -0.21820877492427826,
+    1.70130455493927,
+    -0.09610150009393692,
+    -0.07287607342004776
+  ],
+  "open_empty_hand_before_lift": false,
+  "strategy": "Raise with measured entry fingers, then open while approaching final ready.",
+  "ideal_min_conservative_desk_gap_m": 0.04950602119404165
+}

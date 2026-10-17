@@ -1,0 +1,112 @@
+{
+  "robot_actuated": false,
+  "server_gpu": 1,
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "prompt": "pick drink bottle and place it on the right table",
+  "state_group_indices_match_dataset": true,
+  "state_parity": [
+    {
+      "frame": 250,
+      "seconds": 5,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.003587150014936924,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.003587150014936924
+    },
+    {
+      "frame": 500,
+      "seconds": 10,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0036515574902296066,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0036515574902296066
+    },
+    {
+      "frame": 750,
+      "seconds": 15,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.003655136562883854,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.003655136562883854
+    },
+    {
+      "frame": 1000,
+      "seconds": 20,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.2736873924732208,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.2736873924732208
+    },
+    {
+      "frame": 1500,
+      "seconds": 30,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.2918434143066406,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.2918434143066406
+    },
+    {
+      "frame": 1900,
+      "seconds": 38,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.001016172580420971,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.001016172580420971
+    }
+  ],
+  "sim_state_frame_skew_s": -0.004974071998731233,
+  "simulation_image_is_saved_monitor_jpeg": true,
+  "same_query_repeat_count": 3,
+  "sources": {
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/policy_input_probe.py": "3c2e3ba9a62b5e813a1b1ecb7da7f250e5367ff6a207800d7ea27755cc4c0a66",
+    "/tmp/pnp_bottle_260916_gr00t_raw_20260930/meta/modality.json": "45ff0cd3e2d1221147588957b0fb788bf321599dcebc396cf1a71d97e5f6da5b",
+    "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/data/chunk-000/episode_000018.parquet": "a3b9e16a00dec8d3037326076d14a36d8340d713cd06937383852e132d6e935a",
+    "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4": "5adf0f2de73b01733915abb888303ac902093371700f05aeb52344f42ff6d89e",
+    "docs/artifacts/g1_harness_20261002/live-green-stool-criterion/mission/be79f5e9e18f4cc4a04ed3a9d95c4922/events.jsonl": "f74f722ec8df768871f3482d77f72b90106bd93d2c315708e838b9cea8fb3ec4",
+    "docs/artifacts/g1_harness_20261002/live-green-stool-criterion/ground-truth.jsonl": "b8cabd0a6ec59d39a5fc98d422712b27c928c9282f292a55273e10ed8e223a6b",
+    "docs/artifacts/g1_harness_20261002/live-green-stool-criterion/mission/be79f5e9e18f4cc4a04ed3a9d95c4922/b6caba67bcd2d0af9a94336c6e08062898c08a371642c29edf6117f2af5c81e4.jpg": "60a208c4c5be26d604f5cc3614ac150857eca26daa7118c229fc208e2f9e8fb3",
+    "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000/processor_config.json": "c0ea0f1e830dfd25238dff8baaad80d1551bf324dc1e53076b3349fabe3d6540"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "pipeline_started": false,
+  "robot_commands_sent": false,
+  "camera_to_robot_calibrated": false,
+  "requested_profile": {
+    "width": 640,
+    "height": 480,
+    "fps": 15,
+    "format": "rgb8"
+  },
+  "status": "blocked",
+  "reason": "pyrealsense2 is not installed"
+}

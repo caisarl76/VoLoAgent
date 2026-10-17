@@ -1,0 +1,164 @@
+{
+  "volo_base_commit": "537b1e3d664444c3110ebea8b7501a0303c99277",
+  "native_commit": "7994c8bb51b0c006eb44fde8858d9d0bccc07d0d",
+  "production_code_changed": false,
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "checkpoint_queries_this_stage": 0,
+  "training_performed": false,
+  "dataset_exported": false,
+  "prompt": "pick drink bottle and place it on the right table",
+  "robot_connection": false,
+  "dds_interface": "lo",
+  "dashboard_deferred": true,
+  "controller_model_hashes_reverified": {
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx": "fb97de22819b2057b41459802128d91723d91a25f0ad73e7bfc41a9cf8365bae",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx": "34bae8570d4a4421a5391a5c2befd745d4a02d182ec539e5f9da44c091c67509",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml": "4a67713b310932e50aca81f19188c8d76013148e98b15c8b5bbea995f12e59f0",
+    "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx": "39b553e197f62f077975ba38512bc04781a3fc37c2af7c6756e04629f760edea"
+  },
+  "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "urdf_sha256": "3dcb9c361753f464fa1f0238cdf800af842909628fd153733075607881c12d62",
+  "camera_driver_sha256": "a8f4b617439d2c46137ff9fa74c63af15d7259b866cca6a4f13f0268c193e802",
+  "prior_archives_verified": {
+    "g1_harness_20261002": {
+      "files_verified": 203,
+      "manifest_sha256": "abf4767648104671eeaac2b4167603c2f4d5d1e324c369910a00b9b3768e2871"
+    },
+    "g1_harness_20261006": {
+      "files_verified": 423,
+      "manifest_sha256": "646fa38eaf58ee80d5e8f48662e5a8dde65ee44a0fd4dca00d3cec2ed668a5fa"
+    },
+    "g1_harness_20261006_followup": {
+      "files_verified": 316,
+      "manifest_sha256": "33cdfb437265143a98ad45c659a0f1fb3a583f26cd261f97182814ac53286df4"
+    }
+  },
+  "commands_cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+  "commands": [
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py tests/test_g1_monitor.py docs/artifacts/g1_harness_20261006_followup/test_planner_wire.py",
+      "exit_code": 0,
+      "result": "27 passed, zero skips",
+      "log": "software-checks.log"
+    },
+    {
+      "command": "ruff check docs/artifacts/g1_harness_20261006_acceptance/*.py docs/artifacts/g1_harness_20261006_acceptance/turn-diagnosis/analysis.py",
+      "exit_code": 0,
+      "result": "All checks passed.",
+      "log": "ruff.log"
+    },
+    {
+      "command": ".venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/native_locomotion_probe.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --output docs/artifacts/g1_harness_20261006_acceptance/native-repeat-baseline --initial-yaw-deg 0 --turn-angle-deg -15 --post-walk-hold-s 0",
+      "exit_code": 0,
+      "result": "Turn failed; fresh hold/stationary/no-latent control checks passed.",
+      "log": "native-repeat-baseline/driver.log",
+      "exact_child_commands": "native-repeat-baseline/events.jsonl"
+    },
+    {
+      "command": ".venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/native_locomotion_probe.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --output docs/artifacts/g1_harness_20261006_acceptance/native-repeat-pause --initial-yaw-deg 0 --turn-angle-deg -15 --post-walk-hold-s 1",
+      "exit_code": 0,
+      "result": "Turn failed; fresh hold/stationary/no-latent control checks passed.",
+      "log": "native-repeat-pause/driver.log",
+      "exact_child_commands": "native-repeat-pause/events.jsonl"
+    },
+    {
+      "command": ".venv/bin/python docs/artifacts/g1_harness_20261001/evaluate_vision_cases.py --manifest docs/artifacts/g1_harness_20261006_acceptance/vision_cases.json --output docs/artifacts/g1_harness_20261006_acceptance/vision-recorded --vlm-model openai/gpt-5.6-sol --vlm-base-url https://api.genon.ai/v1 --env-file /home/jihun/work/VoLoAgent/.env",
+      "exit_code": 1,
+      "note": "Manifest contents at launch saved as vision_cases_as_run.json. Public first-positive expectation corrected after run; responses rescored without new API calls.",
+      "api_calls": 8,
+      "log": "vision-recorded/evaluation.log"
+    },
+    {
+      "command": ".venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/dataset_review_gate.py docs/artifacts/g1_harness_20261006_acceptance/dataset-plan.json",
+      "exit_code": 1,
+      "result": "Expected blocked: no accepted training windows.",
+      "output": "dataset-readiness.json"
+    },
+    {
+      "command": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/read_camera_intrinsics.py --output docs/artifacts/g1_harness_20261006_acceptance/camera-host-readiness.json",
+      "exit_code": 2,
+      "result": "Expected blocked: SDK not installed in checked environment.",
+      "output": "camera-host-readiness.json"
+    },
+    {
+      "command": "/home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/plot_results.py",
+      "exit_code": 0,
+      "result": "Three PNG/PDF pairs; visually inspected."
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py -k unhashable_split",
+      "exit_code": 1,
+      "result": "Expected reproduction: 2 failed, 8 deselected.",
+      "log": "review-fix-split-red.log"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py tests/test_g1_monitor.py docs/artifacts/g1_harness_20261006_followup/test_planner_wire.py",
+      "exit_code": 0,
+      "result": "29 passed, zero skips",
+      "log": "review-fix-checks.log"
+    },
+    {
+      "command": "ruff check docs/artifacts/g1_harness_20261006_acceptance/dataset_review_gate.py docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py",
+      "exit_code": 0,
+      "result": "All checks passed.",
+      "log": "review-fix-ruff.log"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q",
+      "exit_code": 134,
+      "environment": "Sandboxed",
+      "result": "Aborted in ZeroMQ mock-server bind fixture; incomplete result.",
+      "log": "review-fix-full-suite-sandbox-abort.log"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "environment": "Outside sandbox",
+      "result": "595 passed, 15 skipped, 46 warnings",
+      "log": "review-fix-full-suite.log"
+    }
+  ],
+  "evidence_limits": [
+    "Source frame labels are sampled Codex review, not new user-confirmed episode outcomes.",
+    "Current checkpoint saw the proposed held-out references; future split only.",
+    "Camera intrinsics and optical-to-robot transform remain unmeasured.",
+    "One turn trial per configuration; no repeatability acceptance.",
+    "Bottle geometry assumes upright orientation and 10 Hz asynchronous reconstruction.",
+    "The review checker is standalone metadata validation, not a training/export integration."
+  ],
+  "reproduction_commands": [
+    "/home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/dense_review.py --dataset /mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916 --output /tmp/g1-dense-review-new",
+    "/home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/audit_control_modes.py --dataset /mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916 --mapping docs/artifacts/g1_harness_20261006/training-state-audit/episodes.jsonl --enum-source /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/pico_manager_thread_server.py --output /tmp/g1-control-mode-audit-new",
+    "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/analyze_bottle_reach.py --trial docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence --scene docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/scene.xml --output /tmp/g1-bottle-reach-new",
+    "env MUJOCO_GL=egl PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_harness_20261006_acceptance/build_camera_proxy.py --trial docs/artifacts/g1_harness_20261006_followup/appearance-live-capture-cadence --scene docs/artifacts/g1_harness_20261006_followup/appearance-control/clear_green_cap/scene.xml --urdf /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/g1_29dof_with_hand.urdf --output /tmp/g1-camera-proxy-new",
+    "python3 docs/artifacts/g1_harness_20261006_acceptance/analyze_turn_repeats.py",
+    "python3 docs/artifacts/g1_harness_20261006_acceptance/turn-diagnosis/analysis.py --output /tmp/g1-turn-diagnosis-new"
+  ],
+  "reproduction_note": "Use new output paths. Native probes run only headless loopback and require the existing workstation environments/binaries/models; do not run against physical hardware. Plan/review JSONs are authored review metadata, not accepted data exports.",
+  "final_review": "final-review.md",
+  "final_review_model": "gpt-6-astra/high",
+  "final_integrity_checks": {
+    "old_archive_files_verified": 942,
+    "source_hashes_reverified": true,
+    "configured_credentials_absent": true,
+    "all_python_json_parse": true,
+    "local_markdown_links_resolve": true,
+    "owned_simulator_ports_released": true
+  },
+  "review_correction": {
+    "reviewed_commit": "51d4d090044dda1f5bbf462f48d2cac0f64e150e",
+    "findings": {
+      "P2": "Missing required author sign-off",
+      "P3": "Unhashable split crashes metadata checker"
+    },
+    "checker_change": "Validate split is a string before set membership.",
+    "author_identity": "Jihun Kim <caisarl76@gmail.com>",
+    "identity_source": "Authenticated GitHub profile and native repository author history",
+    "signoff_trailer": "Signed-off-by: Jihun Kim <caisarl76@gmail.com>",
+    "history_scope": "Amend reviewed tip only; exact remote lease uses reviewed_commit.",
+    "before_sources": "review-before/",
+    "original_evidence_unchanged": true,
+    "report": "review-corrections.md"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "robot_connection": false,
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "deadline_s": 10.0,
+  "production_deadline": true,
+  "scope": "Recorded timestamps; provider wall time is not real-time video replay.",
+  "label_provenance": "User-confirmed episode outcomes: 15 and 30 success; 16 palm-angle slip. Phase labels are investigator judgments of the saved terminal sheets, not new user approvals or policy hold-out labels.",
+  "episodes": {
+    "15": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000015.mp4",
+      "sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207"
+    }
+  },
+  "cases": [
+    {
+      "id": "desk-bottle",
+      "episode": 15,
+      "phase": "ready",
+      "initial_frame": 0,
+      "frame": 62,
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000062.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:BadRequestError",
+        "frame_id": "ecff1616d11dff4c3b2987ad5a5892eb761d5c8e38fae942eb269d337682ca53",
+        "execution_id": "desk-bottle",
+        "inference_epoch": 1,
+        "captured_at": 722061.532594209,
+        "decided_at": 722063.653830621,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "ready"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 722061.542176956,
+        "error_class": "BadRequestError",
+        "http_status": 400,
+        "error_message": "litellm.BadRequestError: AzureException BadRequestError - Unknown parameter: 'thinking_token_budget'.. Received Model Group=openai/gpt-5.6-sol\nAvailable Model Group Fallbacks=None",
+        "latency_s": 2.1115771060576662
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 2.1212364120874554
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "unavailable": 1,
+    "label_disagreements": 1,
+    "confirmed_phases": 0,
+    "false_positive_frames": 0
+  }
+}

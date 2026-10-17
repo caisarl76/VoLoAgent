@@ -1,0 +1,340 @@
+{
+  "review_method": "Codex visual screening of all31 timestamped contact sheets; no continuous video review or new human outcome labels.",
+  "newly_screened_episodes": 12,
+  "existing_user_reference_episodes": 2,
+  "retained_episodes_without_complete_outcome_review": 172,
+  "unscreened_retained_episodes": 160,
+  "dataset_modified": false,
+  "training_performed": false,
+  "episodes": [
+    {
+      "source_episode": 5,
+      "prepared_episode": 5,
+      "screening_category": "user_failure_reference",
+      "observed": "Bottle lifted at17.52s; open hand without visible destination release at19.52s. User-confirmed failed reference retained.",
+      "evidence_intervals_s": [
+        [
+          17.52,
+          19.52
+        ]
+      ],
+      "next_review": "Preserve failure label; review grasp slip densely if used for training.",
+      "inspected_sheets": [
+        "episode_000005_overview_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": "user_confirmed_failure"
+    },
+    {
+      "source_episode": 14,
+      "prepared_episode": 13,
+      "screening_category": "pause_or_setup_candidate",
+      "observed": "The429s flagged interval shows a largely fixed floor/table view at sampled15s intervals; later frames show the source table. Final placement is unseen.",
+      "evidence_intervals_s": [
+        [
+          26.94,
+          455.94
+        ],
+        [
+          498.34,
+          518.12
+        ]
+      ],
+      "next_review": "Review densely around transitions before trimming pauses; outcome unknown.",
+      "inspected_sheets": [
+        "episode_000014_overview_0.jpg",
+        "episode_000014_flag-0_0.jpg",
+        "episode_000014_flag-1_0.jpg",
+        "episode_000014_flag-1_1.jpg",
+        "episode_000014_flag-2_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 18,
+      "prepared_episode": 17,
+      "screening_category": "user_success_reference",
+      "observed": "Bottle carried18.40-33.10s; bottle on stool and hand withdrawn37.46-40.46s. Destination was confirmed by user.",
+      "evidence_intervals_s": [
+        [
+          18.4,
+          33.1
+        ],
+        [
+          37.46,
+          40.46
+        ]
+      ],
+      "next_review": "Preserve successful reference; reserve other episodes for held-out evaluation.",
+      "inspected_sheets": [
+        "episode_000018_overview_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": "user_confirmed_success"
+    },
+    {
+      "source_episode": 42,
+      "prepared_episode": 41,
+      "screening_category": "setup_candidate",
+      "observed": "Basket and bottles visible0-4.82s; camera then faces floor and a person21.36-26.56s. Placement outcome unseen.",
+      "evidence_intervals_s": [
+        [
+          0,
+          4.82
+        ],
+        [
+          21.36,
+          26.56
+        ]
+      ],
+      "next_review": "Separate setup from any task attempt after dense review.",
+      "inspected_sheets": [
+        "episode_000042_overview_0.jpg",
+        "episode_000042_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 45,
+      "prepared_episode": 44,
+      "screening_category": "setup_or_post_task_candidate",
+      "observed": "Bottle already on stool at0-4.40s; a person handles setup, followed by a floor view12.70-24.16s. A transfer is not established by these samples.",
+      "evidence_intervals_s": [
+        [
+          0,
+          4.4
+        ],
+        [
+          12.7,
+          24.16
+        ]
+      ],
+      "next_review": "Determine whether this is post-task/reset footage before inclusion.",
+      "inspected_sheets": [
+        "episode_000045_overview_0.jpg",
+        "episode_000045_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 52,
+      "prepared_episode": 51,
+      "screening_category": "release_or_drop_review_candidate",
+      "observed": "Floor/person in both flags; bottle held above stool49.98-52.98s. At53.98s bottle tilts, and54.98s has no visible released bottle.",
+      "evidence_intervals_s": [
+        [
+          10.32,
+          23.8
+        ],
+        [
+          26.62,
+          35.54
+        ],
+        [
+          49.98,
+          54.98
+        ]
+      ],
+      "next_review": "Dense review49-55s to distinguish release/drop; do not label success.",
+      "inspected_sheets": [
+        "episode_000052_overview_0.jpg",
+        "episode_000052_flag-0_0.jpg",
+        "episode_000052_flag-1_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 55,
+      "prepared_episode": 54,
+      "screening_category": "recovery_or_setup_candidate",
+      "observed": "Bottle visible on floor near stool at0s; later floor/person views. Final placement unseen.",
+      "evidence_intervals_s": [
+        [
+          0,
+          3.9
+        ],
+        [
+          10.26,
+          21.44
+        ]
+      ],
+      "next_review": "Check prior episode continuity and recovery; outcome unknown.",
+      "inspected_sheets": [
+        "episode_000055_overview_0.jpg",
+        "episode_000055_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 78,
+      "prepared_episode": 77,
+      "screening_category": "stool_release_candidate",
+      "observed": "Bottle carried21.56-35.92s; bottle lies on stool with hand open39.38-46.32s, then basket/setup changes48.80-55.74s. Later flag shows floor.",
+      "evidence_intervals_s": [
+        [
+          21.56,
+          35.92
+        ],
+        [
+          39.38,
+          46.32
+        ],
+        [
+          48.8,
+          55.74
+        ],
+        [
+          66.92,
+          76.28
+        ]
+      ],
+      "next_review": "Review release35-44s and intended pose; sampled candidate, not accepted outcome label.",
+      "inspected_sheets": [
+        "episode_000078_overview_0.jpg",
+        "episode_000078_flag-0_0.jpg",
+        "episode_000078_flag-1_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 140,
+      "prepared_episode": 135,
+      "screening_category": "task_or_object_review_candidate",
+      "observed": "Initial floor pause1-7.44s; later view contains a white cylindrical object and laptop. Intended object and placement are not established.",
+      "evidence_intervals_s": [
+        [
+          1,
+          7.44
+        ],
+        [
+          18.84,
+          25.9
+        ]
+      ],
+      "next_review": "Verify intended task/object and actual transfer densely.",
+      "inspected_sheets": [
+        "episode_000140_overview_0.jpg",
+        "episode_000140_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 146,
+      "prepared_episode": 141,
+      "screening_category": "setup_candidate",
+      "observed": "Bottle basket initially; bottle visible on floor at2.58s. Flag contains a person/floor10.02-19.62s; no terminal placement evidence.",
+      "evidence_intervals_s": [
+        [
+          0,
+          2.58
+        ],
+        [
+          10.02,
+          19.62
+        ]
+      ],
+      "next_review": "Review source context and exclude setup only after confirmation.",
+      "inspected_sheets": [
+        "episode_000146_overview_0.jpg",
+        "episode_000146_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 150,
+      "prepared_episode": 145,
+      "screening_category": "destination_review_candidate",
+      "observed": "Bottle grasped20.28s; subsequent view moves toward a basket on a black surface33.80s, then floor/person43.70-71.44s. Stool placement is unseen.",
+      "evidence_intervals_s": [
+        [
+          20.28,
+          33.8
+        ],
+        [
+          43.7,
+          71.44
+        ]
+      ],
+      "next_review": "Verify destination/task boundaries and pause trimming.",
+      "inspected_sheets": [
+        "episode_000150_overview_0.jpg",
+        "episode_000150_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 151,
+      "prepared_episode": 146,
+      "screening_category": "setup_candidate",
+      "observed": "Basket with bottles initially; flagged interval21.70-33.84s shows a person, chair and floor. No sampled task transfer.",
+      "evidence_intervals_s": [
+        [
+          0,
+          3.08
+        ],
+        [
+          21.7,
+          33.84
+        ]
+      ],
+      "next_review": "Review setup boundary and any unsampled task attempt.",
+      "inspected_sheets": [
+        "episode_000151_overview_0.jpg",
+        "episode_000151_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 155,
+      "prepared_episode": 150,
+      "screening_category": "task_prompt_mismatch_candidate",
+      "observed": "Sampled robot actions manipulate a blue cup, a white/green box and colored objects; clear bottles remain in the background. Preparation assigned the bottle prompt to every retained frame.",
+      "evidence_intervals_s": [
+        [
+          0,
+          61.82
+        ],
+        [
+          108.18,
+          170
+        ]
+      ],
+      "next_review": "Highest-priority task-label audit. Identify exact incompatible segments before preparing a new dataset.",
+      "inspected_sheets": [
+        "episode_000155_overview_0.jpg",
+        "episode_000155_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    },
+    {
+      "source_episode": 159,
+      "prepared_episode": 154,
+      "screening_category": "task_prompt_mismatch_or_setup_candidate",
+      "observed": "Person arranges pink object/controller while robot hands remain at similar positions in0-7.94s samples. Preparation assigned the bottle prompt.",
+      "evidence_intervals_s": [
+        [
+          0,
+          7.94
+        ]
+      ],
+      "next_review": "Dense review full8s; likely setup needs separate labeling or exclusion in a derived dataset.",
+      "inspected_sheets": [
+        "episode_000159_overview_0.jpg",
+        "episode_000159_flag-0_0.jpg"
+      ],
+      "continuous_video_review": false,
+      "accepted_outcome_label": null
+    }
+  ]
+}

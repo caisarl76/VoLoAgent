@@ -1,0 +1,286 @@
+{
+  "robot_connection": false,
+  "model": "openai/gpt-5.6-sol",
+  "base_url": "https://api.genon.ai/v1",
+  "deadline_s": 10.0,
+  "production_deadline": true,
+  "scope": "Recorded timestamps; provider wall time is not real-time video replay.",
+  "label_provenance": "Investigator-selected temporal context from user-confirmed successful source episode 15. First show contact and removal, then two distinct visibly empty-hand frames. These are recorded-image judgments, not real-time robot acceptance.",
+  "episodes": {
+    "15": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000015.mp4",
+      "sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207"
+    }
+  },
+  "cases": [
+    {
+      "id": "contact15",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 395,
+      "sequence": "transfer15",
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep15_f000395.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The person is grasping the bottle, but it remains supported by the robot's right hand; the hand is not yet clearly empty and unobstructed.",
+        "frame_id": "35e5ea6d29e194ba4bce28495b07ea1995d0f898e46822f4032b210aae71d1aa",
+        "execution_id": "transfer15",
+        "inference_epoch": 1,
+        "captured_at": 950414.364878399,
+        "decided_at": 950418.671277496,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "{\"outcome\":\"no\",\"reason\":\"The person is grasping the bottle, but it remains supported by the robot's right hand; the hand is not yet clearly empty and unobstructed.\"}",
+      "frame_outcome": "no",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 950414.374362489,
+        "response_model": "openai/gpt-5.6-sol",
+        "usage": {
+          "completion_tokens": 88,
+          "prompt_tokens": 902,
+          "total_tokens": 990,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 39,
+            "rejected_prediction_tokens": 0,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 8,
+            "engine_ttft_ms": 1208,
+            "engine_ttlt_ms": 1962,
+            "pre_inference_ms": 124,
+            "service_tbt_ms": 9,
+            "service_ttft_ms": 1760,
+            "service_ttlt_ms": 2510,
+            "user_visible_ttft_ms": 1636
+          },
+          "cost": 0.00715
+        },
+        "latency_s": 4.296814437024295
+      },
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 4.306399097084068
+    },
+    {
+      "id": "taking15",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 405,
+      "sequence": "transfer15",
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep15_f000405.jpg",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The person deliberately grasped and lifted the bottle from the offered right hand; the robot palm is clearly visible and empty, with no human contact obstructing its return and no slipping or falling observed.",
+        "frame_id": "d0b1ab21edad06d6681711545844fc3071fc24f53c7ab05f50c9eaaaa1ae2e42",
+        "execution_id": "transfer15",
+        "inference_epoch": 1,
+        "captured_at": 950418.776038367,
+        "decided_at": 950423.100702649,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "{\"outcome\":\"yes\",\"reason\":\"The person deliberately grasped and lifted the bottle from the offered right hand; the robot palm is clearly visible and empty, with no human contact obstructing its return and no slipping or falling observed.\"}",
+      "frame_outcome": "yes",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 950418.782709716,
+        "response_model": "openai/gpt-5.6-sol",
+        "usage": {
+          "completion_tokens": 160,
+          "prompt_tokens": 1271,
+          "total_tokens": 1431,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 103,
+            "rejected_prediction_tokens": 0,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 11,
+            "engine_ttft_ms": 642,
+            "engine_ttlt_ms": 2400,
+            "pre_inference_ms": 98,
+            "service_tbt_ms": 11,
+            "service_ttft_ms": 1164,
+            "service_ttlt_ms": 2915,
+            "user_visible_ttft_ms": 1067
+          },
+          "cost": 0.011155
+        },
+        "latency_s": 4.31789917498827
+      },
+      "confirmation_streak": 1,
+      "matches_label": false,
+      "latency_s": 4.324664282030426
+    },
+    {
+      "id": "clear15-first",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 415,
+      "sequence": "transfer15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000415.jpg",
+      "decision": {
+        "outcome": "complete",
+        "reason": "The person deliberately grasped and lifted the bottle from the offered right hand; the hand is now clearly visible, empty, and unobstructed, with no slipping or falling observed.",
+        "frame_id": "b937460859ab9f07406da762032a7e8ca0bfc23db001d41b9f1321eb7f987d01",
+        "execution_id": "transfer15",
+        "inference_epoch": 1,
+        "captured_at": 950423.206976149,
+        "decided_at": 950426.006147872,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "{\"outcome\":\"yes\",\"reason\":\"The person deliberately grasped and lifted the bottle from the offered right hand; the hand is now clearly visible, empty, and unobstructed, with no slipping or falling observed.\"}",
+      "frame_outcome": "yes",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 950423.216038055,
+        "response_model": "openai/gpt-5.6-sol",
+        "usage": {
+          "completion_tokens": 48,
+          "prompt_tokens": 1640,
+          "total_tokens": 1688,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 6,
+            "engine_ttft_ms": 702,
+            "engine_ttlt_ms": 994,
+            "pre_inference_ms": 84,
+            "service_tbt_ms": 6,
+            "service_ttft_ms": 1203,
+            "service_ttlt_ms": 1488,
+            "user_visible_ttft_ms": 1119
+          },
+          "cost": 0.00964
+        },
+        "latency_s": 2.7900418660137802
+      },
+      "confirmation_streak": 2,
+      "matches_label": true,
+      "latency_s": 2.799171722959727
+    },
+    {
+      "id": "clear15-second",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 425,
+      "sequence": "transfer15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000425.jpg",
+      "decision": {
+        "outcome": "complete",
+        "reason": "The person deliberately grasped and lifted the bottle from the offered right hand; the hand is now clearly visible, empty, and unobstructed, with no slipping or falling observed.",
+        "frame_id": "fa4a08bbcd830318099590146078ad0219dff8f5709039e6bb24d4917cf1eb0c",
+        "execution_id": "transfer15",
+        "inference_epoch": 1,
+        "captured_at": 950426.113040611,
+        "decided_at": 950429.357670478,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "{\"outcome\":\"yes\",\"reason\":\"The person deliberately grasped and lifted the bottle from the offered right hand; the hand is now clearly visible, empty, and unobstructed, with no slipping or falling observed.\"}",
+      "frame_outcome": "yes",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 950426.12416078,
+        "response_model": "openai/gpt-5.6-sol",
+        "usage": {
+          "completion_tokens": 48,
+          "prompt_tokens": 2009,
+          "total_tokens": 2057,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0,
+            "text_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": null,
+            "cached_tokens": 0,
+            "image_tokens": null,
+            "text_tokens": null
+          },
+          "latency_checkpoint": {
+            "engine_tbt_ms": 6,
+            "engine_ttft_ms": 720,
+            "engine_ttlt_ms": 1004,
+            "pre_inference_ms": 98,
+            "service_tbt_ms": 6,
+            "service_ttft_ms": 1337,
+            "service_ttlt_ms": 1617,
+            "user_visible_ttft_ms": 1240
+          },
+          "cost": 0.011485
+        },
+        "latency_s": 3.2334409470204264
+      },
+      "confirmation_streak": 3,
+      "matches_label": true,
+      "latency_s": 3.244629867025651
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "unavailable": 0,
+    "label_disagreements": 1,
+    "confirmed_phases": 2,
+    "false_positive_frames": 1
+  }
+}

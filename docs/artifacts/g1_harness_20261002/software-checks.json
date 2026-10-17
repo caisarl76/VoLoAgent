@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-02",
+  "profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "native_runtime_commit": "d513de59be21ec81c8d52497592c066f0de534f2",
+  "native_dependency_fix_commit": "73560de922f27af97b7cdeaf41bba43c0f809feb",
+  "g1_tests": {
+    "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/test_g1*.py --g1-native-checkout=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --g1-native-python=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python --require-g1-e2e -q",
+    "passed": 50,
+    "skipped": 0,
+    "elapsed_s": 29.14,
+    "exit_code": 0,
+    "output": "50 passed in 29.14s",
+    "sandbox_retry": "Previous attempt: 8 IPC bind failures (Operation not permitted), 42 passed. Required outside-sandbox rerun passed."
+  },
+  "native_harness_launcher_tests": {
+    "command": "env PYTHONPATH=. PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest gear_sonic/tests/test_harness_control.py gear_sonic/tests/test_launch_inference.py -q",
+    "passed": 23,
+    "elapsed_s": 0.2,
+    "exit_code": 0,
+    "output": "23 passed in 0.20s"
+  },
+  "workstation_inference_imports": {
+    "python": "/home/jihun/work/GR00T-WholeBodyControl/.venv_inference/bin/python",
+    "modules": [
+      "yaml",
+      "gear_sonic.utils.inference.harness_control",
+      "gear_sonic.scripts.run_vla_inference"
+    ],
+    "pyyaml": "6.0.2",
+    "exit_code": 0
+  },
+  "recorded_green_stool_vision": {
+    "total": 10,
+    "unavailable": 0,
+    "valid_negative_cases": 8,
+    "false_complete": 0,
+    "positive_label_disagreements": 0,
+    "sequence_confirmations": 1,
+    "monitor_outcome_disagreements": 0
+  },
+  "cleanup": {
+    "trial_ports": [
+      11555,
+      11556,
+      11557,
+      11580,
+      15558
+    ],
+    "owned_processes_stopped": true,
+    "gpu_compute_processes_after_trials": 0
+  },
+  "scope": "Counts/output captured from tool results. Full suites and C++ checks were not rerun in this follow-up; see historical report.",
+  "artifact_verification": {
+    "ruff": "passed",
+    "git_diff_check": "passed",
+    "strict_json_jsonl": "passed",
+    "local_links": "passed",
+    "provenance_hashes": "passed",
+    "credential_scan": "passed",
+    "raw_whitespace_scope": "Captured .log/.xml are exempt via artifact-local .gitattributes; all authored files pass staged diff checks."
+  }
+}

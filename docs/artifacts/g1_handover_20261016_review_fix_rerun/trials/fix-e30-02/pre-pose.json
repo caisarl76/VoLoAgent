@@ -1,0 +1,28 @@
+{
+  "execution": {
+    "runtime_id": "ae4e4722f74a40cdb73d6a358dfacbb5",
+    "execution_id": "ef1080f174624158b79f5a048a0157ab",
+    "skill_id": "reset_ready",
+    "phase": "RESETTING",
+    "inference_epoch": 2,
+    "started_at": 1311012.205879375,
+    "reason": null
+  },
+  "phase": "COMPLETED",
+  "reason": null,
+  "duration_s": 4.004361785016954,
+  "desk": {
+    "restored": true,
+    "sim_time": 6.474999999999884,
+    "desk_gap": {
+      "gap_m": 0.032747056468220404,
+      "actor": "right_elbow_link",
+      "obstacle": "desk_top"
+    },
+    "desk_top_xpos": [
+      0.3999999999999999,
+      0.0,
+      0.825
+    ]
+  }
+}

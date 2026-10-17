@@ -1,0 +1,167 @@
+{
+  "reviewer": "Codex, direct visual inspection of all 23 dense sheets",
+  "samples": 316,
+  "sheets": 23,
+  "source_episodes": 6,
+  "accepted_new_episode_labels": 0,
+  "dataset_modified": false,
+  "episodes": [
+    {
+      "source_episode": 5,
+      "category": "user_confirmed_failure",
+      "observed": "Bottle is grasped around 16.5 s and raised; at 18.5 s the hand opens and bottle returns toward the source tabletop. The green stool is not the observed release destination. Initial floor views 0\u20134 s are separate review candidates.",
+      "evidence_intervals_s": [
+        [
+          0,
+          4
+        ],
+        [
+          14.5,
+          19.52
+        ]
+      ],
+      "inspected_sheets": [
+        "episode_000005_failure_reference_0.jpg",
+        "episode_000005_failure_reference_1.jpg",
+        "episode_000005_failure_reference_2.jpg"
+      ],
+      "new_accepted_episode_label": false,
+      "continuous_video_review": false
+    },
+    {
+      "source_episode": 18,
+      "category": "user_confirmed_success",
+      "observed": "Initial floor views 0\u20134 s; four bottles become visible about 4.5 s. Grasp develops 13\u201315 s. Release onto the green stool occurs between the sampled 35.4 and 36.0 s views, and bottle remains there through the final 40.46 s sample. These are sampled transition brackets, not exact task-cut times.",
+      "evidence_intervals_s": [
+        [
+          0,
+          4
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          35.4,
+          36
+        ],
+        [
+          36,
+          40.46
+        ]
+      ],
+      "inspected_sheets": [
+        "episode_000018_approach_reference_0.jpg",
+        "episode_000018_approach_reference_1.jpg",
+        "episode_000018_approach_reference_2.jpg",
+        "episode_000018_release_reference_0.jpg",
+        "episode_000018_release_reference_1.jpg",
+        "episode_000018_release_reference_2.jpg"
+      ],
+      "new_accepted_episode_label": false,
+      "continuous_video_review": false
+    },
+    {
+      "source_episode": 52,
+      "category": "still_held_terminal_samples",
+      "observed": "At 49\u201354.6 s the bottle remains enclosed by the gripper beside/above the stool. At 54.8\u201354.98 s it tilts partly out of the camera view with fingers still closed. The earlier sparse review did not establish a drop; dense samples establish no visible release.",
+      "evidence_intervals_s": [
+        [
+          49,
+          54.98
+        ]
+      ],
+      "inspected_sheets": [
+        "episode_000052_release_or_drop_0.jpg",
+        "episode_000052_release_or_drop_1.jpg"
+      ],
+      "new_accepted_episode_label": false,
+      "continuous_video_review": false
+    },
+    {
+      "source_episode": 78,
+      "category": "visually_observed_release_candidate",
+      "observed": "Fingers open at 37.2 s and the bottle tips onto the stool at 37.4 s. It remains lying on the stool through sampled 44 s, with the gripper withdrawn/open. The completion criterion permits lying support; the eight-frame monitor check uses two post-release frames. No new accepted episode training label is created.",
+      "evidence_intervals_s": [
+        [
+          35,
+          37.2
+        ],
+        [
+          37.2,
+          37.4
+        ],
+        [
+          37.4,
+          44
+        ]
+      ],
+      "inspected_sheets": [
+        "episode_000078_release_0.jpg",
+        "episode_000078_release_1.jpg",
+        "episode_000078_release_2.jpg"
+      ],
+      "new_accepted_episode_label": false,
+      "continuous_video_review": false
+    },
+    {
+      "source_episode": 155,
+      "category": "mixed_tasks_requires_segmentation",
+      "observed": "Robot handles a blue cup in 4\u20138 s and a green/white box in 12\u201324 s samples. It also reaches toward/manipulates a clear bottle around 26\u201338 s; its destination is not established. Later samples show an opaque yellow object and colored objects, interleaved with human resets. The entire episode must not be relabeled or described as having zero bottle actions.",
+      "evidence_intervals_s": [
+        [
+          4,
+          8
+        ],
+        [
+          12,
+          24
+        ],
+        [
+          26,
+          38
+        ],
+        [
+          40,
+          50
+        ],
+        [
+          52,
+          70
+        ],
+        [
+          90,
+          170
+        ]
+      ],
+      "inspected_sheets": [
+        "episode_000155_task_boundaries_0.jpg",
+        "episode_000155_task_boundaries_1.jpg",
+        "episode_000155_task_boundaries_2.jpg",
+        "episode_000155_task_boundaries_3.jpg",
+        "episode_000155_task_boundaries_4.jpg",
+        "episode_000155_task_boundaries_5.jpg"
+      ],
+      "new_accepted_episode_label": false,
+      "continuous_video_review": false
+    },
+    {
+      "source_episode": 159,
+      "category": "human_setup_candidate",
+      "observed": "Across 0\u20137.94 s samples the person moves a controller and a pink object while the robot hands change little. Bottles remain in the background. No bottle transfer to the green stool is visible. This is sampled screening, not frame-complete proof.",
+      "evidence_intervals_s": [
+        [
+          0,
+          7.94
+        ]
+      ],
+      "inspected_sheets": [
+        "episode_000159_setup_0.jpg",
+        "episode_000159_setup_1.jpg",
+        "episode_000159_setup_2.jpg"
+      ],
+      "new_accepted_episode_label": false,
+      "continuous_video_review": false
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+1790928446.200433 [0]     python: selected interface "lo" is not multicast-capable: disabling multicast
+[ChannelFactory] create domain error. msg: Occurred upon initialisation of a cyclonedds.domain.Domain
+Note: Channel factory initialization attempt: channel factory init error.
+Sensor server running at tcp://*:11555
+Image publishing subprocess started with 1 cameras on ZMQ port 11555
+Image publish frequency:  33.03902323749508
+Image publish frequency:  32.871751465563186
+[Sensor server] Message sent: 100, message dropped: 0
+Image publish frequency:  32.63161006729685
+Image publish frequency:  33.5528214645697
+[Sensor server] Message sent: 200, message dropped: 0
+Image publish frequency:  30.64063059311695
+Image publish frequency:  33.75289904639279
+[Sensor server] Message sent: 300, message dropped: 0
+Image publish frequency:  31.652019047187824
+[Sensor server] Message sent: 400, message dropped: 0
+Image publish frequency:  33.104998539823356
+Image publish frequency:  32.795671347699624
+[Sensor server] Message sent: 500, message dropped: 0
+Image publish frequency:  32.337008311103574
+Image publish frequency:  32.44783116591755
+[Sensor server] Message sent: 600, message dropped: 0
+Image publish frequency:  32.54173326092017
+Image publish frequency:  32.458628695248414
+[Sensor server] Message sent: 700, message dropped: 0
+Image publish frequency:  32.25147251057286
+Diagnostic: virtual support released
+Image publish frequency:  32.32106033752023
+[Sensor server] Message sent: 800, message dropped: 0
+Image publish frequency:  32.296670465395636
+Image publish frequency:  31.321345361132686
+[Sensor server] Message sent: 900, message dropped: 0
+Image publish frequency:  31.776233948255616
+Image publish frequency:  32.79669710997123
+[Sensor server] Message sent: 1000, message dropped: 0
+Image publish frequency:  32.79669710997123
+Image publish frequency:  32.93628382516923
+[Sensor server] Message sent: 1100, message dropped: 0
+Image publish frequency:  32.347732198082724
+Image publish frequency:  32.6214582928252
+[Sensor server] Message sent: 1200, message dropped: 0
+Image publish frequency:  32.26065085799112
+Image publish frequency:  32.37494789817374
+[Sensor server] Message sent: 1300, message dropped: 0
+Image publish frequency:  32.201455639836624
+Image publish frequency:  32.68093594408646
+[Sensor server] Message sent: 1400, message dropped: 0
+Image publish frequency:  30.97804957310408
+Image publish frequency:  32.59053435589019
+[Sensor server] Message sent: 1500, message dropped: 0
+Image publish frequency:  32.489806035818305
+Image publish frequency:  31.415183653903767
+[Sensor server] Message sent: 1600, message dropped: 0
+Image publish frequency:  32.15233305992288
+Image publish frequency:  32.43553575847562
+[Sensor server] Message sent: 1700, message dropped: 0
+Image publish frequency:  32.14321623444302
+Image publish frequency:  31.911864509944156
+[Sensor server] Message sent: 1800, message dropped: 0
+Image publish frequency:  32.39995674139077
+Image publish frequency:  32.08911466780916
+[Sensor server] Message sent: 1900, message dropped: 0
+Image publish frequency:  32.453605694831325
+Image publish frequency:  32.53542256525618
+[Sensor server] Message sent: 2000, message dropped: 0
+Image publish frequency:  32.97668055664754
+Image publish frequency:  31.98096835684331
+[Sensor server] Message sent: 2100, message dropped: 0
+Image publish frequency:  32.272565690762896
+Image publish frequency:  31.837741005009867
+[Sensor server] Message sent: 2200, message dropped: 0
+Image publish frequency:  32.32155847358363
+Image publish frequency:  32.15085430448347
+[Sensor server] Message sent: 2300, message dropped: 0
+Image publish frequency:  32.07316494995144
+Image publish frequency:  31.542523670218767
+[Sensor server] Message sent: 2400, message dropped: 0
+Image publish frequency:  32.54577339106414
+Image publish frequency:  32.70565484545086
+[Sensor server] Message sent: 2500, message dropped: 0
+Image publish frequency:  32.09992040653891
+Image publish frequency:  32.03299296608292
+[Sensor server] Message sent: 2600, message dropped: 0
+Image publish frequency:  32.308114187117745
+Image publish frequency:  32.584457858469094
+[Sensor server] Message sent: 2700, message dropped: 0
+Image publish frequency:  32.5705410946139
+Image publish frequency:  32.17675217871609
+[Sensor server] Message sent: 2800, message dropped: 0
+Image publish frequency:  32.623234397361706
+Image publish frequency:  32.477478802895966
+[Sensor server] Message sent: 2900, message dropped: 0
+Image publish frequency:  32.432526058581544
+Image publish frequency:  32.384696753271825
+[Sensor server] Message sent: 3000, message dropped: 0
+Image publish frequency:  32.06605403587101
+Image publish frequency:  32.17379031020834
+[Sensor server] Message sent: 3100, message dropped: 0
+Image publish frequency:  32.06678950144879
+Image publish frequency:  32.69622157607128
+[Sensor server] Message sent: 3200, message dropped: 0
+Image publish frequency:  32.52255633267683
+Image publish frequency:  32.55335133960448
+[Sensor server] Message sent: 3300, message dropped: 0
+Image publish frequency:  31.78104944118204
+Image publish frequency:  32.92077296202691
+[Sensor server] Message sent: 3400, message dropped: 0
+Image publish frequency:  31.85587665666654
+Image publish frequency:  32.68934127256289
+[Sensor server] Message sent: 3500, message dropped: 0
+Image publish frequency:  33.07471631457343
+Image publish frequency:  32.8418942620897
+[Sensor server] Message sent: 3600, message dropped: 0
+Image publish frequency:  32.886184726360355
+Image publish frequency:  32.7212188823791
+[Sensor server] Message sent: 3700, message dropped: 0
+Image publish frequency:  32.13410457766712
+Image publish frequency:  32.792594445834375
+[Sensor server] Message sent: 3800, message dropped: 0
+Image publish frequency:  32.936542463386864
+Image publish frequency:  32.42174588573593
+[Sensor server] Message sent: 3900, message dropped: 0
+Image publish frequency:  31.971704729091076
+Image publish frequency:  32.52911431673647
+[Sensor server] Message sent: 4000, message dropped: 0
+Image publish frequency:  33.054385259789896
+Image publish frequency:  33.190399696132815
+[Sensor server] Message sent: 4100, message dropped: 0
+Image publish frequency:  33.21826317665228
+Image publish frequency:  32.38619709827116
+[Sensor server] Message sent: 4200, message dropped: 0
+Image publish frequency:  33.189349159248266
+Image publish frequency:  32.72862337500195
+[Sensor server] Message sent: 4300, message dropped: 0
+Image publish frequency:  32.786442373835285
+Image publish frequency:  33.06611166296138
+[Sensor server] Message sent: 4400, message dropped: 0
+Image publish frequency:  33.33336512250753
+Image publish frequency:  33.29050487733251
+[Sensor server] Message sent: 4500, message dropped: 0
+Image publish frequency:  32.7316882833107
+Image publish frequency:  32.426508334106444
+[Sensor server] Message sent: 4600, message dropped: 0
+Image publish frequency:  32.91250647373625
+Image publish frequency:  32.85578655470084
+[Sensor server] Message sent: 4700, message dropped: 0
+Image publish frequency:  32.832639258540254
+Image publish frequency:  31.96853682517664
+[Sensor server] Message sent: 4800, message dropped: 0
+Image publish frequency:  32.891858404303704
+Image publish frequency:  33.522250639386186
+[Sensor server] Message sent: 4900, message dropped: 0
+Image publish frequency:  32.67533479273622
+Image publish frequency:  32.52709619381456
+Simulator interrupted by user.
+Image publisher interrupted by user
+Exception ignored in: <function Renderer.__del__ at 0x7eed1a74fc70>
+Traceback (most recent call last):
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/rendering/classic/renderer.py", line 343, in __del__
+    self.close()
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/rendering/classic/renderer.py", line 329, in close
+    self._gl_context.free()
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 131, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE,
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7eecc63164c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7eed26732b40>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7eed26732b40>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7eed26732ac0>,
+	),
+	result = 0
+)
+Exception ignored in: <function GLContext.__del__ at 0x7eed25864790>
+Traceback (most recent call last):
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 138, in __del__
+    self.free()
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/mujoco/egl/__init__.py", line 131, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE,
+  File "/home/jihun/work/GR00T-WholeBodyControl/.venv_sim/lib/python3.10/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7eecc63164c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7eed26732b40>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7eed26732b40>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7eed26732ac0>,
+	),
+	result = 0
+)

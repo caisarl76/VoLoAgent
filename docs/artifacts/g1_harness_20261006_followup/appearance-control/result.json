@@ -1,0 +1,34 @@
+{
+  "robot_actuated": false,
+  "dds_started": false,
+  "physics_unchanged": true,
+  "invariant_fields": [
+    "body_mass",
+    "body_inertia",
+    "body_ipos",
+    "body_iquat",
+    "jnt_qposadr",
+    "jnt_dofadr",
+    "dof_damping",
+    "actuator_trnid",
+    "actuator_gainprm",
+    "cam_pos",
+    "cam_quat",
+    "cam_fovy"
+  ],
+  "one_second_dynamics_max_qpos_delta": 0.0,
+  "image_mean_absolute_difference": 2.7467523871527777,
+  "state_sample_at": 447869.465329519,
+  "skill_start_at": 447869.483051962,
+  "state_skew_s": -0.017722442978993058,
+  "reconstructed_pose_is_approximate": true,
+  "whole_scene_calibrated": false,
+  "sources": {
+    "docs/artifacts/g1_harness_20261006/bottle-measured-scene/scene.xml": "8dfc51ed7cb97916582fac9d59ca322b203c0379e463d175b8d17219d1f66d04",
+    "docs/artifacts/g1_harness_20261006/bottle-physical-calibration-truth-control/ground-truth.jsonl": "1b01462fd5b1a7edd5a891f3e3dc090a0af27e3284f36b447b74365845607cdb"
+  },
+  "scenes": {
+    "cyan": "8dfc51ed7cb97916582fac9d59ca322b203c0379e463d175b8d17219d1f66d04",
+    "clear_green_cap": "1d6d901d0052bcd5cb4774dcee405e2564fc56deac006092c6f7dfe295711de5"
+  }
+}

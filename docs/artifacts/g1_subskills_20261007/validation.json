@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "scope": "Grasp-preserving lifecycle and candidate dataset preparation; memory-only native IPC, scripted vision, no hardware commands or competence claim.",
+  "volo_base_commit": "2eee64b59d5d2b183140850b2d144c973d33f40e",
+  "native_commit": "f791c8d52fa0655991efd7ca86ee28e4db1bd2df",
+  "active_profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "active_profile_changed": false,
+  "new_training_performed": false,
+  "new_dataset_exported": false,
+  "accepted_new_subskill_segments": 0,
+  "training_windows": 0,
+  "pick_terminal": "Stop and hold above the source table, as confirmed by user.",
+  "checks": {
+    "volo_full_suite": {
+      "passed": 655,
+      "skipped": 6,
+      "warnings": 46,
+      "elapsed_s": 48.25,
+      "log": "volo-tests.txt",
+      "native_checkout": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native"
+    },
+    "native_harness_suite": {
+      "passed": 67,
+      "elapsed_s": 0.71,
+      "files": [
+        "test_harness_control.py",
+        "test_harness_rpc.py",
+        "test_harness_review_regressions.py",
+        "test_vla_standing_reset.py",
+        "test_observation_snapshot.py",
+        "test_bounded_planner.py"
+      ]
+    },
+    "final_focused_suite": {
+      "passed": 72,
+      "elapsed_s": 1.9
+    },
+    "independent_review": {
+      "confirmed_defects": 0,
+      "focused_tests_passed": 49
+    },
+    "review_gate": {
+      "exit_code": 1,
+      "ready": false,
+      "expected_rejection": true,
+      "missing": "Accepted per-skill train/held-out coverage"
+    },
+    "video_assets": [
+      {
+        "source_episode": 52,
+        "frames": 2750,
+        "fps": 50,
+        "checksums_match": true
+      },
+      {
+        "source_episode": 78,
+        "frames": 2300,
+        "fps": 50,
+        "checksums_match": true
+      },
+      {
+        "source_episode": 18,
+        "frames": 2024,
+        "fps": 50,
+        "checksums_match": true
+      },
+      {
+        "source_episode": 5,
+        "frames": 977,
+        "fps": 50,
+        "checksums_match": true
+      }
+    ],
+    "mirrored_profile_matches": true
+  },
+  "evidence": {
+    "native": "handoff-evidence/native.jsonl",
+    "coordinator": "handoff-evidence/coordinator-events.jsonl",
+    "result": "handoff-evidence/result.json",
+    "description": "Copied memory-only pick/place IPC trial; temporary test paths in the original result are preserved."
+  },
+  "source_sha256": {
+    "vlm_orchestrator/harness/g1/registry.py": "ea3dbb37394c94d658b17b00a62f6aa909dc73e4558238e60a862c2d9bff3286",
+    "vlm_orchestrator/harness/g1/runner.py": "8c47a706fe9c817762f67523c4462b880f20405e48e1771581e20a1b1cdef630",
+    "tests/test_g1_subskill_handoff.py": "6ad7b11d3738bb708b030ce7f0e321437f7b34bdc52fe36b431a5e612a063644",
+    "tests/test_g1_subskill_dataset.py": "d59c810c2e328a0129517b429a7e7f197f6b515163ba2bf73ca0704690c5ad86",
+    "docs/artifacts/g1_subskills_20261007/candidate-skills.json": "a3d1fd29103a0ea2d408bf34ec421d57d727e719d30419eecca894d8be2783f6",
+    "docs/artifacts/g1_subskills_20261007/candidate-manifest.json": "9c07441f646a932a3c2707dc78556cbe497938cc93d713c49ac9838367892592",
+    "docs/artifacts/g1_subskills_20261007/subskill_dataset.py": "f79406ae3e4c6adea07dff435071ac3f46a5f7a3a5ed681d60c7bb27e8e4dcaa"
+  }
+}

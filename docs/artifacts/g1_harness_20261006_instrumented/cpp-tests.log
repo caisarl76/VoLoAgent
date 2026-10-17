@@ -1,0 +1,20 @@
+[==========] Running 17 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from FK
+[ RUN      ] FK.TestFKAndGlobalVelocities
+Reading motion data from CSV files in: reference/bones_072925_test/
+Error reading directory: filesystem error: directory iterator cannot open directory: No such file or directory [reference/bones_072925_test/]
+unknown file: Failure
+C++ exception with description "Couldn't parse xml file g1/g1_29dof.xml" thrown in the test body.
+
+[  FAILED  ] FK.TestFKAndGlobalVelocities (0 ms)
+[----------] 1 test from FK (0 ms total)
+
+[----------] 1 test from HarnessTelemetry
+[ RUN      ] HarnessTelemetry.AbsoluteMotorOrderingAndEffectiveCapability
+[       OK ] HarnessTelemetry.AbsoluteMotorOrderingAndEffectiveCapability (0 ms)
+[----------] 1 test from HarnessTelemetry (0 ms total)
+
+[----------] 2 tests from HarnessTimeout
+[ RUN      ] HarnessTimeout.RetainsOnlyOptedInTargetsAndZerosVelocity
+Operation not permitted (src/ip_resolver.cpp:542)

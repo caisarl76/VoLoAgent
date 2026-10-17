@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "fps": 50,
+  "frame_coordinate_system": "original_source_zero_based",
+  "reviewer": "user",
+  "source52": {
+    "source_episode": 52,
+    "prepared_episode": 51,
+    "excluded_start_frame": 0,
+    "excluded_end_frame_exclusive": 1813,
+    "retained_start_frame": 1813,
+    "retained_end_frame_exclusive": 2750,
+    "retained_frames": 937,
+    "removed_duration_s": 36.26,
+    "retained_duration_s": 18.74,
+    "reason": "Returning to starting position after previous episode",
+    "confirmation": "User confirmed Source52 and inclusive cut of frames0\u20131812."
+  },
+  "source78": {
+    "source_episode": 78,
+    "prepared_episode": 77,
+    "failed_skill": "place_held_bottle_on_stool",
+    "reported_hand": "left",
+    "incident_start_frame": 1500,
+    "incident_end_frame_exclusive": 1601,
+    "incident_bounds_precision": "approximate",
+    "placement_outcome": "failure",
+    "cause": "Hand lowering onto basket pushed it off stool; basket fell to ground, per user review.",
+    "later_bottle_release_counts_as_success": false
+  },
+  "accepted_positive_subskill_segments": 0,
+  "training_performed": false,
+  "original_dataset_modified": false,
+  "current_checkpoint_changed": false
+}

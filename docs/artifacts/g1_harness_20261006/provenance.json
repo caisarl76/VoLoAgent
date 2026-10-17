@@ -1,0 +1,121 @@
+{
+  "date_local": "2026-10-06",
+  "timezone": "Asia/Seoul",
+  "robot_actuated": false,
+  "dds_interface": "lo",
+  "physical_connection": false,
+  "worktrees": {
+    "volo": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+    "native": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native"
+  },
+  "branches": {
+    "volo": "work/g1-harness-20261001",
+    "native": "work/volo-g1-harness-20261001"
+  },
+  "heads_before_current_changes": {
+    "volo": "ce6cf58d1f2c484d6a8866e4c246ddfcb74cc2ec",
+    "native": "73560de922f27af97b7cdeaf41bba43c0f809feb"
+  },
+  "native_as_run_working_fix": true,
+  "profile_sha256": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154",
+  "native_runner_current_sha256": "565e7acc59cdd75de61e7d13659d07c179c1cb8ef87b6b556c1b675b60371787",
+  "native_regression_sha256": "8caa8dbab004bb453dcf169383077c7f89ee775fd2219e567b86a9c264fd4c72",
+  "controller_binary_sha256": "2d42a14cb0ef9c1fef4d00d44da0b7a34b1593b3af53d9df6dbb45daccac4e0b",
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "checkpoint_identity_scope": "Path, serving logs and processor_config.json hash; model weight files not independently hashed here.",
+  "checkpoint_processor_sha256": "c0ea0f1e830dfd25238dff8baaad80d1551bf324dc1e53076b3349fabe3d6540",
+  "prompt": "pick drink bottle and place it on the right table",
+  "scene_sha256": "8dfc51ed7cb97916582fac9d59ca322b203c0379e463d175b8d17219d1f66d04",
+  "scene_calibration_scope": "User bottle height20cm diameter8cm mass300g; sample table/stool heights80cm. Camera, relative positions, appearance, friction and mass distribution remain provisional.",
+  "software_checks": [
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=. .venv/bin/python -m pytest gear_sonic/tests -q",
+      "result": "627 passed, 123 warnings",
+      "log": "software-checks/g1-native-suite-20261006-unrestricted.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q",
+      "result": "595 passed, 15 skipped, 46 warnings",
+      "log": "software-checks/g1-agent-suite-20261006-unrestricted.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/test_g1_harness_e2e.py --g1-native-checkout=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --g1-native-python=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python --require-g1-e2e -q",
+      "result": "50 passed, zero skips",
+      "log": "software-checks/g1-e2e-20261006.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/test_placement_truth.py /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/test_placement_truth_mujoco.py -q",
+      "result": "22 passed",
+      "log": "software-checks/g1-placement-final-20261006.log"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest docs/artifacts/g1_harness_20261006/test_bottle_mission_probe.py -q",
+      "result": "1 passed",
+      "log": "software-checks/g1-mission-probe-final-20261006.log"
+    }
+  ],
+  "current_authored_scripts": {
+    "bottle_live_sim_worker.py": "3ff12bae402e97a15933ab6e71c50d7e81b6d44be810292891a73bf43df022df",
+    "placement_truth.py": "92c220a95ab505d7c38dd91c96f3ba1fb790b8f757f8ee17b4068b1f2e0f5871",
+    "verify_bottle_calibration.py": "f72b8f7c391bbf8d956800edc108d8557fe4fd708de2f8925ea452082d822c66",
+    "test_bottle_mission_probe.py": "e8f9b97a7db6304b430cc11f8fedc97891ce9d41646c64ca13de51a1d8a55b2e",
+    "audit_training_states.py": "841d68e7c664bc37523cca0dc136b773c94f15559ed6ee2e49c85d41a5d95702",
+    "visualize_results.py": "89ff5a9fecea4d786f3020651abf8e4f214cd6267b0f013b7f3eab2f3ac219d5",
+    "analyze_policy_probe.py": "b60e9ec7f64b2e40767c4a7866b39b9b91de8c2c42234011b3bde78cf11f00c0",
+    "test_placement_truth_mujoco.py": "4c6890e34be6edeefff17da4c56aa0c63b69cdcdaf7c6cebb28cf1ce62eec693",
+    "bottle_mission_probe.py": "f51690b32485d17163f459b74d6c10a1bd6a9ed88f2c87119b40ff46aa579374",
+    "test_placement_truth.py": "2875c1f851576762f91006898bf91918ffc97ec907552073b7be5171927fbbb3",
+    "policy_input_probe.py": "d025e58c75a35e4da9720e1b5841d084bf7d3f7071516d47e3b6c1439b451852",
+    "repeat_turns.py": "ed3cd6e6e4126802f397da3ec93e9fcff78568a5036ddcf702f73ed2e920d639"
+  },
+  "exact_child_launch_commands": "Each live run driver-events.jsonl records argv, GPU and PID; turn runs record commands in turn-repeat/results.json and case events.jsonl.",
+  "top_level_command_scope": "Commands below reproduce current authored scripts; historical snapshots contain the exact older executed source. Temporary and absolute paths in raw evidence are preserved.",
+  "reproduction_commands": [
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "PYTHONPATH=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native:/home/jihun/work/Isaac-GR00T /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python docs/artifacts/g1_harness_20261006/policy_input_probe.py --saved-live docs/artifacts/g1_harness_20261002/live-green-stool-criterion --output /tmp/g1-policy-reproduction --require-parity"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": ".venv/bin/python docs/artifacts/g1_harness_20261006/bottle_mission_probe.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --scene docs/artifacts/g1_harness_20261006/bottle-measured-scene/scene.xml --output /tmp/g1-bottle-reproduction --env-file /home/jihun/work/VoLoAgent/.env --monitor-mode simulator_truth_control"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": ".venv/bin/python docs/artifacts/g1_harness_20261006/repeat_turns.py --native /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --profile configs/g1/workstation.yaml --output /tmp/g1-turn-reproduction"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native",
+      "command": ".venv/bin/python /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/verify_bottle_calibration.py --scene /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/bottle-measured-scene/scene.xml --original-scene /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261002/bottle-scene/scene.xml --output /tmp/g1-bottle-control-reproduction"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "MPLCONFIGDIR=/tmp/g1-report-matplotlib /home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006/visualize_results.py"
+    },
+    {
+      "cwd": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness",
+      "command": "/home/jihun/work/Isaac-GR00T/.venv/bin/python docs/artifacts/g1_harness_20261006/audit_training_states.py --source /mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916 --mapping docs/artifacts/g1_harness_20261006/training-state-audit/source_mapping.json --output /tmp/g1-training-audit-reproduction"
+    }
+  ],
+  "baseline_input_probe_snapshot_reconstructed_sha256": "3c2e3ba9a62b5e813a1b1ecb7da7f250e5367ff6a207800d7ea27755cc4c0a66",
+  "fixed_input_probe_snapshot_reconstructed_sha256": "b70b76f300dc0999f6b38b2b785511b21381adc9f2fdb7224aa55e5c5a8dae61",
+  "probe_reconstructions_match_recorded_hashes": true,
+  "raw_live_snapshots_unchanged": true,
+  "current_gate_fixes_applied_after_failed_live_trials": true,
+  "manual_forced_controls_are_not_learned_task_success": true,
+  "scripted_monitor_is_not_genon_validation": true,
+  "numeric_training_audit_is_not_visual_labeling": true,
+  "training_performed": false,
+  "dataset_modified": false,
+  "dashboard_deferred": true,
+  "native_fix_commit": "5e35112dc9162b616c412e90ac964e216fe803b3",
+  "training_source_mapping": {
+    "original_path": "/tmp/pnp_bottle_260916_gr00t_raw_20260930/source_mapping.json",
+    "sha256": "5ee6bf3dac98e6073b41d597ca2e31ae5680806c33362987e22d2ebb8dc39074",
+    "archived_path": "training-state-audit/source_mapping.json"
+  }
+}

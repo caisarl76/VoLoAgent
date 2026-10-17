@@ -1,0 +1,42 @@
+{
+  "scope": "Acceptance investigation completed; task 8 and hardware acceptance remain open.",
+  "production_changed": false,
+  "training_performed": false,
+  "dataset_exported": false,
+  "new_accepted_episode_labels": 0,
+  "retained_episodes_audited": 174,
+  "dense_sampled_frames": 316,
+  "future_training_ready": false,
+  "accepted_training_windows": 0,
+  "new_vision_frame_claims_matched": 8,
+  "new_vision_negative_frames": 6,
+  "new_vision_false_completes": 0,
+  "vision_initial_cli_exit_code": 1,
+  "vision_rescored_without_new_calls": true,
+  "turn_successes": 0,
+  "new_turn_trials": 2,
+  "fresh_hold_confirmations": 2,
+  "actual_native_guard_interruption_hold_covered": true,
+  "fully_hidden_held_bottle_validated": false,
+  "camera_calibrated": false,
+  "focused_tests_passed": 29,
+  "focused_test_skips": 0,
+  "independent_review_significant_findings": 0,
+  "next_work": [
+    "Accepted full task-segment and outcome review; no automatic outcome labels from control mode.",
+    "Actual RGB profile intrinsics and optical-to-robot transform, followed by scene matching.",
+    "Instrumented SONIC input/trajectory/frame timing under unchanged turn limits.",
+    "Fully hidden carried-bottle completion checks and successful live manipulation evaluation.",
+    "Supervised hardware gate after simulator acceptance; dashboard remains another session."
+  ],
+  "review_correction": {
+    "reported_findings": 2,
+    "checker_fixed": true,
+    "author_signoff_required_on_amended_commit": true,
+    "cli_counterexamples_passed": 2,
+    "full_suite_passed": 595,
+    "full_suite_skipped": 15,
+    "full_suite_warnings": 46,
+    "full_suite_sandbox_attempt_exit_code": 134
+  }
+}

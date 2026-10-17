@@ -1,0 +1,20 @@
+1790916239.003893 [0]     python: selected interface "lo" is not multicast-capable: disabling multicast
+[ChannelFactory] create domain error. msg: Occurred upon initialisation of a cyclonedds.domain.Domain
+Note: Channel factory initialization attempt: channel factory init error.
+Warning: Robot has fallen, height: 0.194 m
+Traceback (most recent call last):
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py", line 71, in <module>
+    main()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py", line 67, in main
+    sim.start()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/mujoco_sim/base_sim.py", line 610, in start
+    self.sim_env.sim_step()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py", line 48, in step
+    original_step()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/mujoco_sim/base_sim.py", line 412, in sim_step
+    self.mj_data.xfrc_applied[self.band_attached_link] = self.elastic_band.Advance(pose)
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/mujoco_sim/unitree_sdk2py_bridge.py", line 391, in Advance
+    rot = scipy.spatial.transform.Rotation.from_quat(quat)
+  File "_rotation.pyx", line 1007, in scipy.spatial.transform._rotation.Rotation.from_quat
+  File "_rotation.pyx", line 865, in scipy.spatial.transform._rotation.Rotation.__init__
+ValueError: Found zero norm quaternions in `quat`.

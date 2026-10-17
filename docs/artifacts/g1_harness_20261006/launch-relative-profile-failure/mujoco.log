@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/bottle_live_sim_worker.py", line 62, in <module>
+    main()
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261006/bottle_live_sim_worker.py", line 21, in main
+    spec.loader.exec_module(worker)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_harness_20261001/sonic_sim_worker.py", line 16, in <module>
+    from gear_sonic.scripts.run_sim_loop import SimWrapper
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/scripts/run_sim_loop.py", line 11, in <module>
+    from gear_sonic.utils.mujoco_sim.simulator_factory import SimulatorFactory, init_channel
+  File "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/utils/mujoco_sim/simulator_factory.py", line 6, in <module>
+    from unitree_sdk2py.core.channel import ChannelFactoryInitialize
+  File "/home/jihun/work/GR00T-WholeBodyControl/external_dependencies/unitree_sdk2_python/unitree_sdk2py/__init__.py", line 1, in <module>
+    from . import idl, utils, core, rpc, go2, b2
+  File "/home/jihun/work/GR00T-WholeBodyControl/external_dependencies/unitree_sdk2_python/unitree_sdk2py/idl/__init__.py", line 1, in <module>
+    from .default import *
+  File "/home/jihun/work/GR00T-WholeBodyControl/external_dependencies/unitree_sdk2_python/unitree_sdk2py/idl/default.py", line 6, in <module>
+    from .unitree_go.msg.dds_ import *
+  File "/home/jihun/work/GR00T-WholeBodyControl/external_dependencies/unitree_sdk2_python/unitree_sdk2py/idl/unitree_go/__init__.py", line 8, in <module>
+    from . import msg
+  File "/home/jihun/work/GR00T-WholeBodyControl/external_dependencies/unitree_sdk2_python/unitree_sdk2py/idl/unitree_go/msg/__init__.py", line 8, in <module>
+    from . import dds_
+  File "/home/jihun/work/GR00T-WholeBodyControl/external_dependencies/unitree_sdk2_python/unitree_sdk2py/idl/unitree_go/msg/dds_/__init__.py", line 26, in <module>
+    from ._TimeSpec_ import TimeSpec_
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 975, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_data
+KeyboardInterrupt

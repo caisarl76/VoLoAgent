@@ -7,6 +7,9 @@ dist/
 build/
 *.pyc
 .env
+.venv/
+.worktrees/
+.superpowers/
 results/
 debug_place/
 debug_grasp/

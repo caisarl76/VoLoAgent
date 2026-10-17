@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-13",
+  "base_commit": "1d88759",
+  "native_commit": "44f9bba",
+  "native_worktree_clean": true,
+  "scope": "Recorded-image Qwen VLM evaluation; artifact evaluator options only",
+  "robot_connection": false,
+  "hardware_commands_sent": false,
+  "hardware_profiles_unchanged": true,
+  "profiles_sha256": {
+    "configs/g1/handover.example.yaml": "79edf679e22185d28864b025fa321a0f54223fb804d4b7d04668651b4db3753b",
+    "configs/g1/workstation.yaml": "2cb9b06e6283a552eedf1d6f2c3659229908d9309b6e3b5e0270be732c896154"
+  },
+  "serving_process_reconfigured_or_stopped": false,
+  "temporary_ssh_tunnel_closed": true,
+  "genon_api_calls_this_evaluation": 0,
+  "baseline_reports_preserved": true,
+  "focused_tests": {
+    "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest docs/artifacts/g1_handover_20261013_qwen/tests/test_evaluator.py tests/test_g1_handover_monitor.py tests/test_g1_handover_cli.py -q",
+    "passed": 27,
+    "exit_code": 0,
+    "log": "focused-tests.log"
+  },
+  "comparison_verification": {
+    "command": ".venv/bin/python docs/artifacts/g1_handover_20261013_qwen/compare.py",
+    "exit_code": 0,
+    "case_ids_phases_and_timestamps_equal": true,
+    "source_videos_rehashed": 3,
+    "source_video_and_frame_bytes_equal": true,
+    "decision_deadline_s": 10.0,
+    "historical_complete_observations_recounted_as_unique_phases": true
+  },
+  "qwen_phase_cases": {
+    "total": 13,
+    "unavailable": 0,
+    "label_agreements": 8,
+    "positive_offer_judgments": 0,
+    "offer_cases_labeled_positive": 4,
+    "initial_slip_detected_as_failure": false,
+    "rescue_detected_as_failure": true,
+    "median_provider_latency_s": 1.669548932928592
+  },
+  "qwen_temporal_cases": {
+    "total": 4,
+    "unavailable": 0,
+    "label_agreements": 3,
+    "unique_confirmed_phases": 1,
+    "review_boundary_disagreements": 1
+  },
+  "held_out_positive_validation": false,
+  "full_robot_cycle_evaluated": false,
+  "production_monitor_replaced": false,
+  "full_project_tests_rerun": false
+}

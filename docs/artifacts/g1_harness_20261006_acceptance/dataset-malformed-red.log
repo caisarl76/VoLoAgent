@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_malformed_review_metadata_is_rejected_without_creating_windows ______
+
+    def test_malformed_review_metadata_is_rejected_without_creating_windows():
+        plans = [None, [], {"episodes": [None]}]
+        for field, value in [("segments", None), ("segments", [None])]:
+            p = valid_plan()
+            p["episodes"][0][field] = value
+            plans.append(p)
+        for p in plans:
+>           result = assess(p)
+                     ^^^^^^^^^
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = None
+
+    def assess(plan):
+        errors, windows, seen = [], [], set()
+>       if plan.get("prompt") != PROMPT or plan.get("action_horizon") != 40:
+           ^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'get'
+
+docs/artifacts/g1_harness_20261006_acceptance/dataset_review_gate.py:13: AttributeError
+=========================== short test summary info ============================
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_malformed_review_metadata_is_rejected_without_creating_windows
+1 failed, 7 deselected in 0.02s

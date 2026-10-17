@@ -1,0 +1,13 @@
+{
+  "frames": 318,
+  "fps": 20,
+  "duration_s": 15.9,
+  "rendering": "Post-run mj_forward of saved measured qpos; zero-order hold at wall-time cadence, no resimulation.",
+  "max_sample_age_s": 0.05035899416543543,
+  "source_run": "native-return-final",
+  "robot_connection": false,
+  "virtual_support_enabled": false,
+  "full_handover_demonstrated": false,
+  "hardware_acceptance": false,
+  "clearance_overlay": "conservative desk gap"
+}

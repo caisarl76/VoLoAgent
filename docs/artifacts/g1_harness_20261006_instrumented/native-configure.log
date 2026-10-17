@@ -1,0 +1,24 @@
+-- C++ Compiler: /usr/bin/c++
+-- C++ Compiler ID: GNU
+-- C++ Compiler Version: 11.4.0
+-- ✅ CUDA Toolkit found: version 13.0.88
+--    CUDA Root: /usr/local/cuda
+--    CUDA Libraries: /usr/local/cuda/lib64
+--    🚀 CUDA 12.6+ detected - enabling optimized features
+-- Current system architecture: x86_64
+-- Importing: /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/thirdparty/unitree_sdk2/thirdparty/lib/x86_64/libddsc.so
+-- Importing: /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/thirdparty/unitree_sdk2/thirdparty/lib/x86_64/libddscxx.so
+-- Unitree SDK library found at: /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/thirdparty/unitree_sdk2/lib/x86_64/libunitree_sdk2.a
+-- Importing: /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/thirdparty/unitree_sdk2/lib/x86_64/libunitree_sdk2.a
+-- blah = /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/../../cmake
+-- ROS2 disabled (BUILD_ROS2=OFF)
+-- ✅ msgpack found at: /usr/include
+-- ✅ x86_64 detected - building without DLA support
+--    Using CUDA library path: /usr/local/cuda/lib64
+-- ✅ ZMQ support enabled for main executable
+-- ✅ Added zmq_pose_subscriber_test (ZMQ found)
+-- ✅ Added zmq_python_sender_test (ZMQ found)
+-- ROS2 not found - building without ROS2InputHandler support
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/g1-harness-cpp-build
