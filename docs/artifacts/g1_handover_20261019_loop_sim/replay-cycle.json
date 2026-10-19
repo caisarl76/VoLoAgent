@@ -1,0 +1,28 @@
+{
+  "dataset": "/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_261019",
+  "episode": 6,
+  "cycle": 3,
+  "fps": 50,
+  "first_frame": 1133,
+  "last_frame": 1432,
+  "frames": 300,
+  "grasp_offset_s": 2.4,
+  "release_offset_s": 5.38,
+  "start_arm": [
+    -0.2922,
+    -0.3218,
+    -0.0528,
+    -0.076,
+    0.4962,
+    0.1003,
+    -0.1901
+  ],
+  "release_wrist_roll": 1.6725664138793945,
+  "pelvis_height_m": 0.7868784962210065,
+  "palm_at_grasp_pelvis_frame_m": [
+    0.3292,
+    -0.1281,
+    0.1551
+  ],
+  "palm_at_grasp_floor_height_m": 0.9420080485445738
+}

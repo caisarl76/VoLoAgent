@@ -1,0 +1,548 @@
+[
+  {
+    "run": "sweep2-0.15",
+    "box_front_m": 0.15,
+    "box_height_m": 0.845,
+    "cycles_requested": 3,
+    "autopilot_outcome": "completed",
+    "autopilot_reason": "Completed 3 handover cycles with confirmed ready hold",
+    "cycles_completed": 3,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ],
+      [
+        "ready",
+        1
+      ],
+      [
+        "pick_offer",
+        1
+      ],
+      [
+        "wait_empty",
+        1
+      ],
+      [
+        "ready",
+        2
+      ],
+      [
+        "pick_offer",
+        2
+      ],
+      [
+        "wait_empty",
+        2
+      ],
+      [
+        "ready",
+        3
+      ],
+      [
+        "pick_offer",
+        3
+      ],
+      [
+        "wait_empty",
+        3
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -180 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+      "raise first (direct path -180 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))"
+    ],
+    "fixture_events": [
+      {
+        "sim_time": 13.535,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.038,
+        "bottle": [
+          0.36677145867565947,
+          0.09770077465257421,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 18.15,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.038
+      },
+      {
+        "sim_time": 21.44,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.684
+      },
+      {
+        "sim_time": 24.08,
+        "event": "person_took_bottle",
+        "cycle": 1
+      },
+      {
+        "sim_time": 30.53,
+        "event": "person_placed_bottle",
+        "cycle": 1,
+        "position": [
+          0.34383113745937294,
+          0.18293759850537766,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 34.63,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.072
+      },
+      {
+        "sim_time": 37.915,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.686
+      },
+      {
+        "sim_time": 40.46,
+        "event": "person_took_bottle",
+        "cycle": 2
+      },
+      {
+        "sim_time": 46.48,
+        "event": "person_placed_bottle",
+        "cycle": 2,
+        "position": [
+          0.3425683894227841,
+          0.1983494558265449,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 50.58,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.075
+      },
+      {
+        "sim_time": 53.88,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.687
+      },
+      {
+        "sim_time": 56.46,
+        "event": "person_took_bottle",
+        "cycle": 3
+      }
+    ],
+    "box_contact_samples_by_body": {
+      "left_wrist_yaw_link": 45
+    },
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "b1df417c2421a1b872aa926ad4922657939a93e97f97584ffc88376db7583ac2"
+  },
+  {
+    "run": "sweep2-0.20",
+    "box_front_m": 0.2,
+    "box_height_m": 0.845,
+    "cycles_requested": 3,
+    "autopilot_outcome": "interrupted",
+    "autopilot_reason": "reset_timeout",
+    "cycles_completed": 1,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ],
+      [
+        "ready",
+        1
+      ],
+      [
+        "pick_offer",
+        1
+      ],
+      [
+        "wait_empty",
+        1
+      ],
+      [
+        "ready",
+        2
+      ],
+      [
+        "pick_offer",
+        2
+      ],
+      [
+        "wait_empty",
+        2
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -154 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "raise first (direct path -153 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))"
+    ],
+    "fixture_events": [
+      {
+        "sim_time": 13.575,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.036,
+        "bottle": [
+          0.40046650037199066,
+          0.07967766031485175,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 17.125,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.042
+      },
+      {
+        "sim_time": 20.43,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.686
+      },
+      {
+        "sim_time": 23.065,
+        "event": "person_took_bottle",
+        "cycle": 1
+      },
+      {
+        "sim_time": 28.695,
+        "event": "person_placed_bottle",
+        "cycle": 1,
+        "position": [
+          0.3994983428788557,
+          0.13698886221367457,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 32.83,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.076
+      },
+      {
+        "sim_time": 36.12,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.687
+      },
+      {
+        "sim_time": 38.74,
+        "event": "person_took_bottle",
+        "cycle": 2
+      }
+    ],
+    "box_contact_samples_by_body": {
+      "left_wrist_yaw_link": 8
+    },
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "b1df417c2421a1b872aa926ad4922657939a93e97f97584ffc88376db7583ac2"
+  },
+  {
+    "run": "sweep2-0.20b",
+    "box_front_m": 0.2,
+    "box_height_m": 0.845,
+    "cycles_requested": 3,
+    "autopilot_outcome": "interrupted",
+    "autopilot_reason": "reset_timeout",
+    "cycles_completed": 0,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))"
+    ],
+    "fixture_events": [],
+    "box_contact_samples_by_body": {},
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "b1df417c2421a1b872aa926ad4922657939a93e97f97584ffc88376db7583ac2"
+  },
+  {
+    "run": "sweep2-0.20c",
+    "box_front_m": 0.2,
+    "box_height_m": 0.845,
+    "cycles_requested": 3,
+    "autopilot_outcome": "interrupted",
+    "autopilot_reason": "reset_timeout",
+    "cycles_completed": 0,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -153 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))"
+    ],
+    "fixture_events": [],
+    "box_contact_samples_by_body": {},
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "b1df417c2421a1b872aa926ad4922657939a93e97f97584ffc88376db7583ac2"
+  },
+  {
+    "run": "sweep2-0.25",
+    "box_front_m": 0.25,
+    "box_height_m": 0.845,
+    "cycles_requested": 3,
+    "autopilot_outcome": "completed",
+    "autopilot_reason": "Completed 3 handover cycles with confirmed ready hold",
+    "cycles_completed": 3,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ],
+      [
+        "ready",
+        1
+      ],
+      [
+        "pick_offer",
+        1
+      ],
+      [
+        "wait_empty",
+        1
+      ],
+      [
+        "ready",
+        2
+      ],
+      [
+        "pick_offer",
+        2
+      ],
+      [
+        "wait_empty",
+        2
+      ],
+      [
+        "ready",
+        3
+      ],
+      [
+        "pick_offer",
+        3
+      ],
+      [
+        "wait_empty",
+        3
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -127 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+      "raise first (direct path -127 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
+      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
+      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))"
+    ],
+    "fixture_events": [
+      {
+        "sim_time": 13.455,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.072,
+        "bottle": [
+          0.3610655597169919,
+          0.03273427287097131,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 17.005,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.057
+      },
+      {
+        "sim_time": 20.35,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.686
+      },
+      {
+        "sim_time": 23.015,
+        "event": "person_took_bottle",
+        "cycle": 1
+      },
+      {
+        "sim_time": 30.165,
+        "event": "person_placed_bottle",
+        "cycle": 1,
+        "position": [
+          0.37041959132410945,
+          0.061005031046095524,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 34.26,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.086
+      },
+      {
+        "sim_time": 37.535,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.689
+      },
+      {
+        "sim_time": 40.155,
+        "event": "person_took_bottle",
+        "cycle": 2
+      },
+      {
+        "sim_time": 47.21,
+        "event": "person_placed_bottle",
+        "cycle": 2,
+        "position": [
+          0.3722984023847937,
+          0.05867136767580724,
+          0.946
+        ]
+      },
+      {
+        "sim_time": 51.32,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.084
+      },
+      {
+        "sim_time": 54.62,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.689
+      },
+      {
+        "sim_time": 57.225,
+        "event": "person_took_bottle",
+        "cycle": 3
+      }
+    ],
+    "box_contact_samples_by_body": {},
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "b1df417c2421a1b872aa926ad4922657939a93e97f97584ffc88376db7583ac2"
+  },
+  {
+    "run": "smoke-11",
+    "box_front_m": 0.2,
+    "box_height_m": 0.845,
+    "cycles_requested": 1,
+    "autopilot_outcome": "interrupted",
+    "autopilot_reason": "Handover lost fresh control or planner hold",
+    "cycles_completed": 0,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ],
+      [
+        "ready",
+        1
+      ],
+      [
+        "pick_offer",
+        1
+      ],
+      [
+        "wait_empty",
+        1
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "raise first (direct path -152 mm from desk (pelvis 0.787 m, desk top +0.058 m))"
+    ],
+    "fixture_events": [
+      {
+        "sim_time": 14.92,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.039
+      },
+      {
+        "sim_time": 18.32,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.053
+      },
+      {
+        "sim_time": 21.47,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.684
+      }
+    ],
+    "box_contact_samples_by_body": {},
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "432e2978f2fd6b53f771603f113e6423437a7d409142ea9cd384181acc5d08b8"
+  },
+  {
+    "run": "smoke-12",
+    "box_front_m": 0.2,
+    "box_height_m": 0.845,
+    "cycles_requested": 1,
+    "autopilot_outcome": "completed",
+    "autopilot_reason": "Completed 1 handover cycles with confirmed ready hold",
+    "cycles_completed": 1,
+    "phases": [
+      [
+        "startup_empty",
+        1
+      ],
+      [
+        "ready",
+        1
+      ],
+      [
+        "pick_offer",
+        1
+      ],
+      [
+        "wait_empty",
+        1
+      ]
+    ],
+    "ready_return_decisions": [
+      "raise first (direct path -151 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "raise first (direct path -154 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))"
+    ],
+    "fixture_events": [
+      {
+        "sim_time": 14.25,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.037
+      },
+      {
+        "sim_time": 18.85,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.044
+      },
+      {
+        "sim_time": 22.185,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.684
+      },
+      {
+        "sim_time": 24.8,
+        "event": "person_took_bottle",
+        "cycle": 1
+      }
+    ],
+    "box_contact_samples_by_body": {},
+    "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
+    "volo_commit": "84a0c898f8e598f1ecc6dce06b2d8905dc8e9e37",
+    "binary_sha256": "b1df417c2421a1b872aa926ad4922657939a93e97f97584ffc88376db7583ac2"
+  }
+]
