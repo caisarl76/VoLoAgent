@@ -18,12 +18,13 @@ handover:
   skill_id: bottle_handover
   checkpoint_verified: false
   ready_pose_reviewed: false
-  # Desk measured 15 Oct 2026: top 84-85 cm above the floor, near edge 15-20 cm in
-  # front of the pelvis center; the conservative ends are used. The pelvis height
-  # (about 74-76 cm, varying with SONIC's knee bend) is estimated from the measured
-  # legs at each ready return. The raise is skipped when the hand starts above the
-  # desk top or the direct return keeps >=3 cm from the desk.
-  desk_top_above_floor_m: 0.85
+  # Pick surface: the black box of handover_bottle_261019, top 84.5 cm above the floor
+  # (19 Oct 2026). Its distance from the pelvis varies; 0.15 m is the closest edge
+  # used, which is the conservative case for the clearance check. The recorded
+  # standing start pose overlaps a box this close (hand 0.18 m forward, 0.55 m high),
+  # so start with the box at least ~0.19 m away. The pelvis height is estimated
+  # from the measured legs at each ready return.
+  desk_top_above_floor_m: 0.845
   desk_front_from_pelvis_m: 0.15
   # Simulation candidate from episode 30 frame 60; real swept path unqualified.
   raised_right_arm_joints:
@@ -34,12 +35,22 @@ handover:
     right_wrist_roll_joint: 1.085878610610962
     right_wrist_pitch_joint: -0.15723302960395813
     right_wrist_yaw_joint: -0.48973536491394043
-  # Candidate measured from episode 15 frames [415,432); path not yet reviewed.
+  # Palm-in ready pose: per-joint median of 2867 still, open-hand, palm-in frames
+  # between handover cycles in handover_bottle_261019 episodes 2-7 (19 Oct 2026).
+  # Not yet reviewed on hardware.
   ready_right_arm_joints:
-    right_shoulder_pitch_joint: -0.10413093119859695
-    right_shoulder_roll_joint: -0.08507601171731949
-    right_shoulder_yaw_joint: 0.30275747179985046
-    right_elbow_joint: -0.21820877492427826
-    right_wrist_roll_joint: 1.70130455493927
-    right_wrist_pitch_joint: -0.09610150009393692
-    right_wrist_yaw_joint: -0.07287607342004776
+    right_shoulder_pitch_joint: -0.2287
+    right_shoulder_roll_joint: -0.3292
+    right_shoulder_yaw_joint: 0.0495
+    right_elbow_joint: -0.3238
+    right_wrist_roll_joint: 0.4396
+    right_wrist_pitch_joint: 0.1176
+    right_wrist_yaw_joint: -0.0919
+  # Left shoulder and elbow at the same frames; the ready return moves them there.
+  # The left wrist is held as measured: its recorded values vary too much (IQR
+  # 0.27-0.29 rad on roll/yaw) to be a target, and SONIC left it 0.3-0.4 rad off in sim.
+  ready_left_arm_joints:
+    left_shoulder_pitch_joint: 0.1367
+    left_shoulder_roll_joint: 0.309
+    left_shoulder_yaw_joint: -0.4384
+    left_elbow_joint: 0.7003

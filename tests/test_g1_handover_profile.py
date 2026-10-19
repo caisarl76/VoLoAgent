@@ -103,7 +103,7 @@ def test_example_is_disabled_and_separate_from_placement():
 def test_handover_desk_pose_is_optional_and_paired(tmp_path):
     assert load_profile(handover_profile(tmp_path)).handover.desk_top_above_floor_m is None
     example = load_profile(ROOT / "configs/g1/handover.example.yaml").handover
-    assert (example.desk_top_above_floor_m, example.desk_front_from_pelvis_m) == (0.85, 0.15)
+    assert (example.desk_top_above_floor_m, example.desk_front_from_pelvis_m) == (0.845, 0.15)
 
 
 @pytest.mark.parametrize(
@@ -138,3 +138,25 @@ def test_handover_gravity_feedforward_is_optional_bool(tmp_path, value):
     else:
         with pytest.raises(ValueError):
             load_profile(path)
+
+
+def test_example_ready_pose_is_the_recorded_palm_in_pose_for_both_arms():
+    example = load_profile(ROOT / "configs/g1/handover.example.yaml").handover
+    assert example.right_arm_target == (-0.2287, -0.3292, 0.0495, -0.3238, 0.4396, 0.1176, -0.0919)
+    assert example.left_arm_target == (0.1367, 0.309, -0.4384, 0.7003)
+
+
+@pytest.mark.parametrize("bad", [
+    {name: 0.0 for name in NAMES[:4]},  # Right-arm names.
+    {name.replace("right_", "left_"): 9.0 for name in NAMES[:4]},  # Outside bounds.
+    {name.replace("right_", "left_"): 0.0 for name in NAMES[:3]},
+    {name.replace("right_", "left_"): 0.0 for name in NAMES},  # Wrists cannot be set.
+])
+def test_handover_left_arm_ready_pose_is_optional_and_validated(tmp_path, bad):
+    assert load_profile(handover_profile(tmp_path)).handover.left_arm_target is None
+    path = handover_profile(tmp_path)
+    data = yaml.safe_load(path.read_text())
+    data["handover"]["ready_left_arm_joints"] = bad
+    path.write_text(yaml.safe_dump(data))
+    with pytest.raises(ValueError):
+        load_profile(path)
