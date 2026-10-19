@@ -1,0 +1,861 @@
+Connecting to PolicyServer at 127.0.0.1:15558...
+Harness policy connects and prewarms on its inference worker; outputs stay paused.
+[ZMQStateSubscriber] Connected to tcp://127.0.0.1:11557 (topic: g1_debug)
+[92mZMQ action socket bound to tcp://127.0.0.1:11556[0m
+[92mUsing embodiment tag: unitree_g1_sonic[0m
+[ZMQKeyboardSubscriber] Connected to tcp://127.0.0.1:11580
+Starting the policy loop with language prompt: pick drink bottle and place it on the right table
+Initialized composed camera client sensor
+Image latency for ego_view: 7.10 ms
+Image latency for ego_view: 4.21 ms
+Image latency for ego_view: 22.43 ms
+Image latency for ego_view: 3.43 ms
+Image latency for ego_view: 19.50 ms
+Image latency for ego_view: 17.59 ms
+Image latency for ego_view: 13.66 ms
+Image latency for ego_view: 11.89 ms
+Image latency for ego_view: 10.19 ms
+Image latency for ego_view: 6.63 ms
+Image latency for ego_view: 4.92 ms
+Image latency for ego_view: 21.64 ms
+Image latency for ego_view: 18.04 ms
+Image latency for ego_view: 16.09 ms
+Image latency for ego_view: 15.94 ms
+Image latency for ego_view: 12.80 ms
+Image latency for ego_view: 9.56 ms
+Image latency for ego_view: 6.58 ms
+Image latency for ego_view: 3.81 ms
+Image latency for ego_view: 21.17 ms
+Image latency for ego_view: 17.22 ms
+Image latency for ego_view: 13.65 ms
+Image latency for ego_view: 9.91 ms
+Image latency for ego_view: 5.81 ms
+Image latency for ego_view: 22.15 ms
+Image latency for ego_view: 18.61 ms
+Image latency for ego_view: 14.20 ms
+Image latency for ego_view: 10.54 ms
+Image latency for ego_view: 6.86 ms
+Image latency for ego_view: 3.45 ms
+Image latency for ego_view: 20.14 ms
+Image latency for ego_view: 17.78 ms
+Image latency for ego_view: 13.83 ms
+Image latency for ego_view: 11.35 ms
+Image latency for ego_view: 8.59 ms
+Image latency for ego_view: 6.14 ms
+Image latency for ego_view: 2.49 ms
+Image latency for ego_view: 18.55 ms
+Image latency for ego_view: 15.96 ms
+Image latency for ego_view: 14.41 ms
+Image latency for ego_view: 10.53 ms
+Image latency for ego_view: 8.15 ms
+Image latency for ego_view: 5.19 ms
+Image latency for ego_view: 21.89 ms
+Image latency for ego_view: 19.03 ms
+Image latency for ego_view: 15.91 ms
+Image latency for ego_view: 12.57 ms
+Image latency for ego_view: 11.55 ms
+Image latency for ego_view: 11.45 ms
+Image latency for ego_view: 11.03 ms
+Image latency for ego_view: 10.29 ms
+Image latency for ego_view: 7.21 ms
+Image latency for ego_view: 4.45 ms
+Image latency for ego_view: 2.71 ms
+Image latency for ego_view: 20.55 ms
+Image latency for ego_view: 19.81 ms
+Image latency for ego_view: 19.92 ms
+Image latency for ego_view: 17.83 ms
+Image latency for ego_view: 15.13 ms
+Image latency for ego_view: 12.35 ms
+Image latency for ego_view: 8.19 ms
+Image latency for ego_view: 6.53 ms
+Image latency for ego_view: 3.09 ms
+Image latency for ego_view: 22.07 ms
+Image latency for ego_view: 21.16 ms
+Image latency for ego_view: 18.32 ms
+Image latency for ego_view: 14.76 ms
+Image latency for ego_view: 10.80 ms
+Image latency for ego_view: 8.94 ms
+Image latency for ego_view: 4.68 ms
+Image latency for ego_view: 20.91 ms
+Image latency for ego_view: 16.18 ms
+Image latency for ego_view: 13.99 ms
+Image latency for ego_view: 10.12 ms
+Image latency for ego_view: 4.88 ms
+Starting C++ control loop in PLANNER mode...
+[92mSent ZMQ command: start control loop (planner mode)[0m
+Started C++ control loop in PLANNER mode
+Press 'i' to return to straight standing, then 'p' to evaluate
+Note: Policy loop is paused - press 'p' to resume
+[ZMQStateSubscriber] Connected to tcp://127.0.0.1:11557 (topic: g1_debug)
+Image latency for ego_view: 21.82 ms
+Image latency for ego_view: 18.35 ms
+Image latency for ego_view: 9.97 ms
+Image latency for ego_view: 2.91 ms
+Image latency for ego_view: 18.14 ms
+Image latency for ego_view: 14.21 ms
+Image latency for ego_view: 11.05 ms
+Image latency for ego_view: 7.50 ms
+[92mSent ZMQ command: start control loop (planner mode)[0m
+Image latency for ego_view: 22.18 ms
+Image latency for ego_view: 18.14 ms
+Image latency for ego_view: 13.39 ms
+Image latency for ego_view: 10.60 ms
+Image latency for ego_view: 6.95 ms
+Image latency for ego_view: 4.63 ms
+Image latency for ego_view: 18.09 ms
+Image latency for ego_view: 14.27 ms
+Image latency for ego_view: 9.89 ms
+Image latency for ego_view: 8.78 ms
+Image latency for ego_view: 4.99 ms
+Image latency for ego_view: 3.24 ms
+Image latency for ego_view: 20.41 ms
+Image latency for ego_view: 18.56 ms
+Image latency for ego_view: 14.21 ms
+Image latency for ego_view: 11.63 ms
+Image latency for ego_view: 7.47 ms
+Image latency for ego_view: 5.19 ms
+Image latency for ego_view: 3.18 ms
+Image latency for ego_view: 18.92 ms
+[92mSent ZMQ command: start control loop (pose mode)[0m
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[DEBUG] No cached chunk yet, waiting...
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+Image latency for ego_view: 15.66 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.198s)[0m
+Image latency for ego_view: 10.86 ms
+Image latency for ego_view: 9.79 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+Image latency for ego_view: 8.72 ms
+[92mZMQ: Sent latent action - frame: 49, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.198s)[0m
+Image latency for ego_view: 6.25 ms
+Image latency for ego_view: 5.62 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.156s)[0m
+Image latency for ego_view: 22.24 ms
+[92mZMQ: Sent latent action - frame: 99, token shape: (64,)[0m
+Image latency for ego_view: 18.75 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+Image latency for ego_view: 18.40 ms
+Image latency for ego_view: 16.42 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.179s)[0m
+[92mZMQ: Sent latent action - frame: 149, token shape: (64,)[0m
+Image latency for ego_view: 11.07 ms
+Image latency for ego_view: 9.72 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.174s)[0m
+Image latency for ego_view: 8.69 ms
+[92mZMQ: Sent latent action - frame: 199, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.175s)[0m
+Image latency for ego_view: 7.63 ms
+Image latency for ego_view: 5.73 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.193s)[0m
+Image latency for ego_view: 6.90 ms
+Image latency for ego_view: 5.18 ms
+[92mZMQ: Sent latent action - frame: 249, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.148s)[0m
+Image latency for ego_view: 4.12 ms
+Image latency for ego_view: 21.10 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.169s)[0m
+Image latency for ego_view: 19.68 ms
+[92mZMQ: Sent latent action - frame: 299, token shape: (64,)[0m
+Image latency for ego_view: 16.58 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.149s)[0m
+Image latency for ego_view: 15.21 ms
+Image latency for ego_view: 12.28 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.169s)[0m
+[92mZMQ: Sent latent action - frame: 349, token shape: (64,)[0m
+Image latency for ego_view: 11.12 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.170s)[0m
+Image latency for ego_view: 10.86 ms
+Image latency for ego_view: 9.02 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.169s)[0m
+Image latency for ego_view: 8.59 ms
+[92mZMQ: Sent latent action - frame: 399, token shape: (64,)[0m
+Image latency for ego_view: 7.55 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+Image latency for ego_view: 6.34 ms
+Image latency for ego_view: 3.96 ms
+[92mZMQ: Sent latent action - frame: 449, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.166s)[0m
+Image latency for ego_view: 3.61 ms
+Image latency for ego_view: 21.76 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.162s)[0m
+Image latency for ego_view: 21.79 ms
+[92mZMQ: Sent latent action - frame: 499, token shape: (64,)[0m
+Image latency for ego_view: 21.48 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.202s)[0m
+Image latency for ego_view: 2.80 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.175s)[0m
+Image latency for ego_view: 21.12 ms
+[92mZMQ: Sent latent action - frame: 549, token shape: (64,)[0m
+Image latency for ego_view: 20.35 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.215s)[0m
+Image latency for ego_view: 8.57 ms
+Image latency for ego_view: 8.04 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.209s)[0m
+Image latency for ego_view: 5.51 ms
+[92mZMQ: Sent latent action - frame: 599, token shape: (64,)[0m
+Image latency for ego_view: 4.04 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.182s)[0m
+Image latency for ego_view: 22.54 ms
+Image latency for ego_view: 21.88 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.200s)[0m
+[92mZMQ: Sent latent action - frame: 649, token shape: (64,)[0m
+Image latency for ego_view: 19.40 ms
+Image latency for ego_view: 14.97 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+Image latency for ego_view: 14.16 ms
+[92mZMQ: Sent latent action - frame: 699, token shape: (64,)[0m
+Image latency for ego_view: 12.35 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+Image latency for ego_view: 10.45 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 9.29 ms
+[92mZMQ: Sent latent action - frame: 749, token shape: (64,)[0m
+Image latency for ego_view: 8.12 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.174s)[0m
+Image latency for ego_view: 6.32 ms
+Image latency for ego_view: 4.55 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.172s)[0m
+Image latency for ego_view: 4.69 ms
+[92mZMQ: Sent latent action - frame: 799, token shape: (64,)[0m
+Image latency for ego_view: 2.94 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.150s)[0m
+Image latency for ego_view: 21.95 ms
+Image latency for ego_view: 19.91 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.170s)[0m
+[92mZMQ: Sent latent action - frame: 849, token shape: (64,)[0m
+Image latency for ego_view: 17.87 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.189s)[0m
+Image latency for ego_view: 16.61 ms
+Image latency for ego_view: 16.77 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.163s)[0m
+[92mZMQ: Sent latent action - frame: 899, token shape: (64,)[0m
+Image latency for ego_view: 12.59 ms
+Image latency for ego_view: 10.42 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.143s)[0m
+Image latency for ego_view: 11.36 ms
+Image latency for ego_view: 12.50 ms
+[92mZMQ: Sent latent action - frame: 949, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.202s)[0m
+Image latency for ego_view: 11.47 ms
+Image latency for ego_view: 10.35 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 9.38 ms
+[92mZMQ: Sent latent action - frame: 999, token shape: (64,)[0m
+Image latency for ego_view: 7.44 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.195s)[0m
+Image latency for ego_view: 6.97 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.173s)[0m
+Image latency for ego_view: 4.84 ms
+[92mZMQ: Sent latent action - frame: 1049, token shape: (64,)[0m
+Image latency for ego_view: 4.36 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.193s)[0m
+Image latency for ego_view: 22.69 ms
+Image latency for ego_view: 20.43 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.171s)[0m
+[92mZMQ: Sent latent action - frame: 1099, token shape: (64,)[0m
+Image latency for ego_view: 17.80 ms
+Image latency for ego_view: 14.20 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.191s)[0m
+Image latency for ego_view: 12.93 ms
+Image latency for ego_view: 11.70 ms
+[92mZMQ: Sent latent action - frame: 1149, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.169s)[0m
+Image latency for ego_view: 10.01 ms
+Image latency for ego_view: 7.94 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.149s)[0m
+Image latency for ego_view: 7.43 ms
+[92mZMQ: Sent latent action - frame: 1199, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.148s)[0m
+Image latency for ego_view: 5.21 ms
+Image latency for ego_view: 22.52 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.163s)[0m
+Image latency for ego_view: 18.77 ms
+[92mZMQ: Sent latent action - frame: 1249, token shape: (64,)[0m
+Image latency for ego_view: 16.57 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.145s)[0m
+Image latency for ego_view: 14.81 ms
+Image latency for ego_view: 13.03 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.145s)[0m
+Image latency for ego_view: 11.66 ms
+[92mZMQ: Sent latent action - frame: 1299, token shape: (64,)[0m
+Image latency for ego_view: 8.72 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.168s)[0m
+Image latency for ego_view: 7.55 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.169s)[0m
+Image latency for ego_view: 6.23 ms
+[92mZMQ: Sent latent action - frame: 1349, token shape: (64,)[0m
+Image latency for ego_view: 4.52 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+Image latency for ego_view: 22.39 ms
+Image latency for ego_view: 20.29 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.193s)[0m
+[92mZMQ: Sent latent action - frame: 1399, token shape: (64,)[0m
+Image latency for ego_view: 20.87 ms
+Image latency for ego_view: 19.06 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.180s)[0m
+Image latency for ego_view: 19.55 ms
+[92mZMQ: Sent latent action - frame: 1449, token shape: (64,)[0m
+Image latency for ego_view: 17.45 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.158s)[0m
+Image latency for ego_view: 16.28 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+Image latency for ego_view: 15.98 ms
+Image latency for ego_view: 13.02 ms
+[92mZMQ: Sent latent action - frame: 1499, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+Image latency for ego_view: 10.70 ms
+Image latency for ego_view: 5.26 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+Image latency for ego_view: 4.51 ms
+[92mZMQ: Sent latent action - frame: 1549, token shape: (64,)[0m
+Image latency for ego_view: 3.20 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.197s)[0m
+Image latency for ego_view: 7.87 ms
+Image latency for ego_view: 6.11 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+[92mZMQ: Sent latent action - frame: 1599, token shape: (64,)[0m
+Image latency for ego_view: 22.28 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+Image latency for ego_view: 3.06 ms
+Image latency for ego_view: 20.41 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+Image latency for ego_view: 18.04 ms
+[92mZMQ: Sent latent action - frame: 1649, token shape: (64,)[0m
+Image latency for ego_view: 18.25 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.188s)[0m
+Image latency for ego_view: 15.97 ms
+Image latency for ego_view: 14.72 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+[92mZMQ: Sent latent action - frame: 1699, token shape: (64,)[0m
+Image latency for ego_view: 13.44 ms
+Image latency for ego_view: 10.72 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+Image latency for ego_view: 9.22 ms
+[92mZMQ: Sent latent action - frame: 1749, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 5.69 ms
+Image latency for ego_view: 3.36 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.145s)[0m
+Image latency for ego_view: 21.83 ms
+[92mZMQ: Sent latent action - frame: 1799, token shape: (64,)[0m
+Image latency for ego_view: 20.57 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.144s)[0m
+Image latency for ego_view: 19.35 ms
+Image latency for ego_view: 18.31 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.144s)[0m
+Image latency for ego_view: 18.36 ms
+[92mZMQ: Sent latent action - frame: 1849, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 14.83 ms
+Image latency for ego_view: 12.96 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.143s)[0m
+Image latency for ego_view: 11.37 ms
+[92mZMQ: Sent latent action - frame: 1899, token shape: (64,)[0m
+Image latency for ego_view: 10.11 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+Image latency for ego_view: 8.65 ms
+Image latency for ego_view: 6.93 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+[92mZMQ: Sent latent action - frame: 1949, token shape: (64,)[0m
+Image latency for ego_view: 5.04 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.165s)[0m
+Image latency for ego_view: 22.79 ms
+Image latency for ego_view: 21.82 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.145s)[0m
+Image latency for ego_view: 19.50 ms
+[92mZMQ: Sent latent action - frame: 1999, token shape: (64,)[0m
+Image latency for ego_view: 17.15 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.145s)[0m
+Image latency for ego_view: 17.31 ms
+Image latency for ego_view: 15.18 ms
+[92mZMQ: Sent latent action - frame: 2049, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.187s)[0m
+Image latency for ego_view: 12.93 ms
+Image latency for ego_view: 12.24 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.144s)[0m
+Image latency for ego_view: 10.46 ms
+[92mZMQ: Sent latent action - frame: 2099, token shape: (64,)[0m
+Image latency for ego_view: 7.92 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 4.79 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.165s)[0m
+Image latency for ego_view: 6.34 ms
+[92mZMQ: Sent latent action - frame: 2149, token shape: (64,)[0m
+Image latency for ego_view: 3.44 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.163s)[0m
+Image latency for ego_view: 22.30 ms
+Image latency for ego_view: 21.28 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.163s)[0m
+Image latency for ego_view: 18.06 ms
+[92mZMQ: Sent latent action - frame: 2199, token shape: (64,)[0m
+Image latency for ego_view: 14.88 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.144s)[0m
+Image latency for ego_view: 15.46 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.146s)[0m
+Image latency for ego_view: 13.66 ms
+[92mZMQ: Sent latent action - frame: 2249, token shape: (64,)[0m
+Image latency for ego_view: 8.23 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+Image latency for ego_view: 4.87 ms
+Image latency for ego_view: 6.05 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.146s)[0m
+[92mZMQ: Sent latent action - frame: 2299, token shape: (64,)[0m
+Image latency for ego_view: 22.50 ms
+Image latency for ego_view: 20.24 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.148s)[0m
+Image latency for ego_view: 17.85 ms
+Image latency for ego_view: 14.78 ms
+[92mZMQ: Sent latent action - frame: 2349, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.171s)[0m
+Image latency for ego_view: 12.97 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.152s)[0m
+Image latency for ego_view: 11.05 ms
+Image latency for ego_view: 7.98 ms
+[92mZMQ: Sent latent action - frame: 2399, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.153s)[0m
+Image latency for ego_view: 4.33 ms
+Image latency for ego_view: 3.08 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.175s)[0m
+Image latency for ego_view: 20.75 ms
+[92mZMQ: Sent latent action - frame: 2449, token shape: (64,)[0m
+Image latency for ego_view: 18.16 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 16.58 ms
+Image latency for ego_view: 13.52 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+[92mZMQ: Sent latent action - frame: 2499, token shape: (64,)[0m
+Image latency for ego_view: 10.31 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.162s)[0m
+Image latency for ego_view: 6.59 ms
+Image latency for ego_view: 4.31 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 21.26 ms
+[92mZMQ: Sent latent action - frame: 2549, token shape: (64,)[0m
+Image latency for ego_view: 18.04 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+Image latency for ego_view: 15.71 ms
+Image latency for ego_view: 11.36 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.170s)[0m
+[92mZMQ: Sent latent action - frame: 2599, token shape: (64,)[0m
+Image latency for ego_view: 10.12 ms
+Image latency for ego_view: 7.61 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.152s)[0m
+Image latency for ego_view: 6.51 ms
+[92mZMQ: Sent latent action - frame: 2649, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.172s)[0m
+Image latency for ego_view: 4.99 ms
+Image latency for ego_view: 3.41 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.172s)[0m
+Image latency for ego_view: 22.13 ms
+Image latency for ego_view: 19.76 ms
+[92mZMQ: Sent latent action - frame: 2699, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.152s)[0m
+Image latency for ego_view: 17.97 ms
+Image latency for ego_view: 16.42 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.154s)[0m
+Image latency for ego_view: 14.18 ms
+[92mZMQ: Sent latent action - frame: 2749, token shape: (64,)[0m
+Image latency for ego_view: 10.94 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.155s)[0m
+Image latency for ego_view: 11.08 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 9.83 ms
+[92mZMQ: Sent latent action - frame: 2799, token shape: (64,)[0m
+Image latency for ego_view: 6.54 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.157s)[0m
+Image latency for ego_view: 4.08 ms
+Image latency for ego_view: 22.30 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.157s)[0m
+[92mZMQ: Sent latent action - frame: 2849, token shape: (64,)[0m
+Image latency for ego_view: 20.11 ms
+Image latency for ego_view: 17.38 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.201s)[0m
+Image latency for ego_view: 15.68 ms
+Image latency for ego_view: 13.24 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.179s)[0m
+[92mZMQ: Sent latent action - frame: 2899, token shape: (64,)[0m
+Image latency for ego_view: 12.43 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+Image latency for ego_view: 9.35 ms
+Image latency for ego_view: 6.43 ms
+[92mZMQ: Sent latent action - frame: 2949, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.159s)[0m
+Image latency for ego_view: 4.84 ms
+Image latency for ego_view: 2.67 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.182s)[0m
+Image latency for ego_view: 20.46 ms
+[92mZMQ: Sent latent action - frame: 2999, token shape: (64,)[0m
+Image latency for ego_view: 18.88 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.163s)[0m
+Image latency for ego_view: 14.83 ms
+Image latency for ego_view: 13.98 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.162s)[0m
+Image latency for ego_view: 11.45 ms
+[92mZMQ: Sent latent action - frame: 3049, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.143s)[0m
+Image latency for ego_view: 8.05 ms
+Image latency for ego_view: 4.87 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.165s)[0m
+Image latency for ego_view: 19.67 ms
+[92mZMQ: Sent latent action - frame: 3099, token shape: (64,)[0m
+Image latency for ego_view: 17.87 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+Image latency for ego_view: 17.33 ms
+Image latency for ego_view: 14.70 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+[92mZMQ: Sent latent action - frame: 3149, token shape: (64,)[0m
+Image latency for ego_view: 12.80 ms
+Image latency for ego_view: 11.07 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.188s)[0m
+Image latency for ego_view: 8.28 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+Image latency for ego_view: 6.34 ms
+[92mZMQ: Sent latent action - frame: 3199, token shape: (64,)[0m
+Image latency for ego_view: 6.41 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+Image latency for ego_view: 3.68 ms
+Image latency for ego_view: 21.98 ms
+[92mZMQ: Sent latent action - frame: 3249, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.148s)[0m
+Image latency for ego_view: 17.69 ms
+Image latency for ego_view: 14.91 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.151s)[0m
+Image latency for ego_view: 12.45 ms
+[92mZMQ: Sent latent action - frame: 3299, token shape: (64,)[0m
+Image latency for ego_view: 10.06 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.173s)[0m
+Image latency for ego_view: 10.35 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.151s)[0m
+Image latency for ego_view: 8.99 ms
+[92mZMQ: Sent latent action - frame: 3349, token shape: (64,)[0m
+Image latency for ego_view: 7.09 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.190s)[0m
+Image latency for ego_view: 5.84 ms
+Image latency for ego_view: 4.79 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.168s)[0m
+Image latency for ego_view: 3.34 ms
+[92mZMQ: Sent latent action - frame: 3399, token shape: (64,)[0m
+Image latency for ego_view: 21.21 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.208s)[0m
+Image latency for ego_view: 17.25 ms
+Image latency for ego_view: 14.92 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.165s)[0m
+[92mZMQ: Sent latent action - frame: 3449, token shape: (64,)[0m
+Image latency for ego_view: 13.31 ms
+Image latency for ego_view: 11.59 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.165s)[0m
+Image latency for ego_view: 9.75 ms
+[92mZMQ: Sent latent action - frame: 3499, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.145s)[0m
+Image latency for ego_view: 8.65 ms
+Image latency for ego_view: 5.49 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.147s)[0m
+Image latency for ego_view: 4.00 ms
+Image latency for ego_view: 19.51 ms
+[92mZMQ: Sent latent action - frame: 3549, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.172s)[0m
+Image latency for ego_view: 18.64 ms
+Image latency for ego_view: 15.00 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.154s)[0m
+Image latency for ego_view: 13.39 ms
+[92mZMQ: Sent latent action - frame: 3599, token shape: (64,)[0m
+Image latency for ego_view: 10.77 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.154s)[0m
+Image latency for ego_view: 9.86 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.155s)[0m
+Image latency for ego_view: 9.61 ms
+[92mZMQ: Sent latent action - frame: 3649, token shape: (64,)[0m
+Image latency for ego_view: 6.07 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+Image latency for ego_view: 5.83 ms
+Image latency for ego_view: 4.80 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.158s)[0m
+[92mZMQ: Sent latent action - frame: 3699, token shape: (64,)[0m
+Image latency for ego_view: 6.05 ms
+Image latency for ego_view: 4.51 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.154s)[0m
+Image latency for ego_view: 2.42 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.175s)[0m
+Image latency for ego_view: 21.95 ms
+[92mZMQ: Sent latent action - frame: 3749, token shape: (64,)[0m
+Image latency for ego_view: 20.36 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.173s)[0m
+Image latency for ego_view: 19.30 ms
+Image latency for ego_view: 19.18 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.154s)[0m
+[92mZMQ: Sent latent action - frame: 3799, token shape: (64,)[0m
+Image latency for ego_view: 17.42 ms
+Image latency for ego_view: 15.61 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.172s)[0m
+Image latency for ego_view: 13.09 ms
+[92mZMQ: Sent latent action - frame: 3849, token shape: (64,)[0m
+Image latency for ego_view: 8.92 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.173s)[0m
+Image latency for ego_view: 7.69 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.174s)[0m
+Image latency for ego_view: 8.90 ms
+Image latency for ego_view: 7.54 ms
+[92mZMQ: Sent latent action - frame: 3899, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.149s)[0m
+Image latency for ego_view: 5.90 ms
+Image latency for ego_view: 4.93 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.191s)[0m
+Image latency for ego_view: 3.38 ms
+[92mZMQ: Sent latent action - frame: 3949, token shape: (64,)[0m
+Image latency for ego_view: 22.73 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.166s)[0m
+Image latency for ego_view: 22.76 ms
+Image latency for ego_view: 21.45 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.184s)[0m
+[92mZMQ: Sent latent action - frame: 3999, token shape: (64,)[0m
+Image latency for ego_view: 18.88 ms
+Image latency for ego_view: 16.83 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.162s)[0m
+Image latency for ego_view: 13.77 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.143s)[0m
+[92mZMQ: Sent latent action - frame: 4049, token shape: (64,)[0m
+Image latency for ego_view: 11.83 ms
+Image latency for ego_view: 9.95 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 8.21 ms
+Image latency for ego_view: 5.77 ms
+[92mZMQ: Sent latent action - frame: 4099, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.185s)[0m
+Image latency for ego_view: 2.96 ms
+Image latency for ego_view: 21.12 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 18.47 ms
+[92mZMQ: Sent latent action - frame: 4149, token shape: (64,)[0m
+Image latency for ego_view: 17.40 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.165s)[0m
+Image latency for ego_view: 14.09 ms
+Image latency for ego_view: 12.27 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+[92mZMQ: Sent latent action - frame: 4199, token shape: (64,)[0m
+Image latency for ego_view: 8.17 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+Image latency for ego_view: 4.55 ms
+Image latency for ego_view: 21.55 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.169s)[0m
+Image latency for ego_view: 18.32 ms
+[92mZMQ: Sent latent action - frame: 4249, token shape: (64,)[0m
+Image latency for ego_view: 15.86 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.151s)[0m
+Image latency for ego_view: 13.53 ms
+Image latency for ego_view: 9.37 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.153s)[0m
+[92mZMQ: Sent latent action - frame: 4299, token shape: (64,)[0m
+Image latency for ego_view: 5.73 ms
+Image latency for ego_view: 4.11 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.198s)[0m
+Image latency for ego_view: 2.54 ms
+[92mZMQ: Sent latent action - frame: 4349, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+Image latency for ego_view: 19.76 ms
+Image latency for ego_view: 17.95 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+Image latency for ego_view: 16.79 ms
+[92mZMQ: Sent latent action - frame: 4399, token shape: (64,)[0m
+Image latency for ego_view: 13.66 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 14.35 ms
+Image latency for ego_view: 12.48 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 8.76 ms
+[92mZMQ: Sent latent action - frame: 4449, token shape: (64,)[0m
+Image latency for ego_view: 4.85 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 3.62 ms
+Image latency for ego_view: 18.50 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+[92mZMQ: Sent latent action - frame: 4499, token shape: (64,)[0m
+Image latency for ego_view: 16.79 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.177s)[0m
+Image latency for ego_view: 18.51 ms
+Image latency for ego_view: 17.41 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.155s)[0m
+[92mZMQ: Sent latent action - frame: 4549, token shape: (64,)[0m
+Image latency for ego_view: 15.43 ms
+Image latency for ego_view: 13.92 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.155s)[0m
+Image latency for ego_view: 10.92 ms
+Image latency for ego_view: 9.31 ms
+[92mZMQ: Sent latent action - frame: 4599, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.156s)[0m
+Image latency for ego_view: 6.21 ms
+Image latency for ego_view: 4.70 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.179s)[0m
+Image latency for ego_view: 22.35 ms
+[92mZMQ: Sent latent action - frame: 4649, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.159s)[0m
+Image latency for ego_view: 21.30 ms
+Image latency for ego_view: 20.59 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.160s)[0m
+Image latency for ego_view: 19.12 ms
+[92mZMQ: Sent latent action - frame: 4699, token shape: (64,)[0m
+Image latency for ego_view: 15.91 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.160s)[0m
+Image latency for ego_view: 13.92 ms
+Image latency for ego_view: 11.17 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+Image latency for ego_view: 8.81 ms
+[92mZMQ: Sent latent action - frame: 4749, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+Image latency for ego_view: 7.28 ms
+Image latency for ego_view: 6.03 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.184s)[0m
+Image latency for ego_view: 21.44 ms
+[92mZMQ: Sent latent action - frame: 4799, token shape: (64,)[0m
+Image latency for ego_view: 20.14 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.144s)[0m
+Image latency for ego_view: 19.18 ms
+Image latency for ego_view: 17.08 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.144s)[0m
+[92mZMQ: Sent latent action - frame: 4849, token shape: (64,)[0m
+Image latency for ego_view: 15.48 ms
+Image latency for ego_view: 12.99 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.168s)[0m
+Image latency for ego_view: 9.07 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.150s)[0m
+[92mZMQ: Sent latent action - frame: 4899, token shape: (64,)[0m
+Image latency for ego_view: 7.38 ms
+Image latency for ego_view: 5.47 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.170s)[0m
+Image latency for ego_view: 2.97 ms
+Image latency for ego_view: 20.00 ms
+[92mZMQ: Sent latent action - frame: 4949, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.171s)[0m
+Image latency for ego_view: 19.22 ms
+Image latency for ego_view: 16.73 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.149s)[0m
+Image latency for ego_view: 12.67 ms
+[92mZMQ: Sent latent action - frame: 4999, token shape: (64,)[0m
+Image latency for ego_view: 12.27 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.192s)[0m
+Image latency for ego_view: 10.19 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.151s)[0m
+Image latency for ego_view: 7.39 ms
+[92mZMQ: Sent latent action - frame: 5049, token shape: (64,)[0m
+Image latency for ego_view: 5.64 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.175s)[0m
+Image latency for ego_view: 3.31 ms
+Image latency for ego_view: 20.94 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 17.28 ms
+[92mZMQ: Sent latent action - frame: 5099, token shape: (64,)[0m
+Image latency for ego_view: 15.26 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 14.94 ms
+Image latency for ego_view: 12.45 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.175s)[0m
+[92mZMQ: Sent latent action - frame: 5149, token shape: (64,)[0m
+Image latency for ego_view: 11.64 ms
+Image latency for ego_view: 8.14 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.196s)[0m
+Image latency for ego_view: 4.93 ms
+[92mZMQ: Sent latent action - frame: 5199, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.174s)[0m
+Image latency for ego_view: 5.55 ms
+Image latency for ego_view: 22.78 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.196s)[0m
+Image latency for ego_view: 20.01 ms
+[92mZMQ: Sent latent action - frame: 5249, token shape: (64,)[0m
+Image latency for ego_view: 16.50 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.155s)[0m
+Image latency for ego_view: 14.17 ms
+Image latency for ego_view: 11.99 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 11.25 ms
+[92mZMQ: Sent latent action - frame: 5299, token shape: (64,)[0m
+Image latency for ego_view: 8.93 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.176s)[0m
+Image latency for ego_view: 6.38 ms
+Image latency for ego_view: 4.85 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.155s)[0m
+[92mZMQ: Sent latent action - frame: 5349, token shape: (64,)[0m
+Image latency for ego_view: 22.59 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.197s)[0m
+Image latency for ego_view: 20.81 ms
+Image latency for ego_view: 17.28 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.178s)[0m
+[92mZMQ: Sent latent action - frame: 5399, token shape: (64,)[0m
+Image latency for ego_view: 14.67 ms
+Image latency for ego_view: 12.11 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.182s)[0m
+Image latency for ego_view: 7.81 ms
+Image latency for ego_view: 6.23 ms
+[92mZMQ: Sent latent action - frame: 5449, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.162s)[0m
+Image latency for ego_view: 4.45 ms
+Image latency for ego_view: 21.08 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.183s)[0m
+Image latency for ego_view: 20.80 ms
+[92mZMQ: Sent latent action - frame: 5499, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.181s)[0m
+Image latency for ego_view: 18.98 ms
+Image latency for ego_view: 18.63 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.159s)[0m
+Image latency for ego_view: 16.38 ms
+[92mZMQ: Sent latent action - frame: 5549, token shape: (64,)[0m
+Image latency for ego_view: 15.53 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.159s)[0m
+Image latency for ego_view: 12.78 ms
+Image latency for ego_view: 10.72 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.179s)[0m
+[92mZMQ: Sent latent action - frame: 5599, token shape: (64,)[0m
+Image latency for ego_view: 9.80 ms
+Image latency for ego_view: 8.30 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.180s)[0m
+Image latency for ego_view: 5.88 ms
+Image latency for ego_view: 4.01 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.158s)[0m
+[92mZMQ: Sent latent action - frame: 5649, token shape: (64,)[0m
+Image latency for ego_view: 21.47 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.202s)[0m
+Image latency for ego_view: 19.40 ms
+Image latency for ego_view: 16.41 ms
+[92mZMQ: Sent latent action - frame: 5699, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.182s)[0m
+Image latency for ego_view: 14.11 ms
+Image latency for ego_view: 10.35 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.142s)[0m
+Image latency for ego_view: 7.02 ms
+[92mZMQ: Sent latent action - frame: 5749, token shape: (64,)[0m
+Image latency for ego_view: 5.93 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.186s)[0m
+Image latency for ego_view: 5.08 ms
+Image latency for ego_view: 20.57 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.162s)[0m
+Image latency for ego_view: 18.94 ms
+[92mZMQ: Sent latent action - frame: 5799, token shape: (64,)[0m
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 16.08 ms
+Image latency for ego_view: 12.56 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.166s)[0m
+Image latency for ego_view: 10.12 ms
+[92mZMQ: Sent latent action - frame: 5849, token shape: (64,)[0m
+Image latency for ego_view: 8.96 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.166s)[0m
+Image latency for ego_view: 5.37 ms
+Image latency for ego_view: 3.39 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.167s)[0m
+[92mZMQ: Sent latent action - frame: 5899, token shape: (64,)[0m
+Image latency for ego_view: 3.90 ms
+Image latency for ego_view: 3.19 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 20.76 ms
+[92mZMQ: Sent latent action - frame: 5949, token shape: (64,)[0m
+Image latency for ego_view: 18.44 ms
+[92mNew action chunk (prompt: "pick drink bottle and place it on the right table", latency: 0.164s)[0m
+Image latency for ego_view: 15.45 ms
+[92mSent ZMQ command: start control loop (planner mode)[0m
+Image latency for ego_view: 12.33 ms
+VLA inference loop terminated by user
+Shutdown complete.

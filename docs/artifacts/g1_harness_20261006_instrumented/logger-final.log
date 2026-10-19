@@ -1,0 +1,21 @@
+Note: Google Test filter = PlannerTrace.*
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from PlannerTrace
+[ RUN      ] PlannerTrace.RetainsFirstRecordsAndReportsOverflow
+[       OK ] PlannerTrace.RetainsFirstRecordsAndReportsOverflow (0 ms)
+[ RUN      ] PlannerTrace.RequiresFreezeAndRejectsLaterWrites
+[       OK ] PlannerTrace.RequiresFreezeAndRejectsLaterWrites (0 ms)
+[ RUN      ] PlannerTrace.RecordsGeneratedMergedAndSelectedQuaternionsSeparately
+[       OK ] PlannerTrace.RecordsGeneratedMergedAndSelectedQuaternionsSeparately (0 ms)
+[ RUN      ] PlannerTrace.FreezeProducesConsistentSnapshotWithConcurrentWriter
+[       OK ] PlannerTrace.FreezeProducesConsistentSnapshotWithConcurrentWriter (2 ms)
+[ RUN      ] PlannerTrace.OptionIsLimitedToLoopbackSimulation
+[       OK ] PlannerTrace.OptionIsLimitedToLoopbackSimulation (0 ms)
+[ RUN      ] PlannerTrace.InitializationDoesNotInventPhaseTiming
+[       OK ] PlannerTrace.InitializationDoesNotInventPhaseTiming (0 ms)
+[----------] 6 tests from PlannerTrace (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 6 tests.

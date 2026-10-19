@@ -1,0 +1,18 @@
+{
+  "label_provenance": "The user identified episode 5 as a failed manipulation ending without recovery on 2026-10-02. Frame annotations are from direct session visual inspection. The green stool is the user-confirmed intended destination; bottles remaining on the front source table do not establish completion.",
+  "episodes": {
+    "bottle_failed_5": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "outcome": "User-labeled unrecovered failure. The robot attempts to grasp a bottle at the front source table; intended right-side placement is not established before the clip ends.",
+      "initial_s": 5.0,
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The drink bottle is visibly resting on the right table and the robot has released it. Occlusion or a bottle still held in the hand does not establish completion."
+    }
+  },
+  "cases": [
+    {"id": "failed_bottle_before_grasp", "episode": "bottle_failed_5", "at_s": 12.0, "complete": false, "sequence_id": "failed_bottle_episode"},
+    {"id": "failed_bottle_grasp_attempt", "episode": "bottle_failed_5", "at_s": 17.0, "complete": false, "sequence_id": "failed_bottle_episode", "note": "Bottle remains at the front source table, enclosed by the left fingers; release on the right destination is not established."},
+    {"id": "failed_bottle_target_unobservable", "episode": "bottle_failed_5", "at_s": 18.8, "complete": false, "sequence_id": "failed_bottle_episode", "note": "The bottle near the left grasp at17s is no longer visibly identifiable; other bottles remain on the source table. Target visibility loss during manipulation, not proof of blocked-camera occlusion or a fall."},
+    {"id": "failed_bottle_terminal", "episode": "bottle_failed_5", "at_s": 19.4, "complete": false, "sequence_id": "failed_bottle_episode", "note": "The clip ends at19.54s without visible placement on the intended right-side destination; user labeled the episode failed without recovery."}
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "source_episodes": 179,
+  "retained_episodes": 174,
+  "retained_frames": 274241,
+  "retained_prompts": [
+    "pick drink bottle and place it on the right table"
+  ],
+  "retained_unreviewed": 172,
+  "longest_retained": [
+    {
+      "source_episode": 14,
+      "prepared_episode": 13,
+      "retained": true,
+      "frames": 27244,
+      "duration_s": 544.88,
+      "retained_frame_share": 0.09934327835735722,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000014.mp4",
+      "outcome": "unreviewed",
+      "label_source": null,
+      "segments_to_review": [],
+      "notes": [
+        "20-second-spaced session inspection showed many stationary floor/table views; review idle periods and task coverage before any decision."
+      ],
+      "trained_prompt": [
+        "pick drink bottle and place it on the right table"
+      ]
+    },
+    {
+      "source_episode": 155,
+      "prepared_episode": 150,
+      "retained": true,
+      "frames": 8501,
+      "duration_s": 170.02,
+      "retained_frame_share": 0.03099828253251702,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000155.mp4",
+      "outcome": "unreviewed",
+      "label_source": null,
+      "segments_to_review": [],
+      "notes": [],
+      "trained_prompt": [
+        "pick drink bottle and place it on the right table"
+      ]
+    },
+    {
+      "source_episode": 78,
+      "prepared_episode": 77,
+      "retained": true,
+      "frames": 3952,
+      "duration_s": 79.04,
+      "retained_frame_share": 0.014410682574815582,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000078.mp4",
+      "outcome": "unreviewed",
+      "label_source": null,
+      "segments_to_review": [],
+      "notes": [],
+      "trained_prompt": [
+        "pick drink bottle and place it on the right table"
+      ]
+    },
+    {
+      "source_episode": 150,
+      "prepared_episode": 145,
+      "retained": true,
+      "frames": 3719,
+      "duration_s": 74.38,
+      "retained_frame_share": 0.013561064902768004,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000150.mp4",
+      "outcome": "unreviewed",
+      "label_source": null,
+      "segments_to_review": [],
+      "notes": [],
+      "trained_prompt": [
+        "pick drink bottle and place it on the right table"
+      ]
+    },
+    {
+      "source_episode": 166,
+      "prepared_episode": 161,
+      "retained": true,
+      "frames": 3337,
+      "duration_s": 66.74,
+      "retained_frame_share": 0.012168129491943219,
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000166.mp4",
+      "outcome": "unreviewed",
+      "label_source": null,
+      "segments_to_review": [],
+      "notes": [],
+      "trained_prompt": [
+        "pick drink bottle and place it on the right table"
+      ]
+    }
+  ],
+  "allowed_outcomes": [
+    "unreviewed",
+    "successful_placement",
+    "failed_without_recovery",
+    "failed_then_recovered",
+    "unclear"
+  ],
+  "sources": {
+    "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/meta/episodes.jsonl": "efb339449ad844435d22fb019d1f1f9c722ce4c57cc5ee7069f99af16ad1c2a1",
+    "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/meta/info.json": "787da08db0eb58a6e8470a101f6826646e4e47192f56792476ae8e0cdeac4b46",
+    "/tmp/pnp_bottle_260916_gr00t_raw_20260930/source_mapping.json": "5ee6bf3dac98e6073b41d597ca2e31ae5680806c33362987e22d2ebb8dc39074",
+    "/tmp/pnp_bottle_260916_gr00t_raw_20260930/meta/episodes.jsonl": "b552697a0b460517bd4932e53957a636df3abc1ac24e6049f17e1d5302e6b769"
+  },
+  "dataset_modified": false,
+  "training_performed": false,
+  "sampling_or_checkpoint_causality_established": false
+}

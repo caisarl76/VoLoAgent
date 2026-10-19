@@ -1,0 +1,152 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[0-passed_control_checks-0] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x79b97f2f7360>
+tmp_path = PosixPath('/tmp/pytest-of-jihun/pytest-166/test_batch_propagates_driver_f0')
+exit_code = 0, outcome = 'passed_control_checks', expected = 0
+
+    @pytest.mark.parametrize('exit_code,outcome,expected', [
+        (0, 'passed_control_checks', 0),
+        (17, 'passed_control_checks', 1),
+        (0, 'failed', 1),
+        (17, None, 1),
+    ])
+    def test_batch_propagates_driver_failure_but_preserves_failed_turn_controls(
+        monkeypatch, tmp_path, exit_code, outcome, expected,
+    ):
+        monkeypatch.setattr(sys, 'argv', ['batch', '--native', str(tmp_path/'native'),
+                            '--profile', str(tmp_path/'profile'), '--output', str(tmp_path/'results')])
+    
+        def run(argv, **kwargs):
+            folder = Path(argv[argv.index('--output')+1])
+            folder.mkdir()
+            if outcome is not None:
+                (folder/'result.json').write_text(json.dumps(dict(outcome=outcome, turn_success=False)))
+            return SimpleNamespace(returncode=exit_code)
+    
+        monkeypatch.setattr(batch.subprocess, 'run', run)
+>       assert batch.main() == expected
+E       assert None == 0
+E        +  where None = <function main at 0x79b97f3aa700>()
+E        +    where <function main at 0x79b97f3aa700> = batch.main
+
+docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py:31: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"case": "positive-zero", "outcome": "passed_control_checks", "turning": null, "reason": null}
+{"case": "negative-wrap", "outcome": "passed_control_checks", "turning": null, "reason": null}
+{"case": "positive-wrap", "outcome": "passed_control_checks", "turning": null, "reason": null}
+_ test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[17-passed_control_checks-1] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x79b97f2f68b0>
+tmp_path = PosixPath('/tmp/pytest-of-jihun/pytest-166/test_batch_propagates_driver_f1')
+exit_code = 17, outcome = 'passed_control_checks', expected = 1
+
+    @pytest.mark.parametrize('exit_code,outcome,expected', [
+        (0, 'passed_control_checks', 0),
+        (17, 'passed_control_checks', 1),
+        (0, 'failed', 1),
+        (17, None, 1),
+    ])
+    def test_batch_propagates_driver_failure_but_preserves_failed_turn_controls(
+        monkeypatch, tmp_path, exit_code, outcome, expected,
+    ):
+        monkeypatch.setattr(sys, 'argv', ['batch', '--native', str(tmp_path/'native'),
+                            '--profile', str(tmp_path/'profile'), '--output', str(tmp_path/'results')])
+    
+        def run(argv, **kwargs):
+            folder = Path(argv[argv.index('--output')+1])
+            folder.mkdir()
+            if outcome is not None:
+                (folder/'result.json').write_text(json.dumps(dict(outcome=outcome, turn_success=False)))
+            return SimpleNamespace(returncode=exit_code)
+    
+        monkeypatch.setattr(batch.subprocess, 'run', run)
+>       assert batch.main() == expected
+E       assert None == 1
+E        +  where None = <function main at 0x79b97f3aa700>()
+E        +    where <function main at 0x79b97f3aa700> = batch.main
+
+docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py:31: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"case": "positive-zero", "outcome": "passed_control_checks", "turning": null, "reason": null}
+{"case": "negative-wrap", "outcome": "passed_control_checks", "turning": null, "reason": null}
+{"case": "positive-wrap", "outcome": "passed_control_checks", "turning": null, "reason": null}
+_ test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[0-failed-1] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x79b97f16c050>
+tmp_path = PosixPath('/tmp/pytest-of-jihun/pytest-166/test_batch_propagates_driver_f2')
+exit_code = 0, outcome = 'failed', expected = 1
+
+    @pytest.mark.parametrize('exit_code,outcome,expected', [
+        (0, 'passed_control_checks', 0),
+        (17, 'passed_control_checks', 1),
+        (0, 'failed', 1),
+        (17, None, 1),
+    ])
+    def test_batch_propagates_driver_failure_but_preserves_failed_turn_controls(
+        monkeypatch, tmp_path, exit_code, outcome, expected,
+    ):
+        monkeypatch.setattr(sys, 'argv', ['batch', '--native', str(tmp_path/'native'),
+                            '--profile', str(tmp_path/'profile'), '--output', str(tmp_path/'results')])
+    
+        def run(argv, **kwargs):
+            folder = Path(argv[argv.index('--output')+1])
+            folder.mkdir()
+            if outcome is not None:
+                (folder/'result.json').write_text(json.dumps(dict(outcome=outcome, turn_success=False)))
+            return SimpleNamespace(returncode=exit_code)
+    
+        monkeypatch.setattr(batch.subprocess, 'run', run)
+>       assert batch.main() == expected
+E       assert None == 1
+E        +  where None = <function main at 0x79b97f3aa700>()
+E        +    where <function main at 0x79b97f3aa700> = batch.main
+
+docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py:31: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"case": "positive-zero", "outcome": "failed", "turning": null, "reason": null}
+{"case": "negative-wrap", "outcome": "failed", "turning": null, "reason": null}
+{"case": "positive-wrap", "outcome": "failed", "turning": null, "reason": null}
+_ test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[17-None-1] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x79b97f39d7b0>
+tmp_path = PosixPath('/tmp/pytest-of-jihun/pytest-166/test_batch_propagates_driver_f3')
+exit_code = 17, outcome = None, expected = 1
+
+    @pytest.mark.parametrize('exit_code,outcome,expected', [
+        (0, 'passed_control_checks', 0),
+        (17, 'passed_control_checks', 1),
+        (0, 'failed', 1),
+        (17, None, 1),
+    ])
+    def test_batch_propagates_driver_failure_but_preserves_failed_turn_controls(
+        monkeypatch, tmp_path, exit_code, outcome, expected,
+    ):
+        monkeypatch.setattr(sys, 'argv', ['batch', '--native', str(tmp_path/'native'),
+                            '--profile', str(tmp_path/'profile'), '--output', str(tmp_path/'results')])
+    
+        def run(argv, **kwargs):
+            folder = Path(argv[argv.index('--output')+1])
+            folder.mkdir()
+            if outcome is not None:
+                (folder/'result.json').write_text(json.dumps(dict(outcome=outcome, turn_success=False)))
+            return SimpleNamespace(returncode=exit_code)
+    
+        monkeypatch.setattr(batch.subprocess, 'run', run)
+>       assert batch.main() == expected
+E       assert None == 1
+E        +  where None = <function main at 0x79b97f3aa700>()
+E        +    where <function main at 0x79b97f3aa700> = batch.main
+
+docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py:31: AssertionError
+----------------------------- Captured stdout call -----------------------------
+{"case": "positive-zero", "outcome": "driver_error", "turning": null, "reason": null}
+{"case": "negative-wrap", "outcome": "driver_error", "turning": null, "reason": null}
+{"case": "positive-wrap", "outcome": "driver_error", "turning": null, "reason": null}
+=========================== short test summary info ============================
+FAILED docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py::test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[0-passed_control_checks-0]
+FAILED docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py::test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[17-passed_control_checks-1]
+FAILED docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py::test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[0-failed-1]
+FAILED docs/artifacts/g1_harness_20261006_followup/test_repeat_native_turns.py::test_batch_propagates_driver_failure_but_preserves_failed_turn_controls[17-None-1]
+4 failed in 0.11s

@@ -1,0 +1,103 @@
+{
+  "label_provenance": "Eight additional frames labeled by Codex from timestamped sheets. Destination identity is user-confirmed. These are provisional frame labels, not accepted episode-level training labels, human labels, or a held-out reliability estimate. The legacy evaluator field user_outcome contains the explicitly non-user episode description above.",
+  "episodes": {
+    "52": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000052.mp4",
+      "initial_s": 49,
+      "outcome": "Codex sampled frame review; no new user-confirmed episode outcome",
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies."
+    },
+    "78": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000078.mp4",
+      "initial_s": 35,
+      "outcome": "Codex sampled frame review; no new user-confirmed episode outcome",
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies."
+    },
+    "155": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000155.mp4",
+      "initial_s": 0,
+      "outcome": "Codex sampled frame review; no new user-confirmed episode outcome",
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies."
+    },
+    "159": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000159.mp4",
+      "initial_s": 0,
+      "outcome": "Codex sampled frame review; no new user-confirmed episode outcome",
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The target drink bottle has moved from the source table to the separate green stool, which is the registered right-table destination, and the robot has released it. The bottle must visibly rest on that stool. A bottle remaining on the source table does not count. A held or occluded bottle, or an unseen destination, does not establish completion. Identify the destination by its appearance, not by which side of the camera image it occupies."
+    }
+  },
+  "cases": [
+    {
+      "id": "episode-52-0",
+      "episode": "52",
+      "at_s": 53.8,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle visibly held at stool; release not established."
+    },
+    {
+      "id": "episode-52-1",
+      "episode": "52",
+      "at_s": 54.6,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle visibly held at stool; release not established."
+    },
+    {
+      "id": "episode-78-0",
+      "episode": "78",
+      "at_s": 39,
+      "complete": true,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle lies on stool after fingers opened and hand withdrew; lying orientation is allowed by criterion.",
+      "sequence_id": "release-78",
+      "expected_monitor_outcome": "candidate"
+    },
+    {
+      "id": "episode-78-1",
+      "episode": "78",
+      "at_s": 40,
+      "complete": true,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Bottle lies on stool after fingers opened and hand withdrew; lying orientation is allowed by criterion.",
+      "sequence_id": "release-78",
+      "expected_monitor_outcome": "complete"
+    },
+    {
+      "id": "episode-155-0",
+      "episode": "155",
+      "at_s": 6,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Robot manipulates cup/box; bottles remain on source, no green-stool placement visible."
+    },
+    {
+      "id": "episode-155-1",
+      "episode": "155",
+      "at_s": 20,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Robot manipulates cup/box; bottles remain on source, no green-stool placement visible."
+    },
+    {
+      "id": "episode-159-0",
+      "episode": "159",
+      "at_s": 3,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Human setup of unrelated objects; no released bottle on destination visible."
+    },
+    {
+      "id": "episode-159-1",
+      "episode": "159",
+      "at_s": 7,
+      "complete": false,
+      "label_authority": "Codex visual frame screening",
+      "label_note": "Human setup of unrelated objects; no released bottle on destination visible."
+    }
+  ]
+}

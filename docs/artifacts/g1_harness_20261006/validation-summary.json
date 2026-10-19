@@ -1,0 +1,164 @@
+{
+  "robot_actuated": false,
+  "dashboard_deferred": true,
+  "policy_checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "prompt": "pick drink bottle and place it on the right table",
+  "bottle_measurements": {
+    "height_m": 0.2,
+    "diameter_m": 0.08,
+    "mass_kg": 0.3
+  },
+  "whole_scene_calibrated": false,
+  "native_observation_parity_fixed": true,
+  "all_eight_state_groups_equal_in_six_samples": true,
+  "policy_queries": 30,
+  "first_query_latency_s": 4.802718477963936,
+  "warm_mean_latency_s": 0.13255789727454298,
+  "bottle_runs": [
+    {
+      "directory": "measured-state-genon",
+      "monitor_mode": "genon",
+      "mission_outcome": "interrupted",
+      "mission_reason": "vlm_error_or_expired_decision",
+      "elapsed_s": 61.61051173199667,
+      "monitor_decisions": {
+        "in_progress": 24,
+        "unavailable": 1
+      },
+      "object_samples": 935,
+      "contacts": [
+        "source_table"
+      ],
+      "robot_contact_samples": 0,
+      "placement_validated": false,
+      "hold_confirmed": true,
+      "scene_sha256": "22fb182734bf1a7e7fa8c1d8b8da50a3b6628b2882efe3fc1dc2983f3c92dae0",
+      "native_runner_sha256": "565e7acc59cdd75de61e7d13659d07c179c1cb8ef87b6b556c1b675b60371787",
+      "owned_process_exit_codes": {
+        "policy": 0,
+        "mujoco": 0,
+        "sonic": -15,
+        "native": 0
+      }
+    },
+    {
+      "directory": "measured-state-truth-control",
+      "monitor_mode": "simulator_truth_control",
+      "mission_outcome": "interrupted",
+      "mission_reason": "policy_or_task_timeout",
+      "elapsed_s": 119.97706063796068,
+      "monitor_decisions": {
+        "in_progress": 113
+      },
+      "object_samples": 1537,
+      "contacts": [
+        "source_table"
+      ],
+      "robot_contact_samples": 0,
+      "placement_validated": false,
+      "hold_confirmed": true,
+      "scene_sha256": "22fb182734bf1a7e7fa8c1d8b8da50a3b6628b2882efe3fc1dc2983f3c92dae0",
+      "native_runner_sha256": "565e7acc59cdd75de61e7d13659d07c179c1cb8ef87b6b556c1b675b60371787",
+      "owned_process_exit_codes": {
+        "policy": -9,
+        "mujoco": 0,
+        "sonic": -15,
+        "native": 0
+      }
+    },
+    {
+      "directory": "bottle-physical-calibration-truth-control",
+      "monitor_mode": "simulator_truth_control",
+      "mission_outcome": "interrupted",
+      "mission_reason": "Manipulation deadline exceeded",
+      "elapsed_s": 120.1865492759971,
+      "monitor_decisions": {
+        "in_progress": 113
+      },
+      "object_samples": 1497,
+      "contacts": [
+        "source_table"
+      ],
+      "robot_contact_samples": 0,
+      "placement_validated": false,
+      "hold_confirmed": true,
+      "scene_sha256": "8dfc51ed7cb97916582fac9d59ca322b203c0379e463d175b8d17219d1f66d04",
+      "native_runner_sha256": "565e7acc59cdd75de61e7d13659d07c179c1cb8ef87b6b556c1b675b60371787",
+      "owned_process_exit_codes": {
+        "policy": 0,
+        "mujoco": 0,
+        "sonic": -15,
+        "native": 0
+      }
+    }
+  ],
+  "turn_cases": [
+    {
+      "case": "negative-zero",
+      "outcome": "failed",
+      "elapsed_s": 0.951466448022984,
+      "error_rad": 0.2951007248233131,
+      "reason": "planner_error:Heading feedback moved beyond the rate-limited lead bound",
+      "standing_reset": "passed",
+      "walking": "passed_duration_and_stop_ack",
+      "coordinator_loss": null,
+      "hold_confirmed_at_interruption": false,
+      "adapter_driven": true
+    },
+    {
+      "case": "positive-zero",
+      "outcome": "failed",
+      "elapsed_s": 2.952041217999067,
+      "error_rad": 0.07178924373477558,
+      "reason": "planner_error:Heading feedback moved beyond the rate-limited lead bound",
+      "standing_reset": "passed",
+      "walking": "passed_duration_and_stop_ack",
+      "coordinator_loss": null,
+      "hold_confirmed_at_interruption": false,
+      "adapter_driven": true
+    },
+    {
+      "case": "negative-wrap",
+      "outcome": "passed",
+      "elapsed_s": 9.04077523801243,
+      "error_rad": 0.04101583596293645,
+      "reason": null,
+      "standing_reset": "passed",
+      "walking": "passed_duration_and_stop_ack",
+      "coordinator_loss": "passed",
+      "hold_confirmed_at_interruption": null,
+      "adapter_driven": true
+    },
+    {
+      "case": "positive-wrap",
+      "outcome": "passed",
+      "elapsed_s": 4.424430356011726,
+      "error_rad": 0.028561071456446374,
+      "reason": null,
+      "standing_reset": "passed",
+      "walking": "passed_duration_and_stop_ack",
+      "coordinator_loss": "passed",
+      "hold_confirmed_at_interruption": null,
+      "adapter_driven": true
+    }
+  ],
+  "training_audit": {
+    "retained_episodes": 174,
+    "retained_frames": 274241,
+    "nonfinite_frames": 0,
+    "token_bound_exceeded_frames": 0,
+    "legacy_left_finger_max_delta_rad": 1.448620144277811,
+    "legacy_left_finger_frames_over_0_1_rad": 76199,
+    "shorter_than_action_horizon": [
+      0
+    ],
+    "episodes_with_stationary_review_segments": 12,
+    "stationary_flagged_frames": 30740,
+    "visual_outcomes_reviewed": 0
+  },
+  "retained_outcomes_still_unreviewed": 172,
+  "physical_deployment_accepted": false,
+  "turn_repeatability_accepted": false,
+  "training_performed": false,
+  "dataset_modified": false
+}

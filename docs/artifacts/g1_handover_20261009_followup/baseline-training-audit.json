@@ -1,0 +1,197 @@
+{
+  "host": "h100",
+  "run": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_20k_gpu6_20261006",
+  "checkpoint": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_20k_gpu6_20261006/train/handover-bottle-261002-20k-gpu6/checkpoint-20000",
+  "run_manifest": {
+    "mode": "fresh_finetune",
+    "started_at_utc": "2026-10-06T06:02:47.272784+00:00",
+    "source_commit": "2a08eecdbdd306b8000d93aadf3308cf23c9d76a",
+    "physical_gpu": 6,
+    "gpu_uuid": "GPU-0bcc19a5-253f-8e51-16da-f24dea47b6fc",
+    "cuda_device_count": 1,
+    "base_model_revision": "2fc962b973bccdd5d8ce4f67cc63b264d6886495",
+    "cosmos_revision": "9ce19a195e423419c349abfc86fd07178b230561",
+    "max_steps": 20000,
+    "batch_size": 32,
+    "learning_rate": 0.0001,
+    "save_steps": 1000,
+    "resume_from_checkpoint": false,
+    "dataset_source_on_h100": "/mnt/data01/jhkim/gr00t_runs/handover_bottle_260930_subset_261002_n17_gpu2_20261002/dataset"
+  },
+  "loader_probe": {
+    "episodes": 43,
+    "frames": 18970,
+    "fps": 50,
+    "prompt": "pick drink bottle from the table and handover",
+    "shards": 17,
+    "samples": [
+      {
+        "episode": 0,
+        "image_shape": [
+          480,
+          640,
+          3
+        ],
+        "state_dim": 46,
+        "action_dim": 78,
+        "action_horizon": 40,
+        "prompt": "pick drink bottle from the table and handover"
+      },
+      {
+        "episode": 21,
+        "image_shape": [
+          480,
+          640,
+          3
+        ],
+        "state_dim": 46,
+        "action_dim": 78,
+        "action_horizon": 40,
+        "prompt": "pick drink bottle from the table and handover"
+      },
+      {
+        "episode": 42,
+        "image_shape": [
+          480,
+          640,
+          3
+        ],
+        "state_dim": 46,
+        "action_dim": 78,
+        "action_horizon": 40,
+        "prompt": "pick drink bottle from the table and handover"
+      }
+    ],
+    "action_loss_mask_episodes": [],
+    "action_loss_mask_zero_frames": 0,
+    "episodes_shorter_than_action_horizon": []
+  },
+  "tasks": [
+    {
+      "task_index": 0,
+      "task": "pick drink bottle from the table and handover"
+    }
+  ],
+  "subset_manifest": {
+    "source_root": "/mnt/data/jihun/datasets/G1_WBT_GR00T/handover_bottle_260930",
+    "source_review_alias": "local/annotation-6a6f61ef6366b012",
+    "source_run_id": "6266989d23794f33a75560b37b9aae15",
+    "task_prompt": "pick drink bottle from the table and handover",
+    "annotation_method": "manual task text; no AI generation",
+    "removed_episode_indices": [
+      2,
+      4,
+      5,
+      7,
+      14,
+      16,
+      17,
+      20,
+      21,
+      27,
+      28,
+      31,
+      45,
+      53,
+      54,
+      58,
+      59,
+      60
+    ],
+    "old_to_new": {
+      "0": 0,
+      "1": 1,
+      "3": 2,
+      "6": 3,
+      "8": 4,
+      "9": 5,
+      "10": 6,
+      "11": 7,
+      "12": 8,
+      "13": 9,
+      "15": 10,
+      "18": 11,
+      "19": 12,
+      "22": 13,
+      "23": 14,
+      "24": 15,
+      "25": 16,
+      "26": 17,
+      "29": 18,
+      "30": 19,
+      "32": 20,
+      "33": 21,
+      "34": 22,
+      "35": 23,
+      "36": 24,
+      "37": 25,
+      "38": 26,
+      "39": 27,
+      "40": 28,
+      "41": 29,
+      "42": 30,
+      "43": 31,
+      "44": 32,
+      "46": 33,
+      "47": 34,
+      "48": 35,
+      "49": 36,
+      "50": 37,
+      "51": 38,
+      "52": 39,
+      "55": 40,
+      "56": 41,
+      "57": 42
+    },
+    "episodes": 43,
+    "frames": 18970
+  },
+  "dataset_info": {
+    "total_episodes": 43,
+    "total_frames": 18970,
+    "fps": 50,
+    "splits": {
+      "train": "0:43"
+    }
+  },
+  "exit_codes": {
+    "train/exit": "0",
+    "train.exit": "0"
+  },
+  "checkpoint_files": {
+    "config.json": 2146,
+    "model-00001-of-00003.safetensors": 4986649584,
+    "model-00002-of-00003.safetensors": 4970792616,
+    "model-00003-of-00003.safetensors": 2618758696,
+    "model.safetensors.index.json": 104913,
+    "training_args.bin": 5905,
+    "optimizer.pt": 12964594710,
+    "scheduler.pt": 1465,
+    "rng_state.pth": 14645,
+    "trainer_state.json": 279356,
+    "processor_config.json": 27269,
+    "statistics.json": 4314413,
+    "embodiment_id.json": 2226,
+    "wandb_config.json": 77
+  },
+  "metadata_hashes": {
+    "evidence/run_manifest.json": "316699da0c9fa63271fd79c3f00b7e8df8c7e487f68a6a865612274799497e5f",
+    "evidence/native-loader-probe.json": "5dfab60014021e41c32e23898a96123eb4582645066962da3c6fc24b3463b06a",
+    "dataset_view/meta/tasks.jsonl": "5c005891880c468840e0f0b1392540c300065735da83f155e9a9ce7ea685cb6d",
+    "dataset_view/meta/subset_manifest.json": "6b7c208389dc5bf0e0a4a6ebd70ea242e91a59981abddf4b3d7d99e99668de5c",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/config.json": "6e9b72bc2372383af27599811e944b7aa72d0537bf06764aff32f7c5a0d53e4a",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/model.safetensors.index.json": "12117379d91d029c5979a585d07ba794001730c9516d6de5512e3dedfee30730",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/trainer_state.json": "0d10213ab5fa7a6c3c6aaec45c4d5c91389dbba74abaeae8135a3d27bfa40dfb",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/processor_config.json": "c0ea0f1e830dfd25238dff8baaad80d1551bf324dc1e53076b3349fabe3d6540",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/statistics.json": "9965a95afef77fa6cf3b8066870d5c103cadee77f8919bc8a6938117364c0905",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/embodiment_id.json": "c8af3d61fe9ca5508c4a5b9e8be6ad4d0d1eb2c68cec76620ea089b894a3ee22",
+    "train/handover-bottle-261002-20k-gpu6/checkpoint-20000/wandb_config.json": "71199e98c7f71636023012137e442c88a6bbade04efab39421824601888eddc4"
+  },
+  "model_inference_verified": false,
+  "robot_connection": false,
+  "training_summary": [
+    "{'train_runtime': 6160.5975, 'train_samples_per_second': 103.886, 'train_steps_per_second': 3.246, 'train_loss': 0.0758643008172512}",
+    "10/06/2026 07:46:07 - INFO - Training completed!"
+  ],
+  "audit_script_sha256": "74de8bc433bd712c134675d61ca79e4a9cf600edd313589653c09814c66fd9ee"
+}

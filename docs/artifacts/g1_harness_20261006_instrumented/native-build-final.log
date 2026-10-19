@@ -1,0 +1,16 @@
+[ 18%] Built target TRTInference
+[ 36%] Built target audio_thread
+[ 81%] Built target g1_deploy_shared
+Consolidate compiler generated dependencies of target g1_deploy_onnx_ref
+[ 90%] Building CXX object src/g1/g1_deploy_onnx_ref/CMakeFiles/g1_deploy_onnx_ref.dir/src/g1_deploy_onnx_ref.cpp.o
+[100%] Linking CXX executable /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref
+[100%] Built target g1_deploy_onnx_ref
+[ 10%] Built target TRTInference
+[ 21%] Built target audio_thread
+[ 47%] Built target g1_deploy_shared
+[ 57%] Built target gtest
+[ 68%] Built target gtest_main
+Consolidate compiler generated dependencies of target run_tests
+[ 73%] Building CXX object src/g1/g1_deploy_onnx_ref/CMakeFiles/run_tests.dir/unit_tests/test_planner_trace.cpp.o
+[ 78%] Linking CXX executable /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/target/release/run_tests
+[100%] Built target run_tests

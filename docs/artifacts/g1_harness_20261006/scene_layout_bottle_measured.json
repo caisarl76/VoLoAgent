@@ -1,0 +1,15 @@
+{
+  "units": "meters",
+  "coordinate_frame": "G1 initial pelvis XY projected onto floor; X forward, Y robot-left, Z up",
+  "scope": "Bottle dimensions/mass supplied by user on 2026-10-06; source/stool heights previously supplied. Positions, friction and cylinder appearance remain the same sample assumptions for a controlled comparison.",
+  "source_table": {"center_xy": [0.5, 0.2], "half_size_xy": [0.237, 0.3], "height": 0.8},
+  "destination_stool": {"center_xy": [0.35, -0.6], "radius": 0.25, "height": 0.8},
+  "bottle": {
+    "source_xy": [0.45, 0.0],
+    "radius": 0.04,
+    "half_height": 0.1,
+    "mass_kg": 0.3,
+    "density": 298.41551829730376,
+    "measurement_source": "User: 20cm tall, 8cm wide, about 300g"
+  }
+}

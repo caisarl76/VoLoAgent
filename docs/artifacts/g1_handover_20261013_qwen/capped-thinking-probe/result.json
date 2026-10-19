@@ -1,0 +1,72 @@
+{
+  "robot_connection": false,
+  "model": "Qwen/Qwen3.6-27B",
+  "base_url": "http://127.0.0.1:13402/v1",
+  "deadline_s": 10.0,
+  "production_deadline": true,
+  "scope": "Recorded timestamps; provider wall time is not real-time video replay.",
+  "label_provenance": "User-confirmed episode outcomes: 15 and 30 success; 16 palm-angle slip. Phase labels are investigator judgments of the saved terminal sheets, not new user approvals or policy hold-out labels.",
+  "episodes": {
+    "15": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000015.mp4",
+      "sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207"
+    }
+  },
+  "cases": [
+    {
+      "id": "desk-bottle",
+      "episode": 15,
+      "phase": "ready",
+      "initial_frame": 0,
+      "frame": 62,
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000062.jpg",
+      "decision": {
+        "outcome": "unavailable",
+        "reason": "vision_unavailable:ValueError",
+        "frame_id": "ecff1616d11dff4c3b2987ad5a5892eb761d5c8e38fae942eb269d337682ca53",
+        "execution_id": "desk-bottle",
+        "inference_epoch": 1,
+        "captured_at": 1059727.523628019,
+        "decided_at": 1059733.045384899,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "ready"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1059727.612312826,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 256,
+          "prompt_tokens": 764,
+          "total_tokens": 1020,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "length",
+        "content_present": false,
+        "reasoning_present": true,
+        "latency_s": 5.433010687818751
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 5.5217568799853325
+    }
+  ],
+  "request_options": {
+    "max_tokens": 256
+  },
+  "summary": {
+    "total": 1,
+    "unavailable": 1,
+    "label_disagreements": 1,
+    "complete_decisions": 0,
+    "confirmed_phases": 0,
+    "false_positive_frames": 0
+  }
+}

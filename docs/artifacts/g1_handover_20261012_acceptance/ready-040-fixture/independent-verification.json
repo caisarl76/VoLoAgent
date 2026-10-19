@@ -1,0 +1,47 @@
+{
+  "scope": "Actual SONIC/native ready-return component from default standing; no VLA pickup/offer or person removal.",
+  "ready_duration_s": 5.339061824022792,
+  "terminal_phase": "COMPLETED",
+  "native_settling_confirmed": true,
+  "ground_truth_tail_within_0p05_rad": true,
+  "max_right_arm_error_last_0p5_s_rad": 0.04859688184179192,
+  "final_right_arm_max_error_rad": 0.03306922310629584,
+  "minimum_geometric_clearance": {
+    "distance_m": -0.00026410072802340867,
+    "actor": "right_hand_middle_1_link",
+    "obstacle": "desk_top",
+    "distance_capped": false
+  },
+  "clearance_screen_passed": false,
+  "desk_contact_or_overlap_samples": 33,
+  "final_geometric_clearance": {
+    "distance_m": 0.07208541526634438,
+    "actor": "right_hand_index_0_link",
+    "obstacle": "desk_top",
+    "distance_capped": false
+  },
+  "base_horizontal_displacement_from_reset_start_m": 0.023119294853064718,
+  "grounded_standing_screen": {
+    "ready": true,
+    "failures": [],
+    "samples": 121,
+    "foot_floor_contact_samples": 121,
+    "base_height_min_m": 0.7868228577503498,
+    "base_height_max_m": 0.7876752158421944,
+    "base_tilt_max_rad": 0.0463388679288787,
+    "physical_balance_qualified": false
+  },
+  "stationary_planner_packets": 61,
+  "latent_action_publications": 0,
+  "scripted_prewarm_only": true,
+  "readiness_gates_fixture_only": true,
+  "hardware_profile_changed": false,
+  "hardware_acceptance": false,
+  "calibrated_scene": false,
+  "limitations": [
+    "Starts from default standing, not a recorded post-handover pose.",
+    "Scene distance and bottle geometry provisional; cylinder remains on the desk.",
+    "Person proxy has no arms/hands; this cannot establish human clearance.",
+    "Source hand model explicitly warns of simulation instability."
+  ]
+}

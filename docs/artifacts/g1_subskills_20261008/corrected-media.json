@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-08",
+  "fps": 50,
+  "frame_coordinate_system": "original_source_zero_based",
+  "accepted_positive_segments": 0,
+  "training_dataset_exported": false,
+  "manifest_sha256": "453623d8a881a6eb14dcf677e00a4cb70741fca35365b4e62b5d5c0b2b08f0c0",
+  "corrections_sha256": "06dbcb75d6f674733ba0c4f4059141f24420c823a31e5d8024cb1ad1a4393e2d",
+  "clips": [
+    {
+      "source_episode": 52,
+      "prepared_episode": 51,
+      "source_parquet_sha256": "1960737f53c62aadaee2d426dd0a1708df4b6019e55b003929dc56c38f6044cc",
+      "source_video_sha256": "a229565ada1f36ab1be407af34c9893cbdc7008a87462a9853fb4374b7f3f55a",
+      "start_frame": 1813,
+      "end_frame_exclusive": 2750,
+      "frames": 937,
+      "duration_s": 18.74,
+      "video": "source_000052_trimmed.mp4",
+      "video_sha256": "0b913cfa51acf12b736ba39febb866aa8ba333401bfbb5e88ea39e68a7d1205b",
+      "sheet": "source_000052_trimmed.jpg",
+      "sheet_sha256": "5941701fa88459cc9080f74b4f99ace315e5182909cf43f7ccd57e05887e54a5",
+      "frame_map": "source_000052_trimmed-frame-map.csv",
+      "frame_map_sha256": "2427ac121f3c3157b1d97582fa24f374a217c9355bdc189ce6f46b63e40067fe",
+      "note": "Retained rows remain unlabeled. A hold near the stool does not qualify as the source-table pick finish."
+    },
+    {
+      "source_episode": 78,
+      "prepared_episode": 77,
+      "source_parquet_sha256": "801a9364e201e3fa5a53deaf03c8e62e73d532601373d8971f5d708cddf51dd6",
+      "source_video_sha256": "c810cddd43b19c45b3719202fa4968c512c658ce2584bf236ff71e68da8be3e1",
+      "start_frame": 1450,
+      "end_frame_exclusive": 1651,
+      "frames": 201,
+      "duration_s": 4.02,
+      "video": "source_000078_basket_failure.mp4",
+      "video_sha256": "d28bb491b307ee234d8438e843a3ca57e940a9acfff107adf28b6b9ee17b7dd3",
+      "sheet": "source_000078_basket_failure.jpg",
+      "sheet_sha256": "a4c1d0b476921f397b636348bb303efd9aa8b053ad770e92555ee85fa1283cf1",
+      "frame_map": "source_000078_basket_failure-frame-map.csv",
+      "frame_map_sha256": "6c7fd8414b42dedab736a7d3e099d3d2f5135ee70dd3b92a48b67ff88a055820",
+      "note": "User-confirmed failure around source frames 1500\u20131600. Later bottle release does not make this a successful placement."
+    }
+  ],
+  "retained_rows": {
+    "file": "source_000052_retained_rows.parquet",
+    "sha256": "1a53d3c932e02adbbf501348f3d865bb8d405aaec5511c1c746e65a24f1a56e5",
+    "prepared_episode": 51,
+    "prepared_parquet_sha256": "5ef33582ae5da8e01012c331866f86540c447c160e52d38c71204c4f279dd996",
+    "rows": 937,
+    "first_source_frame": 1813,
+    "last_source_frame": 2749,
+    "indices_rebased": false,
+    "scope": "Unlabeled retained-row review extract; original columns and indices preserved. Not a GR00T training dataset."
+  }
+}

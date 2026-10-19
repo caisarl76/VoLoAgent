@@ -1,0 +1,744 @@
+{
+  "robot_connection": false,
+  "model": "Qwen/Qwen3.6-27B",
+  "base_url": "http://127.0.0.1:13402/v1",
+  "deadline_s": 10.0,
+  "production_deadline": true,
+  "scope": "Recorded timestamps; provider wall time is not real-time video replay.",
+  "label_provenance": "User-confirmed episode outcomes: 15 and 30 success; 16 palm-angle slip. Phase labels are investigator judgments of the saved terminal sheets, not new user approvals or policy hold-out labels.",
+  "episodes": {
+    "15": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000015.mp4",
+      "sha256": "03e40a6ca322e1a1d897eb580f0e6e4887f04194e9a8a884dd1a50811aba8207"
+    },
+    "16": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000016.mp4",
+      "sha256": "3588658bc9bfa2484e66e5a1c58d30371d493806167bdc063727b7120543359c"
+    },
+    "30": {
+      "video": "/home/jihun/work/GR00T-WholeBodyControl/outputs/handover_bottle_260930/videos/chunk-000/observation.images.ego_view/episode_000030.mp4",
+      "sha256": "eb9f1283f44059abada2d8f24dd5997722436cd6b39edfd443da1be6fbe537a1"
+    }
+  },
+  "cases": [
+    {
+      "id": "desk-bottle",
+      "episode": 15,
+      "phase": "ready",
+      "initial_frame": 0,
+      "frame": 62,
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000062.jpg",
+      "measured_right_hand_joints": [
+        0.028881819918751717,
+        -0.01166367344558239,
+        -0.008504632860422134,
+        -0.004916273057460785,
+        -0.01370913814753294,
+        -0.0049995724111795425,
+        -0.006228831131011248
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is clearly visible, standing upright on the black case which serves as the working surface. It is not being held by a person or the robot, making it available to pick.",
+        "frame_id": "ecff1616d11dff4c3b2987ad5a5892eb761d5c8e38fae942eb269d337682ca53",
+        "execution_id": "desk-bottle",
+        "inference_epoch": 1,
+        "captured_at": 1069009.295917922,
+        "decided_at": 1069010.571592666,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "ready"
+      },
+      "raw_response": "```json\n{\"outcome\":\"yes\",\"reason\":\"The bottle is clearly visible, standing upright on the black case which serves as the working surface. It is not being held by a person or the robot, making it available to pick.\"}\n```",
+      "frame_outcome": "yes",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069009.309234385,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 766,
+          "total_tokens": 817,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.262055239174515
+      },
+      "confirmation_streak": 1,
+      "matches_label": true,
+      "latency_s": 1.2756747440434992
+    },
+    {
+      "id": "closed-grasp",
+      "episode": 15,
+      "phase": "pick_offer",
+      "initial_frame": 246,
+      "frame": 300,
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep15_f000300.jpg",
+      "measured_right_hand_joints": [
+        0.028316712006926537,
+        -0.34127023816108704,
+        -0.5380373001098633,
+        0.53306645154953,
+        1.187488079071045,
+        0.6526051163673401,
+        0.7953738570213318
+      ],
+      "measured_right_hand_state": "closed",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "measured_hand_not_confirmed_open",
+        "frame_id": "c9bee7b60466d473b935fb3dcdc31948e38748d8b1e7cc43bd0f3a85d5f6fd73",
+        "execution_id": "closed-grasp",
+        "inference_epoch": 1,
+        "captured_at": 1069010.783472519,
+        "decided_at": 1069012.127866814,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": "```json\n{\"outcome\":\"no\",\"reason\":\"The bottle is still being held by the robot's gripper and has not been placed on the palm. The robot hand is not in an open palm configuration to offer the bottle; the fingers are closed around the bottle.\"}\n```",
+      "frame_outcome": "no",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069010.789796891,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 58,
+          "prompt_tokens": 857,
+          "total_tokens": 915,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.3379545151256025
+      },
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 1.3443942950107157
+    },
+    {
+      "id": "offer15-first",
+      "episode": 15,
+      "phase": "pick_offer",
+      "initial_frame": 350,
+      "frame": 365,
+      "sequence": "offer15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000365.jpg",
+      "measured_right_hand_joints": [
+        0.028312621638178825,
+        -0.011613578535616398,
+        -0.009704243391752243,
+        -0.011371446773409843,
+        0.019630366936326027,
+        -0.005292094778269529,
+        0.007042919751256704
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is still resting on the black surface (desk/box) and has not been lifted by the robot. The robot's gripper is positioned near the bottle but is not holding it, nor is the bottle resting on the robot's palm.",
+        "frame_id": "438f6a270c8db52e5eff8b5f633641e86c36ca01cd3a1bc0cae03a9fa1c429f9",
+        "execution_id": "offer15",
+        "inference_epoch": 1,
+        "captured_at": 1069012.393413837,
+        "decided_at": 1069013.771284305,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": "{\"outcome\":\"no\",\"reason\":\"The bottle is still resting on the black surface (desk/box) and has not been lifted by the robot. The robot's gripper is positioned near the bottle but is not holding it, nor is the bottle resting on the robot's palm.\"}",
+      "frame_outcome": "no",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069012.403291907,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 59,
+          "prompt_tokens": 857,
+          "total_tokens": 916,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.3679130340460688
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.3778704679571092
+    },
+    {
+      "id": "offer15-second",
+      "episode": 15,
+      "phase": "pick_offer",
+      "initial_frame": 350,
+      "frame": 375,
+      "sequence": "offer15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000375.jpg",
+      "measured_right_hand_joints": [
+        0.028313899412751198,
+        -0.01160910539329052,
+        -0.009662198834121227,
+        -0.01136786863207817,
+        0.006799635477364063,
+        -0.005309986416250467,
+        0.0070295012556016445
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot is holding the bottle with its gripper (fingers closed around the bottle), not offering it resting on an open palm. The bottle is not supported by the palm surface.",
+        "frame_id": "438974f0968c46310609dee5c11b94f720f2e3ec37aa738447441cfaad85e4b9",
+        "execution_id": "offer15",
+        "inference_epoch": 1,
+        "captured_at": 1069013.894120525,
+        "decided_at": 1069015.294085329,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": "```json\n{\n\"outcome\": \"no\",\n\"reason\": \"The robot is holding the bottle with its gripper (fingers closed around the bottle), not offering it resting on an open palm. The bottle is not supported by the palm surface.\"\n}\n```",
+      "frame_outcome": "no",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069013.903167049,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 58,
+          "prompt_tokens": 1169,
+          "total_tokens": 1227,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.390782942995429
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.3999648038297892
+    },
+    {
+      "id": "offer30-first",
+      "episode": 30,
+      "phase": "pick_offer",
+      "initial_frame": 360,
+      "frame": 370,
+      "sequence": "offer30",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep30_f000370.jpg",
+      "measured_right_hand_joints": [
+        0.02477014809846878,
+        -0.012030445039272308,
+        -0.009892996400594711,
+        -0.005506685469299555,
+        0.03870873153209686,
+        -0.006811959203332663,
+        0.03612072020769119
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is still resting on the black case/desk surface and has not been lifted by the robot. The robot's hand is positioned near the bottle but is not currently supporting it in the air.",
+        "frame_id": "06112ee03a6dea5e433dfe57738d088e377051aa8ce6b20c23588a1d7ef23021",
+        "execution_id": "offer30",
+        "inference_epoch": 1,
+        "captured_at": 1069015.542532749,
+        "decided_at": 1069016.762653647,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": "```json\n{\"outcome\":\"no\",\"reason\":\"The bottle is still resting on the black case/desk surface and has not been lifted by the robot. The robot's hand is positioned near the bottle but is not currently supporting it in the air.\"}\n```",
+      "frame_outcome": "no",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069015.549073488,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 54,
+          "prompt_tokens": 857,
+          "total_tokens": 911,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.213474411983043
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.2201208979822695
+    },
+    {
+      "id": "offer30-second",
+      "episode": 30,
+      "phase": "pick_offer",
+      "initial_frame": 360,
+      "frame": 390,
+      "sequence": "offer30",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep30_f000390.jpg",
+      "measured_right_hand_joints": [
+        0.02477014809846878,
+        -0.012015237472951412,
+        -0.009553956799209118,
+        -0.005533521994948387,
+        0.00661803875118494,
+        -0.006816431879997253,
+        0.006831802893429995
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle is not resting stably on the robot's open palm. In the provided frames, the bottle is being held by the robot's gripper (fingers) and is positioned horizontally. A human hand is actively grasping the bottle, indicating that the robot has not successfully offered it in a stable, resting state on an open palm.",
+        "frame_id": "009011533db04b6b1a6a808b362e193aa90b3ed4e11363b48bd0f5c4135932f1",
+        "execution_id": "offer30",
+        "inference_epoch": 1,
+        "captured_at": 1069016.897315873,
+        "decided_at": 1069018.896375517,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": "```json\n{\n\"outcome\": \"no\",\n\"reason\": \"The bottle is not resting stably on the robot's open palm. In the provided frames, the bottle is being held by the robot's gripper (fingers) and is positioned horizontally. A human hand is actively grasping the bottle, indicating that the robot has not successfully offered it in a stable, resting state on an open palm.\"\n}\n```",
+      "frame_outcome": "no",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069016.906086654,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 90,
+          "prompt_tokens": 1169,
+          "total_tokens": 1259,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.9901788581628352
+      },
+      "confirmation_streak": 0,
+      "matches_label": false,
+      "latency_s": 1.9990596438292414
+    },
+    {
+      "id": "person-contact",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 395,
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep15_f000395.jpg",
+      "measured_right_hand_joints": [
+        0.028310321271419525,
+        -0.011594791896641254,
+        -0.00960405170917511,
+        -0.01137323584407568,
+        0.006669923663139343,
+        -0.0057832105085253716,
+        0.0070098210126161575
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The person's hand is currently grasping the bottle, but the handover is not yet complete. I need to see if the person successfully lifts the bottle away and if the robot hand is left empty and clear.",
+        "frame_id": "35e5ea6d29e194ba4bce28495b07ea1995d0f898e46822f4032b210aae71d1aa",
+        "execution_id": "person-contact",
+        "inference_epoch": 1,
+        "captured_at": 1069019.021853407,
+        "decided_at": 1069021.355468216,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "It is too early to determine the outcome. The person's hand is currently grasping the bottle, but the handover is not yet complete. I need to see if the person successfully lifts the bottle away and if the robot hand is left empty and clear.\n\n```json\n{\"outcome\":\"unknown\",\"reason\":\"The person's hand is currently grasping the bottle, but the handover is not yet complete. I need to see if the person successfully lifts the bottle away and if the robot hand is left empty and clear.\"}\n```",
+      "frame_outcome": "unknown",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069019.028820608,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 110,
+          "prompt_tokens": 794,
+          "total_tokens": 904,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 2.326526117976755
+      },
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 2.333614808972925
+    },
+    {
+      "id": "empty15-first",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 415,
+      "sequence": "empty15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000415.jpg",
+      "measured_right_hand_joints": [
+        0.02831466682255268,
+        -0.011563482694327831,
+        -0.009579898789525032,
+        -0.011371446773409843,
+        0.0066511379554867744,
+        -0.005776054225862026,
+        0.007020555902272463
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The bottle was present in the robot's hand at 7.500s and is gone by 8.300s. The robot hand is clearly visible, open, and empty, with no signs of the bottle falling or rolling off the surface. The human hand is no longer obstructing the view of the robot hand.",
+        "frame_id": "b937460859ab9f07406da762032a7e8ca0bfc23db001d41b9f1321eb7f987d01",
+        "execution_id": "empty15",
+        "inference_epoch": 1,
+        "captured_at": 1069021.493935696,
+        "decided_at": 1069023.163291707,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "{\"outcome\":\"yes\",\"reason\":\"The bottle was present in the robot's hand at 7.500s and is gone by 8.300s. The robot hand is clearly visible, open, and empty, with no signs of the bottle falling or rolling off the surface. The human hand is no longer obstructing the view of the robot hand.\"}",
+      "frame_outcome": "yes",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069021.500704055,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 78,
+          "prompt_tokens": 794,
+          "total_tokens": 872,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.6625095109920949
+      },
+      "confirmation_streak": 1,
+      "matches_label": true,
+      "latency_s": 1.6693560108542442
+    },
+    {
+      "id": "empty15-second",
+      "episode": 15,
+      "phase": "wait_empty",
+      "initial_frame": 375,
+      "frame": 425,
+      "sequence": "empty15",
+      "acceptable_outcomes": [
+        "yes"
+      ],
+      "image": "frames/ep15_f000425.jpg",
+      "measured_right_hand_joints": [
+        0.028310321271419525,
+        -0.011546486057341099,
+        -0.009561113081872463,
+        -0.011370551772415638,
+        0.00663145724684,
+        -0.005767108406871557,
+        0.00701339915394783
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "complete",
+        "reason": "The bottle was present in the robot's hand at 7.500s. By 8.300s, the bottle is gone and the robot hand is clearly visible, empty, and open. There is no evidence of the bottle falling, rolling, or slipping; it appears to have been successfully taken by the person (whose hand was visible in the first frame).",
+        "frame_id": "fa4a08bbcd830318099590146078ad0219dff8f5709039e6bb24d4917cf1eb0c",
+        "execution_id": "empty15",
+        "inference_epoch": 1,
+        "captured_at": 1069023.318966644,
+        "decided_at": 1069025.292650174,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "```json\n{\"outcome\":\"yes\",\"reason\":\"The bottle was present in the robot's hand at 7.500s. By 8.300s, the bottle is gone and the robot hand is clearly visible, empty, and open. There is no evidence of the bottle falling, rolling, or slipping; it appears to have been successfully taken by the person (whose hand was visible in the first frame).\"}\n```",
+      "frame_outcome": "yes",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069023.329032113,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 92,
+          "prompt_tokens": 1106,
+          "total_tokens": 1198,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.96350206900388
+      },
+      "confirmation_streak": 2,
+      "matches_label": true,
+      "latency_s": 1.9736835299991071
+    },
+    {
+      "id": "removal30-incomplete",
+      "episode": 30,
+      "phase": "wait_empty",
+      "initial_frame": 390,
+      "frame": 420,
+      "acceptable_outcomes": [
+        "no",
+        "unknown"
+      ],
+      "image": "frames/ep30_f000420.jpg",
+      "measured_right_hand_joints": [
+        0.024758903309702873,
+        -0.011502652429044247,
+        -0.009469867683947086,
+        -0.009290690533816814,
+        0.006620722822844982,
+        -0.0066965604200959206,
+        0.006832697428762913
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "in_progress",
+        "reason": "The robot's hand is not clearly visible in the provided frames to confirm it is empty and unobstructed. It is also unclear if the bottle was taken from the robot's hand or if it was already in the person's hand.",
+        "frame_id": "eb4c27aa658e88d313ef1a2c90264362b1ee77305d0cccde9a0572ff348e2c27",
+        "execution_id": "removal30-incomplete",
+        "inference_epoch": 1,
+        "captured_at": 1069025.439660328,
+        "decided_at": 1069027.757908631,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "wait_empty"
+      },
+      "raw_response": "It is unclear if the bottle was taken from the robot's hand or if it was already in the person's hand. The robot's hand is not clearly visible in the provided frames to confirm it is empty and unobstructed.\n\n```json\n{\"outcome\":\"unknown\",\"reason\":\"The robot's hand is not clearly visible in the provided frames to confirm it is empty and unobstructed. It is also unclear if the bottle was taken from the robot's hand or if it was already in the person's hand.\"}\n```",
+      "frame_outcome": "unknown",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069025.446463146,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 110,
+          "prompt_tokens": 794,
+          "total_tokens": 904,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 2.311332471901551
+      },
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 2.318248303141445
+    },
+    {
+      "id": "slip16",
+      "episode": 16,
+      "phase": "pick_offer",
+      "initial_frame": 335,
+      "frame": 350,
+      "sequence": "failure16",
+      "acceptable_outcomes": [
+        "failure"
+      ],
+      "image": "frames/ep16_f000350.jpg",
+      "measured_right_hand_joints": [
+        0.028900733217597008,
+        -0.01233906950801611,
+        -0.009998554363846779,
+        -0.016912376508116722,
+        -0.006259209476411343,
+        -0.010114689357578754,
+        0.0039853001944720745
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "failure",
+        "reason": "The bottle is slipping and rolling off the robot's palm. In the first frame, the bottle is resting on the gripper, but in the second frame, it has rolled significantly and is falling away from the robot's hand, indicating a failure to support the object stably.",
+        "frame_id": "7ad5991d6974fe80c142d290ad7932eee2c7c079db3b4f339b1b5642c5b2c3bb",
+        "execution_id": "failure16",
+        "inference_epoch": 1,
+        "captured_at": 1069028.023153871,
+        "decided_at": 1069029.607160329,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": "```json\n{\"outcome\":\"failure\",\"reason\":\"The bottle is slipping and rolling off the robot's palm. In the first frame, the bottle is resting on the gripper, but in the second frame, it has rolled significantly and is falling away from the robot's hand, indicating a failure to support the object stably.\"}\n```",
+      "frame_outcome": "failure",
+      "provider_called": true,
+      "provider_call": {
+        "started_at": 1069028.031456921,
+        "response_model": "Qwen/Qwen3.6-27B",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 857,
+          "total_tokens": 927,
+          "completion_tokens_details": null,
+          "prompt_tokens_details": null
+        },
+        "finish_reason": "stop",
+        "content_present": true,
+        "reasoning_present": false,
+        "latency_s": 1.5755745118949562
+      },
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 1.5840064578223974
+    },
+    {
+      "id": "rescue16",
+      "episode": 16,
+      "phase": "pick_offer",
+      "initial_frame": 335,
+      "frame": 360,
+      "sequence": "failure16",
+      "acceptable_outcomes": [
+        "failure"
+      ],
+      "image": "frames/ep16_f000360.jpg",
+      "measured_right_hand_joints": [
+        0.028903290629386902,
+        -0.012163734994828701,
+        -0.009976190514862537,
+        -0.016589438542723656,
+        -0.006190327927470207,
+        -0.009446450509130955,
+        0.003979038447141647
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "failure",
+        "reason": "The bottle is slipping and rolling off the robot's palm. In the first frame, the bottle is resting on the gripper, but in the second frame, it has rolled significantly and is falling away from the robot's hand, indicating a failure to support the object stably.",
+        "frame_id": "91f8c47890baa73a8a0468882d2c780cd95a100e0450886c1d731093b3664c0d",
+        "execution_id": "failure16",
+        "inference_epoch": 1,
+        "captured_at": 1069029.756361379,
+        "decided_at": 1069029.757191689,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": false,
+      "provider_call": null,
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 0.0008303099311888218
+    },
+    {
+      "id": "later16",
+      "episode": 16,
+      "phase": "pick_offer",
+      "initial_frame": 335,
+      "frame": 386,
+      "sequence": "failure16",
+      "acceptable_outcomes": [
+        "failure"
+      ],
+      "image": "frames/ep16_f000386.jpg",
+      "measured_right_hand_joints": [
+        0.028897667303681374,
+        -0.012150316499173641,
+        -0.009913571178913116,
+        -0.016574230045080185,
+        -0.006190327927470207,
+        -0.009443766437470913,
+        0.003991561941802502
+      ],
+      "measured_right_hand_state": "open",
+      "decision": {
+        "outcome": "failure",
+        "reason": "The bottle is slipping and rolling off the robot's palm. In the first frame, the bottle is resting on the gripper, but in the second frame, it has rolled significantly and is falling away from the robot's hand, indicating a failure to support the object stably.",
+        "frame_id": "d30528a9315e8cba83febe778e798729226cbe2a58bea8ff57172cbc20ecade6",
+        "execution_id": "failure16",
+        "inference_epoch": 1,
+        "captured_at": 1069029.885956666,
+        "decided_at": 1069029.887031458,
+        "runtime_id": "recorded-handover",
+        "cycle_id": 1,
+        "phase": "pick_offer"
+      },
+      "raw_response": null,
+      "frame_outcome": null,
+      "provider_called": false,
+      "provider_call": null,
+      "confirmation_streak": 0,
+      "matches_label": true,
+      "latency_s": 0.001074792118743062
+    }
+  ],
+  "request_options": {
+    "max_tokens": 256,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    }
+  },
+  "measured_hand": {
+    "cache": "docs/artifacts/g1_handover_20261009_followup/palm-diagnostics/measured-extract.npz",
+    "sha256": "62e956c2fe5b8fb9b465c1caee3de3888df00e4bf532e3f4dd360ec84d1750b5",
+    "joint_names": [
+      "right_hand_thumb_0_joint",
+      "right_hand_thumb_1_joint",
+      "right_hand_thumb_2_joint",
+      "right_hand_index_0_joint",
+      "right_hand_index_1_joint",
+      "right_hand_middle_0_joint",
+      "right_hand_middle_1_joint"
+    ],
+    "prompt_hint_phases": [
+      "pick_offer"
+    ],
+    "scope": "Recorded measured joints; synthetic fresh receipt times aligned to selected camera rows."
+  },
+  "summary": {
+    "total": 13,
+    "unavailable": 0,
+    "label_disagreements": 4,
+    "complete_decisions": 1,
+    "confirmed_phases": 1,
+    "false_positive_frames": 0
+  }
+}

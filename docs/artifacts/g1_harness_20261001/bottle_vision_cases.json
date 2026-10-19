@@ -1,0 +1,20 @@
+{
+  "label_provenance": "Frame annotations from direct session visual inspection. On 2026-10-02 the user confirmed that the green stool is the intended right-table destination. Individual frame annotations remain session labels; source metadata identifies retained demonstrations, not success/failure ground truth.",
+  "episodes": {
+    "bottle_18": {
+      "video": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000018.mp4",
+      "outcome": "Session inspection: bottles transported to the green stool, with a released bottle visible at37-39.5s. The user confirmed that this stool is the intended destination.",
+      "initial_s": 5.0,
+      "prompt": "pick drink bottle and place it on the right table",
+      "completion_criteria": "The drink bottle is visibly resting on the right table and the robot has released it. Occlusion or a bottle still held in the hand does not establish completion."
+    }
+  },
+  "cases": [
+    {"id": "bottle_out_of_view", "episode": "bottle_18", "at_s": 1.0, "initial_s": 0.1, "complete": false, "note": "Early camera view shows floor; no bottle or destination visible. Not an occlusion during transport."},
+    {"id": "bottle_before_grasp", "episode": "bottle_18", "at_s": 12.0, "complete": false},
+    {"id": "bottle_held", "episode": "bottle_18", "at_s": 28.0, "complete": false},
+    {"id": "bottle_held_above_destination", "episode": "bottle_18", "at_s": 31.0, "complete": false},
+    {"id": "bottle_released_first", "episode": "bottle_18", "at_s": 37.0, "complete": true, "sequence_id": "bottle_release", "expected_monitor_outcome": "in_progress"},
+    {"id": "bottle_released_second", "episode": "bottle_18", "at_s": 38.0, "complete": true, "sequence_id": "bottle_release", "expected_monitor_outcome": "complete"}
+  ]
+}

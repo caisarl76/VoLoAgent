@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-09",
+  "scope": "Stationary handover software acceptance using synthetic tracking and scripted vision",
+  "volo_base_commit": "f1f755bfd6d343ea57b52de17a50576cabb914d6",
+  "native_base_commit": "f791c8d52fa0655991efd7ca86ee28e4db1bd2df",
+  "results": [
+    {
+      "repo": "VoLoAgent",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q --tb=short",
+      "exit_code": 0,
+      "passed": 708,
+      "skipped": 19,
+      "warnings": 46,
+      "log": "volo-software-tests.log"
+    },
+    {
+      "repo": "VoLoAgent/native memory fixture",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/test_g1_harness_e2e.py --g1-native-checkout=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native --g1-native-python=/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python --require-g1-e2e -q --tb=short",
+      "exit_code": 0,
+      "passed": 13,
+      "log": "native-ipc-tests.log"
+    },
+    {
+      "repo": "Native focused",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest gear_sonic/tests/test_handover_ready.py gear_sonic/tests/test_harness_control.py gear_sonic/tests/test_harness_rpc.py gear_sonic/tests/test_harness_review_regressions.py gear_sonic/tests/test_vla_standing_reset.py gear_sonic/tests/test_run_vla_reset.py -q --tb=short",
+      "exit_code": 0,
+      "passed": 68,
+      "log": "native-focused-tests.log"
+    },
+    {
+      "repo": "Native configured full suite",
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q --tb=short",
+      "exit_code": 2,
+      "collection_errors": [
+        {
+          "file": "decoupled_wbc/tests/control/main/teleop/test_g1_control_loop.py",
+          "missing_module": "rerun"
+        },
+        {
+          "file": "decoupled_wbc/tests/control/main/test_data_exporter_loop.py",
+          "missing_module": "onnxruntime"
+        },
+        {
+          "file": "decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_policy.py",
+          "missing_module": "gymnasium"
+        },
+        {
+          "file": "decoupled_wbc/tests/control/policy/interpolation_policy/test_interpolation_ramp_up.py",
+          "missing_module": "gymnasium"
+        },
+        {
+          "file": "decoupled_wbc/tests/control/teleop/test_teleop_retargeting_ik.py",
+          "missing_module": "pink"
+        },
+        {
+          "file": "decoupled_wbc/tests/data/test_exporter.py",
+          "missing_module": "lerobot"
+        },
+        {
+          "file": "decoupled_wbc/tests/sim/test_sim_data_collection.py",
+          "missing_module": "onnxruntime"
+        }
+      ],
+      "log": "native-default-suite.log"
+    }
+  ],
+  "independent_review": {
+    "model": "gpt-6-astra",
+    "reasoning": "high",
+    "fresh_context": true,
+    "important_findings": 3,
+    "findings_reproduced_and_fixed": [
+      "Await a fresh post-transition capture instead of aborting on healthy cached frames",
+      "Clip compensated ready targets to joint limits",
+      "Keep accepted offering image across pause as context; only fresh paused frames confirm removal"
+    ],
+    "fixes_have_red_green_regressions": true,
+    "second_review_performed": false
+  },
+  "additional_regression": "Stale camera during pending vision interrupts immediately",
+  "three_cycle_acceptance": true,
+  "lease_count_in_three_cycle_case": 1,
+  "ready_returns_in_three_cycle_case": 4,
+  "test_actuator_sink": "memory-only; no PUB socket, DDS or robot connection",
+  "contract_and_profile_mirrors_equal": true,
+  "golden_fixtures_equal": true,
+  "source_files_rehashed": 126,
+  "source_data_changed": false,
+  "active_placement_profile_unchanged": true,
+  "training_performed": false,
+  "real_policy_queried": false,
+  "real_vision_endpoint_queried": false,
+  "physical_simulation_run": false,
+  "hardware_command_sent": false,
+  "disabled_template": true,
+  "limitations": [
+    "Seven native default-suite collection errors caused by missing dependencies",
+    "Scripted vision and synthetic tracking do not establish trained-policy competence, visual accuracy, stable bottle support or collision clearance",
+    "Sparse or delayed vision may miss a fast slip; Genon recorded-video evaluation and offer-dwell measurement remain required"
+  ],
+  "artifacts_sha256": {
+    "volo-software-tests.log": "564a4d841edd9d0f737c1ef3bd3f4bcf114103697f1080238364df1a9a28135b",
+    "native-ipc-tests.log": "0bcde6dde7f4fb5d5799ea887f8a7172583fd2ad67beccdbdebd419450a93910",
+    "native-focused-tests.log": "fa2e0df17f16507ad0a4bdce32245e828c06a2ad155dafdc94dc3d352cfccf24",
+    "native-default-suite.log": "6effeeff2f195f3c15086a0c162cb9b06f9c624e48c8d6b8b315ed9a9fd4880d"
+  }
+}

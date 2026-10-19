@@ -1,0 +1,34 @@
+{
+  "terminal_phase": "INTERRUPTED",
+  "duration_s": 15.06661922391504,
+  "final_ready_settling_passed": false,
+  "minimum_conservative_sampled_desk_gap": {
+    "gap_m": 0.03701141836033506,
+    "actor": "right_hand_middle_0_link",
+    "obstacle": "desk_top"
+  },
+  "sampled_hand_or_forearm_desk_contact_states": 0,
+  "physics_samples": 311,
+  "grounded_standing_screen": {
+    "ready": true,
+    "failures": [],
+    "samples": 311,
+    "foot_floor_contact_samples": 311,
+    "base_height_min_m": 0.7851991681931292,
+    "base_height_max_m": 0.7869925932985365,
+    "base_tilt_max_rad": 0.053590603862277195,
+    "physical_balance_qualified": false
+  },
+  "zero_speed_planner_packets": 157,
+  "latent_action_publications": 0,
+  "owned_processes_stopped": true,
+  "hardware_acceptance": false,
+  "scope": "Saved measured simulation snapshots, about 20 Hz; no continuous collision certificate or physical qualification.",
+  "last_pre_terminal_0p5_s_max_right_arm_error_rad": 0.7012212720060274,
+  "acceptance_passed": false,
+  "production_motion_implementation": true,
+  "artifact_motion_wrapper": false,
+  "entry_pose": "Default standing, not an actual post-handover pose",
+  "full_vla_cycle_tested": false,
+  "continuous_swept_clearance_certified": false
+}

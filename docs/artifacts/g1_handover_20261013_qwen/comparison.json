@@ -1,0 +1,345 @@
+{
+  "robot_connection": false,
+  "comparison_scope": "Selected recorded frames; historical Genon timing, not an isolated concurrent benchmark.",
+  "label_scope": "User-confirmed episode outcomes with investigator-selected phase labels; frame 405 is an unresolved review boundary.",
+  "reports": {
+    "qwen_phase": {
+      "file": "g1_handover_20261013_qwen/phase-cases/result.json",
+      "sha256": "754aa8ea5c83a36f647c762a9f67b8c1c4879e1f8893c21b72ea9ffe068d6c99",
+      "model": "Qwen/Qwen3.6-27B",
+      "request_options": {
+        "max_tokens": 256,
+        "extra_body": {
+          "chat_template_kwargs": {
+            "enable_thinking": false
+          }
+        }
+      },
+      "cases": 13,
+      "provider_calls": 12,
+      "unavailable": 0,
+      "label_agreements": 8,
+      "unique_confirmed_phases": 1,
+      "false_positive_frames_against_review_labels": 0,
+      "provider_latency_s": {
+        "min": 1.123531918041408,
+        "median": 1.669548932928592,
+        "max": 3.7716759028844535
+      },
+      "outcomes": {
+        "desk-bottle": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "closed-grasp": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "offer15-first": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "offer15-second": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "offer30-first": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "offer30-second": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "person-contact": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "empty15-first": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "empty15-second": {
+          "frame": "yes",
+          "decision": "complete",
+          "matches_label": true
+        },
+        "removal30-incomplete": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "slip16": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "rescue16": {
+          "frame": "failure",
+          "decision": "failure",
+          "matches_label": true
+        },
+        "later16": {
+          "frame": null,
+          "decision": "failure",
+          "matches_label": true
+        }
+      }
+    },
+    "genon_phase_historical": {
+      "file": "g1_handover_20261009_followup/vision-compatible/result.json",
+      "sha256": "cb846d1111d0b9c696f8d1777fd153affa7e6d1a933664530f14906523f37d88",
+      "model": "openai/gpt-5.6-sol",
+      "request_options": {},
+      "cases": 13,
+      "provider_calls": 11,
+      "unavailable": 0,
+      "label_agreements": 10,
+      "unique_confirmed_phases": 1,
+      "false_positive_frames_against_review_labels": 0,
+      "provider_latency_s": {
+        "min": 2.935761864995584,
+        "median": 3.712532998993993,
+        "max": 5.35946322104428
+      },
+      "outcomes": {
+        "desk-bottle": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "closed-grasp": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "offer15-first": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "offer15-second": {
+          "frame": "yes",
+          "decision": "complete",
+          "matches_label": true
+        },
+        "offer30-first": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "offer30-second": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "person-contact": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "empty15-first": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "empty15-second": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "removal30-incomplete": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "slip16": {
+          "frame": "failure",
+          "decision": "failure",
+          "matches_label": true
+        },
+        "rescue16": {
+          "frame": null,
+          "decision": "failure",
+          "matches_label": true
+        },
+        "later16": {
+          "frame": null,
+          "decision": "failure",
+          "matches_label": true
+        }
+      }
+    },
+    "qwen_transfer": {
+      "file": "g1_handover_20261013_qwen/transfer-sequence/result.json",
+      "sha256": "7113fd3651fa3d0f305cda935ee85e9e48c23c6ba61d01380fd414c2ed93ea7a",
+      "model": "Qwen/Qwen3.6-27B",
+      "request_options": {
+        "max_tokens": 256,
+        "extra_body": {
+          "chat_template_kwargs": {
+            "enable_thinking": false
+          }
+        }
+      },
+      "cases": 4,
+      "provider_calls": 4,
+      "unavailable": 0,
+      "label_agreements": 3,
+      "unique_confirmed_phases": 1,
+      "false_positive_frames_against_review_labels": 1,
+      "provider_latency_s": {
+        "min": 1.3426610338501632,
+        "median": 2.210578669561073,
+        "max": 2.313886482967064
+      },
+      "outcomes": {
+        "contact15": {
+          "frame": "unknown",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "taking15": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "clear15-first": {
+          "frame": "yes",
+          "decision": "complete",
+          "matches_label": true
+        },
+        "clear15-second": {
+          "frame": "yes",
+          "decision": "complete",
+          "matches_label": true
+        }
+      }
+    },
+    "genon_transfer_historical": {
+      "file": "g1_handover_20261009_followup/transfer-after/result.json",
+      "sha256": "94d32a176cc7cc428101bd28a76f05518ae423f4fc29e6f347f8864d0f8e17af",
+      "model": "openai/gpt-5.6-sol",
+      "request_options": {},
+      "cases": 4,
+      "provider_calls": 4,
+      "unavailable": 0,
+      "label_agreements": 3,
+      "unique_confirmed_phases": 1,
+      "false_positive_frames_against_review_labels": 1,
+      "provider_latency_s": {
+        "min": 2.7900418660137802,
+        "median": 3.765127692022361,
+        "max": 4.31789917498827
+      },
+      "outcomes": {
+        "contact15": {
+          "frame": "no",
+          "decision": "in_progress",
+          "matches_label": true
+        },
+        "taking15": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": false
+        },
+        "clear15-first": {
+          "frame": "yes",
+          "decision": "complete",
+          "matches_label": true
+        },
+        "clear15-second": {
+          "frame": "yes",
+          "decision": "complete",
+          "matches_label": true
+        }
+      }
+    },
+    "qwen_default_probe": {
+      "file": "g1_handover_20261013_qwen/default-probe/result.json",
+      "sha256": "93cc17d56dd62c848b7f83858515f959a16cb7165f1f9320dae0e036242195ce",
+      "model": "Qwen/Qwen3.6-27B",
+      "request_options": {},
+      "cases": 1,
+      "provider_calls": 1,
+      "unavailable": 1,
+      "label_agreements": 0,
+      "unique_confirmed_phases": 0,
+      "false_positive_frames_against_review_labels": 0,
+      "provider_latency_s": null,
+      "outcomes": {
+        "desk-bottle": {
+          "frame": null,
+          "decision": "unavailable",
+          "matches_label": false
+        }
+      }
+    },
+    "qwen_capped_thinking_probe": {
+      "file": "g1_handover_20261013_qwen/capped-thinking-probe/result.json",
+      "sha256": "d357dd2ed81f7839ce28e1119eaa8b264c313ea965f1a83f5e9f9dd075ffbee5",
+      "model": "Qwen/Qwen3.6-27B",
+      "request_options": {
+        "max_tokens": 256
+      },
+      "cases": 1,
+      "provider_calls": 1,
+      "unavailable": 1,
+      "label_agreements": 0,
+      "unique_confirmed_phases": 0,
+      "false_positive_frames_against_review_labels": 0,
+      "provider_latency_s": {
+        "min": 5.433010687818751,
+        "median": 5.433010687818751,
+        "max": 5.433010687818751
+      },
+      "outcomes": {
+        "desk-bottle": {
+          "frame": null,
+          "decision": "unavailable",
+          "matches_label": false
+        }
+      }
+    },
+    "qwen_fast_probe": {
+      "file": "g1_handover_20261013_qwen/fast-probe/result.json",
+      "sha256": "66788f69b0799f754f1108465b18152ee4730ee6048640ecb4dd7ba979e7aba5",
+      "model": "Qwen/Qwen3.6-27B",
+      "request_options": {
+        "max_tokens": 256,
+        "extra_body": {
+          "chat_template_kwargs": {
+            "enable_thinking": false
+          }
+        }
+      },
+      "cases": 1,
+      "provider_calls": 1,
+      "unavailable": 0,
+      "label_agreements": 1,
+      "unique_confirmed_phases": 0,
+      "false_positive_frames_against_review_labels": 0,
+      "provider_latency_s": {
+        "min": 1.1323994789272547,
+        "median": 1.1323994789272547,
+        "max": 1.1323994789272547
+      },
+      "outcomes": {
+        "desk-bottle": {
+          "frame": "yes",
+          "decision": "in_progress",
+          "matches_label": true
+        }
+      }
+    }
+  },
+  "source_videos_and_frame_bytes_match": true
+}

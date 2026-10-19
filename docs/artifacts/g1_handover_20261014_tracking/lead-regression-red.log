@@ -1,0 +1,27 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_____ test_reset_retracts_reference_when_measured_tracking_falls_back[-1] ______
+gear_sonic/tests/test_vla_standing_reset.py:145: in test_reset_retracts_reference_when_measured_tracking_falls_back
+    assert np.max(np.abs(reference - measured)) <= .15000001
+E   AssertionError: assert 0.155 <= 0.15000001
+E    +  where 0.155 = <function max at 0x714f97b56570>(array([0.   , 0.   , 0.   , 0.   , 0.155, 0.   , 0.   , 0.   , 0.   ,\n       0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   ]))
+E    +    where <function max at 0x714f97b56570> = np.max
+E    +    and   array([0.   , 0.   , 0.   , 0.   , 0.155, 0.   , 0.   , 0.   , 0.   ,\n       0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   ]) = <ufunc 'absolute'>((array([ 0.        ,  0.        ,  0.        ,  0.2       ,  0.2       ,\n        0.2       , -0.2       ,  0.        , ...  0.60000002,\n        0.60000002,  0.        ,  0.        ,  0.        ,  0.        ,\n        0.        ,  0.        ]) - array([ 0.        ,  0.        ,  0.        ,  0.2       ,  0.045     ,\n        0.2       , -0.2       ,  0.        , ...  0.60000002,\n        0.60000002,  0.        ,  0.        ,  0.        ,  0.        ,\n        0.        ,  0.        ])))
+E    +      where <ufunc 'absolute'> = np.abs
+______ test_reset_retracts_reference_when_measured_tracking_falls_back[1] ______
+gear_sonic/tests/test_vla_standing_reset.py:145: in test_reset_retracts_reference_when_measured_tracking_falls_back
+    assert np.max(np.abs(reference - measured)) <= .15000001
+E   AssertionError: assert 0.15500000000000003 <= 0.15000001
+E    +  where 0.15500000000000003 = <function max at 0x714f97b56570>(array([0.   , 0.   , 0.   , 0.   , 0.155, 0.   , 0.   , 0.   , 0.   ,\n       0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   ]))
+E    +    where <function max at 0x714f97b56570> = np.max
+E    +    and   array([0.   , 0.   , 0.   , 0.   , 0.155, 0.   , 0.   , 0.   , 0.   ,\n       0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   , 0.   ]) = <ufunc 'absolute'>((array([ 0.        ,  0.        ,  0.        ,  0.2       ,  0.2       ,\n        0.2       , -0.2       ,  0.        , ...  0.60000002,\n        0.60000002,  0.        ,  0.        ,  0.        ,  0.        ,\n        0.        ,  0.        ]) - array([ 0.        ,  0.        ,  0.        ,  0.2       ,  0.355     ,\n        0.2       , -0.2       ,  0.        , ...  0.60000002,\n        0.60000002,  0.        ,  0.        ,  0.        ,  0.        ,\n        0.        ,  0.        ])))
+E    +      where <ufunc 'absolute'> = np.abs
+____ test_reset_rejects_tracking_loss_that_cannot_meet_rate_and_lead_bounds ____
+gear_sonic/tests/test_vla_standing_reset.py:155: in test_reset_rejects_tracking_loss_that_cannot_meet_rate_and_lead_bounds
+    with pytest.raises(ValueError, match="rate-limited lead bound"):
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ============================
+FAILED gear_sonic/tests/test_vla_standing_reset.py::test_reset_retracts_reference_when_measured_tracking_falls_back[-1]
+FAILED gear_sonic/tests/test_vla_standing_reset.py::test_reset_retracts_reference_when_measured_tracking_falls_back[1]
+FAILED gear_sonic/tests/test_vla_standing_reset.py::test_reset_rejects_tracking_loss_that_cannot_meet_rate_and_lead_bounds
+3 failed, 11 deselected in 0.15s

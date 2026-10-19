@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-13",
+  "base_commit": "742f820",
+  "native_commit": "44f9bba",
+  "scope": "Disconnected checkpoint comparison, grasp reach estimates and provisional native-ready simulation.",
+  "hardware_commands_sent": false,
+  "hardware_profiles_unchanged": true,
+  "hardware_example_sha256": "79edf679e22185d28864b025fa321a0f54223fb804d4b7d04668651b4db3753b",
+  "hardware_checkpoint_verified": false,
+  "hardware_ready_pose_reviewed": false,
+  "tests": [
+    {
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest -q --tb=short",
+      "passed": 709,
+      "skipped": 19,
+      "warnings": 46,
+      "exit_code": 0,
+      "log": "volo-tests.log"
+    },
+    {
+      "command": "env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/.venv/bin/python -m pytest docs/artifacts/g1_handover_20261012_acceptance/test_scene.py -q --tb=short",
+      "passed": 6,
+      "exit_code": 0,
+      "log": "scene-tests.log"
+    }
+  ],
+  "setup_failures": [
+    "Unrelated ROS pytest plugin missing lark; disabled plugin autoload.",
+    "Sandbox ZMQ socket test aborted; successful rerun outside sandbox.",
+    "Busy local GPU 0 planner OOM; successful startup on idle local GPU 1.",
+    "Unverified fixture correctly rejected; ready component uses explicitly labelled simulation gates.",
+    "OSMesa unavailable; successful offline EGL rendering on GPU 1."
+  ],
+  "syntax_checked_files": [
+    "ready_probe.py",
+    "policy_reference_eval.py",
+    "estimate_grasp.py",
+    "render_ready.py",
+    "test_scene.py",
+    "sweep_clearance.py",
+    "sim_worker.py",
+    "verify_artifacts.py",
+    "run_reference_eval.py",
+    "analyze_results.py",
+    "scene.py"
+  ],
+  "relative_links_checked": true,
+  "reference_observations_checked": 13,
+  "prediction_reference_arrays_checked": 78,
+  "policy_rollout_run": false,
+  "ready_tracking_passed": true,
+  "ready_clearance_screen_passed": false,
+  "scene_calibrated": false,
+  "robot_balance_qualified": false,
+  "stable_bottle_support_validated": false,
+  "full_handover_demonstrated": false,
+  "training_performed": false,
+  "source_files_rehashed": 126,
+  "source_data_changed": false,
+  "assets_sha256": {
+    "ready-tracking.png": "93db66c3645cb7d8a78aa6b5d10a1a8e179d037f9f1a3949af1f86de2c2b821d",
+    "finger-opening-comparison.png": "7c7966e7a295882e7d83447aa6ac107723a89f75f7c5f6a9f2e37efcb445ee74",
+    "grasp-review.jpg": "1733029843b05b9c7cfd0d8e95ae1a25f18b675bce754d104ea6a29f9bc14a6f",
+    "ready-return-preview.jpg": "3066c872b7468db01c86745c87bf89838b715e1a83cdc598a3d99fcb107d9344",
+    "ready-return.mp4": "b6fbaeca5f21220e416af0c065d5870f9bb37bd18bf409adce118633ac35cb46",
+    "reference-eval/source15_frame120.npz": "0d141dc16a27f4aa85a39f4da7126889536d0240f6a8d0e81640f3297de0d6db",
+    "reference-eval/source30_frame370.npz": "947ae31147c682235e7ded729d4567a9520f3f2149ecb72645c75ffddbb827e5",
+    "reference-eval/source30_frame60.npz": "03f4c37f2b27355307dc13476e08317c6f531f931898ee01085bd8ac059feec7",
+    "reference-eval/source15_frame62.npz": "ea8a9cf56a196409bce9c9017c11c71c57ee8a3d6132734841f181c03011dcfd",
+    "reference-eval/source30_frame320.npz": "a8af58fc760908e2244fe0e07f518388b0705ed5ac7686971bd17e1dcb69901e",
+    "reference-eval/source15_frame246.npz": "81ef9391151b377292eced479c15f4dc98a00c011ab518cddbda2b9f382fc8be",
+    "reference-eval/source15_frame200.npz": "367f39c64968c834b0161e7bfc8607ae82489ee7074642d3101e950c60ac6a55",
+    "reference-eval/source15_frame300.npz": "ca60973ff5427b88eca58c8824193e7bc7b18632d3b2b835de3ff09e593497f0",
+    "reference-eval/source30_frame260.npz": "6c9717edaae0c9b1d89bbbbf52813384629279679805d638eabf2f73f55178f1",
+    "reference-eval/source15_frame365.npz": "7db6fc795b5109f4af0d2835fe159bce05634cbf5374d3d9228c1d958512512a",
+    "reference-eval/source30_frame200.npz": "14d0bda00e070d4cc2af55aa25ba611244410b7613c8a902df6ac5c0d3080ca5",
+    "reference-eval/source15_frame325.npz": "b5d56c22cb9a28b712f05a3b7c324ded49e7c3ef5ce5e28cc0ad763d065699f8",
+    "reference-eval/source30_frame120.npz": "07a4598fbf9c45ba362bd586cef8874581f3b9b966373e85035e49586decdecd"
+  },
+  "independent_review": {
+    "report": "review.json",
+    "confirmed_material_findings": 0,
+    "read_only": true
+  }
+}

@@ -1,0 +1,4 @@
+*.log -whitespace
+*.xml -whitespace
+*.urdf -whitespace
+*.csv whitespace=cr-at-eol

@@ -1,0 +1,147 @@
+..................................sssssssss............................. [ 11%]
+........................................................................ [ 23%]
+........................................................................ [ 35%]
+........................................................................ [ 47%]
+.....................................ssssss............................. [ 59%]
+........................................................................ [ 70%]
+........................................................................ [ 82%]
+........................................................................ [ 94%]
+..................................                                       [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/websockets/sync/server.py:460
+.venv/lib/python3.13/site-packages/websockets/sync/server.py:460
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/.venv/lib/python3.13/site-packages/websockets/sync/server.py:460: DeprecationWarning: WebSocketServer was renamed to Server
+    warnings.warn(  # deprecated in 13.0 - 2024-08-20
+
+tests/test_subgoal.py:52
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_subgoal.py:52: PytestCollectionWarning: cannot collect test class 'TestableSubgoalStrategy' because it has a __init__ constructor (from: tests/test_subgoal.py)
+    class TestableSubgoalStrategy(SubgoalStrategy):
+
+tests/test_adaptive.py::TestPolicyProber::test_probe_low_noise
+tests/test_adaptive.py::TestPolicyProber::test_probe_high_noise
+tests/test_adaptive.py::TestPolicyProber::test_probe_once_convenience
+tests/test_adaptive.py::TestPolicyProber::test_probe_returns_traj_disagreement
+tests/test_adaptive.py::TestProxyAdaptiveMode::test_adaptive_vlm_always_called
+tests/test_adaptive.py::TestProxyAdaptiveMode::test_adaptive_identity_vlm_skips_second_probe
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/vlm_orchestrator/signals/policy_prober.py:263: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    meta_raw = self._ws.recv()
+
+tests/test_adaptive.py::TestProxyAdaptiveMode::test_adaptive_vlm_always_called
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_adaptive.py:497: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    codec.unpackb(client.recv())
+
+tests/test_adaptive.py: 2 warnings
+tests/test_episode_logging.py: 7 warnings
+tests/test_proxy.py: 3 warnings
+  /home/jihun/miniforge3/lib/python3.13/concurrent/futures/thread.py:59: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    result = self.fn(*self.args, **self.kwargs)
+
+tests/test_adaptive.py::TestProxyAdaptiveMode::test_adaptive_identity_vlm_skips_second_probe
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_adaptive.py:551: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    codec.unpackb(client.recv())
+
+tests/test_episode_logging.py::test_multi_episode_shared_connection_episode_id_marker
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_episode_logging.py:103: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    metadata = codec.unpackb(client.recv())
+
+tests/test_episode_logging.py::test_multi_episode_shared_connection_episode_id_marker
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_episode_logging.py::test_multi_episode_shared_connection_episode_id_marker returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_episode_logging.py::test_multi_episode_separate_connections
+tests/test_episode_logging.py::test_multi_episode_separate_connections
+tests/test_episode_logging.py::test_multi_episode_separate_connections
+tests/test_episode_logging.py::test_multi_episode_different_tasks
+tests/test_episode_logging.py::test_multi_episode_different_tasks
+tests/test_episode_logging.py::test_multi_episode_different_tasks
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_episode_logging.py:80: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    metadata = codec.unpackb(client.recv())
+
+tests/test_episode_logging.py::test_multi_episode_separate_connections
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_episode_logging.py::test_multi_episode_separate_connections returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_episode_logging.py::test_multi_episode_different_tasks
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_episode_logging.py::test_multi_episode_different_tasks returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_hitl_log_context
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_hitl_log_context returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_aggregate_hitl_stats
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_aggregate_hitl_stats returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_recovery_has_previous
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_recovery_has_previous returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_grasp_tool_metadata_format
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_grasp_tool_metadata_format returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_pause_resume_logged
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_pause_resume_logged returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_skip_pre_grasp_lift_toggle
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_skip_pre_grasp_lift_toggle returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_grasp_tool_skip_lift_code
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_grasp_tool_skip_lift_code returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_hitl_html_has_toggle
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_hitl_html_has_toggle returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_hitl_auto_log_dir
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_hitl_auto_log_dir returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_hitl_logging.py::test_proxy_prints_log_dir
+  /home/jihun/.local/lib/python3.13/site-packages/_pytest/python.py:171: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_hitl_logging.py::test_proxy_prints_log_dir returned <class 'bool'>.
+  Did you mean to use `assert` instead of `return`?
+  See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+    warnings.warn(
+
+tests/test_proxy.py::test_passthrough
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_proxy.py:85: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    metadata = codec.unpackb(client.recv())
+
+tests/test_proxy.py::test_rewrite
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_proxy.py:130: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    metadata = codec.unpackb(client.recv())
+
+tests/test_proxy.py::test_cosmos3_passthrough_strips_orchestrator_only_keys
+  /home/jihun/work/VoLoAgent/.worktrees/g1-harness/tests/test_proxy.py:192: DeprecationWarning: connect() must be used as a context manager: with connect(...) as websocket: ...; alternatively, use websocket = connect(..., legacy=True) to connect directly
+    codec.unpackb(client.recv())  # metadata
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+595 passed, 15 skipped, 46 warnings in 16.33s

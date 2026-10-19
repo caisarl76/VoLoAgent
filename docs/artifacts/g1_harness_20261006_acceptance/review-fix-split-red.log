@@ -1,0 +1,90 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_unhashable_split_returns_structured_rejection_without_training_windows[list] _
+
+split = []
+
+    @pytest.mark.parametrize("split", [[], {}], ids=["list", "object"])
+    def test_unhashable_split_returns_structured_rejection_without_training_windows(split):
+        p = valid_plan()
+        p["episodes"][1]["split"] = split
+>       result = assess(p)
+                 ^^^^^^^^^
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'prompt': 'pick drink bottle and place it on the right table', 'action_horizon': 40, 'episodes': [{'source_episode': ...pisode': 17, 'source_sha256': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'frames': 150, ...}]}
+
+    def assess(plan):
+        errors, windows, seen = [], [], set()
+        if not isinstance(plan, dict):
+            return {"ready": False, "errors": ["plan must be an object"], "training_windows": []}
+        if plan.get("prompt") != PROMPT or plan.get("action_horizon") != 40:
+            errors.append("plan must use the registered bottle prompt and 40-frame horizon")
+        episodes = plan.get("episodes", [])
+        if not isinstance(episodes, list):
+            return {"ready": False, "errors": ["episodes must be a list"], "training_windows": []}
+        for episode in episodes:
+            if not isinstance(episode, dict):
+                errors.append("episode must be an object")
+                continue
+            source = episode.get("source_episode")
+            if type(source) is not int or source < 0:
+                errors.append("invalid source episode")
+                continue
+            if source in seen:
+                errors.append(f"duplicate source episode {source}; splits must be by whole source episode")
+            seen.add(source)
+            split = episode.get("split")
+>           if split not in {"train", "held_out", "quarantine", "review_needed"}:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: unhashable type: 'list'
+
+docs/artifacts/g1_harness_20261006_acceptance/dataset_review_gate.py:32: TypeError
+_ test_unhashable_split_returns_structured_rejection_without_training_windows[object] _
+
+split = {}
+
+    @pytest.mark.parametrize("split", [[], {}], ids=["list", "object"])
+    def test_unhashable_split_returns_structured_rejection_without_training_windows(split):
+        p = valid_plan()
+        p["episodes"][1]["split"] = split
+>       result = assess(p)
+                 ^^^^^^^^^
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+plan = {'prompt': 'pick drink bottle and place it on the right table', 'action_horizon': 40, 'episodes': [{'source_episode': ...pisode': 17, 'source_sha256': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'frames': 150, ...}]}
+
+    def assess(plan):
+        errors, windows, seen = [], [], set()
+        if not isinstance(plan, dict):
+            return {"ready": False, "errors": ["plan must be an object"], "training_windows": []}
+        if plan.get("prompt") != PROMPT or plan.get("action_horizon") != 40:
+            errors.append("plan must use the registered bottle prompt and 40-frame horizon")
+        episodes = plan.get("episodes", [])
+        if not isinstance(episodes, list):
+            return {"ready": False, "errors": ["episodes must be a list"], "training_windows": []}
+        for episode in episodes:
+            if not isinstance(episode, dict):
+                errors.append("episode must be an object")
+                continue
+            source = episode.get("source_episode")
+            if type(source) is not int or source < 0:
+                errors.append("invalid source episode")
+                continue
+            if source in seen:
+                errors.append(f"duplicate source episode {source}; splits must be by whole source episode")
+            seen.add(source)
+            split = episode.get("split")
+>           if split not in {"train", "held_out", "quarantine", "review_needed"}:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: unhashable type: 'dict'
+
+docs/artifacts/g1_harness_20261006_acceptance/dataset_review_gate.py:32: TypeError
+=========================== short test summary info ============================
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_unhashable_split_returns_structured_rejection_without_training_windows[list]
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_unhashable_split_returns_structured_rejection_without_training_windows[object]
+2 failed, 8 deselected in 0.03s

@@ -1,0 +1,83 @@
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+______ test_accepted_segment_keeps_complete_action_windows_inside_bounds _______
+
+    def test_accepted_segment_keeps_complete_action_windows_inside_bounds():
+        result = assess(valid_plan())
+        assert result["ready"]
+>       assert result["training_windows"] == [{"source_episode": 10,
+            "first_start_frame": 10, "last_start_frame": 50, "count": 41}]
+E       AssertionError: assert [] == [{'source_epi... 'count': 41}]
+E         
+E         Right contains one more item: {'source_episode': 10, 'first_start_frame': 10, 'last_start_frame': 50, 'count': 41}
+E         Use -v to get more diff
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:25: AssertionError
+___________ test_other_part_of_same_episode_cannot_leak_into_holdout ___________
+
+    def test_other_part_of_same_episode_cannot_leak_into_holdout():
+        p = valid_plan()
+        duplicate = copy.deepcopy(p["episodes"][0])
+        duplicate["split"], duplicate["segments"] = "held_out", []
+        p["episodes"].append(duplicate)
+        result = assess(p)
+>       assert not result["ready"]
+E       assert not True
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:35: AssertionError
+____________ test_provisional_task_screening_cannot_enable_training ____________
+
+    def test_provisional_task_screening_cannot_enable_training():
+        p = valid_plan()
+        p["episodes"][0]["segments"][0]["review_state"] = "sampled_candidate"
+>       assert not assess(p)["ready"]
+E       assert not True
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:42: AssertionError
+____________ test_unrelated_task_prompt_cannot_inherit_bottle_label ____________
+
+    def test_unrelated_task_prompt_cannot_inherit_bottle_label():
+        p = valid_plan()
+        p["episodes"][0]["segments"][0]["task_prompt"] = "pick and place cup"
+>       assert not assess(p)["ready"]
+E       assert not True
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:48: AssertionError
+___ test_short_or_overlapping_segments_cannot_create_cross_boundary_windows ____
+
+    def test_short_or_overlapping_segments_cannot_create_cross_boundary_windows():
+        for start, end in [(10, 49), (-1, 90), (10, 101)]:
+            p = valid_plan()
+            p["episodes"][0]["segments"][0].update(start_frame=start, end_frame_exclusive=end)
+>           assert not assess(p)["ready"]
+E           assert not True
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:55: AssertionError
+________ test_quarantined_episode_and_empty_training_set_remain_blocked ________
+
+    def test_quarantined_episode_and_empty_training_set_remain_blocked():
+        p = valid_plan()
+        p["episodes"][0]["split"] = "quarantine"
+>       assert not assess(p)["ready"]
+E       assert not True
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:64: AssertionError
+________ test_failure_label_or_missing_evidence_cannot_enable_training _________
+
+    def test_failure_label_or_missing_evidence_cannot_enable_training():
+        for field, value in [("outcome", "failure"), ("evidence", [])]:
+            p = valid_plan()
+            p["episodes"][0]["segments"][0][field] = value
+>           assert not assess(p)["ready"]
+E           assert not True
+
+docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py:73: AssertionError
+=========================== short test summary info ============================
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_accepted_segment_keeps_complete_action_windows_inside_bounds
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_other_part_of_same_episode_cannot_leak_into_holdout
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_provisional_task_screening_cannot_enable_training
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_unrelated_task_prompt_cannot_inherit_bottle_label
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_short_or_overlapping_segments_cannot_create_cross_boundary_windows
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_quarantined_episode_and_empty_training_set_remain_blocked
+FAILED docs/artifacts/g1_harness_20261006_acceptance/test_dataset_review_gate.py::test_failure_label_or_missing_evidence_cannot_enable_training
+7 failed in 0.03s

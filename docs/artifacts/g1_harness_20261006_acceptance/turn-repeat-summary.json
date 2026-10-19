@@ -1,0 +1,57 @@
+{
+  "scope": "Two simulator repeats; one trial per configuration, not repeatability acceptance.",
+  "cases": [
+    {
+      "case": "native-repeat-baseline",
+      "turn_success": false,
+      "requested_turn_deg": -15.0,
+      "post_walk_hold_s": 0.0,
+      "turn_elapsed_s": 0.46153991197934374,
+      "entry_yaw_deg": 3.076749269382038,
+      "final_measured_progress_deg": 2.1915183956396427,
+      "final_measured_goal_error_deg": 17.19151839563964,
+      "active_reference_max_rate_deg_s": 10.000000000000021,
+      "active_reference_max_lead_deg": 5.0,
+      "terminal_retained_reference_lead_deg": -5.208908617040666,
+      "terminal_required_retraction_rate_deg_s": 10.411665306169324,
+      "terminal_reason": "planner_error:Heading feedback moved beyond the rate-limited lead bound",
+      "hold_ack_elapsed_s": 0.06352236197562888,
+      "post_interrupt_stationary_packets": 50,
+      "latent_wire_count": 0,
+      "owned_process_cleanup_passed": true,
+      "sources": {
+        "native-trace.jsonl": "8b7a4b195f45c5adff033f86428f42d8575865b8f92194151a946d2c7bf1ab06",
+        "events.jsonl": "a604915ca183dba346ef6f0ca2d81a2ec1e9fa7f6f43a73ac56ce42e90157bda",
+        "result.json": "01f1526c53ba79665b365688bf99c9c66309524ae8bd4439d728e821bac71ce5"
+      }
+    },
+    {
+      "case": "native-repeat-pause",
+      "turn_success": false,
+      "requested_turn_deg": -15.0,
+      "post_walk_hold_s": 1.0,
+      "turn_elapsed_s": 10.012106671987567,
+      "entry_yaw_deg": 1.9114205156037172,
+      "final_measured_progress_deg": -3.7917853386229763,
+      "final_measured_goal_error_deg": 11.208214661377022,
+      "active_reference_max_rate_deg_s": 10.000000000000016,
+      "active_reference_max_lead_deg": 5.000000000000002,
+      "terminal_retained_reference_lead_deg": -4.9920902415773725,
+      "terminal_required_retraction_rate_deg_s": 0.0,
+      "terminal_reason": "planner_error:Turn deadline exceeded",
+      "hold_ack_elapsed_s": 0.02994974999455735,
+      "post_interrupt_stationary_packets": 49,
+      "latent_wire_count": 0,
+      "owned_process_cleanup_passed": true,
+      "sources": {
+        "native-trace.jsonl": "3bb463cd5a1f86a7249d85bcc936c16bb35df37ec24f1cc7aaa699cac36490a3",
+        "events.jsonl": "a9fa7b84dd70317d157efe953cfefbe948aa6967bf1532e11d2a0de80100d5b8",
+        "result.json": "26a0da462b7ced8ac875424fd8ee3f026801ae3ed23a62032751c179e63436a8"
+      }
+    }
+  ],
+  "limits_changed": false,
+  "production_changed": false,
+  "inference": "A one-second stationary request pause did not solve turning. Entry physical state/timing remain confounded.",
+  "guard_scope": "The new baseline closes one actual-native-loop lead/rate-guard interruption-and-hold check, not every possible guard failure."
+}

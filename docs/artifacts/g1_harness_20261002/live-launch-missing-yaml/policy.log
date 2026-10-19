@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/home/jihun/work/GR00T-WholeBodyControl/gear_sonic/scripts/serve_pnp_bottle_offline.py", line 14, in <module>
+    runpy.run_module("gr00t.eval.run_gr00t_server", run_name="__main__")
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 227, in run_module
+    return _run_code(code, {}, init_globals, run_name, mod_spec)
+  File "/home/jihun/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/jihun/work/Isaac-GR00T/gr00t/eval/run_gr00t_server.py", line 25, in <module>
+    from gr00t.policy.gr00t_policy import Gr00tPolicy
+  File "/home/jihun/work/Isaac-GR00T/gr00t/policy/gr00t_policy.py", line 27, in <module>
+    import torch
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/__init__.py", line 2126, in <module>
+    from torch import _VF as _VF, functional as functional  # usort: skip
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/functional.py", line 8, in <module>
+    import torch.nn.functional as F
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/nn/__init__.py", line 8, in <module>
+    from torch.nn.modules import *  # usort: skip # noqa: F403
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/nn/modules/__init__.py", line 2, in <module>
+    from .linear import Bilinear, Identity, LazyLinear, Linear  # usort: skip
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 7, in <module>
+    from torch.nn import functional as F, init
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/nn/functional.py", line 11, in <module>
+    from torch._jit_internal import (
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/_jit_internal.py", line 43, in <module>
+    import torch.package._mangling as package_mangling
+  File "/home/jihun/work/Isaac-GR00T/.venv/lib/python3.10/site-packages/torch/package/__init__.py", line 1, in <module>
+    from .analyze.is_from_package import is_from_package
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 975, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_data
+KeyboardInterrupt

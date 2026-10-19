@@ -1,0 +1,29 @@
+{
+  "source_scene": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/scene_43dof.xml",
+  "source_robot": "/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic/data/robot_model/model_data/g1/g1_29dof_with_hand.xml",
+  "source_scene_sha256": "274e7b3755dc1eedcf210af54d1c97749f31457d77ae2c499ec234e804065b21",
+  "source_robot_sha256": "58c82f77753db54f8a6ca0a8e020e142b015d8587db6cfc442f9a75f2bc444c6",
+  "desk_height_m": 0.85,
+  "desk_front_from_robot_origin_m": 0.3,
+  "desk_depth_m": 0.5,
+  "desk_width_m": 1.2,
+  "bottle_center_xyz_m": [
+    0.44999999999999996,
+    -0.1,
+    0.951
+  ],
+  "bottle_height_m": 0.2,
+  "bottle_diameter_m": 0.08,
+  "bottle_mass_kg": 0.3,
+  "person_proxy_center_xyz_m": [
+    1.1,
+    0,
+    0.875
+  ],
+  "physical_scene_calibrated": false,
+  "palm_contact_calibrated": false,
+  "bottle_dimensions_confirmed_for_handover": false,
+  "assumption": "Desk height and across-desk arrangement confirmed; other geometry provisional.",
+  "hand_model_warning": "Source scene explicitly warns the hand model is unstable for simulation.",
+  "human_hand_and_forearm_clearance_modelled": false
+}

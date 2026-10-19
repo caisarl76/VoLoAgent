@@ -1,0 +1,731 @@
+{
+  "scope": "Geometric sensitivity screen only; desk moved around the same recorded trajectory.",
+  "new_physics_trials": 0,
+  "calibrated_scene": false,
+  "hardware_acceptance": false,
+  "source_pose_root_translation_measured": false,
+  "source_pose_root_orientation_assumed_neutral": true,
+  "limitation": "Saved trajectory belongs to the 0.40 m scene; relocated scenes cannot predict dynamics, bottle contact or human-arm clearance.",
+  "rows": [
+    {
+      "desk_front_m": 0.15,
+      "saved_ready_states_minimum": {
+        "distance_m": -0.06367044354207985,
+        "actor": "right_wrist_pitch_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 101,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0033632317684750656,
+            "actor": "right_wrist_roll_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0006130465830650019,
+            "actor": "right_wrist_roll_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_index_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": -0.005616822147546884,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0025171168448774317,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.028226604422437962,
+            "actor": "right_elbow_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.2,
+      "saved_ready_states_minimum": {
+        "distance_m": -0.060664621004577264,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 92,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.007040190982929647,
+            "actor": "right_wrist_pitch_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_elbow_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_thumb_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_thumb_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": -0.005616822147546886,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.04111758669413181,
+            "actor": "right_wrist_roll_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.25,
+      "saved_ready_states_minimum": {
+        "distance_m": -0.06066462100457726,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 91,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_elbow_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.033536186755305425,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": -0.005616822147546884,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.3,
+      "saved_ready_states_minimum": {
+        "distance_m": -0.052302656161841016,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 67,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.010557019301296156,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0037240479180322694,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_index_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": -0.005616822147546884,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0025171168448774317,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.35,
+      "saved_ready_states_minimum": {
+        "distance_m": -0.044579856226168835,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 67,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_index_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.007482243421133957,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.04694320413674623,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": -0.0012036114243016071,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.044443744709254614,
+            "actor": "right_wrist_yaw_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.4,
+      "saved_ready_states_minimum": {
+        "distance_m": -0.00032348662311731946,
+        "actor": "right_hand_middle_1_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 34,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.01926217184683872,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.01565041559065062,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.03410504192135736,
+            "actor": "right_hand_index_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.05491704399821446,
+            "actor": "right_hand_index_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.002735498567600208,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.01730140174443397,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.04478910004513437,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.45,
+      "saved_ready_states_minimum": {
+        "distance_m": 0.0,
+        "actor": "right_wrist_yaw_link",
+        "obstacle": "desk_top",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 18,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_hand_thumb_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.03812460765578907,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.04499789026019582,
+            "actor": "right_hand_index_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.06838012741322584,
+            "actor": "right_hand_index_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.025570812170243134,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.06447054956612358,
+            "actor": "right_hand_middle_0_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.047557559647374514,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    },
+    {
+      "desk_front_m": 0.5,
+      "saved_ready_states_minimum": {
+        "distance_m": 0.0,
+        "actor": "right_hand_index_0_link",
+        "obstacle": "desk_leg_0",
+        "distance_capped": false
+      },
+      "saved_ready_states_contact_or_overlap_samples": 15,
+      "saved_ready_states_samples": 121,
+      "source_pose_checks": [
+        {
+          "source_episode": 15,
+          "source_frame": 191,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.06419407383281904,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.07770989388260037,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 365,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.07837236921326848,
+            "actor": "right_hand_index_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 15,
+          "source_frame": 415,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.09337623335307316,
+            "actor": "right_hand_index_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 168,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.07348349471805901,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 200,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.0,
+            "actor": "right_elbow_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        },
+        {
+          "source_episode": 30,
+          "source_frame": 370,
+          "root_height_assumed_m": 0.793,
+          "clearance": {
+            "distance_m": 0.05645420248363182,
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_capped": false
+          }
+        }
+      ]
+    }
+  ]
+}

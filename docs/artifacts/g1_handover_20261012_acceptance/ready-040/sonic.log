@@ -1,0 +1,157 @@
+[DEBUG] Program starting...
+[DEBUG] Arguments validated...
+[INFO] Using encoder file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx
+[INFO] Using planner file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_sonic.onnx
+[INFO] Using observation config: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml
+[INFO] Using input type: zmq_manager
+[INFO] Using output type: zmq
+[INFO] CRC checking disabled for MuJoCo simulation
+[INFO] Using logs directory: /home/jihun/work/VoLoAgent/.worktrees/g1-harness/docs/artifacts/g1_handover_20261012_acceptance/ready-040/controller
+[DEBUG] Creating G1Deploy object...
+1791851647.783234 [0] g1_deploy_: selected interface "lo" is not multicast-capable: disabling multicast
+Reading motion data from CSV files in: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/reference/example
+Found 13 motion folders
+✓ Loaded neutral_kick_R_001__A543_M (165 timesteps)
+✓ Loaded walking_quip_360_R_002__A428 (455 timesteps)
+✓ Loaded squat_001__A359 (424 timesteps)
+✓ Loaded tired_one_leg_jumping_R_001__A359_M (500 timesteps)
+✓ Loaded dance_in_da_party_001__A464_M (497 timesteps)
+✓ Loaded forward_lunge_R_001__A359_M (399 timesteps)
+✓ Loaded dance_in_da_party_001__A464 (497 timesteps)
+✓ Loaded macarena_001__A545 (1375 timesteps)
+✓ Loaded tired_one_leg_jumping_R_001__A359 (500 timesteps)
+✓ Loaded walking_quip_360_R_002__A428_M (455 timesteps)
+✓ Loaded neutral_kick_R_001__A543 (165 timesteps)
+✓ Loaded macarena_001__A545_M (1375 timesteps)
+✓ Loaded tired_forward_lunge_R_001__A359_M (810 timesteps)
+✓ Motion data loaded successfully!
+Started with motion: neutral_kick_R_001__A543_M (paused at frame 0)
+Loading policy model...
+hash value in file 440e58fad5e2b2fb1863b5f5279dbc4fd0249124d35af832ae0a63898c76711f
+hash of onnx/gpu type 440e58fad5e2b2fb1863b5f5279dbc4fd0249124d35af832ae0a63898c76711f
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 143 MiB
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +0, now: CPU 0, GPU 142 (MiB)
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: obs_dict [1, 994]. 994 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: OUTPUT Tensor: action [1, 29]. 29 elements of type FLOAT
+✓ Successfully converted ONNX to TRT: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/policy_model_decoder.trt
+✓ Policy engine initialized successfully!
+  Model: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_decoder.onnx
+  Input dimension: 994
+  Action dimension: 29
+  Input tensor: obs_dict
+  Output tensor: action
+  Precision: FP32
+Capturing control policy CUDA graph...
+✓ Control policy CUDA graph captured successfully!
+✓ Policy model loaded successfully!
+Loading observation configuration...
+Using observation config file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml
+Parsing observation config file: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/observation_config.yaml
+Found observations section at line 9
+  Parsed observation: token_state -> enabled
+  Parsed observation: his_base_angular_velocity_10frame_step1 -> enabled
+  Parsed observation: his_body_joint_positions_10frame_step1 -> enabled
+  Parsed observation: his_body_joint_velocities_10frame_step1 -> enabled
+  Parsed observation: his_last_actions_10frame_step1 -> enabled
+  Parsed observation: his_gravity_dir_10frame_step1 -> enabled
+Found encoder section at line 23
+  Encoder dimension: 64
+  Encoder use_fp16: false
+  Found encoder_observations subsection
+    Encoder obs: encoder_mode_4 -> enabled
+    Encoder obs: motion_joint_positions_10frame_step5 -> enabled
+    Encoder obs: motion_joint_velocities_10frame_step5 -> enabled
+    Encoder obs: motion_anchor_orientation_heading_10frame_step5 -> enabled
+    Encoder obs: motion_anchor_orientation_heading -> enabled
+    Encoder obs: motion_joint_positions_lowerbody_10frame_step5 -> enabled
+    Encoder obs: motion_joint_velocities_lowerbody_10frame_step5 -> enabled
+    Encoder obs: vr_3point_local_target -> enabled
+    Encoder obs: vr_3point_local_orn_target -> enabled
+    Encoder obs: smpl_joints_10frame_step1 -> enabled
+    Encoder obs: smpl_anchor_orientation_heading_10frame_step1 -> enabled
+    Encoder obs: motion_joint_positions_wrists_10frame_step1 -> enabled
+  Found encoder_modes subsection (after encoder_observations)
+    Found mode: g1
+      Mode ID: 0
+      Found required_observations for mode g1
+        - encoder_mode_4
+        - motion_joint_positions_10frame_step5
+        - motion_joint_velocities_10frame_step5
+        - motion_anchor_orientation_heading_10frame_step5
+    Saved mode 'g1' with 4 observations
+    Found mode: teleop
+      Mode ID: 1
+      Found required_observations for mode teleop
+        - encoder_mode_4
+        - motion_joint_positions_lowerbody_10frame_step5
+        - motion_joint_velocities_lowerbody_10frame_step5
+        - vr_3point_local_target
+        - vr_3point_local_orn_target
+        - motion_anchor_orientation_heading
+    Saved mode 'teleop' with 6 observations
+    Found mode: smpl
+      Mode ID: 2
+      Found required_observations for mode smpl
+        - encoder_mode_4
+        - smpl_joints_10frame_step1
+        - smpl_anchor_orientation_heading_10frame_step1
+        - motion_joint_positions_wrists_10frame_step1
+    Saved mode 'smpl' with 4 observations
+✓ Token state observation validated with encoder configuration
+Successfully parsed 6 observations
+Encoder config found with 12 input observations
+✓ Token state buffer initialized (size: 64)
+Initializing encoder...
+Loading encoder model...
+hash value in file 90ed9925d6f62fc7894b8ee8f8a2145352570e5348ba867b839ac99e0d29932c
+hash of onnx/gpu type 90ed9925d6f62fc7894b8ee8f8a2145352570e5348ba867b839ac99e0d29932c
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 47 MiB
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Running engine with multi stream info
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of aux streams is 2
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] Number of total worker streams is 3
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MS] The main stream provided by execute/enqueue calls is the first worker stream
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +0, now: CPU 0, GPU 189 (MiB)
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: INPUT Tensor: obs_dict [1, 1751]. 1751 elements of type FLOAT
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(476)]: OUTPUT Tensor: encoded_tokens [1, 64]. 64 elements of type FLOAT
+✓ Encoder initialized successfully!
+  Model: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/policy/sonic_v1_1/model_encoder.onnx
+  Input dimension: 1751
+  Token dimension: 64
+  Input tensor: obs_dict
+  Output tensor: encoded_tokens
+Capturing encoder CUDA graph...
+✓ Encoder CUDA graph captured successfully!
+✓ Encoder model loaded successfully!
+Setting encode_mode for 13 loaded reference motions...
+  Motion 'neutral_kick_R_001__A543_M' encode_mode set to: 0
+  Motion 'walking_quip_360_R_002__A428' encode_mode set to: 0
+  Motion 'squat_001__A359' encode_mode set to: 0
+  Motion 'tired_one_leg_jumping_R_001__A359_M' encode_mode set to: 0
+  Motion 'dance_in_da_party_001__A464_M' encode_mode set to: 0
+  Motion 'forward_lunge_R_001__A359_M' encode_mode set to: 0
+  Motion 'dance_in_da_party_001__A464' encode_mode set to: 0
+  Motion 'macarena_001__A545' encode_mode set to: 0
+  Motion 'tired_one_leg_jumping_R_001__A359' encode_mode set to: 0
+  Motion 'walking_quip_360_R_002__A428_M' encode_mode set to: 0
+  Motion 'neutral_kick_R_001__A543' encode_mode set to: 0
+  Motion 'macarena_001__A545_M' encode_mode set to: 0
+  Motion 'tired_forward_lunge_R_001__A359_M' encode_mode set to: 0
+Planner motion encode_mode set to: 0
+LocalMotionPlannerBase constructor
+config_.version: 2
+config_.motion_look_ahead_steps: 2
+config_.default_height: 0.78874
+config_.initial_random_seed: 1234
+Available modes number: 27
+Initialize Engine...
+hash value in file 93ec4df1dfa8c640f7f308e3bb5f047cc3264ceea616dae1004bd3207609eba0
+hash of onnx/gpu type 93ec4df1dfa8c640f7f308e3bb5f047cc3264ceea616dae1004bd3207609eba0
+INFO [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(35)]: Loaded engine size: 713 MiB
+ERROR [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(42)]: [defaultAllocator.cpp::allocateAsync::73] Error Code 1: Cuda Runtime (In allocateAsync at common/dispatch/defaultAllocator.cpp:73)
+WARNING [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(38)]: Requested amount of GPU memory (647157760 bytes) could not be allocated. There may not be enough free memory for allocation to succeed.
+ERROR [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(42)]: [engine.cpp::readEngineFromArchive::1175] Error Code 2: OutOfMemory (Requested size was 647157760 bytes.)
+ERROR [/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native/gear_sonic_deploy/src/TRTInference/InferenceEngine.cpp(375)]: Unable to create engine.
+✗ Failed to initialize TensorRT model: /home/jihun/work/GR00T-WholeBodyControl/gear_sonic_deploy/planner/target_vel/V2/planner_planner_sonic.trt
+✗ Failed to initialize TensorRT engine
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Failed to initialize TensorRT engine

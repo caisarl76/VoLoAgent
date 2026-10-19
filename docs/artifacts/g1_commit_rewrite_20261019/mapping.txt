@@ -1,0 +1,54 @@
+old_sha new_sha author_email subject
+bff8266651d0ce32bb69c00d43b4357432f01b1b e2705f5e280bf620c8a068a6c3c2ce01a793aad9 caisarl76 docs: record G1 harness design and implementation plan
+f44f598fecf98f739ebb4953738446189886e318 f6d584573e10477aed12c62ca782e97e148c687f caisarl76 feat: define G1 harness profile and RPC contract
+62a34adc315a302a51af31fce256c54818e1c4af 3c3cc7c595dbd35d39501ec80d5e661e756febb3 caisarl76 docs: specify G1 native RPC and ownership contract
+7739699049f405d4d9255e8e054e3cb1ebbb0305 480d880cc398970a8c05a59e61f2ec933677279a caisarl76 feat: monitor G1 bottle placement with fresh-frame confirmation
+2177289cf09e985551860592e403c03685ff7ade 324aeb91da2c7ceed3425a5a13c3a2b536ef7a2e caisarl76 feat: run supervised G1 missions through VoLoAgent
+bfebcac5f892fbfb87cda01e4d78cd4ce5c90e80 f552343caf172218842fe25f7ce66762fcc95b2b caisarl76 test: verify G1 bottle mission and document launch
+37bdd0898952d81da162e3699cf20e3bf048fcef 65cd64a28ff5899c201a77a84aa7e5d8ea8ec75f caisarl76 feat: add bounded G1 skill sequences and runtime capability checks
+49043dc27f70352b697e12537fec0f088b374ce7 3232125daef40f47a898caa3f22d96a8591c88cb caisarl76 fix: validate reset arguments and cancel lost start acknowledgements
+d5b4aa7b96f49aa96c34bde4879da4c5da25a3d5 be91395c09c1fba4f1b10ed8dcc8d70aa73d992e caisarl76 test: verify agent takeover never resumes policy
+2118ddcc238311329b73c871018401122e64e216 0e37906efbb98868be6e83f10c1b283f28d2f028 caisarl76 docs: record G1 harness verification and remaining hardware gates
+b341370dfbfd5ebb217d8ec80314c81912de6657 c658be7a800a0c76169ecb5b74ccc013d5402af2 caisarl76 test(g1): record SONIC failures and Genon manipulation checks
+d3ff2fe52759f743d166e4cac16c18203358a9a3 7cf2eb6c51a18590abf290b92b160657ace77498 caisarl76 docs: record G1 tracking limits and bottle monitor validation
+d9fe414a635160a3a76814401d344a02225e5b10 8eede6c107c2d7e13d6a298391bdb3b2205cb583 caisarl76 fix: clarify G1 bottle destination and record live validation
+ce6cf58d1f2c484d6a8866e4c246ddfcb74cc2ec f948f57d3256e9aec80c7d293249fa29e06fa38a caisarl76 docs: visualize saved G1 harness validation results
+95c2c44ab5637a34bb8ff335c3a0c24d26a26f58 9c90eef851ffd0a8e1da8d4174a6fc27a41d3173 caisarl76 docs: record G1 input fix and measured bottle validation
+537b1e3d664444c3110ebea8b7501a0303c99277 8f51a1fccaf72525c4a044b7b24da42579dd1ce3 caisarl76 Validate native-loop stops and audit bottle training labels
+78aeedabb0419abd714713c000e3ef303500325f 690e0de2294f34f341a8140f7702f2dbae76f3f3 caisarl76@gmail.com docs(g1): add dataset review gate and acceptance evidence
+2eee64b59d5d2b183140850b2d144c973d33f40e d2b8f70afb961c00b60d3b88e9cc31c043f60f33 caisarl76@gmail.com Record instrumented G1 turn and D435i factory calibration
+b2e7e151be54e6aa333191fa29dc3494e1753f4b bedee350ac706a146961967e43fc32113cdc1e02 caisarl76@gmail.com Save instrumented SONIC simulation replay videos
+394a10b60d8688a04835a041ddb9ff87c4e70d99 4dba4a9986aba4cc778cad592597187a3fc21357 caisarl76@gmail.com Preserve grasp across manipulation subskills and prepare review data
+8b7ef47df68de8652ed24592863debafac99d016 6d44536cfd1c0ae78356418960fd843718901a76 caisarl76@gmail.com Apply bottle episode cuts and placement failure labels
+b3864349b12dd8ef2de4d653d7f61fce5098eb10 a6cf593db2ca13751cbd81d98087b117a0cd4373 caisarl76@gmail.com Define stationary bottle handover autopilot and inspect recordings
+f1f755bfd6d343ea57b52de17a50576cabb914d6 a692a3a47330b8e9b27852ec57495dcdb596b1f5 caisarl76@gmail.com Record confirmed handover references and candidate ready pose
+468a16bcb9fae94ee7e8c9040b7b894e398369d4 0fa1693b91dd6b6451b9bd4199a9e4d281b9a9ba caisarl76@gmail.com feat(g1): define reviewed handover profile and ready RPC
+2500fe429599c3393164dbbccd94f5cb7e5fadae 42aed75c0315f2fc51cbe9ddd45a6adc3f4752d4 caisarl76@gmail.com feat(g1): monitor handover phases and latch roll failures
+f115bf32233a12235a5e8d71ee344f0e9eb5e8ed d62e17d63af393a23546c8fd0610325a593fd87d caisarl76@gmail.com feat(g1): repeat stationary bottle handover under one lease
+aba19c8e24de12bd98b3e7dc27bfd18137262726 f5fca4c0a6c2eaf0e4190c3f0570c81312abdb6c caisarl76@gmail.com fix(g1): retain handover context and audit trained baseline
+742f820019619b5c1b23b0c13ec1ec12158b0bc2 7cc030b8e2692d5f2ede1c1508c2d78f7563302b caisarl76@gmail.com docs: verify handover checkpoint on h100 GPU 0 and fix transfer sources
+3009290351f2825e9629ed6110247a37ad9afa36 0e2d38e0fb23d534e559162b3aa112b4db9d93e2 caisarl76@gmail.com docs: validate handover references and visualize native ready return
+1d88759d5debd6c2fcbec4f1f718f78b52dc90d5 c400a4053c0e5f77adf505c090526b202f227c29 caisarl76@gmail.com docs: inspect handover lifts and validate staged ready prototype
+c751c8d1a8c33097dc1865391475a4ac51ca46fa 762de847fe0d41c67dd8d84a786222f0cc05dcd2 caisarl76@gmail.com Evaluate Qwen GPU 6 for handover monitoring
+9677982a43571c4d615fc73b0844668299558ed9 dc08b1b34ee6df4269c3ef1f70197369229c2c9f caisarl76@gmail.com Use measured hand posture for handover offer confirmation
+137e1d7c1e6eb867f6b6e525222b13e9cd0a3fb3 a50b5cb88a701b959863a3ca98ae5d16fe0821ad caisarl76@gmail.com Require handover lift waypoint and record native tracking failure
+7bff81056e09aae063a63d2cf71bb9aeb675f45b 2180f35ce099baf1d88ea935f8bd3ab2ff493dc0 caisarl76@gmail.com docs(g1): record paired tracking diagnosis and corrected simulation
+7612ba933de3170ac6d22eb65f24a39da7e38ecb 5a190398b5b5aa209d2380df71c8daca428d9d13 caisarl76@gmail.com docs(g1): hand off ready-return tracking investigation
+7ccc26e896f4a6cd7fc37c2f32ee0c68a4b1571d cf8ff714c29a58c154198dc6bbcf584dca218a8e jihun.kim@genon.ai docs(g1): attribute ready-return stall to shoulder-yaw gravity load
+4e95b89f83cf85a005880a43eaece86513ae13d5 576ca0ad22567abd4bc2c278dfdecdf5993de968 jihun.kim@genon.ai docs(g1): screen raised waypoints by path yaw load and left-arm drift
+476d30cec755747e3386ab57309a7c8505424ec1 cfa85c92c760db9723e2de770702a1c85bf5b29e jihun.kim@genon.ai feat(g1): accept handover desk pose and record direct ready returns
+5cc64aae194ae85df75f9f9eedf933cbe46bc5b3 b5ab98cb7f79ea47a1082957626d9db91d7da623 jihun.kim@genon.ai docs(g1): record post-merge ready-return trial from the ep15 offer
+7a762c3997fb2a9aef2fe7e50d4e8f7728907811 a775736f229d39d5cde1edea0548a5d4a48ec295 jihun.kim@genon.ai docs(g1): record post-merge ready-return trials from all three entries
+c6de9b4546171839b51ae3e9f56e53414bb956a4 dabf089197329baa1c25942248572f9d493ed824 jihun.kim@genon.ai feat(g1): mirror opt-in ready gravity feedforward; record yaw-tau trials
+4659eccad18e31ae50137aa8c99ffdfaa7816532 610f373ad7f4f9bb13cdfabcccb009f5275b46f3 jihun.kim@genon.ai docs(g1): record accepted Dex3 smoke replay on the merged native branch
+94d258c35d5de7f258b2d18730a7ecdf477ca880 7a1809c4f21dcc0cdb78bd6af0959c88b6baf37e jihun.kim@genon.ai feat(g1): set the handover desk edge to the measured 0.15 m
+e836c14a79f6d5480dbd2e335b980f18092d2b35 b5ee09249a62d1ecea49564626800784b578010a jihun.kim@genon.ai docs(g1): record ready-return trials at the measured 0.15 m desk edge
+d02ea88217dbcb32c442365b013e8b7dec44556f ac01a34eb9d96392a1b3d492d6a160fb61eb1d8b jihun.kim@genon.ai docs(g1): record direct ready returns at the 0.15 m desk after the raise rule
+b6cdb9cc05fd8d5da5b9524170494fb6ce7f79ca a20fa43dd429024ed11eacc80ef1491a0c130fd3 jihun.kim@genon.ai feat(g1): configure the handover desk top above the floor
+1fe50459447faec292942492caf6cfda847d0643 f254ae940618506b64c4f16de4e891e10f9ff007 jihun.kim@genon.ai docs(g1): record ready-return trials with the online pelvis estimate
+70123c0943570e1056d9f58b5d695a759070a3f2 cd57cd6c1d863d4d5d9c676edb66036de9a5e6bb jihun.kim@genon.ai docs(g1): add ready-return replay videos
+73b3e2667ff487b3c6d8a20ceaa24cf484696ecf cb74a566a1cf992d884089938249524214a7571a jihun.kim@genon.ai feat(g1): send per-session heartbeat sequences (RPC v1)
+bdfb3083c96d643704b72b7a76dfb58af8ccf934 eb916cf960ab8f65d82ef5e08a72989ab4a60d89 jihun.kim@genon.ai fix(g1): reset the handover monitor between autopilot sessions
+85ee923274b0bf7484ea16f6e19bd5986cfeaf48 32972c4a7be28e571fe160583e513c52895e6a16 jihun.kim@genon.ai docs(g1): record offer-trial rerun after the review fixes
+53ca900f67de70211d85cb97f5893ae74a3b4155 814280be028c00ac2eba91fbc04d3027ee87b4ff jihun.kim@genon.ai docs(g1): check where real-robot offers end against the measured desk
+5c3a8e7a4462e9dccdb209a9cee3ba170a2c9536 5e3c411e00b21d24b2ecb66b44f409c02c7af9f1 jihun.kim@genon.ai fix(g1): isolate monitor checks between missions; stop ready returns on camera loss

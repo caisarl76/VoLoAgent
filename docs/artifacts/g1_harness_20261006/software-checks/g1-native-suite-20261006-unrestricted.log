@@ -1,0 +1,19 @@
+........................................................................ [ 11%]
+........................................................................ [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 57%]
+........................................................................ [ 68%]
+........................................................................ [ 80%]
+........................................................................ [ 91%]
+...................................................                      [100%]
+=============================== warnings summary ===============================
+../../../GR00T-WholeBodyControl/.venv_teleop/lib/python3.10/site-packages/torch/jit/_script.py:1488: 122 warnings
+  /home/jihun/work/GR00T-WholeBodyControl/.venv_teleop/lib/python3.10/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+<unknown>:4
+  <unknown>:4: DeprecationWarning: invalid escape sequence '\*'
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+627 passed, 123 warnings in 10.71s

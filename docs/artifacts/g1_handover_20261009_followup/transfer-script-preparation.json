@@ -1,0 +1,9 @@
+{
+  "prepared_transfer_script": "/tmp/volo-handover-transfer-xa625ovq.sh",
+  "transfer_script_sha256": "e71c1cd5d37ef16805cb5b12270260d45a9ad1a43c1a0f8f4da3bfe24b17fcea",
+  "bash_syntax_valid": true,
+  "transfer_executed": false,
+  "smoke_container_absent": true,
+  "gpu_after_test": "0, 80995, 0",
+  "executed_smoke_script_sha256": "8ea606586f13cb8997a341bc881dea319087648cc78e3f97640c3e2a12e4fa2b"
+}

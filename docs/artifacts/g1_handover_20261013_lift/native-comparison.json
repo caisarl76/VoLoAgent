@@ -1,0 +1,3226 @@
+{
+  "direct": {
+    "terminal_phase": "COMPLETED",
+    "duration_s": 5.339061824022792,
+    "final_ready_settling_passed": true,
+    "last_pre_completion_0p5_s_max_right_arm_error_rad": 0.04859688184179192,
+    "minimum_conservative_sampled_desk_gap": {
+      "gap_m": 0.0,
+      "actor": "right_hand_middle_1_link",
+      "obstacle": "desk_top"
+    },
+    "sampled_hand_or_forearm_desk_contact_states": 7,
+    "physics_samples": 121,
+    "grounded_standing_screen": {
+      "ready": true,
+      "failures": [],
+      "samples": 121,
+      "foot_floor_contact_samples": 121,
+      "base_height_min_m": 0.7868228577503498,
+      "base_height_max_m": 0.7876752158421944,
+      "base_tilt_max_rad": 0.0463388679288787,
+      "physical_balance_qualified": false
+    },
+    "zero_speed_planner_packets": 61,
+    "latent_action_publications": 0,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false,
+    "scope": "Saved measured simulation snapshots, about 20 Hz; no continuous collision certificate or physical qualification.",
+    "samples": [
+      {
+        "time_s": 0.031159162055701017,
+        "conservative_gap": {
+          "gap_m": 0.21783510895258115,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4857695292391744
+      },
+      {
+        "time_s": 0.08243211603257805,
+        "conservative_gap": {
+          "gap_m": 0.2172987466804596,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4821098076018817
+      },
+      {
+        "time_s": 0.13279846601653844,
+        "conservative_gap": {
+          "gap_m": 0.21431015371473186,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4765760610338037
+      },
+      {
+        "time_s": 0.18368985306005925,
+        "conservative_gap": {
+          "gap_m": 0.1974438848029045,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.464846151855051
+      },
+      {
+        "time_s": 0.2344118740875274,
+        "conservative_gap": {
+          "gap_m": 0.175348674776744,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.434278490713166
+      },
+      {
+        "time_s": 0.28558114205952734,
+        "conservative_gap": {
+          "gap_m": 0.15897664850261106,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.3882021525598494
+      },
+      {
+        "time_s": 0.33621027308981866,
+        "conservative_gap": {
+          "gap_m": 0.14961481540190197,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.3299976146079284
+      },
+      {
+        "time_s": 0.38714731903746724,
+        "conservative_gap": {
+          "gap_m": 0.14532218933050742,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.269147312463104
+      },
+      {
+        "time_s": 0.4380365510005504,
+        "conservative_gap": {
+          "gap_m": 0.14088379742909105,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.209882909030632
+      },
+      {
+        "time_s": 0.48895816900767386,
+        "conservative_gap": {
+          "gap_m": 0.1330620518954199,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.1740510681283398
+      },
+      {
+        "time_s": 0.5394072550116107,
+        "conservative_gap": {
+          "gap_m": 0.12277970818731869,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.1618904429531276
+      },
+      {
+        "time_s": 0.5901406990597025,
+        "conservative_gap": {
+          "gap_m": 0.11298297139743922,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.1361006439986006
+      },
+      {
+        "time_s": 0.6408517670352012,
+        "conservative_gap": {
+          "gap_m": 0.1033679773979306,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.1020506524292442
+      },
+      {
+        "time_s": 0.6916435260791332,
+        "conservative_gap": {
+          "gap_m": 0.0933644215583765,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.0829926987934941
+      },
+      {
+        "time_s": 0.7423244160600007,
+        "conservative_gap": {
+          "gap_m": 0.08163897966388207,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.0569693787605616
+      },
+      {
+        "time_s": 0.7930197810055688,
+        "conservative_gap": {
+          "gap_m": 0.07184181416765051,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.0224588051354035
+      },
+      {
+        "time_s": 0.8438180530210957,
+        "conservative_gap": {
+          "gap_m": 0.06463739824182971,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9961688788009164
+      },
+      {
+        "time_s": 0.8946176820900291,
+        "conservative_gap": {
+          "gap_m": 0.05840170468071058,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9736018447509434
+      },
+      {
+        "time_s": 0.9454392790794373,
+        "conservative_gap": {
+          "gap_m": 0.05385460174703212,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.958228951334084
+      },
+      {
+        "time_s": 0.995979399071075,
+        "conservative_gap": {
+          "gap_m": 0.04910479185806169,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9420537768946444
+      },
+      {
+        "time_s": 1.046987314010039,
+        "conservative_gap": {
+          "gap_m": 0.04274967720869316,
+          "actor": "right_hand_index_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8939835491578498
+      },
+      {
+        "time_s": 1.097685415064916,
+        "conservative_gap": {
+          "gap_m": 0.03730153772014193,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8454074118675315
+      },
+      {
+        "time_s": 1.1484729340299964,
+        "conservative_gap": {
+          "gap_m": 0.030911908997880884,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8237339712244034
+      },
+      {
+        "time_s": 1.1991226830286905,
+        "conservative_gap": {
+          "gap_m": 0.026486221296653092,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8095057992404869
+      },
+      {
+        "time_s": 1.250498607987538,
+        "conservative_gap": {
+          "gap_m": 0.022280749937508226,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8077572709282589
+      },
+      {
+        "time_s": 1.3008835350628942,
+        "conservative_gap": {
+          "gap_m": 0.01875718622750705,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8008711596247436
+      },
+      {
+        "time_s": 1.3514177930774167,
+        "conservative_gap": {
+          "gap_m": 0.015382345822750054,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7750003039659294
+      },
+      {
+        "time_s": 1.4029201039811596,
+        "conservative_gap": {
+          "gap_m": 0.012698263475092009,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7527603292734413
+      },
+      {
+        "time_s": 1.453100129030645,
+        "conservative_gap": {
+          "gap_m": 0.010488458333272999,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7294620630071411
+      },
+      {
+        "time_s": 1.5046310840407386,
+        "conservative_gap": {
+          "gap_m": 0.008676903643402012,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7044450590746463
+      },
+      {
+        "time_s": 1.5547807650873438,
+        "conservative_gap": {
+          "gap_m": 0.007268663300310729,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6814300909543172
+      },
+      {
+        "time_s": 1.6056804090039805,
+        "conservative_gap": {
+          "gap_m": 0.006315932649782863,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6617502610033787
+      },
+      {
+        "time_s": 1.6563096439931542,
+        "conservative_gap": {
+          "gap_m": 0.004615006982859549,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6486207172340492
+      },
+      {
+        "time_s": 1.7070442030671984,
+        "conservative_gap": {
+          "gap_m": 0.0019168908338658697,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6178624875549459
+      },
+      {
+        "time_s": 1.7577644300181419,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.00032348662311731946
+          }
+        ],
+        "right_arm_max_error_rad": 0.5863866369562298
+      },
+      {
+        "time_s": 1.808585136081092,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -7.509300171409938e-05
+          }
+        ],
+        "right_arm_max_error_rad": 0.5725935382745251
+      },
+      {
+        "time_s": 1.8596428179880604,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.0001060924119324902
+          }
+        ],
+        "right_arm_max_error_rad": 0.5644945567120423
+      },
+      {
+        "time_s": 1.9106863300548866,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.00015885629386425126
+          }
+        ],
+        "right_arm_max_error_rad": 0.5539947867320285
+      },
+      {
+        "time_s": 1.961490145069547,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.0002311392122071321
+          }
+        ],
+        "right_arm_max_error_rad": 0.5335567550186144
+      },
+      {
+        "time_s": 2.0124020440271124,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.00018861252536245265
+          }
+        ],
+        "right_arm_max_error_rad": 0.5131961309259927
+      },
+      {
+        "time_s": 2.0637799319811165,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.000171681256001921
+          },
+          {
+            "actor": "right_hand_middle_1_link",
+            "obstacle": "desk_top",
+            "distance_m": -0.000171681256001921
+          }
+        ],
+        "right_arm_max_error_rad": 0.49014137529037205
+      },
+      {
+        "time_s": 2.1140535490121692,
+        "conservative_gap": {
+          "gap_m": 0.00013299366352637065,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.44381033231540656
+      },
+      {
+        "time_s": 2.164828352048062,
+        "conservative_gap": {
+          "gap_m": 7.264907370113649e-05,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.3978985932171806
+      },
+      {
+        "time_s": 2.215625219978392,
+        "conservative_gap": {
+          "gap_m": 0.0,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.3561034297260792
+      },
+      {
+        "time_s": 2.266286045080051,
+        "conservative_gap": {
+          "gap_m": 0.028869608343456865,
+          "actor": "right_hand_middle_1_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.3263014793552468
+      },
+      {
+        "time_s": 2.3170374180190265,
+        "conservative_gap": {
+          "gap_m": 0.04197652838926205,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.2951647678125633
+      },
+      {
+        "time_s": 2.368060752050951,
+        "conservative_gap": {
+          "gap_m": 0.04498507118619103,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.2649855275235662
+      },
+      {
+        "time_s": 2.418670659069903,
+        "conservative_gap": {
+          "gap_m": 0.04528322845579451,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.23366365725011806
+      },
+      {
+        "time_s": 2.4694209890440106,
+        "conservative_gap": {
+          "gap_m": 0.048234206708061174,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.21471883825293814
+      },
+      {
+        "time_s": 2.520356592023745,
+        "conservative_gap": {
+          "gap_m": 0.05231896404507186,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.19322525655999256
+      },
+      {
+        "time_s": 2.5708119519986212,
+        "conservative_gap": {
+          "gap_m": 0.05534055144214725,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.17757611364070613
+      },
+      {
+        "time_s": 2.621464987983927,
+        "conservative_gap": {
+          "gap_m": 0.057425136571101355,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.14369948278529043
+      },
+      {
+        "time_s": 2.672294969088398,
+        "conservative_gap": {
+          "gap_m": 0.05767530879106794,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.12421804253055746
+      },
+      {
+        "time_s": 2.7229640260338783,
+        "conservative_gap": {
+          "gap_m": 0.057258452085502315,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.11473836103281987
+      },
+      {
+        "time_s": 2.7738896660739556,
+        "conservative_gap": {
+          "gap_m": 0.05694287785464193,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10845582464306092
+      },
+      {
+        "time_s": 2.8243411240400746,
+        "conservative_gap": {
+          "gap_m": 0.056762097381522665,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10091766005256941
+      },
+      {
+        "time_s": 2.875420376076363,
+        "conservative_gap": {
+          "gap_m": 0.056212239060086176,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08769476510200325
+      },
+      {
+        "time_s": 2.9269602220738307,
+        "conservative_gap": {
+          "gap_m": 0.055684039731688076,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08192939770776861
+      },
+      {
+        "time_s": 2.9791111970553175,
+        "conservative_gap": {
+          "gap_m": 0.05529138914777074,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08209150015633468
+      },
+      {
+        "time_s": 3.0294074000557885,
+        "conservative_gap": {
+          "gap_m": 0.055208522288110455,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08225240596605315
+      },
+      {
+        "time_s": 3.0802664040820673,
+        "conservative_gap": {
+          "gap_m": 0.05535599423265922,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08242811976712885
+      },
+      {
+        "time_s": 3.1309843480121344,
+        "conservative_gap": {
+          "gap_m": 0.05548628777338639,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0825171124934089
+      },
+      {
+        "time_s": 3.1819177580764517,
+        "conservative_gap": {
+          "gap_m": 0.055306051269985175,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08236800703439526
+      },
+      {
+        "time_s": 3.232367474003695,
+        "conservative_gap": {
+          "gap_m": 0.055350531468473685,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0822185648703504
+      },
+      {
+        "time_s": 3.283482358092442,
+        "conservative_gap": {
+          "gap_m": 0.05551221947614905,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.07904041996609801
+      },
+      {
+        "time_s": 3.3340414949925616,
+        "conservative_gap": {
+          "gap_m": 0.05590149332586115,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.07417190595832848
+      },
+      {
+        "time_s": 3.3848758350359276,
+        "conservative_gap": {
+          "gap_m": 0.0568012202955137,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.06836314618047551
+      },
+      {
+        "time_s": 3.435437945066951,
+        "conservative_gap": {
+          "gap_m": 0.05779512239464361,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.06130657481198812
+      },
+      {
+        "time_s": 3.4863730570068583,
+        "conservative_gap": {
+          "gap_m": 0.05853053495327881,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.05558976784688738
+      },
+      {
+        "time_s": 3.5369037840282544,
+        "conservative_gap": {
+          "gap_m": 0.05905916066524497,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.05198195800272967
+      },
+      {
+        "time_s": 3.5876536270370707,
+        "conservative_gap": {
+          "gap_m": 0.060301562007024856,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.047371798664285786
+      },
+      {
+        "time_s": 3.638878131052479,
+        "conservative_gap": {
+          "gap_m": 0.061473975009595665,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.043469917843652894
+      },
+      {
+        "time_s": 3.689494983991608,
+        "conservative_gap": {
+          "gap_m": 0.06303253976659119,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04200607043448121
+      },
+      {
+        "time_s": 3.7399986590025946,
+        "conservative_gap": {
+          "gap_m": 0.06636557819208404,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.040493920863320765
+      },
+      {
+        "time_s": 3.7910094290273264,
+        "conservative_gap": {
+          "gap_m": 0.07013020401107752,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.035844530294479954
+      },
+      {
+        "time_s": 3.8414392470149323,
+        "conservative_gap": {
+          "gap_m": 0.07373822018811764,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03573152816712577
+      },
+      {
+        "time_s": 3.8922657490475103,
+        "conservative_gap": {
+          "gap_m": 0.07456952521004595,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03794617921441701
+      },
+      {
+        "time_s": 3.9431264720624313,
+        "conservative_gap": {
+          "gap_m": 0.07437067945432245,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.037104735361030594
+      },
+      {
+        "time_s": 3.9941437960369512,
+        "conservative_gap": {
+          "gap_m": 0.07388686306477135,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.037032058612451346
+      },
+      {
+        "time_s": 4.044998785015196,
+        "conservative_gap": {
+          "gap_m": 0.07305393168865026,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.037433928030919994
+      },
+      {
+        "time_s": 4.095553145976737,
+        "conservative_gap": {
+          "gap_m": 0.0719131320839902,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.037836225705742355
+      },
+      {
+        "time_s": 4.146773710031994,
+        "conservative_gap": {
+          "gap_m": 0.07120804501366587,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.038087567078563034
+      },
+      {
+        "time_s": 4.197109427070245,
+        "conservative_gap": {
+          "gap_m": 0.07084096668814542,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.038361257503948254
+      },
+      {
+        "time_s": 4.24802861304488,
+        "conservative_gap": {
+          "gap_m": 0.07039492050885354,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.038569277197649465
+      },
+      {
+        "time_s": 4.298809607047588,
+        "conservative_gap": {
+          "gap_m": 0.07000818741180942,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.039159593742671084
+      },
+      {
+        "time_s": 4.3502019790466875,
+        "conservative_gap": {
+          "gap_m": 0.07009620469317653,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.039693029480031616
+      },
+      {
+        "time_s": 4.40101701207459,
+        "conservative_gap": {
+          "gap_m": 0.07028286555767772,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.040640887960008754
+      },
+      {
+        "time_s": 4.451953317038715,
+        "conservative_gap": {
+          "gap_m": 0.07018160214698717,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.042119288677542166
+      },
+      {
+        "time_s": 4.5027837180532515,
+        "conservative_gap": {
+          "gap_m": 0.06973441612505565,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04249555489368223
+      },
+      {
+        "time_s": 4.555444027064368,
+        "conservative_gap": {
+          "gap_m": 0.06940444579146621,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04352196696971683
+      },
+      {
+        "time_s": 4.606195845990442,
+        "conservative_gap": {
+          "gap_m": 0.06896603947954902,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04379746239451349
+      },
+      {
+        "time_s": 4.656786035979167,
+        "conservative_gap": {
+          "gap_m": 0.06842169124143417,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04378594133406094
+      },
+      {
+        "time_s": 4.707454590010457,
+        "conservative_gap": {
+          "gap_m": 0.06777942778587193,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04370702788185232
+      },
+      {
+        "time_s": 4.758191496017389,
+        "conservative_gap": {
+          "gap_m": 0.06714439831088097,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.043762260706663836
+      },
+      {
+        "time_s": 4.809507868019864,
+        "conservative_gap": {
+          "gap_m": 0.06663589325593439,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.043815290589133804
+      },
+      {
+        "time_s": 4.860091732000001,
+        "conservative_gap": {
+          "gap_m": 0.06622363108153084,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.045224653928088304
+      },
+      {
+        "time_s": 4.911150960018858,
+        "conservative_gap": {
+          "gap_m": 0.06587297434961109,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04859688184179192
+      },
+      {
+        "time_s": 4.961642159032635,
+        "conservative_gap": {
+          "gap_m": 0.06463147338226462,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04776760421538878
+      },
+      {
+        "time_s": 5.012293191044591,
+        "conservative_gap": {
+          "gap_m": 0.06356935570548042,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04651317254247239
+      },
+      {
+        "time_s": 5.062864855979569,
+        "conservative_gap": {
+          "gap_m": 0.06261629243958282,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.046333580209717784
+      },
+      {
+        "time_s": 5.1136009600013494,
+        "conservative_gap": {
+          "gap_m": 0.06236302059557242,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04620146540211861
+      },
+      {
+        "time_s": 5.164262384059839,
+        "conservative_gap": {
+          "gap_m": 0.06246797016974943,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04164006022278108
+      },
+      {
+        "time_s": 5.215625372016802,
+        "conservative_gap": {
+          "gap_m": 0.06321200091666535,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.035741218253453805
+      },
+      {
+        "time_s": 5.265987687045708,
+        "conservative_gap": {
+          "gap_m": 0.06430442308363248,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.030823679782048433
+      },
+      {
+        "time_s": 5.316727672005072,
+        "conservative_gap": {
+          "gap_m": 0.06456179485735851,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03097635214490657
+      },
+      {
+        "time_s": 5.367466613068245,
+        "conservative_gap": {
+          "gap_m": 0.0645660412526692,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0311766047831466
+      },
+      {
+        "time_s": 5.418098344001919,
+        "conservative_gap": {
+          "gap_m": 0.06463357990942556,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.031480951938573476
+      },
+      {
+        "time_s": 5.469159207073972,
+        "conservative_gap": {
+          "gap_m": 0.06472810706216223,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03169520730272307
+      },
+      {
+        "time_s": 5.520149213029072,
+        "conservative_gap": {
+          "gap_m": 0.06465521275797569,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03194790905117223
+      },
+      {
+        "time_s": 5.571543361991644,
+        "conservative_gap": {
+          "gap_m": 0.06459649172963974,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03213928780094333
+      },
+      {
+        "time_s": 5.621601940016262,
+        "conservative_gap": {
+          "gap_m": 0.0646360159300814,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.032126225853538415
+      },
+      {
+        "time_s": 5.672671239008196,
+        "conservative_gap": {
+          "gap_m": 0.0646438900850883,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.032349648407349274
+      },
+      {
+        "time_s": 5.723586754058488,
+        "conservative_gap": {
+          "gap_m": 0.06475699687545658,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03241949269391603
+      },
+      {
+        "time_s": 5.774618651019409,
+        "conservative_gap": {
+          "gap_m": 0.06477172694315686,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03255647343091611
+      },
+      {
+        "time_s": 5.825115485000424,
+        "conservative_gap": {
+          "gap_m": 0.06491006964089836,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03268918638832424
+      },
+      {
+        "time_s": 5.8761193110840395,
+        "conservative_gap": {
+          "gap_m": 0.06502642982351974,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03262087677333192
+      },
+      {
+        "time_s": 5.926986785023473,
+        "conservative_gap": {
+          "gap_m": 0.06503340713336611,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.032932332884267446
+      },
+      {
+        "time_s": 5.977757439017296,
+        "conservative_gap": {
+          "gap_m": 0.06510759690858707,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03295220274848515
+      },
+      {
+        "time_s": 6.028365168021992,
+        "conservative_gap": {
+          "gap_m": 0.06512700270339501,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03294734790151155
+      },
+      {
+        "time_s": 6.07896883203648,
+        "conservative_gap": {
+          "gap_m": 0.06505742355588855,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.033127672002835395
+      },
+      {
+        "time_s": 6.12998324201908,
+        "conservative_gap": {
+          "gap_m": 0.06502181286334721,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03306922310629584
+      }
+    ]
+  },
+  "staged": {
+    "terminal_phase": "COMPLETED",
+    "duration_s": 8.942349775927141,
+    "final_ready_settling_passed": true,
+    "last_pre_completion_0p5_s_max_right_arm_error_rad": 0.03182370468983711,
+    "minimum_conservative_sampled_desk_gap": {
+      "gap_m": 0.05321395868150571,
+      "actor": "right_hand_middle_0_link",
+      "obstacle": "desk_top"
+    },
+    "sampled_hand_or_forearm_desk_contact_states": 0,
+    "physics_samples": 189,
+    "grounded_standing_screen": {
+      "ready": true,
+      "failures": [],
+      "samples": 189,
+      "foot_floor_contact_samples": 189,
+      "base_height_min_m": 0.7859647178937609,
+      "base_height_max_m": 0.7875302103725687,
+      "base_tilt_max_rad": 0.05481192478309383,
+      "physical_balance_qualified": false
+    },
+    "zero_speed_planner_packets": 95,
+    "latent_action_publications": 0,
+    "owned_processes_stopped": true,
+    "hardware_acceptance": false,
+    "scope": "Saved measured simulation snapshots, about 20 Hz; no continuous collision certificate or physical qualification.",
+    "samples": [
+      {
+        "time_s": 0.04641404701396823,
+        "conservative_gap": {
+          "gap_m": 0.21639798381085798,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.466893323941416
+      },
+      {
+        "time_s": 0.09756524884141982,
+        "conservative_gap": {
+          "gap_m": 0.2152579451185608,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4535420144022089
+      },
+      {
+        "time_s": 0.14799368102103472,
+        "conservative_gap": {
+          "gap_m": 0.21326046531929002,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4514517882190743
+      },
+      {
+        "time_s": 0.19899214594624937,
+        "conservative_gap": {
+          "gap_m": 0.2113457578115217,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4507828622880108
+      },
+      {
+        "time_s": 0.24988243984989822,
+        "conservative_gap": {
+          "gap_m": 0.20381758291840982,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4389688163219403
+      },
+      {
+        "time_s": 0.30189666897058487,
+        "conservative_gap": {
+          "gap_m": 0.1913673105314434,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.4144238226633246
+      },
+      {
+        "time_s": 0.35281437495723367,
+        "conservative_gap": {
+          "gap_m": 0.17601555197726593,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.3849717079854948
+      },
+      {
+        "time_s": 0.40847087395377457,
+        "conservative_gap": {
+          "gap_m": 0.16187459096730425,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.3662712450489778
+      },
+      {
+        "time_s": 0.4623472059611231,
+        "conservative_gap": {
+          "gap_m": 0.15000117520450174,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.3368849964570984
+      },
+      {
+        "time_s": 0.5139812349807471,
+        "conservative_gap": {
+          "gap_m": 0.138783865183202,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.3052447437982264
+      },
+      {
+        "time_s": 0.5671885758638382,
+        "conservative_gap": {
+          "gap_m": 0.12604756049906468,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.2812240729157274
+      },
+      {
+        "time_s": 0.6204749590251595,
+        "conservative_gap": {
+          "gap_m": 0.11902115182991216,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.261524604860851
+      },
+      {
+        "time_s": 0.6719791779760271,
+        "conservative_gap": {
+          "gap_m": 0.11533286280694904,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.2399275312381792
+      },
+      {
+        "time_s": 0.7228843360207975,
+        "conservative_gap": {
+          "gap_m": 0.1100497749448549,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.2225171330172788
+      },
+      {
+        "time_s": 0.7736056640278548,
+        "conservative_gap": {
+          "gap_m": 0.10308610791423593,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.217061634717734
+      },
+      {
+        "time_s": 0.8246297899167985,
+        "conservative_gap": {
+          "gap_m": 0.09561748261387494,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.2155702613883796
+      },
+      {
+        "time_s": 0.8752739208284765,
+        "conservative_gap": {
+          "gap_m": 0.0897413356046845,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.1861335511147058
+      },
+      {
+        "time_s": 0.9285578278359026,
+        "conservative_gap": {
+          "gap_m": 0.08620959655470911,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.135479356403915
+      },
+      {
+        "time_s": 0.9792875058483332,
+        "conservative_gap": {
+          "gap_m": 0.08471126083551739,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.0952788147038155
+      },
+      {
+        "time_s": 1.0298211209010333,
+        "conservative_gap": {
+          "gap_m": 0.08311846363115727,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.0691609127071322
+      },
+      {
+        "time_s": 1.0806370119098574,
+        "conservative_gap": {
+          "gap_m": 0.08037385154454013,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 1.034134592358993
+      },
+      {
+        "time_s": 1.1313951849006116,
+        "conservative_gap": {
+          "gap_m": 0.07818864553234173,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.999684947599659
+      },
+      {
+        "time_s": 1.18268585880287,
+        "conservative_gap": {
+          "gap_m": 0.07771961374666791,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9603736512055187
+      },
+      {
+        "time_s": 1.2344561119098216,
+        "conservative_gap": {
+          "gap_m": 0.07577670912495243,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9460170845176519
+      },
+      {
+        "time_s": 1.2855033639352769,
+        "conservative_gap": {
+          "gap_m": 0.07248247579282074,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9417187038583
+      },
+      {
+        "time_s": 1.3372535919770598,
+        "conservative_gap": {
+          "gap_m": 0.06997550538961012,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9334394989701006
+      },
+      {
+        "time_s": 1.3875713639426976,
+        "conservative_gap": {
+          "gap_m": 0.06967517939614415,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.9070787139379995
+      },
+      {
+        "time_s": 1.438415320822969,
+        "conservative_gap": {
+          "gap_m": 0.07035981873896506,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8573984838251193
+      },
+      {
+        "time_s": 1.4905258128419518,
+        "conservative_gap": {
+          "gap_m": 0.07319696898215518,
+          "actor": "right_hand_index_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8026917013736783
+      },
+      {
+        "time_s": 1.544591449899599,
+        "conservative_gap": {
+          "gap_m": 0.07600104860175427,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7591988493373641
+      },
+      {
+        "time_s": 1.5954040249343961,
+        "conservative_gap": {
+          "gap_m": 0.07645350265516443,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7309768703385834
+      },
+      {
+        "time_s": 1.6471088018734008,
+        "conservative_gap": {
+          "gap_m": 0.0745448951625386,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.714420475489161
+      },
+      {
+        "time_s": 1.6994363230187446,
+        "conservative_gap": {
+          "gap_m": 0.07064126998328529,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6710900951474776
+      },
+      {
+        "time_s": 1.7546480449382216,
+        "conservative_gap": {
+          "gap_m": 0.06667402730410066,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6496310692607872
+      },
+      {
+        "time_s": 1.8058836730197072,
+        "conservative_gap": {
+          "gap_m": 0.06360841789287039,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6375877946005784
+      },
+      {
+        "time_s": 1.8569725209381431,
+        "conservative_gap": {
+          "gap_m": 0.06227518032329595,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6358256863261182
+      },
+      {
+        "time_s": 1.9077065128367394,
+        "conservative_gap": {
+          "gap_m": 0.06349474333665628,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6355195444445616
+      },
+      {
+        "time_s": 1.9598009588662535,
+        "conservative_gap": {
+          "gap_m": 0.06735226391118836,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6303413451819999
+      },
+      {
+        "time_s": 2.0106509109027684,
+        "conservative_gap": {
+          "gap_m": 0.07241910667217828,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6376807132642892
+      },
+      {
+        "time_s": 2.061573127983138,
+        "conservative_gap": {
+          "gap_m": 0.07677017997725345,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.648841762416355
+      },
+      {
+        "time_s": 2.1124461309518665,
+        "conservative_gap": {
+          "gap_m": 0.0806977170922219,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6561744851940599
+      },
+      {
+        "time_s": 2.163306421833113,
+        "conservative_gap": {
+          "gap_m": 0.08506088211307396,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6564313841915346
+      },
+      {
+        "time_s": 2.214345410000533,
+        "conservative_gap": {
+          "gap_m": 0.09090780661236976,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6591779097217869
+      },
+      {
+        "time_s": 2.2651245249435306,
+        "conservative_gap": {
+          "gap_m": 0.09862268806476893,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.693425746510697
+      },
+      {
+        "time_s": 2.3159085598308593,
+        "conservative_gap": {
+          "gap_m": 0.10554300877881781,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7173460753077132
+      },
+      {
+        "time_s": 2.3665527978446335,
+        "conservative_gap": {
+          "gap_m": 0.10974504918067836,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7339602218634271
+      },
+      {
+        "time_s": 2.4171126179862767,
+        "conservative_gap": {
+          "gap_m": 0.11398067023286075,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7590977201455411
+      },
+      {
+        "time_s": 2.4679479468613863,
+        "conservative_gap": {
+          "gap_m": 0.120865615741574,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7922426321695177
+      },
+      {
+        "time_s": 2.5210091539192945,
+        "conservative_gap": {
+          "gap_m": 0.1286222087573661,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8187024695442874
+      },
+      {
+        "time_s": 2.571795352967456,
+        "conservative_gap": {
+          "gap_m": 0.1341754253819989,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.830739202396316
+      },
+      {
+        "time_s": 2.622575848829001,
+        "conservative_gap": {
+          "gap_m": 0.13685530237409388,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8367771401781843
+      },
+      {
+        "time_s": 2.673002597875893,
+        "conservative_gap": {
+          "gap_m": 0.13911892410641644,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8457586883114251
+      },
+      {
+        "time_s": 2.724446713924408,
+        "conservative_gap": {
+          "gap_m": 0.14098967573243948,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8540910909074524
+      },
+      {
+        "time_s": 2.77619349793531,
+        "conservative_gap": {
+          "gap_m": 0.14228496951841133,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8603907314001316
+      },
+      {
+        "time_s": 2.8265725548844784,
+        "conservative_gap": {
+          "gap_m": 0.1429895120130413,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8643727671313849
+      },
+      {
+        "time_s": 2.877737701870501,
+        "conservative_gap": {
+          "gap_m": 0.14319417301763862,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8667137759174696
+      },
+      {
+        "time_s": 2.928569034906104,
+        "conservative_gap": {
+          "gap_m": 0.1430187386641494,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8682351897625596
+      },
+      {
+        "time_s": 2.979545644018799,
+        "conservative_gap": {
+          "gap_m": 0.1423591735308286,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8685899139832173
+      },
+      {
+        "time_s": 3.030097979819402,
+        "conservative_gap": {
+          "gap_m": 0.14127268982981972,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8673252855284143
+      },
+      {
+        "time_s": 3.0811194689013064,
+        "conservative_gap": {
+          "gap_m": 0.1395505820438433,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8619016258706671
+      },
+      {
+        "time_s": 3.131797085981816,
+        "conservative_gap": {
+          "gap_m": 0.13768236519863675,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8604581296077984
+      },
+      {
+        "time_s": 3.182866347953677,
+        "conservative_gap": {
+          "gap_m": 0.13450281075225395,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8572970082091985
+      },
+      {
+        "time_s": 3.233646509004757,
+        "conservative_gap": {
+          "gap_m": 0.13100409161849288,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8579035331725896
+      },
+      {
+        "time_s": 3.285127269802615,
+        "conservative_gap": {
+          "gap_m": 0.12870520091996396,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8585106527159873
+      },
+      {
+        "time_s": 3.335305984830484,
+        "conservative_gap": {
+          "gap_m": 0.127617628399328,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8595233528927375
+      },
+      {
+        "time_s": 3.3861018328461796,
+        "conservative_gap": {
+          "gap_m": 0.12730613688889164,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8602161926262207
+      },
+      {
+        "time_s": 3.438516004011035,
+        "conservative_gap": {
+          "gap_m": 0.12726255298910583,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8604359332404026
+      },
+      {
+        "time_s": 3.488901302916929,
+        "conservative_gap": {
+          "gap_m": 0.12765884997550464,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8605849277673088
+      },
+      {
+        "time_s": 3.539459932828322,
+        "conservative_gap": {
+          "gap_m": 0.12873493696879035,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8615205133514893
+      },
+      {
+        "time_s": 3.590429429896176,
+        "conservative_gap": {
+          "gap_m": 0.13044912338742487,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8667221024650168
+      },
+      {
+        "time_s": 3.6412586190272123,
+        "conservative_gap": {
+          "gap_m": 0.132600346063843,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8711609599377119
+      },
+      {
+        "time_s": 3.69207647186704,
+        "conservative_gap": {
+          "gap_m": 0.13370798356227934,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.869495005070607
+      },
+      {
+        "time_s": 3.7427156458143145,
+        "conservative_gap": {
+          "gap_m": 0.1323241129246657,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8584730972705023
+      },
+      {
+        "time_s": 3.7935756479855627,
+        "conservative_gap": {
+          "gap_m": 0.12877340100747914,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8506019453211848
+      },
+      {
+        "time_s": 3.844316530972719,
+        "conservative_gap": {
+          "gap_m": 0.12383086656942277,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8376944942984806
+      },
+      {
+        "time_s": 3.89559572795406,
+        "conservative_gap": {
+          "gap_m": 0.11710043765337813,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.8040070673127876
+      },
+      {
+        "time_s": 3.945937766926363,
+        "conservative_gap": {
+          "gap_m": 0.10853165477533372,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.7630189957397493
+      },
+      {
+        "time_s": 3.9971454988699406,
+        "conservative_gap": {
+          "gap_m": 0.09939036530920668,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.724334847974283
+      },
+      {
+        "time_s": 4.048380631953478,
+        "conservative_gap": {
+          "gap_m": 0.09175847143376432,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.691989745163643
+      },
+      {
+        "time_s": 4.099144164007157,
+        "conservative_gap": {
+          "gap_m": 0.08518887238577844,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6727323653469528
+      },
+      {
+        "time_s": 4.149771549971774,
+        "conservative_gap": {
+          "gap_m": 0.08293817383914791,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6636900276568398
+      },
+      {
+        "time_s": 4.200476802885532,
+        "conservative_gap": {
+          "gap_m": 0.08293441001336828,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6496824437841817
+      },
+      {
+        "time_s": 4.251330969855189,
+        "conservative_gap": {
+          "gap_m": 0.08654726983791342,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.6254164754332789
+      },
+      {
+        "time_s": 4.302100564818829,
+        "conservative_gap": {
+          "gap_m": 0.09494504559242242,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.597515197059302
+      },
+      {
+        "time_s": 4.3536883178167045,
+        "conservative_gap": {
+          "gap_m": 0.1008175432152401,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.5707610136826581
+      },
+      {
+        "time_s": 4.4051823548506945,
+        "conservative_gap": {
+          "gap_m": 0.10160706959725664,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.5453078247316326
+      },
+      {
+        "time_s": 4.455859296955168,
+        "conservative_gap": {
+          "gap_m": 0.10118050854320285,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.5175047669047534
+      },
+      {
+        "time_s": 4.506430707871914,
+        "conservative_gap": {
+          "gap_m": 0.09870887271892434,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.49481038841141
+      },
+      {
+        "time_s": 4.557159845950082,
+        "conservative_gap": {
+          "gap_m": 0.09404847337414893,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.47527696185115137
+      },
+      {
+        "time_s": 4.608549583004788,
+        "conservative_gap": {
+          "gap_m": 0.08862625431336697,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.45641190120158354
+      },
+      {
+        "time_s": 4.659252141835168,
+        "conservative_gap": {
+          "gap_m": 0.08347523355072069,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.4296763258245947
+      },
+      {
+        "time_s": 4.709942146902904,
+        "conservative_gap": {
+          "gap_m": 0.07905629659403639,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.40473503122291327
+      },
+      {
+        "time_s": 4.763479301938787,
+        "conservative_gap": {
+          "gap_m": 0.07557154140863252,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.37719413683792863
+      },
+      {
+        "time_s": 4.818167282966897,
+        "conservative_gap": {
+          "gap_m": 0.07171445826086358,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.3460233183209575
+      },
+      {
+        "time_s": 4.868554971879348,
+        "conservative_gap": {
+          "gap_m": 0.06608976597111403,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.30805579573704855
+      },
+      {
+        "time_s": 4.921248001977801,
+        "conservative_gap": {
+          "gap_m": 0.06159849564923875,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.2757719830723182
+      },
+      {
+        "time_s": 4.973564543994144,
+        "conservative_gap": {
+          "gap_m": 0.06195077410272528,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.244723654082956
+      },
+      {
+        "time_s": 5.024729760829359,
+        "conservative_gap": {
+          "gap_m": 0.06369255926512317,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.2273449664431857
+      },
+      {
+        "time_s": 5.076930276816711,
+        "conservative_gap": {
+          "gap_m": 0.06426986207169179,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.21244076931939798
+      },
+      {
+        "time_s": 5.128090839833021,
+        "conservative_gap": {
+          "gap_m": 0.06461138806815442,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.19551151565425234
+      },
+      {
+        "time_s": 5.1804608618840575,
+        "conservative_gap": {
+          "gap_m": 0.0652746244439884,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.1813036669850142
+      },
+      {
+        "time_s": 5.232587581966072,
+        "conservative_gap": {
+          "gap_m": 0.06598528106018395,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.15223886939335868
+      },
+      {
+        "time_s": 5.283314000815153,
+        "conservative_gap": {
+          "gap_m": 0.06645297266330445,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.1144164097548088
+      },
+      {
+        "time_s": 5.334763776976615,
+        "conservative_gap": {
+          "gap_m": 0.06480019035481173,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.112344131411962
+      },
+      {
+        "time_s": 5.385158886900172,
+        "conservative_gap": {
+          "gap_m": 0.06250229504497147,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10799912453767424
+      },
+      {
+        "time_s": 5.43596270494163,
+        "conservative_gap": {
+          "gap_m": 0.05840469664536517,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10716473074612085
+      },
+      {
+        "time_s": 5.486678358865902,
+        "conservative_gap": {
+          "gap_m": 0.055425400445295404,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10506683815719758
+      },
+      {
+        "time_s": 5.539787993999198,
+        "conservative_gap": {
+          "gap_m": 0.054172606380989564,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10439854906867821
+      },
+      {
+        "time_s": 5.594550638925284,
+        "conservative_gap": {
+          "gap_m": 0.05364854957397166,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.10209054623276384
+      },
+      {
+        "time_s": 5.6460803910158575,
+        "conservative_gap": {
+          "gap_m": 0.05321395868150571,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.09685258173656255
+      },
+      {
+        "time_s": 5.696614879881963,
+        "conservative_gap": {
+          "gap_m": 0.05448965891878549,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.09025891571447864
+      },
+      {
+        "time_s": 5.748557768994942,
+        "conservative_gap": {
+          "gap_m": 0.056113726673998,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.08344777666297842
+      },
+      {
+        "time_s": 5.798593939980492,
+        "conservative_gap": {
+          "gap_m": 0.0571527487633328,
+          "actor": "right_hand_middle_0_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.07390204991615917
+      },
+      {
+        "time_s": 5.84983112080954,
+        "conservative_gap": {
+          "gap_m": 0.05839938255360462,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.06717047968457329
+      },
+      {
+        "time_s": 5.900345823029056,
+        "conservative_gap": {
+          "gap_m": 0.05993291603082347,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0647527124385757
+      },
+      {
+        "time_s": 5.951376385986805,
+        "conservative_gap": {
+          "gap_m": 0.061865754185387506,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.05967214766364845
+      },
+      {
+        "time_s": 6.002050313865766,
+        "conservative_gap": {
+          "gap_m": 0.0642029087096294,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0508040242967929
+      },
+      {
+        "time_s": 6.0538687978405505,
+        "conservative_gap": {
+          "gap_m": 0.06560676026333491,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04141126173721946
+      },
+      {
+        "time_s": 6.105038236826658,
+        "conservative_gap": {
+          "gap_m": 0.06609167503504185,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03483747278896876
+      },
+      {
+        "time_s": 6.155580765800551,
+        "conservative_gap": {
+          "gap_m": 0.06626820041662707,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.031317788638755006
+      },
+      {
+        "time_s": 6.206723158946261,
+        "conservative_gap": {
+          "gap_m": 0.06620813584227343,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03044427357426563
+      },
+      {
+        "time_s": 6.256808004807681,
+        "conservative_gap": {
+          "gap_m": 0.06602710736498002,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03029603932997306
+      },
+      {
+        "time_s": 6.307407271815464,
+        "conservative_gap": {
+          "gap_m": 0.0658942870133571,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03011284586377351
+      },
+      {
+        "time_s": 6.358523846836761,
+        "conservative_gap": {
+          "gap_m": 0.06560347085862245,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.030011528278614544
+      },
+      {
+        "time_s": 6.4100535188335925,
+        "conservative_gap": {
+          "gap_m": 0.06577860464524697,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029832953777333707
+      },
+      {
+        "time_s": 6.460583881940693,
+        "conservative_gap": {
+          "gap_m": 0.06721197398452489,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03038222158118392
+      },
+      {
+        "time_s": 6.512553033884615,
+        "conservative_gap": {
+          "gap_m": 0.06780504957587753,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03374785472867603
+      },
+      {
+        "time_s": 6.563531955936924,
+        "conservative_gap": {
+          "gap_m": 0.06754687179543871,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03583838399831746
+      },
+      {
+        "time_s": 6.61438487097621,
+        "conservative_gap": {
+          "gap_m": 0.06725419889930263,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0362903910351175
+      },
+      {
+        "time_s": 6.665350439026952,
+        "conservative_gap": {
+          "gap_m": 0.06707472349760851,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.036577039146389434
+      },
+      {
+        "time_s": 6.7160820458084345,
+        "conservative_gap": {
+          "gap_m": 0.06686377321200983,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.037003111657453014
+      },
+      {
+        "time_s": 6.767011858988553,
+        "conservative_gap": {
+          "gap_m": 0.06656727770486166,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03719893569723576
+      },
+      {
+        "time_s": 6.818073407979682,
+        "conservative_gap": {
+          "gap_m": 0.06561510901970594,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03728541696842924
+      },
+      {
+        "time_s": 6.869181297952309,
+        "conservative_gap": {
+          "gap_m": 0.06392329776151262,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03652312939500407
+      },
+      {
+        "time_s": 6.920913302805275,
+        "conservative_gap": {
+          "gap_m": 0.063799615081633,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03582784872668221
+      },
+      {
+        "time_s": 6.971363653894514,
+        "conservative_gap": {
+          "gap_m": 0.06417153561022229,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0358786752616041
+      },
+      {
+        "time_s": 7.023184584919363,
+        "conservative_gap": {
+          "gap_m": 0.06420070553670153,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03574092474338625
+      },
+      {
+        "time_s": 7.077462086919695,
+        "conservative_gap": {
+          "gap_m": 0.06414788559928217,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.035784363970141675
+      },
+      {
+        "time_s": 7.129499095026404,
+        "conservative_gap": {
+          "gap_m": 0.06407236471741447,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.035672762975995365
+      },
+      {
+        "time_s": 7.180583784822375,
+        "conservative_gap": {
+          "gap_m": 0.0640453199545551,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03579598373822618
+      },
+      {
+        "time_s": 7.23144693300128,
+        "conservative_gap": {
+          "gap_m": 0.06416645137600487,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03844098749443725
+      },
+      {
+        "time_s": 7.281948658870533,
+        "conservative_gap": {
+          "gap_m": 0.06439794994824043,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04090886257639065
+      },
+      {
+        "time_s": 7.332961060805246,
+        "conservative_gap": {
+          "gap_m": 0.06464710738095111,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04199506748536452
+      },
+      {
+        "time_s": 7.38404380902648,
+        "conservative_gap": {
+          "gap_m": 0.06485376978883867,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.042266428115524446
+      },
+      {
+        "time_s": 7.435193761950359,
+        "conservative_gap": {
+          "gap_m": 0.06482817953546943,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04242267904539643
+      },
+      {
+        "time_s": 7.485902258893475,
+        "conservative_gap": {
+          "gap_m": 0.06458631009082118,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04224017118851808
+      },
+      {
+        "time_s": 7.537774977972731,
+        "conservative_gap": {
+          "gap_m": 0.06439954466181187,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04184659526314671
+      },
+      {
+        "time_s": 7.589130230946466,
+        "conservative_gap": {
+          "gap_m": 0.06414694259937866,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.038640774617107077
+      },
+      {
+        "time_s": 7.6395907290279865,
+        "conservative_gap": {
+          "gap_m": 0.06380221975376879,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03581531542702021
+      },
+      {
+        "time_s": 7.690024834824726,
+        "conservative_gap": {
+          "gap_m": 0.06348447778444113,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0411042499486057
+      },
+      {
+        "time_s": 7.74049131385982,
+        "conservative_gap": {
+          "gap_m": 0.06337578022030071,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.044424180182629586
+      },
+      {
+        "time_s": 7.791412697872147,
+        "conservative_gap": {
+          "gap_m": 0.06337303536564874,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04653159950763064
+      },
+      {
+        "time_s": 7.84242958179675,
+        "conservative_gap": {
+          "gap_m": 0.0633771039180913,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.047771883444023444
+      },
+      {
+        "time_s": 7.8934303319547325,
+        "conservative_gap": {
+          "gap_m": 0.06345131763538181,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.047570931421966806
+      },
+      {
+        "time_s": 7.944361306028441,
+        "conservative_gap": {
+          "gap_m": 0.06336166661716439,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.04340309134572956
+      },
+      {
+        "time_s": 7.995458154939115,
+        "conservative_gap": {
+          "gap_m": 0.061799099445228524,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03283514196743956
+      },
+      {
+        "time_s": 8.046423773979768,
+        "conservative_gap": {
+          "gap_m": 0.060315136331743346,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.028238844539648852
+      },
+      {
+        "time_s": 8.097657604841515,
+        "conservative_gap": {
+          "gap_m": 0.05974937205812917,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029284477573538623
+      },
+      {
+        "time_s": 8.147840139921755,
+        "conservative_gap": {
+          "gap_m": 0.059868752497468904,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.02933687925514354
+      },
+      {
+        "time_s": 8.198533830000088,
+        "conservative_gap": {
+          "gap_m": 0.06051392461878849,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029330611495462594
+      },
+      {
+        "time_s": 8.249286144971848,
+        "conservative_gap": {
+          "gap_m": 0.06201042118984639,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029371792318225315
+      },
+      {
+        "time_s": 8.300023686839268,
+        "conservative_gap": {
+          "gap_m": 0.06358222660762482,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029348991170884936
+      },
+      {
+        "time_s": 8.350959307979792,
+        "conservative_gap": {
+          "gap_m": 0.06433683552081472,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029384507538962865
+      },
+      {
+        "time_s": 8.401760194916278,
+        "conservative_gap": {
+          "gap_m": 0.06477386117143208,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.02945453656601285
+      },
+      {
+        "time_s": 8.452557200798765,
+        "conservative_gap": {
+          "gap_m": 0.06572974953099502,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.029274322599844818
+      },
+      {
+        "time_s": 8.503960913978517,
+        "conservative_gap": {
+          "gap_m": 0.06607386598710474,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.030391319482361345
+      },
+      {
+        "time_s": 8.554731040960178,
+        "conservative_gap": {
+          "gap_m": 0.0656831736218107,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.030310090091790642
+      },
+      {
+        "time_s": 8.605936485808343,
+        "conservative_gap": {
+          "gap_m": 0.06439221856897827,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.024986899190772016
+      },
+      {
+        "time_s": 8.656500592827797,
+        "conservative_gap": {
+          "gap_m": 0.06361546947480587,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.028221192795372482
+      },
+      {
+        "time_s": 8.708019746933132,
+        "conservative_gap": {
+          "gap_m": 0.06331997148679552,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03145921522558359
+      },
+      {
+        "time_s": 8.758682052837685,
+        "conservative_gap": {
+          "gap_m": 0.06283362851176914,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03182370468983711
+      },
+      {
+        "time_s": 8.809939701808617,
+        "conservative_gap": {
+          "gap_m": 0.061793973060665815,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.03096272423854085
+      },
+      {
+        "time_s": 8.861034557921812,
+        "conservative_gap": {
+          "gap_m": 0.06153082355210871,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025185124156345426
+      },
+      {
+        "time_s": 8.911769242957234,
+        "conservative_gap": {
+          "gap_m": 0.06161840016729632,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.024888368878579134
+      },
+      {
+        "time_s": 8.96267245686613,
+        "conservative_gap": {
+          "gap_m": 0.06180194881710998,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0248691139107267
+      },
+      {
+        "time_s": 9.013351917965338,
+        "conservative_gap": {
+          "gap_m": 0.06149114383100437,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.02492921745471184
+      },
+      {
+        "time_s": 9.064355107024312,
+        "conservative_gap": {
+          "gap_m": 0.06107554215546468,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025012564942303556
+      },
+      {
+        "time_s": 9.115133933955804,
+        "conservative_gap": {
+          "gap_m": 0.06099858957018077,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.02508593441466417
+      },
+      {
+        "time_s": 9.165937362937257,
+        "conservative_gap": {
+          "gap_m": 0.06102276642932417,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025083900179381904
+      },
+      {
+        "time_s": 9.217028455808759,
+        "conservative_gap": {
+          "gap_m": 0.061015446251231266,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025080161400463638
+      },
+      {
+        "time_s": 9.269018095918,
+        "conservative_gap": {
+          "gap_m": 0.06098888388767331,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025140203018949245
+      },
+      {
+        "time_s": 9.321910422993824,
+        "conservative_gap": {
+          "gap_m": 0.060986535118919535,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025193315105364475
+      },
+      {
+        "time_s": 9.374315743800253,
+        "conservative_gap": {
+          "gap_m": 0.061048401148861016,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025176611286674394
+      },
+      {
+        "time_s": 9.429951493861154,
+        "conservative_gap": {
+          "gap_m": 0.061075829091493755,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.0251644832235995
+      },
+      {
+        "time_s": 9.48680206690915,
+        "conservative_gap": {
+          "gap_m": 0.061047231798973076,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025216469930479074
+      },
+      {
+        "time_s": 9.540661870967597,
+        "conservative_gap": {
+          "gap_m": 0.061042235072517485,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025252894322308206
+      },
+      {
+        "time_s": 9.590993844904006,
+        "conservative_gap": {
+          "gap_m": 0.06113665282537543,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025203673357058864
+      },
+      {
+        "time_s": 9.641315961955115,
+        "conservative_gap": {
+          "gap_m": 0.061100562577590306,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025214703913807687
+      },
+      {
+        "time_s": 9.694352647988126,
+        "conservative_gap": {
+          "gap_m": 0.06103674867575521,
+          "actor": "right_wrist_yaw_link",
+          "obstacle": "desk_top"
+        },
+        "simulated_contacts": [],
+        "right_arm_max_error_rad": 0.025269515026739464
+      }
+    ]
+  },
+  "stages": [
+    {
+      "at": 1052780.653564975,
+      "stage": 0,
+      "label": "raise_with_current_fingers",
+      "simulation_prototype_only": true
+    },
+    {
+      "at": 1052784.247123358,
+      "stage": 1,
+      "label": "final_ready_open_hand",
+      "simulation_prototype_only": true
+    }
+  ],
+  "hardware_profile_changed": false,
+  "production_native_reset_changed": false,
+  "simulation_prototype_only": true
+}

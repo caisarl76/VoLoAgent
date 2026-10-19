@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-02",
+  "episode_outcome": "user_labeled_failed_placement_without_recovery",
+  "video_evidence": [
+    {
+      "path": "/home/jihun/work/GR00T-WholeBodyControl/outputs/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445"
+    },
+    {
+      "path": "/mnt/data/jihun/datasets/G1_WBT_GR00T/pnp_bottle_260916/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445"
+    },
+    {
+      "path": "/tmp/pnp_bottle_260916_gr00t_raw_20260930/videos/chunk-000/observation.images.ego_view/episode_000005.mp4",
+      "sha256": "24d59c1358e8a95b7ad5b66880a879499b18183a72935cec2561612836d77445"
+    }
+  ],
+  "source_episode": {
+    "episode_index": 5,
+    "tasks": [
+      "place OBJECT on the table"
+    ],
+    "length": 977
+  },
+  "prepared_episode": {
+    "episode_index": 5,
+    "tasks": [
+      "pick drink bottle and place it on the right table"
+    ],
+    "length": 977
+  },
+  "source_mapping": {
+    "source_episode_index": 5,
+    "episode_index": 5,
+    "length": 977
+  },
+  "discarded_source_episode_indices": [
+    13,
+    94,
+    99,
+    106,
+    109
+  ],
+  "experiment_readme": "/home/jihun/work/GR00T-WholeBodyControl/docs/artifacts/pnp_bottle_260916_raw_training_20260930/README.md",
+  "preparation_script": "/home/jihun/work/GR00T-WholeBodyControl/docs/artifacts/pnp_bottle_260916_raw_training_20260930/prepare_dataset.py",
+  "checkpoint": "/mnt/data/jihun/models/pnp_bottle_260916_n17_raw_gpu7/checkpoint-20000",
+  "finding": "User-labeled unrecovered failure retained in declared prepared training corpus with the bottle task prompt.",
+  "per_step_sampler_trace_inspected": false,
+  "causal_effect_on_checkpoint_established": false,
+  "dataset_modified": false,
+  "training_performed": false
+}

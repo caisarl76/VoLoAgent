@@ -1,0 +1,475 @@
+{
+  "queries": 30,
+  "recorded_episode": 18,
+  "state_before": [
+    {
+      "frame": 250,
+      "seconds": 5,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.003587150014936924,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.003587150014936924
+    },
+    {
+      "frame": 500,
+      "seconds": 10,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0036515574902296066,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0036515574902296066
+    },
+    {
+      "frame": 750,
+      "seconds": 15,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.003655136562883854,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.003655136562883854
+    },
+    {
+      "frame": 1000,
+      "seconds": 20,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.2736873924732208,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.2736873924732208
+    },
+    {
+      "frame": 1500,
+      "seconds": 30,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.2918434143066406,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.2918434143066406
+    },
+    {
+      "frame": 1900,
+      "seconds": 38,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.001016172580420971,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.001016172580420971
+    }
+  ],
+  "state_after": [
+    {
+      "frame": 250,
+      "seconds": 5,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0,
+      "legacy_overwrite_delta": 0.003587150014936924
+    },
+    {
+      "frame": 500,
+      "seconds": 10,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0,
+      "legacy_overwrite_delta": 0.0036515574902296066
+    },
+    {
+      "frame": 750,
+      "seconds": 15,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0,
+      "legacy_overwrite_delta": 0.003655136562883854
+    },
+    {
+      "frame": 1000,
+      "seconds": 20,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0,
+      "legacy_overwrite_delta": 0.2736873924732208
+    },
+    {
+      "frame": 1500,
+      "seconds": 30,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0,
+      "legacy_overwrite_delta": 0.2918434143066406
+    },
+    {
+      "frame": 1900,
+      "seconds": 38,
+      "max_absolute_state_delta": {
+        "left_leg": 0.0,
+        "right_leg": 0.0,
+        "waist": 0.0,
+        "left_arm": 0.0,
+        "right_arm": 0.0,
+        "left_hand": 0.0,
+        "right_hand": 0.0,
+        "projected_gravity": 0.0
+      },
+      "left_hand_middle_index_coupling_delta": 0.0,
+      "legacy_overwrite_delta": 0.001016172580420971
+    }
+  ],
+  "comparisons": [
+    {
+      "label": "Same input repeats",
+      "case_a": "recorded-10s",
+      "case_b": "recorded-10s",
+      "metrics": {
+        "motion_token": {
+          "mean_mae": 0.016502471330265205,
+          "min_mae": 0.015186506323516369,
+          "max_mae": 0.018926721066236496,
+          "values": [
+            0.015186506323516369,
+            0.018926721066236496,
+            0.015394186601042747
+          ]
+        },
+        "left_hand_joints": {
+          "mean_mae": 0.0026688058860599995,
+          "min_mae": 0.002051478950306773,
+          "max_mae": 0.0031291854102164507,
+          "values": [
+            0.0028257532976567745,
+            0.002051478950306773,
+            0.0031291854102164507
+          ]
+        },
+        "right_hand_joints": {
+          "mean_mae": 0.003563988177726666,
+          "min_mae": 0.0027169364038854837,
+          "max_mae": 0.004075753502547741,
+          "values": [
+            0.004075753502547741,
+            0.0027169364038854837,
+            0.0038992746267467737
+          ]
+        }
+      }
+    },
+    {
+      "label": "Legacy native preparation",
+      "case_a": "recorded-10s",
+      "case_b": "recorded-10s-native-preparation",
+      "metrics": {
+        "motion_token": {
+          "mean_mae": 0.01668302621692419,
+          "min_mae": 0.015028680674731731,
+          "max_mae": 0.01870541274547577,
+          "values": [
+            0.01717139221727848,
+            0.01870541274547577,
+            0.015028680674731731,
+            0.017849963158369064,
+            0.017208609730005264,
+            0.01532534696161747,
+            0.016663655638694763,
+            0.015956666320562363,
+            0.01623750850558281
+          ]
+        },
+        "left_hand_joints": {
+          "mean_mae": 0.0022879464474196234,
+          "min_mae": 0.0014969308394938707,
+          "max_mae": 0.003043387085199356,
+          "values": [
+            0.0015597097808495164,
+            0.0023451452143490314,
+            0.0014969308394938707,
+            0.003043387085199356,
+            0.002740652998909354,
+            0.002768554724752903,
+            0.0021268136333674192,
+            0.002488141879439354,
+            0.0020221818704158068
+          ]
+        },
+        "right_hand_joints": {
+          "mean_mae": 0.0031022135840935838,
+          "min_mae": 0.0015234374441206455,
+          "max_mae": 0.004968610592186451,
+          "values": [
+            0.0033928570337593555,
+            0.0019210379105061293,
+            0.0015234374441206455,
+            0.0038525389973074198,
+            0.004056222271174192,
+            0.004968610592186451,
+            0.0028871374670416117,
+            0.0028466798830777407,
+            0.0024714006576687098
+          ]
+        }
+      }
+    },
+    {
+      "label": "Change image only",
+      "case_a": "recorded-10s",
+      "case_b": "recorded-10s-state-sim-image",
+      "metrics": {
+        "motion_token": {
+          "mean_mae": 0.05866720982723766,
+          "min_mae": 0.05479009076952934,
+          "max_mae": 0.06358731538057327,
+          "values": [
+            0.05479009076952934,
+            0.05616004392504692,
+            0.060423385351896286,
+            0.0556032657623291,
+            0.05638544633984566,
+            0.06177910417318344,
+            0.05842770263552666,
+            0.06084853410720825,
+            0.06358731538057327
+          ]
+        },
+        "left_hand_joints": {
+          "mean_mae": 0.003884083604336613,
+          "min_mae": 0.0018603516509756446,
+          "max_mae": 0.0071017020381987095,
+          "values": [
+            0.0018603516509756446,
+            0.0021470424253493547,
+            0.0071017020381987095,
+            0.00325055792927742,
+            0.003103376366198063,
+            0.006090959534049034,
+            0.0023046876303851604,
+            0.002521623857319355,
+            0.0065764510072767735
+          ]
+        },
+        "right_hand_joints": {
+          "mean_mae": 0.0035283358043266665,
+          "min_mae": 0.0015164620708674192,
+          "max_mae": 0.004914899356663227,
+          "values": [
+            0.0033321708906441927,
+            0.0015164620708674192,
+            0.003499581478536129,
+            0.004383370745927095,
+            0.00480677979066968,
+            0.004914899356663227,
+            0.0033398435916751623,
+            0.002488141879439354,
+            0.003473772434517741
+          ]
+        }
+      }
+    },
+    {
+      "label": "Change state only",
+      "case_a": "recorded-10s",
+      "case_b": "sim-state-recorded-10s-image",
+      "metrics": {
+        "motion_token": {
+          "mean_mae": 0.024322606830133334,
+          "min_mae": 0.021198268979787827,
+          "max_mae": 0.027688518166542053,
+          "values": [
+            0.023771896958351135,
+            0.02747853472828865,
+            0.02627428248524666,
+            0.02359110303223133,
+            0.025073226541280746,
+            0.022415349259972572,
+            0.021198268979787827,
+            0.027688518166542053,
+            0.021412281319499016
+          ]
+        },
+        "left_hand_joints": {
+          "mean_mae": 0.0041861978566481006,
+          "min_mae": 0.002121930941939354,
+          "max_mae": 0.006819893606007099,
+          "values": [
+            0.0037618582136929035,
+            0.006819893606007099,
+            0.002121930941939354,
+            0.003703962080180645,
+            0.0055119977332651615,
+            0.0030908200424164534,
+            0.003678850596770644,
+            0.0063267298974096775,
+            0.0026597375981509686
+          ]
+        },
+        "right_hand_joints": {
+          "mean_mae": 0.00405017666829129,
+          "min_mae": 0.0027057756669819355,
+          "max_mae": 0.005743582732975483,
+          "values": [
+            0.0029408482369035482,
+            0.005743582732975483,
+            0.0027057756669819355,
+            0.004187360405921936,
+            0.0042724609375,
+            0.0040443637408316135,
+            0.0031494139693677425,
+            0.00546247186139226,
+            0.003945312462747097
+          ]
+        }
+      }
+    },
+    {
+      "label": "Change image + state",
+      "case_a": "recorded-10s",
+      "case_b": "sim-saved-native",
+      "metrics": {
+        "motion_token": {
+          "mean_mae": 0.15581904351711273,
+          "min_mae": 0.1332896202802658,
+          "max_mae": 0.1787714958190918,
+          "values": [
+            0.15365822613239288,
+            0.1332896202802658,
+            0.1783665120601654,
+            0.15526679158210754,
+            0.13700367510318756,
+            0.1787714958190918,
+            0.15367114543914795,
+            0.13634121417999268,
+            0.17600271105766296
+          ]
+        },
+        "left_hand_joints": {
+          "mean_mae": 0.01362374455978473,
+          "min_mae": 0.0070605468936264515,
+          "max_mae": 0.0178397037088871,
+          "values": [
+            0.017117047682404518,
+            0.0178397037088871,
+            0.00827636756002903,
+            0.01528878416866064,
+            0.016011439263820648,
+            0.0070605468936264515,
+            0.016365792602300644,
+            0.017032645642757416,
+            0.007621373515576124
+          ]
+        },
+        "right_hand_joints": {
+          "mean_mae": 0.008096090492068065,
+          "min_mae": 0.002098911674693227,
+          "max_mae": 0.016958007588982582,
+          "values": [
+            0.016958007588982582,
+            0.005869837943464518,
+            0.002098911674693227,
+            0.014029017649590969,
+            0.005198102910071611,
+            0.004313615616410971,
+            0.01625976525247097,
+            0.0055538504384458065,
+            0.0025837053544819355
+          ]
+        }
+      }
+    }
+  ],
+  "recorded_target_errors": {
+    "motion_token": {
+      "mean_mae": 0.026372575821975868,
+      "min_mae": 0.01743113063275814,
+      "max_mae": 0.04885733872652054,
+      "evaluated_chunks": 18
+    },
+    "left_hand_joints": {
+      "mean_mae": 0.002076861695968546,
+      "min_mae": 0.0,
+      "max_mae": 0.004935128148645163,
+      "evaluated_chunks": 18
+    },
+    "right_hand_joints": {
+      "mean_mae": 0.0023723494096985734,
+      "min_mae": 0.0,
+      "max_mae": 0.00686314282938838,
+      "evaluated_chunks": 18
+    }
+  },
+  "sim_state_frame_skew_s": -0.004974071998731233,
+  "scope": "Exploratory 3-repeat comparisons on one in-training episode and one saved simulation image; not a success-rate or significance test."
+}
