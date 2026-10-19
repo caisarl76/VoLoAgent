@@ -1,7 +1,6 @@
 """Phase judgments for stationary handover, with cycle-persistent failures."""
 
 from dataclasses import dataclass
-import threading
 
 from vlm_orchestrator.vlm.api import parse_json
 
@@ -65,17 +64,11 @@ class HandoverMonitor(G1CompletionMonitor):
         self.failure = None
         self.offer_anchor = None
         self.require_hand_state = require_hand_state
-        # Held for a whole check, so a new session waits out a previous session's worker.
-        self._session_lock = threading.Lock()
 
-    def start_session(self, timeout_s):
-        """Forget the previous session's cycle, failure and offer, after its last check ends."""
-        if not self._session_lock.acquire(timeout=timeout_s):
-            raise RuntimeError("Previous handover monitor check still running")
-        try:
-            self.cycle_id, self.failure, self.offer_anchor, self.execution = 0, None, None, None
-        finally:
-            self._session_lock.release()
+    def _reset_session(self):
+        # Called under the base session lock by start_session().
+        super()._reset_session()
+        self.cycle_id, self.failure, self.offer_anchor = 0, None, None
 
     def begin_phase(self, phase, cycle_id, execution, initial, not_before):
         with self._session_lock:
@@ -108,10 +101,6 @@ class HandoverMonitor(G1CompletionMonitor):
             self.cycle_id,
             self.phase,
         )
-
-    def check(self, snapshot):
-        with self._session_lock:
-            return self._check(snapshot)
 
     def _check(self, snapshot):
         if self.execution is None:

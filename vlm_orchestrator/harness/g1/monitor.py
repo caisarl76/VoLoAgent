@@ -55,6 +55,10 @@ class G1CompletionMonitor:
         self.raw_response = None
         self._call_thread = None
         self._call_deadline = 0.0
+        # Held for a whole check and for begin/reset, so a result from an earlier
+        # mission can never update a later one. Subclasses override only the
+        # unlocked _check/_reset_session; nothing re-acquires it.
+        self._session_lock = threading.Lock()
         self._handler = VLMFailureHandler(
             self._bounded_call,
             self._image_message,
@@ -113,7 +117,23 @@ class G1CompletionMonitor:
             )
         return content
 
+    def start_session(self, timeout_s: float) -> None:
+        """Wait, bounded, for a check left running by an earlier session, then reset."""
+        if not self._session_lock.acquire(timeout=timeout_s):
+            raise TimeoutError("Previous monitor check still running")
+        try:
+            self._reset_session()
+        finally:
+            self._session_lock.release()
+
+    def _reset_session(self) -> None:
+        self.execution, self.streak, self.seen, self.last_check = None, 0, set(), None
+
     def begin(self, execution: Execution, initial: ObservationSnapshot) -> None:
+        with self._session_lock:
+            self._begin(execution, initial)
+
+    def _begin(self, execution: Execution, initial: ObservationSnapshot) -> None:
         if initial.runtime_id != execution.runtime_id:
             raise ValueError("Initial image belongs to a different executor")
         self.execution = execution
@@ -137,6 +157,10 @@ class G1CompletionMonitor:
         )
 
     def check(self, snapshot: ObservationSnapshot) -> CompletionDecision:
+        with self._session_lock:
+            return self._check(snapshot)
+
+    def _check(self, snapshot: ObservationSnapshot) -> CompletionDecision:
         now = self.now()
         if self.execution is None:
             raise RuntimeError("Monitor mission not started")
