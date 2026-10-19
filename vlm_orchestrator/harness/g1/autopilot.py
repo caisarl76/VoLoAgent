@@ -146,7 +146,8 @@ class HandoverRunner(HarnessRunner):
         ):
             raise MissionInterrupted("Ready return did not invalidate previous actions")
         self._execution = reset
-        self._wait_complete(reset, self.profile.limits.reset_deadline_s)
+        # The handover spec stops a ready return on stale evidence, as in every phase.
+        self._wait_complete(reset, self.profile.limits.reset_deadline_s, fresh_camera=True)
         return reset
 
     def _cycles(self, max_cycles):
@@ -225,9 +226,7 @@ class HandoverRunner(HarnessRunner):
             )
         # Offline vision-only monitors cannot relax live offer confirmation.
         self.monitor.require_hand_state = True
-        # Each session numbers cycles from 1. A check left running by an interrupted
-        # session finishes before the reset, within its VLM deadline, and before claiming.
-        self.monitor.start_session(2 * self.profile.limits.monitor_deadline_s)
+        # Each session numbers cycles from 1; _run_session resets the monitor first.
         return self._run_session(
             [SkillCall(h.skill_id, {})], lambda _: self._cycles(max_cycles)
         )

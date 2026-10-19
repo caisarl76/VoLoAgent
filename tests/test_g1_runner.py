@@ -296,3 +296,48 @@ def test_heartbeat_sequence_starts_at_one_and_increases():
     thread.join(2)
     assert e.heartbeat_sequences[:3] == [1, 2, 3]
     assert runner._heartbeat_error.empty()
+
+
+def test_reused_runner_ignores_a_previous_missions_late_vision_result(tmp_path):
+    # Mission 1 is interrupted while its VLM check is still running. That check later
+    # answers "complete"; it must not count toward mission 2's two confirmations.
+    from vlm_orchestrator.harness.g1.monitor import G1CompletionMonitor
+
+    release, calls, claims = threading.Event(), [], []
+
+    def vision(*_):
+        calls.append(len(claims))
+        if len(calls) == 1:
+            release.wait(5)
+        return '{"status":"complete","action":"next","reason":"placed and released"}'
+
+    e = Executor()
+    monitor = G1CompletionMonitor(PROFILE.require_skill("bottle_to_right_table"), vision,
+                                  time.monotonic, PROFILE.limits)
+    r = runner(e, tmp_path, monitor)
+    timer = threading.Timer(0.15, lambda: setattr(e, "reboot", True))
+    timer.start()
+    first = r.run(SkillCall("bottle_to_right_table", {}))
+    timer.join()
+    assert first.outcome != "completed" and len(calls) == 1
+    e.reboot, e.owner, e.phase = False, None, "IDLE"  # The operator prepares the executor again.
+    original = r.client_factory
+
+    def client():
+        c = original()
+        request = c.request
+
+        def tracked(method, params, **kwargs):
+            if method == "claim_control":
+                claims.append(time.monotonic())
+            return request(method, params, **kwargs)
+
+        c.request = tracked
+        return c
+
+    r.client_factory = client
+    threading.Timer(0.3, release.set).start()
+    second = r.run(SkillCall("bottle_to_right_table", {}))
+    assert second.outcome == "completed", second.reason
+    # The stale check ended before mission 2 claimed; two fresh checks confirmed it.
+    assert calls[0] == 0 and calls[1:].count(1) >= 2

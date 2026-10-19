@@ -107,12 +107,18 @@ class HarnessRunner:
             raise MissionInterrupted(status.reason or status.phase)
         return status
 
-    def _wait_complete(self, execution, timeout):
+    def _wait_complete(self, execution, timeout, *, fresh_camera=False):
         deadline = time.monotonic() + timeout
         while time.monotonic() < deadline:
             status = self._check()
             if status.execution_id != execution.execution_id:
                 raise MissionInterrupted("Execution changed")
+            # Checked before accepting completion: stale evidence stops the motion.
+            if fresh_camera and (
+                status.observation_age_s is None
+                or not 0 <= status.observation_age_s <= self.profile.limits.camera_max_age_s
+            ):
+                raise MissionInterrupted("Camera stream expired during motion")
             if status.phase == "COMPLETED":
                 if not status.hold_confirmed:
                     raise MissionInterrupted(
@@ -411,6 +417,11 @@ class HarnessRunner:
                 time.sleep(0.1)
                 status = self._client.get_status()
             self._validate_executor(status)
+            start_session = getattr(self.monitor, "start_session", None)
+            if start_session is not None:
+                # A check left running by an interrupted session finishes, within its
+                # VLM deadline, before this session claims and resets the monitor.
+                start_session(2 * self.profile.limits.monitor_deadline_s)
             self._lease = self._rpc(
                 "claim_control", {"registry_sha256": self.profile.registry_sha256}
             )

@@ -288,3 +288,35 @@ def test_restart_waits_out_and_ignores_previous_session_monitor_worker(tmp_path)
     assert second.outcome == "completed", second.reason
     assert finished and claimed and finished[0] <= claimed[0]
     assert m.failure is None
+
+
+@pytest.mark.parametrize("which", ["startup", "final"])
+def test_camera_loss_stops_the_ready_return(tmp_path, which):
+    r, e, _ = build(tmp_path)
+    original = r.client_factory
+    returns = []
+
+    def client():
+        c = original()
+        request = c.request
+
+        def tracked(method, params, **kwargs):
+            if method == "reset_ready":
+                returns.append(params["execution_id"])
+                if (which == "startup") == (params["execution_id"] == ""):
+                    e.camera_age = 0.6  # Camera expires while the return runs.
+            return request(method, params, **kwargs)
+
+        def get_status():
+            # The return is still running on the robot when the camera expires.
+            return e.status() if e.camera_age > 0.5 else LocalClient.get_status(c)
+
+        c.request, c.get_status = tracked, get_status
+        return c
+
+    r.client_factory = client
+    result = r.run_autopilot(1)
+    assert result.outcome == "interrupted", result.reason
+    assert "camera" in result.reason.lower()
+    assert e.calls.count("cancel") == 1
+    assert len(returns) == (1 if which == "startup" else 2)
