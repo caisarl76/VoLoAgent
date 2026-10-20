@@ -20,9 +20,10 @@ handover:
   ready_pose_reviewed: false
   # Pick surface: the black box of handover_bottle_261019, top 84.5 cm above the floor
   # (19 Oct 2026). Its distance from the pelvis varies; 0.15 m is the closest edge
-  # used, which is the conservative case for the clearance check. The recorded
-  # standing start pose overlaps a box this close (hand 0.18 m forward, 0.55 m high),
-  # so start with the box at least ~0.19 m away. The pelvis height is estimated
+  # used, which is the conservative case for the clearance check. Keep the box away
+  # from the robot until the startup ready return completes, then bring it in: from
+  # the recorded standing start pose the raised return touched a box 0.18-0.25 m away
+  # (docs/artifacts/g1_handover_20261019_loop_sim). The pelvis height is estimated
   # from the measured legs at each ready return.
   desk_top_above_floor_m: 0.845
   desk_front_from_pelvis_m: 0.15
