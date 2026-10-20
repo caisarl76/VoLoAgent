@@ -53,7 +53,7 @@ Across all runs:
 
 The runs used native base `25c948c` with these changes applied, before they were committed as `23bc312` (deploy telemetry) and `37a742a` (left arm and wrist relief). The deploy binary sha256 was `b1df417c…3ac2`. `trials.json` records the base commit only.
 
-`4b4e666`, committed after these runs, applies the G1 limits to all 14 arm joints in StandingReset. Before that, only the right arm was bounded. Every stored arm reference and measurement in these runs stayed at least 0.32 rad inside those limits, so the runs were not repeated.
+`4b4e666`, committed after these runs, applies the G1 limits to all 14 arm joints in StandingReset. Before that, only the right arm was bounded. Those bounds act only in StandingReset. Its stored references and paired measurements (5,540 pairs in the `trials.json` runs) stayed at least 0.325 rad inside the limits, so the bounds would not have clipped any return, and the runs were not repeated. Over a whole run, measured arm joints came within 0.265 rad of a limit: the right wrist roll during the palm-up offer, while the policy drives the arm and StandingReset is not running.
 
 **1. Deploy `planner_reference_active` reported the wrong owner.**
 - In token-only POSE mode (protocol v4), the planner is disabled but its last frame stays current, so the flag stayed 1.
