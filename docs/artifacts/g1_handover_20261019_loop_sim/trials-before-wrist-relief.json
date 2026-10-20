@@ -49,13 +49,25 @@
         3
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -180 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
-      "raise first (direct path -180 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
-      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
-      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
-      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -180 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      }
     ],
+    "production_ready_returns_settled": "4/4",
     "fixture_events": [
       {
         "sim_time": 13.535,
@@ -179,12 +191,21 @@
         2
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -154 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "raise first (direct path -153 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
-      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -153 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "interrupted: reset_timeout"
+      }
     ],
+    "production_ready_returns_settled": "2/3",
     "fixture_events": [
       {
         "sim_time": 13.575,
@@ -259,10 +280,13 @@
         1
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "interrupted: reset_timeout"
+      }
     ],
+    "production_ready_returns_settled": "0/1",
     "fixture_events": [],
     "box_contact_samples_by_body": {},
     "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
@@ -283,10 +307,13 @@
         1
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -153 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "interrupted: reset_timeout"
+      }
     ],
+    "production_ready_returns_settled": "0/1",
     "fixture_events": [],
     "box_contact_samples_by_body": {},
     "native_base_commit": "25c948c66888c46f4763cb4dedf2022833dc4c82",
@@ -343,13 +370,25 @@
         3
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -127 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
-      "raise first (direct path -127 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
-      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
-      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
-      "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -127 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "settled"
+      }
     ],
+    "production_ready_returns_settled": "4/4",
     "fixture_events": [
       {
         "sim_time": 13.455,
@@ -459,10 +498,13 @@
         1
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -152 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "raise first (direct path -152 mm from desk (pelvis 0.787 m, desk top +0.058 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -152 mm from desk (pelvis 0.787 m, desk top +0.058 m))",
+        "outcome": "settled"
+      }
     ],
+    "production_ready_returns_settled": "1/1",
     "fixture_events": [
       {
         "sim_time": 14.92,
@@ -512,11 +554,17 @@
         1
       ]
     ],
-    "ready_return_decisions": [
-      "raise first (direct path -151 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "raise first (direct path -154 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
-      "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))"
+    "production_ready_returns": [
+      {
+        "decision": "raise first (direct path -154 mm from desk (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      },
+      {
+        "decision": "direct (hand above desk top (pelvis 0.788 m, desk top +0.057 m))",
+        "outcome": "settled"
+      }
     ],
+    "production_ready_returns_settled": "2/2",
     "fixture_events": [
       {
         "sim_time": 14.25,

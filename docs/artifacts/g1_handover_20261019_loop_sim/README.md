@@ -31,25 +31,29 @@ Every run starts from the recorded standing pose with the box 3 m away. The box 
 
 These runs use the native ready return with wrist relief and the deploy telemetry fix described below, at 3 cycles each.
 
-| Box edge from pelvis | Runs | Cycles completed | Ready returns | Box contact (real MuJoCo contacts) |
+| Box edge from pelvis | Runs | Cycles completed | Production ready returns | Box contact (real MuJoCo contacts) |
 |---|---|---|---|---|
-| 0.15 m | 1 | 3/3 | 5/5 settled | Left wrist: 140 samples, mostly while holding the offer; 19 during a return |
-| 0.20 m | 3 | 9/9 | 15/15 settled | Left wrist in all three runs: 20, 27 and 2 samples, mostly while holding the offer; 2 during a return |
-| 0.25 m | 1 | 3/3 | 5/5 settled | None |
+| 0.15 m | 1 | 3/3 | 4/4 settled | Left wrist: 140 samples, mostly while holding the offer; 19 during a return |
+| 0.20 m | 3 | 9/9 | 12/12 settled | Left wrist in all three runs: 20, 27 and 2 samples, mostly while holding the offer; 2 during a return |
+| 0.25 m | 1 | 3/3 | 4/4 settled | None |
+
+Production ready returns are the autopilot's startup return plus one return per cycle. They exclude only the probe's fixture pre-pose to the start pose (tagged `fixture_start_pre_pose`), which runs without the lead guard and with a looser settling tolerance. Failed and interrupted production returns are kept.
 
 Across all runs:
 - Each grasp attached at 4–8 cm from the palm.
 - Every offer released palm-up, at wrist roll 1.68–1.69 rad.
 - No bottle was dropped.
-- Every startup return chose "raise first" (from the start pose the direct path is 12–18 cm into the box volume). Every return after a handover went "direct", because the hand starts above the box top.
+- Every production startup return chose "raise first" (from the start pose the direct path is 12–18 cm into the box volume). Every return after a handover went "direct", because the hand starts above the box top.
 
 `trials-before-wrist-relief.json` keeps the failing runs that motivated the native changes:
-- 0.20 m: three runs ended in `reset_timeout`, in the startup return twice and in the cycle-2 return once.
+- 0.20 m: three runs ended in `reset_timeout`, in the startup return twice and in the cycle-2 return once (production returns 2/3, 0/1 and 0/1 settled).
 - `smoke-11`: the autopilot aborted on a false planner hold.
 
 ## Native changes these runs depend on (GR00T-WholeBodyControl `work/g1-handover-loop-20261020`)
 
 The runs used native base `25c948c` with these changes applied, before they were committed as `23bc312` (deploy telemetry) and `37a742a` (left arm and wrist relief). The deploy binary sha256 was `b1df417c…3ac2`. `trials.json` records the base commit only.
+
+`4b4e666`, committed after these runs, applies the G1 limits to all 14 arm joints in StandingReset. Before that, only the right arm was bounded. Every stored arm reference and measurement in these runs stayed at least 0.32 rad inside those limits, so the runs were not repeated.
 
 **1. Deploy `planner_reference_active` reported the wrong owner.**
 - In token-only POSE mode (protocol v4), the planner is disabled but its last frame stays current, so the flag stayed 1.
