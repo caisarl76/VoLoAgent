@@ -449,9 +449,11 @@ def arm_stream(args, states, walls, blend_in=0):
     guards = EpisodeGuards(**{**guard_kwargs(args), "token_echo_timeout_s": 0.0})
     lr_fire = nt_fire = None
     for j, (s, w) in enumerate(zip(states, walls)):
+        if j < blend_in:  # native (R20b): LoopController records the blend-in ticks into the arm history only
+            guards.record(w, msg_of(s))
         if j >= blend_in:
             if j == blend_in:
-                guards.start(w)
+                guards.start(w, keep_history=True)
             if lr_fire is None and (reason := lw()):
                 lr_fire = (j - blend_in, f"watchdog: {reason}")
             v = guards.check(w, msg_of(s), 0.0, 0.0, w, [])
@@ -672,9 +674,10 @@ def main():
         result["observations"].setdefault("record_frame_index", {})[name] = dict(
             logged_equals_int_t_ep_x_policy_fps=bool(np.array_equal(
                 trials[1]["log"]["frame"][ep], [min(int(t * args0["policy_fps"]), 10**9 - 1) for t in t_ep])),
-            native_formula=f"int(t_ep * LIVE_FPS={loop_control.LIVE_FPS})",
-            native_matches_logged=bool(np.array_equal([int(t * loop_control.LIVE_FPS) for t in t_ep],
-                                                      trials[1]["log"]["frame"][ep])),
+            # native (R20c): LoopController._record uses its TokenStream's source_fps (the profile's policy rate)
+            native_formula=f"int(t_ep * TokenStream.source_fps={TokenStream(args0['policy_fps']).source_fps:g})",
+            native_matches_logged=bool(np.array_equal(
+                [int(t * TokenStream(args0["policy_fps"]).source_fps) for t in t_ep], trials[1]["log"]["frame"][ep])),
             policy_fps=args0["policy_fps"])
 
     for k, c in checks.items():
