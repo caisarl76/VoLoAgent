@@ -160,3 +160,14 @@ def test_handover_left_arm_ready_pose_is_optional_and_validated(tmp_path, bad):
     path.write_text(yaml.safe_dump(data))
     with pytest.raises(ValueError):
         load_profile(path)
+
+
+def test_loop_example_profile_enables_anchoring():
+    path = ROOT / "configs/g1/handover-loop.example.yaml"
+    profile = load_profile(path)
+    assert profile.lerobot_policy.chunk_anchor_s == 1.0
+    assert profile.handover.checkpoint_verified is False
+    # The native parser accepts the same file.
+    from gear_sonic.utils.inference.harness_profile import load_profile as native_load
+
+    assert native_load(path).lerobot_policy.chunk_anchor_s == 1.0

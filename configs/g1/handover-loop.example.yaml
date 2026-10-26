@@ -1,0 +1,58 @@
+# Runnable handover loop profile (s08 checkpoint). A session copy sets checkpoint_verified: true.
+schema_version: 1
+policy_host: 192.168.0.62
+policy_port: 5571
+checkpoint: /mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model
+embodiment: unitree_g1_sonic
+camera_key: ego_view
+action_horizon: 40
+publish_rate: 50
+limits: {}
+skills:
+  bottle_handover:
+    # Exact prompt from the audited 20,000-step H100 baseline.
+    prompt: pick drink bottle from the table and handover
+    completion_criteria: Bottle lifted from desk and stably supported on level upward-facing open right palm; no rolling, falling or human rescue.
+    completion_action: hold
+handover:
+  skill_id: bottle_handover
+  checkpoint_verified: false
+  ready_pose_reviewed: false
+  # Pick surface: the black box of handover_bottle_261019, top 84.5 cm above the floor
+  # (19 Oct 2026). Its distance from the pelvis varies; 0.15 m is the closest edge
+  # used, which is the conservative case for the clearance check. Keep the box away
+  # from the robot until the startup ready return completes, then bring it in: from
+  # the recorded standing start pose the raised return touched a box 0.18-0.25 m away
+  # (docs/artifacts/g1_handover_20261019_loop_sim). The pelvis height is estimated
+  # from the measured legs at each ready return.
+  desk_top_above_floor_m: 0.845
+  desk_front_from_pelvis_m: 0.15
+  # Simulation candidate from episode 30 frame 60; real swept path unqualified.
+  raised_right_arm_joints:
+    right_shoulder_pitch_joint: 0.01119326613843441
+    right_shoulder_roll_joint: -0.681782603263855
+    right_shoulder_yaw_joint: -0.5984442830085754
+    right_elbow_joint: 0.16412396728992462
+    right_wrist_roll_joint: 1.085878610610962
+    right_wrist_pitch_joint: -0.15723302960395813
+    right_wrist_yaw_joint: -0.48973536491394043
+  # Palm-in ready pose: per-joint median of 2867 still, open-hand, palm-in frames
+  # between handover cycles in handover_bottle_261019 episodes 2-7 (19 Oct 2026).
+  # Not yet reviewed on hardware.
+  ready_right_arm_joints:
+    right_shoulder_pitch_joint: -0.2287
+    right_shoulder_roll_joint: -0.3292
+    right_shoulder_yaw_joint: 0.0495
+    right_elbow_joint: -0.3238
+    right_wrist_roll_joint: 0.4396
+    right_wrist_pitch_joint: 0.1176
+    right_wrist_yaw_joint: -0.0919
+  # Left shoulder and elbow at the same frames; the ready return moves them there.
+  # The left wrist is held as measured: its recorded values vary too much (IQR
+  # 0.27-0.29 rad on roll/yaw) to be a target, and SONIC left it 0.3-0.4 rad off in sim.
+  ready_left_arm_joints:
+    left_shoulder_pitch_joint: 0.1367
+    left_shoulder_roll_joint: 0.309
+    left_shoulder_yaw_joint: -0.4384
+    left_elbow_joint: 0.7003
+lerobot_policy: {chunk_blend_s: 0.3, max_token_step: 0.05, dex3_right_order: dataset, chunk_anchor_s: 1.0}
