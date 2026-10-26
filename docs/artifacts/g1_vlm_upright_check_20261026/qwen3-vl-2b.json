@@ -1,0 +1,236 @@
+{
+  "summary": {
+    "model": "/home/jihun/.cache/huggingface/hub/models--Qwen--Qwen3-VL-2B-Instruct/snapshots/89644892e4d85e24eaac8bacfd4f463576704203/",
+    "dtype": "bfloat16",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "load_s": 29.1,
+    "peak_allocated_gb": 4.35,
+    "peak_reserved_gb": 4.4,
+    "median_latency_s": 0.774,
+    "upright_correct": "14/17",
+    "hand_correct": "16/17"
+  },
+  "rows": [
+    {
+      "frame": "s08_t0_first",
+      "label_upright": true,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+      "latency_s": 1.891,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s08_t0_25",
+      "label_upright": true,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.743,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s08_t3_first",
+      "label_upright": true,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.817,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s08_t3_25",
+      "label_upright": true,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.769,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t1_first",
+      "label_upright": true,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.763,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t1_25",
+      "label_upright": true,
+      "label_hand": true,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": true
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+      "latency_s": 0.731,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t0_60",
+      "label_upright": false,
+      "label_hand": true,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": true
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+      "latency_s": 0.787,
+      "upright_ok": false,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t5_60",
+      "label_upright": false,
+      "label_hand": true,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": true
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+      "latency_s": 0.774,
+      "upright_ok": false,
+      "hand_ok": true
+    },
+    {
+      "frame": "s13_t9_60",
+      "label_upright": false,
+      "label_hand": true,
+      "answer": {
+        "bottle_upright_on_case": true,
+        "hand_at_bottle": true
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+      "latency_s": 0.789,
+      "upright_ok": false,
+      "hand_ok": true
+    },
+    {
+      "frame": "s13_t4_60",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": true
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": true}\n```",
+      "latency_s": 0.781,
+      "upright_ok": true,
+      "hand_ok": false
+    },
+    {
+      "frame": "s08_t0_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.747,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s08_t3_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.799,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t0_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.795,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t1_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.747,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s16_t5_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.759,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s13_t4_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.708,
+      "upright_ok": true,
+      "hand_ok": true
+    },
+    {
+      "frame": "s13_t9_last",
+      "label_upright": false,
+      "label_hand": false,
+      "answer": {
+        "bottle_upright_on_case": false,
+        "hand_at_bottle": false
+      },
+      "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+      "latency_s": 0.779,
+      "upright_ok": true,
+      "hand_ok": true
+    }
+  ]
+}
