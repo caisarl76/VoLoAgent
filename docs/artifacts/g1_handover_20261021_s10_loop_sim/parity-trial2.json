@@ -1,0 +1,31 @@
+{
+  "session": "/mnt/data/jihun/g1_eval_sessions/s10_wbt_groot_handover261020_he_handover/raw",
+  "trial": 2,
+  "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261020_he_full/pretrained_model",
+  "task": "pick drink bottle from the table and handover",
+  "settings": {
+    "chunk_blend_s": 0.3,
+    "max_token_step": 0.05,
+    "fps": 50
+  },
+  "state": {
+    "dataset": 0.0,
+    "swap": 0.0
+  },
+  "request": {
+    "frames": 20,
+    "byte_identical": 20,
+    "image_shape": [
+      480,
+      640,
+      3
+    ]
+  },
+  "output": {
+    "ticks": 1500,
+    "chunks": 74,
+    "max_abs_token_diff": 4.656612873077393e-10,
+    "max_abs_hand_diff": 0.0,
+    "streamer_slewed_ticks": 6
+  }
+}

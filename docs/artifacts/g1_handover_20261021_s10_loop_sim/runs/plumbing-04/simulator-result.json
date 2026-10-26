@@ -1,0 +1,18 @@
+{
+  "automatic_resets": 0,
+  "startup_resets": 1,
+  "physics_steps": 11506,
+  "fixture_events": [
+    {
+      "sim_time": 13.510000000000712,
+      "event": "box_restore",
+      "restored": true,
+      "gap_m": 0.07382946968320983,
+      "bottle": [
+        0.3432786344763449,
+        -0.036800691384990605,
+        0.9235
+      ]
+    }
+  ]
+}
