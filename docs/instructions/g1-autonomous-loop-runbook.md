@@ -1,0 +1,81 @@
+# G1 autonomous handover loop: robot runbook
+
+Supervised sessions of the autonomous loop (spec `docs/superpowers/specs/2026-10-26-g1-autonomous-handover-loop-design.md`).
+The operator stays at the robot for every session until the user approves unattended runs (`--no-confirm-paths`).
+
+## Hosts and processes
+
+| Where | Process | Notes |
+|---|---|---|
+| Workstation 192.168.0.62, GPU 1 | s08 policy server, port 5571 | `groot_handover261015_he_full`. It is long-running and shared, so leave it as it is. |
+| Workstation, GPU 0 | Qwen3-VL-2B server, port 8301 | `scripts/g1_local_vlm_server.py --host 0.0.0.0`. It refuses to start with less than 4.4 GB free. |
+| PC2 (`pc2_222`) | deploy (T1), native harness (T2), loop runner (T3), verdict console (T4), telemetry recorder | The runner must run on PC2, because frame ages are compared on one clock. |
+
+The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022`, native `cba799d`). The only deploy change since then is `--dds-domain` (`d0f29b3`), which defaults to 0. The loop's Python code runs from `~/GR00T-WholeBodyControl-loop-<date>`, which holds `gear_sonic`, `vlm_orchestrator`, `session-profile.yaml` and `*_SOURCE_COMMIT`. It uses the 10-22 venv, and `PYTHONPATH` selects the new code.
+
+## Before the session
+
+1. **Pull the code.** Archive `gear_sonic` from the native branch head (without `data/robots` and `data/assets`) and `vlm_orchestrator` from the VoLoAgent head into the new folder. Write the source commits.
+2. **Session profile.** Copy `configs/g1/handover-loop.example.yaml` with `checkpoint_verified: true`. Its header must say that it is for this supervised session only.
+3. **Served model.** `loop_take_over` refuses unless the server reports `profile.checkpoint` as its model. Manual check from PC2:
+   `PYTHONPATH=$PWD <venv>/bin/python -c "from gear_sonic.utils.inference.lerobot_sonic_policy import LeRobotSonicPolicyClient as C; print(C('192.168.0.62', 5571, 10000).model)"`
+4. **VLM server reachable from PC2.** `curl -s http://192.168.0.62:8301/v1/models`.
+5. **Re-arm gate on real frames, with the robot holding the ready pose** (spec: any miss blocks the rollout).
+   - In simulation, the ready-pose hand was in view and read as `hand_at_bottle`. The validation frames were taken without the arm at the ready pose.
+   - **How to hold the ready pose:** start the loop (T1-T3), answer the gates through the raise, keep the case empty, and press Enter during the re-arm wait. The robot freezes at ready. Leave "clear?" unanswered.
+   - **Frames to capture** (capture script in another terminal):
+     - a bottle lying on the case in 3 spots;
+     - an upright bottle with a hand near it;
+     - an upright bottle alone;
+     - an empty case;
+     - a person reaching in.
+   - Run them through `RearmMonitor` and the local server.
+   - **Gate:**
+     - bottle step "no" on every lying, hand and reach frame;
+     - bottle step "yes" on the upright frames;
+     - empty step "yes" on the empty frames.
+   - Then answer "clear?" (the restart flow continues) or end the session.
+6. **Camera colours.** Compare a saved frame with an s08 frame. The bottle cap must be yellow-green.
+
+## Startup order
+
+1. Power up, stand and reset the robot **away from the case**. SONIC's standing pose reaches into a desk-height case.
+2. Start the deploy (T1) with `--harness-planner-hold`, and wait for it to hold the stance.
+3. Start the native harness (T2).
+4. Start the telemetry recorder and the loop runner (T3): `loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`.
+5. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
+6. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
+7. Bring the case in only after the raise has reached the ready pose.
+
+## During the session
+
+- **Enter = stop**, from the take-over on, at any time outside a gate prompt. The robot freezes and holds the last command.
+- At "clear?", presses in the **first 1 s are ignored** (R21). This keeps the second tap of a panicked double press from resuming the robot. Press Enter again once the path is clear.
+  - A stopped raise or lowering resumes from the frame where it stopped.
+  - A stopped trial blends to the ready pose. Then "restart loop?" follows.
+- **Re-arm before each trial.** The runner prints each decision change. A `failure` line means the VLM server is unreachable; check T0. A long run of `no hand_at_bottle` with nobody near the case means the ready-pose hand is being read as a hand: stop the session and report it.
+  - The first trial after a start, restart or reclaim needs only an upright bottle with no hand at it.
+  - Later trials need an empty case first.
+- **Scoring** is done in the verdict console only: `s`, `f <reason#> [note]`, `r`. Scoring never moves the robot. `e` ends the session after the current trial.
+- **Before answering "lower?", move the case away.** In simulation the right thumb rested on the case from the lowering through the stance.
+- **Expected log lines:**
+  - A `Planner timeout` line at take-over is possible and harmless. The planner silence there is about 1.0 s, against the deploy's 1.0 s timeout, and the harness hold keeps the targets.
+  - An occasional late tick of up to about 35 ms is harmless: the deploy holds the last token across it.
+
+## Recovery
+
+| Situation | What to do |
+|---|---|
+| Robot must stop *now*, or anything unexpected | Enter in T3. If T3 is dead, use the deploy terminal (T1) or the Unitree remote damping. |
+| Native harness (T2) crashed or was Ctrl-C'd while in POSE | The deploy silently **holds the last token** forever: no alarm, no fallback (seen in simulation). Stop from T1 or the remote. Never rely on Ctrl-C of T2 as a stop. |
+| Loop runner (T3) crashed | The lease lapses within 2 s and the loop freezes (LOOP_FROZEN). Start `loop` again with the same `--session-dir`. It reclaims without take-over or raise, asks "clear?", resumes, then asks "restart loop?". A frozen lowering completes the session instead. |
+| Native keys while the loop is frozen | Native keys are ignored in loop phases (each one freezes). Recover through T3. |
+| Ctrl-C/EOF at a startup gate, then the next `loop` gets NOT_READY on claim | Press `i` in the native harness terminal (T2) to clear the interrupted state, then start `loop` again. |
+| `trial_files_missing` event at the session end | A trial's files were not written within 10 s, which is usually a disk error. Read T2's stderr. That trial has no verdict slot, but its number is used. |
+| Take-over refused: served model differs | The server on :5571 is serving another checkpoint. Do not run the session until the s08 server is back. |
+
+## After the session
+
+- Pull `sessions/<name>`, the telemetry npz, `harness-*.log` and `*_SOURCE_COMMIT` into `docs/artifacts/g1_handover_<date>_robot_loop/`.
+- Check the raise and the lowering in the telemetry against the recorded paths in `gear_sonic/data/handover/ready_pose_261020_ep76.npz`.
+- `results.jsonl` is lerobot's format. `eval_session.summarize` and `eval_session_to_lerobot.py` read it directly. Redo verdicts are in `redo.jsonl`.
