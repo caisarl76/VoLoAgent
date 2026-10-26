@@ -13,14 +13,18 @@ from .monitor import G1CompletionMonitor, decode_image
 from .registry import HarnessLimits
 
 # Verbatim PROMPT of docs/artifacts/g1_vlm_upright_check_20261026/upright_check.py (17/17). Adding case_empty to
-# it degraded the upright answers, so case_empty is asked separately with EMPTY_PROMPT.
+# it degraded the upright answers, so the empty case is asked separately with EMPTY_PROMPT. A bare "case_empty"
+# question answered false on all 17 frames (the lid's handle and labels); naming them as part of the case
+# separated the 17 frames (2026-10-26, Qwen3-VL-2B on the local server).
 PROMPT = ("You see the head camera of a humanoid robot looking down at a black case. Answer only with JSON "
           '{"bottle_upright_on_case": true|false, "hand_at_bottle": true|false}. bottle_upright_on_case is true only if a '
           "drink bottle stands upright on top of the black case (not lying down, not held, not on the floor). "
           "hand_at_bottle is true if any robot or human hand touches or holds a bottle.")
 EMPTY_PROMPT = (
-    'Answer only with JSON {"case_empty": true|false}. '
-    "case_empty is true only if nothing stands or lies on top of the black case."
+    "You see the head camera of a humanoid robot looking down at a black case. The case has a built-in carrying "
+    "handle and white labels on its lid; they are part of the case. Answer only with JSON "
+    '{"object_on_case": true|false}. object_on_case is true if a bottle or any other loose object stands or lies '
+    "on top of the black case."
 )
 
 
@@ -31,7 +35,7 @@ class RearmDecision:
     frame_id: str
     step: str
     complete: bool = False  # second "yes" from a distinct frame
-    answers: dict | None = None  # {"upright_check": {"raw", "parsed"}, "case_empty": {...}} for the evidence log
+    answers: dict | None = None  # {"upright_check": {"raw", "parsed"}, "object_on_case": {...}} for the evidence log
 
 
 class RearmMonitor(G1CompletionMonitor):
@@ -110,10 +114,10 @@ class RearmMonitor(G1CompletionMonitor):
         else:
             ok = not upright and not hand
             if ok:  # an obvious "no" above costs a single call
-                values, bad = ask("case_empty", EMPTY_PROMPT, ("case_empty",))
+                values, bad = ask("object_on_case", EMPTY_PROMPT, ("object_on_case",))
                 if bad:
                     return bad
-                ok = values[0]
+                ok = not values[0]
         if ok:
             self.streak += 1
             return out("yes", self.step, self.streak >= 2)
