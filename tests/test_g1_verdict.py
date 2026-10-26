@@ -90,6 +90,12 @@ def test_next_trial(tmp_path):
     assert next_trial(tmp_path) == 5
 
 
+def test_next_trial_gap(tmp_path):
+    for i in (0, 1, 2, 3, 5):
+        make_trial(tmp_path, i)
+    assert next_trial(tmp_path) == 6
+
+
 def test_end_command_writes_request_file(tmp_path):
     request_session_end(tmp_path)
     assert (tmp_path / "end_session.request").exists()
@@ -112,3 +118,25 @@ def test_cli_verdict_subcommand(tmp_path, monkeypatch):
     monkeypatch.setattr("sys.stdin", iter(["s\n"]))
     assert cli.main(["verdict", "--session-dir", str(tmp_path)]) == 0
     assert lines(tmp_path)[0]["verdict"] == "success"
+
+
+def test_console_bad_input_and_eof(tmp_path, capsys):
+    make_trial(tmp_path, 0)
+    run_console(tmp_path, iter(["x", "f 9", "f", "s"]), poll_s=0)
+    assert [r["verdict"] for r in lines(tmp_path)] == ["success"]
+    assert capsys.readouterr().out.count("? ") >= 3
+    assert not (tmp_path / "end_session.request").exists()
+
+
+def test_console_survives_corrupt_jsonl(tmp_path, capsys):
+    make_trial(tmp_path, 0)
+    (tmp_path / "results.jsonl").write_text('{"trial": 9, "verd')
+    run_console(tmp_path, iter(["s"]), poll_s=0)
+    assert "cannot read" in capsys.readouterr().out
+    assert (tmp_path / "results.jsonl").read_text() == '{"trial": 9, "verd'
+
+
+def test_redo_forces_empty_reason_and_note(tmp_path):
+    make_trial(tmp_path, 0)
+    line = append_verdict(tmp_path, 0, "redo", "other", "n")
+    assert line["reason"] == "" and line["note"] == ""

@@ -50,7 +50,7 @@ def pending_trials(session_dir) -> list[int]:
 
 def next_trial(session_dir) -> int:
     scored = _scored(session_dir, "results.jsonl") + _scored(session_dir, "redo.jsonl")
-    return max(len(_recorded(session_dir)), max(scored, default=-1) + 1)
+    return max(max(_recorded(session_dir), default=-1) + 1, max(scored, default=-1) + 1)
 
 
 def remaining_trials(session_dir, n_trials) -> int:
@@ -60,13 +60,15 @@ def remaining_trials(session_dir, n_trials) -> int:
 def append_verdict(session_dir, trial, verdict, reason, note) -> dict:
     session_dir = Path(session_dir)
     base = session_dir / f"trial_{trial:03d}"
-    z = np.load(f"{base}.npz")
+    with np.load(f"{base}.npz") as z:
+        episode_end = str(z["episode_end"])
+        wall_start, wall_stop = float(z["wall_start"]), float(z["wall_stop"])
+        model = (str(z["model"]) if "model" in z.files else "") or None
     with np.load(f"{base}_frames.npz") as f:
         frames = len(f["offsets"]) - 1
     if trial in _scored(session_dir, "results.jsonl") + _scored(session_dir, "redo.jsonl"):
         raise ValueError(f"trial {trial} already has a verdict")
-    episode_end = str(z["episode_end"])
-    if verdict == "success":
+    if verdict != "fail":
         reason = note = ""
     elif verdict == "fail" and not reason:
         if not episode_end.startswith("watchdog"):
@@ -78,10 +80,10 @@ def append_verdict(session_dir, trial, verdict, reason, note) -> dict:
         "reason": reason or "",
         "note": note or "",
         "episode_end": episode_end,
-        "wall_start": float(z["wall_start"]),
-        "wall_stop": float(z["wall_stop"]),
+        "wall_start": wall_start,
+        "wall_stop": wall_stop,
         "frames": frames,
-        "model": (str(z["model"]) if "model" in z.files else "") or None,
+        "model": model,
     }
     name = "redo.jsonl" if verdict == "redo" else "results.jsonl"
     with open(session_dir / name, "a") as f:
@@ -108,7 +110,10 @@ def _parse(text):
 
 
 def run_console(session_dir, lines, poll_s=0.5) -> None:
-    """Score pending trials from `lines` (stdin); waits for new trials until `e` or EOF."""
+    """Score pending trials from `lines` (stdin); waits for new trials until `e` or EOF.
+
+    Verdict lines typed ahead are applied to the next pending trials in order.
+    """
     q = queue.Queue()
 
     def read():
@@ -117,13 +122,19 @@ def run_console(session_dir, lines, poll_s=0.5) -> None:
         q.put(None)
 
     threading.Thread(target=read, daemon=True).start()
-    shown = None
+    shown = bad = None
     while True:
-        pending = pending_trials(session_dir)
+        try:
+            pending = pending_trials(session_dir)
+        except ValueError as exc:  # corrupt jsonl: never skip it (would allow double scoring)
+            pending = []
+            if str(exc) != bad:
+                bad = str(exc)
+                print(f"? cannot read results files: {exc}", flush=True)
         if pending and pending[0] != shown:
             shown = pending[0]
-            z = np.load(Path(session_dir) / f"trial_{shown:03d}.npz")
-            print(f"trial {shown}: {z['episode_end']}  [{PROMPT}]", flush=True)
+            with np.load(Path(session_dir) / f"trial_{shown:03d}.npz") as z:
+                print(f"trial {shown}: {z['episode_end']}  [{PROMPT}]", flush=True)
         try:
             text = q.get(timeout=poll_s)
         except queue.Empty:
