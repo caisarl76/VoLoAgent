@@ -41,7 +41,7 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 
 1. Power up, stand and reset the robot **away from the case**. SONIC's standing pose reaches into a desk-height case.
 2. Start the deploy (T1) with `--harness-planner-hold`, and wait for it to hold the stance.
-3. Start the native harness (T2).
+3. Start the native harness (T2) in a tmux window you can type into. Then press **`k` once** in T2. This starts the deploy's C++ control loop in PLANNER mode, and the robot holds its stance. Without it, `loop` stops with "Operator must prepare a running paused executor". `k` is a toggle, so pressing it again stops the control loop. Never press `k` again during the session.
 4. Start the telemetry recorder and the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
 5. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
 6. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
