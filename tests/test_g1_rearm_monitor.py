@@ -90,6 +90,9 @@ def test_malformed_json_is_unknown():
     ds = run(m, "a", "b", "c", "d")
     assert [d.outcome for d in ds] == ["yes", "unknown", "unknown", "yes"]
     assert not any(d.complete for d in ds)
+    # the evidence keeps the raw reply of a malformed answer (R21)
+    assert ds[1].answers == {"upright_check": {"raw": "not json", "parsed": None}}
+    assert ds[2].answers == {"upright_check": {"raw": '{"case_empty": true}', "parsed": None}}
 
 
 def test_vlm_exception_is_failure_and_resets():

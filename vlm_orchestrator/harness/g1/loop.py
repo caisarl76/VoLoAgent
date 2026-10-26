@@ -9,7 +9,7 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
     anything else    error -> release (a release in a LOOP phase leaves it frozen, R16b)
   take_over  loop_take_over, wait stance, "start loop?" -> raise
   raise      ["raise?"], loop_raise, wait ready -> trials
-  restart    "restart loop?" -> trials
+  restart    "restart loop?" -> trials; straight to end when no trial remains or the end is requested
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
              start/restart/reclaim, else empty then bottle), loop_trial, wait ready, log the end reason -> end
   end        ["lower?"], loop_end, wait COMPLETED -> finish
@@ -22,7 +22,8 @@ The Enter key rule: a gate prompt is printed only while the robot holds still, a
 means "proceed". Every other Enter, from the take-over on, is a stop: the main thread polls the console and the
 status at 20 Hz and sends loop_freeze within one poll. Before each gate the runner checks the key once more, so
 an Enter typed during the motion that led to the gate is still a stop; then the console flushes and prints the
-prompt. At "clear?" the robot is already frozen, so extra presses are flushed, never a second stop. Before the
+prompt. At "clear?" the robot is already frozen, so extra presses are flushed, never a second stop, and presses
+in its first second are ignored (R21: the second tap of a double-tap stop must not resume the robot). Before the
 take-over (the two startup gates) the robot is not the runner's to freeze: Enter only answers the gates. A native
 freeze (LOOP_FROZEN) seen while waiting, re-arming or at a hold gate is handled exactly like the stop key.
 
@@ -49,7 +50,8 @@ from .verdict import next_trial, remaining_trials
 
 POLL_S = 0.05  # 20 Hz: stop key, status, re-arm
 TRIAL_FILES_WAIT_S = 10.0  # R15
-RELEASE_RETRY_S = 5.0  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
+RELEASE_RETRY_S = 5.0
+CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
 
@@ -71,12 +73,14 @@ class OperatorConsole:
         self._eof.set()
 
     def _drain(self):
-        last = None
+        """Empty the queue; returns the FIRST press of the burst (the stop's evidence time), or None."""
+        first = None
         while True:
             try:
-                last = self._presses.get_nowait()
+                at = self._presses.get_nowait()
             except queue.Empty:
-                return last
+                return first
+            first = at if first is None else first
 
     def stop_pressed(self) -> bool:
         at = self._drain()
@@ -86,14 +90,18 @@ class OperatorConsole:
             self.pressed_at = at
         return at is not None
 
-    def wait_enter(self, prompt, poll=None) -> None:
-        """Flush, print, wait for one press; ``poll()`` runs every POLL_S and may raise to abandon the gate."""
+    def wait_enter(self, prompt, poll=None, min_after=0.0) -> None:
+        """Flush, print, wait for one press; ``poll()`` runs every POLL_S and may raise to abandon the gate.
+
+        Presses received less than ``min_after`` s after the prompt is shown are discarded (debounce).
+        """
         self._drain()
         print(prompt, file=self.out, flush=True)
+        not_before = time.monotonic() + min_after
         while True:
             try:
-                self._presses.get(timeout=POLL_S)
-                return
+                if self._presses.get(timeout=POLL_S) >= not_before:
+                    return
             except queue.Empty:
                 pass
             if self._eof.is_set():
@@ -164,6 +172,10 @@ class LoopRunner(HarnessRunner):
         self.n = next_trial(self.session_dir)
         if s.phase in ("IDLE", "COMPLETED"):
             self.evidence.event(self.n, "session_start", phase=s.phase)
+            if self._end_requested():  # left by an earlier session; this one has not started
+                self.evidence.event(self.n, "stale_end_request_removed")
+                self._log("stale_end_request_removed")
+                (self.session_dir / "end_session.request").unlink(missing_ok=True)
             return "start"
         if s.loop_trial is not None:  # a reclaimed loop's last trial may still be writing its files
             self.n = max(self.n, s.loop_trial + 1)
@@ -174,6 +186,7 @@ class LoopRunner(HarnessRunner):
         if s.phase == "LOOP_FROZEN":
             self._stopped = s
             return "recover"
+        # Unreachable today: the native claim refuses LOOP_HOLD, and every ownerless loop is LOOP_FROZEN.
         if s.phase == "LOOP_HOLD" and s.loop_stage in ("ready", "stance"):
             return "restart" if s.loop_stage == "ready" else "raise"
         raise MissionInterrupted(f"Cannot take control of a loop in {s.phase} (stage {s.loop_stage})")
@@ -198,6 +211,8 @@ class LoopRunner(HarnessRunner):
         return "trials"
 
     def _restart(self):
+        if self._remaining() <= 0 or self._end_requested():  # the session is over: no restart prompt
+            return "end"
         self._gate("restart loop? (ready pose held) [Enter]", self._hold_poll, stop=True)
         self.evidence.event(self.n, "restart")
         return "trials"
@@ -232,6 +247,7 @@ class LoopRunner(HarnessRunner):
             time.sleep(POLL_S)
         if missing:
             self.evidence.event(self.n, "trial_files_missing", trials=missing)
+        (self.session_dir / "end_session.request").unlink(missing_ok=True)  # one typed during the lowering
         self._release()
         return "done"
 
@@ -253,7 +269,10 @@ class LoopRunner(HarnessRunner):
         else:
             self.evidence.event(self.n, "native_freeze", reason=status.reason, frozen_stage=status.frozen_stage)
         self._trial_ended(status)
-        self._gate(f"clear? (frozen in {status.frozen_stage}: {status.reason}) [Enter resumes]")
+        # R21: debounced; a double-tap stop must never resume the robot
+        self._gate(f"clear? (frozen in {status.frozen_stage}: {status.reason}) "
+                   f"[Enter resumes; presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]",
+                   min_after=CLEAR_DEBOUNCE_S)
         self._rpc("loop_resume", {})
         s = self._wait(("LOOP_HOLD", "stance"), ("LOOP_HOLD", "ready"), ("COMPLETED", None), ("IDLE", None))
         self.evidence.event(self.n, "resume", phase=s.phase, stage=s.loop_stage)
@@ -273,11 +292,11 @@ class LoopRunner(HarnessRunner):
             raise _Stop()
         return self._hold_poll()
 
-    def _gate(self, prompt, poll=None, stop=False):
+    def _gate(self, prompt, poll=None, stop=False, min_after=0.0):
         (poll or self._check)()
         if stop and self.console.stop_pressed():  # an Enter typed before the prompt is a stop, not an answer
             raise _Stop()
-        self.console.wait_enter(prompt, poll or self._check)
+        self.console.wait_enter(prompt, poll or self._check, min_after=min_after)
         self.evidence.event(self.n, "gate", prompt=prompt)
 
     def _wait(self, *targets):
