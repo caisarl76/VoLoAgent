@@ -1,0 +1,10 @@
+{"at": 1827396.412390684, "phase": "startup_empty", "bottle": "on_box", "outcome": "yes"}
+{"at": 1827397.448079273, "phase": "startup_empty", "bottle": "on_box", "outcome": "yes"}
+{"at": 1827407.280743985, "phase": "ready", "bottle": "on_box", "outcome": "yes"}
+{"at": 1827408.350467481, "phase": "ready", "bottle": "on_box", "outcome": "yes"}
+{"at": 1827408.507267724, "phase": "pick_offer", "bottle": "on_box", "outcome": "no"}
+{"at": 1827409.555140235, "phase": "pick_offer", "bottle": "on_box", "outcome": "no"}
+{"at": 1827410.600456453, "phase": "pick_offer", "bottle": "on_box", "outcome": "no"}
+{"at": 1827411.626749455, "phase": "pick_offer", "bottle": "on_box", "outcome": "no"}
+{"at": 1827412.673108685, "phase": "pick_offer", "bottle": "on_box", "outcome": "no"}
+{"at": 1827413.71603721, "phase": "pick_offer", "bottle": "dropped", "outcome": "failure"}
