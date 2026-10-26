@@ -112,7 +112,8 @@ def _parse(text):
 def run_console(session_dir, lines, poll_s=0.5) -> None:
     """Score pending trials from `lines` (stdin); waits for new trials until `e` or EOF.
 
-    Verdict lines typed ahead are applied to the next pending trials in order.
+    A verdict applies only to the trial whose episode_end was printed last. Verdict lines typed while no trial is
+    shown are held, in order, and each is applied once the next pending trial has been shown.
     """
     q = queue.Queue()
 
@@ -123,6 +124,7 @@ def run_console(session_dir, lines, poll_s=0.5) -> None:
 
     threading.Thread(target=read, daemon=True).start()
     shown = bad = None
+    held = []
     while True:
         try:
             pending = pending_trials(session_dir)
@@ -131,27 +133,41 @@ def run_console(session_dir, lines, poll_s=0.5) -> None:
             if str(exc) != bad:
                 bad = str(exc)
                 print(f"? cannot read results files: {exc}", flush=True)
-        if pending and pending[0] != shown:
+        if not pending:
+            shown = None
+        elif pending[0] != shown:
             shown = pending[0]
             with np.load(Path(session_dir) / f"trial_{shown:03d}.npz") as z:
                 print(f"trial {shown}: {z['episode_end']}  [{PROMPT}]", flush=True)
-        try:
-            text = q.get(timeout=poll_s)
-        except queue.Empty:
-            continue
-        if text is None:
-            return
-        words = text.split()
-        if not words:
-            continue
-        if words[0].lower() == "e":
-            request_session_end(session_dir)
-            return
-        if words[0].lower() not in ("s", "f", "r") or not pending:
-            print(f"? {PROMPT}" if pending else "no pending trial", flush=True)
-            continue
+        if held and shown is not None:
+            text = held.pop(0)
+        else:
+            try:
+                text = q.get(timeout=poll_s)
+            except queue.Empty:
+                continue
+            if text is None:
+                if held:
+                    print(f"{len(held)} held verdict(s) not applied: no trial shown", flush=True)
+                return
+            words = text.split()
+            if not words:
+                continue
+            if words[0].lower() == "e":
+                if held:
+                    print(f"{len(held)} held verdict(s) not applied: score them in a later verdict run", flush=True)
+                request_session_end(session_dir)
+                return
+            if words[0].lower() not in ("s", "f", "r"):
+                print(f"? {PROMPT}", flush=True)
+                continue
+            if shown is None:  # typed ahead: waits for the next trial to be shown
+                held.append(text)
+                print("no pending trial; held for the next one", flush=True)
+                continue
         try:
             verdict, reason, note = _parse(text)
-            append_verdict(session_dir, pending[0], verdict, reason, note)
+            line = append_verdict(session_dir, shown, verdict, reason, note)
+            print(f"trial {shown}: {line['verdict']} {line['reason']}".rstrip(), flush=True)
         except ValueError as exc:
             print(f"? {exc}", flush=True)

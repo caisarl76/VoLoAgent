@@ -101,8 +101,13 @@ class HarnessRunner:
             status.runtime_id != self._lease.runtime_id
             or status.owner_session_id != self._session_id
         ):
-            raise MissionInterrupted("Executor restarted or operator took control")
-        self._log("status", **asdict(status))
+            raise MissionInterrupted(
+                f"Executor restarted or operator took control (phase {status.phase}, reason {status.reason})"
+            )
+        key = (status.phase, status.loop_stage, status.reason, status.loop_trial)
+        if key != self._status_key:  # 20-50 Hz polls: log changes only
+            self._status_key = key
+            self._log("status", **asdict(status))
         if status.phase in {"FAULT", "INTERRUPTED"}:
             raise MissionInterrupted(status.reason or status.phase)
         return status
@@ -382,6 +387,7 @@ class HarnessRunner:
         self._mission_dir.mkdir(parents=True, exist_ok=False)
         self._client, self._lease, self._execution = self.client_factory(), None, None
         self._held_execution = None
+        self._status_key = None
         self._stop, self._heartbeat_error = threading.Event(), queue.Queue()
         heartbeat = None
         outcome, reason = "fault", "Mission did not start"

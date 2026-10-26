@@ -68,13 +68,18 @@ def main(argv=None):
     verdict.add_argument("--session-dir", required=True, type=Path)
     autopilot = sub.add_parser("autopilot")
     autopilot.add_argument("--max-cycles", type=int)
-    loop = sub.add_parser("loop")
-    loop.add_argument("--session-dir", required=True, type=Path)
-    loop.add_argument("--trials", required=True, type=int)
-    loop.add_argument("--vlm-base-url", required=True)
-    loop.add_argument("--vlm-model", required=True)
-    loop.add_argument("--vlm-api-key")
-    loop.add_argument("--no-confirm-paths", action="store_true")
+    loop = sub.add_parser("loop", help="run the autonomous handover loop (operator console: Enter)")
+    loop.add_argument("--session-dir", required=True, type=Path,
+                      help="lerobot eval session directory shared with the native harness and the verdict console")
+    loop.add_argument("--trials", required=True, type=int,
+                      help="trials to record in this session (redo verdicts add one back)")
+    loop.add_argument("--vlm-base-url", required=True,
+                      help="OpenAI-compatible endpoint of the re-arm VLM, e.g. http://WORKSTATION:8000/v1")
+    loop.add_argument("--vlm-model", required=True, help="model name served at --vlm-base-url")
+    loop.add_argument("--vlm-api-key", help="API key (default: VLM_API_KEY/GENON_API_KEY/OPENAI_API_KEY or 'local')")
+    loop.add_argument("--no-confirm-paths", action="store_true",
+                      help='drop the "raise?" and "lower?" gates; for unattended runs only, after the supervised '
+                           "session")
     for p in (run, execute, autopilot):
         p.add_argument("--vlm-model")
         p.add_argument("--vlm-base-url")
