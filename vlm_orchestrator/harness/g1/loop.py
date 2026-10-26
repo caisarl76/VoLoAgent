@@ -11,9 +11,10 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   raise      ["raise?"], loop_raise, wait ready -> trials
   restart    "restart loop?" -> trials; straight to end when no trial remains or the end is requested
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
-             start/restart/reclaim, else empty then bottle), loop_trial, wait await_take (R24: the arm holds its
-             offer pose), log the end reason, "taken" check (bottle off the robot's hand on 2 frames),
-             loop_to_ready, wait ready -> end
+             start/restart/reclaim or after a hold in which the VLM saw the bottle on the robot hand, else empty
+             then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
+             "bottle taken?" (R25: the operator's Enter; the VLM "taken" check only logs meanwhile), loop_to_ready,
+             wait ready -> end
   end        ["lower?"], loop_end, wait COMPLETED -> finish
   finish     wait <=10 s for every started trial's frames file (R15), release (NOT_READY retried) -> done
   recover    loop_freeze unless already frozen, "clear?", loop_resume, then by the result:
@@ -26,7 +27,8 @@ means "proceed". Every other Enter, from the take-over on, is a stop: the main t
 status at 20 Hz and sends loop_freeze within one poll. Before each gate the runner checks the key once more, so
 an Enter typed during the motion that led to the gate is still a stop; then the console flushes and prints the
 prompt. At "clear?" the robot is already frozen, so extra presses are flushed, never a second stop, and presses
-in its first second are ignored (R21: the second tap of a double-tap stop must not resume the robot). Before the
+in its first second are ignored (R21: the second tap of a double-tap stop must not resume the robot); the same
+holds for "bottle taken?" (R25), where Enter moves the arm from its offer pose to ready. Before the
 take-over (the two startup gates) the robot is not the runner's to freeze: Enter only answers the gates. A native
 freeze (LOOP_FROZEN) seen while waiting, re-arming or at a hold gate is handled exactly like the stop key.
 
@@ -161,6 +163,13 @@ class LoopRunner(HarnessRunner):
         self._said = (None, 0.0)  # the last re-arm decision line printed and when
         return self._run_session([SkillCall(self.profile.handover.skill_id, {})], self._session)
 
+    def _validate_executor(self, status):
+        """Runs before the claim. A fresh start needs trials left; a reclaim proceeds (a frozen lowering finishes)."""
+        if status.phase in ("IDLE", "COMPLETED") and remaining_trials(self.session_dir, self.n_trials) <= 0:
+            recorded = len(list(self.session_dir.glob("trial_*_frames.npz")))
+            raise ValueError(f"session {self.session_dir} has no trials left ({recorded} recorded); "
+                             "use a new --session-dir")
+
     # --- session --------------------------------------------------------------------------------------------
 
     def _session(self, _calls):
@@ -223,9 +232,12 @@ class LoopRunner(HarnessRunner):
         return "trials"
 
     def _trials(self):
-        first = True
+        skip_empty, why = True, None  # the first trial after a start, restart or reclaim re-arms bottle-only
         while self._remaining() > 0 and not self._end_requested():
-            if not all(self._vlm_wait(step, self.n) for step in (("bottle",) if first else ("empty", "bottle"))):
+            if why:
+                self.evidence.event(self.n, "rearm_skip_empty", reason=why)
+                self._say(f"re-arm: empty step skipped ({why})")
+            if not all(self._rearm(step) for step in (("bottle",) if skip_empty else ("empty", "bottle"))):
                 break  # end_session.request during the re-arm
             self._rpc("loop_trial", {"trial": self.n, "session_dir": str(self.session_dir)})
             self.started.append(self.n)
@@ -233,15 +245,15 @@ class LoopRunner(HarnessRunner):
             self.evidence.event(self.n, "trial_start")
             self._say(f"trial {self.n}: start")
             self._trial_ended(self._wait(("LOOP_HOLD", "await_take")))
-            # R24: the arm holds its offer pose until the camera sees the bottle off the robot's hand; the session
-            # end goes through here too (loop_end is ready-only)
-            if not self._vlm_wait("taken", self.n - 1):  # never move the arm without a completed taken gate
-                raise MissionInterrupted("taken gate did not complete")
+            # R24/R25: the arm holds its offer pose until the operator confirms the take; the session end goes
+            # through here too (loop_end is ready-only)
+            trial = self.n - 1
+            skip_empty = self._taken_gate(trial)
             self._rpc("loop_to_ready", {})
             self._wait(("LOOP_HOLD", "ready"))
-            self.evidence.event(self.n - 1, "to_ready")
+            self.evidence.event(trial, "to_ready")
             self._say("to ready")
-            first = False
+            why = f"the VLM saw the bottle on the robot hand after trial {trial}" if skip_empty else None
         return "end"
 
     def _end(self):
@@ -351,55 +363,91 @@ class LoopRunner(HarnessRunner):
     def _end_requested(self):
         return (self.session_dir / "end_session.request").exists()
 
-    def _vlm_wait(self, step, trial):
-        """Two distinct-frame yeses from the RearmMonitor, logged to ``trial``'s sidecar.
+    def _taken_gate(self, trial):
+        """R25: "bottle taken?" answered by the operator (lerobot's hold_for_operator), debounced like "clear?".
 
-        Re-arm steps ("empty", "bottle") run at the ready hold and return False when the session end is requested
-        meanwhile; "taken" runs at the await_take hold after a trial and never skips (the end needs ready).
+        The VLM "taken" step runs meanwhile from the gate's poll, for the evidence and the console only: it never
+        answers the gate. Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
         """
-        hold, kind = ("await_take", "taken") if step == "taken" else ("ready", "rearm")
-        while self._worker is not None and self._worker[0].is_alive():  # a check left by a stop: let it finish
-            self._poll()
-            time.sleep(POLL_S)
-        self._worker = None
-        self.monitor.begin(step, None)  # RearmMonitor ignores the initial frame
-        self.evidence.event(trial, f"{kind}_begin", step=step)
+        self._vlm_begin("taken", trial)
+        seen_on_hand = []
+
+        def poll():
+            s = self._hold_poll()
+            if (s.phase, s.loop_stage) != ("LOOP_HOLD", "await_take"):
+                raise MissionInterrupted(f"Taken gate needs the await_take hold, not {s.phase} (stage {s.loop_stage})")
+            d = self._vlm_collect("taken", trial)
+            if d is not None and ((d.answers or {}).get("taken") or {}).get("parsed", {}).get(
+                    "bottle_on_robot_hand") is True:
+                seen_on_hand.append(d.frame_id)
+            self._vlm_dispatch(trial)
+
+        self._gate(f"bottle taken? (offer pose held) [Enter; presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]",
+                   poll, stop=True, min_after=CLEAR_DEBOUNCE_S)
+        self.evidence.event(trial, "taken_confirmed", vlm_saw_on_hand=bool(seen_on_hand))
+        return bool(seen_on_hand)
+
+    def _rearm(self, step):
+        """Two distinct-frame yeses at the ready hold; False when the session end is requested meanwhile."""
+        self._vlm_begin(step, self.n)
         while True:
             s = self._poll()
-            if (s.phase, s.loop_stage) != ("LOOP_HOLD", hold):
-                raise MissionInterrupted(f"The {step} check needs the {hold} hold, not {s.phase} (stage {s.loop_stage})")
-            if kind == "rearm" and self._end_requested():
+            if (s.phase, s.loop_stage) != ("LOOP_HOLD", "ready"):
+                raise MissionInterrupted(f"Re-arm needs the ready hold, not {s.phase} (stage {s.loop_stage})")
+            if self._end_requested():
                 return False
-            if self._worker is not None and not self._worker[0].is_alive():
-                _, out, path = self._worker
-                self._worker = None
-                decision, error = out.get_nowait()
-                if error:
-                    raise MissionInterrupted(f"VLM monitor error ({kind}): {error}")
-                self.evidence.event(trial, f"{kind}_decision", **asdict(decision), frame_path=path)
-                self._say_decision(decision)
-                if decision.complete:
-                    self.evidence.event(trial, f"{kind}_end", step=step, frame_id=decision.frame_id)
-                    return True
-            if self._worker is None:  # at most one check in flight; newer frames are not fetched meanwhile
-                try:
-                    frame = self._client.observe()
-                except RPCError as exc:
-                    if exc.code != "UNAVAILABLE":
-                        raise
-                    frame = None
-                if frame is not None:
-                    out = queue.Queue(maxsize=1)
-
-                    def check(frame=frame, out=out):
-                        try:
-                            out.put((self.monitor.check(frame), None))
-                        except Exception as exc:
-                            out.put((None, exc))
-
-                    self._worker = (threading.Thread(target=check, daemon=True), out, self.evidence.frame(trial, frame))
-                    self._worker[0].start()
+            d = self._vlm_collect(step, self.n)
+            if d is not None and d.complete:
+                self.evidence.event(self.n, "rearm_end", step=step, frame_id=d.frame_id)
+                return True
+            self._vlm_dispatch(self.n)
             time.sleep(POLL_S)
+
+    @staticmethod
+    def _kind(step):
+        return "taken" if step == "taken" else "rearm"
+
+    def _vlm_begin(self, step, trial):
+        while self._worker is not None and self._worker[0].is_alive():  # a check left by a stop or a gate
+            self._poll()
+            time.sleep(POLL_S)
+        self._worker = None  # its result, if any, belongs to the previous step: dropped
+        self.monitor.begin(step, None)  # RearmMonitor ignores the initial frame
+        self.evidence.event(trial, f"{self._kind(step)}_begin", step=step)
+
+    def _vlm_collect(self, step, trial):
+        """The finished check's decision (logged and printed), or None while it runs or none is in flight."""
+        if self._worker is None or self._worker[0].is_alive():
+            return None
+        _, out, path = self._worker
+        self._worker = None
+        decision, error = out.get_nowait()
+        if error:
+            raise MissionInterrupted(f"VLM monitor error ({self._kind(step)}): {error}")
+        self.evidence.event(trial, f"{self._kind(step)}_decision", **asdict(decision), frame_path=path)
+        self._say_decision(decision)
+        return decision
+
+    def _vlm_dispatch(self, trial):
+        """Observe (main thread) and start one check when none is in flight; newer frames are not fetched meanwhile."""
+        if self._worker is not None:
+            return
+        try:
+            frame = self._client.observe()
+        except RPCError as exc:
+            if exc.code != "UNAVAILABLE":
+                raise
+            return
+        out = queue.Queue(maxsize=1)
+
+        def check():
+            try:
+                out.put((self.monitor.check(frame), None))
+            except Exception as exc:
+                out.put((None, exc))
+
+        self._worker = (threading.Thread(target=check, daemon=True), out, self.evidence.frame(trial, frame))
+        self._worker[0].start()
 
     def _release(self):
         deadline = time.monotonic() + RELEASE_RETRY_S
