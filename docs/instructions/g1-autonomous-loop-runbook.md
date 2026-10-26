@@ -58,10 +58,13 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 - **Enter = stop**, from the take-over on, at any time outside a gate prompt. The robot freezes and holds the last command.
 - At "clear?", presses in the **first 1 s are ignored** (R21). This keeps the second tap of a panicked double press from resuming the robot. Press Enter again once the path is clear.
   - A stopped raise or lowering resumes from the frame where it stopped.
-  - A stopped trial blends to the ready pose. Then "restart loop?" follows, unless no trial remains or `e` was entered; then the runner goes to "lower?".
+  - A stopped trial, including one stopped while holding its offer pose after the trial, blends to the ready pose. Then "restart loop?" follows, unless no trial remains or `e` was entered; then the runner goes to "lower?".
 - **Re-arm before each trial.** The runner prints each decision change. A `failure` line means the VLM call failed: the server is unreachable, timed out or returned an HTTP error. Check T0. A long run of `no hand_at_bottle` with nobody near the case means the ready-pose hand is being read as a hand: stop the session and report it.
   - The first trial after a start, restart or reclaim needs only an upright bottle with no hand at it.
   - Later trials need an empty case first.
+- **After each trial the arm holds its offer pose** (R24). It moves to the ready pose only after the camera sees the bottle off the robot's hand on 2 distinct frames. The runner prints `taken: no` while the bottle is on the hand and `taken: yes` as it clears, then `to ready`. The session end goes through this hold too.
+  - If the camera never sees the bottle off the hand (say the bottle is taken but the hand is still read as holding it): press Enter (stop), wait more than 1 s, then press Enter again ("clear"). The arm then moves to the ready pose, and "restart loop?" or "lower?" follows as usual.
+  - A `taken` line is printed for each decision change. Repeating `failure` lines mean the VLM is down, as for the re-arm.
 - **Scoring** is done in the verdict console only: `s`, `f <reason#> [note]`, `r`. Scoring never moves the robot. `e` ends the session after the current trial.
 - **Before answering "lower?", move the case away.** In simulation the right thumb rested on the case from the lowering through the stance.
 - **Expected log lines:**
