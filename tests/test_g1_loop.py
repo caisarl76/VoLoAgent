@@ -1,5 +1,6 @@
 """LoopRunner against a scripted native loop (FakeLoop mirrors harness_control/loop_control's phases)."""
 
+import io
 import json
 import queue
 import threading
@@ -203,7 +204,7 @@ class Console:
     def __init__(self, loop, stops=(), interrupt=None):
         self.loop, self.stops, self.interrupt, self.pressed_at = loop, list(stops), interrupt, None
 
-    def wait_enter(self, prompt, poll=None):
+    def wait_enter(self, prompt, poll=None, min_after=0.0):
         if poll:
             poll()
         self.loop.trace.append((time.monotonic(), "?" + prompt.split("?")[0] + "?", None))
@@ -260,7 +261,7 @@ class AutoGates(OperatorConsole):
         super().__init__(stream)
         self.loop, self.interrupt = loop, interrupt
 
-    def wait_enter(self, prompt, poll=None):
+    def wait_enter(self, prompt, poll=None, min_after=0.0):
         self.loop.trace.append((time.monotonic(), "?" + prompt.split("?")[0] + "?", None))
         if self.interrupt and prompt.startswith(self.interrupt):
             raise KeyboardInterrupt
@@ -584,3 +585,89 @@ def test_loop_command_wires_runner(tmp_path, monkeypatch, capsys):
     assert seen["n_trials"] == 4 and seen["confirm_paths"] is False and seen["session_dir"] == tmp_path
     assert isinstance(seen["monitor"], RearmMonitor) and seen["profile"].registry_sha256 == PROFILE.registry_sha256
     assert json.loads(capsys.readouterr().out)["outcome"] == "completed"
+
+
+def test_clear_gate_ignores_presses_in_its_first_second(tmp_path):  # R21: a double-tap stop never resumes
+    loop, stdin, presses = FakeLoop(tmp_path), Lines(), {}
+
+    class Gates(OperatorConsole):  # the real wait_enter for "clear?"; other gates answer themselves
+        def wait_enter(self, prompt, poll=None, min_after=0.0):
+            loop.trace.append((time.monotonic(), "?" + prompt.split("?")[0] + "?", None))
+            if not prompt.startswith("clear?"):
+                return
+            assert "presses in the first 1 s are ignored" in prompt
+            shown = time.monotonic()
+
+            def tap():
+                for name, dt in (("early", 0.1), ("late", 1.2)):
+                    time.sleep(max(0.0, shown + dt - time.monotonic()))
+                    presses[name] = time.monotonic()
+                    stdin.q.put("\n")
+
+            threading.Thread(target=tap, daemon=True).start()
+            super().wait_enter(prompt, poll, min_after)
+
+    def stop(lp):
+        if lp.stage == "episode":
+            stdin.q.put("\n")
+            return True
+
+    loop.hooks.append(stop)
+    _, runner, _ = build(tmp_path, loop, trials=1, console=Gates(stdin, out=io.StringIO()))
+    try:
+        assert runner.run().outcome == "completed"
+    finally:
+        stdin.q.put(None)
+    resume_at = next(t for t, m, _ in loop.trace if m == "loop_resume")
+    assert presses["early"] < presses["late"] < resume_at < presses["late"] + 0.2
+
+
+def test_stop_evidence_uses_the_first_press_of_a_burst():
+    stdin = Lines()
+    console = OperatorConsole(stdin)
+    t0 = time.monotonic()
+    stdin.q.put("\n")
+    time.sleep(0.1)
+    stdin.q.put("\n")
+    time.sleep(0.05)
+    assert console.stop_pressed() and t0 <= console.pressed_at < t0 + 0.05
+    assert not console.stop_pressed()  # the burst was drained
+    stdin.q.put(None)
+
+
+def test_no_restart_prompt_when_the_session_is_over(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=1)  # the stopped trial was the last one
+    runner.console = Console(loop, stops=[in_episode])
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m[m.index("loop_trial"):] == ["loop_trial", "loop_freeze", "?clear?", "loop_resume", "?lower?", "loop_end",
+                                         "release_control"]
+    other = tmp_path / "ended"
+    other.mkdir()
+    loop, runner, _ = build(other, trials=5)  # the end was requested during the stopped trial
+
+    def end_then_stop(lp):  # the operator types e at the verdict console, then stops the trial
+        if in_episode(lp):
+            (other / "end_session.request").touch()
+            return True
+
+    runner.console = Console(loop, stops=[end_then_stop])
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert "?restart loop?" not in m and trials_sent(loop) == [0] and m[-3:] == ["?lower?", "loop_end", "release_control"]
+
+
+def test_stale_end_request_removed_at_entry_and_after_completed(tmp_path):
+    (tmp_path / "end_session.request").touch()  # left by an earlier session
+    loop, runner, _ = build(tmp_path, trials=2)
+
+    def typed_while_lowering(lp):
+        if lp.stage == "lower":
+            (tmp_path / "end_session.request").touch()
+            return True
+
+    loop.hooks.append(typed_while_lowering)
+    assert runner.run().outcome == "completed"
+    assert trials_sent(loop) == [0, 1]  # the stale request did not end this session
+    assert any(e["kind"] == "stale_end_request_removed" for e in evidence(tmp_path, 0))
+    assert not (tmp_path / "end_session.request").exists()

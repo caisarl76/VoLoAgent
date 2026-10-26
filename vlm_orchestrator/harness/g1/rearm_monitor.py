@@ -51,8 +51,12 @@ class RearmMonitor(G1CompletionMonitor):
         now_fn: Callable[[], float],
         limits: HarnessLimits | None = None,
     ):
-        super().__init__(None, vlm_call_fn, now_fn, limits)
-        self.step = None
+        def recorded(system, content):  # keeps a reply the base rejects as malformed, for the evidence
+            self._last_raw = vlm_call_fn(system, content)
+            return self._last_raw
+
+        super().__init__(None, recorded, now_fn, limits)
+        self.step, self._last_raw = None, None
 
     def begin(self, step: Literal["empty", "bottle"], initial: ObservationSnapshot) -> None:
         if step not in ("empty", "bottle"):
@@ -72,10 +76,12 @@ class RearmMonitor(G1CompletionMonitor):
                 {"type": "image_url", "image_url": {"url": image_url}},
                 {"type": "text", "text": prompt},
             ]
+            self._last_raw = None
             try:
                 raw = self._bounded_call("", content)
             except ValueError:  # _bounded_call: the reply is not a JSON object
                 self.streak = 0
+                answers[name] = {"raw": self._last_raw, "parsed": None}
                 return None, out("unknown", f"{name}: malformed_reply")
             except Exception as exc:  # timeout or VLM error
                 self.streak = 0
