@@ -1,0 +1,368 @@
+"""Operator-side orchestrator of the autonomous handover loop (runs on PC2 beside the native harness).
+
+Flow (one step method per state; a stop from any step goes to ``_recover``):
+
+  claim -> entry branch by the native phase:
+    IDLE/COMPLETED   start: "deploy ready?", "robot in position?" -> take_over
+    LOOP_FROZEN      reclaim: recover (no take-over, no startup gates, no raise)
+    LOOP_HOLD ready  reclaim: restart;  LOOP_HOLD stance: reclaim: raise
+    anything else    error -> release (a release in a LOOP phase leaves it frozen, R16b)
+  take_over  loop_take_over, wait stance, "start loop?" -> raise
+  raise      ["raise?"], loop_raise, wait ready -> trials
+  restart    "restart loop?" -> trials
+  trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
+             start/restart/reclaim, else empty then bottle), loop_trial, wait ready, log the end reason -> end
+  end        ["lower?"], loop_end, wait COMPLETED -> finish
+  finish     wait <=10 s for every started trial's frames file (R15), release (NOT_READY retried) -> done
+  recover    loop_freeze unless already frozen, "clear?", loop_resume, then by the result:
+             LOOP_HOLD stance -> raise, LOOP_HOLD ready -> restart, COMPLETED -> finish, IDLE (a take-over
+             aborted by the freeze, R16a) -> take_over
+
+The Enter key rule: a gate prompt is printed only while the robot holds still, and the Enter that answers it
+means "proceed". Every other Enter, from the take-over on, is a stop: the main thread polls the console and the
+status at 20 Hz and sends loop_freeze within one poll. Before each gate the runner checks the key once more, so
+an Enter typed during the motion that led to the gate is still a stop; then the console flushes and prints the
+prompt. At "clear?" the robot is already frozen, so extra presses are flushed, never a second stop. Before the
+take-over (the two startup gates) the robot is not the runner's to freeze: Enter only answers the gates. A native
+freeze (LOOP_FROZEN) seen while waiting, re-arming or at a hold gate is handled exactly like the stop key.
+
+Threads: the main thread owns the RPC client (status, observe, every loop_* call); one worker thread runs the
+VLM check on a frame the main thread fetched and never calls RPC; the heartbeat keeps its own client.
+"""
+
+from __future__ import annotations
+
+import base64
+import hashlib
+import json
+import queue
+import sys
+import threading
+import time
+from dataclasses import asdict
+from pathlib import Path
+
+from .client import RPCError
+from .contract import ObservationSnapshot, SkillCall
+from .runner import HarnessRunner, MissionInterrupted, MissionResult
+from .verdict import next_trial, remaining_trials
+
+POLL_S = 0.05  # 20 Hz: stop key, status, re-arm
+TRIAL_FILES_WAIT_S = 10.0  # R15
+RELEASE_RETRY_S = 5.0  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
+MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
+
+
+class OperatorConsole:
+    """Enter only: any line, empty or not, is one press; text is never parsed (verdicts have their own console).
+
+    A background thread reads ``stream``. EOF counts as a stop (no way left to stop) and fails every gate.
+    """
+
+    def __init__(self, stream=sys.stdin, out=sys.stdout):
+        self._presses, self._eof, self.out, self.pressed_at = queue.Queue(), threading.Event(), out, None
+        threading.Thread(target=self._read, args=(stream,), daemon=True).start()
+
+    def _read(self, stream):
+        for _ in stream:
+            if self._eof.is_set():  # closed
+                return
+            self._presses.put(time.monotonic())
+        self._eof.set()
+
+    def _drain(self):
+        last = None
+        while True:
+            try:
+                last = self._presses.get_nowait()
+            except queue.Empty:
+                return last
+
+    def stop_pressed(self) -> bool:
+        at = self._drain()
+        if at is None and self._eof.is_set():
+            at = time.monotonic()
+        if at is not None:
+            self.pressed_at = at
+        return at is not None
+
+    def wait_enter(self, prompt, poll=None) -> None:
+        """Flush, print, wait for one press; ``poll()`` runs every POLL_S and may raise to abandon the gate."""
+        self._drain()
+        print(prompt, file=self.out, flush=True)
+        while True:
+            try:
+                self._presses.get(timeout=POLL_S)
+                return
+            except queue.Empty:
+                pass
+            if self._eof.is_set():
+                raise EOFError("Operator console closed")
+            if poll:
+                poll()
+
+    def close(self) -> None:
+        self._eof.set()
+
+
+class EvidenceLog:
+    """trial_NNN_evidence.jsonl and evidence/trial_NNN/*.jpg; never touches lerobot's trial files."""
+
+    def __init__(self, session_dir):
+        self.dir = Path(session_dir)
+
+    def event(self, trial: int, kind: str, **fields) -> None:
+        line = {"kind": kind, "at": time.monotonic(), "wall": time.time(), **fields}
+        with open(self.dir / f"trial_{trial:03d}_evidence.jsonl", "a") as f:
+            f.write(json.dumps(line, default=str) + "\n")
+
+    def frame(self, trial: int, snapshot: ObservationSnapshot) -> str:
+        rel = f"evidence/trial_{trial:03d}/{hashlib.sha256(snapshot.frame_id.encode()).hexdigest()}.jpg"
+        (self.dir / rel).parent.mkdir(parents=True, exist_ok=True)
+        (self.dir / rel).write_bytes(base64.b64decode(snapshot.jpeg_rgb_b64, validate=True))
+        return rel
+
+
+class _Stop(Exception):
+    """The stop key (status None) or a native freeze (its LOOP_FROZEN status)."""
+
+    def __init__(self, status=None):
+        super().__init__("stop")
+        self.status = status
+
+
+class LoopRunner(HarnessRunner):
+    def __init__(self, profile, client_factory, monitor, session_dir, n_trials, console, confirm_paths=True):
+        if type(n_trials) is not int or n_trials < 1:
+            raise ValueError("n_trials must be a positive integer")
+        self.session_dir = Path(session_dir).resolve()  # the native process writes here too
+        self.session_dir.mkdir(parents=True, exist_ok=True)
+        super().__init__(profile, client_factory, monitor, self.session_dir / "evidence")
+        self.n_trials, self.console, self.confirm_paths = n_trials, console, confirm_paths
+        self.evidence = EvidenceLog(self.session_dir)
+
+    def run(self) -> MissionResult:
+        if self.profile.handover is None:
+            raise ValueError("Handover loop profile required")
+        # n: the trial in progress or the next one (R4/R4b); started: trials whose loop_trial this runner sent
+        self.n, self.started, self.active, self._worker, self._stopped = 0, [], False, None, None
+        return self._run_session([SkillCall(self.profile.handover.skill_id, {})], self._session)
+
+    # --- session --------------------------------------------------------------------------------------------
+
+    def _session(self, _calls):
+        step = self._entry()
+        while step != "done":
+            try:
+                step = getattr(self, "_" + step)()
+            except _Stop as stop:
+                self._stopped, step = stop.status, "recover"
+        return f"Loop session complete; {len(self.started)} trials run"
+
+    def _entry(self):
+        s = self._check()
+        self.n = next_trial(self.session_dir)
+        if s.phase in ("IDLE", "COMPLETED"):
+            self.evidence.event(self.n, "session_start", phase=s.phase)
+            return "start"
+        if s.loop_trial is not None:  # a reclaimed loop's last trial may still be writing its files
+            self.n = max(self.n, s.loop_trial + 1)
+            if not self._recorded(s.loop_trial):
+                self.started.append(s.loop_trial)
+        self.evidence.event(self.n, "reclaim", phase=s.phase, stage=s.loop_stage, frozen_stage=s.frozen_stage,
+                            reason=s.reason, loop_trial=s.loop_trial, trial_end_reason=s.trial_end_reason)
+        if s.phase == "LOOP_FROZEN":
+            self._stopped = s
+            return "recover"
+        if s.phase == "LOOP_HOLD" and s.loop_stage in ("ready", "stance"):
+            return "restart" if s.loop_stage == "ready" else "raise"
+        raise MissionInterrupted(f"Cannot take control of a loop in {s.phase} (stage {s.loop_stage})")
+
+    def _start(self):
+        self._gate("deploy ready? (deploy in PLANNER, native harness running) [Enter]")
+        self._gate("robot in position? (standing, clear of the case) [Enter]")
+        return "take_over"
+
+    def _take_over(self):
+        self._rpc("loop_take_over", {})
+        self.evidence.event(self.n, "take_over")
+        self._wait(("LOOP_HOLD", "stance"))
+        self._gate("start loop? (stance held) [Enter]", self._hold_poll, stop=True)
+        return "raise"
+
+    def _raise(self):
+        if self.confirm_paths:
+            self._gate("raise? (arm to the ready pose) [Enter]", self._hold_poll, stop=True)
+        self._rpc("loop_raise", {})
+        self._wait(("LOOP_HOLD", "ready"))
+        return "trials"
+
+    def _restart(self):
+        self._gate("restart loop? (ready pose held) [Enter]", self._hold_poll, stop=True)
+        self.evidence.event(self.n, "restart")
+        return "trials"
+
+    def _trials(self):
+        first = True
+        while self._remaining() > 0 and not self._end_requested():
+            if not all(self._rearm(step) for step in (("bottle",) if first else ("empty", "bottle"))):
+                break  # end_session.request during the re-arm
+            self._rpc("loop_trial", {"trial": self.n, "session_dir": str(self.session_dir)})
+            self.started.append(self.n)
+            self.active = True
+            self.evidence.event(self.n, "trial_start")
+            self._trial_ended(self._wait(("LOOP_HOLD", "ready")))
+            first = False
+        return "end"
+
+    def _end(self):
+        request = self.session_dir / "end_session.request"
+        self.evidence.event(self.n, "session_end", cause="end_session.request" if request.exists() else "trials done")
+        request.unlink(missing_ok=True)  # consumed: it must not end a later session in this directory
+        if self.confirm_paths:
+            self._gate("lower? (arm down, hand back to the planner) [Enter]", self._hold_poll, stop=True)
+        self._rpc("loop_end", {})
+        self._wait(("COMPLETED", None))
+        return "finish"
+
+    def _finish(self):
+        deadline = time.monotonic() + TRIAL_FILES_WAIT_S
+        while (missing := [t for t in self.started if not self._recorded(t)]) and time.monotonic() < deadline:
+            self._check()
+            time.sleep(POLL_S)
+        if missing:
+            self.evidence.event(self.n, "trial_files_missing", trials=missing)
+        self._release()
+        return "done"
+
+    def _recover(self):
+        status = self._stopped
+        if status is None:
+            self.evidence.event(self.n, "stop_key", pressed_at=self.console.pressed_at)
+            sent = time.monotonic()
+            try:
+                status = self._rpc("loop_freeze", {})
+            except RPCError as exc:  # the key raced the loop leaving its LOOP phases
+                phase = self._check().phase if exc.code == "NOT_READY" else None
+                if phase not in ("COMPLETED", "IDLE"):
+                    raise
+                self.evidence.event(self.n, "stop_outside_loop", phase=phase)
+                return "finish" if phase == "COMPLETED" else "start"
+            self.evidence.event(self.n, "loop_freeze", dispatched_at=sent, acked_at=time.monotonic(),
+                                reason=status.reason, frozen_stage=status.frozen_stage)
+        else:
+            self.evidence.event(self.n, "native_freeze", reason=status.reason, frozen_stage=status.frozen_stage)
+        self._trial_ended(status)
+        self._gate(f"clear? (frozen in {status.frozen_stage}: {status.reason}) [Enter resumes]")
+        self._rpc("loop_resume", {})
+        s = self._wait(("LOOP_HOLD", "stance"), ("LOOP_HOLD", "ready"), ("COMPLETED", None), ("IDLE", None))
+        self.evidence.event(self.n, "resume", phase=s.phase, stage=s.loop_stage)
+        return {"stance": "raise", "ready": "restart"}.get(s.loop_stage) or (
+            "finish" if s.phase == "COMPLETED" else "take_over")
+
+    # --- helpers --------------------------------------------------------------------------------------------
+
+    def _hold_poll(self):
+        status = self._check()
+        if status.phase == "LOOP_FROZEN":
+            raise _Stop(status)
+        return status
+
+    def _poll(self):
+        if self.console.stop_pressed():
+            raise _Stop()
+        return self._hold_poll()
+
+    def _gate(self, prompt, poll=None, stop=False):
+        (poll or self._check)()
+        if stop and self.console.stop_pressed():  # an Enter typed before the prompt is a stop, not an answer
+            raise _Stop()
+        self.console.wait_enter(prompt, poll or self._check)
+        self.evidence.event(self.n, "gate", prompt=prompt)
+
+    def _wait(self, *targets):
+        while True:
+            s = self._poll()
+            if (s.phase, s.loop_stage) in targets:
+                return s
+            if s.phase not in MOVING:
+                raise MissionInterrupted(f"Unexpected loop state {s.phase} (stage {s.loop_stage})")
+            time.sleep(POLL_S)
+
+    def _trial_ended(self, status):
+        if self.active:
+            self.evidence.event(self.n, "trial_end", reason=status.trial_end_reason)
+            self.active, self.n = False, self.n + 1
+
+    def _recorded(self, trial):
+        return (self.session_dir / f"trial_{trial:03d}_frames.npz").exists()
+
+    def _remaining(self):  # a trial whose files are still being written counts as recorded
+        return remaining_trials(self.session_dir, self.n_trials) - sum(not self._recorded(t) for t in self.started)
+
+    def _end_requested(self):
+        return (self.session_dir / "end_session.request").exists()
+
+    def _rearm(self, step):
+        """Two distinct-frame yeses from the RearmMonitor; False when the session end is requested meanwhile."""
+        while self._worker is not None and self._worker[0].is_alive():  # a check left by a stop: let it finish
+            self._poll()
+            time.sleep(POLL_S)
+        self._worker = None
+        self.monitor.begin(step, None)  # RearmMonitor ignores the initial frame
+        self.evidence.event(self.n, "rearm_begin", step=step)
+        while True:
+            s = self._poll()
+            if (s.phase, s.loop_stage) != ("LOOP_HOLD", "ready"):
+                raise MissionInterrupted(f"Re-arm needs the ready hold, not {s.phase} (stage {s.loop_stage})")
+            if self._end_requested():
+                return False
+            if self._worker is not None and not self._worker[0].is_alive():
+                _, out, path = self._worker
+                self._worker = None
+                decision, error = out.get_nowait()
+                if error:
+                    raise MissionInterrupted(f"Re-arm monitor error: {error}")
+                self.evidence.event(self.n, "rearm_decision", **asdict(decision), frame_path=path)
+                if decision.complete:
+                    self.evidence.event(self.n, "rearm_end", step=step, frame_id=decision.frame_id)
+                    return True
+            if self._worker is None:  # at most one check in flight; newer frames are not fetched meanwhile
+                try:
+                    frame = self._client.observe()
+                except RPCError as exc:
+                    if exc.code != "UNAVAILABLE":
+                        raise
+                    frame = None
+                if frame is not None:
+                    out = queue.Queue(maxsize=1)
+
+                    def check(frame=frame, out=out):
+                        try:
+                            out.put((self.monitor.check(frame), None))
+                        except Exception as exc:
+                            out.put((None, exc))
+
+                    self._worker = (threading.Thread(target=check, daemon=True), out, self.evidence.frame(self.n, frame))
+                    self._worker[0].start()
+            time.sleep(POLL_S)
+
+    def _release(self):
+        deadline = time.monotonic() + RELEASE_RETRY_S
+        while True:
+            try:
+                return self._rpc("release_control", {})
+            except RPCError as exc:
+                if exc.code != "NOT_READY" or time.monotonic() >= deadline:
+                    raise
+            time.sleep(POLL_S)
+
+    def _cancel_and_release(self):
+        """Error path: release as is. In a LOOP phase that freezes the loop for a later reclaim (R16b)."""
+        if self._lease is None:
+            return
+        try:
+            if self._client.get_status().owner_session_id == self._session_id:
+                self._release()
+        except Exception as exc:
+            self._log("cleanup_unconfirmed", reason=str(exc))

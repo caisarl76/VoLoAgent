@@ -18,6 +18,35 @@ from .registry import load_profile, validate_skill_call
 from .runner import HarnessRunner
 from .autopilot import HandoverRunner
 from .handover_monitor import HandoverMonitor
+from .loop import LoopRunner, OperatorConsole
+from .rearm_monitor import RearmMonitor
+
+
+def _vlm_call(args, profile):
+    api = OpenAI(
+        api_key=args.vlm_api_key
+        or os.environ.get("VLM_API_KEY")
+        or os.environ.get("GENON_API_KEY")
+        or os.environ.get("OPENAI_API_KEY")
+        or "local",
+        base_url=args.vlm_base_url,
+        timeout=profile.limits.monitor_deadline_s,
+        max_retries=0,
+    )
+
+    def vlm_call(system, content):
+        response = chat_create(
+            api,
+            model=args.vlm_model,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": content},
+            ],
+            temperature=0.0,
+        )
+        return response.choices[0].message.content
+
+    return vlm_call
 
 
 def main(argv=None):
@@ -39,6 +68,13 @@ def main(argv=None):
     verdict.add_argument("--session-dir", required=True, type=Path)
     autopilot = sub.add_parser("autopilot")
     autopilot.add_argument("--max-cycles", type=int)
+    loop = sub.add_parser("loop")
+    loop.add_argument("--session-dir", required=True, type=Path)
+    loop.add_argument("--trials", required=True, type=int)
+    loop.add_argument("--vlm-base-url", required=True)
+    loop.add_argument("--vlm-model", required=True)
+    loop.add_argument("--vlm-api-key")
+    loop.add_argument("--no-confirm-paths", action="store_true")
     for p in (run, execute, autopilot):
         p.add_argument("--vlm-model")
         p.add_argument("--vlm-base-url")
@@ -105,6 +141,20 @@ def main(argv=None):
             finally:
                 client.close()
             return 0
+        if args.command == "loop":
+            if args.trials < 1:
+                raise ValueError("--trials must be positive")
+            monitor = RearmMonitor(_vlm_call(args, profile), time.monotonic, profile.limits)
+            console = OperatorConsole()
+            try:
+                result = LoopRunner(
+                    profile, factory, monitor, args.session_dir, args.trials, console,
+                    confirm_paths=not args.no_confirm_paths,
+                ).run()
+            finally:
+                console.close()
+            print(json.dumps(asdict(result), default=str))
+            return 0 if result.outcome == "completed" else 1
         if args.command == "autopilot":
             h = profile.handover
             if (
@@ -149,29 +199,7 @@ def main(argv=None):
                 or "YOUR_" in args.vlm_base_url
             ):
                 raise ValueError("Manipulation requires --vlm-model and --vlm-base-url")
-            api = OpenAI(
-                api_key=args.vlm_api_key
-                or os.environ.get("VLM_API_KEY")
-                or os.environ.get("GENON_API_KEY")
-                or os.environ.get("OPENAI_API_KEY")
-                or "local",
-                base_url=args.vlm_base_url,
-                timeout=profile.limits.monitor_deadline_s,
-                max_retries=0,
-            )
-
-            def vlm_call(system, content):
-                response = chat_create(
-                    api,
-                    model=args.vlm_model,
-                    messages=[
-                        {"role": "system", "content": system},
-                        {"role": "user", "content": content},
-                    ],
-                    temperature=0.0,
-                )
-                return response.choices[0].message.content
-
+            vlm_call = _vlm_call(args, profile)
             monitor = (
                 HandoverMonitor(vlm_call, time.monotonic, profile.limits, require_hand_state=True)
                 if args.command == "autopilot"
