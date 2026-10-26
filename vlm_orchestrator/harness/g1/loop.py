@@ -235,7 +235,8 @@ class LoopRunner(HarnessRunner):
             self._trial_ended(self._wait(("LOOP_HOLD", "await_take")))
             # R24: the arm holds its offer pose until the camera sees the bottle off the robot's hand; the session
             # end goes through here too (loop_end is ready-only)
-            self._vlm_wait("taken", self.n - 1)
+            if not self._vlm_wait("taken", self.n - 1):  # never move the arm without a completed taken gate
+                raise MissionInterrupted("taken gate did not complete")
             self._rpc("loop_to_ready", {})
             self._wait(("LOOP_HOLD", "ready"))
             self.evidence.event(self.n - 1, "to_ready")
@@ -374,7 +375,7 @@ class LoopRunner(HarnessRunner):
                 self._worker = None
                 decision, error = out.get_nowait()
                 if error:
-                    raise MissionInterrupted(f"Re-arm monitor error: {error}")
+                    raise MissionInterrupted(f"VLM monitor error ({kind}): {error}")
                 self.evidence.event(trial, f"{kind}_decision", **asdict(decision), frame_path=path)
                 self._say_decision(decision)
                 if decision.complete:
