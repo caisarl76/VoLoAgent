@@ -132,11 +132,12 @@ def test_profile_lerobot_policy_section_is_optional_and_validated(tmp_path):
     path = tmp_path / "profile.yaml"
     path.write_text(yaml.safe_dump(data))
     assert r.load_profile(path).lerobot_policy is None
-    settings = dict(chunk_blend_s=0.3, max_token_step=0.05, dex3_right_order="dataset")
+    settings = dict(chunk_blend_s=0.3, max_token_step=0.05, dex3_right_order="dataset", chunk_anchor_s=1.0)
     path.write_text(yaml.safe_dump({**data, "lerobot_policy": settings}))
     assert r.load_profile(path).lerobot_policy == r.LeRobotPolicySettings(**settings)
     for bad in (dict(chunk_blend_s=0.9), dict(max_token_step=-0.01), dict(max_token_step=float("inf")),
-                dict(dex3_right_order="mirror"), dict(rtc=True)):
+                dict(dex3_right_order="mirror"), dict(rtc=True),
+                dict(chunk_anchor_s=-0.1), dict(chunk_anchor_s=6.0)):
         path.write_text(yaml.safe_dump({**data, "lerobot_policy": bad}))
         with pytest.raises(ValueError, match="lerobot_policy"):
             r.load_profile(path)
