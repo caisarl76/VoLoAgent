@@ -1,4 +1,6 @@
+import ast
 import json
+from pathlib import Path
 import time
 from dataclasses import replace
 
@@ -6,7 +8,7 @@ import pytest
 
 from test_g1_monitor import snapshot
 from vlm_orchestrator.harness.g1.registry import HarnessLimits
-from vlm_orchestrator.harness.g1.rearm_monitor import PROMPT, RearmMonitor
+from vlm_orchestrator.harness.g1.rearm_monitor import EMPTY_PROMPT, PROMPT, RearmMonitor
 
 
 def answer(empty=False, upright=False, hand=False):
@@ -16,14 +18,24 @@ def answer(empty=False, upright=False, hand=False):
 
 
 def make(replies, step="empty", limits=None):
-    queue, calls = list(replies), []
+    # Each queued entry is one frame's world state; PROMPT takes the next entry, EMPTY_PROMPT reads case_empty from it.
+    queue, calls, current = list(replies), [], []
 
     def vlm(system, content):
         calls.append(content)
-        r = queue.pop(0)
+        if content[1]["text"] == EMPTY_PROMPT:
+            return json.dumps({"case_empty": json.loads(current[0])["case_empty"]})
+        current[:] = [queue.pop(0)]
+        r = current[0]
         if isinstance(r, Exception):
             raise r
-        return r
+        try:
+            d = json.loads(r)
+        except ValueError:
+            return r
+        if "bottle_upright_on_case" in d:
+            d.pop("case_empty", None)
+        return json.dumps(d)
 
     m = RearmMonitor(vlm, lambda: 1.0, limits)
     m.begin(step, snapshot("init"))
@@ -62,7 +74,7 @@ def test_bottle_step_completes_without_hand():
 def test_two_distinct_frames_required():
     m, calls = make([answer(empty=True)] * 2)
     ds = run(m, "a", "a")
-    assert not any(d.complete for d in ds) and len(calls) == 1
+    assert not any(d.complete for d in ds) and len(calls) == 2
     assert run(m, "b")[0].complete
 
 
@@ -93,15 +105,38 @@ def test_begin_resets_streak_and_seen_frames():
     assert [d.complete for d in ds] == [False, True]
 
 
-def test_prompt_keeps_upright_check_wording():
-    for s in (
-        "You see the head camera of a humanoid robot looking down at a black case.",
-        "bottle_upright_on_case is true only if a drink bottle stands upright on top of the black case (not lying down, not held, not on the floor).",
-        "hand_at_bottle is true if any robot or human hand touches or holds a bottle.",
-        "case_empty is true only if nothing stands or lies on top of the black case.",
-        '{"case_empty": true|false, "bottle_upright_on_case": true|false, "hand_at_bottle": true|false}',
-    ):
-        assert s in PROMPT
+def test_prompt_is_the_verbatim_upright_check_prompt():
+    src = Path(__file__).parent.parent / "docs/artifacts/g1_vlm_upright_check_20261026/upright_check.py"
+    node = next(n for n in ast.parse(src.read_text()).body
+                if isinstance(n, ast.Assign) and n.targets[0].id == "PROMPT")
+    assert PROMPT == ast.literal_eval(node.value)
+    assert "case_empty" not in PROMPT
+    assert EMPTY_PROMPT == ('Answer only with JSON {"case_empty": true|false}. '
+                            "case_empty is true only if nothing stands or lies on top of the black case.")
+
+
+def test_empty_step_upright_bottle_is_no_with_one_call():
+    m, calls = make([answer(empty=True, upright=True)])
+    assert run(m, "a")[0].outcome == "no" and len(calls) == 1
+
+
+def test_empty_step_clear_but_not_empty_is_no():
+    m, calls = make([answer(empty=False)])
+    d = run(m, "a")[0]
+    assert d.outcome == "no" and len(calls) == 2 and d.answers["case_empty"]["parsed"] == {"case_empty": False}
+
+
+def test_empty_step_yes_records_both_answers():
+    m, calls = make([answer(empty=True)] * 2)
+    ds = run(m, "a", "b")
+    assert [d.complete for d in ds] == [False, True] and len(calls) == 4
+    assert set(ds[0].answers) == {"upright_check", "case_empty"}
+    assert ds[0].answers["upright_check"]["parsed"] == {"bottle_upright_on_case": False, "hand_at_bottle": False}
+
+
+def test_empty_step_hand_alone_is_no():
+    m, calls = make([answer(empty=True, hand=True)])
+    assert run(m, "a")[0].outcome == "no" and len(calls) == 1
 
 
 def test_sends_only_the_current_frame():
@@ -110,18 +145,13 @@ def test_sends_only_the_current_frame():
     assert [c["type"] for c in calls[0]] == ["image_url", "text"]
 
 
-def test_empty_step_rejects_case_empty_with_upright_bottle():
-    m, _ = make([answer(empty=True, upright=True)])
-    assert run(m, "a")[0].outcome == "no"
-
-
 @pytest.mark.parametrize("b64", ["!!!notbase64", "bm90IGEganBlZw=="])
 def test_corrupt_frame_is_unknown_and_resets(b64):
     m, calls = make([answer(empty=True)] * 2)
     run(m, "a")
     d = m.check(replace(snapshot("bad"), jpeg_rgb_b64=b64))
     assert (d.outcome, d.reason) == ("unknown", "invalid_image") and m.streak == 0
-    assert not run(m, "b")[0].complete and len(calls) == 2
+    assert not run(m, "b")[0].complete and len(calls) == 4
 
 
 @pytest.mark.parametrize("bad", ["true", 1])
