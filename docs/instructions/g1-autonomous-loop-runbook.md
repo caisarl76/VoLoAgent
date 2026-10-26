@@ -41,7 +41,13 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 
 1. Power up, stand and reset the robot **away from the case**. SONIC's standing pose reaches into a desk-height case.
 2. Start the deploy (T1) with `--harness-planner-hold`, and wait for it to hold the stance.
-3. Start the native harness (T2) in a tmux window you can type into. Then press **`k` once** in T2. This starts the deploy's C++ control loop in PLANNER mode, and the robot holds its stance. Without it, `loop` stops with "Operator must prepare a running paused executor". `k` is a toggle, so pressing it again stops the control loop. Never press `k` again during the session.
+3. Start the native harness (T2). Then send **`k` once**. The harness does not read keys from its own terminal: it subscribes to ZMQ port 5580, so send the key from a PC2 shell:
+   `~/GR00T-WholeBodyControl-harness-20261022/venv/bin/python -c "import zmq,time; s=zmq.Context().socket(zmq.PUB); s.bind('tcp://127.0.0.1:5580'); time.sleep(1); s.send_string('k'); time.sleep(0.5)"`
+   - This starts the deploy's C++ control loop in PLANNER mode, and the robot goes to planner standing.
+   - Without it, `loop` stops with "Operator must prepare a running paused executor".
+   - Before starting `loop`, wait until `status` shows `controller_running: true` and `policy_ready: true`.
+   - `k` is a toggle, so sending it again stops the control loop. Never send `k` again during the session.
+   - The same one-shot sender delivers `i` (see Recovery).
 4. Start the telemetry recorder and the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
 5. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
 6. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
@@ -70,7 +76,7 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 | Native harness (T2) crashed or was Ctrl-C'd while in POSE | The deploy silently **holds the last token** forever: no alarm, no fallback (seen in simulation). Stop from T1 or the remote. Never rely on Ctrl-C of T2 as a stop. |
 | Loop runner (T3) crashed | The lease lapses within 2 s and the loop freezes (LOOP_FROZEN). Start `loop` again with the same `--session-dir`. It reclaims without take-over or raise, asks "clear?", resumes, then asks "restart loop?". A frozen lowering completes the session instead. |
 | Native keys in a loop phase | The motion keys (`i m p k [ ] w s a d q e z`) and prompt changes freeze the loop and skip their own action. Other keys keep their harmless action. Recover through T3. |
-| Ctrl-C/EOF at a startup gate | The runner normally releases cleanly, and the next `loop` claims as usual. Only if the release failed and the lease lapsed into INTERRUPTED does the next `loop` get NOT_READY on claim. Then press `i` in T2: **`i` also runs the harness's standing reset, so the robot moves; stand clear.** Then start `loop` again. |
+| Ctrl-C/EOF at a startup gate | The runner normally releases cleanly, and the next `loop` claims as usual. Only if the release failed and the lease lapsed into INTERRUPTED does the next `loop` get NOT_READY on claim. Then send `i` to port 5580 with the one-shot sender from the startup order (not typed in T2): **`i` also runs the harness's standing reset, so the robot moves; stand clear.** Then start `loop` again. |
 | `loop` fails with "Policy prewarm unavailable" | The policy server did not answer when the harness first asked. Check :5571. The harness retries its client on later observations; if it keeps failing, restart T2. |
 | `trial_files_missing` event at the session end | A trial's files were not written within 10 s, which is usually a disk error. Read T2's stderr. That trial has no verdict slot, but its number is used. |
 | Take-over refused: served model differs | The server on :5571 is serving another checkpoint. Do not run the session until the s08 server is back. |
