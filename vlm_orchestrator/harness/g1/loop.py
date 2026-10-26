@@ -11,11 +11,14 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   raise      ["raise?"], loop_raise, wait ready -> trials
   restart    "restart loop?" -> trials; straight to end when no trial remains or the end is requested
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
-             start/restart/reclaim, else empty then bottle), loop_trial, wait ready, log the end reason -> end
+             start/restart/reclaim, else empty then bottle), loop_trial, wait await_take (R24: the arm holds its
+             offer pose), log the end reason, "taken" check (bottle off the robot's hand on 2 frames),
+             loop_to_ready, wait ready -> end
   end        ["lower?"], loop_end, wait COMPLETED -> finish
   finish     wait <=10 s for every started trial's frames file (R15), release (NOT_READY retried) -> done
   recover    loop_freeze unless already frozen, "clear?", loop_resume, then by the result:
-             LOOP_HOLD stance -> raise, LOOP_HOLD ready -> restart, COMPLETED -> finish, IDLE (a take-over
+             LOOP_HOLD stance -> raise, LOOP_HOLD ready (also a freeze in await_take: clear = bottle taken)
+             -> restart, COMPLETED -> finish, IDLE (a take-over
              aborted by the freeze, R16a) -> take_over
 
 The Enter key rule: a gate prompt is printed only while the robot holds still, and the Enter that answers it
@@ -222,14 +225,21 @@ class LoopRunner(HarnessRunner):
     def _trials(self):
         first = True
         while self._remaining() > 0 and not self._end_requested():
-            if not all(self._rearm(step) for step in (("bottle",) if first else ("empty", "bottle"))):
+            if not all(self._vlm_wait(step, self.n) for step in (("bottle",) if first else ("empty", "bottle"))):
                 break  # end_session.request during the re-arm
             self._rpc("loop_trial", {"trial": self.n, "session_dir": str(self.session_dir)})
             self.started.append(self.n)
             self.active = True
             self.evidence.event(self.n, "trial_start")
             self._say(f"trial {self.n}: start")
-            self._trial_ended(self._wait(("LOOP_HOLD", "ready")))
+            self._trial_ended(self._wait(("LOOP_HOLD", "await_take")))
+            # R24: the arm holds its offer pose until the camera sees the bottle off the robot's hand; the session
+            # end goes through here too (loop_end is ready-only)
+            self._vlm_wait("taken", self.n - 1)
+            self._rpc("loop_to_ready", {})
+            self._wait(("LOOP_HOLD", "ready"))
+            self.evidence.event(self.n - 1, "to_ready")
+            self._say("to ready")
             first = False
         return "end"
 
@@ -295,7 +305,8 @@ class LoopRunner(HarnessRunner):
         key, now = (d.step, d.outcome, d.reason), time.monotonic()
         if key != self._said[0] or (d.outcome in ("failure", "unknown") and now - self._said[1] >= SAY_REPEAT_S):
             self._said = (key, now)
-            self._say(f"re-arm {d.step}: {d.outcome} {d.reason}"[:120])
+            label = "taken" if d.step == "taken" else f"re-arm {d.step}"
+            self._say((f"{label}: {d.outcome}" + ("" if d.reason == d.step else f" {d.reason}"))[:120])
 
     def _hold_poll(self):
         status = self._check()
@@ -339,19 +350,24 @@ class LoopRunner(HarnessRunner):
     def _end_requested(self):
         return (self.session_dir / "end_session.request").exists()
 
-    def _rearm(self, step):
-        """Two distinct-frame yeses from the RearmMonitor; False when the session end is requested meanwhile."""
+    def _vlm_wait(self, step, trial):
+        """Two distinct-frame yeses from the RearmMonitor, logged to ``trial``'s sidecar.
+
+        Re-arm steps ("empty", "bottle") run at the ready hold and return False when the session end is requested
+        meanwhile; "taken" runs at the await_take hold after a trial and never skips (the end needs ready).
+        """
+        hold, kind = ("await_take", "taken") if step == "taken" else ("ready", "rearm")
         while self._worker is not None and self._worker[0].is_alive():  # a check left by a stop: let it finish
             self._poll()
             time.sleep(POLL_S)
         self._worker = None
         self.monitor.begin(step, None)  # RearmMonitor ignores the initial frame
-        self.evidence.event(self.n, "rearm_begin", step=step)
+        self.evidence.event(trial, f"{kind}_begin", step=step)
         while True:
             s = self._poll()
-            if (s.phase, s.loop_stage) != ("LOOP_HOLD", "ready"):
-                raise MissionInterrupted(f"Re-arm needs the ready hold, not {s.phase} (stage {s.loop_stage})")
-            if self._end_requested():
+            if (s.phase, s.loop_stage) != ("LOOP_HOLD", hold):
+                raise MissionInterrupted(f"The {step} check needs the {hold} hold, not {s.phase} (stage {s.loop_stage})")
+            if kind == "rearm" and self._end_requested():
                 return False
             if self._worker is not None and not self._worker[0].is_alive():
                 _, out, path = self._worker
@@ -359,10 +375,10 @@ class LoopRunner(HarnessRunner):
                 decision, error = out.get_nowait()
                 if error:
                     raise MissionInterrupted(f"Re-arm monitor error: {error}")
-                self.evidence.event(self.n, "rearm_decision", **asdict(decision), frame_path=path)
+                self.evidence.event(trial, f"{kind}_decision", **asdict(decision), frame_path=path)
                 self._say_decision(decision)
                 if decision.complete:
-                    self.evidence.event(self.n, "rearm_end", step=step, frame_id=decision.frame_id)
+                    self.evidence.event(trial, f"{kind}_end", step=step, frame_id=decision.frame_id)
                     return True
             if self._worker is None:  # at most one check in flight; newer frames are not fetched meanwhile
                 try:
@@ -380,7 +396,7 @@ class LoopRunner(HarnessRunner):
                         except Exception as exc:
                             out.put((None, exc))
 
-                    self._worker = (threading.Thread(target=check, daemon=True), out, self.evidence.frame(self.n, frame))
+                    self._worker = (threading.Thread(target=check, daemon=True), out, self.evidence.frame(trial, frame))
                     self._worker[0].start()
             time.sleep(POLL_S)
 

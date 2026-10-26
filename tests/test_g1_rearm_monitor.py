@@ -8,7 +8,7 @@ import pytest
 
 from test_g1_monitor import snapshot
 from vlm_orchestrator.harness.g1.registry import HarnessLimits
-from vlm_orchestrator.harness.g1.rearm_monitor import EMPTY_PROMPT, PROMPT, RearmMonitor
+from vlm_orchestrator.harness.g1.rearm_monitor import EMPTY_PROMPT, PROMPT, TAKEN_PROMPT, RearmMonitor
 
 
 def answer(empty=False, upright=False, hand=False):
@@ -184,3 +184,44 @@ def test_begin_rejects_unknown_step_and_check_needs_begin():
         m.begin("full", snapshot("init"))
     with pytest.raises(RuntimeError):
         RearmMonitor(lambda s, c: "", lambda: 1.0).check(snapshot("a"))
+
+
+def taken_monitor(replies):
+    queue, calls = list(replies), []
+
+    def vlm(system, content):
+        calls.append(content)
+        r = queue.pop(0)
+        if isinstance(r, Exception):
+            raise r
+        return r
+
+    m = RearmMonitor(vlm, lambda: 1.0)
+    m.begin("taken", snapshot("init"))
+    return m, calls
+
+
+def test_taken_prompt_is_verbatim():
+    assert TAKEN_PROMPT == (
+        'You see the head camera of a humanoid robot. Answer only with JSON {"bottle_on_robot_hand": true|false}. '
+        "bottle_on_robot_hand is true if a drink bottle rests on or is held by the robot's own hand (the black and "
+        "silver metal gripper), including while a person touches it; false if the robot's hand is empty or not visible.")
+
+
+def test_taken_step_needs_two_distinct_frames_off_the_hand():
+    off, on = '{"bottle_on_robot_hand": false}', '{"bottle_on_robot_hand": true}'
+    m, calls = taken_monitor([off, on, off, off])
+    ds = run(m, "a", "b", "c", "d")
+    assert [d.outcome for d in ds] == ["yes", "no", "yes", "yes"] and [d.complete for d in ds] == [False] * 3 + [True]
+    assert len(calls) == 4 and all(c[0]["type"] == "image_url" and c[1]["text"] == TAKEN_PROMPT for c in calls)
+    assert ds[0].step == "taken" and ds[0].answers == {"taken": {"raw": off, "parsed": {"bottle_on_robot_hand": False}}}
+    assert run(m, "d")[0].reason == "repeated_frame"
+
+
+def test_taken_step_exact_bool_failure_unknown_and_stale():
+    m, _ = taken_monitor(['{"bottle_on_robot_hand": 0}', "nope", RuntimeError("down"), '{"other": false}'])
+    ds = run(m, "a", "b", "c", "d")
+    assert [d.outcome for d in ds] == ["unknown", "unknown", "failure", "unknown"]
+    assert ds[1].answers["taken"]["raw"] == "nope"
+    stale = m.check(replace(snapshot("e"), received_at=-5.0))
+    assert stale.outcome == "unknown" and stale.reason == "stale_frame"

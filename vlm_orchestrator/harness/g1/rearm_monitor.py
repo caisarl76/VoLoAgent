@@ -1,4 +1,5 @@
-"""Re-arm checks before a trial: the case is empty, then a bottle stands upright with no hand."""
+"""VLM checks around a trial: before it, the case is empty, then a bottle stands upright with no hand ("empty",
+"bottle"); after it, the bottle is off the robot's hand ("taken", R24) before the arm returns to ready."""
 
 from __future__ import annotations
 
@@ -26,6 +27,11 @@ EMPTY_PROMPT = (
     '{"object_on_case": true|false}. object_on_case is true if a bottle or any other loose object stands or lies '
     "on top of the black case."
 )
+# R24: tested on candidate-A trial frames (on-hand 16/17 true, empty-reach 27/30 false); offer-pose empty-hand frames
+# are still to collect on the robot.
+TAKEN_PROMPT = ('You see the head camera of a humanoid robot. Answer only with JSON {"bottle_on_robot_hand": true|false}. '
+                "bottle_on_robot_hand is true if a drink bottle rests on or is held by the robot's own hand (the black and silver "
+                "metal gripper), including while a person touches it; false if the robot's hand is empty or not visible.")
 
 
 @dataclass(frozen=True)
@@ -58,8 +64,8 @@ class RearmMonitor(G1CompletionMonitor):
         super().__init__(None, recorded, now_fn, limits)
         self.step, self._last_raw = None, None
 
-    def begin(self, step: Literal["empty", "bottle"], initial: ObservationSnapshot) -> None:
-        if step not in ("empty", "bottle"):
+    def begin(self, step: Literal["empty", "bottle", "taken"], initial: ObservationSnapshot) -> None:
+        if step not in ("empty", "bottle", "taken"):
             raise ValueError(f"Unknown re-arm step: {step!r}")
         with self._session_lock:
             self.step, self.streak, self.seen = step, 0, set()
@@ -111,15 +117,18 @@ class RearmMonitor(G1CompletionMonitor):
         except (ValueError, OSError, TypeError):
             self.streak = 0
             return out("unknown", "invalid_image")
-        values, bad = ask("upright_check", PROMPT, ("bottle_upright_on_case", "hand_at_bottle"))
-        if bad:
-            return bad
-        upright, hand = values
-        if self.step == "bottle":
-            ok = upright and not hand
+        if self.step == "taken":  # one call; yes iff bottle_on_robot_hand is exactly False
+            values, bad = ask("taken", TAKEN_PROMPT, ("bottle_on_robot_hand",))
+            if bad:
+                return bad
+            ok = values[0] is False
         else:
-            ok = not upright and not hand
-            if ok:  # an obvious "no" above costs a single call
+            values, bad = ask("upright_check", PROMPT, ("bottle_upright_on_case", "hand_at_bottle"))
+            if bad:
+                return bad
+            upright, hand = values
+            ok = (upright and not hand) if self.step == "bottle" else (not upright and not hand)
+            if ok and self.step == "empty":  # an obvious "no" above costs a single call
                 values, bad = ask("object_on_case", EMPTY_PROMPT, ("object_on_case",))
                 if bad:
                     return bad

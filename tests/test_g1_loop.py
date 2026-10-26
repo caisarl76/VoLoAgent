@@ -22,12 +22,16 @@ from vlm_orchestrator.harness.g1.contract import (
     validate_params,
 )
 from vlm_orchestrator.harness.g1.loop import EvidenceLog, LoopRunner, OperatorConsole
-from vlm_orchestrator.harness.g1.rearm_monitor import EMPTY_PROMPT, RearmMonitor
+from vlm_orchestrator.harness.g1.rearm_monitor import (
+    EMPTY_PROMPT,
+    TAKEN_PROMPT,
+    RearmMonitor,
+)
 from vlm_orchestrator.harness.g1.registry import load_profile
 from vlm_orchestrator.harness.g1.verdict import run_console
 
 PROFILE = load_profile(Path(__file__).resolve().parents[1] / "configs/g1/handover-loop.example.yaml")
-TRIAL_STAGES = ("hold_rest", "first_chunk", "blend_in", "episode", "to_ready")
+TRIAL_STAGES = ("hold_rest", "first_chunk", "blend_in", "episode", "await_take", "to_ready")
 
 
 @pytest.fixture(autouse=True)
@@ -74,7 +78,7 @@ class FakeLoop:
     def _trial_end(self):
         self.end_reason = self.end_reason or "handover complete"
         self._write()
-        self.move("LOOP_TRIAL", "to_ready", 1, lambda: self.hold_at("ready"))
+        self.hold_at("await_take")  # R24: hold the offer pose until loop_to_ready
 
     def lowered(self):
         self.move("LOOP_MOTION", "handback", 2, self._handed_back)
@@ -160,6 +164,9 @@ class FakeLoop:
         elif method == "loop_resume":
             assert self.phase == "LOOP_FROZEN"
             self.resume()
+        elif method == "loop_to_ready":
+            assert (self.phase, self.stage) == ("LOOP_HOLD", "await_take")
+            self.move("LOOP_MOTION", "to_ready", 2, lambda: self.hold_at("ready"))
         elif method == "loop_end":
             assert (self.phase, self.stage) == ("LOOP_HOLD", "ready")
             self.move("LOOP_MOTION", "lower", 2, self.lowered)
@@ -227,8 +234,9 @@ class Console:
 class Rearm(RearmMonitor):
     """Real RearmMonitor; the fake VLM always sees what the current step asks for."""
 
-    def __init__(self, block_s=0.0):
+    def __init__(self, block_s=0.0, on_hand=0):
         self.steps, self.block_s = [], block_s
+        self.on_hand = on_hand  # the first `on_hand` "taken" calls see the bottle still on the robot's hand
         self.called, self.unblock = threading.Event(), threading.Event()
         super().__init__(self._vlm, time.monotonic, PROFILE.limits)
 
@@ -242,6 +250,9 @@ class Rearm(RearmMonitor):
             self.unblock.wait(self.block_s)
         if content[1]["text"] == EMPTY_PROMPT:
             return '{"object_on_case": false}'
+        if content[1]["text"] == TAKEN_PROMPT:
+            self.on_hand -= 1
+            return json.dumps({"bottle_on_robot_hand": self.on_hand >= 0})
         return json.dumps({"bottle_upright_on_case": self.step == "bottle", "hand_at_bottle": False})
 
 
@@ -299,7 +310,8 @@ def test_full_session_sequence(tmp_path):
     assert result.outcome == "completed", result.reason
     assert methods(loop) == [
         "claim_control", "?deploy ready?", "?robot in position?", "loop_take_over", "?start loop?", "?raise?",
-        "loop_raise", "loop_trial", "loop_trial", "loop_trial", "?lower?", "loop_end", "release_control",
+        "loop_raise", "loop_trial", "loop_to_ready", "loop_trial", "loop_to_ready", "loop_trial", "loop_to_ready",
+        "?lower?", "loop_end", "release_control",
     ]
     assert trials_sent(loop) == [0, 1, 2]
     assert all(p["session_dir"] == str(tmp_path.resolve()) for _, m, p in loop.trace if m == "loop_trial")
@@ -309,7 +321,7 @@ def test_full_session_sequence(tmp_path):
 def test_first_trial_skips_empty_step_later_trials_require_it(tmp_path):
     _, runner, monitor = build(tmp_path, trials=3)
     assert runner.run().outcome == "completed"
-    assert monitor.steps == ["bottle", "empty", "bottle", "empty", "bottle"]
+    assert monitor.steps == ["bottle", "taken", "empty", "bottle", "taken", "empty", "bottle", "taken"]
 
 
 def test_stop_freezes_then_clear_resumes_then_restart(tmp_path):
@@ -318,11 +330,11 @@ def test_stop_freezes_then_clear_resumes_then_restart(tmp_path):
     assert runner.run().outcome == "completed"
     m = methods(loop)
     assert m[m.index("loop_trial"):] == [
-        "loop_trial", "loop_freeze", "?clear?", "loop_resume", "?restart loop?", "loop_trial", "?lower?", "loop_end",
-        "release_control",
+        "loop_trial", "loop_freeze", "?clear?", "loop_resume", "?restart loop?", "loop_trial", "loop_to_ready", "?lower?",
+        "loop_end", "release_control",
     ]
     assert trials_sent(loop) == [0, 1]
-    assert monitor.steps == ["bottle", "bottle"]  # the trial after a restart re-arms with the bottle step only
+    assert monitor.steps == ["bottle", "bottle", "taken"]  # after a restart: the bottle step only
     assert evidence(tmp_path, 0)[-1]["kind"] == "trial_end" and evidence(tmp_path, 0)[-1]["reason"] == "operator stop"
 
 
@@ -339,7 +351,7 @@ def test_native_freeze_handled_as_stop(tmp_path):
     m = methods(loop)
     assert "loop_freeze" not in m
     assert m[m.index("loop_trial"):m.index("?lower?")] == [
-        "loop_trial", "?clear?", "loop_resume", "?restart loop?", "loop_trial"]
+        "loop_trial", "?clear?", "loop_resume", "?restart loop?", "loop_trial", "loop_to_ready"]
     kinds = {e["kind"]: e for e in evidence(tmp_path, 0)}
     assert "native freeze in episode: robot state 0.25 s old" in runner.console.out.getvalue().splitlines()
     assert kinds["native_freeze"]["reason"] == "robot state 0.25 s old"
@@ -403,7 +415,8 @@ def test_session_end_request_file_ends_after_current_trial(tmp_path):
     loop.hooks.append(request)
     assert runner.run().outcome == "completed"
     m = methods(loop)
-    assert trials_sent(loop) == [0] and m[m.index("loop_trial") + 1:] == ["?lower?", "loop_end", "release_control"]
+    assert trials_sent(loop) == [0] and m[m.index("loop_trial") + 1:] == [
+        "loop_to_ready", "?lower?", "loop_end", "release_control"]  # the end still goes through the taken gate
     assert not (tmp_path / "end_session.request").exists()  # consumed: a later session is not ended by it
 
 
@@ -427,7 +440,7 @@ def test_fresh_runner_reclaims_frozen_loop_without_takeover(tmp_path):
     assert "loop_take_over" not in m and "loop_raise" not in m
     assert m[:5] == ["claim_control", "?clear?", "loop_resume", "?restart loop?", "loop_trial"]
     assert "?deploy ready?" not in m
-    assert trials_sent(loop) == [0, 1, 2] and monitor.steps[0] == "bottle" and monitor.steps[1:3] == ["empty", "bottle"]
+    assert trials_sent(loop) == [0, 1, 2] and monitor.steps[:4] == ["bottle", "taken", "empty", "bottle"]
     assert any(e["kind"] == "reclaim" for e in evidence(tmp_path, 1))
 
 
@@ -698,7 +711,7 @@ def test_console_shows_rearm_and_trial_progress(tmp_path, monkeypatch):
     dead = "re-arm bottle: failure upright_check: RuntimeError: connection refused"
     assert out.count(dead) == 1  # repeated failures: once per SAY_REPEAT_S (2 s)
     assert out[out.index(dead) + 1:] == [
-        "re-arm bottle: yes bottle", "trial 0: start", "stop key: freezing", "frozen in episode (operator stop)",
+        "re-arm bottle: yes", "trial 0: start", "stop key: freezing", "frozen in episode (operator stop)",
         "trial 0: end (operator stop)"]
 
     monkeypatch.setattr(loop_mod, "SAY_REPEAT_S", 0.05)
@@ -716,3 +729,67 @@ def test_events_log_status_only_on_change(tmp_path):
     keys = [(r["phase"], r["loop_stage"], r["reason"], r["loop_trial"]) for r in rows if r["event"] == "status"]
     assert keys and all(a != b for a, b in itertools.pairwise(keys))
     assert ("LOOP_TRIAL", "episode", None, 1) in keys and keys[-1][0] == "COMPLETED"
+
+
+
+def at(loop, method):
+    return [t for t, m, _ in loop.trace if m == method]
+
+
+def test_taken_gate_before_loop_to_ready(tmp_path):  # R24
+    loop, runner, _ = build(tmp_path, trials=1)
+    assert runner.run().outcome == "completed"
+    events = evidence(tmp_path, 0)  # the taken gate is logged with the trial that ended
+    kinds = [e["kind"] for e in events]
+    assert kinds.index("trial_end") < kinds.index("taken_begin") < kinds.index("taken_end") < kinds.index("to_ready")
+    decisions = [e for e in events if e["kind"] == "taken_decision"]
+    assert [d["outcome"] for d in decisions] == ["yes", "yes"] and decisions[-1]["complete"]
+    assert len({d["frame_id"] for d in decisions}) == 2
+    for d in decisions:
+        assert d["frame_path"].startswith("evidence/trial_000/") and (tmp_path / d["frame_path"]).is_file()
+        assert d["answers"]["taken"]["parsed"] == {"bottle_on_robot_hand": False}
+    taken_end = next(e for e in events if e["kind"] == "taken_end")
+    assert taken_end["at"] < at(loop, "loop_to_ready")[0] < at(loop, "loop_end")[0]
+    assert "taken: yes" in runner.console.out.getvalue().splitlines()
+
+
+def test_no_loop_to_ready_while_the_bottle_is_on_the_hand(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=1, monitor=Rearm(on_hand=5))
+    assert runner.run().outcome == "completed"
+    decisions = [e for e in evidence(tmp_path, 0) if e["kind"] == "taken_decision"]
+    assert [d["outcome"] for d in decisions] == ["no"] * 5 + ["yes", "yes"]
+    last_no = [d["at"] for d in decisions if d["outcome"] == "no"][-1]
+    assert len(at(loop, "loop_to_ready")) == 1 and at(loop, "loop_to_ready")[0] > last_no
+    assert "taken: no" in runner.console.out.getvalue().splitlines()
+
+
+def test_stop_during_the_taken_wait_resumes_to_ready(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=2, monitor=Rearm(on_hand=3))  # trial 1's gate: 3 noes, then off
+    runner.console = Console(loop, stops=[lambda lp: lp.stage == "await_take"])
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m[m.index("loop_trial"):] == [
+        "loop_trial", "loop_freeze", "?clear?", "loop_resume", "?restart loop?", "loop_trial", "loop_to_ready", "?lower?",
+        "loop_end", "release_control"]  # the native resume from await_take is the move to ready
+    ends = [e for e in evidence(tmp_path, 0) if e["kind"] == "trial_end"]
+    assert [e["reason"] for e in ends] == ["handover complete"]  # the freeze did not end the trial again
+
+
+def test_session_end_after_the_last_trial_goes_through_the_taken_gate(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=1, monitor=Rearm(on_hand=2), confirm=False)
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m[m.index("loop_trial"):] == ["loop_trial", "loop_to_ready", "loop_end", "release_control"]
+    assert any(e["kind"] == "taken_end" for e in evidence(tmp_path, 0))
+
+
+def test_reclaim_frozen_in_await_take(tmp_path):
+    loop = FakeLoop(tmp_path, "LOOP_FROZEN", "frozen", frozen_stage="await_take", reason="lease expired", trial=0)
+    loop.end_reason = "handover complete"
+    loop._write()  # trial 0 was recorded before the lease lapsed
+    loop.saved = ("await_take", None)
+    _, runner, monitor = build(tmp_path, loop, trials=2)
+    assert runner.run().outcome == "completed"
+    assert methods(loop) == ["claim_control", "?clear?", "loop_resume", "?restart loop?", "loop_trial", "loop_to_ready",
+                             "?lower?", "loop_end", "release_control"]
+    assert trials_sent(loop) == [1] and monitor.steps == ["bottle", "taken"]
