@@ -35,6 +35,8 @@ def main(argv=None):
     run.add_argument("--skill", required=True)
     execute = sub.add_parser("execute")
     execute.add_argument("--plan-file", required=True, type=Path)
+    verdict = sub.add_parser("verdict")
+    verdict.add_argument("--session-dir", required=True, type=Path)
     autopilot = sub.add_parser("autopilot")
     autopilot.add_argument("--max-cycles", type=int)
     for p in (run, execute, autopilot):
@@ -44,6 +46,13 @@ def main(argv=None):
         p.add_argument("--evidence-dir", type=Path, default=Path("results/g1-harness"))
         p.add_argument("--locomotion", action="store_true")
     args = parser.parse_args(argv)
+    if args.command == "verdict":  # stdin only: no profile, no robot
+        import sys
+
+        from .verdict import run_console
+
+        run_console(args.session_dir, sys.stdin)
+        return 0
     try:
         profile = load_profile(args.profile)
         if args.command == "skills":
