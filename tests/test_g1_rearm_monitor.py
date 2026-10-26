@@ -1,6 +1,11 @@
 import json
+import time
+from dataclasses import replace
+
+import pytest
 
 from test_g1_monitor import snapshot
+from vlm_orchestrator.harness.g1.registry import HarnessLimits
 from vlm_orchestrator.harness.g1.rearm_monitor import PROMPT, RearmMonitor
 
 
@@ -10,7 +15,7 @@ def answer(empty=False, upright=False, hand=False):
     )
 
 
-def make(replies, step="empty"):
+def make(replies, step="empty", limits=None):
     queue, calls = list(replies), []
 
     def vlm(system, content):
@@ -20,7 +25,7 @@ def make(replies, step="empty"):
             raise r
         return r
 
-    m = RearmMonitor(vlm, lambda: 1.0, None)
+    m = RearmMonitor(vlm, lambda: 1.0, limits)
     m.begin(step, snapshot("init"))
     return m, calls
 
@@ -102,4 +107,46 @@ def test_prompt_keeps_upright_check_wording():
 def test_sends_only_the_current_frame():
     m, calls = make([answer(empty=True)])
     run(m, "a")
-    assert [c["type"] for c in calls[0]] == ["text", "image_url"]
+    assert [c["type"] for c in calls[0]] == ["image_url", "text"]
+
+
+def test_empty_step_rejects_case_empty_with_upright_bottle():
+    m, _ = make([answer(empty=True, upright=True)])
+    assert run(m, "a")[0].outcome == "no"
+
+
+@pytest.mark.parametrize("b64", ["!!!notbase64", "bm90IGEganBlZw=="])
+def test_corrupt_frame_is_unknown_and_resets(b64):
+    m, calls = make([answer(empty=True)] * 2)
+    run(m, "a")
+    d = m.check(replace(snapshot("bad"), jpeg_rgb_b64=b64))
+    assert (d.outcome, d.reason) == ("unknown", "invalid_image") and m.streak == 0
+    assert not run(m, "b")[0].complete and len(calls) == 2
+
+
+@pytest.mark.parametrize("bad", ["true", 1])
+def test_non_bool_values_are_unknown(bad):
+    m, _ = make([json.dumps({"case_empty": bad, "bottle_upright_on_case": False, "hand_at_bottle": False})] * 2)
+    ds = run(m, "a", "b")
+    assert [d.outcome for d in ds] == ["unknown"] * 2 and not any(d.complete for d in ds)
+
+
+def test_vlm_timeout_is_failure():
+    m, _ = make([None], limits=HarnessLimits(monitor_deadline_s=0.05))
+    m.vlm_call_fn = lambda system, content: time.sleep(0.3)
+    d = run(m, "a")[0]
+    assert d.outcome == "failure" and m.streak == 0
+
+
+def test_stale_frame_is_unknown_without_vlm_call():
+    m, calls = make([answer(empty=True)])
+    d = m.check(snapshot("old", now=0.0))
+    assert (d.outcome, d.reason) == ("unknown", "stale_frame") and not calls
+
+
+def test_begin_rejects_unknown_step_and_check_needs_begin():
+    m, _ = make([])
+    with pytest.raises(ValueError):
+        m.begin("full", snapshot("init"))
+    with pytest.raises(RuntimeError):
+        RearmMonitor(lambda s, c: "", lambda: 1.0).check(snapshot("a"))
