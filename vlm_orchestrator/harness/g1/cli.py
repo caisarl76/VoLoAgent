@@ -51,7 +51,10 @@ def main(argv=None):
 
         from .verdict import run_console
 
-        run_console(args.session_dir, sys.stdin)
+        try:
+            run_console(args.session_dir, sys.stdin)
+        except KeyboardInterrupt:
+            pass
         return 0
     try:
         profile = load_profile(args.profile)
