@@ -108,6 +108,12 @@ def test_rpc_golden_fixture():
     for raw in fixtures["invalid_requests"]:
         with pytest.raises(ValueError):
             c.decode_request(json.dumps(raw).encode())
+    for raw in fixtures["valid_responses"]:
+        assert c.decode_response(json.dumps(raw).encode()).result.phase == raw["result"]["phase"]
+    bad = json.loads(json.dumps(fixtures["valid_responses"][-1]))
+    bad["result"]["frozen_stage"] = "invented"
+    with pytest.raises(ValueError):
+        c.decode_response(json.dumps(bad).encode())
 
 
 def test_response_rejects_bad_result_types():
