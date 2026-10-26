@@ -1,0 +1,91 @@
+{
+  "automatic_resets": 0,
+  "startup_resets": 1,
+  "physics_steps": 21411,
+  "fixture_events": [
+    {
+      "sim_time": 2.0599999999999783,
+      "event": "box_restore",
+      "restored": true,
+      "gap_m": 0.08393877530328214,
+      "bottle": [
+        0.3400171858410653,
+        -0.0979178121546354,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 12.785000000000599,
+      "event": "person_placed_bottle",
+      "cycle": 1,
+      "position": [
+        0.3770235059143347,
+        -0.015865576252798698,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 20.68000000000017,
+      "event": "grasp",
+      "palm_bottle_distance_m": 0.031191756129210553
+    },
+    {
+      "sim_time": 22.84499999999974,
+      "event": "person_took_bottle",
+      "cycle": 1,
+      "source": "in_hand",
+      "position": [
+        0.35718638731694086,
+        -0.07110126178803165,
+        1.020244097427051
+      ]
+    },
+    {
+      "sim_time": 29.36999999999844,
+      "event": "person_placed_bottle",
+      "cycle": 2,
+      "position": [
+        0.36957929931024913,
+        0.04999473829776367,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 51.09500000000769,
+      "event": "person_took_bottle",
+      "cycle": 2,
+      "source": "on_box",
+      "position": [
+        0.36957929931024913,
+        0.04999473829776367,
+        0.92325475
+      ]
+    },
+    {
+      "sim_time": 52.420000000008365,
+      "event": "person_placed_bottle",
+      "cycle": 3,
+      "position": [
+        0.3244853756021854,
+        0.14294881231628143,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 58.89500000001168,
+      "event": "grasp",
+      "palm_bottle_distance_m": 0.05811973014001647
+    },
+    {
+      "sim_time": 60.94000000001272,
+      "event": "person_took_bottle",
+      "cycle": 3,
+      "source": "in_hand",
+      "position": [
+        0.34448715288961146,
+        0.059771945354558015,
+        1.019155861145175
+      ]
+    }
+  ]
+}

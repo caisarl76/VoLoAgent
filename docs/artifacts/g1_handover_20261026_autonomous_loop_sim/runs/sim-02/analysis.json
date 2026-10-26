@@ -1,0 +1,472 @@
+{
+  "session_stream": {
+    "ticks": 3548,
+    "pose_messages": 3548,
+    "pose_messages_per_tick_histogram": {
+      "1": 3548
+    },
+    "frame_index_steps": {
+      "1": 3547
+    },
+    "non_pose_messages_inside_loop": [
+      {
+        "t": 2190499.598886501,
+        "topic": "command",
+        "start_stop_planner": [
+          1,
+          0,
+          0
+        ],
+        "label": "planner token"
+      },
+      {
+        "t": 2190570.288160314,
+        "topic": "planner",
+        "start_stop_planner": null,
+        "label": "handback blend"
+      },
+      {
+        "t": 2190570.288212696,
+        "topic": "command",
+        "start_stop_planner": [
+          1,
+          0,
+          1
+        ],
+        "label": "handback blend"
+      }
+    ],
+    "pose_mode_window": [
+      2190499.598886501,
+      2190570.288212696
+    ],
+    "pose_mode_send_gaps_s": {
+      "n": 3497,
+      "max": 0.03449424495920539,
+      "p99": 0.02302456885576248,
+      "median": 0.02012979332357645,
+      "over_25ms": 3
+    },
+    "pose_mode_gaps_over_25ms": [
+      {
+        "at": 2190545.999876993,
+        "gap_s": 0.026022263802587986,
+        "label": "hold",
+        "stage": "ready"
+      },
+      {
+        "at": 2190552.94680399,
+        "gap_s": 0.02592098480090499,
+        "label": "episode",
+        "stage": "episode"
+      },
+      {
+        "at": 2190553.365400785,
+        "gap_s": 0.03449424495920539,
+        "label": "episode",
+        "stage": "episode"
+      }
+    ],
+    "pose_mode_tick_gaps_s": {
+      "max": 0.025830048602074385,
+      "over_25ms": 2
+    }
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "episode_end": "handover complete",
+      "ticks": null,
+      "frames": 398,
+      "wall_s": 10.929583311080933
+    },
+    {
+      "trial": 1,
+      "episode_end": "handover complete",
+      "ticks": null,
+      "frames": 304,
+      "wall_s": 8.116130828857422
+    },
+    {
+      "trial": 2,
+      "episode_end": "handover complete",
+      "ticks": null,
+      "frames": 368,
+      "wall_s": 10.387713432312012
+    }
+  ],
+  "results_jsonl": [
+    {
+      "trial": 0,
+      "verdict": "success",
+      "reason": "",
+      "note": "",
+      "episode_end": "handover complete",
+      "wall_start": 1793005224.2824855,
+      "wall_stop": 1793005235.2120688,
+      "frames": 398,
+      "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model"
+    },
+    {
+      "trial": 1,
+      "verdict": "fail",
+      "reason": "other",
+      "note": "fixture: grasp disabled (leftover-bottle trial)",
+      "episode_end": "handover complete",
+      "wall_start": 1793005240.5870998,
+      "wall_stop": 1793005248.7032306,
+      "frames": 304,
+      "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model"
+    },
+    {
+      "trial": 2,
+      "verdict": "success",
+      "reason": "",
+      "note": "",
+      "episode_end": "handover complete",
+      "wall_start": 1793005264.1583874,
+      "wall_stop": 1793005274.5461009,
+      "frames": 368,
+      "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model"
+    }
+  ],
+  "redo_jsonl": [],
+  "lerobot_summarize": {
+    "returncode": 0,
+    "stdout": "success 2/3; other: 1\n",
+    "stderr": ""
+  },
+  "evidence_kinds": {
+    "0": [
+      "session_start",
+      "gate",
+      "gate",
+      "take_over",
+      "gate",
+      "gate",
+      "stop_key",
+      "loop_freeze",
+      "gate",
+      "resume",
+      "gate",
+      "restart",
+      "rearm_begin",
+      "rearm_end",
+      "trial_start",
+      "trial_end"
+    ],
+    "1": [
+      "rearm_begin",
+      "rearm_end",
+      "rearm_begin",
+      "rearm_end",
+      "trial_start",
+      "trial_end"
+    ],
+    "2": [
+      "rearm_begin",
+      "rearm_end",
+      "rearm_begin",
+      "rearm_end",
+      "trial_start",
+      "trial_end"
+    ],
+    "3": [
+      "session_end",
+      "gate"
+    ]
+  },
+  "trial_ends": [
+    {
+      "trial": 0,
+      "reason": "handover complete"
+    },
+    {
+      "trial": 1,
+      "reason": "handover complete"
+    },
+    {
+      "trial": 2,
+      "reason": "handover complete"
+    }
+  ],
+  "rearm_decision_counts": {
+    "0": {
+      "bottle:no": 13,
+      "bottle:yes": 2
+    },
+    "1": {
+      "empty:yes": 2,
+      "bottle:no": 13,
+      "bottle:yes": 2
+    },
+    "2": {
+      "empty:no": 112,
+      "empty:yes": 2,
+      "bottle:no": 12,
+      "bottle:yes": 2
+    },
+    "3": {}
+  },
+  "leftover": {
+    "trial": 1,
+    "seen_at": 2190536.150409644,
+    "removed_at": 2190546.181109779,
+    "standing_s": 10.030700135044754,
+    "decisions_while_standing": {
+      "no": 111
+    },
+    "yes_while_standing": 0,
+    "empty_confirmed_after_removal_s": 0.22184164309874177,
+    "bottle_placed_after_removal_s": 1.3004886731505394,
+    "next_trial_started_after_placement_s": 0.26389468787238,
+    "no_trial_before_clear_and_new_bottle": true
+  },
+  "stop": {
+    "pressed_at": 2190502.026475139,
+    "runner_received_at": 2190502.026493286,
+    "freeze_dispatched_at": 2190502.028625263,
+    "freeze_acked_at": 2190502.038619795,
+    "frozen_stage": "raise",
+    "label_at_press": "raise",
+    "first_frozen_tick_at": 2190502.038029009,
+    "press_to_frozen_tick_s": 0.011553870048373938,
+    "press_to_runner_s": 1.81468203663826e-05,
+    "press_to_ack_s": 0.012144655920565128
+  },
+  "resume": {
+    "label_runs": [
+      [
+        "to raise start",
+        50
+      ],
+      [
+        "raise",
+        14
+      ],
+      [
+        "frozen",
+        77
+      ],
+      [
+        "raise",
+        69
+      ],
+      [
+        "to ready",
+        50
+      ]
+    ],
+    "raise_ticks": 83,
+    "raise_rows_expected": 83,
+    "frozen_ticks": 77,
+    "frozen_token_spread": 0.0,
+    "frozen_equals_last_raise_token": true,
+    "max_raise_token_step": 0.050000011920928955,
+    "resume_token_step": 0.05000000074505806,
+    "raise_tokens_vs_asset_max_abs": 0.012500002980232239
+  },
+  "planner_timeout_lines": [],
+  "take_over_starts": [
+    2190498.604919842
+  ],
+  "take_over_planner_silence": [
+    {
+      "take_over_at": 2190498.604919842,
+      "last_planner_message_before_s": null,
+      "planner_silence_at_pose_switch_s": null
+    }
+  ],
+  "pose_switches": [
+    2190499.598886501
+  ],
+  "box_contacts": {
+    "samples_total": 1976,
+    "contact_samples_session": 119,
+    "contact_samples_all": 159,
+    "bodies_session": [
+      "right_hand_thumb_1_link",
+      "right_hand_thumb_2_link",
+      "right_wrist_yaw_link"
+    ],
+    "stages_session": [
+      "-",
+      "None/handback blend",
+      "handback/handback blend",
+      "lower/blend out",
+      "lower/hold rest",
+      "lower/lower"
+    ],
+    "first": [
+      {
+        "at": 2190564.304817071,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.356300271,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.410517847,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.462721917,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.516278205,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.566617109,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.617637556,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.669643936,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.722803697,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2190564.777190674,
+        "bodies": [
+          "right_wrist_yaw_link"
+        ],
+        "stage": "lower/lower"
+      }
+    ]
+  },
+  "pelvis_z_session": {
+    "min": 0.762863364750774,
+    "max": 0.7888899295565672
+  },
+  "simulator": {
+    "automatic_resets": 0,
+    "startup_resets": 1,
+    "fixture_events": [
+      {
+        "sim_time": 1.9399999999999806,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.07390208341861204,
+        "bottle": [
+          0.35212209196050664,
+          -0.0631842701833369,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 12.505000000000555,
+        "event": "person_placed_bottle",
+        "cycle": 1,
+        "position": [
+          0.36349552846707933,
+          0.02182295348474024,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 18.22000000000066,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.014734519544777159
+      },
+      {
+        "sim_time": 20.365000000000233,
+        "event": "person_took_bottle",
+        "cycle": 1,
+        "source": "in_hand",
+        "position": [
+          0.3503112927685869,
+          0.012241476169494614,
+          0.9805831601609384
+        ]
+      },
+      {
+        "sim_time": 28.439999999998626,
+        "event": "person_placed_bottle",
+        "cycle": 2,
+        "position": [
+          0.35050022440848005,
+          0.09599924044019177,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 49.64000000000694,
+        "event": "person_took_bottle",
+        "cycle": 2,
+        "source": "on_box",
+        "position": [
+          0.35050022440848005,
+          0.09599924044019177,
+          0.92325475
+        ]
+      },
+      {
+        "sim_time": 50.86000000000757,
+        "event": "person_placed_bottle",
+        "cycle": 3,
+        "position": [
+          0.32300000000000006,
+          0.18022821993437121,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 56.76500000001059,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.0643934120016803
+      },
+      {
+        "sim_time": 62.625000000013586,
+        "event": "release_palm_up",
+        "wrist_roll_rad": 1.6592183669619636
+      },
+      {
+        "sim_time": 63.65500000001411,
+        "event": "person_took_bottle",
+        "cycle": 3,
+        "source": "on_palm",
+        "position": [
+          0.3458491467813756,
+          -0.000541233172811087,
+          1.0441292932606177
+        ]
+      }
+    ]
+  }
+}

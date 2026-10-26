@@ -1,0 +1,186 @@
+{
+  "completed": false,
+  "trials": 3,
+  "policy_endpoint": "127.0.0.1:5571",
+  "checkpoint": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model",
+  "dds_domain": 37,
+  "gpu_preflight": "0, NVIDIA GeForce RTX 3060, 8823",
+  "scene": {
+    "case_m": [
+      0.475,
+      0.35
+    ],
+    "fovy_deg": 42.63582455092311,
+    "xyaxes": [
+      0.0,
+      -1.0,
+      0.0,
+      0.738464216,
+      0.0,
+      0.674294795
+    ]
+  },
+  "box_front_m": 0.28,
+  "box_height_m": 0.845,
+  "bottle_pelvis_frame_m": [
+    0.33,
+    -0.065
+  ],
+  "served_policy": true,
+  "rendered_head_camera": true,
+  "rearm_vision": "scene-truth oracle (oracle_vlm_server.py) behind RearmMonitor",
+  "scripted_person": true,
+  "scripted_console": true,
+  "scripted_verdicts": true,
+  "hardware_acceptance": false,
+  "robot_connection": false,
+  "native_commit": "ef8a5ee183f2cba5398a0318edc8c348db846906",
+  "volo_commit": "77ed55638b1f50b3bf54cfbebec9a0cfe244a277",
+  "binary": "/home/jihun/work/VoLoAgent/.worktrees/g1-loop-native/gear_sonic_deploy/target/release/g1_deploy_onnx_ref",
+  "binary_sha256": "679c566a514ce69ee31c7b2d7b2dd34f85f3ccec777425b854a9e01a888a554b",
+  "box_restore": {
+    "restored": true,
+    "sim_time": 1.9399999999999806,
+    "box_gap": {
+      "gap_m": 0.07390208341861204,
+      "actor": "right_hand_index_0_link",
+      "obstacle": "desk_top"
+    }
+  },
+  "loop_returncode": 0,
+  "verdict_returncode": 0,
+  "person": {
+    "leftover": {
+      "trial": 1,
+      "seen_at": 2190536.150409644,
+      "remove_at": 2190546.150409644,
+      "removed_at": 2190546.181109779
+    },
+    "takes": [
+      {
+        "at": 2190515.724766962,
+        "n": 1,
+        "why": "from the hand",
+        "bottle": "in_hand",
+        "trial": 0,
+        "phase": "LOOP_TRIAL",
+        "stage": "episode",
+        "palm": [
+          0.34846823013475375,
+          0.010526888677752966,
+          0.9944259093662303
+        ]
+      },
+      {
+        "at": 2190561.016570849,
+        "n": 3,
+        "why": "from the open palm",
+        "bottle": "on_palm",
+        "trial": 2,
+        "phase": "LOOP_TRIAL",
+        "stage": "to_ready",
+        "palm": [
+          0.3662415591560077,
+          -0.04525450927526648,
+          1.0025990899302848
+        ]
+      }
+    ],
+    "removals": [
+      {
+        "at": 2190546.181109779,
+        "n": 2,
+        "why": "clear the case",
+        "bottle": "on_box",
+        "trial": 1,
+        "phase": "LOOP_HOLD",
+        "stage": "ready",
+        "palm": [
+          0.3042586133905731,
+          0.03191372393701423,
+          1.0803387729723786
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "at": 2190507.712715704,
+        "n": 1,
+        "trial": 0
+      },
+      {
+        "at": 2190523.956520868,
+        "n": 2,
+        "trial": 1
+      },
+      {
+        "at": 2190547.481598452,
+        "n": 3,
+        "trial": 2
+      }
+    ]
+  },
+  "outcomes": {
+    "0": [
+      "s",
+      "person took the bottle from the hand"
+    ],
+    "1": [
+      "f 8 fixture: grasp disabled (leftover-bottle trial)",
+      "bottle left standing"
+    ],
+    "2": [
+      "s",
+      "person took the bottle from the open palm"
+    ]
+  },
+  "status_after_session": {
+    "runtime_id": "af147ccb204343a9bf6ada2fe1042a4a",
+    "phase": "COMPLETED",
+    "skill_id": null,
+    "execution_id": null,
+    "inference_epoch": 0,
+    "controller_running": true,
+    "policy_ready": true,
+    "mode_requested": "PLANNER",
+    "planner_reference_active": true,
+    "hold_confirmed": true,
+    "telemetry_age_s": 0.0,
+    "telemetry_index": 3818,
+    "observation_age_s": 0.003634186927229166,
+    "frame_id": "a109dae769574a6bb0c1e22560dcd926:1793005284.2665904",
+    "registry_sha256": "f3a246fcc3252a31bf99807b88a17973a30875c04074eb4f71563f227e167277",
+    "policy_host": "127.0.0.1",
+    "policy_port": 5571,
+    "checkpoint_expected": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model",
+    "owner_session_id": null,
+    "reason": null,
+    "locomotion_enabled": false,
+    "ready_return_enabled": false,
+    "right_hand_open": false,
+    "loop_stage": null,
+    "loop_trial": 2,
+    "trial_end_reason": "handover complete",
+    "frozen_stage": null
+  },
+  "error": "RuntimeError: ['verdict', 'loop'] exited while waiting for dead-stream stance; inspect logs",
+  "owned_process_pids": {
+    "vlm-server": 2013778,
+    "oracle": 2013779,
+    "mujoco": 2013780,
+    "sonic": 2013781,
+    "native": 2013783,
+    "verdict": 2015238,
+    "loop": 2015239
+  },
+  "owned_process_exit_codes": {
+    "vlm-server": -15,
+    "oracle": -15,
+    "mujoco": -15,
+    "sonic": -15,
+    "native": -15,
+    "verdict": 0,
+    "loop": 0
+  },
+  "owned_processes_stopped": true
+}

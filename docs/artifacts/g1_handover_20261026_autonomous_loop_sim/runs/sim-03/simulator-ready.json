@@ -1,0 +1,54 @@
+{
+  "interface": "lo",
+  "domain_id": 37,
+  "hand_mapping": {
+    "left": {
+      "model_order": [
+        "left_hand_thumb_0_joint",
+        "left_hand_thumb_1_joint",
+        "left_hand_thumb_2_joint",
+        "left_hand_middle_0_joint",
+        "left_hand_middle_1_joint",
+        "left_hand_index_0_joint",
+        "left_hand_index_1_joint"
+      ],
+      "native_order": [
+        "left_hand_thumb_0_joint",
+        "left_hand_thumb_1_joint",
+        "left_hand_thumb_2_joint",
+        "left_hand_index_0_joint",
+        "left_hand_index_1_joint",
+        "left_hand_middle_0_joint",
+        "left_hand_middle_1_joint"
+      ]
+    },
+    "right": {
+      "model_order": [
+        "right_hand_thumb_0_joint",
+        "right_hand_thumb_1_joint",
+        "right_hand_thumb_2_joint",
+        "right_hand_middle_0_joint",
+        "right_hand_middle_1_joint",
+        "right_hand_index_0_joint",
+        "right_hand_index_1_joint"
+      ],
+      "native_order": [
+        "right_hand_thumb_0_joint",
+        "right_hand_thumb_1_joint",
+        "right_hand_thumb_2_joint",
+        "right_hand_index_0_joint",
+        "right_hand_index_1_joint",
+        "right_hand_middle_0_joint",
+        "right_hand_middle_1_joint"
+      ]
+    }
+  },
+  "headless": true,
+  "mujoco_version": "3.8.1",
+  "camera": {
+    "name": "d435_head",
+    "key": "ego_view",
+    "port": 11555,
+    "image_dt": 0.033333
+  }
+}

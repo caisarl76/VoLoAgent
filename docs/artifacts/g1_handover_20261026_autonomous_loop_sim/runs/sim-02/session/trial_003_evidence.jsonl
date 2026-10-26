@@ -1,0 +1,2 @@
+{"kind": "session_end", "at": 2190561.950295869, "wall": 1793005275.6230798, "cause": "trials done"}
+{"kind": "gate", "at": 2190562.503605555, "wall": 1793005276.1763902, "prompt": "lower? (arm down, hand back to the planner) [Enter]"}

@@ -1,0 +1,156 @@
+{
+  "base_url": "http://127.0.0.1:8301/v1",
+  "available": {
+    "upright": 119,
+    "empty": 4,
+    "held": 141
+  },
+  "rows": [
+    {
+      "label": "upright",
+      "frame": "upright_0.jpg",
+      "source": "evidence/trial_000/42b5aa1c8d64c93547cbb38794626167d04149177c90014b36ee80dd3a2698a2.jpg (bottle step, oracle yes)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+        "seconds": 0.81
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": true}\n```",
+        "seconds": 0.46
+      },
+      "bottle_step_yes": false,
+      "empty_step_yes": false,
+      "agrees_with_truth": false
+    },
+    {
+      "label": "upright",
+      "frame": "upright_1.jpg",
+      "source": "evidence/trial_002/0e616553ed9159e27a8d4d5c2a46f040f0a5a196dea7a095a9ae889022e2afac.jpg (leftover bottle, empty step, oracle no)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+        "seconds": 0.82
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": true}\n```",
+        "seconds": 0.49
+      },
+      "bottle_step_yes": false,
+      "empty_step_yes": false,
+      "agrees_with_truth": false
+    },
+    {
+      "label": "upright",
+      "frame": "upright_2.jpg",
+      "source": "evidence/trial_002/c3fbcedfb1f924e104ce690b222e2012e910b4356615bf62264a6606ebdca517.jpg (bottle step, oracle yes)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+        "seconds": 0.76
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": true}\n```",
+        "seconds": 0.5
+      },
+      "bottle_step_yes": false,
+      "empty_step_yes": false,
+      "agrees_with_truth": false
+    },
+    {
+      "label": "empty",
+      "frame": "empty_0.jpg",
+      "source": "evidence/trial_001/85e0c564997795ba4330f6b5d33dc27a631f6de779fcceb2e11b853ea371baa7.jpg (empty step, oracle yes)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+        "seconds": 0.77
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": false}\n```",
+        "seconds": 0.46
+      },
+      "bottle_step_yes": true,
+      "empty_step_yes": false,
+      "agrees_with_truth": false
+    },
+    {
+      "label": "empty",
+      "frame": "empty_1.jpg",
+      "source": "evidence/trial_002/c9f1bcab0517aae9724c1192ab3033775f0a0741c97cd6f7530ac69c310b1140.jpg (empty step, oracle yes)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+        "seconds": 0.75
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": false}\n```",
+        "seconds": 0.45
+      },
+      "bottle_step_yes": false,
+      "empty_step_yes": true,
+      "agrees_with_truth": true
+    },
+    {
+      "label": "empty",
+      "frame": "empty_2.jpg",
+      "source": "evidence/trial_002/966dbd316751dbeef4e34e6f04ad333cf15b9e7fb2c6cfec946c55bc638cb83b.jpg (empty step, oracle yes)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+        "seconds": 0.72
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": false}\n```",
+        "seconds": 0.45
+      },
+      "bottle_step_yes": false,
+      "empty_step_yes": true,
+      "agrees_with_truth": true
+    },
+    {
+      "label": "held",
+      "frame": "held_0.jpg",
+      "source": "trial_000_frames.npz[204] (fixture in_hand)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+        "seconds": 0.73
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": false}\n```",
+        "seconds": 0.45
+      },
+      "bottle_step_yes": false,
+      "empty_step_yes": true,
+      "agrees_with_truth": false
+    },
+    {
+      "label": "held",
+      "frame": "held_1.jpg",
+      "source": "trial_000_frames.npz[274] (fixture in_hand)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+        "seconds": 0.72
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": false}\n```",
+        "seconds": 0.47
+      },
+      "bottle_step_yes": true,
+      "empty_step_yes": false,
+      "agrees_with_truth": false
+    },
+    {
+      "label": "held",
+      "frame": "held_2.jpg",
+      "source": "trial_002_frames.npz[228] (fixture in_hand)",
+      "upright_check": {
+        "raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+        "seconds": 0.76
+      },
+      "object_on_case": {
+        "raw": "```json\n{\"object_on_case\": false}\n```",
+        "seconds": 0.46
+      },
+      "bottle_step_yes": true,
+      "empty_step_yes": false,
+      "agrees_with_truth": false
+    }
+  ],
+  "agree": 2,
+  "total": 9
+}
