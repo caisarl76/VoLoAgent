@@ -1,0 +1,6 @@
+{
+  "execution_id": "",
+  "outcome": "fault",
+  "reason": "Operator must prepare a running paused executor",
+  "evidence_dir": "docs/artifacts/g1_handover_20261022_robot_s08/stage3/51120f1f113141a4b402fbf356f21153"
+}
