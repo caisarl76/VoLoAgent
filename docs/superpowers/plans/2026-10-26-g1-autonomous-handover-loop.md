@@ -12,13 +12,14 @@
 
 **Tech Stack:** Python 3.10 (PC2 venv) and 3.13 (workstation), numpy, pyzmq, msgpack, pytest; transformers 5.5.4 (lerobot venv) for the VLM server; MuJoCo fixture for simulation.
 
-**Spec:** `docs/superpowers/specs/2026-10-26-g1-autonomous-handover-loop-design.md` (VoLoAgent, commit 31325b2). Lerobot reference: caisarl76/lerobot `main` a6e267c6, `examples/g1_dex3_training/`. Read it with `git -C ~/work/lerobot show caisarl76/main:examples/g1_dex3_training/<file>`; the working tree is on another branch.
+**Spec:** `docs/superpowers/specs/2026-10-26-g1-autonomous-handover-loop-design.md` (VoLoAgent, commit 31325b2). Lerobot reference: caisarl76/lerobot commit **a6e267c6**, `examples/g1_dex3_training/`.
+- Read it **only** via the pinned commit: `git -C ~/work/lerobot show a6e267c6:examples/g1_dex3_training/<file>`.
+- Never use the moving `caisarl76/main` ref, and never use the working tree, which is on another branch.
 
 **Repos and branches:**
-- **Native:** `/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native`. New branch `work/g1-autonomous-loop-20261026` from `b50613c`, which contains the LeRobot adapter.
-  - The worktree has another session's uncommitted `--dds-domain` edit in `gear_sonic_deploy/src/g1/g1_deploy_onnx_ref/src/g1_deploy_onnx_ref.cpp`. **Never stage or revert it.**
+- **Native:** `/home/jihun/work/VoLoAgent/.worktrees/g1-harness-native`. New branch `work/g1-autonomous-loop-20261026` from **`d0f29b3`** (the head of `work/g1-lerobot-policy-20261021`). It contains the LeRobot adapter (`ad20fd7`, `b50613c`) and the deploy's `--dds-domain` flag (`d0f29b3`).
   - Always `git add` explicit paths.
-- **VoLoAgent:** `/home/jihun/work/VoLoAgent/.worktrees/g1-harness`. New branch `work/g1-autonomous-loop-20261026` from `31325b2`.
+- **VoLoAgent:** `/home/jihun/work/VoLoAgent/.worktrees/g1-harness`. New branch `work/g1-autonomous-loop-20261026` from the corrected plan's commit (`1b33c3d` or its amended successor on `work/g1-s10-loop-sim-20261021`), which contains the spec `31325b2` and this plan.
   - `docs/artifacts/g1_handover_20261021_s10_loop_sim/` belongs to another session. Don't stage it.
 - **Commits:** `git -c user.name="Jihun Kim" -c user.email="jihun.kim@genon.ai" commit -s`, ending with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 - **Tests:**
@@ -65,10 +66,10 @@
 ## Review Focus
 
 1. **A stop pressed during a blend, a path or the policy episode** must freeze at the exact last-sent token: no further token change until `loop_resume`. Test in Task 3 (`test_freeze_mid_blend_holds_last_sent_token`) and Task 6 (`test_stop_during_trial_freezes_and_ends_trial`).
-2. **The orchestrator dying mid-loop:** the lease expires, the native side freezes (never a planner hold), and a new orchestrator can claim from `LOOP_FROZEN` and resume. Test in Task 6 (`test_lease_expiry_in_loop_freezes_and_allows_reclaim`).
+2. **The orchestrator dying mid-loop:** the lease expires, the native side freezes (never a planner hold), and a new orchestrator claims from `LOOP_FROZEN` and resumes without take-over or a second raise. A freeze during the lowering completes the session instead. Tests: Task 6 (`test_lease_expiry_in_loop_freezes_and_allows_reclaim`, `test_resume_mid_lowering_finishes_to_planner_and_completes`) and Task 10 (`test_fresh_runner_reclaims_frozen_loop_without_takeover`, `test_reclaim_frozen_during_lowering_completes_without_restart`).
 3. **A bottle still standing after a missed grasp** must not start the next trial until the case was seen empty. Test in Task 8 (`test_rearm_requires_empty_case_before_bottle`).
 4. **A verdict typed while the robot runs** is never read as the stop key, and a redo adds one trial to the remaining count. Test in Task 9 (`test_redo_extends_remaining_trials`) and Task 10 (`test_stop_key_and_verdict_console_are_separate`).
-5. **The deploy left without tokens in POSE mode.** Every LOOP phase publishes exactly one pose message per tick, including while waiting for the first chunk and while frozen. Test in Task 7 (`test_loop_phases_publish_every_tick`).
+5. **The deploy left without tokens in POSE mode, or a stop delayed.** Every LOOP phase publishes exactly one pose message per tick, including while waiting for the bootstrap chunk, while frozen, and while a trial's files are being written. A blocked VLM call never delays the stop RPC. Tests: Task 5 (`test_close_returns_before_slow_write`), Task 7 (`test_loop_phases_publish_every_tick`, `test_first_chunk_bootstrap_through_inference_queue`, `test_slow_trial_write_does_not_stall_ticks`) and Task 10 (`test_stop_dispatched_while_vlm_call_blocks`).
 
 ---
 
@@ -95,7 +96,14 @@
 - [ ] **Step 2: Run `test_lerobot_sonic_policy.py`.** Expected: 3 new FAIL.
 - [ ] **Step 3: Implement.** Port `ChunkResampler.set_chunk`/`token_at` anchoring (lerobot `sonic_token_stream.py:46-122` at a6e267c6), with `anchor_dims=64` and `current=self.last_token`. Add the profile field and validation in `harness_profile.py`.
 - [ ] **Step 4: Run the file.** Expected: all pass. Then run the full native suite: only the known Inspire failures remain.
-- [ ] **Step 5: Mirror the profile change in VoLoAgent `registry.py`.** Add `chunk_anchor_s` cases to `tests/test_g1_registry_contract.py::test_profile_lerobot_policy_section_is_optional_and_validated`. Run that file and the mirror diff, which should show only the import line. Commit in each repo.
+- [ ] **Step 5: Mirror the profile change in VoLoAgent `registry.py`.** Add `chunk_anchor_s` cases to `tests/test_g1_registry_contract.py::test_profile_lerobot_policy_section_is_optional_and_validated`. Run that file and the mirror diff, which should show only the import line.
+- [ ] **Step 6: Create the runnable loop profile `configs/g1/handover-loop.example.yaml` (VoLoAgent).** It starts from `handover.example.yaml` and sets:
+  - `policy_host: 192.168.0.62`, `policy_port: 5571`;
+  - `checkpoint` = the s08 path `/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model`;
+  - `lerobot_policy: {chunk_blend_s: 0.3, max_token_step: 0.05, dex3_right_order: dataset, chunk_anchor_s: 1.0}`;
+  - the review flags stay **false**. A session copy sets `checkpoint_verified: true` (Task 14).
+
+  Test `tests/test_g1_handover_profile.py::test_loop_example_profile_enables_anchoring`: it loads, has `chunk_anchor_s == 1.0`, and has `checkpoint_verified is False`. Run the native parser on the same file too. Commit in each repo.
 
 ### Task 2: Ready-pose asset
 
@@ -115,7 +123,7 @@
   - `test_load_ready_pose_shapes_and_sha` asserts the shapes above, and that the file's sha256 equals the provenance JSON's.
   - `test_load_ready_pose_rejects_bad_shapes` covers a temp npz with `raise_tokens` (82, 64), and a NaN token.
 - [ ] **Step 2: Run.** Expected: FAIL (module missing).
-- [ ] **Step 3: Copy the asset with `git -C ~/work/lerobot show caisarl76/main:examples/g1_dex3_training/ready_pose_261020_ep76.npz > …`, write the provenance JSON, and implement the loader.**
+- [ ] **Step 3: Copy the asset with `git -C ~/work/lerobot show a6e267c6:examples/g1_dex3_training/ready_pose_261020_ep76.npz > …`, write the provenance JSON, and implement the loader.**
 - [ ] **Step 4: Run.** Expected: PASS.
 - [ ] **Step 5: Commit.**
 
@@ -189,9 +197,17 @@
   - `.tick(wall, t_ep, phase, frame, token, hands, chunk_t0, state28)`;
   - `.frame(t_recv: float, name: str, jpeg: bytes)`;
   - `.close(episode_end: str) -> None`. It writes `trial_NNN.npz` with keys `wall,t_ep,phase,frame,token,hands,chunk_t0,state,joint_ref(nan 31),episode_end,args,model,wall_start,wall_stop`, plus `trial_NNN_frames.npz` (`jpeg,offsets,t_recv,names`), exactly as lerobot `write_trial`. It does **not** write `results.jsonl`.
-  - `next_trial(session_dir) -> int` counts the `trial_*_frames.npz` files.
+  - **Persistence is off the 50 Hz path.**
+    - `tick`/`frame` only append to in-memory lists.
+    - `close()` hands the arrays to a module-level single-worker `TrialWriter` (a daemon thread fed by a `queue.Queue`) and returns at once.
+    - `TrialWriter.flush(timeout_s: float) -> bool` waits for pending writes; it runs at session end and at shutdown.
+    - Files are written to a temp name and renamed, so a reader never sees a partial file.
+  - `next_trial(session_dir) -> int` counts the `trial_*_frames.npz` files, plus trials queued but not yet written.
 
-- [ ] **Step 1: Failing test** `test_trial_files_match_lerobot_layout`: write 3 ticks and 2 frames, close. Load both npz files and assert the key sets, shapes, `wall_start/wall_stop` over the "episode" phase rows only, and that the offsets round-trip the JPEG bytes. `test_next_trial_counts_trial_files`.
+- [ ] **Step 1: Failing tests:**
+  - `test_trial_files_match_lerobot_layout`: write 3 ticks and 2 frames, close, flush. Load both npz files and assert the key sets, shapes, `wall_start/wall_stop` over the "episode" phase rows only, and that the offsets round-trip the JPEG bytes.
+  - `test_next_trial_counts_trial_files`.
+  - `test_close_returns_before_slow_write`: monkeypatch the npz save to sleep 2 s. `close()` returns in < 0.05 s, and after `flush(5)` the files exist.
 - [ ] **Step 2: Run.** Expected: FAIL.
 - [ ] **Step 3: Implement** (port `_save_npz` and `write_trial`'s array part).
 - [ ] **Step 4: Run.** Expected: PASS.
@@ -218,26 +234,40 @@
     - `loop_resume {}`
     - `loop_end {}`
   - `Status` gains `loop_stage: str | None = None` (one of `stance, raise, ready, hold_rest, first_chunk, blend_in, episode, to_ready, frozen, lower, handback`), `loop_trial: int | None = None`, and `trial_end_reason: str | None = None`.
-  - `LoopController(commander, ready_pose, hooks)` with `.take_over(feedback, now)`, `.raise_(now)`, `.trial(trial, session_dir, now)`, `.freeze(reason, now)`, `.resume(now)`, `.end(now)`, `.tick(now, feedback, camera_age_s, policy_chunk) -> tuple[token, hands, label]`.
+  - `LoopController(commander, ready_pose, hooks)` with:
+    - `.take_over(feedback, now)`, `.raise_(now)`, `.trial(trial, session_dir, now)`;
+    - `.freeze(reason, now)`, `.resume(now)`, `.end(now)`;
+    - `.accept_chunk(epoch: int, captured_at: float, rows: np.ndarray) -> bool`;
+    - `.tick(now, feedback, camera_age_s) -> tuple[token, hands, label]`;
+    - attributes `stage: str`, `frozen_stage: str | None`.
   - `RuntimeHooks` gains:
     - `switch_to_pose(self) -> None`: sends start with `planner=False`;
     - `switch_to_planner(self) -> None`;
-    - `publish_pose(self, token, hands) -> None`;
+    - `request_policy_chunk(self) -> int`: enqueue one inference epoch and return it;
     - `set_policy_enabled(self, enabled)`, which already exists.
+
+    Publishing is done by the main loop from `tick()`'s return value (Task 7), not by a hook.
 - Rules:
-  - `loop_take_over` requires the owner, phase `IDLE`/`COMPLETED`, a controller running, and a profile with `lerobot_policy.chunk_anchor_s > 0`. It holds the planner token for 50 ticks, switches to POSE, then holds (stage `stance`).
+  - `loop_take_over` requires the owner, phase `IDLE`/`COMPLETED`, a controller running, `lerobot_policy.chunk_anchor_s > 0` and `handover.checkpoint_verified`. It holds the planner token for 50 ticks, switches to POSE, then holds (stage `stance`).
   - `loop_raise` is accepted only from `LOOP_HOLD` at stage `stance`.
   - `loop_trial` is accepted only from `LOOP_HOLD` at stage `ready`. Its sequence is:
-    1. hold-rest for 75 ticks, the ready token with open hands;
-    2. hold until the first chunk;
-    3. `blend_to` row 0 over 50 ticks; that chunk's t0 is the blend's end;
-    4. `follow` with anchoring; HandoverDetector and guards run each tick;
-    5. on `("end", r)`: `trial_end_reason=r`, then `blend_to` ready, then `LOOP_HOLD` (stage `ready`);
-    6. on `("freeze", r)`: `freeze(r)`.
+    1. `hold_rest`: hold for 75 ticks, the ready token with open hands.
+    2. `first_chunk`: at the end of hold-rest, issue **one bootstrap inference request** via `hooks.request_policy_chunk() -> int` (it enqueues an inference epoch). Keep holding; the hold is published every tick. Accept that request's result through `LoopController.accept_chunk(epoch, captured_at, rows) -> bool`, which is valid in stages `first_chunk` and `episode` and checks the epoch.
+    3. `blend_in`: `blend_to` row 0 over 50 ticks. That chunk's t0 is the blend's end.
+    4. `episode`: `follow` with anchoring. Request a new chunk every 0.4 s from each capture time (`hooks.request_policy_chunk()`). HandoverDetector and guards run each tick.
+    5. On `("end", r)`: `trial_end_reason=r`, then `to_ready` (`blend_to` ready), then `LOOP_HOLD` (stage `ready`).
+    6. On `("freeze", r)`: `freeze(r)`.
 
-    The policy is enabled only during step 4.
-  - `loop_freeze` is valid in any LOOP phase. In `LOOP_TRIAL` it ends the trial with `trial_end_reason="operator stop"`.
-  - `loop_resume` is only from `LOOP_FROZEN`. If the commander was frozen mid-path, it resumes the path. Otherwise it does `blend_to` ready. Either way it ends in `LOOP_HOLD` (stage `ready`).
+    Only the commander publishes tokens. Policy outputs reach the robot only through `accept_chunk` and the `TokenStream`.
+  - `loop_freeze` is valid in any LOOP phase. In `LOOP_TRIAL` it ends the trial with `trial_end_reason="operator stop"`. It records `frozen_stage`, the stage at the freeze.
+  - `loop_resume` is only from `LOOP_FROZEN`. Its destination depends on `frozen_stage`:
+
+    | Frozen stage | Resume | Ends in |
+    |---|---|---|
+    | `stance` | keep the hold | `LOOP_HOLD` (stage `stance`) |
+    | `raise` (the raise-start blend, the raise, or the blend to ready) | resume the path from its frame, then go to ready | `LOOP_HOLD` (stage `ready`) |
+    | `hold_rest`, `first_chunk`, `blend_in`, `episode`, `to_ready`, `ready` | `blend_to` ready | `LOOP_HOLD` (stage `ready`) |
+    | `lower` or `handback` (the lowering-start blend, the lowering, the blend to stance, the hand-back) | resume the path from its frame, then the rest of the end sequence, then `switch_to_planner` | `COMPLETED`; the session has ended |
   - `loop_end` is only from `LOOP_HOLD` at stage `ready`:
     1. `blend_to` the lowering's first row;
     2. `play` the lowering;
@@ -257,6 +287,9 @@
   - `test_stray_native_key_in_loop_freezes_without_its_action`
   - `test_lease_expiry_in_loop_freezes_and_allows_reclaim` (Review Focus 2)
   - `test_resume_mid_raise_continues_raise`
+  - `test_resume_mid_lowering_finishes_to_planner_and_completes`: freeze at lowering row 40, resume. Rows 41–82 play, then the blend to stance, the hand-back and `switch_to_planner`; phase `COMPLETED`.
+  - `test_resume_mid_handback_completes`
+  - `test_first_chunk_bootstrap_requested_after_hold_rest`: exactly one `request_policy_chunk` call at tick 75. The hold continues until `accept_chunk`, and a stale-epoch result is rejected.
   - `test_end_lowers_and_hands_back_to_planner`
   - `test_loop_methods_rejected_outside_their_phase`
   - Golden fixture round trip: the existing contract test is updated with the new methods and status fields.
@@ -275,11 +308,14 @@
 - Consumes: Task 6's `LoopController.tick` and hooks.
 - Rules:
   - When `harness_control.phase` is a LOOP phase, each 20 ms loop iteration publishes **exactly one** `pack_latent_action_message` from `loop.tick(...)`. The planner-command branches, `pause_loop` and the existing MANIPULATING publish are skipped.
-  - Policy chunks accepted during stage `episode` go to the loop's `TokenStream`. The existing `action_chunk_exhausted`, `policy_or_task_timeout` and `invalid_or_failed_policy_result` interrupts are replaced, in LOOP phases, by the guards' chunk-age end and an invalid-result freeze.
-  - Camera frames delivered to the policy also go to the `TrialRecorder`.
+  - `hooks.request_policy_chunk()` puts a new inference epoch on the existing `inference_queue`. Results from `result_queue` in a LOOP phase go to `loop.accept_chunk(epoch, captured_at, rows)` in stages `first_chunk` and `episode`, and are dropped otherwise. They are never published directly.
+  - The existing `action_chunk_exhausted`, `policy_or_task_timeout` and `invalid_or_failed_policy_result` interrupts are replaced, in LOOP phases, by the guards' chunk-age end and an invalid-result freeze.
+  - Camera frames delivered to the policy also go to the `TrialRecorder`. `TrialRecorder.close()` is called on the loop thread but only enqueues; writing happens on the `TrialWriter` thread (Task 5).
 
 - [ ] **Step 1: Failing tests:**
   - `test_loop_phases_publish_every_tick` (Review Focus 5): drive take-over, raise, a trial with scripted chunks, a freeze and a resume. Assert one pose message per loop iteration and no planner command after the POSE switch.
+  - `test_first_chunk_bootstrap_through_inference_queue`: after hold-rest, one epoch appears on `inference_queue`. Its result, put on `result_queue`, is accepted in `first_chunk`, and the blend-in starts. No iteration lacks a pose message while waiting.
+  - `test_slow_trial_write_does_not_stall_ticks`: the npz save sleeps 2 s. The iterations after a trial end still publish one message each, with no gap. The `TrialWriter` thread, not the loop thread, performed the save.
   - `test_loop_trial_uses_anchoring`: the token right after a new chunk equals the last sent, to within 1e-6.
 - [ ] **Step 2: Run.** Expected: FAIL.
 - [ ] **Step 3: Implement.**
@@ -358,17 +394,44 @@
   - `OperatorConsole(stream=sys.stdin)` with `.wait_enter(prompt) -> None`, `.stop_pressed() -> bool` (a background reader; flushes before each gate), and `.close()`.
   - `LoopRunner(profile, client_factory, monitor, session_dir, n_trials, console, confirm_paths: bool = True)` with `.run() -> MissionResult`.
   - CLI: `volo-g1-harness loop --session-dir DIR --trials N --vlm-base-url URL --vlm-model NAME [--no-confirm-paths]`, plus the global `--profile` and `--endpoint`.
+  - `EvidenceLog(session_dir)` with:
+    - `.event(trial: int, kind: str, **fields) -> None`: appends one JSON line to `trial_NNN_evidence.jsonl`;
+    - `.frame(trial: int, snapshot: ObservationSnapshot) -> str`: writes `evidence/trial_NNN/<sha256(frame_id)>.jpg` and returns the relative path.
+
+    Pre-trial events belong to the trial they trigger: index = `next_trial(session_dir)` at the time. It never touches lerobot's `trial_NNN.npz`, `trial_NNN_frames.npz` or `results.jsonl`.
+- **Threads:**
+  - The main thread owns the RPC client. It polls `console.stop_pressed()` and the status at 20 Hz, and dispatches `loop_freeze` within one poll of a key press.
+  - VLM checks run in a worker thread fed with frames the main thread fetched (`observe`). The worker never calls RPC, so a blocked VLM call cannot delay `loop_freeze`.
+  - The heartbeat stays on its own thread, as in `runner.py`.
 - Flow:
-  1. Console: "deploy ready", then "robot in position".
-  2. Claim, then `loop_take_over`, then the console "start loop".
-  3. If `confirm_paths`: the console "raise?". Then `loop_raise` and wait for stage `ready`.
-  4. Trial loop while `remaining_trials > 0` and there is no `end_session.request`:
-     - first trial after a start or restart: re-arm step `bottle` only; later trials: `empty` then `bottle`;
+  1. **Claim, then read the status** to choose the entry branch:
+     - `IDLE` or `COMPLETED`: the fresh-start branch, step 2.
+     - `LOOP_FROZEN` (a reclaim after an orchestrator crash or lease expiry): no take-over, no startup gates, no raise. Go straight to step 6's clear-and-resume handling with the native `frozen_stage`.
+     - `LOOP_HOLD` at stage `ready`: the console "restart loop?", then step 5 with the first-trial rule.
+     - `LOOP_HOLD` at stage `stance`: step 4.
+     - `LOOP_MOTION` or `LOOP_TRIAL` (impossible after a lease expiry, which freezes): report the error and release.
+  2. Fresh start: the console "deploy ready", then "robot in position".
+  3. `loop_take_over`, then the console "start loop".
+  4. If `confirm_paths`: the console "raise?". Then `loop_raise` and wait for stage `ready`.
+  5. Trial loop, while `remaining_trials > 0` and there is no `end_session.request`:
+     - first trial after a start, restart or reclaim: re-arm step `bottle` only; later trials: `empty` then `bottle`;
      - `loop_trial`;
-     - wait for stage `ready`.
-  5. On the stop key at any time: `loop_freeze`, then the console "clear?", then `loop_resume`, then the console "restart loop?", then back to step 4 with the first-trial rule.
-  6. Session end: if `confirm_paths`, the console "lower?". Then `loop_end`, then release.
-  7. If the native side reports `LOOP_FROZEN` with a freeze reason, handle it as a stop.
+     - wait for stage `ready`;
+     - log the trial end reason to the evidence.
+  6. On the stop key at any time, or a native `LOOP_FROZEN` with a freeze reason:
+     1. `loop_freeze` (skipped if already frozen);
+     2. the console "clear?";
+     3. `loop_resume`;
+     4. then by the resulting phase: `COMPLETED` means the session ended during the lowering or hand-back, so release and finish with no restart prompt; `LOOP_HOLD` at stage `stance` goes to step 4; `LOOP_HOLD` at stage `ready` means the console "restart loop?", then step 5 with the first-trial rule.
+  7. Session end: if `confirm_paths`, the console "lower?". Then `loop_end`, wait for `COMPLETED`, `TrialWriter`-style flush on the native side (session end), then release.
+- **Evidence written** (`EvidenceLog`):
+  - every re-arm step begin and end;
+  - every VLM decision: the outcome, the parsed JSON, the raw text, `frame_id`, and the saved frame path;
+  - `loop_trial` start;
+  - the trial end reason;
+  - stop key press time and `loop_freeze` dispatch time;
+  - native freeze reasons;
+  - resume, restart and reclaim events.
 
   Startup gates are explicit console steps; the runner never sends the native `k`.
 
@@ -380,6 +443,10 @@
   - `test_confirm_paths_gates_raise_and_lower`
   - `test_stop_key_and_verdict_console_are_separate` (Review Focus 4: the loop's console reads only Enter; verdict text written to the verdict console never triggers `loop_freeze`)
   - `test_session_end_request_file_ends_after_current_trial`
+  - `test_fresh_runner_reclaims_frozen_loop_without_takeover`: the first runner's lease expires and the status becomes `LOOP_FROZEN` (`frozen_stage="episode"`). A new `LoopRunner` claims and sends no `loop_take_over` or `loop_raise`. It prompts "clear?", sends `loop_resume`, then "restart loop?", and runs the next trial with the bottle-only re-arm.
+  - `test_reclaim_frozen_during_lowering_completes_without_restart`: `frozen_stage="lower"`; after resume the status is `COMPLETED`; there is no restart prompt and control is released.
+  - `test_stop_dispatched_while_vlm_call_blocks`: the fake VLM call sleeps 5 s; the stop key is pressed 0.5 s into it. `loop_freeze` is sent within 0.2 s of the key press, measured by the fake client's request times.
+  - `test_evidence_sidecar_records_trigger_and_stops`: after one trial with a stop, `trial_000_evidence.jsonl` holds the re-arm decisions with existing frame files, the `loop_trial` start, the end reason, and the stop and freeze times. The lerobot trial files are untouched.
 - [ ] **Step 2: Run.** Expected: FAIL.
 - [ ] **Step 3: Implement.**
 - [ ] **Step 4: Run the new file, then the full VoLoAgent suite.** Expected: PASS.
@@ -427,7 +494,7 @@
 **Files:**
 - Create: `docs/artifacts/g1_handover_20261026_autonomous_loop_sim/`. It reuses the 20261021 fixture's scene, the D435 camera and the scripted person: copy the files rather than edit that folder, which has another session's uncommitted edits.
 
-**Prerequisite:** the deploy's `--dds-domain` flag (another session's uncommitted edit) must be committed by its owner, or the run happens when no other G1 sim/deploy is on domain 0 (check `ps` for `g1_deploy_onnx_ref … lo`).
+**Isolation:** run on an **isolated non-zero DDS domain**, `--dds-domain 37` (deploy flag from `d0f29b3`; the sim's `DOMAIN_ID`, as the 20261021 fixture passes it). Rebuild the workstation deploy binary from the new native branch head before the run, and record its sha256 in the result. Strip the snap EGL environment for headless rendering (memory note `sim-dds-domain0-crosstalk`).
 
 - [ ] **Step 1: Write the probe.**
   - It starts the sim, deploy, native harness and the fake or real s08 server, plus the local VLM server.
@@ -450,6 +517,10 @@
   - a person reaching in.
 
   Label them, and rerun `upright_check.py` and the RearmMonitor via the local server. Gate: no miss on a lying bottle or a hand.
-- [ ] **Step 2: Rebuild and redeploy the native tree to PC2** (`~/GR00T-WholeBodyControl-harness-20261022`: copy `gear_sonic` from the new branch head; the deploy binary is unchanged). Copy the VoLoAgent package, and confirm the camera colours against an s08 frame.
+- [ ] **Step 2: Redeploy to PC2:**
+  - Native tree in a new folder `~/GR00T-WholeBodyControl-loop-<date>`: `gear_sonic` from the new branch head. Rebuild the deploy from the same head; on the robot it runs with the default domain 0.
+  - The VoLoAgent package.
+  - A **session copy** of `configs/g1/handover-loop.example.yaml` with `checkpoint_verified: true`, stating in its header that it is for the supervised session only.
+  - Confirm the camera colours against an s08 frame.
 - [ ] **Step 3: Supervised session** (`--trials 5`, with `--confirm-paths` on by default). Log the raise and lowering against the recorded paths, and score every trial.
 - [ ] **Step 4: Report the results to the user.** Dropping `--confirm-paths` (unattended) needs the user's go-ahead.
