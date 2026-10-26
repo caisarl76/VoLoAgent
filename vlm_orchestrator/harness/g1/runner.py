@@ -104,7 +104,7 @@ class HarnessRunner:
             raise MissionInterrupted(
                 f"Executor restarted or operator took control (phase {status.phase}, reason {status.reason})"
             )
-        key = (status.phase, status.loop_stage, status.reason, status.loop_trial)
+        key = (status.phase, status.loop_stage, status.reason, status.loop_trial, status.hold_confirmed)
         if key != self._status_key:  # 20-50 Hz polls: log changes only
             self._status_key = key
             self._log("status", **asdict(status))
