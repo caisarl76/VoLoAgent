@@ -18,13 +18,15 @@ def answer(empty=False, upright=False, hand=False):
 
 
 def make(replies, step="empty", limits=None):
-    # Each queued entry is one frame's world state; PROMPT takes the next entry, EMPTY_PROMPT reads case_empty from it.
+    # Each queued entry is one frame's world state; PROMPT takes the next entry, EMPTY_PROMPT reads case_empty from it
+    # (object_on_case = not case_empty; a non-bool passes through unchanged).
     queue, calls, current = list(replies), [], []
 
     def vlm(system, content):
         calls.append(content)
         if content[1]["text"] == EMPTY_PROMPT:
-            return json.dumps({"case_empty": json.loads(current[0])["case_empty"]})
+            v = json.loads(current[0])["case_empty"]
+            return json.dumps({"object_on_case": (not v) if isinstance(v, bool) else v})
         current[:] = [queue.pop(0)]
         r = current[0]
         if isinstance(r, Exception):
@@ -111,8 +113,7 @@ def test_prompt_is_the_verbatim_upright_check_prompt():
                 if isinstance(n, ast.Assign) and n.targets[0].id == "PROMPT")
     assert PROMPT == ast.literal_eval(node.value)
     assert "case_empty" not in PROMPT
-    assert EMPTY_PROMPT == ('Answer only with JSON {"case_empty": true|false}. '
-                            "case_empty is true only if nothing stands or lies on top of the black case.")
+    assert '{"object_on_case": true|false}' in EMPTY_PROMPT and "handle and white labels" in EMPTY_PROMPT
 
 
 def test_empty_step_upright_bottle_is_no_with_one_call():
@@ -123,14 +124,14 @@ def test_empty_step_upright_bottle_is_no_with_one_call():
 def test_empty_step_clear_but_not_empty_is_no():
     m, calls = make([answer(empty=False)])
     d = run(m, "a")[0]
-    assert d.outcome == "no" and len(calls) == 2 and d.answers["case_empty"]["parsed"] == {"case_empty": False}
+    assert d.outcome == "no" and len(calls) == 2 and d.answers["object_on_case"]["parsed"] == {"object_on_case": True}
 
 
 def test_empty_step_yes_records_both_answers():
     m, calls = make([answer(empty=True)] * 2)
     ds = run(m, "a", "b")
     assert [d.complete for d in ds] == [False, True] and len(calls) == 4
-    assert set(ds[0].answers) == {"upright_check", "case_empty"}
+    assert set(ds[0].answers) == {"upright_check", "object_on_case"}
     assert ds[0].answers["upright_check"]["parsed"] == {"bottle_upright_on_case": False, "hand_at_bottle": False}
 
 

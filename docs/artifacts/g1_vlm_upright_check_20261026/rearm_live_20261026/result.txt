@@ -1,0 +1,18 @@
+s08_t0_25      label up=True  hand=False | bottle=yes     (want yes) | empty=no
+s08_t0_first   label up=True  hand=False | bottle=yes     (want yes) | empty=no
+s08_t0_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+s08_t3_25      label up=True  hand=False | bottle=yes     (want yes) | empty=no
+s08_t3_first   label up=True  hand=False | bottle=yes     (want yes) | empty=no
+s08_t3_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+s13_t4_60      label up=False hand=False | bottle=no      (want no) | empty=no
+s13_t4_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+s13_t9_60      label up=False hand=True  | bottle=no      (want no) | empty=no
+s13_t9_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+s16_t0_60      label up=False hand=True  | bottle=no      (want no) | empty=no
+s16_t0_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+s16_t1_25      label up=True  hand=True  | bottle=no      (want no) | empty=no
+s16_t1_first   label up=True  hand=False | bottle=yes     (want yes) | empty=no
+s16_t1_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+s16_t5_60      label up=False hand=True  | bottle=no      (want no) | empty=no
+s16_t5_last    label up=False hand=False | bottle=no      (want no) | empty=yes
+bottle-step combined 17 / 17
