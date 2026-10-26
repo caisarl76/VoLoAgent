@@ -34,7 +34,11 @@ class RearmDecision:
 
 
 class RearmMonitor(G1CompletionMonitor):
-    """Reuses the monitor's bounded VLM call; sends the current frame only, never a BEFORE image."""
+    """Reuses the monitor's bounded VLM call; sends the current frame only, never a BEFORE image.
+
+    The base's _begin and _image_message must never be reached from this subclass (skill is None).
+    A ValueError from the VLM client is labelled "unknown" (malformed_reply), not "failure".
+    """
 
     def __init__(
         self,
@@ -43,9 +47,11 @@ class RearmMonitor(G1CompletionMonitor):
         limits: HarnessLimits | None = None,
     ):
         super().__init__(None, vlm_call_fn, now_fn, limits)
-        self.step = "empty"
+        self.step = None
 
     def begin(self, step: Literal["empty", "bottle"], initial: ObservationSnapshot) -> None:
+        if step not in ("empty", "bottle"):
+            raise ValueError(f"Unknown re-arm step: {step!r}")
         with self._session_lock:
             self.step, self.streak, self.seen = step, 0, set()
 
@@ -53,18 +59,22 @@ class RearmMonitor(G1CompletionMonitor):
         def out(outcome, reason, complete=False):
             return RearmDecision(outcome, reason, snapshot.frame_id, self.step, complete)
 
+        if self.step is None:
+            raise RuntimeError("Monitor step not started")
+        if self.now() - snapshot.received_at > self.limits.camera_max_age_s:
+            return out("unknown", "stale_frame")
         if snapshot.frame_id in self.seen:  # not a new answer: leave the streak alone
             return out("unknown", "repeated_frame")
         self.seen.add(snapshot.frame_id)
         self._call_deadline = snapshot.received_at + self.limits.decision_expiry_s
-        content = [
+        try:
+            image_url = f"data:image/jpeg;base64,{encode_image_b64(decode_image(snapshot))}"
+        except (ValueError, OSError, TypeError):
+            self.streak = 0
+            return out("unknown", "invalid_image")
+        content = [  # image first, as in the validated upright_check run
+            {"type": "image_url", "image_url": {"url": image_url}},
             {"type": "text", "text": PROMPT},
-            {
-                "type": "image_url",
-                "image_url": {
-                    "url": f"data:image/jpeg;base64,{encode_image_b64(decode_image(snapshot))}"
-                },
-            },
         ]
         try:
             raw = self._bounded_call("", content)
@@ -82,7 +92,7 @@ class RearmMonitor(G1CompletionMonitor):
         except (ValueError, KeyError, TypeError):
             self.streak = 0
             return out("unknown", "malformed_reply")
-        if case_empty if self.step == "empty" else upright and not hand:
+        if (case_empty and not upright) if self.step == "empty" else (upright and not hand):
             self.streak += 1
             return out("yes", self.step, self.streak >= 2)
         self.streak = 0
