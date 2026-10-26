@@ -129,6 +129,7 @@ def load_generate(model_path, device):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--model", required=True)
+    p.add_argument("--host", default="127.0.0.1", help="0.0.0.0 to serve the PC2 orchestrator over the lab LAN")
     p.add_argument("--port", type=int, default=8301)
     p.add_argument("--device", default="cuda:0")
     p.add_argument("--min-free-gb", type=float, default=4.4)
@@ -137,8 +138,8 @@ def main(argv=None):
     if free < args.min_free_gb:
         sys.exit(f"{args.device} has {free:.1f} GB free, below --min-free-gb {args.min_free_gb}; not loading the model")
     generate = load_generate(args.model, args.device)
-    httpd = ThreadingHTTPServer(("127.0.0.1", args.port), build_app(generate))
-    print(f"serving {MODEL_NAME} on http://127.0.0.1:{args.port}/v1", flush=True)
+    httpd = ThreadingHTTPServer((args.host, args.port), build_app(generate))
+    print(f"serving {MODEL_NAME} on http://{args.host}:{args.port}/v1", flush=True)
     httpd.serve_forever()
 
 
