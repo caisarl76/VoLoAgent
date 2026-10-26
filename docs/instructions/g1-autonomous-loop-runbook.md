@@ -49,6 +49,7 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
    - `k` is a toggle, so sending it again stops the control loop. Never send `k` again during the session.
    - The same one-shot sender delivers `i` (see Recovery).
 4. Start the telemetry recorder and the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
+   - A finished session (no trials left for `--trials`, counting redo verdicts) is refused before the claim: `session <dir> has no trials left (N recorded); use a new --session-dir`. Use a new directory, or a larger `--trials` to extend the session on purpose. A crashed session that is still frozen (LOOP_FROZEN) is reclaimed regardless, so a frozen lowering can finish.
 5. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
 6. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
 7. Bring the case in only after the raise has reached the ready pose.
@@ -61,10 +62,10 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
   - A stopped trial, including one stopped while holding its offer pose after the trial, blends to the ready pose. Then "restart loop?" follows, unless no trial remains or `e` was entered; then the runner goes to "lower?".
 - **Re-arm before each trial.** The runner prints each decision change. A `failure` line means the VLM call failed: the server is unreachable, timed out or returned an HTTP error. Check T0. A long run of `no hand_at_bottle` with nobody near the case means the ready-pose hand is being read as a hand: stop the session and report it.
   - The first trial after a start, restart or reclaim needs only an upright bottle with no hand at it.
-  - Later trials need an empty case first.
-- **After each trial the arm holds its offer pose** (R24). It moves to the ready pose only after the camera sees the bottle off the robot's hand on 2 distinct frames. The runner prints `taken: no` while the bottle is on the hand and `taken: yes` as it clears, then `to ready`. The session end goes through this hold too.
-  - If the camera never sees the bottle off the hand (say the bottle is taken but the hand is still read as holding it): press Enter (stop), wait more than 1 s, then press Enter again ("clear"). The arm then moves to the ready pose, and "restart loop?" or "lower?" follows as usual.
-  - A `taken` line is printed for each decision change. Repeating `failure` lines mean the VLM is down, as for the re-arm.
+  - Later trials need an empty case first, except the trial after a hold in which the VLM saw the bottle on the robot hand: the bottle then went from the hand to the person, not onto the case, so the runner prints `re-arm: empty step skipped (...)` and asks only for the upright bottle.
+- **After each trial the arm holds its offer pose** (R24/R25). When the person has taken the bottle, press Enter at `bottle taken? (offer pose held)`; the arm then moves to the ready pose (`to ready`). Presses in the first 1 s after the prompt are ignored, and an Enter pressed before the prompt appears is a stop. The session end goes through this hold too.
+  - The `taken: no` / `taken: yes` lines printed during the hold are the VLM's view, for information only: they never move the arm. A false `taken: yes` (the bottle at the image edge, still on the palm) was seen on the robot, so only your Enter counts.
+  - Repeating `failure` lines mean the VLM is down, as for the re-arm.
 - **Scoring** is done in the verdict console only: `s`, `f <reason#> [note]`, `r`. Scoring never moves the robot. `e` ends the session after the current trial.
 - **Before answering "lower?", move the case away.** In simulation the right thumb rested on the case from the lowering through the stance.
 - **Expected log lines:**
