@@ -51,6 +51,7 @@ from .verdict import next_trial, remaining_trials
 POLL_S = 0.05  # 20 Hz: stop key, status, re-arm
 TRIAL_FILES_WAIT_S = 10.0  # R15
 RELEASE_RETRY_S = 5.0
+SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most this often
 CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
@@ -154,6 +155,7 @@ class LoopRunner(HarnessRunner):
             raise ValueError("Handover loop profile required")
         # n: the trial in progress or the next one (R4/R4b); started: trials whose loop_trial this runner sent
         self.n, self.started, self.active, self._worker, self._stopped = 0, [], False, None, None
+        self._said = (None, 0.0)  # the last re-arm decision line printed and when
         return self._run_session([SkillCall(self.profile.handover.skill_id, {})], self._session)
 
     # --- session --------------------------------------------------------------------------------------------
@@ -226,6 +228,7 @@ class LoopRunner(HarnessRunner):
             self.started.append(self.n)
             self.active = True
             self.evidence.event(self.n, "trial_start")
+            self._say(f"trial {self.n}: start")
             self._trial_ended(self._wait(("LOOP_HOLD", "ready")))
             first = False
         return "end"
@@ -255,6 +258,7 @@ class LoopRunner(HarnessRunner):
         status = self._stopped
         if status is None:
             self.evidence.event(self.n, "stop_key", pressed_at=self.console.pressed_at)
+            self._say("stop key: freezing")
             sent = time.monotonic()
             try:
                 status = self._rpc("loop_freeze", {})
@@ -266,8 +270,10 @@ class LoopRunner(HarnessRunner):
                 return "finish" if phase == "COMPLETED" else "start"
             self.evidence.event(self.n, "loop_freeze", dispatched_at=sent, acked_at=time.monotonic(),
                                 reason=status.reason, frozen_stage=status.frozen_stage)
+            self._say(f"frozen in {status.frozen_stage} ({status.reason})")
         else:
             self.evidence.event(self.n, "native_freeze", reason=status.reason, frozen_stage=status.frozen_stage)
+            self._say(f"native freeze in {status.frozen_stage}: {status.reason}")
         self._trial_ended(status)
         # R21: debounced; a double-tap stop must never resume the robot
         self._gate(f"clear? (frozen in {status.frozen_stage}: {status.reason}) "
@@ -280,6 +286,16 @@ class LoopRunner(HarnessRunner):
             "finish" if s.phase == "COMPLETED" else "take_over")
 
     # --- helpers --------------------------------------------------------------------------------------------
+
+    def _say(self, text):
+        """One short line on the operator console (the re-arm and trial progress)."""
+        print(text, file=self.console.out, flush=True)
+
+    def _say_decision(self, d):
+        key, now = (d.step, d.outcome, d.reason), time.monotonic()
+        if key != self._said[0] or (d.outcome in ("failure", "unknown") and now - self._said[1] >= SAY_REPEAT_S):
+            self._said = (key, now)
+            self._say(f"re-arm {d.step}: {d.outcome} {d.reason}"[:120])
 
     def _hold_poll(self):
         status = self._check()
@@ -311,6 +327,7 @@ class LoopRunner(HarnessRunner):
     def _trial_ended(self, status):
         if self.active:
             self.evidence.event(self.n, "trial_end", reason=status.trial_end_reason)
+            self._say(f"trial {self.n}: end ({status.trial_end_reason})")
             self.active, self.n = False, self.n + 1
 
     def _recorded(self, trial):
@@ -343,6 +360,7 @@ class LoopRunner(HarnessRunner):
                 if error:
                     raise MissionInterrupted(f"Re-arm monitor error: {error}")
                 self.evidence.event(self.n, "rearm_decision", **asdict(decision), frame_path=path)
+                self._say_decision(decision)
                 if decision.complete:
                     self.evidence.event(self.n, "rearm_end", step=step, frame_id=decision.frame_id)
                     return True

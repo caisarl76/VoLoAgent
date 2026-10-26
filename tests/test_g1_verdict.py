@@ -140,3 +140,38 @@ def test_redo_forces_empty_reason_and_note(tmp_path):
     make_trial(tmp_path, 0)
     line = append_verdict(tmp_path, 0, "redo", "other", "n")
     assert line["reason"] == "" and line["note"] == ""
+
+
+def test_console_prints_each_recorded_verdict(tmp_path, capsys):
+    make_trial(tmp_path, 0)
+    make_trial(tmp_path, 1)
+    run_console(tmp_path, iter(["f 2 slipped", "s"]), poll_s=0)
+    out = capsys.readouterr().out.splitlines()
+    assert f"trial 0: fail {FAILURE_REASONS[1]}" in out and "trial 1: success" in out
+
+
+def test_typed_ahead_verdicts_wait_for_their_trial_to_be_shown(tmp_path, capsys):
+    import threading
+    import time
+
+    def typed():
+        yield "s"  # typed before any trial exists
+        yield "f 2"
+        deadline = time.monotonic() + 3
+        while time.monotonic() < deadline and len(
+                (tmp_path / "results.jsonl").read_text().splitlines() if (tmp_path / "results.jsonl").exists() else []) < 2:
+            time.sleep(0.01)
+
+    def trials_land():
+        time.sleep(0.1)
+        make_trial(tmp_path, 0)
+        time.sleep(0.1)
+        make_trial(tmp_path, 1)
+
+    threading.Thread(target=trials_land, daemon=True).start()
+    run_console(tmp_path, typed(), poll_s=0.01)
+    assert [(r["trial"], r["verdict"]) for r in lines(tmp_path)] == [(0, "success"), (1, "fail")]
+    out = capsys.readouterr().out.splitlines()
+    for t, verdict in ((0, "trial 0: success"), (1, f"trial 1: fail {FAILURE_REASONS[1]}")):
+        shown = next(i for i, s in enumerate(out) if s.startswith(f"trial {t}: handover"))
+        assert shown < out.index(verdict)  # applied only after its episode_end was shown
