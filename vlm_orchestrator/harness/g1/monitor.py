@@ -91,6 +91,7 @@ class G1CompletionMonitor:
             raw, error = replies.get(timeout=remaining)
         except queue.Empty as exc:
             raise TimeoutError("VLM call deadline exceeded") from exc
+        self._call_thread.join(timeout=1.0)  # it has replied; let it exit so a back-to-back call is not refused
         if error:
             raise error
         if not isinstance(raw, str) or not isinstance(parse_json(raw), dict):
