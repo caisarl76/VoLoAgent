@@ -1,0 +1,3413 @@
+{
+ "base_url": "http://127.0.0.1:8302/v1",
+ "n": 169,
+ "n_rearm": 51,
+ "n_taken": 118,
+ "n_taken_on_hand": 32,
+ "field_accuracy": {
+  "bottle_upright_on_case": "168/169",
+  "object_on_case": "135/169",
+  "bottle_on_robot_hand": "159/169",
+  "hand_at_bottle": "146/169"
+ },
+ "rearm_false_yes": [],
+ "rearm_missed_yes": [],
+ "taken_false_yes": [
+  14,
+  15,
+  16,
+  19,
+  21,
+  24,
+  80,
+  138,
+  139
+ ],
+ "taken_missed_yes": [
+  36
+ ],
+ "latency_s_median": 0.5955011751502752,
+ "latency_s_p95": 1.0267859362065792,
+ "rows": [
+  {
+   "id": 0,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 0,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 1,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 1,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 2,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 2,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 3,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 3,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 4,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 4,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 5,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 5,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 6,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 6,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": true,
+    "note": "human_hand_at_bottle: motion-blurred hand at top edge, no bottle visible; it may be carrying the bottle just out of frame"
+   }
+  },
+  {
+   "id": 7,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 7,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 8,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 8,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 9,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 9,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 10,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 10,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 11,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 11,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 12,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 12,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 13,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 13,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 14,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 14,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 15,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 15,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 16,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 16,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 17,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 17,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 18,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 18,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 19,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 19,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 20,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 20,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 21,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 21,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 22,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 22,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 23,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 23,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 24,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 24,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 25,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 25,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 26,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 26,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 27,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 27,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 28,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 28,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 29,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 29,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 30,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 30,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 31,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 31,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 32,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 32,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 33,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 33,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "object_on_case: left half of lid occluded by blue garment; visible part is empty"
+   }
+  },
+  {
+   "id": 34,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 34,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 35,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 35,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "object_on_case: left half of lid occluded by blue garment; visible part is empty"
+   }
+  },
+  {
+   "id": 36,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 36,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "object_on_case: person holds bottle (blurred, tilted) just above lid; unclear if it touches the lid"
+   }
+  },
+  {
+   "id": 37,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 37,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "bottle_upright_on_case: bottle stands upright on lid but fingers still touch it (being placed/released)"
+   }
+  },
+  {
+   "id": 38,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 38,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 39,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 39,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "object_on_case: lid almost fully occluded by blue garment; robot_hand_visible: blurred dark object at right edge, likely the gripper"
+   }
+  },
+  {
+   "id": 40,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 40,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "upright/object_on_case: a transparent vertical sliver on the lid at the garment edge looks like a standing bottle but is mostly occluded; robot_hand_visible: dark finger-like object at right edge"
+   }
+  },
+  {
+   "id": 41,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 41,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 42,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 42,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 43,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 43,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 44,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 44,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 45,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 45,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 46,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 46,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 47,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 47,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 48,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 48,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 49,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 49,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 50,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 50,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 51,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 51,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 52,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 52,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 53,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 53,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 54,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 54,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 55,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 55,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 56,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 56,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 57,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 57,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 58,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 58,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 59,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 59,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 60,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 60,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 61,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 61,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 62,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 62,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 63,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 63,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 64,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 64,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 65,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 65,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 66,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 66,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 67,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 67,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 68,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 68,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 69,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 69,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 70,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 70,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 71,
+   "kind": "rearm_empty",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 71,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 72,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 72,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 73,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 73,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 74,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 74,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 75,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 75,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 76,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 76,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 77,
+   "kind": "rearm_bottle",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 77,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": false,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 78,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 78,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 79,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 79,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 80,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 80,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "bottle_on_robot_hand: person grabbing bottle off gripper with motion blur; unclear if still in contact"
+   }
+  },
+  {
+   "id": 81,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 81,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 82,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 82,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 83,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 83,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "object_on_case: person placing bottle (blurred, tilted) near lid; unclear if it touches the lid"
+   }
+  },
+  {
+   "id": 84,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 84,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 85,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 85,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 86,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 86,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 87,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 87,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 88,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 88,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 89,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 89,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 90,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 90,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 91,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 91,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 92,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 92,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 93,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 93,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 94,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 94,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 95,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 95,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 96,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 96,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 97,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 97,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 98,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 98,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 99,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 99,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 100,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 100,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 101,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 101,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 102,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 102,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 103,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 103,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 104,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 104,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 105,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 105,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 106,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 106,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 107,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 107,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 108,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 108,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 109,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 109,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 110,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 110,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 111,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 111,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 112,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 112,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 113,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 113,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 114,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 114,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 115,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 115,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 116,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 116,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 117,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 117,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 118,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 118,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 119,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 119,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 120,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 120,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 121,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 121,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 122,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 122,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 123,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 123,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 124,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 124,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 125,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 125,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 126,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 126,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 127,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 127,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 128,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 128,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 129,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 129,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 130,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 130,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 131,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 131,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 132,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 132,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 133,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 133,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 134,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 134,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 135,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 135,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 136,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 136,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 137,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 137,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 138,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 138,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "human_hand_at_bottle: blurred hand reaches within a few px of bottle; appears not yet touching"
+   }
+  },
+  {
+   "id": 139,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 139,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "bottle_on_robot_hand: hand grips bottle at right edge directly above gripper; contact with gripper not certain"
+   }
+  },
+  {
+   "id": 140,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 140,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "human_hand_at_bottle: bottle blurred in flight at left edge, only a sliver of skin visible"
+   }
+  },
+  {
+   "id": 141,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 141,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "object_on_case: bottle held tilted by hand, base appears at/near the lid while being placed"
+   }
+  },
+  {
+   "id": 142,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 142,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 143,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 143,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 144,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 144,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 145,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 145,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 146,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 146,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 147,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 147,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 148,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 148,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 149,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 149,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 150,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 150,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 151,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 151,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 152,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 152,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 153,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 153,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 154,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": true
+   },
+   "label": {
+    "id": 154,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": false,
+    "object_on_case": false,
+    "bottle_on_robot_hand": true,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 155,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": false,
+    "hand_at_bottle": true,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 155,
+    "bottle_upright_on_case": false,
+    "human_hand_at_bottle": true,
+    "object_on_case": false,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": true,
+    "note": "bottle_on_robot_hand: person lifting bottle (blurred) just above gripper fingers; likely already off"
+   }
+  },
+  {
+   "id": 156,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 156,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 157,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 157,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 158,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 158,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 159,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 159,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 160,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 160,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 161,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 161,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 162,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 162,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 163,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 163,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 164,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 164,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 165,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 165,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 166,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 166,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 167,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 167,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  },
+  {
+   "id": 168,
+   "kind": "taken",
+   "pred": {
+    "bottle_upright_on_case": true,
+    "hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false
+   },
+   "label": {
+    "id": 168,
+    "bottle_upright_on_case": true,
+    "human_hand_at_bottle": false,
+    "object_on_case": true,
+    "bottle_on_robot_hand": false,
+    "robot_hand_visible": true,
+    "uncertain": false,
+    "note": ""
+   }
+  }
+ ]
+}
