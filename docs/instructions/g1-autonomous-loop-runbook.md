@@ -8,7 +8,7 @@ The operator stays at the robot for every session until the user approves unatte
 | Where | Process | Notes |
 |---|---|---|
 | Workstation 192.168.0.62, GPU 1 | s08 policy server, port 5571 | `groot_handover261015_he_full`. It is long-running and shared, so leave it as it is. |
-| Workstation, GPU 0 (T0) | Qwen3-VL-2B server, port 8301 | `scripts/g1_local_vlm_server.py --host 0.0.0.0`. It refuses to start with less than 4.4 GB free. |
+| Workstation, GPU 0 (T0) | Qwen3-VL-4B server, port 8301 (tmux `vlm`) | `scripts/g1_local_vlm_server.py --model <Qwen3-VL-4B-Instruct snapshot> --host 0.0.0.0 --min-free-gb 9`. It uses ~8.8 GB. The 4B weights are in the snap HF cache (`~/snap/alacritty/common/.cache/huggingface/hub`). `/v1/models` still lists the name `qwen3-vl-2b`, but the model served is the one given by `--model`. |
 | PC2 (`pc2_222`) | deploy (T1), native harness (T2), loop runner (T3), verdict console (T4), telemetry recorder | The runner must run on PC2, because frame ages are compared on one clock. |
 
 The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022`, native `cba799d`). The only deploy change since then is `--dds-domain` (`d0f29b3`), which defaults to 0. The loop's Python code runs from `~/GR00T-WholeBodyControl-loop-<date>`, which holds `gear_sonic`, `vlm_orchestrator`, `session-profile.yaml` and `*_SOURCE_COMMIT`. It uses the 10-22 venv, and `PYTHONPATH` selects the new code.
@@ -51,7 +51,7 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 4. Start the telemetry recorder in its own tmux session, one per session name. It refuses to start if another recorder is already writing the same file:
    `tmux new-session -d -s recorder "cd ~/GR00T-WholeBodyControl-loop-<date> && PYTHONPATH=\$PWD <venv>/bin/python g1_record_telemetry.py telemetry-<name>.npz --seconds 1800 2>&1 | tee recorder-<name>.log"`
    To stop and save early, run `kill <pid>`, using the pid printed in the first line of `recorder-<name>.log`. Do not use `pkill`/`pgrep -f`: the pattern can match your own shell.
-5. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
+5. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-4b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
    - A finished session (no trials left for `--trials`, counting redo verdicts) is refused before the claim: `session <dir> has no trials left (N recorded); use a new --session-dir`. Use a new directory, or a larger `--trials` to extend the session on purpose. A crashed session that is still frozen (LOOP_FROZEN) is reclaimed regardless, so a frozen lowering can finish.
 6. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
 7. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
@@ -66,11 +66,16 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 - **Re-arm before each trial.** The runner prints each decision change. A `failure` line means the VLM call failed: the server is unreachable, timed out or returned an HTTP error. Check T0. A long run of `no hand_at_bottle` with nobody near the case means the ready-pose hand is being read as a hand: stop the session and report it.
   - The first trial after a start, restart or reclaim needs only an upright bottle with no hand at it.
   - Later trials need an empty case first, except the trial after a hold in which the VLM saw the bottle on the robot hand: the bottle then went from the hand to the person, not onto the case, so the runner prints `re-arm: empty step skipped (...)` and asks only for the upright bottle.
-- **After each trial the arm holds its offer pose** (R24-R26) at `bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, or Enter)`. The arm moves on to the ready pose by itself once the right-arm torque shows the bottle lifted off the palm (`taken: detected by arm torque`, then `to ready`). The session end goes through this hold too.
+- **After each trial the arm holds its offer pose** (R24-R26) at `bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, the camera sees the hand empty, or Enter)`. The arm moves on to the ready pose by itself once either:
+  - the right-arm torque shows the bottle lifted off the palm (`taken: detected by arm torque`); or
+  - the VLM answers "hand empty" for 3 frames in a row, about 2 s (R29, `taken: the camera saw the hand empty 3 times in a row`).
+
+  Then it prints `to ready`. An answer that sees the bottle on the hand restarts the count. `--taken-vlm-frames N` changes the count, and `0` turns the camera route off. The session end goes through this hold too.
   - Enter is the manual override: press it when the person has taken the bottle but the arm did not move on, for example a take within the first 2 s of the hold (the detector is still measuring its baseline) or a take the detector missed. Presses in the first 1 s after the prompt are ignored, and an Enter pressed before the prompt appears is a stop.
   - An Enter pressed just as the torque detector moves the arm on counts as an answer to this prompt, not as a stop. Press Enter again to stop the move to ready.
   - **Take the bottle cleanly: do not push the palm up or lean on the bottle.** Lifting the weight off the palm is exactly what the detector looks for, so a push that carries most of the bottle's weight for 1 s moves the arm on with the bottle still there.
   - The detector learns each hold's loaded torque between 1 and 2 s after the trial ends. A take inside those first 2 s, or a hold where the arm was still settling then, is left to your Enter.
+  - The harness log (T2) prints `[loop] hold +N s torque sh/el = … | sh roll/yaw = … | wrist r/p/y = …` every 0.5 s of the hold. These lines are diagnostics for a later wrist-torque detector.
   - The deploy must publish `motor_torque` (the 2026-10-27 build in `~/GR00T-WholeBodyControl-deploy-20261027`); with the 10-22 deploy there is no torque and every hold waits for Enter.
   - The `taken: no` / `taken: yes` lines printed during the hold are the VLM's view, for information only: they never move the arm. A false `taken: yes` (the bottle at the image edge, still on the palm) was seen on the robot, so only your Enter counts.
   - Repeating `failure` lines mean the VLM is down, as for the re-arm.
