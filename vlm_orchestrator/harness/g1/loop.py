@@ -419,7 +419,8 @@ class LoopRunner(HarnessRunner):
                 raise _Taken("torque")
             d = self._vlm_collect("taken", trial)
             if d is not None:
-                if ((d.answers or {}).get("taken") or {}).get("parsed", {}).get("bottle_on_robot_hand") is True:
+                # a malformed reply is stored with parsed None: it counts as neither on the hand nor empty
+                if (((d.answers or {}).get("taken") or {}).get("parsed") or {}).get("bottle_on_robot_hand") is True:
                     seen_on_hand.append(d.frame_id)
                 empty[0] = empty[0] + 1 if d.outcome == "yes" else 0
                 if self.taken_vlm_frames and empty[0] >= self.taken_vlm_frames:

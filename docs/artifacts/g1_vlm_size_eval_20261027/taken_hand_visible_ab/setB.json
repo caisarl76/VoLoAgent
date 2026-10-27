@@ -1,0 +1,660 @@
+[
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 0.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/0e0ec85066c42eacd9e042638ec17de63a3c3ba997f1b8bd90cd167025286ad5.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 1.7,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/2914e8a23615c7a0b6e3cd0b091b482fe45e9dbfbd92f89096ca940d22300daf.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 2.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/19570a7f500793431f8239c4e31d89b6d98b410d7e1826238c9d09a0aab0d6cd.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 3.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/9d6fc0a89f564a7519965999ada0d26cebc115f549b4761341fd7eac0af135e2.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 4.2,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/2ee70669fea02a03ce880715a4a14e208a76a55b825c921482252f3edfd9c26a.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 5.0,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/fec3118da99ed3d823fe7389cf57e47a432a505f6a2a2f8244e6b962e46a2bfa.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 5.7,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/a951b09ebcbe69618009830e7f8ed0894ec893e177db8e1cc00bfbdbb751288e.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 6.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/6878ed9bbbc7466a1f31be61acb06fa74778ab837140042f6cb523b197317e2a.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 7.3,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/08d827607cf08cd189160f8420696b0cd21b010b1774c981bfcad670a22db8ec.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 8.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/fbb056c139cc1ffddb55cf9733482a90381d46c4a6a3f9a4e31d1aaa635e835f.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 8.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/701298634e3ea3d6f2e50f6f96dfc7b324f01d0f9ffc5102fc54fa9c0f1f6795.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 9.7,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/435102858416604b65a1c91a64c85a278b8f2799be65075ac070934978aaa367.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 10.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/e0de65eb3715a6ad9f31187c22171fd2c7163e05729d1acbd3c8c98335577500.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 11.2,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/8ba05a4615f03062ca18e9b44a62f659a0fb30395db498651b7b16f0cb2c33c4.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 12.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/52db60a477339a85ecda32d3faf05d2e6781f8c4ab4054def847bfa85743365f.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 12.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/b7ee946aa28d2698a2c4fee0f891fdd6db12f1648c867d6115fd198302cbf23e.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 13.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/8a2c1f0fdbd5972d6afd54d1955f4366d19b2beebc40d1c1e188f0da23379ad2.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 14.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/2bf862d72fae4d2b10b24799ac9aac7350330c2cf7c9540483d4b35003e3fb39.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 15.2,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/9da047f6b144d18fe299c9743c8527c4a0752aaf637bf8c68cd970c0f39af7c2.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 16.0,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/7c0590c5d0a0749eccaebf65362d27d61a334ae0d731e01c6d0bddd4491ed7ff.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 16.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/882acfd9491e3025e2fbbcb24a22bec0f4d8391159064fa5f8b6cd46d17cd975.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 17.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/b3f3353304d706f3bcac5863f83d130f2b3edabec3b52cac4357fbee1d3a3b84.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 18.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/978a588bfbca3e6e14b131632442c12770f2104d168cfe23f454bc0b02622fb6.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 19.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/6a3164077d078a478dc8ea46c9326c791273d494de933b942cc79e5304424c0c.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 19.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/ef982bda15bdf2dbaaf3100eef8cc40b5d58d733133bb7e3770652656965bb0d.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 20.7,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/1b5bab5916bc15c2709f1b5cb6937f27fd562c2f5f0bf1db53bf55526c35656d.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 21.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/c75252d8eabd520da10a5f3bff53ca4e431ad58d9d6f1b825eff0719242da252.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 22.3,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/a44ffd32329fee1803e4621725d1451e25d09defb7c758e570e4cdb3cf5f2060.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 23.0,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/3d0944b793d8768961c3c7b2bc39e8870de90b87c7a3ef5cf9a06d806c818312.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 23.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/956282486a0322d80df4e7663f78aacf22dfafb05b4458ca0e18f907c3964c14.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 24.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/ba32f1283f5db8d5b02f8e43b29e6610830c1d2e52fa9fd222591c3dd3663121.jpg"
+},
+{
+"session": "r34",
+"trial": 0,
+"t_hold": 25.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r34/session/evidence/trial_000/07f8b4418024c002c4bc3550e7a9cc36a78d99ab30b5686dfd44bbf98de36e6c.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 0.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/f07138c1f2f416df50d564c3f2c7a06009a4e14af8e2d564034557ad26299f44.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 1.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/518e089d48d76acbca6560789830df45bc46ad10a45e9ac8bd6409fc9295bab7.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 2.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/fb4c58623de0c90106fa903b00a390e13ac20b24049b6c3da68e6504cea28523.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 3.2,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/08deb2bdf030bce5b919ac235a9a905170a48df0e05e3a22d95197f74e1cc038.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 4.0,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/b1ea732c6bf3d23f80d73bc072f126c1c55c5ba61852d308a79d9adcf49338d6.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 4.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/7bc7a4f9b6908d2db0820ef7cb88f1222f9987a6d2adb7f617c04da025a77946.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 5.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/c486fe1242b88bd97b34569c776599caafa40c0db6c1fffdfc00cfd8f80f487d.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 6.3,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/634980b95dbdfb636f40bf9ac2c644ae0bde1e9c051573a0ccae2f4299d8ae95.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 7.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/15fe0964a32053562b08dc6511a1bbd503eb3edd2039b391f75c03b5d03b9941.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 7.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/f73226bf1feb3b86e93371865980bc7c83eac254215cca835924bdffff04b362.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 8.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/0237df38f10f8474655d83b8eaaa174158ad5355b0c8e5c78f13a90db55b6a66.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 9.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/154c6ad64821676883fecc2c76f2610e3f32a9801c7313f47f1b412e01a89901.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 10.2,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/a244cb9488b32f684c12c1d96d5ce0bc399d9a37a134643d895c6fbd88e87abd.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 11.0,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/e062eeac6f4f3dc8490bc460beaa067d66c723998e586731d5ba780b996b5753.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 11.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/622e5c179a821b541d0d16a17866859d6456ee84ace7913e0589d15468965910.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 12.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/88e53dcaa14913d135380b2082bac47df262ec0a37c10e9fc3ddf4e74fcf36da.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 13.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/7a1a3b5a8662654e430a6178a9ce46c4ebeb18d462ba97a626153bc459c89589.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 14.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/ea9a9b76e41715240f37c946594155b6e9b1d90d34ac77a176dc3e288d981d3f.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 14.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/000c8b1453fde44014a08b982cecd6bb08cbbe8f9efa607ce1578a60cb940d38.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 15.7,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/1a3b72b90079bf902bbe6b9cb7694b536cb2747f3608051036d76ec3763b6615.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 16.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/00e4b68840ed014f8d9b5cbb32357c1a8955b5b9354d2f8c846ec57d3da45e72.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 17.3,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/abafdc0e6a805793e7fd7b6f79181e99a100d81eb92a3fd08a66396fe022735e.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 18.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/1f39868cd3a8d583cb3440237155b5453121208fb793b9eebf7f781d28759c5d.jpg"
+},
+{
+"session": "r36",
+"trial": 7,
+"t_hold": 18.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_007/8a1b80857b0b74f2715f2d774e1ff24f9dbde4717166063b1811bd41342102c5.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 0.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/567151b3ddad7ea4747f322d1b3405081dc9b079c07c5d2045aac52e409b1d05.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 1.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/ecdbf21f2806c9b7d2f6a5ec705ebd50bb35be8b6f4ea15f5e9ada01e0101d9f.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 2.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/fa04ab3de8afaad9756391e9aef467fc5db670950f9b2b5b21e4f31195fcc74c.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 3.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/b3c6e6bce98e7ca0265b68e2af5dc192565cd9e9fb2152757f9a6afc69b2033a.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 3.9,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/9adc80af517a18e113531e7be3b92ea353f6d6060717e1e09707edcd410a8cdc.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 4.7,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/49947494c0e7694f434e1adac439ddde65761edb9c39e46b7aba43ec655f1983.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 5.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/8a571eb3b5736f1f7a94adfa594cc3b6b09ba4883f11f2d33b2acb17ab43b3d5.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 6.3,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/b2b8a38d2988a032ebbfe2a4fd6f22c8c1f52339def0787080ee8c3b0ca0df05.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 7.1,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/c57e92034cf823277672963dcd4600324ce6ef1f9604585c3477aa4aa42e31d4.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 7.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/5cb77ad42bb1076418f2a45de0401dc16231253e418e3626ce4a1e3c17284fec.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 8.6,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/fa9b29a1a3f7c1facc08c838461578aaa2029cd9d7a7b586e363cbdd811726dd.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 9.4,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/d465eda292f6bfd874db9fccb2c45419d25c98035bfea51dc4b2372bd431f313.jpg"
+},
+{
+"session": "r36",
+"trial": 8,
+"t_hold": 10.2,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r36/session/evidence/trial_008/2f07387763ca37e47f376d7b78c48c6fb41a3163cb42d76735dfd0111bc85e7f.jpg"
+},
+{
+"session": "r38",
+"trial": 4,
+"t_hold": 0.8,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_004/727dccef681f3442377012a060f5d17f2bc28a71facd4a067fb5de638ac76440.jpg"
+},
+{
+"session": "r38",
+"trial": 4,
+"t_hold": 1.5,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_004/38352b7a61f6fdcbf5e74ab17dde79aae0591eb38b34140d94f47e7bcc2513fe.jpg"
+},
+{
+"session": "r38",
+"trial": 4,
+"t_hold": 2.3,
+"label": "empty",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_004/bb60113d7707017d6df199a4be3bb9016a3754998d56dc13ae81fe0b54ce77e9.jpg"
+},
+{
+"session": "r33",
+"trial": 2,
+"t_hold": 0.8,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_002/3aecd0c12758627b9948bf5c183b6e807cc915da71603227f1f2620cc54133e2.jpg"
+},
+{
+"session": "r33",
+"trial": 2,
+"t_hold": 1.5,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_002/2b8c7bbb5d8d1ac67aedc05af4bc406e2d5ce2899b8b4bc7aa9194d0dc0637fe.jpg"
+},
+{
+"session": "r33",
+"trial": 2,
+"t_hold": 2.2,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_002/061064556448623fc710a5b344e0193e90afda6e49091623a8477a6d92324e63.jpg"
+},
+{
+"session": "r33",
+"trial": 4,
+"t_hold": 0.8,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_004/a37f3f095b3268d9c5736eea7110ebcc407d3d73aa95cc9858834759b3bf92d3.jpg"
+},
+{
+"session": "r33",
+"trial": 4,
+"t_hold": 1.6,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_004/5e58cc3529c62d855f4d7b74103e1dff7ecb7ff122a92377665960ac36d6e973.jpg"
+},
+{
+"session": "r33",
+"trial": 4,
+"t_hold": 2.4,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_004/caafb7c52523621590a302ab3ba78addebca54de22506d37b9b5343a5a17bee7.jpg"
+},
+{
+"session": "r33",
+"trial": 9,
+"t_hold": 0.8,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_009/62f3784d6c83088e614953b64112f1b9318696eaa8446667724fb308493ca458.jpg"
+},
+{
+"session": "r33",
+"trial": 9,
+"t_hold": 1.6,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_009/ae0d9fc8b2985cda52ec467f7b9cce0fda2c83fc3db37461446638cf601decfc.jpg"
+},
+{
+"session": "r33",
+"trial": 9,
+"t_hold": 2.4,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_009/c5ca379ec61be3198e0d52adfb24c0f35f0e01286d65ef7f4b85f2094c71ee34.jpg"
+},
+{
+"session": "r33",
+"trial": 9,
+"t_hold": 3.1,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r33/session/evidence/trial_009/7268a9faeb6112e30d130f451fc1fb929a1df87cafe71dabfdd2c306870aabf1.jpg"
+},
+{
+"session": "r38",
+"trial": 5,
+"t_hold": 0.8,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_005/d2a4df035aa5861c6c602defd8b62c9d32d319500df15244a93d813fde4a38cf.jpg"
+},
+{
+"session": "r38",
+"trial": 5,
+"t_hold": 1.5,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_005/73fdaf036a545efe9563640aa6321485efd93a22854cbddecb152d605dc8523b.jpg"
+},
+{
+"session": "r38",
+"trial": 5,
+"t_hold": 2.3,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_005/6a86cab867581006e65d2beb75334f109bfe9b6ba1f03ca249fb097b2cbec1c7.jpg"
+},
+{
+"session": "r38",
+"trial": 5,
+"t_hold": 3.1,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_005/6553873d69b677d6d766d209e1bb85b4a4d8de2a7c60c06048506497bed94154.jpg"
+},
+{
+"session": "r38",
+"trial": 5,
+"t_hold": 3.9,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_005/e066f23dadeb22d1c3e931fc5cca428f77f1cb430ffb4b981f07797bc128b20e.jpg"
+},
+{
+"session": "r38",
+"trial": 5,
+"t_hold": 4.6,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_005/c801e3f4d39fef68dc4fc23888b2de3f8238ed7db4e1b51c4ecc905152fb2d9a.jpg"
+},
+{
+"session": "r38",
+"trial": 7,
+"t_hold": 0.8,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_007/2e699f58369966775f98836e76bbf881f1d10c71bd09dc684f8a99015bb89089.jpg"
+},
+{
+"session": "r38",
+"trial": 7,
+"t_hold": 1.6,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_007/48b855de1bcbd61dbc5d42cf1b03060b9ec716025d9fa786d844ef65d1fdceca.jpg"
+},
+{
+"session": "r38",
+"trial": 7,
+"t_hold": 2.4,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_007/41689f958938928ba11cea833a0e7b433b8c0c1ea419d5ba8577ae6e2e7c2f32.jpg"
+},
+{
+"session": "r38",
+"trial": 7,
+"t_hold": 3.1,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_007/274929fdefbab84eb499984460a81fe3c2e6908bf72b818e4a8b34e0f1b40354.jpg"
+},
+{
+"session": "r38",
+"trial": 7,
+"t_hold": 3.9,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_007/0312385827da290b5abbd4e654f8fc12dc0aee16b32e4d21c61730c441d91c15.jpg"
+},
+{
+"session": "r38",
+"trial": 7,
+"t_hold": 4.7,
+"label": "on",
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/robot_r38/session/evidence/trial_007/e3731a85cab678609f7c33a90928dd1fe667a97037979f92e5808c85034ee6fc.jpg"
+}
+]

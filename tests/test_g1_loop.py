@@ -1160,3 +1160,29 @@ def test_leaving_await_take_during_the_taken_gate_fails_closed(tmp_path):  # rev
     result = runner.run()
     assert result.outcome != "completed" and "Taken gate needs the await_take hold" in result.reason
     assert "loop_to_ready" not in methods(loop)
+
+
+class TakenReplies(Rearm):
+    """The fake VLM answers "taken" with these raw replies, then the bottle on the hand forever."""
+
+    def __init__(self, replies):
+        super().__init__()
+        self.replies = list(replies)
+
+    def _vlm(self, system, content):
+        if content[1]["text"] == TAKEN_PROMPT:
+            return self.replies.pop(0) if self.replies else '{"bottle_on_robot_hand": true}'
+        return super()._vlm(system, content)
+
+
+@pytest.mark.parametrize("frames", [3, 0])
+def test_a_malformed_taken_reply_resets_the_count_and_keeps_holding(tmp_path, frames):  # review P2 (voloagent-5a)
+    empty = '{"bottle_on_robot_hand": false}'
+    loop, runner, _ = build(tmp_path, trials=1, monitor=TakenReplies([empty, empty, "nope", empty]),
+                            taken_vlm_frames=frames)
+    runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 5)})
+    assert runner.run().outcome == "completed"
+    assert "loop_freeze" not in methods(loop)
+    events = evidence(tmp_path, 0)
+    assert [e["outcome"] for e in events if e["kind"] == "taken_decision"][:4] == ["yes", "yes", "unknown", "yes"]
+    assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "operator"
