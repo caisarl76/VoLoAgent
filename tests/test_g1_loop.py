@@ -55,6 +55,7 @@ class FakeLoop:
         self.release_refusals, self.write_delay, self.write_files = 0, 0.0, True
         self.native_next = None  # loop_trial rejects a number below this (else the recorded count)
         self.frames = 0
+        self.take = False  # R26: the native torque take detector's verdict, reported only in await_take
 
     # motion
     def tick(self):
@@ -127,7 +128,7 @@ class FakeLoop:
             "boot", self.phase, None, None, 0, True, True, "POSE", None, self.hold, 0.0, 1, 0.0, "f",
             PROFILE.registry_sha256, PROFILE.policy_host, PROFILE.policy_port, PROFILE.checkpoint, self.owner,
             self.reason, loop_stage=self.stage, loop_trial=self.trial, trial_end_reason=self.end_reason,
-            frozen_stage=self.frozen_stage,
+            frozen_stage=self.frozen_stage, take_detected=self.take if self.stage == "await_take" else None,
         )
 
     def dispatch(self, method, params, session_id):
@@ -157,7 +158,7 @@ class FakeLoop:
             floor = self.native_next if self.native_next is not None else len(list(self.dir.glob("trial_*_frames.npz")))
             if params["trial"] < floor:
                 raise RPCError("INVALID_REQUEST", f"trial {params['trial']} is already recorded in {self.dir}")
-            self.trial, self.end_reason, self.recording = params["trial"], None, True
+            self.trial, self.end_reason, self.recording, self.take = params["trial"], None, True, False
             self.move("LOOP_TRIAL", "episode", 3, self._trial_end)
         elif method == "loop_freeze":
             self.freeze("operator stop")
@@ -216,10 +217,10 @@ class Console:
         self.out = io.StringIO()
 
     def wait_enter(self, prompt, poll=None, min_after=0.0):
+        key = prompt.split("?")[0] + "?"
+        self.loop.trace.append((time.monotonic(), "?" + key, None))  # shown, then polled, like the real console
         if poll:
             poll()
-        key = prompt.split("?")[0] + "?"
-        self.loop.trace.append((time.monotonic(), "?" + key, None))
         if self.interrupt and prompt.startswith(self.interrupt):
             raise KeyboardInterrupt
         while key in self.until and not self.until[key]():
@@ -234,6 +235,9 @@ class Console:
             self.pressed_at = time.monotonic()
             return True
         return False
+
+    def flush(self):
+        self.flushed = getattr(self, "flushed", 0) + 1
 
     def close(self):
         pass
@@ -744,6 +748,17 @@ def at(loop, method):
     return [t for t, m, _ in loop.trace if m == method]
 
 
+def never(timeout_s=5.0):
+    """A Console `until` predicate for a gate the operator never answers; fails instead of hanging."""
+    deadline = time.monotonic() + timeout_s
+
+    def answered():
+        assert time.monotonic() < deadline, "the gate was not ended for the operator"
+        return False
+
+    return answered
+
+
 def decisions_logged(session_dir, trial, n, kind="taken_decision"):
     def enough():
         path = session_dir / f"trial_{trial:03d}_evidence.jsonl"
@@ -833,7 +848,7 @@ def test_native_freeze_during_the_taken_gate(tmp_path):
                 lp.freeze("camera frame 0.60 s old")
                 return True
 
-    runner.console = Console(loop, until={"bottle taken?": lambda: False})  # only the freeze ends the gate
+    runner.console = Console(loop, until={"bottle taken?": never()})  # only the freeze ends the gate
     loop.hooks.append(guard)
     assert runner.run().outcome == "completed"
     m = methods(loop)
@@ -893,3 +908,89 @@ def test_finished_session_refused_before_claim(tmp_path):
     _, runner, _ = build(tmp_path, loop, trials=2)
     assert runner.run().outcome == "completed"
     assert methods(loop) == ["claim_control", "?clear?", "loop_resume", "release_control"]
+
+
+
+def take_after(polls):
+    """A FakeLoop hook: the torque detector fires after `polls` ticks of every await_take hold."""
+    seen = []
+
+    def hook(lp):
+        if lp.stage != "await_take":
+            seen.clear()
+            return
+        seen.append(1)
+        if len(seen) >= polls:
+            lp.take = True
+
+    return hook
+
+
+def test_take_detected_moves_to_ready_without_enter(tmp_path):  # R26
+    loop, runner, _ = build(tmp_path, trials=2)
+    loop.hooks.append(take_after(3))
+    runner.console = Console(loop, until={"bottle taken?": never()})  # the operator never presses
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m.count("?bottle taken?") == 2 and m.count("loop_to_ready") == 2 and "loop_freeze" not in m
+    confirmed = next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")
+    assert confirmed["by"] == "torque"
+    assert "taken: detected by arm torque" in runner.console.out.getvalue().splitlines()
+    assert "bottle taken?" not in runner.console.answered
+
+
+def test_no_take_detected_waits_for_enter(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=1)
+    runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 3)})
+    assert runner.run().outcome == "completed"
+    enter = runner.console.answered["bottle taken?"]
+    assert at(loop, "loop_to_ready")[0] > enter
+    assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "operator"
+    assert "taken: detected by arm torque" not in runner.console.out.getvalue()
+
+
+def test_stop_during_the_take_gate_still_freezes(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=1)
+    runner.console = Console(loop, stops=[lambda lp: lp.stage == "await_take"],
+                             until={"bottle taken?": never()})
+    loop.hooks.append(take_after(50))  # would fire later; the stop comes first
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m[m.index("loop_trial"):] == ["loop_trial", "loop_freeze", "?clear?", "loop_resume", "?lower?", "loop_end",
+                                         "release_control"]
+
+
+def test_enter_pending_when_the_torque_ends_the_gate_is_not_a_stop(tmp_path):
+    loop, stdin = FakeLoop(tmp_path), Lines()
+
+    class Gates(OperatorConsole):  # the real wait_enter for "bottle taken?"; other gates answer themselves
+        def wait_enter(self, prompt, poll=None, min_after=0.0):
+            loop.trace.append((time.monotonic(), "?" + prompt.split("?")[0] + "?", None))
+            if prompt.startswith("bottle taken?"):
+                super().wait_enter(prompt, poll, min_after)
+
+    console = Gates(stdin, out=io.StringIO())
+    ticks = []
+
+    def press_then_take(lp):  # the operator presses as the arm feels the take: both land in one poll
+        if lp.stage == "await_take":
+            ticks.append(1)
+            if len(ticks) == 3:
+                stdin.q.put("\n")
+                deadline = time.monotonic() + 1
+                while console._presses.empty():  # queued by the reader thread, not yet read by the gate
+                    assert time.monotonic() < deadline
+                    time.sleep(0.001)
+                lp.take = True
+                return True
+
+    loop.hooks.append(press_then_take)
+    _, runner, _ = build(tmp_path, loop, trials=1, console=console)
+    try:
+        assert runner.run().outcome == "completed"
+    finally:
+        stdin.q.put(None)
+    m = methods(loop)
+    assert "loop_freeze" not in m and m[m.index("loop_trial"):] == [
+        "loop_trial", "?bottle taken?", "loop_to_ready", "?lower?", "loop_end", "release_control"]
+    assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "torque"

@@ -13,7 +13,8 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
              start/restart/reclaim or after a hold in which the VLM saw the bottle on the robot hand, else empty
              then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
-             "bottle taken?" (R25: the operator's Enter; the VLM "taken" check only logs meanwhile), loop_to_ready,
+             "bottle taken?" (R25 the operator's Enter, or R26 the native torque take detector; the VLM "taken"
+             check only logs meanwhile), loop_to_ready,
              wait ready -> end
   end        ["lower?"], loop_end, wait COMPLETED -> finish
   finish     wait <=10 s for every started trial's frames file (R15), release (NOT_READY retried) -> done
@@ -115,6 +116,10 @@ class OperatorConsole:
             if poll:
                 poll()
 
+    def flush(self) -> None:
+        """Drop pending presses (a gate that ended without one: they answered it, they are not stops)."""
+        self._drain()
+
     def close(self) -> None:
         self._eof.set()
 
@@ -135,6 +140,10 @@ class EvidenceLog:
         (self.dir / rel).parent.mkdir(parents=True, exist_ok=True)
         (self.dir / rel).write_bytes(base64.b64decode(snapshot.jpeg_rgb_b64, validate=True))
         return rel
+
+
+class _Taken(Exception):
+    """The native take detector (Status.take_detected) ended the "bottle taken?" gate."""
 
 
 class _Stop(Exception):
@@ -364,27 +373,40 @@ class LoopRunner(HarnessRunner):
         return (self.session_dir / "end_session.request").exists()
 
     def _taken_gate(self, trial):
-        """R25: "bottle taken?" answered by the operator (lerobot's hold_for_operator), debounced like "clear?".
+        """ "bottle taken?": ends on the operator's Enter (R25, debounced like "clear?") or the native torque take
+        detector (R26, Status.take_detected), whichever comes first.
 
         The VLM "taken" step runs meanwhile from the gate's poll, for the evidence and the console only: it never
         answers the gate. Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
         """
         self._vlm_begin("taken", trial)
-        seen_on_hand = []
+        seen_on_hand, polls = [], [0]
 
         def poll():
             s = self._hold_poll()
             if (s.phase, s.loop_stage) != ("LOOP_HOLD", "await_take"):
                 raise MissionInterrupted(f"Taken gate needs the await_take hold, not {s.phase} (stage {s.loop_stage})")
+            polls[0] += 1
+            # the first call is _gate's pre-prompt check: a take seen there ends the gate on the next poll, after
+            # the pre-prompt stop check and the prompt
+            if polls[0] > 1 and s.take_detected is True:
+                raise _Taken()
             d = self._vlm_collect("taken", trial)
             if d is not None and ((d.answers or {}).get("taken") or {}).get("parsed", {}).get(
                     "bottle_on_robot_hand") is True:
                 seen_on_hand.append(d.frame_id)
             self._vlm_dispatch(trial)
 
-        self._gate(f"bottle taken? (offer pose held) [Enter; presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]",
-                   poll, stop=True, min_after=CLEAR_DEBOUNCE_S)
-        self.evidence.event(trial, "taken_confirmed", vlm_saw_on_hand=bool(seen_on_hand))
+        try:
+            self._gate("bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, or Enter) "
+                       f"[presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]", poll, stop=True,
+                       min_after=CLEAR_DEBOUNCE_S)
+            by = "operator"
+        except _Taken:
+            self.console.flush()  # an Enter typed for this gate must not become a stop during the move to ready
+            by = "torque"
+            self._say("taken: detected by arm torque")
+        self.evidence.event(trial, "taken_confirmed", by=by, vlm_saw_on_hand=bool(seen_on_hand))
         return bool(seen_on_hand)
 
     def _rearm(self, step):
