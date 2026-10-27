@@ -13,8 +13,9 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
              start/restart/reclaim, after a "handover complete" trial (R30) or after a hold in which the VLM saw
              the bottle on the robot hand, else empty then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
-             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, or R29 the VLM
-             seeing the hand empty in TAKEN_VLM_FRAMES distinct frames in a row), loop_to_ready,
+             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, R32 the VLM seeing
+             the hand empty in TAKEN_EMPTY_FRAMES frames in a row while the native harness reports no bottle on
+             the wrist, or R29 the VLM alone in TAKEN_VLM_FRAMES frames, off by default), loop_to_ready,
              wait ready -> end
   end        ["lower?"], loop_end, wait COMPLETED -> finish
   finish     wait <=10 s for every started trial's frames file (R15), release (NOT_READY retried) -> done
@@ -62,6 +63,11 @@ SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most t
 # offer pose the head camera sees only an edge of the bottle, and 4 of the 6 holds the camera ended in r33 had the
 # bottle still on the palm.
 TAKEN_VLM_FRAMES = 0
+# R32: the camera's "hand empty" in this many distinct frames in a row ends "bottle taken?" when the native harness
+# also reports no bottle on the wrist (Status.take_hand_empty): a hand already empty when the hold starts (r36
+# trials 7 and 8) gives the torque detector no unload to see. In r33 the camera's false "empty" holds had the
+# bottle on the wrist (wrist yaw >= 0.88), which take_hand_empty rules out.
+TAKEN_EMPTY_FRAMES = 3
 CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
@@ -147,7 +153,8 @@ class EvidenceLog:
 
 
 class _Taken(Exception):
-    """The native take detector (Status.take_detected, by "torque") or the VLM (by "vlm") ended "bottle taken?"."""
+    """What ended "bottle taken?": the native take detector (Status.take_detected, by "torque"), the VLM with
+    Status.take_hand_empty (by "camera+wrist", R32) or the VLM alone (by "vlm", R29)."""
 
     def __init__(self, by):
         super().__init__(by)
@@ -416,6 +423,8 @@ class LoopRunner(HarnessRunner):
                 empty[0] = empty[0] + 1 if d.outcome == "yes" else 0
                 if self.taken_vlm_frames and empty[0] >= self.taken_vlm_frames:
                     raise _Taken("vlm")
+            if polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
+                raise _Taken("camera+wrist")
             self._vlm_dispatch(trial)
 
         try:
@@ -427,8 +436,9 @@ class LoopRunner(HarnessRunner):
         except _Taken as taken:
             self.console.flush()  # an Enter typed for this gate must not become a stop during the move to ready
             by = taken.by
-            self._say("taken: detected by arm torque" if by == "torque" else
-                      f"taken: the camera saw the hand empty {self.taken_vlm_frames} times in a row")
+            self._say({"torque": "taken: detected by arm torque",
+                       "camera+wrist": "taken: the camera sees the hand empty and the wrist carries no bottle",
+                       }.get(by, f"taken: the camera saw the hand empty {self.taken_vlm_frames} times in a row"))
         self.evidence.event(trial, "taken_confirmed", by=by, vlm_saw_on_hand=bool(seen_on_hand))
         return bool(seen_on_hand)
 
