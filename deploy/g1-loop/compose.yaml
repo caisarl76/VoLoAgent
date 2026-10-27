@@ -77,6 +77,8 @@ services:
       - -c
       - |
         if [ "$$1" = loop ]; then shift; set -- loop --vlm-base-url "$$VLM_BASE_URL" --vlm-model "$$VLM_MODEL" "$$@"; fi
-        exec python -m vlm_orchestrator.harness.g1.cli --profile "$$PROFILE" --endpoint "$$HARNESS_ENDPOINT" "$$@"
+        # not -m: that puts the cwd (the loop folder, which holds its own vlm_orchestrator) ahead of the baked code
+        exec python -c 'import runpy, sys; sys.path[0] = "/opt/volo"; runpy.run_module("vlm_orchestrator.harness.g1.cli", run_name="__main__", alter_sys=True)' \
+          --profile "$$PROFILE" --endpoint "$$HARNESS_ENDPOINT" "$$@"
       - sh
     command: [status]
