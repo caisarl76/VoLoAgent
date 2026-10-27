@@ -1,0 +1,49 @@
+70a2408 fbf977a jihun.kim@genon.ai feat(g1): accept profiles that serve a LeRobot SONIC-token policy
+31325b2 eef3ac9 jihun.kim@genon.ai docs(g1): design the autonomous handover loop on the native harness
+bf98c13 43a5131 jihun.kim@genon.ai docs(g1): plan the autonomous handover loop implementation
+f9b77f2 7671fd5 caisarl76 docs(g1): run the s10 policy in the handover loop simulation
+a8b5b74 f3b72bc jihun.kim@genon.ai docs(g1): correct the autonomous loop plan after review
+f22b7e0 0d432d4 caisarl76 feat(g1): chunk_anchor_s in the profile mirror and a loop example profile
+bc50559 c25dac6 caisarl76 fix(g1): split the loop profile test and mirror the wrapped check
+f048646 45f5ee4 caisarl76 feat(g1): mirror the loop_* RPC methods, LOOP phases and loop status fields
+59f6c72 259d46f caisarl76 feat(g1): re-arm monitor for the empty case and an upright bottle
+d14ab5a 52530ab caisarl76 fix(g1): harden the re-arm monitor against bad frames and replies
+c1aa482 7f53335 caisarl76 fix(g1): let a finished VLM call thread exit before the next bounded call
+3f1121a 742d911 caisarl76 feat(g1): verdict console and lerobot session files
+120cf28 ef07426 caisarl76 fix(g1): verdict next_trial gaps, corrupt jsonl, redo and Ctrl-C handling
+ad9e2de 45a210a caisarl76 feat(g1): local OpenAI-compatible Qwen3-VL server for the re-arm checks
+bf749ea ef4d8e3 caisarl76 fix(g1): ask the verbatim upright prompt and case_empty separately
+1218441 5122fcb caisarl76 fix(g1): ask the empty case as object_on_case, naming the lid's handle and labels
+4daf83b 631d0f7 caisarl76 feat(g1): --host for the local VLM server (the PC2 orchestrator reaches it over the lab LAN)
+cc0e614 1c0ed90 caisarl76 feat(g1): LoopRunner and the loop command
+3c5c5d1 6ee73d5 caisarl76 docs(g1): loop parity check against lerobot a6e267c6 (first run)
+0778ab5 64f9731 caisarl76 docs(g1): loop parity re-run after the R20 native fixes: all checks pass
+77ed556 dbfe88a caisarl76 fix(g1): debounce the clear gate, skip restart when the session is over, keep raw malformed replies
+e0dc497 e435b1d caisarl76 docs(g1): autonomous loop simulation run
+3755f02 e67d9b5 caisarl76 fix(g1): operator progress lines, shown-trial verdicts, status log on change
+5afd929 b274aa2 caisarl76 docs(g1): robot runbook for the autonomous handover loop
+05f7f87 d3e9899 caisarl76 fix(g1): keep hold_confirmed transitions in the on-change status log
+c000e85 233db41 caisarl76 docs(g1): loop parity r3 after the final-review native fixes (native 87c4b38): all checks pass
+696c987 b4b03a8 caisarl76 docs(g1): runbook corrections from the final re-review
+86fad45 6bdaa1e caisarl76 docs(g1): runbook: press k once in the native harness to start the control loop
+4376dd4 c451817 caisarl76 docs(g1): runbook: native keys go to ZMQ port 5580, not the harness terminal
+07f4102 7044cfa caisarl76 fix(g1): hold the offer pose until the camera sees the bottle off the hand
+c28e81b 8755135 caisarl76 docs(g1): ready-pose candidates with the right gripper out of the head view
+1888434 a86cbf4 caisarl76 fix(g1): never send loop_to_ready unless the taken gate completed; name the monitor in its error
+c6a1d3e af835f3 caisarl76 fix(g1): the operator confirms the take; the VLM taken check only logs
+1f954aa 7417552 caisarl76 feat(g1): session telemetry recorder that saves on SIGTERM/SIGINT/SIGHUP and refuses duplicates
+d92ba66 0c94999 caisarl76 docs(g1): runbook step numbering
+4099fdb 7364099 caisarl76 docs(g1): VLM size study for the re-arm and taken checks (2B, 4B, Qwen3.5-9B AWQ/FP8)
+707fac5 b5aebcb caisarl76 feat(g1): read-only Dex3 pressure-pad probe (rt/dex3/<hand>/state, labelled segments)
+e135288 faeb46f caisarl76 feat(g1): probe also records right-arm motor torques (rt/lowstate tau_est/q/dq); Enter-only label cycling
+dfd7a1f 1a8ac9d caisarl76 feat(g1): the arm torque take detector ends the bottle-taken gate
+c10a4f3 1d34ef9 caisarl76 docs(g1): runbook: take the bottle cleanly; the detector's 2 s baseline; it needs the 10-27 deploy
+79a7e17 6b7537f caisarl76 feat(g1): R29 the VLM ends "bottle taken?" after 3 hand-empty answers in a row (--taken-vlm-frames)
+8a256e8 5c819dc caisarl76 docs(g1): runbook: Qwen3-VL-4B on :8301; R29 camera route out of the taken hold; wrist torque trace
+4f5bf42 ff1d42d caisarl76 docs(g1): 4B on lerobot s17-s20 frames: re-arm and taken per class, dense 0.6 s runs
+dc3c4f2 4f1044f caisarl76 fix(g1): R30 camera taken route off by default; bottle-only re-arm after a handover
+433a1a5 e2e58f7 caisarl76 docs(g1): runbook: R31 wrist-yaw take rule; a bottle taken as the hand opens needs Enter
+e01fdaa f0d5c12 caisarl76 feat(g1): R32 "bottle taken?" ends when the camera sees the hand empty and the wrist carries no bottle
+44c84ab fd99922 caisarl76 fix(g1): review: keep the end request until the session finishes; runbook, verdict and robustness fixes
+bbba780 54dcf21 caisarl76@gmail.com docs(g1): commit the execution ledger (rulings R1-R32, robot sessions) beside the plan
+ad63ab2 09f552b caisarl76@gmail.com fix(g1): a malformed taken reply no longer crashes the taken gate (review P2)
