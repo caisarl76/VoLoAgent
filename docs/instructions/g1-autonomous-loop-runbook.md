@@ -54,8 +54,8 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
 5. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
    - A finished session (no trials left for `--trials`, counting redo verdicts) is refused before the claim: `session <dir> has no trials left (N recorded); use a new --session-dir`. Use a new directory, or a larger `--trials` to extend the session on purpose. A crashed session that is still frozen (LOOP_FROZEN) is reclaimed regardless, so a frozen lowering can finish.
 6. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
-6. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
-7. Bring the case in only after the raise has reached the ready pose.
+7. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
+8. Bring the case in only after the raise has reached the ready pose.
 
 ## During the session
 
