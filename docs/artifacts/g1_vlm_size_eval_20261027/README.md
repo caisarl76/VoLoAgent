@@ -27,3 +27,15 @@ Two other attempts on the taken check:
 - Proprioception gives no signal either: the right-arm tracking error and the hand joints change by less than 0.04 rad when the bottle is lifted off (r26 telemetry).
 
 **vLLM on a 3060 (Qwen3.5-9B AWQ).** It needs `--enforce-eager --max-num-batched-tokens 2048 --mm-processor-kwargs '{"max_pixels": 307200}' --gpu-memory-utilization 0.84`. Without them, the encoder profiling at the maximum image size runs out of memory.
+
+## Follow-up: the taken check on r28-r31 holds (2026-10-27)
+
+241 frames from the 12 holds of r28-r31 (`holds_r28_r31/items.json`). Labels: 50 with the bottle on the palm, 181 after the take, and 10 mid-grab frames excluded. The frames come from the evidence folders in each session, at their original paths. `eval_taken.py` asks `TAKEN_PROMPT` only.
+
+| Model | False "taken" (50 on-palm) | Missed (181) | s/prompt | Peak GPU |
+|---|---|---|---|---|
+| Qwen3-VL-2B | 2 (r31 t0) | 48 | 0.42 | – |
+| Qwen3-VL-4B | **0** | **0** | 0.53 | 8.8 GB (GPU1, no desktop) |
+| Qwen3.5-9B AWQ | 0 | 19, plus many unparsed answers | 0.98 | 11.6 GB |
+
+4B marks every take in these holds within one frame (~0.6 s), including r31 t1/t2, where the arm torque did not move. In the earlier set, its 9 false "taken" all come from r24 t0 (6 frames, bottle at the image edge behind a sleeve) and r26 (3 frames).

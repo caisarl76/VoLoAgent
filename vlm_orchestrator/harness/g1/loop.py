@@ -13,8 +13,8 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
              start/restart/reclaim or after a hold in which the VLM saw the bottle on the robot hand, else empty
              then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
-             "bottle taken?" (R25 the operator's Enter, or R26 the native torque take detector; the VLM "taken"
-             check only logs meanwhile), loop_to_ready,
+             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, or R29 the VLM
+             seeing the hand empty in TAKEN_VLM_FRAMES distinct frames in a row), loop_to_ready,
              wait ready -> end
   end        ["lower?"], loop_end, wait COMPLETED -> finish
   finish     wait <=10 s for every started trial's frames file (R15), release (NOT_READY retried) -> done
@@ -58,6 +58,7 @@ POLL_S = 0.05  # 20 Hz: stop key, status, re-arm
 TRIAL_FILES_WAIT_S = 10.0  # R15
 RELEASE_RETRY_S = 5.0
 SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most this often
+TAKEN_VLM_FRAMES = 3  # R29: consecutive "bottle off the hand" answers that end "bottle taken?" (Qwen3-VL-4B); 0 = log only
 CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
@@ -143,7 +144,11 @@ class EvidenceLog:
 
 
 class _Taken(Exception):
-    """The native take detector (Status.take_detected) ended the "bottle taken?" gate."""
+    """The native take detector (Status.take_detected, by "torque") or the VLM (by "vlm") ended "bottle taken?"."""
+
+    def __init__(self, by):
+        super().__init__(by)
+        self.by = by
 
 
 class _Stop(Exception):
@@ -155,13 +160,17 @@ class _Stop(Exception):
 
 
 class LoopRunner(HarnessRunner):
-    def __init__(self, profile, client_factory, monitor, session_dir, n_trials, console, confirm_paths=True):
+    def __init__(self, profile, client_factory, monitor, session_dir, n_trials, console, confirm_paths=True,
+                 taken_vlm_frames=TAKEN_VLM_FRAMES):
         if type(n_trials) is not int or n_trials < 1:
             raise ValueError("n_trials must be a positive integer")
         self.session_dir = Path(session_dir).resolve()  # the native process writes here too
         self.session_dir.mkdir(parents=True, exist_ok=True)
         super().__init__(profile, client_factory, monitor, self.session_dir / "evidence")
         self.n_trials, self.console, self.confirm_paths = n_trials, console, confirm_paths
+        if type(taken_vlm_frames) is not int or taken_vlm_frames < 0:
+            raise ValueError("taken_vlm_frames must be a non-negative integer")
+        self.taken_vlm_frames = taken_vlm_frames
         self.evidence = EvidenceLog(self.session_dir)
 
     def run(self) -> MissionResult:
@@ -373,14 +382,14 @@ class LoopRunner(HarnessRunner):
         return (self.session_dir / "end_session.request").exists()
 
     def _taken_gate(self, trial):
-        """ "bottle taken?": ends on the operator's Enter (R25, debounced like "clear?") or the native torque take
-        detector (R26, Status.take_detected), whichever comes first.
+        """ "bottle taken?": ends on the operator's Enter (R25, debounced like "clear?"), the native torque take
+        detector (R26, Status.take_detected) or, with taken_vlm_frames > 0, that many VLM "taken" yeses in a row
+        (R29: each from a distinct frame; any other decision restarts the count), whichever comes first.
 
-        The VLM "taken" step runs meanwhile from the gate's poll, for the evidence and the console only: it never
-        answers the gate. Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
+        Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
         """
         self._vlm_begin("taken", trial)
-        seen_on_hand, polls = [], [0]
+        seen_on_hand, polls, empty = [], [0], [0]
 
         def poll():
             s = self._hold_poll()
@@ -390,22 +399,27 @@ class LoopRunner(HarnessRunner):
             # the first call is _gate's pre-prompt check: a take seen there ends the gate on the next poll, after
             # the pre-prompt stop check and the prompt
             if polls[0] > 1 and s.take_detected is True:
-                raise _Taken()
+                raise _Taken("torque")
             d = self._vlm_collect("taken", trial)
-            if d is not None and ((d.answers or {}).get("taken") or {}).get("parsed", {}).get(
-                    "bottle_on_robot_hand") is True:
-                seen_on_hand.append(d.frame_id)
+            if d is not None:
+                if ((d.answers or {}).get("taken") or {}).get("parsed", {}).get("bottle_on_robot_hand") is True:
+                    seen_on_hand.append(d.frame_id)
+                empty[0] = empty[0] + 1 if d.outcome == "yes" else 0
+                if self.taken_vlm_frames and empty[0] >= self.taken_vlm_frames:
+                    raise _Taken("vlm")
             self._vlm_dispatch(trial)
 
         try:
-            self._gate("bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, or Enter) "
+            self._gate("bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, the camera "
+                       "sees the hand empty, or Enter) "
                        f"[presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]", poll, stop=True,
                        min_after=CLEAR_DEBOUNCE_S)
             by = "operator"
-        except _Taken:
+        except _Taken as taken:
             self.console.flush()  # an Enter typed for this gate must not become a stop during the move to ready
-            by = "torque"
-            self._say("taken: detected by arm torque")
+            by = taken.by
+            self._say("taken: detected by arm torque" if by == "torque" else
+                      f"taken: the camera saw the hand empty {self.taken_vlm_frames} times in a row")
         self.evidence.event(trial, "taken_confirmed", by=by, vlm_saw_on_hand=bool(seen_on_hand))
         return bool(seen_on_hand)
 
