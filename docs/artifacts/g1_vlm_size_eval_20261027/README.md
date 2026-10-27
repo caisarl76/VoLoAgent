@@ -62,3 +62,25 @@ The loop's three prompts were asked on every frame (`lerobot_s17_s20/`).
   - s17 t5: 5 in a row at 7.6-9.6 s, a person's hand on the bottle at the offer;
   - s18 t9: 3 in a row at 7.6-8.6 s, as the arm swings into the offer.
 - Most false runs come 0.6-1.6 s after the lift, while the arm moves. The loop's taken check runs only in the still offer-pose hold after the release; there, r28-r31 gave 0/50.
+
+## Follow-up: a "hand visible" taken prompt (review P1, 2026-10-27)
+
+The review proposed asking `{"robot_hand_visible", "bottle_on_robot_hand"}`, so that "taken" needs a visible empty hand. `taken_hand_visible_ab/` scores it against the current prompt with Qwen3-VL-4B.
+
+**Set A**, the r28-r31 holds (50 bottle-on frames, 181 empty):
+
+| Prompt | False "taken" | Empty-hand yes | Hand "not visible" on empty frames |
+|---|---|---|---|
+| Current | 0 | 181 | n/a |
+| Visible version | 0 | 140 | 38 |
+
+**Set B** (`setB.json`), the holds that decide R32 (22 bottle-on frames at the image edge, 72 empty):
+
+| Prompt | False "taken" | Empty-hand yes |
+|---|---|---|
+| Current | 20 | 72 |
+| Visible version | 4 | 21 |
+
+- In the empty-hand holds, the visible version reports the hand as not visible in most frames.
+- Three "empty" answers in a row then never occur in r34 t0 or r38 t4, and occur later in r36 t8.
+- So R32 would have needed the operator's Enter in two of its four rescues. The current prompt's false "empty" answers at the edge were all blocked by R32's wrist condition (wrist yaw >= 0.67).
