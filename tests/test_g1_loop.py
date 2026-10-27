@@ -1186,3 +1186,53 @@ def test_a_malformed_taken_reply_resets_the_count_and_keeps_holding(tmp_path, fr
     events = evidence(tmp_path, 0)
     assert [e["outcome"] for e in events if e["kind"] == "taken_decision"][:4] == ["yes", "yes", "unknown", "yes"]
     assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "operator"
+
+
+def test_stale_camera_evidence_does_not_combine_with_a_later_unloaded_wrist(tmp_path):  # review of PR #5
+    loop, runner, _ = build(tmp_path, trials=1)  # the fake VLM sees the hand empty in every frame
+    observe, held = FakeClient.observe, []
+
+    def frames_stop(client):  # three frames in the hold, then the camera stops answering
+        if client.loop.stage == "await_take":
+            held.append(1)
+            if len(held) > 3:
+                raise RPCError("UNAVAILABLE", "no camera frame")
+        return observe(client)
+
+    started = []
+
+    def wrist_unloads_late(lp):  # the native wrist reports no bottle only 3 s into the hold
+        if lp.stage == "await_take":
+            started.append(started[0] if started else time.monotonic())
+            lp.hand_empty = time.monotonic() - started[0] > 3.0
+
+    loop.hooks.append(wrist_unloads_late)
+    runner.console = Console(loop, until={"bottle taken?": lambda: started and time.monotonic() - started[0] > 5.0})
+    FakeClient.observe = frames_stop
+    try:
+        assert runner.run().outcome == "completed"
+    finally:
+        FakeClient.observe = observe
+    events = evidence(tmp_path, 0)
+    assert len([e for e in events if e["kind"] == "taken_decision"]) >= TAKEN_EMPTY_FRAMES
+    assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "operator"
+
+
+def test_a_redo_while_lower_waits_runs_the_replacement_trial(tmp_path):  # review of PR #5
+    loop, runner, monitor = build(tmp_path, trials=1)
+    redone = []
+
+    def redo_then_answer():  # the operator marks trial 0 as redo in T4 while "lower?" waits, then presses Enter
+        if not redone:
+            redone.append(1)
+            with open(tmp_path / "redo.jsonl", "a") as f:
+                f.write(json.dumps({"trial": 0, "verdict": "redo"}) + "\n")
+        return True
+
+    runner.console = Console(loop, until={"lower?": redo_then_answer})
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert trials_sent(loop) == [0, 1]
+    assert m[m.index("?lower?"):] == ["?lower?", "?restart loop?", "loop_trial", "?bottle taken?", "loop_to_ready",
+                                      "?lower?", "loop_end", "release_control"]
+    assert any(e["kind"] == "session_end_withdrawn" for e in evidence(tmp_path, 1))

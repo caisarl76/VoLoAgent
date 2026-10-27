@@ -69,6 +69,9 @@ TAKEN_VLM_FRAMES = 0
 # trials 7 and 8) gives the torque detector no unload to see. In r33 the camera's false "empty" holds had the
 # bottle on the wrist (wrist yaw >= 0.88), which take_hand_empty rules out.
 TAKEN_EMPTY_FRAMES = 3
+# The camera's "empty" count expires when no new "yes" came for this long (decisions arrive every ~0.6-0.8 s): if
+# frames stop arriving, old answers must not combine with a later take_hand_empty (review of PR #5).
+TAKEN_EMPTY_FRESH_S = 2.0
 CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
@@ -297,6 +300,10 @@ class LoopRunner(HarnessRunner):
         # the request stays until _finish: a stop at "lower?" resumes to ready, and _restart must still see it
         if self.confirm_paths:
             self._gate("lower? (arm down, hand back to the planner) [Enter]", self._hold_poll, stop=True)
+        if not request.exists() and self._remaining() > 0:  # a redo verdict while "lower?" waited: one more trial
+            self.evidence.event(self.n, "session_end_withdrawn", reason="redo verdict added a trial")
+            self._say("a redo verdict added a trial: not lowering")
+            return "restart"
         self._rpc("loop_end", {})
         self._wait(("COMPLETED", None))
         return "finish"
@@ -406,7 +413,7 @@ class LoopRunner(HarnessRunner):
         Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
         """
         self._vlm_begin("taken", trial)
-        seen_on_hand, polls, empty = [], [0], [0]
+        seen_on_hand, polls, empty, last_yes = [], [0], [0], [None]
 
         def poll():
             s = self._hold_poll()
@@ -423,8 +430,11 @@ class LoopRunner(HarnessRunner):
                 if (((d.answers or {}).get("taken") or {}).get("parsed") or {}).get("bottle_on_robot_hand") is True:
                     seen_on_hand.append(d.frame_id)
                 empty[0] = empty[0] + 1 if d.outcome == "yes" else 0
+                last_yes[0] = time.monotonic() if d.outcome == "yes" else None
                 if self.taken_vlm_frames and empty[0] >= self.taken_vlm_frames:
                     raise _Taken("vlm")
+            if empty[0] and time.monotonic() - last_yes[0] > TAKEN_EMPTY_FRESH_S:  # no fresh camera evidence
+                empty[0], last_yes[0] = 0, None
             if polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
                 raise _Taken("camera+wrist")
             self._vlm_dispatch(trial)
