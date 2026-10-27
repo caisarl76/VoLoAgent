@@ -25,7 +25,7 @@ FAILURE_REASONS = (
     "other",
 )
 SAFETY_STOP = "safety stop (watchdog)"
-PROMPT = "s / f / r [+ reason index] [note], e = end session"
+PROMPT = "s / f / r [+ reason index] [note], e = end session, c = cancel verdicts typed ahead"
 
 
 def _trials(session_dir, pattern):
@@ -152,6 +152,10 @@ def run_console(session_dir, lines, poll_s=0.5) -> None:
                 return
             words = text.split()
             if not words:
+                continue
+            if words[0].lower() == "c":  # a stray verdict typed while no trial was shown must not score the next one
+                print(f"dropped {len(held)} held verdict(s)", flush=True)
+                held.clear()
                 continue
             if words[0].lower() == "e":
                 if held:

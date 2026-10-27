@@ -547,7 +547,7 @@ def test_session_end_waits_for_trial_files(tmp_path, monkeypatch):  # R15
     assert runner.run().outcome == "completed"
     assert trials_sent(loop) == [0]  # an in-flight trial counts: no extra trial while its files are written
     release_at = next(t for t, m, _ in loop.trace if m == "release_control")
-    assert (tmp_path / "trial_000_frames.npz").stat().st_mtime <= time.time()
+    assert (tmp_path / "trial_000_frames.npz").stat().st_mtime <= release_at - time.monotonic() + time.time()
     assert not any(e["kind"] == "trial_files_missing" for e in evidence(tmp_path, 1))
     assert release_at > next(t for t, m, _ in loop.trace if m == "loop_end")
 
@@ -630,7 +630,7 @@ def test_loop_command_wires_runner(tmp_path, monkeypatch, capsys):
     assert seen["taken_vlm_frames"] == 0  # R30 default: log only
     assert isinstance(seen["monitor"], RearmMonitor) and seen["profile"].registry_sha256 == PROFILE.registry_sha256
     assert json.loads(capsys.readouterr().out)["outcome"] == "completed"
-    assert cli.main(argv + ["--taken-vlm-frames", "0"]) == 0 and seen["taken_vlm_frames"] == 0
+    assert cli.main(argv + ["--taken-vlm-frames", "3"]) == 0 and seen["taken_vlm_frames"] == 3
 
 
 def test_clear_gate_ignores_presses_in_its_first_second(tmp_path):  # R21: a double-tap stop never resumes
@@ -1101,3 +1101,62 @@ def test_the_camera_count_restarts_on_an_on_hand_answer_with_the_wrist_empty(tmp
     events = evidence(tmp_path, 0)
     assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes", "yes", "no", "yes", "yes", "yes"]
     assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "camera+wrist"
+
+
+def test_a_stop_at_lower_keeps_the_end_request(tmp_path):  # review: the request is consumed only by _finish
+    loop, runner, _ = build(tmp_path, trials=3)
+
+    def request_end(lp):  # the operator types e in T4 during trial 0's hold
+        if lp.stage == "await_take":
+            (tmp_path / "end_session.request").touch()
+
+    def at_lower(_lp):  # Enter pressed just before "lower?" is shown: a stop
+        path = tmp_path / "trial_001_evidence.jsonl"
+        return path.exists() and '"kind": "session_end"' in path.read_text()
+
+    loop.hooks.append(request_end)
+    runner.console = Console(loop, stops=[at_lower])
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert "?restart loop?" not in m and trials_sent(loop) == [0]
+    assert m[m.index("loop_to_ready"):] == ["loop_to_ready", "loop_freeze", "?clear?", "loop_resume", "?lower?",
+                                            "loop_end", "release_control"]
+    assert not (tmp_path / "end_session.request").exists()  # consumed by _finish
+
+
+def test_a_corrupt_frame_is_skipped_not_a_fault(tmp_path):  # review: EvidenceLog.frame decodes before the monitor
+    loop, runner, _ = build(tmp_path, trials=1)
+    observe, bad = FakeClient.observe, []
+
+    def first_corrupt(client):
+        frame = observe(client)
+        if not bad:
+            bad.append(frame.frame_id)
+            return replace(frame, jpeg_rgb_b64="not base64!")
+        return frame
+
+    FakeClient.observe = first_corrupt
+    try:
+        assert runner.run().outcome == "completed"
+    finally:
+        FakeClient.observe = observe
+    assert any(e["kind"] == "frame_invalid" and e["frame_id"] == bad[0] for e in evidence(tmp_path, 0))
+    assert trials_sent(loop) == [0]
+
+
+def test_leaving_await_take_during_the_taken_gate_fails_closed(tmp_path):  # review: MissionInterrupted guard
+    loop, runner, _ = build(tmp_path, trials=1)
+    ticks = []
+
+    def jump(lp):  # the native loop leaves await_take on its own: the runner must not send loop_to_ready
+        if lp.stage == "await_take":
+            ticks.append(1)
+            if len(ticks) == 5:
+                lp.hold_at("ready")
+                return True
+
+    loop.hooks.append(jump)
+    runner.console = Console(loop, until={"bottle taken?": never()})
+    result = runner.run()
+    assert result.outcome != "completed" and "Taken gate needs the await_take hold" in result.reason
+    assert "loop_to_ready" not in methods(loop)

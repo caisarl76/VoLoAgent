@@ -41,6 +41,7 @@ VLM check on a frame the main thread fetched and never calls RPC; the heartbeat 
 from __future__ import annotations
 
 import base64
+import binascii
 import hashlib
 import json
 import queue
@@ -57,7 +58,7 @@ from .verdict import next_trial, remaining_trials
 
 POLL_S = 0.05  # 20 Hz: stop key, status, re-arm
 TRIAL_FILES_WAIT_S = 10.0  # R15
-RELEASE_RETRY_S = 5.0
+RELEASE_RETRY_S = 5.0  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
 SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most this often
 # R29: consecutive "bottle off the hand" answers that end "bottle taken?"; 0 = log only. R30: 0 by default: at the
 # offer pose the head camera sees only an edge of the bottle, and 4 of the 6 holds the camera ended in r33 had the
@@ -68,7 +69,7 @@ TAKEN_VLM_FRAMES = 0
 # trials 7 and 8) gives the torque detector no unload to see. In r33 the camera's false "empty" holds had the
 # bottle on the wrist (wrist yaw >= 0.88), which take_hand_empty rules out.
 TAKEN_EMPTY_FRAMES = 3
-CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
+CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
 
@@ -293,7 +294,7 @@ class LoopRunner(HarnessRunner):
     def _end(self):
         request = self.session_dir / "end_session.request"
         self.evidence.event(self.n, "session_end", cause="end_session.request" if request.exists() else "trials done")
-        request.unlink(missing_ok=True)  # consumed: it must not end a later session in this directory
+        # the request stays until _finish: a stop at "lower?" resumes to ready, and _restart must still see it
         if self.confirm_paths:
             self._gate("lower? (arm down, hand back to the planner) [Enter]", self._hold_poll, stop=True)
         self._rpc("loop_end", {})
@@ -493,6 +494,11 @@ class LoopRunner(HarnessRunner):
             if exc.code != "UNAVAILABLE":
                 raise
             return
+        try:
+            path = self.evidence.frame(trial, frame)
+        except (binascii.Error, ValueError):  # a corrupt frame: skip it, as the monitor would (invalid_image)
+            self.evidence.event(trial, "frame_invalid", frame_id=frame.frame_id)
+            return
         out = queue.Queue(maxsize=1)
 
         def check():
@@ -501,7 +507,7 @@ class LoopRunner(HarnessRunner):
             except Exception as exc:
                 out.put((None, exc))
 
-        self._worker = (threading.Thread(target=check, daemon=True), out, self.evidence.frame(trial, frame))
+        self._worker = (threading.Thread(target=check, daemon=True), out, path)
         self._worker[0].start()
 
     def _release(self):
