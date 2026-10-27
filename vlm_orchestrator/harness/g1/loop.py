@@ -11,8 +11,8 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   raise      ["raise?"], loop_raise, wait ready -> trials
   restart    "restart loop?" -> trials; straight to end when no trial remains or the end is requested
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
-             start/restart/reclaim or after a hold in which the VLM saw the bottle on the robot hand, else empty
-             then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
+             start/restart/reclaim, after a "handover complete" trial (R30) or after a hold in which the VLM saw
+             the bottle on the robot hand, else empty then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
              "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, or R29 the VLM
              seeing the hand empty in TAKEN_VLM_FRAMES distinct frames in a row), loop_to_ready,
              wait ready -> end
@@ -58,7 +58,10 @@ POLL_S = 0.05  # 20 Hz: stop key, status, re-arm
 TRIAL_FILES_WAIT_S = 10.0  # R15
 RELEASE_RETRY_S = 5.0
 SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most this often
-TAKEN_VLM_FRAMES = 3  # R29: consecutive "bottle off the hand" answers that end "bottle taken?" (Qwen3-VL-4B); 0 = log only
+# R29: consecutive "bottle off the hand" answers that end "bottle taken?"; 0 = log only. R30: 0 by default: at the
+# offer pose the head camera sees only an edge of the bottle, and 4 of the 6 holds the camera ended in r33 had the
+# bottle still on the palm.
+TAKEN_VLM_FRAMES = 0
 CLEAR_DEBOUNCE_S = 1.0  # R21: "clear?" ignores presses this soon after it is shown  # COMPLETED: release is NOT_READY until the native planner hold is confirmed
 MOVING = ("LOOP_MOTION", "LOOP_TRIAL")
 
@@ -262,16 +265,22 @@ class LoopRunner(HarnessRunner):
             self.active = True
             self.evidence.event(self.n, "trial_start")
             self._say(f"trial {self.n}: start")
-            self._trial_ended(self._wait(("LOOP_HOLD", "await_take")))
+            ended = self._wait(("LOOP_HOLD", "await_take"))
+            self._trial_ended(ended)
             # R24/R25: the arm holds its offer pose until the operator confirms the take; the session end goes
             # through here too (loop_end is ready-only)
             trial = self.n - 1
-            skip_empty = self._taken_gate(trial)
+            seen_on_hand = self._taken_gate(trial)
             self._rpc("loop_to_ready", {})
             self._wait(("LOOP_HOLD", "ready"))
             self.evidence.event(trial, "to_ready")
             self._say("to ready")
-            why = f"the VLM saw the bottle on the robot hand after trial {trial}" if skip_empty else None
+            # R30: after a handover the bottle left with the person, so the case needs no empty check; after any
+            # other end the bottle may still be on the case (or lying there), so empty then bottle
+            handed = ended.trial_end_reason == "handover complete"
+            skip_empty = handed or seen_on_hand
+            why = (f"trial {trial} ended with a handover" if handed else
+                   f"the VLM saw the bottle on the robot hand after trial {trial}" if seen_on_hand else None)
         return "end"
 
     def _end(self):

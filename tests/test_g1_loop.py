@@ -46,6 +46,7 @@ class FakeLoop:
         self.dir = Path(session_dir)
         self.phase, self.stage, self.frozen_stage, self.reason = phase, stage, frozen_stage, reason
         self.trial, self.end_reason = trial, None
+        self.next_end = "handover complete"  # how each trial ends unless a guard ended it first
         self.switched = phase not in ("IDLE", "COMPLETED")
         self.saved = (frozen_stage, None)  # the stage and motion a freeze interrupted
         self.owner, self.motion, self.recording, self.hold = None, None, False, True
@@ -77,7 +78,7 @@ class FakeLoop:
         self.hold_at("stance")
 
     def _trial_end(self):
-        self.end_reason = self.end_reason or "handover complete"
+        self.end_reason = self.end_reason or self.next_end
         self._write()
         self.hold_at("await_take")  # R24: hold the offer pose until loop_to_ready
 
@@ -332,8 +333,17 @@ def test_full_session_sequence(tmp_path):
     assert loop.owner is None and loop.phase == "COMPLETED"
 
 
-def test_first_trial_skips_empty_step_later_trials_require_it(tmp_path):
+def test_after_a_handover_the_rearm_is_bottle_only(tmp_path):  # R30
     _, runner, monitor = build(tmp_path, trials=3)
+    assert runner.run().outcome == "completed"
+    assert monitor.steps == ["bottle", "taken", "bottle", "taken", "bottle", "taken"]
+    skip = [e for e in evidence(tmp_path, 1) if e["kind"] == "rearm_skip_empty"]
+    assert skip and skip[0]["reason"] == "trial 0 ended with a handover"
+
+
+def test_first_trial_skips_empty_step_later_trials_without_a_handover_require_it(tmp_path):
+    loop, runner, monitor = build(tmp_path, trials=3)
+    loop.next_end = "time limit"  # no handover: the bottle may still be on the case
     assert runner.run().outcome == "completed"
     assert monitor.steps == ["bottle", "taken", "empty", "bottle", "taken", "empty", "bottle", "taken"]
 
@@ -454,7 +464,7 @@ def test_fresh_runner_reclaims_frozen_loop_without_takeover(tmp_path):
     assert "loop_take_over" not in m and "loop_raise" not in m
     assert m[:5] == ["claim_control", "?clear?", "loop_resume", "?restart loop?", "loop_trial"]
     assert "?deploy ready?" not in m
-    assert trials_sent(loop) == [0, 1, 2] and monitor.steps[:4] == ["bottle", "taken", "empty", "bottle"]
+    assert trials_sent(loop) == [0, 1, 2] and monitor.steps[:4] == ["bottle", "taken", "bottle", "taken"]
     assert any(e["kind"] == "reclaim" for e in evidence(tmp_path, 1))
 
 
@@ -615,7 +625,7 @@ def test_loop_command_wires_runner(tmp_path, monkeypatch, capsys):
             "--no-confirm-paths"]
     assert cli.main(argv) == 0
     assert seen["n_trials"] == 4 and seen["confirm_paths"] is False and seen["session_dir"] == tmp_path
-    assert seen["taken_vlm_frames"] == 3  # R29 default
+    assert seen["taken_vlm_frames"] == 0  # R30 default: log only
     assert isinstance(seen["monitor"], RearmMonitor) and seen["profile"].registry_sha256 == PROFILE.registry_sha256
     assert json.loads(capsys.readouterr().out)["outcome"] == "completed"
     assert cli.main(argv + ["--taken-vlm-frames", "0"]) == 0 and seen["taken_vlm_frames"] == 0
@@ -863,6 +873,7 @@ def test_native_freeze_during_the_taken_gate(tmp_path):
 
 def test_empty_step_skipped_after_the_vlm_saw_the_bottle_on_the_hand(tmp_path):
     loop, runner, monitor = build(tmp_path, trials=2, monitor=Rearm(on_hand=1))  # 1 on-hand answer, then empty
+    loop.next_end = "time limit"  # not a handover: only the VLM's sighting skips the empty step
     runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 2)})
     assert runner.run().outcome == "completed"
     assert monitor.steps == ["bottle", "taken", "bottle", "taken"]  # trial 1: bottle-only
@@ -874,6 +885,7 @@ def test_empty_step_skipped_after_the_vlm_saw_the_bottle_on_the_hand(tmp_path):
 
 def test_empty_step_required_when_the_vlm_never_saw_the_bottle_on_the_hand(tmp_path):
     loop, runner, monitor = build(tmp_path, trials=2)
+    loop.next_end = "time limit"
     runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 2)})
     assert runner.run().outcome == "completed"
     assert monitor.steps == ["bottle", "taken", "empty", "bottle", "taken"]
