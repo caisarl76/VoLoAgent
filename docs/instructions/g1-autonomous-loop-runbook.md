@@ -48,9 +48,12 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
    - Before starting `loop`, wait until `status` shows `controller_running: true` and `policy_ready: true`.
    - `k` is a toggle, so sending it again stops the control loop. Never send `k` again during the session.
    - The same one-shot sender delivers `i` (see Recovery).
-4. Start the telemetry recorder and the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
+4. Start the telemetry recorder in its own tmux session, one per session name. It refuses to start if another recorder is already writing the same file:
+   `tmux new-session -d -s recorder "cd ~/GR00T-WholeBodyControl-loop-<date> && PYTHONPATH=\$PWD <venv>/bin/python g1_record_telemetry.py telemetry-<name>.npz --seconds 1800 2>&1 | tee recorder-<name>.log"`
+   To stop and save early, run `kill <pid>`, using the pid printed in the first line of `recorder-<name>.log`. Do not use `pkill`/`pgrep -f`: the pattern can match your own shell.
+5. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-2b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
    - A finished session (no trials left for `--trials`, counting redo verdicts) is refused before the claim: `session <dir> has no trials left (N recorded); use a new --session-dir`. Use a new directory, or a larger `--trials` to extend the session on purpose. A crashed session that is still frozen (LOOP_FROZEN) is reclaimed regardless, so a frozen lowering can finish.
-5. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
+6. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
 6. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
 7. Bring the case in only after the raise has reached the ready pose.
 
