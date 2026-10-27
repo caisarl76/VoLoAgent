@@ -175,3 +175,11 @@ def test_typed_ahead_verdicts_wait_for_their_trial_to_be_shown(tmp_path, capsys)
     for t, verdict in ((0, "trial 0: success"), (1, f"trial 1: fail {FAILURE_REASONS[1]}")):
         shown = next(i for i, s in enumerate(out) if s.startswith(f"trial {t}: handover"))
         assert shown < out.index(verdict)  # applied only after its episode_end was shown
+
+
+def test_c_drops_verdicts_typed_ahead(tmp_path, capsys):  # review: a stray s must not score the next trial
+    run_console(tmp_path, iter(["s", "c"]), poll_s=0)
+    assert "dropped 1 held verdict(s)" in capsys.readouterr().out
+    make_trial(tmp_path, 0)
+    run_console(tmp_path, iter([]), poll_s=0)
+    assert not (tmp_path / "results.jsonl").exists()

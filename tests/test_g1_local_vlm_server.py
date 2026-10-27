@@ -111,3 +111,14 @@ def test_refuses_start_when_gpu_memory_low(monkeypatch, capsys):
         server.main(["--model", "m", "--min-free-gb", "4.4"])
     assert exit_.value.code != 0
     assert "1.0" in str(exit_.value.code) + capsys.readouterr().err
+
+
+def test_models_lists_the_served_name():
+    httpd = ThreadingHTTPServer(("127.0.0.1", 0), server.build_app(lambda *a: "{}", "qwen3-vl-4b"))
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    try:
+        body = json.loads(urllib.request.urlopen(f"http://127.0.0.1:{httpd.server_port}/v1/models").read())
+    finally:
+        httpd.shutdown()
+        httpd.server_close()
+    assert [m["id"] for m in body["data"]] == ["qwen3-vl-4b"]

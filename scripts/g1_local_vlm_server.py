@@ -52,7 +52,7 @@ def parse_messages(messages):
     return images, "\n".join(texts), "\n".join(s for s in system if s)
 
 
-def build_app(generate):
+def build_app(generate, served_name=MODEL_NAME):
     """generate(images, text, system="") -> str. One request at a time (lock around generate)."""
     lock = threading.Lock()
 
@@ -67,7 +67,7 @@ def build_app(generate):
 
         def do_GET(self):
             if self.path.rstrip("/") == "/v1/models":
-                self._send(200, {"object": "list", "data": [{"id": MODEL_NAME, "object": "model"}]})
+                self._send(200, {"object": "list", "data": [{"id": served_name, "object": "model"}]})
             else:
                 self._send(404, {"error": {"message": "not found"}})
 
@@ -88,7 +88,7 @@ def build_app(generate):
                 "id": f"chatcmpl-{uuid.uuid4().hex}",
                 "object": "chat.completion",
                 "created": int(time.time()),
-                "model": body.get("model") or MODEL_NAME,
+                "model": body.get("model") or served_name,
                 "choices": [{"index": 0, "message": {"role": "assistant", "content": reply}, "finish_reason": "stop"}],
             })
 
@@ -133,13 +133,14 @@ def main(argv=None):
     p.add_argument("--port", type=int, default=8301)
     p.add_argument("--device", default="cuda:0")
     p.add_argument("--min-free-gb", type=float, default=4.4)
+    p.add_argument("--served-name", default=MODEL_NAME, help="the name /v1/models reports (e.g. qwen3-vl-4b)")
     args = p.parse_args(argv)
     free = free_gpu_gb(args.device)
     if free < args.min_free_gb:
         sys.exit(f"{args.device} has {free:.1f} GB free, below --min-free-gb {args.min_free_gb}; not loading the model")
     generate = load_generate(args.model, args.device)
-    httpd = ThreadingHTTPServer((args.host, args.port), build_app(generate))
-    print(f"serving {MODEL_NAME} on http://{args.host}:{args.port}/v1", flush=True)
+    httpd = ThreadingHTTPServer((args.host, args.port), build_app(generate, args.served_name))
+    print(f"serving {args.served_name} on http://{args.host}:{args.port}/v1", flush=True)
     httpd.serve_forever()
 
 

@@ -8,7 +8,7 @@ The operator stays at the robot for every session until the user approves unatte
 | Where | Process | Notes |
 |---|---|---|
 | Workstation 192.168.0.62, GPU 1 | s08 policy server, port 5571 | `groot_handover261015_he_full`. It is long-running and shared, so leave it as it is. |
-| Workstation, GPU 0 (T0) | Qwen3-VL-4B server, port 8301 (tmux `vlm`) | `scripts/g1_local_vlm_server.py --model <Qwen3-VL-4B-Instruct snapshot> --host 0.0.0.0 --min-free-gb 9`. It uses ~8.8 GB. The 4B weights are in the snap HF cache (`~/snap/alacritty/common/.cache/huggingface/hub`). `/v1/models` still lists the name `qwen3-vl-2b`, but the model served is the one given by `--model`. |
+| Workstation, GPU 0 (T0) | Qwen3-VL-4B server, port 8301 (tmux `vlm`) | `scripts/g1_local_vlm_server.py --model <Qwen3-VL-4B-Instruct snapshot> --served-name qwen3-vl-4b --host 0.0.0.0 --min-free-gb 9`. It uses ~8.8 GB. The 4B weights are in the snap HF cache (`~/snap/alacritty/common/.cache/huggingface/hub`). |
 | PC2 (`pc2_222`) | deploy (T1), native harness (T2), loop runner (T3), verdict console (T4), telemetry recorder | The runner must run on PC2, because frame ages are compared on one clock. |
 
 The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022`, native `cba799d`). The only deploy change since then is `--dds-domain` (`d0f29b3`), which defaults to 0. The loop's Python code runs from `~/GR00T-WholeBodyControl-loop-<date>`, which holds `gear_sonic`, `vlm_orchestrator`, `session-profile.yaml` and `*_SOURCE_COMMIT`. It uses the 10-22 venv, and `PYTHONPATH` selects the new code.
@@ -53,7 +53,7 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
    To stop and save early, run `kill <pid>`, using the pid printed in the first line of `recorder-<name>.log`. Do not use `pkill`/`pgrep -f`: the pattern can match your own shell.
 5. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-4b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
    - A finished session (no trials left for `--trials`, counting redo verdicts) is refused before the claim: `session <dir> has no trials left (N recorded); use a new --session-dir`. Use a new directory, or a larger `--trials` to extend the session on purpose. A crashed session that is still frozen (LOOP_FROZEN) is reclaimed regardless, so a frozen lowering can finish.
-6. Start the verdict console (T4): `verdict --session-dir sessions/<name>`.
+6. Start the verdict console (T4): `python -m vlm_orchestrator.harness.g1.cli verdict --session-dir sessions/<name>`. A verdict typed while no trial is shown is held for the next trial; `c` drops the held ones.
 7. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
 8. Bring the case in only after the raise has reached the ready pose.
 
@@ -76,7 +76,7 @@ The deploy binary is the 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022
   - **A hand already empty when the hold starts** (the bottle taken as the hand opened, or a missed grasp) leaves no unload for the torque to see. Since R32 the hold also ends when the camera sees the hand empty 3 times in a row **and** the wrist carries no bottle (wrist yaw steady at or below 0.5 N·m): `taken: the camera sees the hand empty and the wrist carries no bottle`. Neither signal alone moves the arm. If neither fires, press Enter. The harness log's `episode end torque ... from -3 s` line records the arm's load over the episode's last 3 s, so these cases can be studied (R31).
   - The harness log (T2) prints `[loop] hold +N s torque sh/el = … | sh roll/yaw = … | wrist r/p/y = …` every 0.5 s of the hold. These lines are diagnostics for a later wrist-torque detector.
   - The deploy must publish `motor_torque` (the 2026-10-27 build in `~/GR00T-WholeBodyControl-deploy-20261027`); with the 10-22 deploy there is no torque and every hold waits for Enter.
-  - The `taken: no` / `taken: yes` lines printed during the hold are the VLM's view, for information only: they never move the arm. A false `taken: yes` (the bottle at the image edge, still on the palm) was seen on the robot, so only your Enter counts.
+  - The `taken: no` / `taken: yes` lines printed during the hold are the VLM's view. Alone they never move the arm: a false `taken: yes` (the bottle at the image edge, still on the palm) was seen on the robot. Together with an unloaded wrist they do (R32, above).
   - Repeating `failure` lines mean the VLM is down, as for the re-arm.
 - **Scoring** is done in the verdict console only: `s`, `f <reason#> [note]`, `r`. Reason numbers are 1-based: 1 did not reach, 2 grasp failed / missed, 3 dropped, 4 wrong object, 5 collision, 6 stalled / froze, 7 safety stop, 8 other. Each verdict appends a line to `results.jsonl` at once; if the file is missing after a session, nothing was scored. Scoring never moves the robot. `e` ends the session after the current trial.
 - **Before answering "lower?", move the case away.** In simulation the right thumb rested on the case from the lowering through the stance.

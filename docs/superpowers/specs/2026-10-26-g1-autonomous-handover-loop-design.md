@@ -1,6 +1,6 @@
 # G1 autonomous handover loop on the VoLoAgent native harness
 
-Status: design, awaiting approval (2026-10-26).
+Status: approved design (2026-10-26). The robot rounds changed several behaviours, notably the return to ready (it now waits for "bottle taken?") and the re-arm steps; rulings R24-R32 in `.superpowers/sdd/2026-10-26-g1-autonomous-handover-loop/progress.md` and the runbook describe the current behaviour.
 
 ## Intent
 

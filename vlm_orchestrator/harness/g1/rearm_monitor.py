@@ -27,8 +27,9 @@ EMPTY_PROMPT = (
     '{"object_on_case": true|false}. object_on_case is true if a bottle or any other loose object stands or lies '
     "on top of the black case."
 )
-# R24: tested on candidate-A trial frames (on-hand 16/17 true, empty-reach 27/30 false); offer-pose empty-hand frames
-# are still to collect on the robot.
+# R24: tested on candidate-A trial frames (on-hand 16/17 true, empty-reach 27/30 false). Offer-pose hold frames
+# (2026-10-27, docs/artifacts/g1_vlm_size_eval_20261027): the bottle at the image edge reads as "not on hand", so the
+# loop never acts on this answer alone (R30, R32).
 TAKEN_PROMPT = ('You see the head camera of a humanoid robot. Answer only with JSON {"bottle_on_robot_hand": true|false}. '
                 "bottle_on_robot_hand is true if a drink bottle rests on or is held by the robot's own hand (the black and silver "
                 "metal gripper), including while a person touches it; false if the robot's hand is empty or not visible.")
