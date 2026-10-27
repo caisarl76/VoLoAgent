@@ -39,3 +39,26 @@ Two other attempts on the taken check:
 | Qwen3.5-9B AWQ | 0 | 19, plus many unparsed answers | 0.98 | 11.6 GB |
 
 4B marks every take in these holds within one frame (~0.6 s), including r31 t1/t2, where the arm torque did not move. In the earlier set, its 9 false "taken" all come from r24 t0 (6 frames, bottle at the image edge behind a sleeve) and r26 (3 frames).
+
+## Follow-up: lerobot reference sessions s17-s20 (2026-10-27, Qwen3-VL-4B on :8301)
+
+Frames come from `/mnt/data/jihun/g1_eval_sessions/s1{7,8,9}_*/raw` and `s20_*/raw`, read only. Each episode was sampled at 1 Hz (551 frames) and labelled by hand:
+
+| Label | Meaning | Frames |
+|---|---|---|
+| C | bottle upright on the case | 109 |
+| G | robot hand at or grasping the bottle on the case | 150 |
+| H | bottle on or in the robot hand | 164 |
+| P | person holding the bottle | 15 |
+| E | no bottle on the hand or case | 83 |
+| U | unsure | 30 |
+
+The loop's three prompts were asked on every frame (`lerobot_s17_s20/`).
+
+- **Re-arm "bottle" yes:** C 109/109. False yes on G 41/150, mostly the reach frames before the fingers close, plus 0 of the H, P and E frames. The loop never runs re-arm during a reach.
+- **Empty step yes:** E 80/83. False yes on C/G/H/P: 4/438.
+- **Taken (`bottle_on_robot_hand` false) on H:** 14/164 at 1 Hz. Every one has the bottle at the top-right image edge, partly out of frame, several with a person's hand on it.
+- **Dense check of the on-hand stretches at 0.6 s** (the loop's pace, `dense-4b.json`): 27/248 false. Runs of 3 or more in a row occur in 2 of 32 episodes:
+  - s17 t5: 5 in a row at 7.6-9.6 s, a person's hand on the bottle at the offer;
+  - s18 t9: 3 in a row at 7.6-8.6 s, as the arm swings into the offer.
+- Most false runs come 0.6-1.6 s after the lift, while the arm moves. The loop's taken check runs only in the still offer-pose hold after the release; there, r28-r31 gave 0/50.
