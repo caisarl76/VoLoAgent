@@ -21,7 +21,7 @@ from vlm_orchestrator.harness.g1.contract import (
     Status,
     validate_params,
 )
-from vlm_orchestrator.harness.g1.loop import EvidenceLog, LoopRunner, OperatorConsole
+from vlm_orchestrator.harness.g1.loop import TAKEN_EMPTY_FRAMES, EvidenceLog, LoopRunner, OperatorConsole
 from vlm_orchestrator.harness.g1.rearm_monitor import (
     EMPTY_PROMPT,
     TAKEN_PROMPT,
@@ -57,6 +57,7 @@ class FakeLoop:
         self.native_next = None  # loop_trial rejects a number below this (else the recorded count)
         self.frames = 0
         self.take = False  # R26: the native torque take detector's verdict, reported only in await_take
+        self.hand_empty = False  # R32: Status.take_hand_empty, reported only in await_take
 
     # motion
     def tick(self):
@@ -130,6 +131,7 @@ class FakeLoop:
             PROFILE.registry_sha256, PROFILE.policy_host, PROFILE.policy_port, PROFILE.checkpoint, self.owner,
             self.reason, loop_stage=self.stage, loop_trial=self.trial, trial_end_reason=self.end_reason,
             frozen_stage=self.frozen_stage, take_detected=self.take if self.stage == "await_take" else None,
+            take_hand_empty=self.hand_empty if self.stage == "await_take" else None,
         )
 
     def dispatch(self, method, params, session_id):
@@ -1061,3 +1063,41 @@ def test_taken_vlm_frames_must_be_a_non_negative_int(tmp_path):
     for bad in (-1, 1.5, None):
         with pytest.raises(ValueError, match="taken_vlm_frames"):
             build(tmp_path, taken_vlm_frames=bad)
+
+
+def test_camera_and_wrist_together_end_the_taken_gate(tmp_path):  # R32
+    loop, runner, _ = build(tmp_path, trials=2)  # the fake VLM sees the hand empty; R29 (camera alone) is off
+    loop.hand_empty = True  # the native harness: no bottle on the wrist
+    runner.console = Console(loop, until={"bottle taken?": never()})  # the operator never presses
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m.count("?bottle taken?") == 2 and m.count("loop_to_ready") == 2 and "loop_freeze" not in m
+    events = evidence(tmp_path, 0)
+    assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "camera+wrist"
+    assert len([e for e in events if e["kind"] == "taken_decision"]) >= TAKEN_EMPTY_FRAMES
+    assert "taken: the camera sees the hand empty and the wrist carries no bottle" in runner.console.out.getvalue()
+
+
+def test_camera_alone_or_wrist_alone_waits_for_enter(tmp_path):  # R32
+    # the camera says empty, the wrist still carries the bottle (r33's false "empty" holds)
+    loop, runner, _ = build(tmp_path, trials=1)
+    runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 5)})
+    assert runner.run().outcome == "completed"
+    assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "operator"
+    # the wrist is unloaded but the camera sees the bottle on the hand
+    other = tmp_path / "other"
+    loop, runner, _ = build(other, trials=1, monitor=TakenAnswers([]))
+    loop.hand_empty = True
+    runner.console = Console(loop, until={"bottle taken?": decisions_logged(other, 0, 5)})
+    assert runner.run().outcome == "completed"
+    assert next(e for e in evidence(other, 0) if e["kind"] == "taken_confirmed")["by"] == "operator"
+
+
+def test_the_camera_count_restarts_on_an_on_hand_answer_with_the_wrist_empty(tmp_path):  # R32
+    loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False, True, False, False, False]))
+    loop.hand_empty = True
+    runner.console = Console(loop, until={"bottle taken?": never()})
+    assert runner.run().outcome == "completed"
+    events = evidence(tmp_path, 0)
+    assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes", "yes", "no", "yes", "yes", "yes"]
+    assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "camera+wrist"
