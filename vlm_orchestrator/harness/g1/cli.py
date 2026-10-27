@@ -18,7 +18,7 @@ from .registry import load_profile, validate_skill_call
 from .runner import HarnessRunner
 from .autopilot import HandoverRunner
 from .handover_monitor import HandoverMonitor
-from .loop import LoopRunner, OperatorConsole
+from .loop import TAKEN_VLM_FRAMES, LoopRunner, OperatorConsole
 from .rearm_monitor import RearmMonitor
 
 
@@ -77,6 +77,8 @@ def main(argv=None):
                       help="OpenAI-compatible endpoint of the re-arm VLM, e.g. http://WORKSTATION:8000/v1")
     loop.add_argument("--vlm-model", required=True, help="model name served at --vlm-base-url")
     loop.add_argument("--vlm-api-key", help="API key (default: VLM_API_KEY/GENON_API_KEY/OPENAI_API_KEY or 'local')")
+    loop.add_argument("--taken-vlm-frames", type=int, default=TAKEN_VLM_FRAMES,
+                      help="VLM 'hand empty' answers in a row that end 'bottle taken?' (0: log only)")
     loop.add_argument("--no-confirm-paths", action="store_true",
                       help='drop the "raise?" and "lower?" gates; for unattended runs only, after the supervised '
                            "session")
@@ -154,7 +156,7 @@ def main(argv=None):
             try:
                 result = LoopRunner(
                     profile, factory, monitor, args.session_dir, args.trials, console,
-                    confirm_paths=not args.no_confirm_paths,
+                    confirm_paths=not args.no_confirm_paths, taken_vlm_frames=args.taken_vlm_frames,
                 ).run()
             finally:
                 console.close()

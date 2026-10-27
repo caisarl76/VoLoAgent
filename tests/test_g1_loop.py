@@ -292,11 +292,13 @@ class AutoGates(OperatorConsole):
             raise KeyboardInterrupt
 
 
-def build(tmp_path, loop=None, *, trials=1, console=None, monitor=None, confirm=True):
+def build(tmp_path, loop=None, *, trials=1, console=None, monitor=None, confirm=True, taken_vlm_frames=0):
+    """taken_vlm_frames defaults to 0 (R29 off): the fake VLM sees the hand empty at once, which would end every
+    "bottle taken?" gate; the R29 tests turn it on."""
     loop = loop or FakeLoop(tmp_path)
     monitor = monitor or Rearm()
     runner = LoopRunner(PROFILE, factory(loop), monitor, tmp_path, trials, console or Console(loop),
-                        confirm_paths=confirm)
+                        confirm_paths=confirm, taken_vlm_frames=taken_vlm_frames)
     return loop, runner, monitor
 
 
@@ -598,9 +600,10 @@ def test_loop_command_wires_runner(tmp_path, monkeypatch, capsys):
     seen = {}
 
     class Runner:
-        def __init__(self, profile, factory, monitor, session_dir, n_trials, console, confirm_paths=True):
+        def __init__(self, profile, factory, monitor, session_dir, n_trials, console, confirm_paths=True,
+                     taken_vlm_frames=None):
             seen.update(profile=profile, monitor=monitor, session_dir=session_dir, n_trials=n_trials,
-                        console=console, confirm_paths=confirm_paths)
+                        console=console, confirm_paths=confirm_paths, taken_vlm_frames=taken_vlm_frames)
 
         def run(self):
             return MissionResult("", "completed", "ok", tmp_path)
@@ -612,8 +615,10 @@ def test_loop_command_wires_runner(tmp_path, monkeypatch, capsys):
             "--no-confirm-paths"]
     assert cli.main(argv) == 0
     assert seen["n_trials"] == 4 and seen["confirm_paths"] is False and seen["session_dir"] == tmp_path
+    assert seen["taken_vlm_frames"] == 3  # R29 default
     assert isinstance(seen["monitor"], RearmMonitor) and seen["profile"].registry_sha256 == PROFILE.registry_sha256
     assert json.loads(capsys.readouterr().out)["outcome"] == "completed"
+    assert cli.main(argv + ["--taken-vlm-frames", "0"]) == 0 and seen["taken_vlm_frames"] == 0
 
 
 def test_clear_gate_ignores_presses_in_its_first_second(tmp_path):  # R21: a double-tap stop never resumes
@@ -766,7 +771,7 @@ def decisions_logged(session_dir, trial, n, kind="taken_decision"):
     return enough
 
 
-def test_no_loop_to_ready_before_the_operator_enter_even_when_the_vlm_says_taken(tmp_path):  # R25
+def test_no_loop_to_ready_before_the_operator_enter_even_when_the_vlm_says_taken(tmp_path):  # R25, R29 off
     loop, runner, _ = build(tmp_path, trials=1)  # the fake VLM sees the hand empty: "taken" yes, then complete
     runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 4)})
     assert runner.run().outcome == "completed"
@@ -994,3 +999,53 @@ def test_enter_pending_when_the_torque_ends_the_gate_is_not_a_stop(tmp_path):
     assert "loop_freeze" not in m and m[m.index("loop_trial"):] == [
         "loop_trial", "?bottle taken?", "loop_to_ready", "?lower?", "loop_end", "release_control"]
     assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "torque"
+
+
+class TakenAnswers(Rearm):
+    """The fake VLM answers "taken" from a list of bottle_on_robot_hand values, then True (on hand) forever."""
+
+    def __init__(self, answers):
+        super().__init__()
+        self.answers = list(answers)
+
+    def _vlm(self, system, content):
+        if content[1]["text"] == TAKEN_PROMPT:
+            return json.dumps({"bottle_on_robot_hand": self.answers.pop(0) if self.answers else True})
+        return super()._vlm(system, content)
+
+
+def test_vlm_empty_hand_frames_end_the_taken_gate(tmp_path):  # R29
+    loop, runner, _ = build(tmp_path, trials=2, taken_vlm_frames=3)  # the fake VLM sees the hand empty
+    runner.console = Console(loop, until={"bottle taken?": never()})  # the operator never presses
+    assert runner.run().outcome == "completed"
+    m = methods(loop)
+    assert m.count("?bottle taken?") == 2 and m.count("loop_to_ready") == 2 and "loop_freeze" not in m
+    events = evidence(tmp_path, 0)
+    assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "vlm"
+    assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes"] * 3
+    assert "taken: the camera saw the hand empty 3 times in a row" in runner.console.out.getvalue().splitlines()
+
+
+def test_an_on_hand_answer_restarts_the_vlm_count(tmp_path):  # R29
+    loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False, True, False, False, False]),
+                            taken_vlm_frames=3)
+    runner.console = Console(loop, until={"bottle taken?": never()})
+    assert runner.run().outcome == "completed"
+    events = evidence(tmp_path, 0)
+    assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes", "yes", "no", "yes", "yes", "yes"]
+    confirmed = next(e for e in events if e["kind"] == "taken_confirmed")
+    assert confirmed["by"] == "vlm" and confirmed["vlm_saw_on_hand"] is True
+
+
+def test_vlm_seeing_the_bottle_waits_for_enter(tmp_path):  # R29
+    loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False]), taken_vlm_frames=3)
+    runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 5)})
+    assert runner.run().outcome == "completed"
+    assert at(loop, "loop_to_ready")[0] > runner.console.answered["bottle taken?"]
+    assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "operator"
+
+
+def test_taken_vlm_frames_must_be_a_non_negative_int(tmp_path):
+    for bad in (-1, 1.5, None):
+        with pytest.raises(ValueError, match="taken_vlm_frames"):
+            build(tmp_path, taken_vlm_frames=bad)
