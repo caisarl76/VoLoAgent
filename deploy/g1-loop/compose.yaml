@@ -28,7 +28,7 @@ services:
         hub_gr00t: "${POLICY_HUB_DIR:-/set-POLICY_HUB_DIR-in-.env}/models--nvidia--GR00T-N1.7-3B"
         hub_cosmos: "${POLICY_HUB_DIR:-/set-POLICY_HUB_DIR-in-.env}/models--nvidia--Cosmos-Reason2-2B"
         vlm_hub: "${VLM_HUB_REPO:-/set-VLM_HUB_REPO-in-.env}"
-    image: volo-g1-workstation
+    image: volo-g1-workstation:g1-loop-final-20261028  # the tested image; README "Frozen set"
     ports: ["${POLICY_PORT:-5571}:${POLICY_PORT:-5571}"]
     command: [sh, -c, 'exec python -u sonic_policy_server.py --policy-path "$$POLICY_PATH" --port ${POLICY_PORT:-5571}
               --backbone-dtype bfloat16 --noise-scale 0']
@@ -37,7 +37,7 @@ services:
 
   vlm:
     profiles: [workstation]
-    image: volo-g1-workstation
+    image: volo-g1-workstation:g1-loop-final-20261028
     ports: ["${VLM_PORT:-8301}:${VLM_PORT:-8301}"]
     command: [python, /opt/volo/g1_local_vlm_server.py, --model, /models/qwen3-vl-4b, --host, 0.0.0.0,
               --port, "${VLM_PORT:-8301}", --device, "cuda:0", --min-free-gb, "${VLM_MIN_FREE_GB:-9}",
