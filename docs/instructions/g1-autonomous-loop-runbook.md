@@ -41,6 +41,9 @@ The deploy binary is the 2026-10-27 build (`~/GR00T-WholeBodyControl-deploy-2026
 
 1. Power up, stand and reset the robot **away from the case**. SONIC's standing pose reaches into a desk-height case.
 2. Start the deploy (T1) with `--harness-planner-hold`, and wait for it to hold the stance.
+   From `~/GR00T-WholeBodyControl-deploy-20261027/gear_sonic_deploy`:
+   `just run g1_deploy_onnx_ref enP8p1s0 policy/sonic_v1_1/model_decoder.onnx reference/example/ --obs-config policy/sonic_v1_1/observation_config.yaml --encoder-file policy/sonic_v1_1/model_encoder.onnx --planner-file planner/target_vel/V2/planner_sonic.onnx --input-type zmq_manager --output-type all --zmq-host localhost --harness-planner-hold`
+   - The models are in `policy/sonic_v1_1/`. This folder has no `policy/release/` models, so the upstream example command aborts with "Cannot find ONNX mode at path: policy/release/model_decoder.onnx".
 3. Start the native harness (T2). Then send **`k` once**. The harness does not read keys from its own terminal: it subscribes to ZMQ port 5580, so send the key from a PC2 shell:
    `~/GR00T-WholeBodyControl-harness-20261022/venv/bin/python -c "import zmq,time; s=zmq.Context().socket(zmq.PUB); s.bind('tcp://127.0.0.1:5580'); time.sleep(1); s.send_string('k'); time.sleep(0.5)"`
    - This starts the deploy's C++ control loop in PLANNER mode, and the robot goes to planner standing.
