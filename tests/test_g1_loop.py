@@ -1236,3 +1236,13 @@ def test_a_redo_while_lower_waits_runs_the_replacement_trial(tmp_path):  # revie
     assert m[m.index("?lower?"):] == ["?lower?", "?restart loop?", "loop_trial", "?bottle taken?", "loop_to_ready",
                                       "?lower?", "loop_end", "release_control"]
     assert any(e["kind"] == "session_end_withdrawn" for e in evidence(tmp_path, 1))
+
+
+def test_a_restart_after_a_log_only_trial_requests_the_next_free_number(tmp_path):  # PR #20 follow-up
+    loop, first, _ = build(tmp_path, trials=3)
+    first.n_trials = 1
+    assert first.run().outcome == "completed" and trials_sent(loop) == [0]
+    (tmp_path / "trial_001.npz").write_bytes((tmp_path / "trial_000.npz").read_bytes())  # trial 1: the log only
+    loop, runner, _ = build(tmp_path, FakeLoop(tmp_path), trials=3)  # a fresh runner: the restart
+    assert runner.run().outcome == "completed"
+    assert trials_sent(loop) == [2, 3]  # 1 would be refused by the native harness ("already recorded")
