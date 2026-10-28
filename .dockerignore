@@ -41,6 +41,3 @@ examples/robocasa/
 examples/vlabench/
 examples/droid_sim/
 scripts/
-
-# Secrets
-**/.env

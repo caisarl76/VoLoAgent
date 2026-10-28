@@ -1,11 +1,11 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-# G1 handover loop: VLM and policy servers on the workstation, loop runner + verdict console on PC2.
+# G1 handover loop: VLM and policy servers on the workstation. PC2 runs the loop natively (runbook).
 # All weights are baked in at build time (with internet); the running services need only the lab LAN.
 # See README.md in this directory. Settings come from .env next to this file (copy env.example).
-# Compose interpolates every service whatever the profile, so a host-specific setting has a default that names it:
-# a missing one fails where it is used (build context, bind mount), not on the other host.
+# A build-only setting has a default that names it: a missing one fails at its build context, not at `up` on a
+# host that only runs the loaded image.
 name: volo-g1-loop
 
 x-workstation-gpu: &gpu
@@ -41,44 +41,6 @@ services:
     ports: ["${VLM_PORT:-8301}:${VLM_PORT:-8301}"]
     command: [python, /opt/volo/g1_local_vlm_server.py, --model, /models/qwen3-vl-4b, --host, 0.0.0.0,
               --port, "${VLM_PORT:-8301}", --device, "cuda:0", --min-free-gb, "${VLM_MIN_FREE_GB:-9}",
-              --served-name, "${VLM_MODEL:-qwen3-vl-4b}"]  # the name the runner sends
+              --served-name, "${VLM_MODEL:-qwen3-vl-4b}"]  # the loop runner's --vlm-model
     deploy: {resources: {reservations: {devices: [{<<: *gpu, device_ids: ["${VLM_GPU:-0}"]}]}}}
     restart: unless-stopped
-
-  # PC2 (192.168.0.222), one interactive container per terminal:
-  #   sudo docker compose --profile pc2 run --rm runner loop --session-dir sessions/<name> --trials N
-  #   sudo docker compose --profile pc2 run --rm runner verdict --session-dir sessions/<name>
-  runner:
-    profiles: [pc2]
-    build: {context: ../.., dockerfile: deploy/g1-loop/runner.Dockerfile}
-    image: volo-g1-runner
-    network_mode: host
-    # the native harness's IPC socket is user-only (unitree, uid 1000)
-    user: "1000:1000"
-    environment:
-      HOME: /tmp
-      PROFILE: ${PROFILE:-session-profile.yaml}
-      HARNESS_ENDPOINT: ${HARNESS_ENDPOINT:-ipc:///tmp/volo-g1-harness.sock}
-      VLM_BASE_URL: ${VLM_BASE_URL:-http://192.168.0.62:8301/v1}
-      VLM_MODEL: ${VLM_MODEL:-qwen3-vl-4b}
-    volumes:
-      # the socket is recreated on every harness restart, so mount the directory, not the file
-      - /tmp:/tmp
-      # same absolute path as on the host: loop_trial sends session_dir to the native process, which writes there
-      # (long form: the short one would create a missing host dir instead of failing)
-      - {type: bind, source: "${LOOP_DIR:-/set-LOOP_DIR-in-.env}", target: "${LOOP_DIR:-/set-LOOP_DIR-in-.env}",
-         bind: {create_host_path: false}}
-    working_dir: ${LOOP_DIR:-/set-LOOP_DIR-in-.env}
-    # gates are answered on stdin and Enter = STOP, so a TTY is required
-    stdin_open: true
-    tty: true
-    entrypoint:
-      - sh
-      - -c
-      - |
-        if [ "$$1" = loop ]; then shift; set -- loop --vlm-base-url "$$VLM_BASE_URL" --vlm-model "$$VLM_MODEL" "$$@"; fi
-        # not -m: that puts the cwd (the loop folder, which holds its own vlm_orchestrator) ahead of the baked code
-        exec python -c 'import runpy, sys; sys.path[0] = "/opt/volo"; runpy.run_module("vlm_orchestrator.harness.g1.cli", run_name="__main__", alter_sys=True)' \
-          --profile "$$PROFILE" --endpoint "$$HARNESS_ENDPOINT" "$$@"
-      - sh
-    command: [status]
