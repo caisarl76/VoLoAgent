@@ -67,10 +67,24 @@ loaded, reported the profile's checkpoint path on `info` and returned a finite `
 
 ## Run (offline)
 
-Workstation. Only one server can hold each port and GPU, so stop tmux servers on :8301 and :5571 first. The VLM refuses to load with less than `VLM_MIN_FREE_GB` free. The policy takes about 3-4 minutes to listen:
+Workstation. Only one server can hold each port and GPU, so stop tmux servers on :8301 and :5571 first. The VLM refuses to load with less than `VLM_MIN_FREE_GB` free. The policy takes about 14 minutes to listen from a cold start on this workstation (see below):
 
     docker compose --profile workstation up -d
     docker compose --profile workstation logs -f policy   # wait for "[server] ... ready on port 5571"
     curl -s http://<workstation>:8301/v1/models
 
 The native harness asks the policy server for its model once, when its worker first connects: **restart T2 after any policy restart**.
+
+**Cold start is disk-bound.** Docker's data root on this workstation (`/mnt/data/docker`) is on the WD20EZBX hard disk. Most of the start goes to reading about 33 GB from that disk: Python packages 9.6 GB, the s08 checkpoint 12.6 GB, GR00T-N1.7-3B 6.5 GB and Cosmos-Reason2-2B 4.6 GB. The VLM reads its own 8.3 GB from the same disk at the same time. The 2026-10-28 cold `up` (DimOS run) logged:
+
+| Phase | Time |
+|---|---|
+| container start → first log line (Python imports, model construction) | 3 min 26 s |
+| → backbone weights (`Loading weights`, 1031 tensors) | 1 min 32 s |
+| → `Loading weights from local directory` (the s08 checkpoint) | 1 min 52 s |
+| → `ready on port 5571` | 6 min 55 s |
+| **total** | **13 min 45 s** |
+
+- **Start the stack at least 15 minutes before the demo.** Wait for `ready on port 5571`, then leave it running. Don't restart `policy` before a session; `restart: unless-stopped` brings it back after a reboot, but that is another cold start.
+- **Pre-reading the files does not warm it on this host.** These files need more memory than is free for the cache. With the demo stack up, about 31 GB of RAM is available, against about 33 GB of policy files, so they push each other out. Measured: a sequential read of the files took 443 s cold and 400 s again right after.
+- **A faster disk would help.** The NVMe system disk has too little free space for the 44 GB image (27 GB free on 2026-10-28). On a demo workstation whose Docker data root is on an SSD, time a cold start there once before the demo.
