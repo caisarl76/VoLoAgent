@@ -13,10 +13,10 @@ x-workstation-gpu: &gpu
   capabilities: [gpu]
 
 services:
-  # Workstation (192.168.0.62): docker compose --profile workstation up -d
-  # Both servers share one image (one venv on the workstation, all weights baked in).
-  policy:
-    profiles: [workstation]
+  # Build (online): docker compose --profile build build
+  # It tags :dev, never the frozen tag that policy and vlm run (README "Frozen set"); nothing runs this service.
+  workstation-image:
+    profiles: [build]
     build:
       context: .
       dockerfile: workstation.Dockerfile
@@ -28,6 +28,12 @@ services:
         hub_gr00t: "${POLICY_HUB_DIR:-/set-POLICY_HUB_DIR-in-.env}/models--nvidia--GR00T-N1.7-3B"
         hub_cosmos: "${POLICY_HUB_DIR:-/set-POLICY_HUB_DIR-in-.env}/models--nvidia--Cosmos-Reason2-2B"
         vlm_hub: "${VLM_HUB_REPO:-/set-VLM_HUB_REPO-in-.env}"
+    image: volo-g1-workstation:dev
+
+  # Workstation (192.168.0.62): docker compose --profile workstation up -d
+  # Both servers share one image (one venv on the workstation, all weights baked in).
+  policy:
+    profiles: [workstation]
     image: volo-g1-workstation:g1-loop-final-20261028  # the tested image; README "Frozen set"
     ports: ["${POLICY_PORT:-5571}:${POLICY_PORT:-5571}"]
     command: [sh, -c, 'exec python -u sonic_policy_server.py --policy-path "$$POLICY_PATH" --port ${POLICY_PORT:-5571}

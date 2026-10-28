@@ -18,7 +18,7 @@ The loop was frozen after the final robot test on 2026-10-28 (ready-A-r42: 9/10,
 | Loop runner (PC2) | VoLoAgent tag `g1-loop-final-20261028` = `93c7afd` |
 | Native harness (PC2) | GR00T-WholeBodyControl tag `g1-loop-final-20261028` = `f192d29`, with the 2026-10-27 deploy (`motor_torque`) |
 | Workstation image | `volo-g1-workstation:g1-loop-final-20261028`, image ID `sha256:20c490beb8e1156ef97ec2a1e355377bdc53350e0a785cf6346ee544fd60fbd8` (both services ran it in r41/r42) |
-| Archive | `/mnt/data/volo-g1-workstation-g1-loop-final-20261028.tar.gz`, with its SHA-256 in the `.sha256` file next to it |
+| Archive | `/mnt/data/volo-g1-workstation-g1-loop-final-20261028.tar.gz`, SHA-256 `a025bde33aab01d216fbfb85947e78b3ff57e2742b6d3bfe82e7471649ab8db5` (also in the `.sha256` file next to it) |
 | VLM server script | `scripts/g1_local_vlm_server.py` at `93c7afd`, SHA-256 `e019a556fc127f0217b8935e7e463f80ac043ae741f8526c432150d5b2fec17f` (same in the image) |
 | VLM weights | Qwen3-VL-4B-Instruct snapshot `ebb281ec70b05090aa6165b016eac8ec08e71b17`; content hash `977de4de045e6d85dd1a4953dfef2dc9b457db201aeb7ddbf5424f1b1df3a5d3` |
 | Policy checkpoint | s08 `/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model`; content hash `c7e6fa5c61a6435bf6c254ab9db25eabe24cb2c6fbcfc81c60d3ec3e5759e5fd` |
@@ -47,16 +47,20 @@ PC2 runs everything natively, exactly as in the runbook: the deploy (T1), the na
 
 Copy `env.example` to `.env` in this directory. The build block names the weight sources on this workstation; a missing one fails at its build context and names itself (for example `/set-LEROBOT_DIR-in-.env`). One image, 44 GB of layers; `docker images` shows about 74 GB because it counts compressed and unpacked copies:
 
-    docker compose --profile workstation build
+    docker compose --profile build build
 
-To move the image to the demo workstation (the archive keeps the tag):
+The build is tagged `volo-g1-workstation:dev`; it never moves the frozen tag that `policy` and `vlm` run. To use a new build, check it as below, then give it a new tag with `docker tag volo-g1-workstation:dev volo-g1-workstation:<new tag>` and update `compose.yaml` and the frozen set.
 
-    docker save volo-g1-workstation:g1-loop-final-20261028 | pigz -1 > /mnt/data/volo-g1-workstation-g1-loop-final-20261028.tar.gz
-    # on the demo workstation
+To move the image to the demo workstation (the archive keeps the tag), copy the archive with its `.sha256`:
+
+    cd /mnt/data
+    docker save volo-g1-workstation:g1-loop-final-20261028 | pigz -1 > volo-g1-workstation-g1-loop-final-20261028.tar.gz
+    sha256sum volo-g1-workstation-g1-loop-final-20261028.tar.gz > volo-g1-workstation-g1-loop-final-20261028.tar.gz.sha256
+    # on the demo workstation, in the directory holding both files
     sha256sum -c volo-g1-workstation-g1-loop-final-20261028.tar.gz.sha256
     gunzip -c volo-g1-workstation-g1-loop-final-20261028.tar.gz | docker load
 
-Copy this directory with its `.env` along; `up` uses the loaded image and does not rebuild.
+Copy this directory with its `.env` along; `up` uses the loaded image and has nothing to build.
 
 Checked 2026-10-27 with `--network none`: the VLM loaded from the image and answered an image question, and the policy server
 loaded, reported the profile's checkpoint path on `info` and returned a finite `[40, 78]` chunk, on CPU and again on GPU.
