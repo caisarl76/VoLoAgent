@@ -1,0 +1,6 @@
+{
+  "execution_id": "",
+  "outcome": "interrupted",
+  "reason": "Handover camera frame expired",
+  "evidence_dir": "docs/artifacts/g1_handover_20261022_robot_s08/stage3/5a6b3f6344c8463685b0e091b1d89e2a"
+}

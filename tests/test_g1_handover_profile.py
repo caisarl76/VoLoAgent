@@ -1,3 +1,5 @@
+import os
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -160,3 +162,22 @@ def test_handover_left_arm_ready_pose_is_optional_and_validated(tmp_path, bad):
     path.write_text(yaml.safe_dump(data))
     with pytest.raises(ValueError):
         load_profile(path)
+
+
+LOOP_PROFILE = ROOT / "configs/g1/handover-loop.example.yaml"
+
+
+def test_loop_example_profile_enables_anchoring():
+    profile = load_profile(LOOP_PROFILE)
+    assert profile.lerobot_policy.chunk_anchor_s == 1.0
+    assert profile.handover.checkpoint_verified is False
+
+
+def test_native_parser_accepts_the_loop_example_profile(native_runtime):
+    checkout, python = native_runtime
+    code = "import sys; from gear_sonic.utils.inference.harness_profile import load_profile as l; print(l(sys.argv[1]).lerobot_policy.chunk_anchor_s)"
+    out = subprocess.run(
+        [str(python), "-c", code, str(LOOP_PROFILE)],
+        cwd=checkout, env={**os.environ, "PYTHONPATH": str(checkout)}, capture_output=True, text=True, check=True,
+    )
+    assert out.stdout.strip() == "1.0"

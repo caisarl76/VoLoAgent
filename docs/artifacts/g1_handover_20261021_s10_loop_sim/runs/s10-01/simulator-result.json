@@ -1,0 +1,28 @@
+{
+  "automatic_resets": 0,
+  "startup_resets": 1,
+  "physics_steps": 8894,
+  "fixture_events": [
+    {
+      "sim_time": 13.390000000000693,
+      "event": "box_restore",
+      "restored": true,
+      "gap_m": 0.06677742480963171,
+      "bottle": [
+        0.3592502669897339,
+        -0.05428610732030961,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 19.085000000000488,
+      "event": "grasp",
+      "palm_bottle_distance_m": 0.06131922050916861
+    },
+    {
+      "sim_time": 19.585000000000388,
+      "event": "release_not_palm_up",
+      "wrist_roll_rad": 0.39625417575232397
+    }
+  ]
+}

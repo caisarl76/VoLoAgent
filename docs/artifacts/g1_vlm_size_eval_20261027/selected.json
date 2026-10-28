@@ -1,0 +1,2612 @@
+[
+{
+"session": "robot_A",
+"kind": "rearm_bottle",
+"path": "robot_A/session/evidence/trial_000/7a91588157eeea5c07dfaced0e0bbc643aba22c0e761271ccf2e8c19078b047b.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 0
+},
+{
+"session": "robot_A",
+"kind": "rearm_bottle",
+"path": "robot_A/session/evidence/trial_000/b1ceff10d18e3493ffd30527bbdc3a774c4cd6d6ab0d2184f049b458a17a77b3.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 1
+},
+{
+"session": "robot_A",
+"kind": "rearm_bottle",
+"path": "robot_A/session/evidence/trial_001/c6eeb8f07f026c9f2238f6a012e6285f3f49c4173024e6282ad97bb720ad32d2.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 2
+},
+{
+"session": "robot_A",
+"kind": "rearm_bottle",
+"path": "robot_A/session/evidence/trial_001/2d54fef41fb93a8258f96f8095835da6cbb731771be40d20c902066b1980e629.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 3
+},
+{
+"session": "robot_A",
+"kind": "rearm_bottle",
+"path": "robot_A/session/evidence/trial_002/49fbb4f1f6f4356bdb0f3a8d5f7bae0bb6d9adb442757900999bb568789bc96c.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 4
+},
+{
+"session": "robot_A",
+"kind": "rearm_bottle",
+"path": "robot_A/session/evidence/trial_002/8135ba5e4fffb408c4ab343ce759f375b5194e7196dd545654e224baaf27dea0.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 5
+},
+{
+"session": "robot_A",
+"kind": "rearm_empty",
+"path": "robot_A/session/evidence/trial_002/e5dc1493ebf43bd0f717956254c8ec6345d1985b1897f70537cff73183337b86.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false
+}
+},
+"object_on_case": {
+"raw": "```json\n{\"object_on_case\": false}\n```",
+"parsed": {
+"object_on_case": false
+}
+}
+},
+"id": 6
+},
+{
+"session": "robot_A",
+"kind": "rearm_empty",
+"path": "robot_A/session/evidence/trial_002/324522fb80fe6e11e3014682f02f987562b5ebe1a2fc57bd42029b287f304782.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false
+}
+},
+"object_on_case": {
+"raw": "```json\n{\"object_on_case\": false}\n```",
+"parsed": {
+"object_on_case": false
+}
+}
+},
+"id": 7
+},
+{
+"session": "robot_A24",
+"kind": "rearm_bottle",
+"path": "robot_A24/session/evidence/trial_000/6ced424b13df78560a48680f3f6377ae4ffbe877a67e395e7764dc953f3646f0.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 8
+},
+{
+"session": "robot_A24",
+"kind": "rearm_bottle",
+"path": "robot_A24/session/evidence/trial_000/1a2bd606adcc0669ad0bb5c821596842aee5dea61cc8fea522efc10ef3491a6f.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 9
+},
+{
+"session": "robot_A24",
+"kind": "rearm_bottle",
+"path": "robot_A24/session/evidence/trial_001/e5c20feccf911157bc408d6870a4a0789fa717cfbe176d90c14fb3653a0ab17c.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 10
+},
+{
+"session": "robot_A24",
+"kind": "rearm_bottle",
+"path": "robot_A24/session/evidence/trial_001/7a9f9c75ac05750d3628065edc8b5403e35120d9be6d89b040187ead7f3fccbe.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 11
+},
+{
+"session": "robot_A24",
+"kind": "rearm_bottle",
+"path": "robot_A24/session/evidence/trial_002/ba70015cbcc7212ae5053e39504440607579d5c97bd357c5796d8177132f39c3.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 12
+},
+{
+"session": "robot_A24",
+"kind": "rearm_bottle",
+"path": "robot_A24/session/evidence/trial_002/2534c3ed14293c0813ec5723331421c26b625ca40cccbba4eacc1722282d04d5.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 13
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_000/b8ff1fd5375113dc3b963a653ff46abd357c7ba9d47dd2edd892a8964225e0a7.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 14
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_000/5f5ae67077484303352604de5d48ec5813daff39e7fea5854375b77149cb9615.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 15
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_000/38f49e0a9aaf25f95dfabe110e5f47357b5e72470ada9f8d4f0575c63f3f773d.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 16
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/b9a1c671cf8201df0db8b5ed6207cc0eefbe121284d3d25a4cbf7cd5d80032c0.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 17
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/f3e0c47ea3c1ec75c96ceff5167df06d38832dd03d4fc63f749e0a1c71bdfc1c.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 18
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/d70c318f2096499818262fa4c3a150ac53a1deeabe0160fdd884167ebc9a07a8.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 19
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/89ef1e64be277dcfc77c7501aa4a9bb5ed9c85c0d539ab42ef90ce2ba8c32e3b.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 20
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/fbb5713c2fabd6050776bb96b64cd27adc0478c56aabc6362294dd6f097b1eca.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 21
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/36bf8253c93f7152e83d5df8ea3d11fd890beecdfa3777b9c07089e3de6434b4.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 22
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/d8814699534acd8de5269b90de8b01c2dacae5a2ec1388863958646d951412b7.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 23
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/cb9e5abb128e6a1135c12361a5eb672a7e19b5d7ce5925d27a35304b66fcd372.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 24
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/9fa7f0fbc9b6571e4a2a06f2eba59959271d76c0fe9149f33043f8a5857dd349.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 25
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/00a670a9707d3083cf9320a26b1be9a7b391580c26fff63c92eecc75763a5d8f.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 26
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/06c59db298af03a8259bf46a910005b47b8148036fb08af80046c9199d50090d.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 27
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/084b28fb32060cce12772cc5a82612ebce565f8886adc5292b342e7843fdd0f7.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 28
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/5b22da6654821138e7bca45ff0c3cb980b7a3b3b962899d61079eea925f841c9.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 29
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/a1f431a07503755a5344e785a9b8857d2d0a26d3272484c752025aafebe7bcc9.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 30
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/1b7bc40d3444c5c733e4e4b1444ce5b10163aaa7968bf614dc36393b7a1c8791.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 31
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/c416cbcd53e786d57ee40210f969386da921ba9f5ef80cea9627aead699bff36.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 32
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/036c8a9c8df35d271cbffdece5267490896e48f8212cffa4ce60036416da3c09.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 33
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/9f61dd479a2e6b716e68fd86d9e14eca3b304bb530dfcac8fd871d9000a6b8a2.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 34
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/339cb5ccfa110bf5ff6f626334d9eeb7b68c2c3f6257b837a352f10167fe9ce1.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 35
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/600ee866f6d952e85878c0304328cf8f0d16b63a7ecc96036e6394d8135b6a7d.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 36
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/0bb43755a8a2012ef0a96a82e6c7de2a06daf7d1f2f42c5c149f36197bf8e948.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 37
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_001/579ff50ff977784619413e525fcd3b5e3a5accb727f3a2fa5d99f19b3bbc2093.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 38
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_002/57be5f20a337d13faeb1178b87260c9bf946aea4a74135ebe946fc42685960b4.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 39
+},
+{
+"session": "robot_A24",
+"kind": "taken",
+"path": "robot_A24/session/evidence/trial_002/22179ab90dc7aae2f4e27c0535a4022494ddb7dda858e499651784000f1ea8e7.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 40
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_001/1a5474b9fd91c1d1bc56f7533f477b5a1fad5b0f14dbd31c67acbaef94830d17.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false
+}
+},
+"object_on_case": {
+"raw": "```json\n{\"object_on_case\": false}\n```",
+"parsed": {
+"object_on_case": false
+}
+}
+},
+"id": 41
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_001/fd59c39b12361dbd0c261f367088c3b1eeedee6658a2b703cbbf0b67101d19dd.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": false, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false
+}
+},
+"object_on_case": {
+"raw": "```json\n{\"object_on_case\": false}\n```",
+"parsed": {
+"object_on_case": false
+}
+}
+},
+"id": 42
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/c96b6257442e37fd5537e6d9a3df12c9297fe26a4ba4d530bd8444c7f4a63261.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 43
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/e1d6934389751b7a5ef31704f04d261bd394d13df45c65289b719f0a45e4ddd4.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 44
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/79ef19f88ad3c4a115e51d191ce0e8ed77816cd65c9d26054d23c5fe151f0a2c.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 45
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/faeb3dfbae1f013559fd8dbd85c6244c34cec48cc68d1e4e0ff0f29d4c723b9a.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 46
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/002aa2560e8c5f54f4e9683d2a048bdae985f96630bc9fd65d65cbe7b1048a4a.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 47
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/282ac58f870a76eda81a9e9f4c98e57e8e996d49eefc739c9844d39618f80a91.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 48
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/d8eed2e96c526589127c180895e276ca20c4de867a993a89e0a9c4e9fe31263d.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 49
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/aaa9cd4b198cbebb60946136ae6e6023c2f35ae836c0cd6b4f56ee1f79454b18.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 50
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/80132574548ed8cf55e79b4e0580deeaac9fe0519366c5349790abe279c703ea.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": true}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true
+}
+}
+},
+"id": 51
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/3c3804d26502e43cb2e643edf43f3c50d54cd0ea3b46f2239ca40186a704f946.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 52
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/5f06ca8f3982bb5e48ac1c1f7c5175d1f9847afd9872d547d30243d92a2394c1.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 53
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/7fcc1dd489e629f283049fb89eab14b52feb101eb7277639bc37928b51af91b6.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 54
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/075f7a7bdc2eb9f33b8cdeaaa18daeca85080568941d16145fc8d1c7d01d5a6b.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 55
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/c5ddfdc9f0032d80024a606fe830af819b67cf9cd677761dd8d16ffeb4ec56d6.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 56
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/c8c40c603d45d04782fe3aedd86956e01b60222eb2399140393a0771c6230909.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 57
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/26a810aa1ff31bbb7abb27c79e68b3d5f69852a6ac2c79090c269a956e264287.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 58
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/f11ee7c2194aa5c705855d3b115fb3b6271d78f8b874ca4ea2fc54b524b7c560.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 59
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/6f667df56728fb908d897d8ded9f890d20ec07c3887eac8a39a465c3b149881a.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 60
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/b9520853be2b248b937e2fe566ec6697da21b39f1447b8d1383e854445fa1574.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 61
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/6eaf6f566fd8b547f4284fc9a99284c3d237bb7e2e3e4053e103a1a8c302cd54.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 62
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/714b5bbd50dfdfdb72a48d77e962fd3130d92dac4d6ed1736b1fb825f70de32a.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 63
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/81ea6261684fb96cb55feb93603bceb53dfa512acfb2598264b470d87a8bebdb.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 64
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/6fdd7fa18805f4102235ecb95974b0c4598a909a70d70f32bc79162e48076fe5.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 65
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/d784b9306c75bf57b5b49f412394c31afd5dbdd54e4cb1c16fc36af104ec4b53.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 66
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/08c68ef3601f251f4c1718399ea00c9efd9ebb2d86b8c9f6a855bb6e1daad245.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 67
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/100bcc385705c2951644982d790e08e19bb47e6e686767326727551cce65431c.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 68
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/ac878719f3eb63a25973efa2c8a25dc3decc17c2660481b03d793a2fe25eeea5.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 69
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/2188d4b139c2389148c2f0bbabac5fb2a433e0f9fd756906a6d0c6e222134637.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 70
+},
+{
+"session": "robot_A24",
+"kind": "rearm_empty",
+"path": "robot_A24/session/evidence/trial_002/3d6d267a0be4d4432de6d15690f2df88e568835c23cc0222adcf240b0fd10f57.jpg",
+"vlm2b": "no",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 71
+},
+{
+"session": "robot_r26",
+"kind": "rearm_bottle",
+"path": "robot_r26/session/evidence/trial_000/a7482920c99f3f8b86f9416d964fb5a81207cb87fa8bb527a2baf7ac4f13b013.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 72
+},
+{
+"session": "robot_r26",
+"kind": "rearm_bottle",
+"path": "robot_r26/session/evidence/trial_000/d4408756a78d36a3adcae65fbc39254bf084357121774d1b75ca613e99767164.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 73
+},
+{
+"session": "robot_r26",
+"kind": "rearm_bottle",
+"path": "robot_r26/session/evidence/trial_001/89e698ea4cbe48f5f0427b6a1a8914666583c67d15cc49151591e765710c99b4.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 74
+},
+{
+"session": "robot_r26",
+"kind": "rearm_bottle",
+"path": "robot_r26/session/evidence/trial_001/6220e74d5e21ae8143a1cc99d1ec59d634c653a3495c73ed51a78a4ab42c9448.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 75
+},
+{
+"session": "robot_r26",
+"kind": "rearm_bottle",
+"path": "robot_r26/session/evidence/trial_002/b951f6dfee3e74f66980378d7fa788e4ac5b484fa7072bb02da18da2ffaa3ce9.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 76
+},
+{
+"session": "robot_r26",
+"kind": "rearm_bottle",
+"path": "robot_r26/session/evidence/trial_002/6e9eeb7196ca436140952b68783f12506b10ab884f1816e9241ea6a81e08cbd0.jpg",
+"vlm2b": "yes",
+"answers": {
+"upright_check": {
+"raw": "```json\n{\"bottle_upright_on_case\": true, \"hand_at_bottle\": false}\n```",
+"parsed": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false
+}
+}
+},
+"id": 77
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/64cde03ce17e39450ec93572b773d4808bcbd7d90a4a2bf8c13aa6656ff4e928.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 78
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/4cc499f63e963175a2815370afd86c89b0d30898b6422d9716d7b390478f5c12.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 79
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/9825af7046200b4fa5b80801b4d551a57e501af2fb1919064357fafdf94047cf.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 80
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/a8fe9a451a6116f744b440ebf8ca142bca99eebcc0e33d1c7ac549cecc233cc9.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 81
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/623b0b65589b7e8420641d63784e633ad3ed3ba47edfb3817a904ad469b1b3dd.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 82
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/211a9c3b3cbc27f83a4c2b96431a00aa9ee899120e8f1af6ee9a2ce531f3da29.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 83
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/fc3f77d7fb1244a976b25288356d17de349e155aaa21847c3d8925cdbe9ec600.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 84
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/bf5bab5a13ecdd009b340836d40cf2af0509ced7298d8a3ac94f186de71199df.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 85
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/d470ce9b60821fc737ab27fe732653e2bbf4c36a3aa2b52ed834aa60c8f47571.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 86
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/7935276e155bb2bc3aac909f0ae187fdd7cdea5682374a5e37473a368f284292.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 87
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/4ef68075d8e715e6c5defee8c14fde4a63514a97444ab82ce5dd2252d533def4.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 88
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/f4dda4e37c53f3a4cfaa28917b7a2623c7d5c33d35af59edab7bbde9737b7087.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 89
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/6cfb1832eae7ec2bc86d8706a8a870c1418339f2dd343cfd4d370b4fad367661.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 90
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/4b6707bcdb9ed3b048898e1d1c31f9dcd57dd09640e88978006050b1396c64f1.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 91
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/bca0a62e6439fb43efe19f1cd3905813d282dd4ab23dd998d59bac7c9c0262f2.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 92
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/aa184f586dd1405cf4d01b9f84f5287941a420d851289c1d7ae4bdbf2ea0f532.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 93
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/e218d8cd72085969c26e46f7d14d55a51203373f834201571c784907535171af.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 94
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/449891e2e8027161789defda551d90b750718e6430839b9c4403fcf378b569d8.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 95
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/3246e2bf296eab21ea3e48cfc73a869be8af27079e1089e563363feb539a5738.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 96
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/ed24d3643e9ef2522995dd8e1d2c1ad69b968bffeeda37b021516f17470667fb.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 97
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/bc56c8445d1b80efd283e84d12b2e969408c174b041a79210904df12543181ea.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 98
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/b971d1abb02eed92907fa8a728dff7124acad5d4c3d03f79c79e950f0f9e133d.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 99
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/5a4fb3b801c6b9296f89544c33b798ea106b4de3070f4480b89ba3a7d76e5133.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 100
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/54c78c2cb86cbab470e7e67dc1978a4337e382d31651b6cf57c441faa2dab8a3.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 101
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/348f74649adde67d18fbccba054ef32da155a8af535b882312570a1190868170.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 102
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/52b5233d7d6b13301e16bb99f8439d72a7de718105811d3028610b34455d0e1b.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 103
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/5837d4de46c1996f666e19e96cf5b89b1d33c81a85cdee9a351b5c72ced05fc9.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 104
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/29ab3212b1858d8f5e9bde1525597ef156506667521e1c30c51886e63c0e556d.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 105
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/1efaa184231ea0444008e825a0e8301f5f6819cd56f3ba54ac4897b3f2f8e31d.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 106
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/6653c1607a4bab85812be3b15cef85ca1858f32ab619013fe910c9c10704c239.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 107
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/9d2d8e9b1fe2fc11ce299d851e7c39d510e10d476152f538e2a4285757a9eb41.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 108
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/e6e8195807306f0d9cbea708ef8f54d7650dbbfcdbbe6f99995ea342df571f0e.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 109
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/926297f4b624931c9232743b8f6d996bdf5e1d99655c49543d8dbb64d76fd804.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 110
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/fbf6711690bbcc3403c35343968b6af86feca5b86b081785ddcc9dcb08831d33.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 111
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/a4a15ec450d86e42b910c11c8964ae4cfc59495b5ce212679841b89fdd192f89.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 112
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/113a277a5e74a3c4e4a276d2cac179072a5a2e222c009665c316d9f0d4c1b5d5.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 113
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/b3769cf1a92acf906603c5dbb678ee6d1c2b500a652f5aaaf13e884e4824806f.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 114
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/b70e53b59c9e77197d47c078bd1573fc66ba2426d5b483c1c286c0d183159f23.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 115
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/b6403c48bbb360f435d7ad72d08c7656eb91dbcbf605631231d285792f302521.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 116
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/fd70f25bdbb605ec486e2b7554c881614611eff0af2f5e99e4257d5b17301510.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 117
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/dcb3bbe934b1cbf441cf93d26566dffd4a66cef35179ca1863d8aa022b18dddb.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 118
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/1877a6099767f429d02865a4ea0274ba882ebe3566a2447edf95d77e8eedc4c8.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 119
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/25855677a3bf0a07b9ab17e8283241d190c938e021f85b93637ccf69392d3837.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 120
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/2ecbf1bb52b8b7c8f5651e38ef07954c155c94aab49f4e0695f2834a0f4b0868.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 121
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/2711bf661c48fc2b65a7188dd33050160a8d123818b71194a5b2ec4d31b510aa.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 122
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/c96c821bdf4f3f456928a66dee9ba9f437e0b048cc933f3ac783017bc925d028.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 123
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/dec93c0bd766b9ee46580f1f3cb6ad2a06e255aa09ef8e4b3d3a98bcecc32551.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 124
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/a3a91f46c00c2db9fc37942b80cfff573a5abe57b6975eb6048f309247964f9f.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 125
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/2dd5b2a6070afeb2a3c5fd58ecf8d20bee3294c1e09951925701e9d5e988ad83.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 126
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/1fc1fed2db087b53cbf6d49e5fd803d3ef04b842a4734aa66b48aa8417ab1920.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 127
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/f4e6be480822d3ad2e7f3fa24e39af764181fdd72d492a94a5f8e06d15a71aec.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 128
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/8bdfa0d1e997c98b7af3e243ff20bcd1ab791b1277ce964fc49a0505fd104765.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 129
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/5072b20da329f6a91ba218ff57e61e4e8d35e660a72cc1cf79cc1576f51f9b7a.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 130
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/962d45767b5cbee25cbd571a3e930eb493a77bbc7e58c5f812e3334dddb1f0a2.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 131
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/e0c4121c0f866d12b02f4516640f1325d3ff1920b2727188a906859a62b1846d.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 132
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/9f3b97e40537b73983165bafbc575aa677ec1ffd0946be7f09c0a8c762335ad5.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 133
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/22231a92319ca6b759ce002a7a69af6ad84b164477b561f66c2c035733773dc9.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 134
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_000/0a31692ae31a25e7bcfbff0868ea6e4228f9dfb1c89a7d22a1c3630cf9f32eac.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 135
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/e5accf8370e9484e0d3248a006783e90ed3b544b6d30ca1875fc25ea17f59e7d.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 136
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/606fa27a41e51dd5751ece4ac0d85a580e0d7bee948b8964369b1a2d6a5cc0ce.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 137
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/9944b591c02b49fa2287cf0db285cd72f118db1e3a97dad6c70e5c4391e003f5.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 138
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/9ac4ada6646a1c973e753c1116668183bcc6322d9eb2fe1de1c6c0e21e25a956.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 139
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/ca03bf091f43173ab7c7bd981bf475efb5ce2e47144e14639d8e81c84a94d746.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 140
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/ca7b50805ebd4dd13790cbca887a5e3017291709909302ef0af22352e4590df6.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 141
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/bc8866fdcb5749720692683ae5cb4ccd619b7fc42d85565aeba9469080705a3e.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 142
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/faa67743ea9b8dfd59194d9dbd574b528f8b60d19043f9a2c53622cd1076c4f6.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 143
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/88600a5a1a736a7f7bc57076bd529d0da42af7f82d7c66c3587c5d71d3365e01.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 144
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/bb1cd35c1763cb16cb514d78a387070ccae9e6c61e3f094adc9c2dca98ef8a75.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 145
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/a179b5cd0776ddf1dcd2ec33b9e7c005bcf2d032e5325582836d85c6d0dcc874.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 146
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/ae6fb9b2bf459d4e914fb7ea8e419fb3c0f5c990d4c5931bf81848400ff56a25.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 147
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_001/984dec35409ea955c3f59d8b22814cff57dc87cd2d142fbbb0193fb0b5f52d72.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": false}\n```",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 148
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/e7b804609c8725a1a28ebcc1a5cbd0f6779cbfd59fdc555bc8182b676f8b0780.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 149
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/eecc5407c170ba18d3c28134e97ea4412db1abc1d4cf54717ed1740b198383cf.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 150
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/e0760ae83f2e70b739538aa31a4cdbebc0579b88ab7e2a090a450553b9cd33c1.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 151
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/e3bc645e439f606aa738360f5a13647bca5272544556af869ec09ab1cba8df0e.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 152
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/e8a62638cffbfaec0e0d5fd73af73a02db0141a7ba9b34ee97f9f1ed3f61d41d.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 153
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/4631f13614e1f2115613300b9fe4fd523aca9856482795542300f7ecc2c4ccab.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "```json\n{\"bottle_on_robot_hand\": true}\n```",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 154
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/b19c030940c8605da4ab9871981ab9da8c0861919c9b0f8ec7010c43dfccdc38.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 155
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/1e644d69430642278044d42a49d69864a052eece86927bcf449bc7a7245b0bf1.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 156
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/ea97a564b4f11b487501881b1e7b4482b6ddb7f8417484441ba7995b9c3c522a.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 157
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/cb2c84ceb95450cb03b5f24d0b69aead6211d6126df337b71daaad7c75d412de.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 158
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/28b5ffa63a4acc528c2d78d3e935110ee1914bc2718cd759c1326c8bca0ad9d9.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 159
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/4e26767c09e66a3b21ab48cdafb9129fedfec585609f28be176c065f33dcf9af.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 160
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/3b41637844dd8c91b514737aa55f90110e0dd21c445adc529265d97b1432801c.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 161
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/3e6d9ede9415e84ca6da4d0d680dc870f9b2ece9e6ac4eb6cbf1680ca2748b1e.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 162
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/456df21d8c4a2b133dd1e48a5ebc5b99659ddd3d72252aae8eea2b8e8d298d17.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 163
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/727a0d2b0c346f9c9cb119657be9b121442987277e57de49a1b26bfdb1d13e97.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 164
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/3ecc6f3f379d31e7c95c36e459cfa31c65c3e2107cf31e5da0274e3a3486c7ee.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 165
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/ab1e3ed9d3f976bc6b8f8042492ff9180ddd2aec3a2ec188332906a4c5bd7e71.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 166
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/baa6e260190ac5d16003b62d76f6dcd259103c3db52fc4cbfafe4f7ee07181d2.jpg",
+"vlm2b": "yes",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": false}",
+"parsed": {
+"bottle_on_robot_hand": false
+}
+}
+},
+"id": 167
+},
+{
+"session": "robot_r26",
+"kind": "taken",
+"path": "robot_r26/session/evidence/trial_002/103e5cd3e8611b6ca12e41d9a6f329dbbee1d74d79100300f6cebb9098f02ca2.jpg",
+"vlm2b": "no",
+"answers": {
+"taken": {
+"raw": "{\"bottle_on_robot_hand\": true}",
+"parsed": {
+"bottle_on_robot_hand": true
+}
+}
+},
+"id": 168
+}
+]

@@ -1,0 +1,711 @@
+{
+  "session_stream": {
+    "ticks": 3650,
+    "pose_messages": 3650,
+    "pose_messages_per_tick_histogram": {
+      "1": 3650
+    },
+    "frame_index_steps": {
+      "1": 3649
+    },
+    "non_pose_messages_inside_loop": [
+      {
+        "t": 2191034.756839589,
+        "topic": "command",
+        "start_stop_planner": [
+          1,
+          0,
+          0
+        ],
+        "label": "planner token"
+      },
+      {
+        "t": 2191107.289301665,
+        "topic": "planner",
+        "start_stop_planner": null,
+        "label": "handback blend"
+      },
+      {
+        "t": 2191107.289355786,
+        "topic": "command",
+        "start_stop_planner": [
+          1,
+          0,
+          1
+        ],
+        "label": "handback blend"
+      }
+    ],
+    "pose_mode_window": [
+      2191034.756839589,
+      2191107.289355786
+    ],
+    "pose_mode_send_gaps_s": {
+      "n": 3599,
+      "max": 0.026506415102630854,
+      "p99": 0.021707927072420717,
+      "median": 0.020116865634918213,
+      "over_25ms": 1
+    },
+    "pose_mode_gaps_over_25ms": [
+      {
+        "at": 2191089.937343489,
+        "gap_s": 0.026506415102630854,
+        "label": "episode",
+        "stage": "episode"
+      }
+    ],
+    "pose_mode_tick_gaps_s": {
+      "max": 0.02619845187291503,
+      "over_25ms": 1
+    }
+  },
+  "dead_stream_take_over_stream": {
+    "ticks": 98,
+    "pose_messages": 98,
+    "pose_messages_per_tick_histogram": {
+      "1": 98
+    },
+    "frame_index_steps": {
+      "1": 97
+    },
+    "non_pose_messages_inside_loop": [
+      {
+        "t": 2191110.739355756,
+        "topic": "command",
+        "start_stop_planner": [
+          1,
+          0,
+          0
+        ],
+        "label": "planner token"
+      }
+    ],
+    "pose_mode_window": [
+      2191110.739355756,
+      null
+    ],
+    "pose_mode_send_gaps_s": {
+      "n": 49,
+      "max": 0.02080540917813778,
+      "p99": 0.020729911476373673,
+      "median": 0.020118643064051867,
+      "over_25ms": 0
+    },
+    "pose_mode_gaps_over_25ms": [],
+    "pose_mode_tick_gaps_s": {
+      "max": 0.020159900188446045,
+      "over_25ms": 0
+    }
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "episode_end": "handover complete",
+      "ticks": null,
+      "frames": 421,
+      "wall_s": 11.651726961135864
+    },
+    {
+      "trial": 1,
+      "episode_end": "handover complete",
+      "ticks": null,
+      "frames": 307,
+      "wall_s": 8.183847904205322
+    },
+    {
+      "trial": 2,
+      "episode_end": "handover complete",
+      "ticks": null,
+      "frames": 416,
+      "wall_s": 11.672362089157104
+    }
+  ],
+  "results_jsonl": [
+    {
+      "trial": 0,
+      "verdict": "success",
+      "reason": "",
+      "note": "",
+      "episode_end": "handover complete",
+      "wall_start": 1793005759.5501823,
+      "wall_stop": 1793005771.2019093,
+      "frames": 421,
+      "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model"
+    },
+    {
+      "trial": 1,
+      "verdict": "fail",
+      "reason": "other",
+      "note": "fixture: grasp disabled (leftover-bottle trial)",
+      "episode_end": "handover complete",
+      "wall_start": 1793005776.3327281,
+      "wall_stop": 1793005784.516576,
+      "frames": 307,
+      "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model"
+    },
+    {
+      "trial": 2,
+      "verdict": "success",
+      "reason": "",
+      "note": "",
+      "episode_end": "handover complete",
+      "wall_start": 1793005799.9488158,
+      "wall_stop": 1793005811.621178,
+      "frames": 416,
+      "model": "/mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model"
+    }
+  ],
+  "redo_jsonl": [],
+  "lerobot_summarize": {
+    "returncode": 0,
+    "stdout": "success 2/3; other: 1\n",
+    "stderr": ""
+  },
+  "evidence_kinds": {
+    "0": [
+      "session_start",
+      "gate",
+      "gate",
+      "take_over",
+      "gate",
+      "gate",
+      "stop_key",
+      "loop_freeze",
+      "gate",
+      "resume",
+      "gate",
+      "restart",
+      "rearm_begin",
+      "rearm_end",
+      "trial_start",
+      "trial_end"
+    ],
+    "1": [
+      "rearm_begin",
+      "rearm_end",
+      "rearm_begin",
+      "rearm_end",
+      "trial_start",
+      "trial_end"
+    ],
+    "2": [
+      "rearm_begin",
+      "rearm_end",
+      "rearm_begin",
+      "rearm_end",
+      "trial_start",
+      "trial_end"
+    ],
+    "3": [
+      "session_end",
+      "gate"
+    ]
+  },
+  "trial_ends": [
+    {
+      "trial": 0,
+      "reason": "handover complete"
+    },
+    {
+      "trial": 1,
+      "reason": "handover complete"
+    },
+    {
+      "trial": 2,
+      "reason": "handover complete"
+    }
+  ],
+  "rearm_decision_counts": {
+    "0": {
+      "bottle:no": 14,
+      "bottle:yes": 2
+    },
+    "1": {
+      "empty:yes": 2,
+      "bottle:no": 11,
+      "bottle:yes": 2
+    },
+    "2": {
+      "empty:no": 113,
+      "empty:yes": 2,
+      "bottle:no": 12,
+      "bottle:yes": 2
+    },
+    "3": {}
+  },
+  "leftover": {
+    "trial": 1,
+    "seen_at": 2191071.930428102,
+    "removed_at": 2191081.984527806,
+    "standing_s": 10.054099703673273,
+    "decisions_while_standing": {
+      "no": 112
+    },
+    "yes_while_standing": 0,
+    "empty_confirmed_after_removal_s": 0.2627082602120936,
+    "bottle_placed_after_removal_s": 1.3710219701752067,
+    "next_trial_started_after_placement_s": 0.1836644378490746,
+    "no_trial_before_clear_and_new_bottle": true
+  },
+  "stop": {
+    "pressed_at": 2191037.161466014,
+    "runner_received_at": 2191037.161487994,
+    "freeze_dispatched_at": 2191037.182420086,
+    "freeze_acked_at": 2191037.19404384,
+    "frozen_stage": "raise",
+    "label_at_press": "raise",
+    "first_frozen_tick_at": 2191037.193276123,
+    "press_to_frozen_tick_s": 0.03181010903790593,
+    "press_to_runner_s": 2.19796784222126e-05,
+    "press_to_ack_s": 0.03257782571017742
+  },
+  "resume": {
+    "label_runs": [
+      [
+        "to raise start",
+        50
+      ],
+      [
+        "raise",
+        16
+      ],
+      [
+        "frozen",
+        78
+      ],
+      [
+        "raise",
+        67
+      ],
+      [
+        "to ready",
+        50
+      ]
+    ],
+    "raise_ticks": 83,
+    "raise_rows_expected": 83,
+    "frozen_ticks": 78,
+    "frozen_token_spread": 0.0,
+    "frozen_equals_last_raise_token": true,
+    "max_raise_token_step": 0.050000011920928955,
+    "resume_token_step": 0.05000000074505806,
+    "raise_tokens_vs_asset_max_abs": 0.012500002980232239
+  },
+  "planner_timeout_lines": [],
+  "take_over_starts": [
+    2191033.770395542,
+    2191109.75397577
+  ],
+  "take_over_planner_silence": [
+    {
+      "take_over_at": 2191033.770395542,
+      "last_planner_message_before_s": null,
+      "planner_silence_at_pose_switch_s": null
+    },
+    {
+      "take_over_at": 2191109.75397577,
+      "last_planner_message_before_s": 0.02028298517689109,
+      "planner_silence_at_pose_switch_s": 1.005662971176207
+    }
+  ],
+  "pose_switches": [
+    2191034.756839589,
+    2191110.739355756
+  ],
+  "dead_stream": {
+    "killed_at": 2191111.865983299,
+    "last_logged_pose_send_before_kill_s": -0.14150751195847988,
+    "deploy_lines": [
+      {
+        "after_kill_s": 0.04296185402199626,
+        "line": "[ZMQEndpointInterface] Received ZMQ message - topic: 'pose', protocol_version: 4, num_fields: 4, total_size: 4 buffers"
+      },
+      {
+        "after_kill_s": 0.04296185402199626,
+        "line": "[ZMQEndpointInterface] *** Starting ZMQ processing ***"
+      },
+      {
+        "after_kill_s": 0.04296185402199626,
+        "line": "[ZMQEndpointInterface] Protocol version: 4"
+      },
+      {
+        "after_kill_s": 0.04296185402199626,
+        "line": "[ZMQEndpointInterface] Protocol v4: Received 64D token (latent action), tokens[0]=0.2500, frame_index: 3755"
+      },
+      {
+        "after_kill_s": 0.04296185402199626,
+        "line": "[ZMQEndpointInterface] Protocol v4: Left hand joints set: [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]"
+      },
+      {
+        "after_kill_s": 0.04296185402199626,
+        "line": "[ZMQEndpointInterface] Protocol v4: Right hand joints set: [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]"
+      },
+      {
+        "after_kill_s": 0.2937992559745908,
+        "line": "[Token Flow] Copied external tokens, tokens[0]=0.2500"
+      },
+      {
+        "after_kill_s": 0.594641663134098,
+        "line": "Loop timing - LowState age: 1.1920ms, Streaming data mean delay: 18.1620ms, Streaming data std delay: 57.5959ms, IMU age: 1.1890ms, Obs: 61us, Policy: 871us, Obs 2 Motor Command: 933us, Post processing: 34us | HandCloseRatio: 1.0000"
+      },
+      {
+        "after_kill_s": 1.2463802970014513,
+        "line": "[Token Flow] Copied external tokens, tokens[0]=0.2500"
+      },
+      {
+        "after_kill_s": 1.597519291099161,
+        "line": "Loop timing - LowState age: 3.4230ms, Streaming data mean delay: 72.6170ms, Streaming data std delay: 249.9774ms, IMU age: 3.4150ms, Obs: 70us, Policy: 606us, Obs 2 Motor Command: 676us, Post processing: 17us | HandCloseRatio: 1.0000"
+      },
+      {
+        "after_kill_s": 2.2492405171506107,
+        "line": "[Token Flow] Copied external tokens, tokens[0]=0.2500"
+      },
+      {
+        "after_kill_s": 2.60022134706378,
+        "line": "Loop timing - LowState age: 3.3600ms, Streaming data mean delay: 177.1120ms, Streaming data std delay: 509.9082ms, IMU age: 3.3720ms, Obs: 65us, Policy: 610us, Obs 2 Motor Command: 676us, Post processing: 18us | HandCloseRatio: 1.0000"
+      },
+      {
+        "after_kill_s": 3.251972704194486,
+        "line": "[Token Flow] Copied external tokens, tokens[0]=0.2500"
+      }
+    ],
+    "robot": [
+      {
+        "after_kill_s": -0.47504463279619813,
+        "pelvis_z": 0.7878215072347298,
+        "max_joint_change_rad": 0.006148305504389495,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ]
+      },
+      {
+        "after_kill_s": -0.2210190468467772,
+        "pelvis_z": 0.787808269261398,
+        "max_joint_change_rad": 0.002642905656786154,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ]
+      },
+      {
+        "after_kill_s": 0.040324465837329626,
+        "pelvis_z": 0.7877941735283943,
+        "max_joint_change_rad": 0.0006240367175208705,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ]
+      },
+      {
+        "after_kill_s": 0.2965993979014456,
+        "pelvis_z": 0.7877794933734747,
+        "max_joint_change_rad": 0.003572202921737877,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ]
+      },
+      {
+        "after_kill_s": 0.5504649369977415,
+        "pelvis_z": 0.7877648254712722,
+        "max_joint_change_rad": 0.006244548066754507,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ]
+      },
+      {
+        "after_kill_s": 0.805653699208051,
+        "pelvis_z": 0.7877444850979738,
+        "max_joint_change_rad": 0.008621136774009497,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_hand_thumb_2_link"
+        ]
+      },
+      {
+        "after_kill_s": 1.0599809801205993,
+        "pelvis_z": 0.7877727382441366,
+        "max_joint_change_rad": 0.03438430864934286,
+        "feet_on_floor": 8,
+        "box_contacts": []
+      },
+      {
+        "after_kill_s": 1.3182113580405712,
+        "pelvis_z": 0.7877527464948682,
+        "max_joint_change_rad": 0.03284688106475425,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 1.5739044859074056,
+        "pelvis_z": 0.7877526599857549,
+        "max_joint_change_rad": 0.03291975616034501,
+        "feet_on_floor": 8,
+        "box_contacts": []
+      },
+      {
+        "after_kill_s": 1.8278597691096365,
+        "pelvis_z": 0.7877528517131795,
+        "max_joint_change_rad": 0.03281105619659125,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 2.081732956226915,
+        "pelvis_z": 0.7877545679821092,
+        "max_joint_change_rad": 0.03275304803328177,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 2.338116960134357,
+        "pelvis_z": 0.7877579490245444,
+        "max_joint_change_rad": 0.03478811662712092,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 2.5937893781811,
+        "pelvis_z": 0.7877627227416885,
+        "max_joint_change_rad": 0.03658701654418442,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 2.8482331722043455,
+        "pelvis_z": 0.7877680141437945,
+        "max_joint_change_rad": 0.03811622136136289,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 3.106517732143402,
+        "pelvis_z": 0.7877730223839096,
+        "max_joint_change_rad": 0.03946609077589455,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      },
+      {
+        "after_kill_s": 3.3617031718604267,
+        "pelvis_z": 0.7877772217653852,
+        "max_joint_change_rad": 0.04069739577687481,
+        "feet_on_floor": 8,
+        "box_contacts": [
+          "right_wrist_yaw_link"
+        ]
+      }
+    ],
+    "pelvis_z_min": 0.7877270936257502,
+    "max_joint_change_rad_3s": 0.04116287598910842,
+    "deploy_alive": true
+  },
+  "box_contacts": {
+    "samples_total": 2136,
+    "contact_samples_session": 121,
+    "contact_samples_all": 265,
+    "bodies_session": [
+      "left_hand_index_1_link",
+      "right_hand_thumb_1_link",
+      "right_hand_thumb_2_link"
+    ],
+    "stages_session": [
+      "-",
+      "None/handback blend",
+      "handback/handback blend",
+      "lower/blend out",
+      "lower/hold rest",
+      "lower/lower",
+      "raise/to raise start"
+    ],
+    "first": [
+      {
+        "at": 2191035.957213285,
+        "bodies": [
+          "left_hand_index_1_link"
+        ],
+        "stage": "raise/to raise start"
+      },
+      {
+        "at": 2191101.474426479,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.525123969,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.576229897,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.627670533,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.677735791,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.728321426,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.779839629,
+        "bodies": [
+          "right_hand_thumb_1_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.830527231,
+        "bodies": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ],
+        "stage": "lower/lower"
+      },
+      {
+        "at": 2191101.881200938,
+        "bodies": [
+          "right_hand_thumb_1_link",
+          "right_hand_thumb_2_link"
+        ],
+        "stage": "lower/lower"
+      }
+    ]
+  },
+  "pelvis_z_session": {
+    "min": 0.7630230557778998,
+    "max": 0.7890853601397169
+  },
+  "simulator": {
+    "automatic_resets": 0,
+    "startup_resets": 1,
+    "fixture_events": [
+      {
+        "sim_time": 2.0599999999999783,
+        "event": "box_restore",
+        "restored": true,
+        "gap_m": 0.08393877530328214,
+        "bottle": [
+          0.3400171858410653,
+          -0.0979178121546354,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 12.785000000000599,
+        "event": "person_placed_bottle",
+        "cycle": 1,
+        "position": [
+          0.3770235059143347,
+          -0.015865576252798698,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 20.68000000000017,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.031191756129210553
+      },
+      {
+        "sim_time": 22.84499999999974,
+        "event": "person_took_bottle",
+        "cycle": 1,
+        "source": "in_hand",
+        "position": [
+          0.35718638731694086,
+          -0.07110126178803165,
+          1.020244097427051
+        ]
+      },
+      {
+        "sim_time": 29.36999999999844,
+        "event": "person_placed_bottle",
+        "cycle": 2,
+        "position": [
+          0.36957929931024913,
+          0.04999473829776367,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 51.09500000000769,
+        "event": "person_took_bottle",
+        "cycle": 2,
+        "source": "on_box",
+        "position": [
+          0.36957929931024913,
+          0.04999473829776367,
+          0.92325475
+        ]
+      },
+      {
+        "sim_time": 52.420000000008365,
+        "event": "person_placed_bottle",
+        "cycle": 3,
+        "position": [
+          0.3244853756021854,
+          0.14294881231628143,
+          0.9235
+        ]
+      },
+      {
+        "sim_time": 58.89500000001168,
+        "event": "grasp",
+        "palm_bottle_distance_m": 0.05811973014001647
+      },
+      {
+        "sim_time": 60.94000000001272,
+        "event": "person_took_bottle",
+        "cycle": 3,
+        "source": "in_hand",
+        "position": [
+          0.34448715288961146,
+          0.059771945354558015,
+          1.019155861145175
+        ]
+      }
+    ]
+  }
+}

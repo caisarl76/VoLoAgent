@@ -108,6 +108,12 @@ def test_rpc_golden_fixture():
     for raw in fixtures["invalid_requests"]:
         with pytest.raises(ValueError):
             c.decode_request(json.dumps(raw).encode())
+    for raw in fixtures["valid_responses"]:
+        assert c.decode_response(json.dumps(raw).encode()).result.phase == raw["result"]["phase"]
+    bad = json.loads(json.dumps(fixtures["valid_responses"][-1]))
+    bad["result"]["frozen_stage"] = "invented"
+    with pytest.raises(ValueError):
+        c.decode_response(json.dumps(bad).encode())
 
 
 def test_response_rejects_bad_result_types():
@@ -123,3 +129,21 @@ def test_response_rejects_overflowed_float():
     payload = b'{"request_id":"r","runtime_id":"boot","error":null,"result":{"runtime_id":"boot","session_id":"s","lease_id":"l","expires_at":1e1000}}'
     with pytest.raises(ValueError):
         c.decode_response(payload)
+
+
+def test_profile_lerobot_policy_section_is_optional_and_validated(tmp_path):
+    # A LeRobot SONIC-token policy (lerobot's sonic_policy_server.py), played like its streamer.
+    r, _ = modules()
+    data = yaml.safe_load((ROOT / "configs/g1/workstation.yaml").read_text())
+    path = tmp_path / "profile.yaml"
+    path.write_text(yaml.safe_dump(data))
+    assert r.load_profile(path).lerobot_policy is None
+    settings = dict(chunk_blend_s=0.3, max_token_step=0.05, dex3_right_order="dataset", chunk_anchor_s=1.0)
+    path.write_text(yaml.safe_dump({**data, "lerobot_policy": settings}))
+    assert r.load_profile(path).lerobot_policy == r.LeRobotPolicySettings(**settings)
+    for bad in (dict(chunk_blend_s=0.9), dict(max_token_step=-0.01), dict(max_token_step=float("inf")),
+                dict(dex3_right_order="mirror"), dict(rtc=True),
+                dict(chunk_anchor_s=-0.1), dict(chunk_anchor_s=6.0)):
+        path.write_text(yaml.safe_dump({**data, "lerobot_policy": bad}))
+        with pytest.raises(ValueError, match="lerobot_policy"):
+            r.load_profile(path)

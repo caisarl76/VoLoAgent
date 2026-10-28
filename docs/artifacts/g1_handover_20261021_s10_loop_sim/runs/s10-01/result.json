@@ -1,0 +1,85 @@
+{
+  "completed": true,
+  "box_front_m": 0.28,
+  "box_height_m": 0.845,
+  "gravity_feedforward": false,
+  "box_after_startup": true,
+  "dds_domain": 37,
+  "bottle_pelvis_frame_m": [
+    0.33,
+    -0.065
+  ],
+  "bottle_min_x_m": 0.32300000000000006,
+  "cycles": 3,
+  "policy_endpoint": "127.0.0.1:5561",
+  "checkpoint": "/mnt/data/jihun/g1_models/wbt_groot_handover261020_he_full/pretrained_model",
+  "lerobot_policy": {
+    "chunk_blend_s": 0.3,
+    "max_token_step": 0.05,
+    "dex3_right_order": "dataset"
+  },
+  "scene": {
+    "case_m": [
+      0.475,
+      0.35
+    ],
+    "fovy_deg": 42.63582455092311,
+    "xyaxes": [
+      0.0,
+      -1.0,
+      0.0,
+      0.738464216,
+      0.0,
+      0.674294795
+    ]
+  },
+  "served_policy": true,
+  "rendered_head_camera": true,
+  "oracle_vision": true,
+  "scripted_person": true,
+  "gpu_preflight": "1, NVIDIA GeForce RTX 3060, 2455",
+  "hardware_acceptance": false,
+  "robot_connection": false,
+  "native_base_commit": "cba799d3cc30990c8ed33c19258adc6f2d435a3d",
+  "volo_commit": "4ee350c32b1cf27ac0fdc0d4f7f54e7a6c47195e",
+  "binary_sha256": "8e08977793ac32f968bf88152d5e0c0fb8223d3747ff39462b16c9cd0f399ef5",
+  "mission": {
+    "execution_id": "a99c4fa45fc64ea29464cb47af045669",
+    "outcome": "interrupted",
+    "reason": "sim oracle: bottle dropped",
+    "evidence_dir": "/tmp/claude-1000/-home-jihun-work-VoLoAgent/b8c1d716-f5c5-4544-a6cc-131ef3e511a5/scratchpad/s10/s10-01/missions/f02084b94ff64d5ca2594a4c255ff438"
+  },
+  "autopilot_outcome": "interrupted",
+  "autopilot_reason": "sim oracle: bottle dropped",
+  "final_status": {
+    "runtime_id": "d0dbf199e9da4d8ea9bcc6a76b8ee2b4",
+    "phase": "INTERRUPTED",
+    "skill_id": "bottle_handover",
+    "execution_id": "a99c4fa45fc64ea29464cb47af045669",
+    "inference_epoch": 5,
+    "controller_running": true,
+    "policy_ready": true,
+    "mode_requested": "PLANNER",
+    "planner_reference_active": true,
+    "hold_confirmed": true,
+    "telemetry_age_s": 0.0,
+    "telemetry_index": 1042,
+    "observation_age_s": 0.014154002070426941,
+    "frame_id": "91e4aef9c82545e9ade2290a8f199286:1792642127.681246",
+    "registry_sha256": "abc4ceb450103bcb052d5159e5b263674fe97021697736ec3e6381d44a9d5de7",
+    "policy_host": "127.0.0.1",
+    "policy_port": 5561,
+    "checkpoint_expected": "/mnt/data/jihun/g1_models/wbt_groot_handover261020_he_full/pretrained_model",
+    "owner_session_id": null,
+    "reason": "cancelled",
+    "locomotion_enabled": false,
+    "ready_return_enabled": true,
+    "right_hand_open": false
+  },
+  "owned_process_exit_codes": {
+    "mujoco": 0,
+    "sonic": -15,
+    "native": 0
+  },
+  "owned_processes_stopped": true
+}

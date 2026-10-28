@@ -1,0 +1,9 @@
+{
+  "restored": true,
+  "sim_time": 13.510000000000712,
+  "box_gap": {
+    "gap_m": 0.07382946968320983,
+    "actor": "right_wrist_roll_link",
+    "obstacle": "desk_top"
+  }
+}

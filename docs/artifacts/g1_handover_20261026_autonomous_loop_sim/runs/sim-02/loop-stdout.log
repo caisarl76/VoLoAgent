@@ -1,0 +1,8 @@
+deploy ready? (deploy in PLANNER, native harness running) [Enter]
+robot in position? (standing, clear of the case) [Enter]
+start loop? (stance held) [Enter]
+raise? (arm to the ready pose) [Enter]
+clear? (frozen in raise: operator stop) [Enter resumes; presses in the first 1 s are ignored]
+restart loop? (ready pose held) [Enter]
+lower? (arm down, hand back to the planner) [Enter]
+{"execution_id": "", "outcome": "completed", "reason": "Loop session complete; 3 trials run", "evidence_dir": "/tmp/t13-runs/sim-02/session/evidence/6d2dea72048b47e4a4458beaa0882d81"}

@@ -1,0 +1,96 @@
+{
+  "automatic_resets": 0,
+  "startup_resets": 1,
+  "physics_steps": 19561,
+  "fixture_events": [
+    {
+      "sim_time": 1.9399999999999806,
+      "event": "box_restore",
+      "restored": true,
+      "gap_m": 0.07390208341861204,
+      "bottle": [
+        0.35212209196050664,
+        -0.0631842701833369,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 12.505000000000555,
+      "event": "person_placed_bottle",
+      "cycle": 1,
+      "position": [
+        0.36349552846707933,
+        0.02182295348474024,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 18.22000000000066,
+      "event": "grasp",
+      "palm_bottle_distance_m": 0.014734519544777159
+    },
+    {
+      "sim_time": 20.365000000000233,
+      "event": "person_took_bottle",
+      "cycle": 1,
+      "source": "in_hand",
+      "position": [
+        0.3503112927685869,
+        0.012241476169494614,
+        0.9805831601609384
+      ]
+    },
+    {
+      "sim_time": 28.439999999998626,
+      "event": "person_placed_bottle",
+      "cycle": 2,
+      "position": [
+        0.35050022440848005,
+        0.09599924044019177,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 49.64000000000694,
+      "event": "person_took_bottle",
+      "cycle": 2,
+      "source": "on_box",
+      "position": [
+        0.35050022440848005,
+        0.09599924044019177,
+        0.92325475
+      ]
+    },
+    {
+      "sim_time": 50.86000000000757,
+      "event": "person_placed_bottle",
+      "cycle": 3,
+      "position": [
+        0.32300000000000006,
+        0.18022821993437121,
+        0.9235
+      ]
+    },
+    {
+      "sim_time": 56.76500000001059,
+      "event": "grasp",
+      "palm_bottle_distance_m": 0.0643934120016803
+    },
+    {
+      "sim_time": 62.625000000013586,
+      "event": "release_palm_up",
+      "wrist_roll_rad": 1.6592183669619636
+    },
+    {
+      "sim_time": 63.65500000001411,
+      "event": "person_took_bottle",
+      "cycle": 3,
+      "source": "on_palm",
+      "position": [
+        0.3458491467813756,
+        -0.000541233172811087,
+        1.0441292932606177
+      ]
+    }
+  ]
+}

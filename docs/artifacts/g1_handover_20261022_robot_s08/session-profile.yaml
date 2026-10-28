@@ -1,0 +1,50 @@
+# SUPERVISED HARDWARE SESSION 2026-10-22 ONLY: review flags set for this session copy; do not reuse.
+# Reference handover model s08 (groot_handover261015_he_full) served by lerobot's sonic_policy_server.
+schema_version: 1
+policy_host: 192.168.0.62
+policy_port: 5571
+checkpoint: /mnt/data/jihun/g1_models/wbt_groot_handover261015_he_full/pretrained_model
+embodiment: unitree_g1_sonic
+camera_key: ego_view
+action_horizon: 40
+publish_rate: 50
+limits:
+  manipulation_deadline_s: 45.0
+skills:
+  bottle_handover:
+    prompt: pick drink bottle from the table and handover
+    completion_criteria: Bottle lifted from desk and stably supported on level upward-facing
+      open right palm; no rolling, falling or human rescue.
+    completion_action: hold
+handover:
+  skill_id: bottle_handover
+  checkpoint_verified: true
+  ready_pose_reviewed: true
+  desk_top_above_floor_m: 0.845
+  desk_front_from_pelvis_m: 0.15
+  raised_right_arm_joints:
+    right_shoulder_pitch_joint: 0.01119326613843441
+    right_shoulder_roll_joint: -0.681782603263855
+    right_shoulder_yaw_joint: -0.5984442830085754
+    right_elbow_joint: 0.16412396728992462
+    right_wrist_roll_joint: 1.085878610610962
+    right_wrist_pitch_joint: -0.15723302960395813
+    right_wrist_yaw_joint: -0.48973536491394043
+  ready_right_arm_joints:
+    right_shoulder_pitch_joint: -0.2287
+    right_shoulder_roll_joint: -0.3292
+    right_shoulder_yaw_joint: 0.0495
+    right_elbow_joint: -0.3238
+    right_wrist_roll_joint: 0.4396
+    right_wrist_pitch_joint: 0.1176
+    right_wrist_yaw_joint: -0.0919
+  ready_left_arm_joints:
+    left_shoulder_pitch_joint: 0.1367
+    left_shoulder_roll_joint: 0.309
+    left_shoulder_yaw_joint: -0.4384
+    left_elbow_joint: 0.7003
+  ready_gravity_feedforward: false
+lerobot_policy:
+  chunk_blend_s: 0.3
+  max_token_step: 0.05
+  dex3_right_order: dataset

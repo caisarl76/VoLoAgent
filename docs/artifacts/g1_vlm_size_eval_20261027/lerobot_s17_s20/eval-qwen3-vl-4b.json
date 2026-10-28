@@ -1,0 +1,8267 @@
+[
+{
+"id": 0,
+"session": "s17",
+"trial": 0,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 1,
+"session": "s17",
+"trial": 0,
+"frame": 25,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0025.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 2,
+"session": "s17",
+"trial": 0,
+"frame": 55,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0055.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 3,
+"session": "s17",
+"trial": 0,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0084.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 4,
+"session": "s17",
+"trial": 0,
+"frame": 114,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0114.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 5,
+"session": "s17",
+"trial": 0,
+"frame": 144,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0144.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 6,
+"session": "s17",
+"trial": 0,
+"frame": 172,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0172.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 7,
+"session": "s17",
+"trial": 0,
+"frame": 198,
+"t": 7.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0198.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 8,
+"session": "s17",
+"trial": 0,
+"frame": 228,
+"t": 8.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0228.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 9,
+"session": "s17",
+"trial": 0,
+"frame": 256,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0256.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 10,
+"session": "s17",
+"trial": 0,
+"frame": 283,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0283.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 11,
+"session": "s17",
+"trial": 0,
+"frame": 311,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0311.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 12,
+"session": "s17",
+"trial": 0,
+"frame": 338,
+"t": 12.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0338.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 13,
+"session": "s17",
+"trial": 0,
+"frame": 364,
+"t": 13.06,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0364.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 14,
+"session": "s17",
+"trial": 0,
+"frame": 391,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0391.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 15,
+"session": "s17",
+"trial": 0,
+"frame": 419,
+"t": 15.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0419.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 16,
+"session": "s17",
+"trial": 0,
+"frame": 447,
+"t": 16.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0447.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 17,
+"session": "s17",
+"trial": 0,
+"frame": 477,
+"t": 17.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0477.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 18,
+"session": "s17",
+"trial": 0,
+"frame": 507,
+"t": 18.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0507.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 19,
+"session": "s17",
+"trial": 0,
+"frame": 537,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0537.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 20,
+"session": "s17",
+"trial": 0,
+"frame": 565,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0565.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 21,
+"session": "s17",
+"trial": 0,
+"frame": 593,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0593.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 22,
+"session": "s17",
+"trial": 0,
+"frame": 622,
+"t": 22.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0622.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 23,
+"session": "s17",
+"trial": 0,
+"frame": 647,
+"t": 23.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0647.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 24,
+"session": "s17",
+"trial": 0,
+"frame": 676,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0676.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 25,
+"session": "s17",
+"trial": 0,
+"frame": 699,
+"t": 25.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0699.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 26,
+"session": "s17",
+"trial": 0,
+"frame": 727,
+"t": 26.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0727.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 27,
+"session": "s17",
+"trial": 0,
+"frame": 755,
+"t": 27.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0755.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 28,
+"session": "s17",
+"trial": 0,
+"frame": 781,
+"t": 28.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0781.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 29,
+"session": "s17",
+"trial": 0,
+"frame": 807,
+"t": 29.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0807.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 30,
+"session": "s17",
+"trial": 0,
+"frame": 833,
+"t": 30.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0833.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 31,
+"session": "s17",
+"trial": 0,
+"frame": 862,
+"t": 31.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_00_0862.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 32,
+"session": "s17",
+"trial": 1,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 33,
+"session": "s17",
+"trial": 1,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0028.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 34,
+"session": "s17",
+"trial": 1,
+"frame": 55,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0055.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 35,
+"session": "s17",
+"trial": 1,
+"frame": 85,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0085.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 36,
+"session": "s17",
+"trial": 1,
+"frame": 112,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0112.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 37,
+"session": "s17",
+"trial": 1,
+"frame": 140,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0140.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 38,
+"session": "s17",
+"trial": 1,
+"frame": 169,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0169.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 39,
+"session": "s17",
+"trial": 1,
+"frame": 199,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0199.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 40,
+"session": "s17",
+"trial": 1,
+"frame": 229,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0229.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 41,
+"session": "s17",
+"trial": 1,
+"frame": 257,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0257.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 42,
+"session": "s17",
+"trial": 1,
+"frame": 287,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0287.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 43,
+"session": "s17",
+"trial": 1,
+"frame": 315,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0315.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 44,
+"session": "s17",
+"trial": 1,
+"frame": 345,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0345.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 45,
+"session": "s17",
+"trial": 1,
+"frame": 375,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0375.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 46,
+"session": "s17",
+"trial": 1,
+"frame": 404,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0404.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 47,
+"session": "s17",
+"trial": 1,
+"frame": 430,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0430.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 48,
+"session": "s17",
+"trial": 1,
+"frame": 456,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0456.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 49,
+"session": "s17",
+"trial": 1,
+"frame": 484,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0484.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 50,
+"session": "s17",
+"trial": 1,
+"frame": 513,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0513.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 51,
+"session": "s17",
+"trial": 1,
+"frame": 543,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0543.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 52,
+"session": "s17",
+"trial": 1,
+"frame": 571,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0571.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 53,
+"session": "s17",
+"trial": 1,
+"frame": 600,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0600.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 54,
+"session": "s17",
+"trial": 1,
+"frame": 628,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0628.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 55,
+"session": "s17",
+"trial": 1,
+"frame": 657,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0657.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 56,
+"session": "s17",
+"trial": 1,
+"frame": 687,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0687.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 57,
+"session": "s17",
+"trial": 1,
+"frame": 715,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0715.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 58,
+"session": "s17",
+"trial": 1,
+"frame": 744,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0744.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 59,
+"session": "s17",
+"trial": 1,
+"frame": 772,
+"t": 27.06,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0772.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 60,
+"session": "s17",
+"trial": 1,
+"frame": 799,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0799.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 61,
+"session": "s17",
+"trial": 1,
+"frame": 827,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0827.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 62,
+"session": "s17",
+"trial": 1,
+"frame": 855,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0855.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 63,
+"session": "s17",
+"trial": 1,
+"frame": 885,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_01_0885.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 64,
+"session": "s17",
+"trial": 2,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 65,
+"session": "s17",
+"trial": 2,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0028.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 66,
+"session": "s17",
+"trial": 2,
+"frame": 57,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0057.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 67,
+"session": "s17",
+"trial": 2,
+"frame": 85,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0085.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 68,
+"session": "s17",
+"trial": 2,
+"frame": 115,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0115.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 69,
+"session": "s17",
+"trial": 2,
+"frame": 142,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0142.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 70,
+"session": "s17",
+"trial": 2,
+"frame": 170,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0170.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 71,
+"session": "s17",
+"trial": 2,
+"frame": 197,
+"t": 7.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0197.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 72,
+"session": "s17",
+"trial": 2,
+"frame": 226,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0226.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 73,
+"session": "s17",
+"trial": 2,
+"frame": 255,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0255.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 74,
+"session": "s17",
+"trial": 2,
+"frame": 283,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0283.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 75,
+"session": "s17",
+"trial": 2,
+"frame": 312,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0312.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 76,
+"session": "s17",
+"trial": 2,
+"frame": 340,
+"t": 12.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0340.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 77,
+"session": "s17",
+"trial": 2,
+"frame": 370,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0370.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 78,
+"session": "s17",
+"trial": 2,
+"frame": 399,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0399.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 79,
+"session": "s17",
+"trial": 2,
+"frame": 427,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0427.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 80,
+"session": "s17",
+"trial": 2,
+"frame": 455,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0455.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 81,
+"session": "s17",
+"trial": 2,
+"frame": 481,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0481.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 82,
+"session": "s17",
+"trial": 2,
+"frame": 510,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0510.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 83,
+"session": "s17",
+"trial": 2,
+"frame": 540,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0540.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 84,
+"session": "s17",
+"trial": 2,
+"frame": 568,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0568.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 85,
+"session": "s17",
+"trial": 2,
+"frame": 597,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0597.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 86,
+"session": "s17",
+"trial": 2,
+"frame": 625,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0625.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 87,
+"session": "s17",
+"trial": 2,
+"frame": 654,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0654.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 88,
+"session": "s17",
+"trial": 2,
+"frame": 683,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0683.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 89,
+"session": "s17",
+"trial": 2,
+"frame": 711,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0711.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 90,
+"session": "s17",
+"trial": 2,
+"frame": 739,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0739.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 91,
+"session": "s17",
+"trial": 2,
+"frame": 767,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0767.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 92,
+"session": "s17",
+"trial": 2,
+"frame": 796,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0796.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 93,
+"session": "s17",
+"trial": 2,
+"frame": 826,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0826.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 94,
+"session": "s17",
+"trial": 2,
+"frame": 855,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0855.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 95,
+"session": "s17",
+"trial": 2,
+"frame": 884,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_02_0884.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 96,
+"session": "s17",
+"trial": 3,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 97,
+"session": "s17",
+"trial": 3,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0028.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 98,
+"session": "s17",
+"trial": 3,
+"frame": 57,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0057.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 99,
+"session": "s17",
+"trial": 3,
+"frame": 85,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0085.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 100,
+"session": "s17",
+"trial": 3,
+"frame": 112,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0112.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 101,
+"session": "s17",
+"trial": 3,
+"frame": 140,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0140.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 102,
+"session": "s17",
+"trial": 3,
+"frame": 165,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0165.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 103,
+"session": "s17",
+"trial": 3,
+"frame": 194,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0194.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 104,
+"session": "s17",
+"trial": 3,
+"frame": 221,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0221.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 105,
+"session": "s17",
+"trial": 3,
+"frame": 250,
+"t": 9.09,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0250.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 106,
+"session": "s17",
+"trial": 3,
+"frame": 275,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0275.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 107,
+"session": "s17",
+"trial": 3,
+"frame": 303,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0303.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 108,
+"session": "s17",
+"trial": 3,
+"frame": 332,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0332.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 109,
+"session": "s17",
+"trial": 3,
+"frame": 357,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0357.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 110,
+"session": "s17",
+"trial": 3,
+"frame": 381,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0381.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 111,
+"session": "s17",
+"trial": 3,
+"frame": 410,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0410.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 112,
+"session": "s17",
+"trial": 3,
+"frame": 435,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0435.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 113,
+"session": "s17",
+"trial": 3,
+"frame": 461,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0461.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 114,
+"session": "s17",
+"trial": 3,
+"frame": 488,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0488.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 115,
+"session": "s17",
+"trial": 3,
+"frame": 512,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0512.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 116,
+"session": "s17",
+"trial": 3,
+"frame": 539,
+"t": 20.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0539.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 117,
+"session": "s17",
+"trial": 3,
+"frame": 566,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0566.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 118,
+"session": "s17",
+"trial": 3,
+"frame": 596,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0596.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 119,
+"session": "s17",
+"trial": 3,
+"frame": 626,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0626.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 120,
+"session": "s17",
+"trial": 3,
+"frame": 653,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0653.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 121,
+"session": "s17",
+"trial": 3,
+"frame": 682,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0682.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 122,
+"session": "s17",
+"trial": 3,
+"frame": 709,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0709.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 123,
+"session": "s17",
+"trial": 3,
+"frame": 738,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0738.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 124,
+"session": "s17",
+"trial": 3,
+"frame": 767,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0767.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 125,
+"session": "s17",
+"trial": 3,
+"frame": 797,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0797.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 126,
+"session": "s17",
+"trial": 3,
+"frame": 824,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0824.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 127,
+"session": "s17",
+"trial": 3,
+"frame": 851,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_03_0851.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 128,
+"session": "s17",
+"trial": 4,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 129,
+"session": "s17",
+"trial": 4,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 130,
+"session": "s17",
+"trial": 4,
+"frame": 54,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0054.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 131,
+"session": "s17",
+"trial": 4,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0084.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 132,
+"session": "s17",
+"trial": 4,
+"frame": 111,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0111.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 133,
+"session": "s17",
+"trial": 4,
+"frame": 140,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0140.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 134,
+"session": "s17",
+"trial": 4,
+"frame": 169,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0169.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 135,
+"session": "s17",
+"trial": 4,
+"frame": 199,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0199.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 136,
+"session": "s17",
+"trial": 4,
+"frame": 227,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0227.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 137,
+"session": "s17",
+"trial": 4,
+"frame": 254,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0254.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 138,
+"session": "s17",
+"trial": 4,
+"frame": 282,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0282.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 139,
+"session": "s17",
+"trial": 4,
+"frame": 311,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0311.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 140,
+"session": "s17",
+"trial": 4,
+"frame": 341,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0341.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 141,
+"session": "s17",
+"trial": 4,
+"frame": 368,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0368.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 142,
+"session": "s17",
+"trial": 4,
+"frame": 394,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0394.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 143,
+"session": "s17",
+"trial": 4,
+"frame": 421,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0421.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 144,
+"session": "s17",
+"trial": 4,
+"frame": 448,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0448.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 145,
+"session": "s17",
+"trial": 4,
+"frame": 474,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0474.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 146,
+"session": "s17",
+"trial": 4,
+"frame": 502,
+"t": 18.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0502.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 147,
+"session": "s17",
+"trial": 4,
+"frame": 528,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0528.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 148,
+"session": "s17",
+"trial": 4,
+"frame": 557,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0557.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 149,
+"session": "s17",
+"trial": 4,
+"frame": 586,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0586.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 150,
+"session": "s17",
+"trial": 4,
+"frame": 615,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0615.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 151,
+"session": "s17",
+"trial": 4,
+"frame": 644,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0644.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 152,
+"session": "s17",
+"trial": 4,
+"frame": 674,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0674.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 153,
+"session": "s17",
+"trial": 4,
+"frame": 703,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0703.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 154,
+"session": "s17",
+"trial": 4,
+"frame": 732,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0732.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 155,
+"session": "s17",
+"trial": 4,
+"frame": 761,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0761.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 156,
+"session": "s17",
+"trial": 4,
+"frame": 790,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0790.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 157,
+"session": "s17",
+"trial": 4,
+"frame": 820,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0820.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 158,
+"session": "s17",
+"trial": 4,
+"frame": 849,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0849.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 159,
+"session": "s17",
+"trial": 4,
+"frame": 879,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_04_0879.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 160,
+"session": "s17",
+"trial": 5,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 161,
+"session": "s17",
+"trial": 5,
+"frame": 30,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0030.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 162,
+"session": "s17",
+"trial": 5,
+"frame": 58,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0058.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 163,
+"session": "s17",
+"trial": 5,
+"frame": 87,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0087.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 164,
+"session": "s17",
+"trial": 5,
+"frame": 117,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0117.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 165,
+"session": "s17",
+"trial": 5,
+"frame": 146,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0146.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 166,
+"session": "s17",
+"trial": 5,
+"frame": 175,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0175.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 167,
+"session": "s17",
+"trial": 5,
+"frame": 203,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0203.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 168,
+"session": "s17",
+"trial": 5,
+"frame": 231,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0231.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 169,
+"session": "s17",
+"trial": 5,
+"frame": 258,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0258.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 170,
+"session": "s17",
+"trial": 5,
+"frame": 288,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0288.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 171,
+"session": "s17",
+"trial": 5,
+"frame": 316,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0316.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 172,
+"session": "s17",
+"trial": 5,
+"frame": 342,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0342.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 173,
+"session": "s17",
+"trial": 5,
+"frame": 369,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0369.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 174,
+"session": "s17",
+"trial": 5,
+"frame": 397,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0397.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 175,
+"session": "s17",
+"trial": 5,
+"frame": 426,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0426.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 176,
+"session": "s17",
+"trial": 5,
+"frame": 456,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0456.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 177,
+"session": "s17",
+"trial": 5,
+"frame": 484,
+"t": 17.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0484.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 178,
+"session": "s17",
+"trial": 5,
+"frame": 512,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0512.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 179,
+"session": "s17",
+"trial": 5,
+"frame": 541,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0541.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 180,
+"session": "s17",
+"trial": 5,
+"frame": 570,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0570.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 181,
+"session": "s17",
+"trial": 5,
+"frame": 600,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_05_0600.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 182,
+"session": "s17",
+"trial": 6,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0000.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 183,
+"session": "s17",
+"trial": 6,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0029.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 184,
+"session": "s17",
+"trial": 6,
+"frame": 58,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0058.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 185,
+"session": "s17",
+"trial": 6,
+"frame": 87,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0087.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 186,
+"session": "s17",
+"trial": 6,
+"frame": 116,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0116.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 187,
+"session": "s17",
+"trial": 6,
+"frame": 144,
+"t": 5.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0144.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 188,
+"session": "s17",
+"trial": 6,
+"frame": 168,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0168.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 189,
+"session": "s17",
+"trial": 6,
+"frame": 195,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0195.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 190,
+"session": "s17",
+"trial": 6,
+"frame": 223,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0223.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 191,
+"session": "s17",
+"trial": 6,
+"frame": 252,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0252.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 192,
+"session": "s17",
+"trial": 6,
+"frame": 282,
+"t": 10.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0282.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 193,
+"session": "s17",
+"trial": 6,
+"frame": 310,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0310.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 194,
+"session": "s17",
+"trial": 6,
+"frame": 338,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0338.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 195,
+"session": "s17",
+"trial": 6,
+"frame": 368,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0368.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 196,
+"session": "s17",
+"trial": 6,
+"frame": 395,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0395.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 197,
+"session": "s17",
+"trial": 6,
+"frame": 425,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0425.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 198,
+"session": "s17",
+"trial": 6,
+"frame": 452,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0452.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 199,
+"session": "s17",
+"trial": 6,
+"frame": 481,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0481.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 200,
+"session": "s17",
+"trial": 6,
+"frame": 511,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0511.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 201,
+"session": "s17",
+"trial": 6,
+"frame": 539,
+"t": 19.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0539.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 202,
+"session": "s17",
+"trial": 6,
+"frame": 567,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0567.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 203,
+"session": "s17",
+"trial": 6,
+"frame": 596,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0596.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 204,
+"session": "s17",
+"trial": 6,
+"frame": 624,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0624.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 205,
+"session": "s17",
+"trial": 6,
+"frame": 652,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0652.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 206,
+"session": "s17",
+"trial": 6,
+"frame": 680,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0680.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 207,
+"session": "s17",
+"trial": 6,
+"frame": 709,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0709.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 208,
+"session": "s17",
+"trial": 6,
+"frame": 739,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0739.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 209,
+"session": "s17",
+"trial": 6,
+"frame": 767,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0767.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 210,
+"session": "s17",
+"trial": 6,
+"frame": 797,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0797.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 211,
+"session": "s17",
+"trial": 6,
+"frame": 826,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0826.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 212,
+"session": "s17",
+"trial": 6,
+"frame": 855,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0855.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 213,
+"session": "s17",
+"trial": 6,
+"frame": 885,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_06_0885.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 214,
+"session": "s17",
+"trial": 7,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0000.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 215,
+"session": "s17",
+"trial": 7,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0028.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 216,
+"session": "s17",
+"trial": 7,
+"frame": 55,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0055.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 217,
+"session": "s17",
+"trial": 7,
+"frame": 83,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0083.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 218,
+"session": "s17",
+"trial": 7,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0113.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 219,
+"session": "s17",
+"trial": 7,
+"frame": 143,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0143.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 220,
+"session": "s17",
+"trial": 7,
+"frame": 171,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0171.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 221,
+"session": "s17",
+"trial": 7,
+"frame": 200,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0200.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 222,
+"session": "s17",
+"trial": 7,
+"frame": 229,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0229.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 223,
+"session": "s17",
+"trial": 7,
+"frame": 257,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0257.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 224,
+"session": "s17",
+"trial": 7,
+"frame": 286,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0286.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 225,
+"session": "s17",
+"trial": 7,
+"frame": 316,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0316.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 226,
+"session": "s17",
+"trial": 7,
+"frame": 345,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0345.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 227,
+"session": "s17",
+"trial": 7,
+"frame": 373,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0373.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 228,
+"session": "s17",
+"trial": 7,
+"frame": 400,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0400.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 229,
+"session": "s17",
+"trial": 7,
+"frame": 429,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0429.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 230,
+"session": "s17",
+"trial": 7,
+"frame": 457,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0457.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 231,
+"session": "s17",
+"trial": 7,
+"frame": 485,
+"t": 17.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0485.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 232,
+"session": "s17",
+"trial": 7,
+"frame": 514,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0514.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 233,
+"session": "s17",
+"trial": 7,
+"frame": 542,
+"t": 19.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0542.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 234,
+"session": "s17",
+"trial": 7,
+"frame": 570,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0570.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 235,
+"session": "s17",
+"trial": 7,
+"frame": 598,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0598.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 236,
+"session": "s17",
+"trial": 7,
+"frame": 626,
+"t": 22.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0626.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 237,
+"session": "s17",
+"trial": 7,
+"frame": 651,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0651.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 238,
+"session": "s17",
+"trial": 7,
+"frame": 678,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0678.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 239,
+"session": "s17",
+"trial": 7,
+"frame": 706,
+"t": 25.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0706.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 240,
+"session": "s17",
+"trial": 7,
+"frame": 734,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0734.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 241,
+"session": "s17",
+"trial": 7,
+"frame": 763,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0763.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 242,
+"session": "s17",
+"trial": 7,
+"frame": 792,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0792.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 243,
+"session": "s17",
+"trial": 7,
+"frame": 821,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0821.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 244,
+"session": "s17",
+"trial": 7,
+"frame": 851,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0851.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 245,
+"session": "s17",
+"trial": 7,
+"frame": 881,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_07_0881.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 246,
+"session": "s17",
+"trial": 8,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 247,
+"session": "s17",
+"trial": 8,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0028.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 248,
+"session": "s17",
+"trial": 8,
+"frame": 53,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0053.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 249,
+"session": "s17",
+"trial": 8,
+"frame": 83,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0083.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 250,
+"session": "s17",
+"trial": 8,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0113.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 251,
+"session": "s17",
+"trial": 8,
+"frame": 141,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0141.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 252,
+"session": "s17",
+"trial": 8,
+"frame": 171,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0171.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 253,
+"session": "s17",
+"trial": 8,
+"frame": 200,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0200.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 254,
+"session": "s17",
+"trial": 8,
+"frame": 230,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0230.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 255,
+"session": "s17",
+"trial": 8,
+"frame": 259,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0259.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 256,
+"session": "s17",
+"trial": 8,
+"frame": 287,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0287.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 257,
+"session": "s17",
+"trial": 8,
+"frame": 317,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0317.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 258,
+"session": "s17",
+"trial": 8,
+"frame": 346,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0346.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 259,
+"session": "s17",
+"trial": 8,
+"frame": 374,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0374.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 260,
+"session": "s17",
+"trial": 8,
+"frame": 400,
+"t": 14.06,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0400.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 261,
+"session": "s17",
+"trial": 8,
+"frame": 428,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0428.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 262,
+"session": "s17",
+"trial": 8,
+"frame": 457,
+"t": 16.07,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0457.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 263,
+"session": "s17",
+"trial": 8,
+"frame": 483,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0483.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 264,
+"session": "s17",
+"trial": 8,
+"frame": 512,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0512.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 265,
+"session": "s17",
+"trial": 8,
+"frame": 539,
+"t": 19.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0539.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 266,
+"session": "s17",
+"trial": 8,
+"frame": 568,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0568.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 267,
+"session": "s17",
+"trial": 8,
+"frame": 597,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0597.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 268,
+"session": "s17",
+"trial": 8,
+"frame": 622,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0622.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 269,
+"session": "s17",
+"trial": 8,
+"frame": 649,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0649.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 270,
+"session": "s17",
+"trial": 8,
+"frame": 677,
+"t": 24.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0677.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 271,
+"session": "s17",
+"trial": 8,
+"frame": 705,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0705.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 272,
+"session": "s17",
+"trial": 8,
+"frame": 734,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0734.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 273,
+"session": "s17",
+"trial": 8,
+"frame": 764,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0764.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 274,
+"session": "s17",
+"trial": 8,
+"frame": 792,
+"t": 28.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0792.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 275,
+"session": "s17",
+"trial": 8,
+"frame": 820,
+"t": 29.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0820.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 276,
+"session": "s17",
+"trial": 8,
+"frame": 849,
+"t": 30.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0849.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 277,
+"session": "s17",
+"trial": 8,
+"frame": 879,
+"t": 31.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_08_0879.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 278,
+"session": "s17",
+"trial": 9,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 279,
+"session": "s17",
+"trial": 9,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0029.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 280,
+"session": "s17",
+"trial": 9,
+"frame": 59,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0059.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 281,
+"session": "s17",
+"trial": 9,
+"frame": 88,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0088.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 282,
+"session": "s17",
+"trial": 9,
+"frame": 117,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0117.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 283,
+"session": "s17",
+"trial": 9,
+"frame": 146,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0146.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 284,
+"session": "s17",
+"trial": 9,
+"frame": 173,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0173.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 285,
+"session": "s17",
+"trial": 9,
+"frame": 201,
+"t": 7.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0201.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 286,
+"session": "s17",
+"trial": 9,
+"frame": 229,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0229.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 287,
+"session": "s17",
+"trial": 9,
+"frame": 259,
+"t": 9.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0259.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 288,
+"session": "s17",
+"trial": 9,
+"frame": 288,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0288.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 289,
+"session": "s17",
+"trial": 9,
+"frame": 317,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0317.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 290,
+"session": "s17",
+"trial": 9,
+"frame": 347,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0347.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 291,
+"session": "s17",
+"trial": 9,
+"frame": 377,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0377.jpg",
+"label": "P",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 292,
+"session": "s17",
+"trial": 9,
+"frame": 406,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0406.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 293,
+"session": "s17",
+"trial": 9,
+"frame": 436,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0436.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 294,
+"session": "s17",
+"trial": 9,
+"frame": 465,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0465.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 295,
+"session": "s17",
+"trial": 9,
+"frame": 494,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0494.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 296,
+"session": "s17",
+"trial": 9,
+"frame": 523,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0523.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 297,
+"session": "s17",
+"trial": 9,
+"frame": 553,
+"t": 19.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0553.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 298,
+"session": "s17",
+"trial": 9,
+"frame": 583,
+"t": 20.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0583.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 299,
+"session": "s17",
+"trial": 9,
+"frame": 613,
+"t": 21.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0613.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 300,
+"session": "s17",
+"trial": 9,
+"frame": 643,
+"t": 22.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0643.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 301,
+"session": "s17",
+"trial": 9,
+"frame": 673,
+"t": 23.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0673.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 302,
+"session": "s17",
+"trial": 9,
+"frame": 700,
+"t": 24.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0700.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 303,
+"session": "s17",
+"trial": 9,
+"frame": 729,
+"t": 25.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0729.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 304,
+"session": "s17",
+"trial": 9,
+"frame": 757,
+"t": 26.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0757.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 305,
+"session": "s17",
+"trial": 9,
+"frame": 787,
+"t": 27.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s17_09_0787.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 306,
+"session": "s18",
+"trial": 0,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 307,
+"session": "s18",
+"trial": 0,
+"frame": 30,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0030.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 308,
+"session": "s18",
+"trial": 0,
+"frame": 59,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0059.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 309,
+"session": "s18",
+"trial": 0,
+"frame": 87,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0087.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 310,
+"session": "s18",
+"trial": 0,
+"frame": 115,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0115.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 311,
+"session": "s18",
+"trial": 0,
+"frame": 144,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0144.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 312,
+"session": "s18",
+"trial": 0,
+"frame": 173,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0173.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 313,
+"session": "s18",
+"trial": 0,
+"frame": 201,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0201.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 314,
+"session": "s18",
+"trial": 0,
+"frame": 228,
+"t": 8.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0228.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 315,
+"session": "s18",
+"trial": 0,
+"frame": 256,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0256.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 316,
+"session": "s18",
+"trial": 0,
+"frame": 285,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0285.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 317,
+"session": "s18",
+"trial": 0,
+"frame": 313,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_00_0313.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 318,
+"session": "s18",
+"trial": 1,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 319,
+"session": "s18",
+"trial": 1,
+"frame": 26,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0026.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 320,
+"session": "s18",
+"trial": 1,
+"frame": 54,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0054.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 321,
+"session": "s18",
+"trial": 1,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0084.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 322,
+"session": "s18",
+"trial": 1,
+"frame": 112,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0112.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 323,
+"session": "s18",
+"trial": 1,
+"frame": 140,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0140.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 324,
+"session": "s18",
+"trial": 1,
+"frame": 169,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0169.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 325,
+"session": "s18",
+"trial": 1,
+"frame": 196,
+"t": 7.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0196.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 326,
+"session": "s18",
+"trial": 1,
+"frame": 224,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0224.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 327,
+"session": "s18",
+"trial": 1,
+"frame": 254,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0254.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 328,
+"session": "s18",
+"trial": 1,
+"frame": 282,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0282.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 329,
+"session": "s18",
+"trial": 1,
+"frame": 311,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0311.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 330,
+"session": "s18",
+"trial": 1,
+"frame": 340,
+"t": 12.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_01_0340.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 331,
+"session": "s18",
+"trial": 2,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 332,
+"session": "s18",
+"trial": 2,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 333,
+"session": "s18",
+"trial": 2,
+"frame": 55,
+"t": 2.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0055.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 334,
+"session": "s18",
+"trial": 2,
+"frame": 83,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0083.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 335,
+"session": "s18",
+"trial": 2,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0113.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 336,
+"session": "s18",
+"trial": 2,
+"frame": 142,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0142.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 337,
+"session": "s18",
+"trial": 2,
+"frame": 171,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0171.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 338,
+"session": "s18",
+"trial": 2,
+"frame": 199,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0199.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 339,
+"session": "s18",
+"trial": 2,
+"frame": 227,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0227.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 340,
+"session": "s18",
+"trial": 2,
+"frame": 252,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0252.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 341,
+"session": "s18",
+"trial": 2,
+"frame": 278,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_02_0278.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 342,
+"session": "s18",
+"trial": 3,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 343,
+"session": "s18",
+"trial": 3,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0029.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 344,
+"session": "s18",
+"trial": 3,
+"frame": 58,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0058.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 345,
+"session": "s18",
+"trial": 3,
+"frame": 87,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0087.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 346,
+"session": "s18",
+"trial": 3,
+"frame": 117,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0117.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 347,
+"session": "s18",
+"trial": 3,
+"frame": 146,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0146.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 348,
+"session": "s18",
+"trial": 3,
+"frame": 175,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0175.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 349,
+"session": "s18",
+"trial": 3,
+"frame": 204,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0204.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 350,
+"session": "s18",
+"trial": 3,
+"frame": 229,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0229.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 351,
+"session": "s18",
+"trial": 3,
+"frame": 256,
+"t": 9.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0256.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 352,
+"session": "s18",
+"trial": 3,
+"frame": 284,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0284.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 353,
+"session": "s18",
+"trial": 3,
+"frame": 308,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_03_0308.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 354,
+"session": "s18",
+"trial": 4,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 355,
+"session": "s18",
+"trial": 4,
+"frame": 26,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0026.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 356,
+"session": "s18",
+"trial": 4,
+"frame": 52,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0052.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 357,
+"session": "s18",
+"trial": 4,
+"frame": 82,
+"t": 3.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0082.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 358,
+"session": "s18",
+"trial": 4,
+"frame": 111,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0111.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 359,
+"session": "s18",
+"trial": 4,
+"frame": 136,
+"t": 5.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0136.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 360,
+"session": "s18",
+"trial": 4,
+"frame": 164,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0164.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 361,
+"session": "s18",
+"trial": 4,
+"frame": 192,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0192.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": false,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 362,
+"session": "s18",
+"trial": 4,
+"frame": 221,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0221.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 363,
+"session": "s18",
+"trial": 4,
+"frame": 250,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0250.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 364,
+"session": "s18",
+"trial": 4,
+"frame": 278,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0278.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 365,
+"session": "s18",
+"trial": 4,
+"frame": 307,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_04_0307.jpg",
+"label": "E",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 366,
+"session": "s18",
+"trial": 5,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 367,
+"session": "s18",
+"trial": 5,
+"frame": 25,
+"t": 1.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0025.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 368,
+"session": "s18",
+"trial": 5,
+"frame": 51,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0051.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 369,
+"session": "s18",
+"trial": 5,
+"frame": 78,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0078.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 370,
+"session": "s18",
+"trial": 5,
+"frame": 108,
+"t": 4.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0108.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 371,
+"session": "s18",
+"trial": 5,
+"frame": 135,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0135.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 372,
+"session": "s18",
+"trial": 5,
+"frame": 160,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0160.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 373,
+"session": "s18",
+"trial": 5,
+"frame": 188,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0188.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 374,
+"session": "s18",
+"trial": 5,
+"frame": 217,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0217.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 375,
+"session": "s18",
+"trial": 5,
+"frame": 241,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_05_0241.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 376,
+"session": "s18",
+"trial": 6,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 377,
+"session": "s18",
+"trial": 6,
+"frame": 30,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0030.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 378,
+"session": "s18",
+"trial": 6,
+"frame": 58,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0058.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 379,
+"session": "s18",
+"trial": 6,
+"frame": 86,
+"t": 3.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0086.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 380,
+"session": "s18",
+"trial": 6,
+"frame": 114,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0114.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 381,
+"session": "s18",
+"trial": 6,
+"frame": 143,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0143.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 382,
+"session": "s18",
+"trial": 6,
+"frame": 173,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0173.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 383,
+"session": "s18",
+"trial": 6,
+"frame": 200,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0200.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 384,
+"session": "s18",
+"trial": 6,
+"frame": 229,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0229.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 385,
+"session": "s18",
+"trial": 6,
+"frame": 259,
+"t": 9.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0259.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 386,
+"session": "s18",
+"trial": 6,
+"frame": 287,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0287.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 387,
+"session": "s18",
+"trial": 6,
+"frame": 312,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_06_0312.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 388,
+"session": "s18",
+"trial": 7,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 389,
+"session": "s18",
+"trial": 7,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0028.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 390,
+"session": "s18",
+"trial": 7,
+"frame": 56,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0056.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 391,
+"session": "s18",
+"trial": 7,
+"frame": 81,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0081.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 392,
+"session": "s18",
+"trial": 7,
+"frame": 108,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0108.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 393,
+"session": "s18",
+"trial": 7,
+"frame": 136,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0136.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 394,
+"session": "s18",
+"trial": 7,
+"frame": 162,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0162.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 395,
+"session": "s18",
+"trial": 7,
+"frame": 189,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0189.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 396,
+"session": "s18",
+"trial": 7,
+"frame": 216,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0216.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 397,
+"session": "s18",
+"trial": 7,
+"frame": 243,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0243.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 398,
+"session": "s18",
+"trial": 7,
+"frame": 270,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0270.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 399,
+"session": "s18",
+"trial": 7,
+"frame": 295,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_07_0295.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 400,
+"session": "s18",
+"trial": 8,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 401,
+"session": "s18",
+"trial": 8,
+"frame": 25,
+"t": 1.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0025.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 402,
+"session": "s18",
+"trial": 8,
+"frame": 50,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0050.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 403,
+"session": "s18",
+"trial": 8,
+"frame": 78,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0078.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 404,
+"session": "s18",
+"trial": 8,
+"frame": 106,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0106.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 405,
+"session": "s18",
+"trial": 8,
+"frame": 133,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0133.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 406,
+"session": "s18",
+"trial": 8,
+"frame": 162,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0162.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 407,
+"session": "s18",
+"trial": 8,
+"frame": 190,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0190.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 408,
+"session": "s18",
+"trial": 8,
+"frame": 220,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0220.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 409,
+"session": "s18",
+"trial": 8,
+"frame": 249,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0249.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 410,
+"session": "s18",
+"trial": 8,
+"frame": 278,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_08_0278.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 411,
+"session": "s18",
+"trial": 9,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 412,
+"session": "s18",
+"trial": 9,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 413,
+"session": "s18",
+"trial": 9,
+"frame": 55,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0055.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 414,
+"session": "s18",
+"trial": 9,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0084.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 415,
+"session": "s18",
+"trial": 9,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0113.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 416,
+"session": "s18",
+"trial": 9,
+"frame": 143,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0143.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 417,
+"session": "s18",
+"trial": 9,
+"frame": 172,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0172.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 418,
+"session": "s18",
+"trial": 9,
+"frame": 199,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0199.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 419,
+"session": "s18",
+"trial": 9,
+"frame": 229,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0229.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 420,
+"session": "s18",
+"trial": 9,
+"frame": 258,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0258.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 421,
+"session": "s18",
+"trial": 9,
+"frame": 287,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0287.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 422,
+"session": "s18",
+"trial": 9,
+"frame": 313,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s18_09_0313.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 423,
+"session": "s19",
+"trial": 0,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 424,
+"session": "s19",
+"trial": 0,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0029.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 425,
+"session": "s19",
+"trial": 0,
+"frame": 55,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0055.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 426,
+"session": "s19",
+"trial": 0,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0084.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 427,
+"session": "s19",
+"trial": 0,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0113.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 428,
+"session": "s19",
+"trial": 0,
+"frame": 143,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0143.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 429,
+"session": "s19",
+"trial": 0,
+"frame": 172,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0172.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 430,
+"session": "s19",
+"trial": 0,
+"frame": 201,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0201.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 431,
+"session": "s19",
+"trial": 0,
+"frame": 228,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0228.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 432,
+"session": "s19",
+"trial": 0,
+"frame": 256,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0256.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 433,
+"session": "s19",
+"trial": 0,
+"frame": 285,
+"t": 10.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0285.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 434,
+"session": "s19",
+"trial": 0,
+"frame": 310,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0310.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 435,
+"session": "s19",
+"trial": 0,
+"frame": 336,
+"t": 12.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0336.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 436,
+"session": "s19",
+"trial": 0,
+"frame": 365,
+"t": 13.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0365.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 437,
+"session": "s19",
+"trial": 0,
+"frame": 395,
+"t": 14.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0395.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 438,
+"session": "s19",
+"trial": 0,
+"frame": 423,
+"t": 15.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0423.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 439,
+"session": "s19",
+"trial": 0,
+"frame": 452,
+"t": 16.03,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0452.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 440,
+"session": "s19",
+"trial": 0,
+"frame": 481,
+"t": 17.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0481.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 441,
+"session": "s19",
+"trial": 0,
+"frame": 511,
+"t": 18.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_00_0511.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 442,
+"session": "s19",
+"trial": 1,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 443,
+"session": "s19",
+"trial": 1,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0029.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 444,
+"session": "s19",
+"trial": 1,
+"frame": 58,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0058.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 445,
+"session": "s19",
+"trial": 1,
+"frame": 88,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0088.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 446,
+"session": "s19",
+"trial": 1,
+"frame": 115,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0115.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 447,
+"session": "s19",
+"trial": 1,
+"frame": 145,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0145.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 448,
+"session": "s19",
+"trial": 1,
+"frame": 172,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0172.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 449,
+"session": "s19",
+"trial": 1,
+"frame": 200,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0200.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 450,
+"session": "s19",
+"trial": 1,
+"frame": 226,
+"t": 8.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0226.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 451,
+"session": "s19",
+"trial": 1,
+"frame": 250,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_01_0250.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 452,
+"session": "s19",
+"trial": 2,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 453,
+"session": "s19",
+"trial": 2,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 454,
+"session": "s19",
+"trial": 2,
+"frame": 55,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0055.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 455,
+"session": "s19",
+"trial": 2,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0084.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 456,
+"session": "s19",
+"trial": 2,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0113.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 457,
+"session": "s19",
+"trial": 2,
+"frame": 141,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0141.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 458,
+"session": "s19",
+"trial": 2,
+"frame": 168,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0168.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 459,
+"session": "s19",
+"trial": 2,
+"frame": 198,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0198.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 460,
+"session": "s19",
+"trial": 2,
+"frame": 227,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0227.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 461,
+"session": "s19",
+"trial": 2,
+"frame": 251,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_02_0251.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 462,
+"session": "s19",
+"trial": 3,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 463,
+"session": "s19",
+"trial": 3,
+"frame": 28,
+"t": 1.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0028.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 464,
+"session": "s19",
+"trial": 3,
+"frame": 53,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0053.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 465,
+"session": "s19",
+"trial": 3,
+"frame": 81,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0081.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 466,
+"session": "s19",
+"trial": 3,
+"frame": 109,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0109.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 467,
+"session": "s19",
+"trial": 3,
+"frame": 136,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0136.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 468,
+"session": "s19",
+"trial": 3,
+"frame": 163,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0163.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 469,
+"session": "s19",
+"trial": 3,
+"frame": 187,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0187.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 470,
+"session": "s19",
+"trial": 3,
+"frame": 215,
+"t": 8.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0215.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 471,
+"session": "s19",
+"trial": 3,
+"frame": 242,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0242.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 472,
+"session": "s19",
+"trial": 3,
+"frame": 270,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_03_0270.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": false,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 473,
+"session": "s19",
+"trial": 4,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 474,
+"session": "s19",
+"trial": 4,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 475,
+"session": "s19",
+"trial": 4,
+"frame": 56,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0056.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 476,
+"session": "s19",
+"trial": 4,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0084.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 477,
+"session": "s19",
+"trial": 4,
+"frame": 114,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0114.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 478,
+"session": "s19",
+"trial": 4,
+"frame": 141,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0141.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 479,
+"session": "s19",
+"trial": 4,
+"frame": 170,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0170.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 480,
+"session": "s19",
+"trial": 4,
+"frame": 199,
+"t": 7.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_04_0199.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 481,
+"session": "s19",
+"trial": 5,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 482,
+"session": "s19",
+"trial": 5,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0028.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 483,
+"session": "s19",
+"trial": 5,
+"frame": 54,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0054.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 484,
+"session": "s19",
+"trial": 5,
+"frame": 81,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0081.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 485,
+"session": "s19",
+"trial": 5,
+"frame": 110,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0110.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 486,
+"session": "s19",
+"trial": 5,
+"frame": 136,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0136.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 487,
+"session": "s19",
+"trial": 5,
+"frame": 166,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0166.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 488,
+"session": "s19",
+"trial": 5,
+"frame": 192,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0192.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 489,
+"session": "s19",
+"trial": 5,
+"frame": 221,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0221.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 490,
+"session": "s19",
+"trial": 5,
+"frame": 250,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0250.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 491,
+"session": "s19",
+"trial": 5,
+"frame": 278,
+"t": 10.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_05_0278.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 492,
+"session": "s19",
+"trial": 6,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 493,
+"session": "s19",
+"trial": 6,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0029.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 494,
+"session": "s19",
+"trial": 6,
+"frame": 59,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0059.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 495,
+"session": "s19",
+"trial": 6,
+"frame": 88,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0088.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 496,
+"session": "s19",
+"trial": 6,
+"frame": 118,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0118.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 497,
+"session": "s19",
+"trial": 6,
+"frame": 148,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0148.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 498,
+"session": "s19",
+"trial": 6,
+"frame": 177,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0177.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 499,
+"session": "s19",
+"trial": 6,
+"frame": 206,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0206.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 500,
+"session": "s19",
+"trial": 6,
+"frame": 235,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_06_0235.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 501,
+"session": "s19",
+"trial": 7,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 502,
+"session": "s19",
+"trial": 7,
+"frame": 28,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0028.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 503,
+"session": "s19",
+"trial": 7,
+"frame": 57,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0057.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 504,
+"session": "s19",
+"trial": 7,
+"frame": 85,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0085.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 505,
+"session": "s19",
+"trial": 7,
+"frame": 115,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0115.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 506,
+"session": "s19",
+"trial": 7,
+"frame": 143,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0143.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 507,
+"session": "s19",
+"trial": 7,
+"frame": 171,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0171.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 508,
+"session": "s19",
+"trial": 7,
+"frame": 201,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0201.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 509,
+"session": "s19",
+"trial": 7,
+"frame": 231,
+"t": 8.05,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_07_0231.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 510,
+"session": "s19",
+"trial": 8,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 511,
+"session": "s19",
+"trial": 8,
+"frame": 26,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0026.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 512,
+"session": "s19",
+"trial": 8,
+"frame": 54,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0054.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 513,
+"session": "s19",
+"trial": 8,
+"frame": 84,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0084.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 514,
+"session": "s19",
+"trial": 8,
+"frame": 113,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0113.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 515,
+"session": "s19",
+"trial": 8,
+"frame": 142,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0142.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 516,
+"session": "s19",
+"trial": 8,
+"frame": 171,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0171.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 517,
+"session": "s19",
+"trial": 8,
+"frame": 200,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_08_0200.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 518,
+"session": "s19",
+"trial": 9,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 519,
+"session": "s19",
+"trial": 9,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 520,
+"session": "s19",
+"trial": 9,
+"frame": 56,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0056.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 521,
+"session": "s19",
+"trial": 9,
+"frame": 85,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0085.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 522,
+"session": "s19",
+"trial": 9,
+"frame": 115,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0115.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 523,
+"session": "s19",
+"trial": 9,
+"frame": 140,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0140.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 524,
+"session": "s19",
+"trial": 9,
+"frame": 166,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0166.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 525,
+"session": "s19",
+"trial": 9,
+"frame": 193,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0193.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 526,
+"session": "s19",
+"trial": 9,
+"frame": 223,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s19_09_0223.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 527,
+"session": "s20",
+"trial": 0,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 528,
+"session": "s20",
+"trial": 0,
+"frame": 29,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0029.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 529,
+"session": "s20",
+"trial": 0,
+"frame": 56,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0056.jpg",
+"label": "U",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 530,
+"session": "s20",
+"trial": 0,
+"frame": 85,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0085.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 531,
+"session": "s20",
+"trial": 0,
+"frame": 111,
+"t": 4.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0111.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 532,
+"session": "s20",
+"trial": 0,
+"frame": 140,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0140.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 533,
+"session": "s20",
+"trial": 0,
+"frame": 169,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0169.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 534,
+"session": "s20",
+"trial": 0,
+"frame": 196,
+"t": 7.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0196.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 535,
+"session": "s20",
+"trial": 0,
+"frame": 223,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0223.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 536,
+"session": "s20",
+"trial": 0,
+"frame": 253,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0253.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 537,
+"session": "s20",
+"trial": 0,
+"frame": 283,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0283.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 538,
+"session": "s20",
+"trial": 0,
+"frame": 313,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_00_0313.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 539,
+"session": "s20",
+"trial": 1,
+"frame": 0,
+"t": 0.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0000.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 540,
+"session": "s20",
+"trial": 1,
+"frame": 27,
+"t": 1.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0027.jpg",
+"label": "C",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": false
+}
+},
+{
+"id": 541,
+"session": "s20",
+"trial": 1,
+"frame": 53,
+"t": 2.0,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0053.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 542,
+"session": "s20",
+"trial": 1,
+"frame": 79,
+"t": 3.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0079.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 543,
+"session": "s20",
+"trial": 1,
+"frame": 105,
+"t": 4.04,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0105.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 544,
+"session": "s20",
+"trial": 1,
+"frame": 130,
+"t": 5.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0130.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 545,
+"session": "s20",
+"trial": 1,
+"frame": 157,
+"t": 6.01,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0157.jpg",
+"label": "G",
+"pred": {
+"bottle_upright_on_case": true,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 546,
+"session": "s20",
+"trial": 1,
+"frame": 185,
+"t": 7.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0185.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 547,
+"session": "s20",
+"trial": 1,
+"frame": 211,
+"t": 8.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0211.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 548,
+"session": "s20",
+"trial": 1,
+"frame": 238,
+"t": 9.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0238.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": false,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 549,
+"session": "s20",
+"trial": 1,
+"frame": 268,
+"t": 10.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0268.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+},
+{
+"id": 550,
+"session": "s20",
+"trial": 1,
+"frame": 294,
+"t": 11.02,
+"path": "/home/jihun/.claude/jobs/eec392e6/tmp/lrset/img/s20_01_0294.jpg",
+"label": "H",
+"pred": {
+"bottle_upright_on_case": false,
+"hand_at_bottle": true,
+"object_on_case": true,
+"bottle_on_robot_hand": true
+}
+}
+]
