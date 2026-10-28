@@ -49,8 +49,12 @@ def pending_trials(session_dir) -> list[int]:
 
 
 def next_trial(session_dir) -> int:
+    """One past the highest trial number used in the session: either trial file, or a verdict line. The native
+    harness writes the log before the frames, so a write cut between them leaves trial_NNN.npz alone; that number
+    is used (the harness refuses it), though only complete trials (_recorded) are scored and counted."""
     scored = _scored(session_dir, "results.jsonl") + _scored(session_dir, "redo.jsonl")
-    return max(max(_recorded(session_dir), default=-1) + 1, max(scored, default=-1) + 1)
+    used = _trials(session_dir, "trial_*.npz")  # trial_NNN.npz and trial_NNN_frames.npz
+    return max(max(used, default=-1) + 1, max(scored, default=-1) + 1)
 
 
 def remaining_trials(session_dir, n_trials) -> int:

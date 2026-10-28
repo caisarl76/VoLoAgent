@@ -183,3 +183,11 @@ def test_c_drops_verdicts_typed_ahead(tmp_path, capsys):  # review: a stray s mu
     make_trial(tmp_path, 0)
     run_console(tmp_path, iter([]), poll_s=0)
     assert not (tmp_path / "results.jsonl").exists()
+
+
+def test_next_trial_skips_a_log_only_trial(tmp_path):  # a write cut between the log and the frames file
+    make_trial(tmp_path, 0)
+    np.savez(tmp_path / "trial_001.npz", wall=np.zeros(2), episode_end="handover")  # no trial_001_frames.npz
+    assert next_trial(tmp_path) == 2  # the native harness refuses 1: it is already recorded
+    assert pending_trials(tmp_path) == [0]  # only complete trials are scored
+    assert remaining_trials(tmp_path, 3) == 2  # and counted
