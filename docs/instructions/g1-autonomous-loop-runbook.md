@@ -9,7 +9,7 @@ The operator stays at the robot for every session until the user approves unatte
 |---|---|---|
 | Workstation 192.168.0.62, GPU 1 | s08 policy server, port 5571 | `groot_handover261015_he_full`. It is long-running and shared, so leave it as it is. |
 | Workstation, GPU 0 (T0) | Qwen3-VL-4B server, port 8301 (tmux `vlm`) | `scripts/g1_local_vlm_server.py --model <Qwen3-VL-4B-Instruct snapshot> --served-name qwen3-vl-4b --host 0.0.0.0 --min-free-gb 9`. It uses ~8.8 GB. The 4B weights are in the snap HF cache (`~/snap/alacritty/common/.cache/huggingface/hub`). |
-| PC2 (`pc2_222`) | deploy (T1), native harness (T2), loop runner (T3), verdict console (T4), telemetry recorder | The runner must run on PC2, because frame ages are compared on one clock. |
+| PC2 (`pc2_222`) | camera server (port 5555), deploy (T1), native harness (T2), loop runner (T3), verdict console (T4), telemetry recorder | The runner must run on PC2, because frame ages are compared on one clock. |
 
 The deploy binary is the 2026-10-27 build (`~/GR00T-WholeBodyControl-deploy-20261027`, native `e182107`), which adds `motor_torque` to the deploy's telemetry for the take detector. The 10-22 build (`~/GR00T-WholeBodyControl-harness-20261022`, native `cba799d`) lacks it, and with it every hold waits for Enter. The loop's Python code runs from `~/GR00T-WholeBodyControl-loop-<date>`, which holds `gear_sonic`, `vlm_orchestrator`, `session-profile.yaml` and `*_SOURCE_COMMIT`. It uses the 10-22 venv, and `PYTHONPATH` selects the new code.
 
@@ -44,21 +44,25 @@ The deploy binary is the 2026-10-27 build (`~/GR00T-WholeBodyControl-deploy-2026
    From `~/GR00T-WholeBodyControl-deploy-20261027/gear_sonic_deploy`:
    `just run g1_deploy_onnx_ref enP8p1s0 policy/sonic_v1_1/model_decoder.onnx reference/example/ --obs-config policy/sonic_v1_1/observation_config.yaml --encoder-file policy/sonic_v1_1/model_encoder.onnx --planner-file planner/target_vel/V2/planner_sonic.onnx --input-type zmq_manager --output-type all --zmq-host localhost --harness-planner-hold`
    - The models are in `policy/sonic_v1_1/`. This folder has no `policy/release/` models, so the upstream example command aborts with "Cannot find ONNX mode at path: policy/release/model_decoder.onnx".
-3. Start the native harness (T2). Then send **`k` once**. The harness does not read keys from its own terminal: it subscribes to ZMQ port 5580, so send the key from a PC2 shell:
-   `~/GR00T-WholeBodyControl-harness-20261022/venv/bin/python -c "import zmq,time; s=zmq.Context().socket(zmq.PUB); s.bind('tcp://127.0.0.1:5580'); time.sleep(1); s.send_string('k'); time.sleep(0.5)"`
+3. Start the camera server on port 5555, before T2. It needs the camera venv, because the harness venv has no `pyrealsense2`:
+   `cd ~/GR00T-WholeBodyControl && .venv_camera/bin/python -u -m gear_sonic.camera.composed_camera --ego-view-camera realsense --realsense-enable-depth --port 5555`
+   - Without it the harness gets no observations: `status` shows `observation_age_s: null` and `policy_ready: false`, and `loop` faults with "Policy prewarm unavailable".
+4. Start the native harness (T2). Then send **`k` once**. The harness does not read keys from its own terminal: it subscribes to ZMQ port 5580, so send the key from a PC2 shell:
+   `~/GR00T-WholeBodyControl-harness-20261022/venv/bin/python -c "import zmq,sys,time; s=zmq.Context().socket(zmq.XPUB); s.bind('tcp://127.0.0.1:5580'); s.poll(120000) or sys.exit('no key subscriber in 120 s: is T2 running?'); s.recv(); s.send_string('k'); time.sleep(0.5)"`
+   - The sender waits until the harness subscribes, which happens late in its startup. A plain PUB sender with a fixed sleep can send before then; the key is dropped and T1 stays at "Init Done".
    - This starts the deploy's C++ control loop in PLANNER mode, and the robot goes to planner standing.
    - Without it, `loop` stops with "Operator must prepare a running paused executor".
    - Before starting `loop`, wait until `status` shows `controller_running: true` and `policy_ready: true`.
    - `k` is a toggle, so sending it again stops the control loop. Never send `k` again during the session.
    - The same one-shot sender delivers `i` (see Recovery).
-4. Start the telemetry recorder in its own tmux session, one per session name. It refuses to start if another recorder is already writing the same file:
+5. Start the telemetry recorder in its own tmux session, one per session name. It refuses to start if another recorder is already writing the same file:
    `tmux new-session -d -s recorder "cd ~/GR00T-WholeBodyControl-loop-<date> && PYTHONPATH=\$PWD <venv>/bin/python g1_record_telemetry.py telemetry-<name>.npz --seconds 1800 2>&1 | tee recorder-<name>.log"`
    To stop and save early, run `kill <pid>`, using the pid printed in the first line of `recorder-<name>.log`. Do not use `pkill`/`pgrep -f`: the pattern can match your own shell.
-5. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-4b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
+6. Start the loop runner (T3): `python -m vlm_orchestrator.harness.g1.cli --profile session-profile.yaml --endpoint ipc:///tmp/volo-g1-harness.sock loop --session-dir sessions/<name> --trials N --vlm-base-url http://192.168.0.62:8301/v1 --vlm-model qwen3-vl-4b`. `--profile` is required: without it the runner stops with "Handover loop profile required".
    - A finished session (no trials left for `--trials`, counting redo verdicts) is refused before the claim: `session <dir> has no trials left (N recorded); use a new --session-dir`. Use a new directory, or a larger `--trials` to extend the session on purpose. A crashed session that is still frozen (LOOP_FROZEN) is reclaimed regardless, so a frozen lowering can finish.
-6. Start the verdict console (T4): `python -m vlm_orchestrator.harness.g1.cli verdict --session-dir sessions/<name>`. A verdict typed while no trial is shown is held for the next trial; `c` drops the held ones.
-7. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
-8. Bring the case in only after the raise has reached the ready pose.
+7. Start the verdict console (T4): `python -m vlm_orchestrator.harness.g1.cli verdict --session-dir sessions/<name>`. A verdict typed while no trial is shown is held for the next trial; `c` drops the held ones.
+8. The runner asks for the gates in order: "deploy ready", "robot in position", "start loop", then "raise?".
+9. Bring the case in only after the raise has reached the ready pose.
 
 ## During the session
 
