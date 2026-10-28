@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# G1 handover loop: VLM and policy servers on the workstation. PC2 runs the loop natively (runbook).
+# All weights are baked in at build time (with internet); the running services need only the lab LAN.
+# See README.md in this directory. Settings come from .env next to this file (copy env.example).
+# A build-only setting has a default that names it: a missing one fails at its build context, not at `up` on a
+# host that only runs the loaded image.
+name: volo-g1-loop
+
+x-workstation-gpu: &gpu
+  driver: nvidia
+  capabilities: [gpu]
+
+services:
+  # Build (online): docker compose --profile build build
+  # It tags :dev, never the frozen tag that policy and vlm run (README "Frozen set"); nothing runs this service.
+  workstation-image:
+    profiles: [build]
+    build:
+      context: .
+      dockerfile: workstation.Dockerfile
+      args: {VLM_REVISION: "${VLM_REVISION:-set-VLM_REVISION-in-.env}"}
+      additional_contexts:
+        lerobot: "${LEROBOT_DIR:-/set-LEROBOT_DIR-in-.env}"
+        volo_scripts: ../../scripts
+        policy_ckpt: "${POLICY_CKPT_DIR:-/set-POLICY_CKPT_DIR-in-.env}"
+        hub_gr00t: "${POLICY_HUB_DIR:-/set-POLICY_HUB_DIR-in-.env}/models--nvidia--GR00T-N1.7-3B"
+        hub_cosmos: "${POLICY_HUB_DIR:-/set-POLICY_HUB_DIR-in-.env}/models--nvidia--Cosmos-Reason2-2B"
+        vlm_hub: "${VLM_HUB_REPO:-/set-VLM_HUB_REPO-in-.env}"
+    image: volo-g1-workstation:dev
+
+  # Workstation (192.168.0.62): docker compose --profile workstation up -d
+  # Both servers share one image (one venv on the workstation, all weights baked in).
+  policy:
+    profiles: [workstation]
+    image: volo-g1-workstation:g1-loop-final-20261028  # the tested image; README "Frozen set"
+    ports: ["${POLICY_PORT:-5571}:${POLICY_PORT:-5571}"]
+    command: [sh, -c, 'exec python -u sonic_policy_server.py --policy-path "$$POLICY_PATH" --port ${POLICY_PORT:-5571}
+              --backbone-dtype bfloat16 --noise-scale 0']
+    deploy: {resources: {reservations: {devices: [{<<: *gpu, device_ids: ["${POLICY_GPU:-1}"]}]}}}
+    restart: unless-stopped
+
+  vlm:
+    profiles: [workstation]
+    image: volo-g1-workstation:g1-loop-final-20261028
+    ports: ["${VLM_PORT:-8301}:${VLM_PORT:-8301}"]
+    command: [python, /opt/volo/g1_local_vlm_server.py, --model, /models/qwen3-vl-4b, --host, 0.0.0.0,
+              --port, "${VLM_PORT:-8301}", --device, "cuda:0", --min-free-gb, "${VLM_MIN_FREE_GB:-9}",
+              --served-name, "${VLM_MODEL:-qwen3-vl-4b}"]  # the loop runner's --vlm-model
+    deploy: {resources: {reservations: {devices: [{<<: *gpu, device_ids: ["${VLM_GPU:-0}"]}]}}}
+    restart: unless-stopped
