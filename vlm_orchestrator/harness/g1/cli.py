@@ -78,7 +78,8 @@ def main(argv=None):
     loop.add_argument("--vlm-model", required=True, help="model name served at --vlm-base-url")
     loop.add_argument("--vlm-api-key", help="API key (default: VLM_API_KEY/GENON_API_KEY/OPENAI_API_KEY or 'local')")
     loop.add_argument("--taken-vlm-frames", type=int, default=TAKEN_VLM_FRAMES,
-                      help="VLM 'hand empty' answers in a row that end 'bottle taken?' (0: log only)")
+                      help="VLM 'hand empty' answers in a row, one check per second, that end 'bottle taken?' "
+                           "(0: log only, the default; 3 for tests only, see R30)")
     loop.add_argument("--no-confirm-paths", action="store_true",
                       help='drop the "raise?" and "lower?" gates; for unattended runs only, after the supervised '
                            "session")

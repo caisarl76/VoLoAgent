@@ -1037,13 +1037,15 @@ def test_vlm_empty_hand_frames_end_the_taken_gate(tmp_path):  # R29
     events = evidence(tmp_path, 0)
     assert next(e for e in events if e["kind"] == "taken_confirmed")["by"] == "vlm"
     assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes"] * 3
+    at_ = [e["at"] for e in events if e["kind"] == "taken_decision"]
+    assert min(at_[i + 1] - at_[i] for i in range(len(at_) - 1)) > loop_mod.TAKEN_VLM_PERIOD_S - 0.1  # R33: one check per second
     assert "taken: the camera saw the hand empty 3 times in a row" in runner.console.out.getvalue().splitlines()
 
 
 def test_an_on_hand_answer_restarts_the_vlm_count(tmp_path):  # R29
     loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False, True, False, False, False]),
-                            taken_vlm_frames=3)
-    runner.console = Console(loop, until={"bottle taken?": never()})
+                            taken_vlm_frames=3)  # six checks, 1 s apart (R33)
+    runner.console = Console(loop, until={"bottle taken?": never(10.0)})
     assert runner.run().outcome == "completed"
     events = evidence(tmp_path, 0)
     assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes", "yes", "no", "yes", "yes", "yes"]
