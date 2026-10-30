@@ -64,6 +64,9 @@ SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most t
 # offer pose the head camera sees only an edge of the bottle, and 4 of the 6 holds the camera ended in r33 had the
 # bottle still on the palm.
 TAKEN_VLM_FRAMES = 0
+# R33: with R29 on, a taken check starts at most once per TAKEN_VLM_PERIOD_S, so its TAKEN_VLM_FRAMES answers
+# cover at least that many seconds (user, 2026-10-30: three checks one second apart, all empty, or start again).
+TAKEN_VLM_PERIOD_S = 1.0
 # R32: the camera's "hand empty" in this many distinct frames in a row ends "bottle taken?" when the native harness
 # also reports no bottle on the wrist (Status.take_hand_empty): a hand already empty when the hold starts (r36
 # trials 7 and 8) gives the torque detector no unload to see. In r33 the camera's false "empty" holds had the
@@ -408,12 +411,13 @@ class LoopRunner(HarnessRunner):
     def _taken_gate(self, trial):
         """ "bottle taken?": ends on the operator's Enter (R25, debounced like "clear?"), the native torque take
         detector (R26, Status.take_detected) or, with taken_vlm_frames > 0, that many VLM "taken" yeses in a row
-        (R29: each from a distinct frame; any other decision restarts the count), whichever comes first.
+        (R29: each from a distinct frame; any other decision restarts the count; R33: checks start at least
+        TAKEN_VLM_PERIOD_S apart), whichever comes first.
 
         Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
         """
         self._vlm_begin("taken", trial)
-        seen_on_hand, polls, empty, last_yes = [], [0], [0], [None]
+        seen_on_hand, polls, empty, last_yes, last_check = [], [0], [0], [None], [None]
 
         def poll():
             s = self._hold_poll()
@@ -437,7 +441,13 @@ class LoopRunner(HarnessRunner):
                 empty[0], last_yes[0] = 0, None
             if polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
                 raise _Taken("camera+wrist")
-            self._vlm_dispatch(trial)
+            now = time.monotonic()
+            if self.taken_vlm_frames and last_check[0] is not None and now - last_check[0] < TAKEN_VLM_PERIOD_S:
+                return  # R33
+            if self._worker is None:
+                self._vlm_dispatch(trial)
+                if self._worker is not None:
+                    last_check[0] = now
 
         try:
             self._gate("bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, the camera "
