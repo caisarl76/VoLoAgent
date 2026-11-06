@@ -13,7 +13,7 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
              start/restart/reclaim, after a "handover complete" trial (R30) or after a hold in which the VLM saw
              the bottle on the robot hand, else empty then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
-             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, R32 the VLM seeing
+             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, R32 with the camera route enabled: the VLM seeing
              the hand empty in TAKEN_EMPTY_FRAMES frames in a row while the native harness reports no bottle on
              the wrist, or R29 the VLM alone in TAKEN_VLM_FRAMES frames, off by default), loop_to_ready,
              wait ready -> end
@@ -64,6 +64,9 @@ SAY_REPEAT_S = 2.0  # a repeating re-arm failure/unknown is re-printed at most t
 # offer pose the head camera sees only an edge of the bottle, and 4 of the 6 holds the camera ended in r33 had the
 # bottle still on the palm.
 TAKEN_VLM_FRAMES = 0
+# R33: with R29 on, a taken check starts at most once per TAKEN_VLM_PERIOD_S, so its TAKEN_VLM_FRAMES answers
+# cover at least that many seconds (user, 2026-10-30: three checks one second apart, all empty, or start again).
+TAKEN_VLM_PERIOD_S = 1.0
 # R32: the camera's "hand empty" in this many distinct frames in a row ends "bottle taken?" when the native harness
 # also reports no bottle on the wrist (Status.take_hand_empty): a hand already empty when the hold starts (r36
 # trials 7 and 8) gives the torque detector no unload to see. In r33 the camera's false "empty" holds had the
@@ -408,12 +411,13 @@ class LoopRunner(HarnessRunner):
     def _taken_gate(self, trial):
         """ "bottle taken?": ends on the operator's Enter (R25, debounced like "clear?"), the native torque take
         detector (R26, Status.take_detected) or, with taken_vlm_frames > 0, that many VLM "taken" yeses in a row
-        (R29: each from a distinct frame; any other decision restarts the count), whichever comes first.
+        (R29: each from a distinct frame; any other decision restarts the count; R33: checks start at least
+        TAKEN_VLM_PERIOD_S apart), whichever comes first.
 
         Returns True when any decision saw the bottle on the robot hand (bottle_on_robot_hand true).
         """
         self._vlm_begin("taken", trial)
-        seen_on_hand, polls, empty, last_yes = [], [0], [0], [None]
+        seen_on_hand, polls, empty, last_yes, last_check = [], [0], [0], [None], [None]
 
         def poll():
             s = self._hold_poll()
@@ -435,13 +439,19 @@ class LoopRunner(HarnessRunner):
                     raise _Taken("vlm")
             if empty[0] and time.monotonic() - last_yes[0] > TAKEN_EMPTY_FRESH_S:  # no fresh camera evidence
                 empty[0], last_yes[0] = 0, None
-            if polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
+            if self.taken_vlm_frames and polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
                 raise _Taken("camera+wrist")
-            self._vlm_dispatch(trial)
+            now = time.monotonic()
+            if self.taken_vlm_frames and last_check[0] is not None and now - last_check[0] < TAKEN_VLM_PERIOD_S:
+                return  # R33
+            if self._worker is None:
+                self._vlm_dispatch(trial)
+                if self._worker is not None:
+                    last_check[0] = time.monotonic()
 
         try:
-            self._gate("bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, the camera "
-                       "sees the hand empty, or Enter) "
+            camera = ", the camera sees the hand empty" if self.taken_vlm_frames else ""
+            self._gate(f"bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off{camera}, or Enter) "
                        f"[presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]", poll, stop=True,
                        min_after=CLEAR_DEBOUNCE_S)
             by = "operator"
