@@ -13,7 +13,7 @@ Flow (one step method per state; a stop from any step goes to ``_recover``):
   trials     while trials remain and no end_session.request: re-arm (bottle only on the first trial after a
              start/restart/reclaim, after a "handover complete" trial (R30) or after a hold in which the VLM saw
              the bottle on the robot hand, else empty then bottle), loop_trial, wait await_take (R24: the arm holds its offer pose), log the end reason,
-             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, R32 the VLM seeing
+             "bottle taken?" (R25 the operator's Enter, R26 the native torque take detector, R32 with the camera route enabled: the VLM seeing
              the hand empty in TAKEN_EMPTY_FRAMES frames in a row while the native harness reports no bottle on
              the wrist, or R29 the VLM alone in TAKEN_VLM_FRAMES frames, off by default), loop_to_ready,
              wait ready -> end
@@ -439,7 +439,7 @@ class LoopRunner(HarnessRunner):
                     raise _Taken("vlm")
             if empty[0] and time.monotonic() - last_yes[0] > TAKEN_EMPTY_FRESH_S:  # no fresh camera evidence
                 empty[0], last_yes[0] = 0, None
-            if polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
+            if self.taken_vlm_frames and polls[0] > 1 and empty[0] >= TAKEN_EMPTY_FRAMES and s.take_hand_empty is True:  # R32
                 raise _Taken("camera+wrist")
             now = time.monotonic()
             if self.taken_vlm_frames and last_check[0] is not None and now - last_check[0] < TAKEN_VLM_PERIOD_S:
@@ -447,11 +447,11 @@ class LoopRunner(HarnessRunner):
             if self._worker is None:
                 self._vlm_dispatch(trial)
                 if self._worker is not None:
-                    last_check[0] = now
+                    last_check[0] = time.monotonic()
 
         try:
-            self._gate("bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off, the camera "
-                       "sees the hand empty, or Enter) "
+            camera = ", the camera sees the hand empty" if self.taken_vlm_frames else ""
+            self._gate(f"bottle taken? (offer pose held; moves on when the arm feels the bottle lifted off{camera}, or Enter) "
                        f"[presses in the first {CLEAR_DEBOUNCE_S:g} s are ignored]", poll, stop=True,
                        min_after=CLEAR_DEBOUNCE_S)
             by = "operator"

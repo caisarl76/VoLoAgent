@@ -1042,6 +1042,29 @@ def test_vlm_empty_hand_frames_end_the_taken_gate(tmp_path):  # R29
     assert "taken: the camera saw the hand empty 3 times in a row" in runner.console.out.getvalue().splitlines()
 
 
+def test_slow_frame_fetch_does_not_shorten_taken_check_interval(tmp_path, monkeypatch):
+    loop, runner, monitor = build(tmp_path, trials=1, taken_vlm_frames=3)
+    runner.console = Console(loop, until={"bottle taken?": never(10.0)})
+    original_observe, original_check = FakeClient.observe, monitor.check
+    starts = []
+
+    def observe(client):
+        if client.loop.stage == "await_take" and not starts:
+            time.sleep(0.7)
+        return original_observe(client)
+
+    def check(frame):
+        if monitor.step == "taken":
+            starts.append(time.monotonic())
+        return original_check(frame)
+
+    monkeypatch.setattr(FakeClient, "observe", observe)
+    monkeypatch.setattr(monitor, "check", check)
+    assert runner.run().outcome == "completed"
+    assert len(starts) == 3
+    assert min(b - a for a, b in itertools.pairwise(starts)) >= 0.95
+
+
 def test_an_on_hand_answer_restarts_the_vlm_count(tmp_path):  # R29
     loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False, True, False, False, False]),
                             taken_vlm_frames=3)  # six checks, 1 s apart (R33)
@@ -1067,8 +1090,16 @@ def test_taken_vlm_frames_must_be_a_non_negative_int(tmp_path):
             build(tmp_path, taken_vlm_frames=bad)
 
 
+def test_camera_and_wrist_do_not_end_the_default_taken_gate(tmp_path):
+    loop, runner, _ = build(tmp_path, trials=1)
+    loop.hand_empty = True
+    runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 5)})
+    assert runner.run().outcome == "completed"
+    assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "operator"
+
+
 def test_camera_and_wrist_together_end_the_taken_gate(tmp_path):  # R32
-    loop, runner, _ = build(tmp_path, trials=2)  # the fake VLM sees the hand empty; R29 (camera alone) is off
+    loop, runner, _ = build(tmp_path, trials=2, taken_vlm_frames=4)  # R32 fires before four camera-only answers
     loop.hand_empty = True  # the native harness: no bottle on the wrist
     runner.console = Console(loop, until={"bottle taken?": never()})  # the operator never presses
     assert runner.run().outcome == "completed"
@@ -1082,13 +1113,13 @@ def test_camera_and_wrist_together_end_the_taken_gate(tmp_path):  # R32
 
 def test_camera_alone_or_wrist_alone_waits_for_enter(tmp_path):  # R32
     # the camera says empty, the wrist still carries the bottle (r33's false "empty" holds)
-    loop, runner, _ = build(tmp_path, trials=1)
+    loop, runner, _ = build(tmp_path, trials=1, taken_vlm_frames=6)
     runner.console = Console(loop, until={"bottle taken?": decisions_logged(tmp_path, 0, 5)})
     assert runner.run().outcome == "completed"
     assert next(e for e in evidence(tmp_path, 0) if e["kind"] == "taken_confirmed")["by"] == "operator"
     # the wrist is unloaded but the camera sees the bottle on the hand
     other = tmp_path / "other"
-    loop, runner, _ = build(other, trials=1, monitor=TakenAnswers([]))
+    loop, runner, _ = build(other, trials=1, monitor=TakenAnswers([]), taken_vlm_frames=4)
     loop.hand_empty = True
     runner.console = Console(loop, until={"bottle taken?": decisions_logged(other, 0, 5)})
     assert runner.run().outcome == "completed"
@@ -1096,9 +1127,10 @@ def test_camera_alone_or_wrist_alone_waits_for_enter(tmp_path):  # R32
 
 
 def test_the_camera_count_restarts_on_an_on_hand_answer_with_the_wrist_empty(tmp_path):  # R32
-    loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False, True, False, False, False]))
+    loop, runner, _ = build(tmp_path, trials=1, monitor=TakenAnswers([False, False, True, False, False, False]),
+                            taken_vlm_frames=4)
     loop.hand_empty = True
-    runner.console = Console(loop, until={"bottle taken?": never()})
+    runner.console = Console(loop, until={"bottle taken?": never(10.0)})
     assert runner.run().outcome == "completed"
     events = evidence(tmp_path, 0)
     assert [e["outcome"] for e in events if e["kind"] == "taken_decision"] == ["yes", "yes", "no", "yes", "yes", "yes"]
@@ -1191,7 +1223,7 @@ def test_a_malformed_taken_reply_resets_the_count_and_keeps_holding(tmp_path, fr
 
 
 def test_stale_camera_evidence_does_not_combine_with_a_later_unloaded_wrist(tmp_path):  # review of PR #5
-    loop, runner, _ = build(tmp_path, trials=1)  # the fake VLM sees the hand empty in every frame
+    loop, runner, _ = build(tmp_path, trials=1, taken_vlm_frames=4)  # the fake VLM sees the hand empty in every frame
     observe, held = FakeClient.observe, []
 
     def frames_stop(client):  # three frames in the hold, then the camera stops answering
@@ -1203,13 +1235,13 @@ def test_stale_camera_evidence_does_not_combine_with_a_later_unloaded_wrist(tmp_
 
     started = []
 
-    def wrist_unloads_late(lp):  # the native wrist reports no bottle only 3 s into the hold
+    def wrist_unloads_late(lp):  # the wrist unloads after the last camera answer has expired
         if lp.stage == "await_take":
             started.append(started[0] if started else time.monotonic())
-            lp.hand_empty = time.monotonic() - started[0] > 3.0
+            lp.hand_empty = time.monotonic() - started[0] > 5.0
 
     loop.hooks.append(wrist_unloads_late)
-    runner.console = Console(loop, until={"bottle taken?": lambda: started and time.monotonic() - started[0] > 5.0})
+    runner.console = Console(loop, until={"bottle taken?": lambda: started and time.monotonic() - started[0] > 7.0})
     FakeClient.observe = frames_stop
     try:
         assert runner.run().outcome == "completed"
