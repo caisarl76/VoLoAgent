@@ -1,0 +1,54 @@
+# Trash pick-and-bin subtask skills (GR00T N1.7, pnp_trash_subtasks, 72 episodes, 20,000 steps).
+# Not hardware-verified. The checkpoint has no held-out episodes; see
+# docs/artifacts/g1_trash_subtasks_20261106/README.md for its open-loop evaluation.
+# "approach" and "turn ... approach" skills walk through the VLA's motion tokens.
+# The walk/turn limits below bound only walk_for/turn_by, not these skills.
+# Serve with Isaac-GR00T's PolicyServer, as for workstation.yaml.
+schema_version: 1
+policy_host: 127.0.0.1
+policy_port: 15558
+checkpoint: /mnt/data/jihun/g1_models/pnp_trash_subtasks_n17_20260828/checkpoint-20000
+embodiment: unitree_g1_sonic
+camera_key: ego_view
+action_horizon: 40
+publish_rate: 50
+limits:
+  lease_s: 2.0
+  heartbeat_s: 0.25
+# Prompts are the exact training strings, including "put it in to".
+skills:
+  approach_brown_table:
+    prompt: approach brown table
+    completion_criteria: The robot stands at the brown wooden table and has stopped walking, with the objects on the table within arm's reach in front of it.
+    completion_action: hold
+  pick_apple:
+    prompt: pick the apple
+    completion_criteria: The apple is held in a robot hand and lifted clear of the table; it no longer rests on the table.
+    completion_action: hold
+  pick_cup:
+    prompt: pick the cup
+    completion_criteria: The cup is held in a robot hand and lifted clear of the table; it no longer rests on the table.
+    completion_action: hold
+  pick_pill_bottle:
+    prompt: pick the pill bottle
+    completion_criteria: The pill bottle is held in a robot hand and lifted clear of the table; it no longer rests on the table.
+    completion_action: hold
+  pick_pill_box:
+    prompt: pick the pill box
+    completion_criteria: The pill box is held in a robot hand and lifted clear of the table; it no longer rests on the table.
+    completion_action: hold
+  pick_red_bottle:
+    prompt: pick the red bottle
+    completion_criteria: The red bottle is held in a robot hand and lifted clear of the table; it no longer rests on the table.
+    completion_action: hold
+  turn_left_approach_trash_bin:
+    prompt: turn left and approach the trash bin
+    completion_criteria: The robot has turned away from the table and stands close in front of the trash bin on the floor, still holding the object.
+    completion_action: hold
+  turn_right_approach_trash_bin:
+    prompt: turn right and approach the trash bin
+    completion_criteria: The robot has turned away from the table and stands close in front of the trash bin on the floor, still holding the object.
+    completion_action: hold
+  put_in_trash_bin:
+    prompt: put it in to the trash bin
+    completion_criteria: The object the robot held has been released into the trash bin and is no longer in either hand.
